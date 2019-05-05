@@ -1,7 +1,8 @@
 module top(
 	  input      clk,          //clock da FPGA (50MHz)
-	  input  wire leftSprite,	  //mover sprite para a esquerda
-	  input  wire rightSprite,    //mover sprite para a direita
+	  //input  wire leftSprite,	  //mover sprite para a esquerda
+	  //input  wire rightSprite,    //mover sprite para a direita
+	  input wire changePosition,
 	  output reg  [2:0] VGA_R,   //intensidade de vermelho
 	  output reg  [2:0] VGA_G,   //intensidade de verde
 	  output reg  [2:0] VGA_B,   //intensidade do azul
@@ -16,6 +17,9 @@ wire [9:0]  pixel_y;    //coordenada y do pixel atual da tela
 
 reg [9:0] sprite_x;
 reg [9:0] sprite_y;
+
+reg [9:0] x_position;
+reg [9:0] y_position;
 
 
 SVGA_sync	SVGA(.clock(clk),
@@ -68,7 +72,19 @@ initial begin
 	sprite_x = 0;
 	sprite_y = 0;
 	address  = 0;
+	x_position = 400;
+   y_position = 300;
    $readmemh("/home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/teste3_palette.mem", palette);  // bitmap palette to load
+end
+
+always @ (posedge changePosition)
+begin
+	x_position <= (x_position + 20);
+	y_position <= (y_position*2);
+	
+	if(x_position >= 768) x_position <= 0;
+	if(y_position >= 568) y_position <= 0;
+	
 end
 
 always @ (posedge clk)
@@ -76,27 +92,7 @@ always @ (posedge clk)
 		  address <= (SPRITE_SIZE * sprite_y) + sprite_x;
         if (video_enable)
 				begin
-					if( ( pixel_x >= 400 && pixel_x <= 432) && (pixel_y >= 300 && pixel_y <= 332)  )//caso esteja no centro
-						begin
-							colour <= palette[dataout];
-							if(sprite_y > SPRITE_SIZE) 
-							begin
-								sprite_y <= 0;
-								sprite_x <= 0;
-							end
-							if(sprite_x > SPRITE_SIZE-1) 
-								begin
-									sprite_x <= 0;
-									sprite_y <= sprite_y + 1;
-								end
-							else sprite_x <= sprite_x + 1;
-						end
-					else
-						begin
-							colour[11:8] <= 0;
-							colour[7:4]  <= 0;
-							colour[3:0]  <= 0;
-						end
+					buildSprite(x_position,y_position);	
 				end
         else    
 				begin 
@@ -106,5 +102,38 @@ always @ (posedge clk)
         VGA_G <= colour[6:4];
         VGA_B <= colour[2:0];
     end			 
+		 
+task buildSprite;
+	input [9:0] x;
+	input [9:0] y;
+	begin
+		if( (pixel_x >= x && pixel_x <= (x + SPRITE_SIZE) ) && (pixel_y >= y && pixel_y <= (y + SPRITE_SIZE)) )//caso esteja no centro
+		begin
+			colour <= palette[dataout];
+			if(sprite_y > SPRITE_SIZE) 
+			begin
+				sprite_y <= 0;
+				sprite_x <= 0;
+			end
+			if(sprite_x > SPRITE_SIZE-1) 
+			begin
+				sprite_x <= 0;
+				sprite_y <= sprite_y + 1;
+			end
+			else sprite_x <= sprite_x + 1;
+		end
+		else
+		begin
+			colour[11:8] <= 0;
+			colour[7:4]  <= 0;
+			colour[3:0]  <= 0;
+		end
+	end
+endtask
+
+		 
+		 
+		 
+		 
 		 
 endmodule

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for consoleFPGA
-Sun May  5 14:48:19 2019
+Sun May  5 16:14:45 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -17,18 +17,19 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   9. Registers Removed During Synthesis
  10. Removed Registers Triggering Further Register Optimizations
  11. General Register Statistics
- 12. Registers Packed Into Inferred Megafunctions
- 13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Source assignments for sram:vram|altsyncram:memory_array_rtl_0|altsyncram_eu61:auto_generated
- 15. Parameter Settings for User Entity Instance: SVGA_sync:SVGA
- 16. Parameter Settings for User Entity Instance: sram:vram
- 17. Parameter Settings for Inferred Entity Instance: sram:vram|altsyncram:memory_array_rtl_0
- 18. altsyncram Parameter Settings by Entity Instance
- 19. Port Connectivity Checks: "sram:vram"
- 20. Port Connectivity Checks: "SVGA_sync:SVGA"
- 21. Post-Synthesis Netlist Statistics for Top Partition
- 22. Elapsed Time Per Partition
- 23. Analysis & Synthesis Messages
+ 12. Inverted Register Statistics
+ 13. Registers Packed Into Inferred Megafunctions
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Source assignments for sram:vram|altsyncram:memory_array_rtl_0|altsyncram_eu61:auto_generated
+ 16. Parameter Settings for User Entity Instance: SVGA_sync:SVGA
+ 17. Parameter Settings for User Entity Instance: sram:vram
+ 18. Parameter Settings for Inferred Entity Instance: sram:vram|altsyncram:memory_array_rtl_0
+ 19. altsyncram Parameter Settings by Entity Instance
+ 20. Port Connectivity Checks: "sram:vram"
+ 21. Port Connectivity Checks: "SVGA_sync:SVGA"
+ 22. Post-Synthesis Netlist Statistics for Top Partition
+ 23. Elapsed Time Per Partition
+ 24. Analysis & Synthesis Messages
 
 
 
@@ -54,16 +55,16 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun May  5 14:48:19 2019       ;
+; Analysis & Synthesis Status        ; Successful - Sun May  5 16:14:45 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; consoleFPGA                                 ;
 ; Top-level Entity Name              ; top                                         ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 106                                         ;
-;     Total combinational functions  ; 97                                          ;
-;     Dedicated logic registers      ; 61                                          ;
-; Total registers                    ; 61                                          ;
-; Total pins                         ; 14                                          ;
+; Total logic elements               ; 179                                         ;
+;     Total combinational functions  ; 169                                         ;
+;     Dedicated logic registers      ; 77                                          ;
+; Total registers                    ; 77                                          ;
+; Total pins                         ; 13                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 8,192                                       ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -202,31 +203,31 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 106       ;
+; Estimated Total logic elements              ; 179       ;
 ;                                             ;           ;
-; Total combinational functions               ; 97        ;
+; Total combinational functions               ; 169       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 42        ;
-;     -- 3 input functions                    ; 11        ;
-;     -- <=2 input functions                  ; 44        ;
+;     -- 4 input functions                    ; 44        ;
+;     -- 3 input functions                    ; 53        ;
+;     -- <=2 input functions                  ; 72        ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 56        ;
-;     -- arithmetic mode                      ; 41        ;
+;     -- normal mode                          ; 82        ;
+;     -- arithmetic mode                      ; 87        ;
 ;                                             ;           ;
-; Total registers                             ; 61        ;
-;     -- Dedicated logic registers            ; 61        ;
+; Total registers                             ; 77        ;
+;     -- Dedicated logic registers            ; 77        ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
-; I/O pins                                    ; 14        ;
+; I/O pins                                    ; 13        ;
 ; Total memory bits                           ; 8192      ;
 ;                                             ;           ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
 ; Maximum fan-out                             ; 69        ;
-; Total fan-out                               ; 555       ;
-; Average fan-out                             ; 2.86      ;
+; Total fan-out                               ; 770       ;
+; Average fan-out                             ; 2.75      ;
 +---------------------------------------------+-----------+
 
 
@@ -235,8 +236,8 @@ refer to the applicable agreement for further details.
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                         ; Entity Name     ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------+-----------------+--------------+
-; |top                                      ; 97 (48)             ; 61 (38)                   ; 8192        ; 0            ; 0       ; 0         ; 14   ; 0            ; |top                                                                        ; top             ; work         ;
-;    |SVGA_sync:SVGA|                       ; 49 (49)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|SVGA_sync:SVGA                                                         ; SVGA_sync       ; work         ;
+; |top                                      ; 169 (116)           ; 77 (54)                   ; 8192        ; 0            ; 0       ; 0         ; 13   ; 0            ; |top                                                                        ; top             ; work         ;
+;    |SVGA_sync:SVGA|                       ; 53 (53)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|SVGA_sync:SVGA                                                         ; SVGA_sync       ; work         ;
 ;    |sram:vram|                            ; 0 (0)               ; 0 (0)                     ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|sram:vram                                                              ; sram            ; work         ;
 ;       |altsyncram:memory_array_rtl_0|     ; 0 (0)               ; 0 (0)                     ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|sram:vram|altsyncram:memory_array_rtl_0                                ; altsyncram      ; work         ;
 ;          |altsyncram_eu61:auto_generated| ; 0 (0)               ; 0 (0)                     ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|sram:vram|altsyncram:memory_array_rtl_0|altsyncram_eu61:auto_generated ; altsyncram_eu61 ; work         ;
@@ -258,32 +259,27 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------+----------------------------------------+
 ; Register name                          ; Reason for Removal                     ;
 +----------------------------------------+----------------------------------------+
+; y_position[0]                          ; Stuck at GND due to stuck port data_in ;
+; x_position[0,1]                        ; Stuck at GND due to stuck port data_in ;
+; y_position[1]                          ; Stuck at GND due to stuck port data_in ;
 ; colour[1,2,8..10]                      ; Stuck at GND due to stuck port data_in ;
 ; VGA_R[0]~reg0                          ; Stuck at GND due to stuck port data_in ;
 ; VGA_R[1]~reg0                          ; Stuck at GND due to stuck port data_in ;
 ; VGA_R[2]~reg0                          ; Stuck at GND due to stuck port data_in ;
 ; VGA_B[1]~reg0                          ; Stuck at GND due to stuck port data_in ;
 ; VGA_B[2]~reg0                          ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 10 ;                                        ;
+; Total Number of Removed Registers = 14 ;                                        ;
 +----------------------------------------+----------------------------------------+
 
 
-+------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                        ;
-+---------------+---------------------------+----------------------------------------+
-; Register name ; Reason for Removal        ; Registers Removed due to This Register ;
-+---------------+---------------------------+----------------------------------------+
-; colour[8]     ; Stuck at GND              ; VGA_R[0]~reg0                          ;
-;               ; due to stuck port data_in ;                                        ;
-; colour[9]     ; Stuck at GND              ; VGA_R[1]~reg0                          ;
-;               ; due to stuck port data_in ;                                        ;
-; colour[10]    ; Stuck at GND              ; VGA_R[2]~reg0                          ;
-;               ; due to stuck port data_in ;                                        ;
-; colour[1]     ; Stuck at GND              ; VGA_B[1]~reg0                          ;
-;               ; due to stuck port data_in ;                                        ;
-; colour[2]     ; Stuck at GND              ; VGA_B[2]~reg0                          ;
-;               ; due to stuck port data_in ;                                        ;
-+---------------+---------------------------+----------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                       ;
++---------------+---------------------------+---------------------------------------------------------------------------------------+
+; Register name ; Reason for Removal        ; Registers Removed due to This Register                                                ;
++---------------+---------------------------+---------------------------------------------------------------------------------------+
+; y_position[0] ; Stuck at GND              ; colour[8], colour[9], colour[10], colour[1], colour[2], VGA_R[0]~reg0, VGA_R[1]~reg0, ;
+;               ; due to stuck port data_in ; VGA_R[2]~reg0, VGA_B[1]~reg0, VGA_B[2]~reg0                                           ;
++---------------+---------------------------+---------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -291,7 +287,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 61    ;
+; Total registers                              ; 77    ;
 ; Number of registers using Synchronous Clear  ; 20    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -299,6 +295,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Number of registers using Clock Enable       ; 20    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; y_position[8]                          ; 4       ;
+; y_position[5]                          ; 5       ;
+; y_position[3]                          ; 4       ;
+; y_position[2]                          ; 3       ;
+; x_position[8]                          ; 11      ;
+; x_position[7]                          ; 3       ;
+; x_position[4]                          ; 3       ;
+; Total number of inverted registers = 7 ;         ;
++----------------------------------------+---------+
 
 
 +--------------------------------------------------------------+
@@ -315,9 +327,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output     ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |top|SVGA_sync:SVGA|pixel_y[9] ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|colour[0]                 ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |top|sprite_y[0]               ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |top|SVGA_sync:SVGA|pixel_y[0] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|colour[4]                 ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |top|sprite_y[6]               ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
 
 
@@ -469,24 +481,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 14                          ;
-; cycloneiii_ff         ; 61                          ;
+; boundary_port         ; 13                          ;
+; cycloneiii_ff         ; 77                          ;
 ;     ENA SCLR          ; 20                          ;
-;     plain             ; 41                          ;
-; cycloneiii_lcell_comb ; 98                          ;
-;     arith             ; 41                          ;
-;         2 data inputs ; 37                          ;
-;         3 data inputs ; 4                           ;
-;     normal            ; 57                          ;
-;         0 data inputs ; 1                           ;
-;         1 data inputs ; 4                           ;
-;         2 data inputs ; 3                           ;
-;         3 data inputs ; 7                           ;
-;         4 data inputs ; 42                          ;
+;     plain             ; 57                          ;
+; cycloneiii_lcell_comb ; 170                         ;
+;     arith             ; 87                          ;
+;         2 data inputs ; 52                          ;
+;         3 data inputs ; 35                          ;
+;     normal            ; 83                          ;
+;         0 data inputs ; 3                           ;
+;         1 data inputs ; 5                           ;
+;         2 data inputs ; 13                          ;
+;         3 data inputs ; 18                          ;
+;         4 data inputs ; 44                          ;
 ; cycloneiii_ram_block  ; 8                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 5.00                        ;
-; Average LUT depth     ; 2.42                        ;
+; Max LUT depth         ; 5.90                        ;
+; Average LUT depth     ; 3.20                        ;
 +-----------------------+-----------------------------+
 
 
@@ -505,7 +517,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sun May  5 14:47:58 2019
+    Info: Processing started: Sun May  5 16:14:24 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off consoleFPGA -c consoleFPGA
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -518,16 +530,18 @@ Info (12021): Found 1 design units, including 1 entities, in source file Modulos
 Info (12021): Found 1 design units, including 1 entities, in source file Modulos/top.v
     Info (12023): Found entity 1: top File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/top.v Line: 1
 Info (12127): Elaborating entity "top" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at top.v(76): truncated value with size 32 to match size of target (10) File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/top.v Line: 76
-Warning (10230): Verilog HDL assignment warning at top.v(90): truncated value with size 32 to match size of target (10) File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/top.v Line: 90
+Warning (10230): Verilog HDL assignment warning at top.v(82): truncated value with size 32 to match size of target (10) File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/top.v Line: 82
+Warning (10230): Verilog HDL assignment warning at top.v(83): truncated value with size 32 to match size of target (10) File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/top.v Line: 83
 Warning (10230): Verilog HDL assignment warning at top.v(92): truncated value with size 32 to match size of target (10) File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/top.v Line: 92
-Warning (10030): Net "palette.data_a" at top.v(64) has no driver or initial value, using a default initial value '0' File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/top.v Line: 64
-Warning (10030): Net "palette.waddr_a" at top.v(64) has no driver or initial value, using a default initial value '0' File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/top.v Line: 64
-Warning (10030): Net "palette.we_a" at top.v(64) has no driver or initial value, using a default initial value '0' File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/top.v Line: 64
-Info (12128): Elaborating entity "SVGA_sync" for hierarchy "SVGA_sync:SVGA" File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/top.v Line: 28
+Warning (10230): Verilog HDL assignment warning at top.v(121): truncated value with size 32 to match size of target (10) File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/top.v Line: 121
+Warning (10230): Verilog HDL assignment warning at top.v(123): truncated value with size 32 to match size of target (10) File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/top.v Line: 123
+Warning (10030): Net "palette.data_a" at top.v(68) has no driver or initial value, using a default initial value '0' File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/top.v Line: 68
+Warning (10030): Net "palette.waddr_a" at top.v(68) has no driver or initial value, using a default initial value '0' File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/top.v Line: 68
+Warning (10030): Net "palette.we_a" at top.v(68) has no driver or initial value, using a default initial value '0' File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/top.v Line: 68
+Info (12128): Elaborating entity "SVGA_sync" for hierarchy "SVGA_sync:SVGA" File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/top.v Line: 32
 Warning (10230): Verilog HDL assignment warning at SVGA_sync.v(59): truncated value with size 32 to match size of target (11) File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/SVGAGrafico/SVGA_sync.v Line: 59
 Warning (10230): Verilog HDL assignment warning at SVGA_sync.v(80): truncated value with size 32 to match size of target (10) File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/SVGAGrafico/SVGA_sync.v Line: 80
-Info (12128): Elaborating entity "sram" for hierarchy "sram:vram" File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/top.v Line: 62
+Info (12128): Elaborating entity "sram" for hierarchy "sram:vram" File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/top.v Line: 66
 Info (10648): Verilog HDL Display System Task info at sram.v(24): /home/gabriel/Documentos/Console’¿¨¥˜±ÖŽàÔÙÔ¸ç‚QCVµ-3þÂ File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/moduloSram/sram.v Line: 24
 Info (19000): Inferred 1 megafunctions from design logic
     Info (276029): Inferred altsyncram megafunction from the following design logic: "sram:vram|memory_array_rtl_0" 
@@ -557,25 +571,22 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/alts
     Info (12023): Found entity 1: altsyncram_eu61 File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/db/altsyncram_eu61.tdf Line: 27
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "VGA_R[0]" is stuck at GND File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/top.v Line: 74
-    Warning (13410): Pin "VGA_R[1]" is stuck at GND File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/top.v Line: 74
-    Warning (13410): Pin "VGA_R[2]" is stuck at GND File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/top.v Line: 74
-    Warning (13410): Pin "VGA_B[1]" is stuck at GND File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/top.v Line: 74
-    Warning (13410): Pin "VGA_B[2]" is stuck at GND File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/top.v Line: 74
+    Warning (13410): Pin "VGA_R[0]" is stuck at GND File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/top.v Line: 90
+    Warning (13410): Pin "VGA_R[1]" is stuck at GND File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/top.v Line: 90
+    Warning (13410): Pin "VGA_R[2]" is stuck at GND File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/top.v Line: 90
+    Warning (13410): Pin "VGA_B[1]" is stuck at GND File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/top.v Line: 90
+    Warning (13410): Pin "VGA_B[2]" is stuck at GND File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/top.v Line: 90
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 2 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "leftSprite" File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/top.v Line: 3
-    Warning (15610): No output dependent on input pin "rightSprite" File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/top.v Line: 4
-Info (21057): Implemented 128 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 3 input pins
+Info (21057): Implemented 200 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
     Info (21059): Implemented 11 output pins
-    Info (21061): Implemented 106 logic cells
+    Info (21061): Implemented 179 logic cells
     Info (21064): Implemented 8 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 19 warnings
-    Info: Peak virtual memory: 991 megabytes
-    Info: Processing ended: Sun May  5 14:48:19 2019
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 18 warnings
+    Info: Peak virtual memory: 990 megabytes
+    Info: Processing ended: Sun May  5 16:14:45 2019
     Info: Elapsed time: 00:00:21
     Info: Total CPU time (on all processors): 00:00:50
 

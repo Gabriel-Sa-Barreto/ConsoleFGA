@@ -1,7 +1,25 @@
 |top
 clk => clk.IN2
-leftSprite => ~NO_FANOUT~
-rightSprite => ~NO_FANOUT~
+changePosition => y_position[0].CLK
+changePosition => y_position[1].CLK
+changePosition => y_position[2].CLK
+changePosition => y_position[3].CLK
+changePosition => y_position[4].CLK
+changePosition => y_position[5].CLK
+changePosition => y_position[6].CLK
+changePosition => y_position[7].CLK
+changePosition => y_position[8].CLK
+changePosition => y_position[9].CLK
+changePosition => x_position[0].CLK
+changePosition => x_position[1].CLK
+changePosition => x_position[2].CLK
+changePosition => x_position[3].CLK
+changePosition => x_position[4].CLK
+changePosition => x_position[5].CLK
+changePosition => x_position[6].CLK
+changePosition => x_position[7].CLK
+changePosition => x_position[8].CLK
+changePosition => x_position[9].CLK
 VGA_R[0] <= VGA_R[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 VGA_R[1] <= VGA_R[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 VGA_R[2] <= VGA_R[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE

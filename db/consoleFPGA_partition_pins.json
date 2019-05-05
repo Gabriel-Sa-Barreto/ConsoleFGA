@@ -30,6 +30,10 @@
 				{
 					"name" : "clk",
 					"strict" : false
+				},
+				{
+					"name" : "changePosition",
+					"strict" : false
 				}
 			]
 		}
