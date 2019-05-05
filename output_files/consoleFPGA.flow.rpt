@@ -1,5 +1,5 @@
 Flow report for consoleFPGA
-Thu May  2 00:23:10 2019
+Sun May  5 14:48:37 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,18 +40,18 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Thu May  2 00:23:10 2019       ;
+; Flow Status                        ; Successful - Sun May  5 14:48:37 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; consoleFPGA                                 ;
 ; Top-level Entity Name              ; top                                         ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE22F17C6                                ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 164 / 22,320 ( < 1 % )                      ;
-;     Total combinational functions  ; 157 / 22,320 ( < 1 % )                      ;
-;     Dedicated logic registers      ; 51 / 22,320 ( < 1 % )                       ;
-; Total registers                    ; 51                                          ;
-; Total pins                         ; 12 / 154 ( 8 % )                            ;
+; Total logic elements               ; 106 / 22,320 ( < 1 % )                      ;
+;     Total combinational functions  ; 97 / 22,320 ( < 1 % )                       ;
+;     Dedicated logic registers      ; 61 / 22,320 ( < 1 % )                       ;
+; Total registers                    ; 61                                          ;
+; Total pins                         ; 14 / 154 ( 9 % )                            ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 8,192 / 608,256 ( 1 % )                     ;
 ; Embedded Multiplier 9-bit elements ; 0 / 132 ( 0 % )                             ;
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/02/2019 00:22:27 ;
+; Start date & time ; 05/05/2019 14:47:58 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; consoleFPGA         ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 39627052299777.155676734713171         ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 39627052299777.155707847806737         ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Systemverilog Hdl                      ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (SystemVerilog)        ; <None>        ; --          ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --          ; eda_simulation ;
@@ -97,12 +97,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:24     ; 1.0                     ; 944 MB              ; 00:00:54                           ;
-; Fitter               ; 00:00:10     ; 1.0                     ; 1281 MB             ; 00:00:12                           ;
-; Assembler            ; 00:00:01     ; 1.0                     ; 819 MB              ; 00:00:02                           ;
-; Timing Analyzer      ; 00:00:03     ; 1.0                     ; 833 MB              ; 00:00:02                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 1057 MB             ; 00:00:01                           ;
-; Total                ; 00:00:39     ; --                      ; --                  ; 00:01:11                           ;
+; Analysis & Synthesis ; 00:00:20     ; 1.0                     ; 942 MB              ; 00:00:50                           ;
+; Fitter               ; 00:00:09     ; 1.0                     ; 1289 MB             ; 00:00:10                           ;
+; Assembler            ; 00:00:01     ; 1.0                     ; 818 MB              ; 00:00:02                           ;
+; Timing Analyzer      ; 00:00:03     ; 1.0                     ; 829 MB              ; 00:00:02                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 1059 MB             ; 00:00:01                           ;
+; Total                ; 00:00:34     ; --                      ; --                  ; 00:01:05                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
