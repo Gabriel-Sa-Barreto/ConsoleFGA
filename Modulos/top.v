@@ -61,7 +61,7 @@ sram #(
         .ADDR_WIDTH(VRAM_A_WIDTH), 
         .DATA_WIDTH(VRAM_D_WIDTH), 
         .DEPTH(VRAM_DEPTH), 
-        .MEMFILE("/home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/sprites.mem"))  // bitmap to load
+        .MEMFILE("/home/gabriel/Documentos/ConsoleFPGA/sprites.mem"))  // bitmap to load
         vram (
         .i_addr(address), 
         .i_clk(clk), 
@@ -70,7 +70,7 @@ sram #(
         .o_data(dataout)
     );
 
-reg [11:0] palette [0:255];  // 64 x 12-bit colour palette entries
+reg [11:0] palette [0:255];  // 256 x 12-bit colour palette entries
 reg [11:0] colour;
 
 initial begin
@@ -79,7 +79,7 @@ initial begin
 	address  = 0;
 	x_position = 400;
    y_position = 300;
-   $readmemh("/home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/sprites_palette.mem", palette);  // bitmap palette to load
+   $readmemh("/home/gabriel/Documentos/ConsoleFPGA/sprites_palette.mem", palette);  // bitmap palette to load
 end
 
 always @ (posedge changePosition)
@@ -112,7 +112,7 @@ task buildSprite;
 	input [9:0] x;
 	input [9:0] y;
 	begin
-		if( (pixel_x >= x && pixel_x <= (x + SPRITE_SIZE) ) && (pixel_y >= y && pixel_y <= (y + SPRITE_SIZE)) )//caso esteja no centro
+		if( (pixel_x >= x && pixel_x < (x + SPRITE_SIZE) ) && (pixel_y >= y && pixel_y < (y + SPRITE_SIZE)) )//caso esteja no centro
 		begin
 			colour <= palette[dataout];
 			if(sprite_y > SPRITE_SIZE) 

@@ -108,6 +108,9 @@ pixel_y[9] <= pixel_y[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 |top|sram:vram
 i_clk => memory_array.we_a.CLK
+i_clk => memory_array.waddr_a[12].CLK
+i_clk => memory_array.waddr_a[11].CLK
+i_clk => memory_array.waddr_a[10].CLK
 i_clk => memory_array.waddr_a[9].CLK
 i_clk => memory_array.waddr_a[8].CLK
 i_clk => memory_array.waddr_a[7].CLK
@@ -165,6 +168,15 @@ i_addr[8] => memory_array.RADDR8
 i_addr[9] => memory_array.waddr_a[9].DATAIN
 i_addr[9] => memory_array.WADDR9
 i_addr[9] => memory_array.RADDR9
+i_addr[10] => memory_array.waddr_a[10].DATAIN
+i_addr[10] => memory_array.WADDR10
+i_addr[10] => memory_array.RADDR10
+i_addr[11] => memory_array.waddr_a[11].DATAIN
+i_addr[11] => memory_array.WADDR11
+i_addr[11] => memory_array.RADDR11
+i_addr[12] => memory_array.waddr_a[12].DATAIN
+i_addr[12] => memory_array.WADDR12
+i_addr[12] => memory_array.RADDR12
 i_write => memory_array.we_a.DATAIN
 i_write => o_data[0]~reg0.ENA
 i_write => o_data[1]~reg0.ENA

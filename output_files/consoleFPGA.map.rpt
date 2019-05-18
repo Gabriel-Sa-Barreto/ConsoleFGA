@@ -1,5 +1,5 @@
 Analysis & Synthesis report for consoleFPGA
-Sun May  5 16:14:45 2019
+Sat May 18 20:24:20 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -15,21 +15,20 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
   9. Registers Removed During Synthesis
- 10. Removed Registers Triggering Further Register Optimizations
- 11. General Register Statistics
- 12. Inverted Register Statistics
- 13. Registers Packed Into Inferred Megafunctions
- 14. Multiplexer Restructuring Statistics (Restructuring Performed)
- 15. Source assignments for sram:vram|altsyncram:memory_array_rtl_0|altsyncram_eu61:auto_generated
- 16. Parameter Settings for User Entity Instance: SVGA_sync:SVGA
- 17. Parameter Settings for User Entity Instance: sram:vram
- 18. Parameter Settings for Inferred Entity Instance: sram:vram|altsyncram:memory_array_rtl_0
- 19. altsyncram Parameter Settings by Entity Instance
- 20. Port Connectivity Checks: "sram:vram"
- 21. Port Connectivity Checks: "SVGA_sync:SVGA"
- 22. Post-Synthesis Netlist Statistics for Top Partition
- 23. Elapsed Time Per Partition
- 24. Analysis & Synthesis Messages
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Registers Packed Into Inferred Megafunctions
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Source assignments for sram:vram|altsyncram:memory_array_rtl_0|altsyncram_a971:auto_generated
+ 15. Parameter Settings for User Entity Instance: SVGA_sync:SVGA
+ 16. Parameter Settings for User Entity Instance: sram:vram
+ 17. Parameter Settings for Inferred Entity Instance: sram:vram|altsyncram:memory_array_rtl_0
+ 18. altsyncram Parameter Settings by Entity Instance
+ 19. Port Connectivity Checks: "sram:vram"
+ 20. Port Connectivity Checks: "SVGA_sync:SVGA"
+ 21. Post-Synthesis Netlist Statistics for Top Partition
+ 22. Elapsed Time Per Partition
+ 23. Analysis & Synthesis Messages
 
 
 
@@ -55,18 +54,18 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun May  5 16:14:45 2019       ;
+; Analysis & Synthesis Status        ; Successful - Sat May 18 20:24:20 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; consoleFPGA                                 ;
 ; Top-level Entity Name              ; top                                         ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 179                                         ;
-;     Total combinational functions  ; 169                                         ;
-;     Dedicated logic registers      ; 77                                          ;
-; Total registers                    ; 77                                          ;
+; Total logic elements               ; 329                                         ;
+;     Total combinational functions  ; 314                                         ;
+;     Dedicated logic registers      ; 90                                          ;
+; Total registers                    ; 90                                          ;
 ; Total pins                         ; 13                                          ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 8,192                                       ;
+; Total memory bits                  ; 65,536                                      ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
 ; Total PLLs                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
@@ -175,27 +174,27 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                  ;
-+------------------------------------------+-----------------+-------------------------------------------------------+------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path         ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                             ; Library ;
-+------------------------------------------+-----------------+-------------------------------------------------------+------------------------------------------------------------------------------------------+---------+
-; Modulos/moduloSram/sram.v                ; yes             ; User Verilog HDL File                                 ; /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/moduloSram/sram.v                ;         ;
-; Modulos/SVGAGrafico/SVGA_sync.v          ; yes             ; User Verilog HDL File                                 ; /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/SVGAGrafico/SVGA_sync.v          ;         ;
-; Modulos/top.v                            ; yes             ; User Verilog HDL File                                 ; /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/top.v                            ;         ;
-; teste3_palette.mem                       ; yes             ; Auto-Found Unspecified File                           ; /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/teste3_palette.mem                       ;         ;
-; altsyncram.tdf                           ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf                  ;         ;
-; stratix_ram_block.inc                    ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc           ;         ;
-; lpm_mux.inc                              ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/lpm_mux.inc                     ;         ;
-; lpm_decode.inc                           ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/lpm_decode.inc                  ;         ;
-; aglobal181.inc                           ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc                  ;         ;
-; a_rdenreg.inc                            ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/a_rdenreg.inc                   ;         ;
-; altrom.inc                               ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altrom.inc                      ;         ;
-; altram.inc                               ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altram.inc                      ;         ;
-; altdpram.inc                             ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altdpram.inc                    ;         ;
-; db/altsyncram_eu61.tdf                   ; yes             ; Auto-Generated Megafunction                           ; /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/db/altsyncram_eu61.tdf                   ;         ;
-; db/consoleFPGA.ram0_sram_9648033.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/db/consoleFPGA.ram0_sram_9648033.hdl.mif ;         ;
-+------------------------------------------+-----------------+-------------------------------------------------------+------------------------------------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                         ;
++-------------------------------------------+-----------------+-------------------------------------------------------+--------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path          ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                   ; Library ;
++-------------------------------------------+-----------------+-------------------------------------------------------+--------------------------------------------------------------------------------+---------+
+; Modulos/moduloSram/sram.v                 ; yes             ; User Verilog HDL File                                 ; /home/gabriel/Documentos/ConsoleFPGA/Modulos/moduloSram/sram.v                 ;         ;
+; Modulos/SVGAGrafico/SVGA_sync.v           ; yes             ; User Verilog HDL File                                 ; /home/gabriel/Documentos/ConsoleFPGA/Modulos/SVGAGrafico/SVGA_sync.v           ;         ;
+; Modulos/top.v                             ; yes             ; User Verilog HDL File                                 ; /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v                             ;         ;
+; sprites_palette.mem                       ; yes             ; Auto-Found Unspecified File                           ; /home/gabriel/Documentos/ConsoleFPGA/sprites_palette.mem                       ;         ;
+; altsyncram.tdf                            ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc                     ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                               ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                            ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; aglobal181.inc                            ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc        ;         ;
+; a_rdenreg.inc                             ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                                ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                                ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                              ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_a971.tdf                    ; yes             ; Auto-Generated Megafunction                           ; /home/gabriel/Documentos/ConsoleFPGA/db/altsyncram_a971.tdf                    ;         ;
+; db/consoleFPGA.ram0_sram_f2cac7dc.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; /home/gabriel/Documentos/ConsoleFPGA/db/consoleFPGA.ram0_sram_f2cac7dc.hdl.mif ;         ;
++-------------------------------------------+-----------------+-------------------------------------------------------+--------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------+
@@ -203,31 +202,31 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 179       ;
+; Estimated Total logic elements              ; 329       ;
 ;                                             ;           ;
-; Total combinational functions               ; 169       ;
+; Total combinational functions               ; 314       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 44        ;
-;     -- 3 input functions                    ; 53        ;
-;     -- <=2 input functions                  ; 72        ;
+;     -- 4 input functions                    ; 170       ;
+;     -- 3 input functions                    ; 61        ;
+;     -- <=2 input functions                  ; 83        ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 82        ;
-;     -- arithmetic mode                      ; 87        ;
+;     -- normal mode                          ; 226       ;
+;     -- arithmetic mode                      ; 88        ;
 ;                                             ;           ;
-; Total registers                             ; 77        ;
-;     -- Dedicated logic registers            ; 77        ;
+; Total registers                             ; 90        ;
+;     -- Dedicated logic registers            ; 90        ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 13        ;
-; Total memory bits                           ; 8192      ;
+; Total memory bits                           ; 65536     ;
 ;                                             ;           ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 69        ;
-; Total fan-out                               ; 770       ;
-; Average fan-out                             ; 2.75      ;
+; Maximum fan-out                             ; 82        ;
+; Total fan-out                               ; 1359      ;
+; Average fan-out                             ; 3.10      ;
 +---------------------------------------------+-----------+
 
 
@@ -236,50 +235,34 @@ refer to the applicable agreement for further details.
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                         ; Entity Name     ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------+-----------------+--------------+
-; |top                                      ; 169 (116)           ; 77 (54)                   ; 8192        ; 0            ; 0       ; 0         ; 13   ; 0            ; |top                                                                        ; top             ; work         ;
+; |top                                      ; 314 (261)           ; 90 (67)                   ; 65536       ; 0            ; 0       ; 0         ; 13   ; 0            ; |top                                                                        ; top             ; work         ;
 ;    |SVGA_sync:SVGA|                       ; 53 (53)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|SVGA_sync:SVGA                                                         ; SVGA_sync       ; work         ;
-;    |sram:vram|                            ; 0 (0)               ; 0 (0)                     ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|sram:vram                                                              ; sram            ; work         ;
-;       |altsyncram:memory_array_rtl_0|     ; 0 (0)               ; 0 (0)                     ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|sram:vram|altsyncram:memory_array_rtl_0                                ; altsyncram      ; work         ;
-;          |altsyncram_eu61:auto_generated| ; 0 (0)               ; 0 (0)                     ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|sram:vram|altsyncram:memory_array_rtl_0|altsyncram_eu61:auto_generated ; altsyncram_eu61 ; work         ;
+;    |sram:vram|                            ; 0 (0)               ; 0 (0)                     ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|sram:vram                                                              ; sram            ; work         ;
+;       |altsyncram:memory_array_rtl_0|     ; 0 (0)               ; 0 (0)                     ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|sram:vram|altsyncram:memory_array_rtl_0                                ; altsyncram      ; work         ;
+;          |altsyncram_a971:auto_generated| ; 0 (0)               ; 0 (0)                     ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|sram:vram|altsyncram:memory_array_rtl_0|altsyncram_a971:auto_generated ; altsyncram_a971 ; work         ;
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                              ;
-+-----------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+------------------------------------------+
-; Name                                                                              ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF                                      ;
-+-----------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+------------------------------------------+
-; sram:vram|altsyncram:memory_array_rtl_0|altsyncram_eu61:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 1024         ; 8            ; --           ; --           ; 8192 ; db/consoleFPGA.ram0_sram_9648033.hdl.mif ;
-+-----------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                ;
++-----------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+-------+-------------------------------------------+
+; Name                                                                              ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF                                       ;
++-----------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+-------+-------------------------------------------+
+; sram:vram|altsyncram:memory_array_rtl_0|altsyncram_a971:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 8192         ; 8            ; --           ; --           ; 65536 ; db/consoleFPGA.ram0_sram_f2cac7dc.hdl.mif ;
++-----------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+-------+-------------------------------------------+
 
 
-+---------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                              ;
-+----------------------------------------+----------------------------------------+
-; Register name                          ; Reason for Removal                     ;
-+----------------------------------------+----------------------------------------+
-; y_position[0]                          ; Stuck at GND due to stuck port data_in ;
-; x_position[0,1]                        ; Stuck at GND due to stuck port data_in ;
-; y_position[1]                          ; Stuck at GND due to stuck port data_in ;
-; colour[1,2,8..10]                      ; Stuck at GND due to stuck port data_in ;
-; VGA_R[0]~reg0                          ; Stuck at GND due to stuck port data_in ;
-; VGA_R[1]~reg0                          ; Stuck at GND due to stuck port data_in ;
-; VGA_R[2]~reg0                          ; Stuck at GND due to stuck port data_in ;
-; VGA_B[1]~reg0                          ; Stuck at GND due to stuck port data_in ;
-; VGA_B[2]~reg0                          ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 14 ;                                        ;
-+----------------------------------------+----------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                       ;
-+---------------+---------------------------+---------------------------------------------------------------------------------------+
-; Register name ; Reason for Removal        ; Registers Removed due to This Register                                                ;
-+---------------+---------------------------+---------------------------------------------------------------------------------------+
-; y_position[0] ; Stuck at GND              ; colour[8], colour[9], colour[10], colour[1], colour[2], VGA_R[0]~reg0, VGA_R[1]~reg0, ;
-;               ; due to stuck port data_in ; VGA_R[2]~reg0, VGA_B[1]~reg0, VGA_B[2]~reg0                                           ;
-+---------------+---------------------------+---------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; y_position[0]                         ; Stuck at GND due to stuck port data_in ;
+; x_position[0,1]                       ; Stuck at GND due to stuck port data_in ;
+; y_position[1]                         ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 4 ;                                        ;
++---------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -287,12 +270,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 77    ;
-; Number of registers using Synchronous Clear  ; 20    ;
+; Total registers                              ; 90    ;
+; Number of registers using Synchronous Clear  ; 10    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 20    ;
+; Number of registers using Clock Enable       ; 15    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -302,13 +285,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
+; x_position[8]                          ; 11      ;
+; x_position[7]                          ; 3       ;
+; x_position[4]                          ; 3       ;
 ; y_position[8]                          ; 4       ;
 ; y_position[5]                          ; 5       ;
 ; y_position[3]                          ; 4       ;
 ; y_position[2]                          ; 3       ;
-; x_position[8]                          ; 11      ;
-; x_position[7]                          ; 3       ;
-; x_position[4]                          ; 3       ;
 ; Total number of inverted registers = 7 ;         ;
 +----------------------------------------+---------+
 
@@ -327,14 +310,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output     ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |top|SVGA_sync:SVGA|pixel_y[0] ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|colour[4]                 ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |top|SVGA_sync:SVGA|pixel_y[8] ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |top|colour[2]                 ;
 ; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |top|sprite_y[6]               ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |top|sprite_x[4]               ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------+
-; Source assignments for sram:vram|altsyncram:memory_array_rtl_0|altsyncram_eu61:auto_generated ;
+; Source assignments for sram:vram|altsyncram:memory_array_rtl_0|altsyncram_a971:auto_generated ;
 +---------------------------------+--------------------+------+---------------------------------+
 ; Assignment                      ; Value              ; From ; To                              ;
 +---------------------------------+--------------------+------+---------------------------------+
@@ -361,77 +345,77 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: sram:vram                                       ;
-+----------------+------------------------------------------------------------+----------------+
-; Parameter Name ; Value                                                      ; Type           ;
-+----------------+------------------------------------------------------------+----------------+
-; ADDR_WIDTH     ; 10                                                         ; Signed Integer ;
-; DATA_WIDTH     ; 8                                                          ; Signed Integer ;
-; DEPTH          ; 1024                                                       ; Signed Integer ;
-; MEMFILE        ; /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/teste3.mem ; String         ;
-+----------------+------------------------------------------------------------+----------------+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sram:vram                             ;
++----------------+--------------------------------------------------+----------------+
+; Parameter Name ; Value                                            ; Type           ;
++----------------+--------------------------------------------------+----------------+
+; ADDR_WIDTH     ; 13                                               ; Signed Integer ;
+; DATA_WIDTH     ; 8                                                ; Signed Integer ;
+; DEPTH          ; 8192                                             ; Signed Integer ;
+; MEMFILE        ; /home/gabriel/Documentos/ConsoleFPGA/sprites.mem ; String         ;
++----------------+--------------------------------------------------+----------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: sram:vram|altsyncram:memory_array_rtl_0       ;
-+------------------------------------+------------------------------------------+----------------+
-; Parameter Name                     ; Value                                    ; Type           ;
-+------------------------------------+------------------------------------------+----------------+
-; BYTE_SIZE_BLOCK                    ; 8                                        ; Untyped        ;
-; AUTO_CARRY_CHAINS                  ; ON                                       ; AUTO_CARRY     ;
-; IGNORE_CARRY_BUFFERS               ; OFF                                      ; IGNORE_CARRY   ;
-; AUTO_CASCADE_CHAINS                ; ON                                       ; AUTO_CASCADE   ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                                      ; IGNORE_CASCADE ;
-; WIDTH_BYTEENA                      ; 1                                        ; Untyped        ;
-; OPERATION_MODE                     ; ROM                                      ; Untyped        ;
-; WIDTH_A                            ; 8                                        ; Untyped        ;
-; WIDTHAD_A                          ; 10                                       ; Untyped        ;
-; NUMWORDS_A                         ; 1024                                     ; Untyped        ;
-; OUTDATA_REG_A                      ; UNREGISTERED                             ; Untyped        ;
-; ADDRESS_ACLR_A                     ; NONE                                     ; Untyped        ;
-; OUTDATA_ACLR_A                     ; NONE                                     ; Untyped        ;
-; WRCONTROL_ACLR_A                   ; NONE                                     ; Untyped        ;
-; INDATA_ACLR_A                      ; NONE                                     ; Untyped        ;
-; BYTEENA_ACLR_A                     ; NONE                                     ; Untyped        ;
-; WIDTH_B                            ; 1                                        ; Untyped        ;
-; WIDTHAD_B                          ; 1                                        ; Untyped        ;
-; NUMWORDS_B                         ; 1                                        ; Untyped        ;
-; INDATA_REG_B                       ; CLOCK1                                   ; Untyped        ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                   ; Untyped        ;
-; RDCONTROL_REG_B                    ; CLOCK1                                   ; Untyped        ;
-; ADDRESS_REG_B                      ; CLOCK1                                   ; Untyped        ;
-; OUTDATA_REG_B                      ; UNREGISTERED                             ; Untyped        ;
-; BYTEENA_REG_B                      ; CLOCK1                                   ; Untyped        ;
-; INDATA_ACLR_B                      ; NONE                                     ; Untyped        ;
-; WRCONTROL_ACLR_B                   ; NONE                                     ; Untyped        ;
-; ADDRESS_ACLR_B                     ; NONE                                     ; Untyped        ;
-; OUTDATA_ACLR_B                     ; NONE                                     ; Untyped        ;
-; RDCONTROL_ACLR_B                   ; NONE                                     ; Untyped        ;
-; BYTEENA_ACLR_B                     ; NONE                                     ; Untyped        ;
-; WIDTH_BYTEENA_A                    ; 1                                        ; Untyped        ;
-; WIDTH_BYTEENA_B                    ; 1                                        ; Untyped        ;
-; RAM_BLOCK_TYPE                     ; AUTO                                     ; Untyped        ;
-; BYTE_SIZE                          ; 8                                        ; Untyped        ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                ; Untyped        ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                     ; Untyped        ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                     ; Untyped        ;
-; INIT_FILE                          ; db/consoleFPGA.ram0_sram_9648033.hdl.mif ; Untyped        ;
-; INIT_FILE_LAYOUT                   ; PORT_A                                   ; Untyped        ;
-; MAXIMUM_DEPTH                      ; 0                                        ; Untyped        ;
-; CLOCK_ENABLE_INPUT_A               ; NORMAL                                   ; Untyped        ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL                                   ; Untyped        ;
-; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                   ; Untyped        ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                   ; Untyped        ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                          ; Untyped        ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                          ; Untyped        ;
-; ENABLE_ECC                         ; FALSE                                    ; Untyped        ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                    ; Untyped        ;
-; WIDTH_ECCSTATUS                    ; 3                                        ; Untyped        ;
-; DEVICE_FAMILY                      ; Cyclone IV E                             ; Untyped        ;
-; CBXI_PARAMETER                     ; altsyncram_eu61                          ; Untyped        ;
-+------------------------------------+------------------------------------------+----------------+
++-------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sram:vram|altsyncram:memory_array_rtl_0        ;
++------------------------------------+-------------------------------------------+----------------+
+; Parameter Name                     ; Value                                     ; Type           ;
++------------------------------------+-------------------------------------------+----------------+
+; BYTE_SIZE_BLOCK                    ; 8                                         ; Untyped        ;
+; AUTO_CARRY_CHAINS                  ; ON                                        ; AUTO_CARRY     ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                       ; IGNORE_CARRY   ;
+; AUTO_CASCADE_CHAINS                ; ON                                        ; AUTO_CASCADE   ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                       ; IGNORE_CASCADE ;
+; WIDTH_BYTEENA                      ; 1                                         ; Untyped        ;
+; OPERATION_MODE                     ; ROM                                       ; Untyped        ;
+; WIDTH_A                            ; 8                                         ; Untyped        ;
+; WIDTHAD_A                          ; 13                                        ; Untyped        ;
+; NUMWORDS_A                         ; 8192                                      ; Untyped        ;
+; OUTDATA_REG_A                      ; UNREGISTERED                              ; Untyped        ;
+; ADDRESS_ACLR_A                     ; NONE                                      ; Untyped        ;
+; OUTDATA_ACLR_A                     ; NONE                                      ; Untyped        ;
+; WRCONTROL_ACLR_A                   ; NONE                                      ; Untyped        ;
+; INDATA_ACLR_A                      ; NONE                                      ; Untyped        ;
+; BYTEENA_ACLR_A                     ; NONE                                      ; Untyped        ;
+; WIDTH_B                            ; 1                                         ; Untyped        ;
+; WIDTHAD_B                          ; 1                                         ; Untyped        ;
+; NUMWORDS_B                         ; 1                                         ; Untyped        ;
+; INDATA_REG_B                       ; CLOCK1                                    ; Untyped        ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                    ; Untyped        ;
+; RDCONTROL_REG_B                    ; CLOCK1                                    ; Untyped        ;
+; ADDRESS_REG_B                      ; CLOCK1                                    ; Untyped        ;
+; OUTDATA_REG_B                      ; UNREGISTERED                              ; Untyped        ;
+; BYTEENA_REG_B                      ; CLOCK1                                    ; Untyped        ;
+; INDATA_ACLR_B                      ; NONE                                      ; Untyped        ;
+; WRCONTROL_ACLR_B                   ; NONE                                      ; Untyped        ;
+; ADDRESS_ACLR_B                     ; NONE                                      ; Untyped        ;
+; OUTDATA_ACLR_B                     ; NONE                                      ; Untyped        ;
+; RDCONTROL_ACLR_B                   ; NONE                                      ; Untyped        ;
+; BYTEENA_ACLR_B                     ; NONE                                      ; Untyped        ;
+; WIDTH_BYTEENA_A                    ; 1                                         ; Untyped        ;
+; WIDTH_BYTEENA_B                    ; 1                                         ; Untyped        ;
+; RAM_BLOCK_TYPE                     ; AUTO                                      ; Untyped        ;
+; BYTE_SIZE                          ; 8                                         ; Untyped        ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                 ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                      ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                      ; Untyped        ;
+; INIT_FILE                          ; db/consoleFPGA.ram0_sram_f2cac7dc.hdl.mif ; Untyped        ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                    ; Untyped        ;
+; MAXIMUM_DEPTH                      ; 0                                         ; Untyped        ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                    ; Untyped        ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                    ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                    ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                    ; Untyped        ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                           ; Untyped        ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                           ; Untyped        ;
+; ENABLE_ECC                         ; FALSE                                     ; Untyped        ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                     ; Untyped        ;
+; WIDTH_ECCSTATUS                    ; 3                                         ; Untyped        ;
+; DEVICE_FAMILY                      ; Cyclone IV E                              ; Untyped        ;
+; CBXI_PARAMETER                     ; altsyncram_a971                           ; Untyped        ;
++------------------------------------+-------------------------------------------+----------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -444,7 +428,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Entity Instance                           ; sram:vram|altsyncram:memory_array_rtl_0 ;
 ;     -- OPERATION_MODE                     ; ROM                                     ;
 ;     -- WIDTH_A                            ; 8                                       ;
-;     -- NUMWORDS_A                         ; 1024                                    ;
+;     -- NUMWORDS_A                         ; 8192                                    ;
 ;     -- OUTDATA_REG_A                      ; UNREGISTERED                            ;
 ;     -- WIDTH_B                            ; 1                                       ;
 ;     -- NUMWORDS_B                         ; 1                                       ;
@@ -482,23 +466,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 13                          ;
-; cycloneiii_ff         ; 77                          ;
-;     ENA SCLR          ; 20                          ;
-;     plain             ; 57                          ;
-; cycloneiii_lcell_comb ; 170                         ;
-;     arith             ; 87                          ;
+; cycloneiii_ff         ; 90                          ;
+;     ENA               ; 5                           ;
+;     ENA SCLR          ; 10                          ;
+;     plain             ; 75                          ;
+; cycloneiii_lcell_comb ; 314                         ;
+;     arith             ; 88                          ;
 ;         2 data inputs ; 52                          ;
-;         3 data inputs ; 35                          ;
-;     normal            ; 83                          ;
-;         0 data inputs ; 3                           ;
-;         1 data inputs ; 5                           ;
-;         2 data inputs ; 13                          ;
-;         3 data inputs ; 18                          ;
-;         4 data inputs ; 44                          ;
+;         3 data inputs ; 36                          ;
+;     normal            ; 226                         ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 6                           ;
+;         2 data inputs ; 23                          ;
+;         3 data inputs ; 25                          ;
+;         4 data inputs ; 170                         ;
 ; cycloneiii_ram_block  ; 8                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 5.90                        ;
-; Average LUT depth     ; 3.20                        ;
+; Max LUT depth         ; 6.00                        ;
+; Average LUT depth     ; 3.75                        ;
 +-----------------------+-----------------------------+
 
 
@@ -507,7 +492,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:04     ;
 +----------------+--------------+
 
 
@@ -517,77 +502,71 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sun May  5 16:14:24 2019
+    Info: Processing started: Sat May 18 20:23:53 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off consoleFPGA -c consoleFPGA
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file Modulos/moduloSram/sram.v
-    Info (12023): Found entity 1: sram File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/moduloSram/sram.v Line: 11
+    Info (12023): Found entity 1: sram File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/moduloSram/sram.v Line: 11
 Info (12021): Found 1 design units, including 1 entities, in source file Modulos/SVGAGrafico/SVGA_sync.v
-    Info (12023): Found entity 1: SVGA_sync File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/SVGAGrafico/SVGA_sync.v Line: 18
+    Info (12023): Found entity 1: SVGA_sync File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/SVGAGrafico/SVGA_sync.v Line: 18
 Info (12021): Found 1 design units, including 1 entities, in source file Modulos/SVGAGrafico/SVGA_top.v
-    Info (12023): Found entity 1: SVGA_top File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/SVGAGrafico/SVGA_top.v Line: 19
+    Info (12023): Found entity 1: SVGA_top File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/SVGAGrafico/SVGA_top.v Line: 19
 Info (12021): Found 1 design units, including 1 entities, in source file Modulos/top.v
-    Info (12023): Found entity 1: top File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/top.v Line: 1
+    Info (12023): Found entity 1: top File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 1
 Info (12127): Elaborating entity "top" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at top.v(82): truncated value with size 32 to match size of target (10) File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/top.v Line: 82
-Warning (10230): Verilog HDL assignment warning at top.v(83): truncated value with size 32 to match size of target (10) File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/top.v Line: 83
-Warning (10230): Verilog HDL assignment warning at top.v(92): truncated value with size 32 to match size of target (10) File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/top.v Line: 92
-Warning (10230): Verilog HDL assignment warning at top.v(121): truncated value with size 32 to match size of target (10) File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/top.v Line: 121
-Warning (10230): Verilog HDL assignment warning at top.v(123): truncated value with size 32 to match size of target (10) File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/top.v Line: 123
-Warning (10030): Net "palette.data_a" at top.v(68) has no driver or initial value, using a default initial value '0' File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/top.v Line: 68
-Warning (10030): Net "palette.waddr_a" at top.v(68) has no driver or initial value, using a default initial value '0' File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/top.v Line: 68
-Warning (10030): Net "palette.we_a" at top.v(68) has no driver or initial value, using a default initial value '0' File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/top.v Line: 68
-Info (12128): Elaborating entity "SVGA_sync" for hierarchy "SVGA_sync:SVGA" File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/top.v Line: 32
-Warning (10230): Verilog HDL assignment warning at SVGA_sync.v(59): truncated value with size 32 to match size of target (11) File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/SVGAGrafico/SVGA_sync.v Line: 59
-Warning (10230): Verilog HDL assignment warning at SVGA_sync.v(80): truncated value with size 32 to match size of target (10) File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/SVGAGrafico/SVGA_sync.v Line: 80
-Info (12128): Elaborating entity "sram" for hierarchy "sram:vram" File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/top.v Line: 66
-Info (10648): Verilog HDL Display System Task info at sram.v(24): /home/gabriel/Documentos/Consoleíø®•ò±÷é‡‘Ÿ‘∏ÁÇQCVµ-3˛¬ File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/moduloSram/sram.v Line: 24
+Warning (10230): Verilog HDL assignment warning at top.v(87): truncated value with size 32 to match size of target (10) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 87
+Warning (10230): Verilog HDL assignment warning at top.v(88): truncated value with size 32 to match size of target (10) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 88
+Warning (10230): Verilog HDL assignment warning at top.v(97): truncated value with size 32 to match size of target (13) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 97
+Warning (10230): Verilog HDL assignment warning at top.v(128): truncated value with size 32 to match size of target (10) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 128
+Warning (10230): Verilog HDL assignment warning at top.v(130): truncated value with size 32 to match size of target (10) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 130
+Warning (10030): Net "palette.data_a" at top.v(73) has no driver or initial value, using a default initial value '0' File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 73
+Warning (10030): Net "palette.waddr_a" at top.v(73) has no driver or initial value, using a default initial value '0' File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 73
+Warning (10030): Net "palette.we_a" at top.v(73) has no driver or initial value, using a default initial value '0' File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 73
+Info (12128): Elaborating entity "SVGA_sync" for hierarchy "SVGA_sync:SVGA" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 32
+Warning (10230): Verilog HDL assignment warning at SVGA_sync.v(59): truncated value with size 32 to match size of target (11) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/SVGAGrafico/SVGA_sync.v Line: 59
+Warning (10230): Verilog HDL assignment warning at SVGA_sync.v(80): truncated value with size 32 to match size of target (10) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/SVGAGrafico/SVGA_sync.v Line: 80
+Info (12128): Elaborating entity "sram" for hierarchy "sram:vram" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 71
+Info (10648): Verilog HDL Display System Task info at sram.v(24): /home/gabriel/Documentª‚êßÿ‹⁄èŸ ≥øπ·pFMPLµ-O3˛¬ File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/moduloSram/sram.v Line: 24
 Info (19000): Inferred 1 megafunctions from design logic
     Info (276029): Inferred altsyncram megafunction from the following design logic: "sram:vram|memory_array_rtl_0" 
         Info (286033): Parameter OPERATION_MODE set to ROM
         Info (286033): Parameter WIDTH_A set to 8
-        Info (286033): Parameter WIDTHAD_A set to 10
-        Info (286033): Parameter NUMWORDS_A set to 1024
+        Info (286033): Parameter WIDTHAD_A set to 13
+        Info (286033): Parameter NUMWORDS_A set to 8192
         Info (286033): Parameter OUTDATA_REG_A set to UNREGISTERED
         Info (286033): Parameter ADDRESS_ACLR_A set to NONE
         Info (286033): Parameter OUTDATA_ACLR_A set to NONE
         Info (286033): Parameter INDATA_ACLR_A set to NONE
         Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
-        Info (286033): Parameter INIT_FILE set to db/consoleFPGA.ram0_sram_9648033.hdl.mif
+        Info (286033): Parameter INIT_FILE set to db/consoleFPGA.ram0_sram_f2cac7dc.hdl.mif
 Info (12130): Elaborated megafunction instantiation "sram:vram|altsyncram:memory_array_rtl_0"
 Info (12133): Instantiated megafunction "sram:vram|altsyncram:memory_array_rtl_0" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "ROM"
     Info (12134): Parameter "WIDTH_A" = "8"
-    Info (12134): Parameter "WIDTHAD_A" = "10"
-    Info (12134): Parameter "NUMWORDS_A" = "1024"
+    Info (12134): Parameter "WIDTHAD_A" = "13"
+    Info (12134): Parameter "NUMWORDS_A" = "8192"
     Info (12134): Parameter "OUTDATA_REG_A" = "UNREGISTERED"
     Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
     Info (12134): Parameter "OUTDATA_ACLR_A" = "NONE"
     Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
     Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
-    Info (12134): Parameter "INIT_FILE" = "db/consoleFPGA.ram0_sram_9648033.hdl.mif"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_eu61.tdf
-    Info (12023): Found entity 1: altsyncram_eu61 File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/db/altsyncram_eu61.tdf Line: 27
+    Info (12134): Parameter "INIT_FILE" = "db/consoleFPGA.ram0_sram_f2cac7dc.hdl.mif"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_a971.tdf
+    Info (12023): Found entity 1: altsyncram_a971 File: /home/gabriel/Documentos/ConsoleFPGA/db/altsyncram_a971.tdf Line: 27
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "VGA_R[0]" is stuck at GND File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/top.v Line: 90
-    Warning (13410): Pin "VGA_R[1]" is stuck at GND File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/top.v Line: 90
-    Warning (13410): Pin "VGA_R[2]" is stuck at GND File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/top.v Line: 90
-    Warning (13410): Pin "VGA_B[1]" is stuck at GND File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/top.v Line: 90
-    Warning (13410): Pin "VGA_B[2]" is stuck at GND File: /home/gabriel/Documentos/ConsoleFPGA/ConsoleFGA/Modulos/top.v Line: 90
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 200 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 350 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 11 output pins
-    Info (21061): Implemented 179 logic cells
+    Info (21061): Implemented 329 logic cells
     Info (21064): Implemented 8 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 18 warnings
-    Info: Peak virtual memory: 990 megabytes
-    Info: Processing ended: Sun May  5 16:14:45 2019
-    Info: Elapsed time: 00:00:21
-    Info: Total CPU time (on all processors): 00:00:50
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 12 warnings
+    Info: Peak virtual memory: 992 megabytes
+    Info: Processing ended: Sat May 18 20:24:20 2019
+    Info: Elapsed time: 00:00:27
+    Info: Total CPU time (on all processors): 00:00:54
 
 
