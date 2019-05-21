@@ -2,7 +2,7 @@ module top(
 	  input      clk,          //clock da FPGA (50MHz)
 	  //input  wire leftSprite,	  //mover sprite para a esquerda
 	  //input  wire rightSprite,    //mover sprite para a direita
-	  input wire changePosition,
+	  input wire       sprite,
 	  output reg  [2:0] VGA_R,   //intensidade de vermelho
 	  output reg  [2:0] VGA_G,   //intensidade de verde
 	  output reg  [2:0] VGA_B,   //intensidade do azul
@@ -17,10 +17,7 @@ wire [9:0]  pixel_y;    //coordenada y do pixel atual da tela
 
 reg [9:0] sprite_x;
 reg [9:0] sprite_y;
-
-reg [9:0] x_position;
-reg [9:0] y_position;
-
+reg [2:0] choose_sprite;
 
 SVGA_sync	SVGA(.clock(clk),
 				 .reset(),
@@ -31,6 +28,12 @@ SVGA_sync	SVGA(.clock(clk),
 				 .pixel_y(pixel_y)
 				);
 
+initial begin
+	choose_sprite = 0;
+	SPRITE_OFFSET = 0;
+   $readmemh("/home/gabriel/Documentos/ConsoleFPGA/sprites_palette.mem", palette);  // bitmap palette to load
+end				
+				
 // VRAM frame buffers (read-write)
 ////////////////////////////////////////////
 localparam SCREEN_WIDTH = 800;
@@ -54,7 +57,7 @@ localparam VRAM_D_WIDTH = 8;
 reg [VRAM_A_WIDTH-1:0] address;      //endereco da memoria
 wire [VRAM_D_WIDTH-1:0] dataout;     //saida de dados da memoria
 ///////////////////////////////////////////
-localparam SPRITE_OFFSET = 4 * SPRITE_SIZE * SPRITE_SIZE;
+reg[12:0] SPRITE_OFFSET;
 
 
 sram #(
@@ -70,34 +73,23 @@ sram #(
         .o_data(dataout)
     );
 
-reg [11:0] palette [0:255];  // 256 x 12-bit colour palette entries
+reg [11:0] palette [0:63];  // 256 x 12-bit colour palette entries
 reg [11:0] colour;
 
-initial begin
-	sprite_x = 0;
-	sprite_y = 0;
-	address  = 0;
-	x_position = 400;
-   y_position = 300;
-   $readmemh("/home/gabriel/Documentos/ConsoleFPGA/sprites_palette.mem", palette);  // bitmap palette to load
-end
-
-always @ (posedge changePosition)
+always @ (posedge sprite)
 begin
-	x_position <= (x_position + 20);
-	y_position <= (y_position*2);
-	
-	if(x_position >= 768) x_position <= 0;
-	if(y_position >= 568) y_position <= 0;
+	if(choose_sprite > 7) choose_sprite <= 0;
+	else choose_sprite <= choose_sprite + 1;
+	SPRITE_OFFSET <= choose_sprite * SPRITE_SIZE * SPRITE_SIZE;
 	
 end
 
 always @ (posedge clk)
     begin
-		  address <= SPRITE_OFFSET + (SPRITE_SIZE * sprite_y) + sprite_x;
         if (video_enable)
 				begin
-					buildSprite(x_position,y_position);	
+					buildSprite(400,300);
+					address <= SPRITE_OFFSET + (SPRITE_SIZE * sprite_y) + sprite_x;
 				end
         else    
 				begin 
@@ -112,23 +104,21 @@ task buildSprite;
 	input [9:0] x;
 	input [9:0] y;
 	begin
-		if( (pixel_x >= x && pixel_x < (x + SPRITE_SIZE) ) && (pixel_y >= y && pixel_y < (y + SPRITE_SIZE)) )//caso esteja no centro
+		if( (pixel_x >= x && pixel_x <= (x + SPRITE_SIZE) ) && (pixel_y >= y && pixel_y <= (y + SPRITE_SIZE) ) )
 		begin
-			colour <= palette[dataout];
 			if(sprite_y > SPRITE_SIZE) 
 			begin
-				sprite_y <= 0;
 				sprite_x <= 0;
+				sprite_y <= 0;
 			end
-			else
+			
+			if(sprite_x > SPRITE_SIZE-1) 
 			begin
-				if(sprite_x > SPRITE_SIZE-1) 
-				begin
-					sprite_x <= 0;
-					sprite_y <= sprite_y + 1;
-				end
-				else sprite_x <= sprite_x + 1;
+				sprite_x <= 0;
+				sprite_y <= sprite_y + 1;
 			end
+			else sprite_x <= sprite_x + 1;	
+			colour <= palette[dataout];
 		end
 		else
 		begin

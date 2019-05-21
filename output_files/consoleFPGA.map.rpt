@@ -1,5 +1,5 @@
 Analysis & Synthesis report for consoleFPGA
-Sat May 18 20:24:20 2019
+Tue May 21 17:00:11 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -16,19 +16,18 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   8. Analysis & Synthesis RAM Summary
   9. Registers Removed During Synthesis
  10. General Register Statistics
- 11. Inverted Register Statistics
- 12. Registers Packed Into Inferred Megafunctions
- 13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Source assignments for sram:vram|altsyncram:memory_array_rtl_0|altsyncram_a971:auto_generated
- 15. Parameter Settings for User Entity Instance: SVGA_sync:SVGA
- 16. Parameter Settings for User Entity Instance: sram:vram
- 17. Parameter Settings for Inferred Entity Instance: sram:vram|altsyncram:memory_array_rtl_0
- 18. altsyncram Parameter Settings by Entity Instance
- 19. Port Connectivity Checks: "sram:vram"
- 20. Port Connectivity Checks: "SVGA_sync:SVGA"
- 21. Post-Synthesis Netlist Statistics for Top Partition
- 22. Elapsed Time Per Partition
- 23. Analysis & Synthesis Messages
+ 11. Registers Packed Into Inferred Megafunctions
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Source assignments for sram:vram|altsyncram:memory_array_rtl_0|altsyncram_a971:auto_generated
+ 14. Parameter Settings for User Entity Instance: SVGA_sync:SVGA
+ 15. Parameter Settings for User Entity Instance: sram:vram
+ 16. Parameter Settings for Inferred Entity Instance: sram:vram|altsyncram:memory_array_rtl_0
+ 17. altsyncram Parameter Settings by Entity Instance
+ 18. Port Connectivity Checks: "sram:vram"
+ 19. Port Connectivity Checks: "SVGA_sync:SVGA"
+ 20. Post-Synthesis Netlist Statistics for Top Partition
+ 21. Elapsed Time Per Partition
+ 22. Analysis & Synthesis Messages
 
 
 
@@ -54,18 +53,18 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat May 18 20:24:20 2019       ;
+; Analysis & Synthesis Status        ; Successful - Tue May 21 17:00:11 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; consoleFPGA                                 ;
 ; Top-level Entity Name              ; top                                         ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 329                                         ;
-;     Total combinational functions  ; 314                                         ;
-;     Dedicated logic registers      ; 90                                          ;
-; Total registers                    ; 90                                          ;
+; Total logic elements               ; 170                                         ;
+;     Total combinational functions  ; 153                                         ;
+;     Dedicated logic registers      ; 80                                          ;
+; Total registers                    ; 80                                          ;
 ; Total pins                         ; 13                                          ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 65,536                                      ;
+; Total memory bits                  ; 49,152                                      ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
 ; Total PLLs                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
@@ -202,31 +201,31 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 329       ;
+; Estimated Total logic elements              ; 170       ;
 ;                                             ;           ;
-; Total combinational functions               ; 314       ;
+; Total combinational functions               ; 153       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 170       ;
-;     -- 3 input functions                    ; 61        ;
-;     -- <=2 input functions                  ; 83        ;
+;     -- 4 input functions                    ; 84        ;
+;     -- 3 input functions                    ; 20        ;
+;     -- <=2 input functions                  ; 49        ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 226       ;
-;     -- arithmetic mode                      ; 88        ;
+;     -- normal mode                          ; 107       ;
+;     -- arithmetic mode                      ; 46        ;
 ;                                             ;           ;
-; Total registers                             ; 90        ;
-;     -- Dedicated logic registers            ; 90        ;
+; Total registers                             ; 80        ;
+;     -- Dedicated logic registers            ; 80        ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 13        ;
-; Total memory bits                           ; 65536     ;
+; Total memory bits                           ; 49152     ;
 ;                                             ;           ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 82        ;
-; Total fan-out                               ; 1359      ;
-; Average fan-out                             ; 3.10      ;
+; Maximum fan-out                             ; 80        ;
+; Total fan-out                               ; 809       ;
+; Average fan-out                             ; 3.05      ;
 +---------------------------------------------+-----------+
 
 
@@ -235,11 +234,11 @@ refer to the applicable agreement for further details.
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                         ; Entity Name     ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------+-----------------+--------------+
-; |top                                      ; 314 (261)           ; 90 (67)                   ; 65536       ; 0            ; 0       ; 0         ; 13   ; 0            ; |top                                                                        ; top             ; work         ;
-;    |SVGA_sync:SVGA|                       ; 53 (53)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|SVGA_sync:SVGA                                                         ; SVGA_sync       ; work         ;
-;    |sram:vram|                            ; 0 (0)               ; 0 (0)                     ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|sram:vram                                                              ; sram            ; work         ;
-;       |altsyncram:memory_array_rtl_0|     ; 0 (0)               ; 0 (0)                     ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|sram:vram|altsyncram:memory_array_rtl_0                                ; altsyncram      ; work         ;
-;          |altsyncram_a971:auto_generated| ; 0 (0)               ; 0 (0)                     ; 65536       ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|sram:vram|altsyncram:memory_array_rtl_0|altsyncram_a971:auto_generated ; altsyncram_a971 ; work         ;
+; |top                                      ; 153 (99)            ; 80 (57)                   ; 49152       ; 0            ; 0       ; 0         ; 13   ; 0            ; |top                                                                        ; top             ; work         ;
+;    |SVGA_sync:SVGA|                       ; 54 (54)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|SVGA_sync:SVGA                                                         ; SVGA_sync       ; work         ;
+;    |sram:vram|                            ; 0 (0)               ; 0 (0)                     ; 49152       ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|sram:vram                                                              ; sram            ; work         ;
+;       |altsyncram:memory_array_rtl_0|     ; 0 (0)               ; 0 (0)                     ; 49152       ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|sram:vram|altsyncram:memory_array_rtl_0                                ; altsyncram      ; work         ;
+;          |altsyncram_a971:auto_generated| ; 0 (0)               ; 0 (0)                     ; 49152       ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|sram:vram|altsyncram:memory_array_rtl_0|altsyncram_a971:auto_generated ; altsyncram_a971 ; work         ;
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -253,16 +252,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+-------+-------------------------------------------+
 
 
-+--------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                             ;
-+---------------------------------------+----------------------------------------+
-; Register name                         ; Reason for Removal                     ;
-+---------------------------------------+----------------------------------------+
-; y_position[0]                         ; Stuck at GND due to stuck port data_in ;
-; x_position[0,1]                       ; Stuck at GND due to stuck port data_in ;
-; y_position[1]                         ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 4 ;                                        ;
-+---------------------------------------+----------------------------------------+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; SPRITE_OFFSET[0..9]                    ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 10 ;                                        ;
++----------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -270,30 +267,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 90    ;
-; Number of registers using Synchronous Clear  ; 10    ;
+; Total registers                              ; 80    ;
+; Number of registers using Synchronous Clear  ; 20    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 15    ;
+; Number of registers using Clock Enable       ; 33    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
-
-
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; x_position[8]                          ; 11      ;
-; x_position[7]                          ; 3       ;
-; x_position[4]                          ; 3       ;
-; y_position[8]                          ; 4       ;
-; y_position[5]                          ; 5       ;
-; y_position[3]                          ; 4       ;
-; y_position[2]                          ; 3       ;
-; Total number of inverted registers = 7 ;         ;
-+----------------------------------------+---------+
 
 
 +--------------------------------------------------------------+
@@ -301,7 +282,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------+------------------------------+------+
 ; Register Name          ; Megafunction                 ; Type ;
 +------------------------+------------------------------+------+
-; sram:vram|o_data[0..7] ; sram:vram|memory_array_rtl_0 ; RAM  ;
+; sram:vram|o_data[0..5] ; sram:vram|memory_array_rtl_0 ; RAM  ;
 +------------------------+------------------------------+------+
 
 
@@ -310,10 +291,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output     ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |top|SVGA_sync:SVGA|pixel_y[8] ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |top|SVGA_sync:SVGA|pixel_y[9] ;
 ; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |top|colour[2]                 ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |top|sprite_y[6]               ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |top|sprite_x[4]               ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |top|sprite_y[9]               ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
 
 
@@ -439,16 +419,17 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+-----------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "sram:vram"                                                                                                                                                                                ;
-+--------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port         ; Type  ; Severity ; Details                                                                                                                                                                            ;
-+--------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; i_write      ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; i_write[-1]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
-; i_data       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (8 bits) it drives.  The 24 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; i_data[7..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
-+--------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "sram:vram"                                                                                                                                                                                 ;
++--------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                                                                                                                            ;
++--------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; i_write      ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; i_write[-1]  ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; i_data       ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (8 bits) it drives.  The 24 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; i_data[7..0] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; o_data[7..6] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
++--------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +---------------------------------------------------+
@@ -466,24 +447,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 13                          ;
-; cycloneiii_ff         ; 90                          ;
-;     ENA               ; 5                           ;
-;     ENA SCLR          ; 10                          ;
-;     plain             ; 75                          ;
-; cycloneiii_lcell_comb ; 314                         ;
-;     arith             ; 88                          ;
-;         2 data inputs ; 52                          ;
-;         3 data inputs ; 36                          ;
-;     normal            ; 226                         ;
-;         0 data inputs ; 2                           ;
+; cycloneiii_ff         ; 80                          ;
+;     ENA               ; 13                          ;
+;     ENA SCLR          ; 20                          ;
+;     plain             ; 47                          ;
+; cycloneiii_lcell_comb ; 153                         ;
+;     arith             ; 46                          ;
+;         2 data inputs ; 39                          ;
+;         3 data inputs ; 7                           ;
+;     normal            ; 107                         ;
 ;         1 data inputs ; 6                           ;
-;         2 data inputs ; 23                          ;
-;         3 data inputs ; 25                          ;
-;         4 data inputs ; 170                         ;
-; cycloneiii_ram_block  ; 8                           ;
+;         2 data inputs ; 4                           ;
+;         3 data inputs ; 13                          ;
+;         4 data inputs ; 84                          ;
+; cycloneiii_ram_block  ; 6                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 6.00                        ;
-; Average LUT depth     ; 3.75                        ;
+; Max LUT depth         ; 7.00                        ;
+; Average LUT depth     ; 2.87                        ;
 +-----------------------+-----------------------------+
 
 
@@ -492,7 +472,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:04     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -502,7 +482,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sat May 18 20:23:53 2019
+    Info: Processing started: Tue May 21 16:59:48 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off consoleFPGA -c consoleFPGA
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -515,19 +495,21 @@ Info (12021): Found 1 design units, including 1 entities, in source file Modulos
 Info (12021): Found 1 design units, including 1 entities, in source file Modulos/top.v
     Info (12023): Found entity 1: top File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 1
 Info (12127): Elaborating entity "top" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at top.v(87): truncated value with size 32 to match size of target (10) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 87
-Warning (10230): Verilog HDL assignment warning at top.v(88): truncated value with size 32 to match size of target (10) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 88
-Warning (10230): Verilog HDL assignment warning at top.v(97): truncated value with size 32 to match size of target (13) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 97
-Warning (10230): Verilog HDL assignment warning at top.v(128): truncated value with size 32 to match size of target (10) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 128
-Warning (10230): Verilog HDL assignment warning at top.v(130): truncated value with size 32 to match size of target (10) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 130
-Warning (10030): Net "palette.data_a" at top.v(73) has no driver or initial value, using a default initial value '0' File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 73
-Warning (10030): Net "palette.waddr_a" at top.v(73) has no driver or initial value, using a default initial value '0' File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 73
-Warning (10030): Net "palette.we_a" at top.v(73) has no driver or initial value, using a default initial value '0' File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 73
-Info (12128): Elaborating entity "SVGA_sync" for hierarchy "SVGA_sync:SVGA" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 32
+Warning (10230): Verilog HDL assignment warning at top.v(82): truncated value with size 32 to match size of target (3) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 82
+Warning (10230): Verilog HDL assignment warning at top.v(83): truncated value with size 32 to match size of target (13) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 83
+Warning (10230): Verilog HDL assignment warning at top.v(118): truncated value with size 32 to match size of target (10) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 118
+Warning (10230): Verilog HDL assignment warning at top.v(120): truncated value with size 32 to match size of target (10) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 120
+Warning (10230): Verilog HDL assignment warning at top.v(92): truncated value with size 32 to match size of target (13) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 92
+Warning (10030): Net "palette.data_a" at top.v(76) has no driver or initial value, using a default initial value '0' File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 76
+Warning (10030): Net "palette.waddr_a" at top.v(76) has no driver or initial value, using a default initial value '0' File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 76
+Warning (10030): Net "palette.we_a" at top.v(76) has no driver or initial value, using a default initial value '0' File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 76
+Info (12128): Elaborating entity "SVGA_sync" for hierarchy "SVGA_sync:SVGA" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 29
 Warning (10230): Verilog HDL assignment warning at SVGA_sync.v(59): truncated value with size 32 to match size of target (11) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/SVGAGrafico/SVGA_sync.v Line: 59
 Warning (10230): Verilog HDL assignment warning at SVGA_sync.v(80): truncated value with size 32 to match size of target (10) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/SVGAGrafico/SVGA_sync.v Line: 80
-Info (12128): Elaborating entity "sram" for hierarchy "sram:vram" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 71
+Info (12128): Elaborating entity "sram" for hierarchy "sram:vram" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 74
 Info (10648): Verilog HDL Display System Task info at sram.v(24): /home/gabriel/Document»â§ØÜÚÙÊ³¿¹ápFMPLµ-O3þÂ File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/moduloSram/sram.v Line: 24
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276004): RAM logic "palette" is uninferred due to inappropriate RAM size File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 76
 Info (19000): Inferred 1 megafunctions from design logic
     Info (276029): Inferred altsyncram megafunction from the following design logic: "sram:vram|memory_array_rtl_0" 
         Info (286033): Parameter OPERATION_MODE set to ROM
@@ -554,19 +536,23 @@ Info (12133): Instantiated megafunction "sram:vram|altsyncram:memory_array_rtl_0
     Info (12134): Parameter "INIT_FILE" = "db/consoleFPGA.ram0_sram_f2cac7dc.hdl.mif"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_a971.tdf
     Info (12023): Found entity 1: altsyncram_a971 File: /home/gabriel/Documentos/ConsoleFPGA/db/altsyncram_a971.tdf Line: 27
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following RAM node(s):
+        Warning (14320): Synthesized away node "sram:vram|altsyncram:memory_array_rtl_0|altsyncram_a971:auto_generated|ram_block1a6" File: /home/gabriel/Documentos/ConsoleFPGA/db/altsyncram_a971.tdf Line: 160
+        Warning (14320): Synthesized away node "sram:vram|altsyncram:memory_array_rtl_0|altsyncram_a971:auto_generated|ram_block1a7" File: /home/gabriel/Documentos/ConsoleFPGA/db/altsyncram_a971.tdf Line: 181
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 350 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 189 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 11 output pins
-    Info (21061): Implemented 329 logic cells
-    Info (21064): Implemented 8 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 12 warnings
-    Info: Peak virtual memory: 992 megabytes
-    Info: Processing ended: Sat May 18 20:24:20 2019
-    Info: Elapsed time: 00:00:27
-    Info: Total CPU time (on all processors): 00:00:54
+    Info (21061): Implemented 170 logic cells
+    Info (21064): Implemented 6 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 16 warnings
+    Info: Peak virtual memory: 993 megabytes
+    Info: Processing ended: Tue May 21 17:00:11 2019
+    Info: Elapsed time: 00:00:23
+    Info: Total CPU time (on all processors): 00:00:52
 
 

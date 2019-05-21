@@ -52,7 +52,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "changePosition",
+					"name" : "sprite",
 					"strict" : false
 				}
 			]
