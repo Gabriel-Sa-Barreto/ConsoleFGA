@@ -13,7 +13,8 @@ module sram #(parameter ADDR_WIDTH=8, DATA_WIDTH=8, DEPTH=256, MEMFILE="") (
     input wire [ADDR_WIDTH-1:0] i_addr,    //endereço de acesso a memoria
     input wire i_write,                    //entrada para habilitaçao de escrita
     input wire [DATA_WIDTH-1:0] i_data,    //entrada de dados
-    output reg [DATA_WIDTH-1:0] o_data     //saida de dados
+    output reg [DATA_WIDTH-1:0] o_data,    //saida de dados
+	 output wire dataoutReady               //informa se o dado requerido esta pronto
     );
 
     reg [DATA_WIDTH-1:0] memory_array [0:DEPTH-1]; 
@@ -35,4 +36,6 @@ module sram #(parameter ADDR_WIDTH=8, DATA_WIDTH=8, DEPTH=256, MEMFILE="") (
             o_data <= memory_array[i_addr];
         end     
     end
+	 
+	 assign dataoutReady = (i_write == 0) ? 1'b1: 1'b0;
 endmodule
