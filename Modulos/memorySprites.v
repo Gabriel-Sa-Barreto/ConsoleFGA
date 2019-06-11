@@ -45,9 +45,9 @@ begin
    read_enable3 = 0;
    read_enable4 = 0;
    read_enable5 = 0;
-
-	$readmemh("/home/gabriel/Documentos/ConsoleFPGA/sprites/background/background_palette.mem", element4_palette);  // bitmap palette to load
-	$readmemh("/home/gabriel/Documentos/ConsoleFPGA/teste3_palette.mem", element5_palette);  // bitmap palette to load
+	$readmemh("/home/gabriel/Documentos/ConsoleFPGA/sprites/sprites25x25/apple_palette.mem",     element1_palette);
+	$readmemh("/home/gabriel/Documentos/ConsoleFPGA/sprites/background/background_palette.mem", element4_palette);
+	$readmemh("/home/gabriel/Documentos/ConsoleFPGA/teste3_palette.mem",                        element5_palette); 
 end							 
 							 
 							 
@@ -129,17 +129,18 @@ begin
 	else if(ready3) dataout <= element3_palette[colour3];
 	else if(ready4) dataout <= element4_palette[colour4];
 	else if(ready5) dataout <= element5_palette[colour5];
+	else            dataout <= 0;
 end	
 						 
 sram #(     
 		.ADDR_WIDTH(element1_VRAM_A_WIDTH), 
       .DATA_WIDTH(VRAM_D_WIDTH), 
       .DEPTH(element1_VRAM_DEPTH), 
-      .MEMFILE(""))
+      .MEMFILE("/home/gabriel/Documentos/ConsoleFPGA/sprites/sprites25x25/apple.mem"))
    element1(
 		.i_clk(clk) ,	         // input  clk_sig
 		.i_addr(address1) ,	   // input [ADDR_WIDTH-1:0] i_addr_sig
-		.i_write(~read_enable1),	// input  read_sig
+		.i_write(~read_enable1),// input  read_sig
 		.i_data(0) ,	         // input [DATA_WIDTH-1:0] i_data_sig
 		.o_data(colour1),	      // output   [DATA_WIDTH-1:0] data_sig
 		.dataoutReady(ready1)   // output dataoutReady 

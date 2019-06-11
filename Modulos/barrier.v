@@ -1,9 +1,10 @@
 module barrier(
 			input  wire clk,
+			input  wire reset, 
 			input  wire   [10:0] pixel_x, //current pixel from VGA h_sync 
 			input  wire    [9:0] pixel_y, //curent pixel from VGA  v_sync
 			output  reg          enable,  //signal for active a pixel's barrier on VGA
-			output  reg   [9:0]  addressBarrier //address of the currrent pixel of barrier
+			output  reg    [9:0] addressBarrier //address of the currrent pixel of barrier
 );
 
 initial begin
@@ -22,6 +23,10 @@ localparam blockSize    = 25; //size's sprite block applicated on barrier.
 
 always @ (posedge clk) //The every new pixel 
 begin
+	if(reset) begin
+		barrier_x <= 0;
+		   enable <= 0;
+	end
 	//check if the pixel x is in the position wish
 	if(barrier_x >= countLimiter) barrier_x <= 0; //refresh the value for the next clock pulse
 	
@@ -46,6 +51,9 @@ end
 
 always @ (posedge clk) 
 begin
+	if(reset) begin
+		barrier_y <= 0;
+	end
 	if(barrier_y >= countLimiter) barrier_y <= 0; //refresh the value for the next clock pulse
 	
 	if(pixel_x == column-1) barrier_y <= barrier_y + 1; //refresh the counter y of the sprite block	
