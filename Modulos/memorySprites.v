@@ -45,9 +45,9 @@ begin
    read_enable3 = 0;
    read_enable4 = 0;
    read_enable5 = 0;
-	$readmemh("/home/gabriel/Documentos/ConsoleFPGA/sprites/sprites25x25/apple_palette.mem",     element1_palette);
+	$readmemh("/home/gabriel/Documentos/ConsoleFPGA/sprites/sprites25x25/apple_palette.mem",    element1_palette);
 	$readmemh("/home/gabriel/Documentos/ConsoleFPGA/sprites/background/background_palette.mem", element4_palette);
-	$readmemh("/home/gabriel/Documentos/ConsoleFPGA/teste3_palette.mem",                        element5_palette); 
+	$readmemh("/home/gabriel/Documentos/ConsoleFPGA/sprites/block/block_palette.mem",           element5_palette); 
 end							 
 							 
 							 
@@ -58,7 +58,7 @@ localparam element1_SPRITE_SIZE = 25;      //fruit sprites
 localparam element2_SPRITE_SIZE = 25;      //heart sprites
 localparam element3_SPRITE_SIZE = 20;      //snake
 localparam element4_SPRITE_SIZE = 100;     //background
-localparam element5_SPRITE_SIZE = 32;      //blocks
+localparam element5_SPRITE_SIZE = 25;      //blocks
 ////////////////////////////////////////////
 //Definiçao do numero de sprites armazenado no banco da memoria de sprites
 localparam SPRITE_COUNT = 5;
@@ -75,7 +75,7 @@ localparam element1_VRAM_A_WIDTH = 12; //25x25x6   = 3750 (2^12)
 localparam element2_VRAM_A_WIDTH = 12; //25x25x6   = 3750 (2^12)
 localparam element3_VRAM_A_WIDTH = 12; //20x20x6   = 2400 (2^12)
 localparam element4_VRAM_A_WIDTH = 16; //100x100x6 = 60000 (2^16)
-localparam element5_VRAM_A_WIDTH = 10; //25x25x6   = 3750 (2^12)  
+localparam element5_VRAM_A_WIDTH = 12; //25x25x6   = 3750 (2^12)  
 ////////////////////////////////////////////
 //Quantidade de bits para a cor de um pixel dos sprites
 localparam VRAM_D_WIDTH = 8;   
@@ -195,7 +195,7 @@ sram #(
 		.ADDR_WIDTH(element5_VRAM_A_WIDTH), 
       .DATA_WIDTH(VRAM_D_WIDTH), 
       .DEPTH(element5_VRAM_DEPTH), 
-      .MEMFILE("/home/gabriel/Documentos/ConsoleFPGA/teste3.mem"))
+      .MEMFILE("/home/gabriel/Documentos/ConsoleFPGA/sprites/block/block.mem"))
    element5 (
 		.i_clk(clk) ,	        
 		.i_addr(address5) ,	   

@@ -1,6 +1,7 @@
 module printRGB #(parameter ELEMENT = 5)(
 		input  wire         clk,
 		input  wire         reset,
+		input  wire         active,
 		input  wire [10:0]  pixel_x, //current pixel from VGA h_sync 
 		input  wire [9:0]   pixel_y, //curent pixel from VGA  v_sync
 		output  reg         ready,
@@ -19,13 +20,14 @@ barrier barrier_inst //The barrier consist in the fourth element on sprites memo
 (
 	.clk(clk) ,	            			// input  clk_sig
 	.reset(reset),
+	.active(active),
 	.pixel_x(pixel_x) ,	   			// input [10:0] pixel_x_sig
 	.pixel_y(pixel_y) ,	   			// input [9:0] pixel_y_sig
 	.enable(enableBarrier) ,			// output  enable_sig
 	.addressBarrier(addressBarrier)  // output [9:0] addressBarrier_sig
 );
 
-
+/*
 fruits fruits_inst
 (
 	.clk(clk) ,							// input  clk_sig
@@ -36,20 +38,23 @@ fruits fruits_inst
 	.enable(enableFruit) ,			// output  enable_sig
 	.addressFruit(addressFruit) 	// output [9:0] addressFruit_sig
 );
-
-always @ (posedge clk)
+*/
+always @ (*)
 begin
 	if(enableBarrier) begin 
-		element <= 4;
+		element <= 5;
 		address <= addressBarrier;
 		ready   <= 1;
 	end 
-	else if(enableFruit) begin
+	/*else if(enableFruit) begin
 		element <= 1;
 		address <= addressFruit;
 		ready   <= 1;
+	end*/
+	else begin
+		ready   <= 0;
+		address <= 0;
 	end
-	else ready <= 0;
 end
 
 endmodule

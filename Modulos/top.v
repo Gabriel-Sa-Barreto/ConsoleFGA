@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 module top(
 	  input wire     clk,        //clock da FPGA (50MHz)
 	  input wire     reset,      //signal for restart the system
@@ -38,8 +39,6 @@ SVGA_sync	SVGA(.clock(clk),
 				 .pixel_y(pixel_y)
 				);
 
-
-
 memorySprites #(.ELEMENTS(QTD_ELEMENTS))
 memorySprites_inst
 (
@@ -54,7 +53,8 @@ memorySprites_inst
 printRGB printRGB_inst
 (
 	.clk(clk) ,	        	  // input  clk_sig
-	.reset(reset) ,	     // input  reset_sig
+	.reset(0) ,	     		  // input  reset_sig
+	.active(video_enable),
 	.pixel_x(pixel_x) ,	  // input [10:0] pixel_x_sig
 	.pixel_y(pixel_y) ,	  // input [9:0] pixel_y_sig
 	.ready(ready) ,	     // output  ready_sig
@@ -70,10 +70,15 @@ begin
 			elementMemory <= element;
 			addressMemory <= address;
 			enableMemory  <= ready;
-		end 
-		colour[8:6] <= dataout[11:9];
-		colour[5:3] <= dataout[7:5]; 
-		colour[2:0] <= dataout[3:1];
+			colour[8:6] <= dataout[11:9];
+			colour[5:3] <= dataout[7:5]; 
+			colour[2:0] <= dataout[3:1];
+		end
+		else begin
+			colour <= 0;
+			colour <= 0; 
+			colour <= 0;
+		end
 	end
 	else begin
 		colour <= 0;
@@ -82,7 +87,7 @@ begin
 	end
 end
 
-always @ (*) begin
+always @ (posedge clk) begin
 	VGA_R <= colour[8:6];
 	VGA_G <= colour[5:3];
 	VGA_B <= colour[2:0];

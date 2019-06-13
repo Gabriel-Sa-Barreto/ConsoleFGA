@@ -1,0 +1,4547 @@
+// Copyright (C) 2018  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus Prime"
+// VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
+
+// DATE "06/13/2019 19:01:02"
+
+// 
+// Device: Altera EP4CE22F17C6 Package FBGA256
+// 
+
+// 
+// This Verilog file should be used for ModelSim-Altera (Verilog) only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module top (
+	clk,
+	reset,
+	VGA_R,
+	VGA_G,
+	VGA_B,
+	hsync,
+	vsync);
+input 	clk;
+input 	reset;
+output 	[2:0] VGA_R;
+output 	[2:0] VGA_G;
+output 	[2:0] VGA_B;
+output 	hsync;
+output 	vsync;
+
+// Design Ports Information
+// reset	=>  Location: PIN_L14,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// VGA_R[0]	=>  Location: PIN_F9,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// VGA_R[1]	=>  Location: PIN_E9,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// VGA_R[2]	=>  Location: PIN_F8,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// VGA_G[0]	=>  Location: PIN_D8,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// VGA_G[1]	=>  Location: PIN_E6,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// VGA_G[2]	=>  Location: PIN_C6,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// VGA_B[0]	=>  Location: PIN_D6,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// VGA_B[1]	=>  Location: PIN_A6,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// VGA_B[2]	=>  Location: PIN_D5,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// hsync	=>  Location: PIN_A4,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// vsync	=>  Location: PIN_B5,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// clk	=>  Location: PIN_R8,	 I/O Standard: 2.5 V,	 Current Strength: Default
+
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+// synopsys translate_off
+initial $sdf_annotate("consoleFPGA_6_1200mv_0c_v_slow.sdo");
+// synopsys translate_on
+
+wire \reset~input_o ;
+wire \VGA_R[0]~output_o ;
+wire \VGA_R[1]~output_o ;
+wire \VGA_R[2]~output_o ;
+wire \VGA_G[0]~output_o ;
+wire \VGA_G[1]~output_o ;
+wire \VGA_G[2]~output_o ;
+wire \VGA_B[0]~output_o ;
+wire \VGA_B[1]~output_o ;
+wire \VGA_B[2]~output_o ;
+wire \hsync~output_o ;
+wire \vsync~output_o ;
+wire \clk~input_o ;
+wire \clk~inputclkctrl_outclk ;
+wire \enableMemory~feeder_combout ;
+wire \SVGA|Add0~0_combout ;
+wire \SVGA|Add0~1 ;
+wire \SVGA|Add0~2_combout ;
+wire \SVGA|Add0~3 ;
+wire \SVGA|Add0~4_combout ;
+wire \SVGA|Add0~5 ;
+wire \SVGA|Add0~6_combout ;
+wire \SVGA|Add0~7 ;
+wire \SVGA|Add0~8_combout ;
+wire \SVGA|Add0~11 ;
+wire \SVGA|Add0~12_combout ;
+wire \SVGA|Add0~13 ;
+wire \SVGA|Add0~14_combout ;
+wire \SVGA|Add0~15 ;
+wire \SVGA|Add0~16_combout ;
+wire \SVGA|Add0~17 ;
+wire \SVGA|Add0~18_combout ;
+wire \SVGA|Add0~19 ;
+wire \SVGA|Add0~20_combout ;
+wire \SVGA|Equal5~0_combout ;
+wire \SVGA|pixel_x~3_combout ;
+wire \SVGA|Equal5~1_combout ;
+wire \SVGA|pixel_x~2_combout ;
+wire \SVGA|Add0~9 ;
+wire \SVGA|Add0~10_combout ;
+wire \SVGA|Equal1~0_combout ;
+wire \SVGA|Equal5~2_combout ;
+wire \SVGA|Add1~0_combout ;
+wire \SVGA|pixel_y[0]~4_combout ;
+wire \SVGA|Add1~1 ;
+wire \SVGA|Add1~2_combout ;
+wire \SVGA|pixel_y[1]~1_combout ;
+wire \SVGA|Add1~3 ;
+wire \SVGA|Add1~4_combout ;
+wire \SVGA|pixel_y[2]~10_combout ;
+wire \SVGA|Add1~5 ;
+wire \SVGA|Add1~6_combout ;
+wire \SVGA|pixel_y[3]~3_combout ;
+wire \SVGA|Add1~7 ;
+wire \SVGA|Add1~8_combout ;
+wire \SVGA|pixel_y[4]~2_combout ;
+wire \SVGA|always1~2_combout ;
+wire \SVGA|Add1~9 ;
+wire \SVGA|Add1~11 ;
+wire \SVGA|Add1~12_combout ;
+wire \SVGA|pixel_y[6]~8_combout ;
+wire \SVGA|Add1~13 ;
+wire \SVGA|Add1~14_combout ;
+wire \SVGA|pixel_y[7]~6_combout ;
+wire \SVGA|Add1~15 ;
+wire \SVGA|Add1~16_combout ;
+wire \SVGA|pixel_y[8]~7_combout ;
+wire \SVGA|Add1~17 ;
+wire \SVGA|Add1~18_combout ;
+wire \SVGA|pixel_y[9]~5_combout ;
+wire \SVGA|always1~0_combout ;
+wire \SVGA|always1~1_combout ;
+wire \SVGA|pixel_y[9]~0_combout ;
+wire \SVGA|Add1~10_combout ;
+wire \SVGA|pixel_y[5]~9_combout ;
+wire \SVGA|LessThan1~1_combout ;
+wire \SVGA|LessThan1~2_combout ;
+wire \SVGA|video_enable~0_combout ;
+wire \SVGA|video_enable~1_combout ;
+wire \SVGA|video_enable~2_combout ;
+wire \SVGA|LessThan1~3_combout ;
+wire \printRGB_inst|barrier_inst|always0~3_combout ;
+wire \printRGB_inst|barrier_inst|always0~7_combout ;
+wire \printRGB_inst|barrier_inst|always0~6_combout ;
+wire \printRGB_inst|barrier_inst|enable~0_combout ;
+wire \printRGB_inst|barrier_inst|enable~q ;
+wire \colour[1]~15_combout ;
+wire \enableMemory~q ;
+wire \memorySprites_inst|read_enable5~0_combout ;
+wire \memorySprites_inst|read_enable5~combout ;
+wire \~GND~combout ;
+wire \printRGB_inst|barrier_inst|barrier_y[0]~5_combout ;
+wire \printRGB_inst|barrier_inst|barrier_y[0]~6 ;
+wire \printRGB_inst|barrier_inst|barrier_y[1]~9_combout ;
+wire \SVGA|Equal1~1_combout ;
+wire \SVGA|Equal1~2_combout ;
+wire \printRGB_inst|barrier_inst|barrier_y[4]~8_combout ;
+wire \printRGB_inst|barrier_inst|barrier_y[1]~10 ;
+wire \printRGB_inst|barrier_inst|barrier_y[2]~11_combout ;
+wire \printRGB_inst|barrier_inst|barrier_y[2]~12 ;
+wire \printRGB_inst|barrier_inst|barrier_y[3]~13_combout ;
+wire \printRGB_inst|barrier_inst|barrier_y[3]~14 ;
+wire \printRGB_inst|barrier_inst|barrier_y[4]~15_combout ;
+wire \printRGB_inst|barrier_inst|Equal2~0_combout ;
+wire \printRGB_inst|barrier_inst|Equal2~1_combout ;
+wire \SVGA|LessThan1~0_combout ;
+wire \SVGA|always3~0_combout ;
+wire \SVGA|always3~1_combout ;
+wire \printRGB_inst|barrier_inst|barrier_y[4]~7_combout ;
+wire \printRGB_inst|barrier_inst|Add2~1 ;
+wire \printRGB_inst|barrier_inst|Add2~2_combout ;
+wire \printRGB_inst|barrier_inst|Add2~3 ;
+wire \printRGB_inst|barrier_inst|Add2~4_combout ;
+wire \printRGB_inst|barrier_inst|Add2~5 ;
+wire \printRGB_inst|barrier_inst|Add2~6_combout ;
+wire \printRGB_inst|barrier_inst|barrier_x~1_combout ;
+wire \printRGB_inst|barrier_inst|Equal3~0_combout ;
+wire \printRGB_inst|barrier_inst|Add2~7 ;
+wire \printRGB_inst|barrier_inst|Add2~8_combout ;
+wire \printRGB_inst|barrier_inst|barrier_x~2_combout ;
+wire \printRGB_inst|barrier_inst|Add2~0_combout ;
+wire \printRGB_inst|barrier_inst|barrier_x~0_combout ;
+wire \printRGB_inst|barrier_inst|addressBarrier[0]~10_combout ;
+wire \printRGB_inst|barrier_inst|addressBarrier[0]~12_combout ;
+wire \enableMemory~clkctrl_outclk ;
+wire \printRGB_inst|barrier_inst|addressBarrier[0]~11 ;
+wire \printRGB_inst|barrier_inst|addressBarrier[1]~13_combout ;
+wire \printRGB_inst|barrier_inst|addressBarrier[1]~14 ;
+wire \printRGB_inst|barrier_inst|addressBarrier[2]~15_combout ;
+wire \printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][3]~0_combout ;
+wire \printRGB_inst|barrier_inst|addressBarrier[2]~16 ;
+wire \printRGB_inst|barrier_inst|addressBarrier[3]~17_combout ;
+wire \printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][4]~1_combout ;
+wire \printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~0_combout ;
+wire \printRGB_inst|barrier_inst|addressBarrier[3]~18 ;
+wire \printRGB_inst|barrier_inst|addressBarrier[4]~19_combout ;
+wire \printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][5]~2_combout ;
+wire \printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~1 ;
+wire \printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~2_combout ;
+wire \printRGB_inst|barrier_inst|addressBarrier[4]~20 ;
+wire \printRGB_inst|barrier_inst|addressBarrier[5]~21_combout ;
+wire \printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][6]~3_combout ;
+wire \printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~3 ;
+wire \printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~4_combout ;
+wire \printRGB_inst|barrier_inst|addressBarrier[5]~22 ;
+wire \printRGB_inst|barrier_inst|addressBarrier[6]~23_combout ;
+wire \printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][7]~4_combout ;
+wire \printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~5 ;
+wire \printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~6_combout ;
+wire \printRGB_inst|barrier_inst|addressBarrier[6]~24 ;
+wire \printRGB_inst|barrier_inst|addressBarrier[7]~25_combout ;
+wire \printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][8]~5_combout ;
+wire \printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~7 ;
+wire \printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~8_combout ;
+wire \printRGB_inst|barrier_inst|addressBarrier[7]~26 ;
+wire \printRGB_inst|barrier_inst|addressBarrier[8]~27_combout ;
+wire \printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~9 ;
+wire \printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~10_combout ;
+wire \printRGB_inst|barrier_inst|addressBarrier[8]~28 ;
+wire \printRGB_inst|barrier_inst|addressBarrier[9]~29_combout ;
+wire \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a1 ;
+wire \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a2 ;
+wire \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a3 ;
+wire \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a4 ;
+wire \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0~portbdataout ;
+wire \colour~3_combout ;
+wire \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a5 ;
+wire \colour~16_combout ;
+wire \colour~2_combout ;
+wire \colour~4_combout ;
+wire \VGA_R[0]~reg0feeder_combout ;
+wire \VGA_R[0]~reg0_q ;
+wire \memorySprites_inst|element5_palette~0_combout ;
+wire \colour~5_combout ;
+wire \VGA_R[1]~reg0feeder_combout ;
+wire \VGA_R[1]~reg0_q ;
+wire \colour~6_combout ;
+wire \colour~7_combout ;
+wire \VGA_R[2]~reg0feeder_combout ;
+wire \VGA_R[2]~reg0_q ;
+wire \memorySprites_inst|element5_palette~2_combout ;
+wire \memorySprites_inst|element5_palette~1_combout ;
+wire \colour~8_combout ;
+wire \VGA_G[0]~reg0feeder_combout ;
+wire \VGA_G[0]~reg0_q ;
+wire \colour~9_combout ;
+wire \colour~10_combout ;
+wire \VGA_G[1]~reg0feeder_combout ;
+wire \VGA_G[1]~reg0_q ;
+wire \VGA_G[2]~reg0feeder_combout ;
+wire \VGA_G[2]~reg0_q ;
+wire \memorySprites_inst|element5_palette~3_combout ;
+wire \colour~11_combout ;
+wire \colour~12_combout ;
+wire \VGA_B[0]~reg0feeder_combout ;
+wire \VGA_B[0]~reg0_q ;
+wire \colour~13_combout ;
+wire \VGA_B[1]~reg0feeder_combout ;
+wire \VGA_B[1]~reg0_q ;
+wire \colour~14_combout ;
+wire \VGA_B[2]~reg0feeder_combout ;
+wire \VGA_B[2]~reg0_q ;
+wire \SVGA|Equal2~0_combout ;
+wire \SVGA|hsync~0_combout ;
+wire \SVGA|hsync~1_combout ;
+wire \SVGA|hsync~q ;
+wire \SVGA|vsync~1_combout ;
+wire \SVGA|vsync~0_combout ;
+wire \SVGA|vsync~2_combout ;
+wire \SVGA|vsync~q ;
+wire [9:0] \memorySprites_inst|address5 ;
+wire [4:0] \printRGB_inst|barrier_inst|barrier_x ;
+wire [9:0] addressMemory;
+wire [9:0] \SVGA|pixel_y ;
+wire [10:0] \SVGA|pixel_x ;
+wire [8:0] colour;
+wire [4:0] \printRGB_inst|barrier_inst|barrier_y ;
+wire [9:0] \printRGB_inst|barrier_inst|addressBarrier ;
+
+wire [8:0] \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0_PORTBDATAOUT_bus ;
+
+assign \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0~portbdataout  = \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0_PORTBDATAOUT_bus [0];
+assign \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a1  = \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0_PORTBDATAOUT_bus [1];
+assign \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a2  = \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0_PORTBDATAOUT_bus [2];
+assign \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a3  = \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0_PORTBDATAOUT_bus [3];
+assign \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a4  = \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0_PORTBDATAOUT_bus [4];
+assign \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a5  = \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0_PORTBDATAOUT_bus [5];
+
+hard_block auto_generated_inst(
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+// Location: IOOBUF_X34_Y34_N2
+cycloneive_io_obuf \VGA_R[0]~output (
+	.i(\VGA_R[0]~reg0_q ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\VGA_R[0]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \VGA_R[0]~output .bus_hold = "false";
+defparam \VGA_R[0]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X29_Y34_N16
+cycloneive_io_obuf \VGA_R[1]~output (
+	.i(\VGA_R[1]~reg0_q ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\VGA_R[1]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \VGA_R[1]~output .bus_hold = "false";
+defparam \VGA_R[1]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X20_Y34_N16
+cycloneive_io_obuf \VGA_R[2]~output (
+	.i(\VGA_R[2]~reg0_q ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\VGA_R[2]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \VGA_R[2]~output .bus_hold = "false";
+defparam \VGA_R[2]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X23_Y34_N23
+cycloneive_io_obuf \VGA_G[0]~output (
+	.i(\VGA_G[0]~reg0_q ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\VGA_G[0]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \VGA_G[0]~output .bus_hold = "false";
+defparam \VGA_G[0]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X14_Y34_N16
+cycloneive_io_obuf \VGA_G[1]~output (
+	.i(\VGA_G[1]~reg0_q ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\VGA_G[1]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \VGA_G[1]~output .bus_hold = "false";
+defparam \VGA_G[1]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X18_Y34_N23
+cycloneive_io_obuf \VGA_G[2]~output (
+	.i(\VGA_G[2]~reg0_q ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\VGA_G[2]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \VGA_G[2]~output .bus_hold = "false";
+defparam \VGA_G[2]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X9_Y34_N9
+cycloneive_io_obuf \VGA_B[0]~output (
+	.i(\VGA_B[0]~reg0_q ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\VGA_B[0]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \VGA_B[0]~output .bus_hold = "false";
+defparam \VGA_B[0]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X16_Y34_N2
+cycloneive_io_obuf \VGA_B[1]~output (
+	.i(\VGA_B[1]~reg0_q ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\VGA_B[1]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \VGA_B[1]~output .bus_hold = "false";
+defparam \VGA_B[1]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X5_Y34_N16
+cycloneive_io_obuf \VGA_B[2]~output (
+	.i(\VGA_B[2]~reg0_q ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\VGA_B[2]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \VGA_B[2]~output .bus_hold = "false";
+defparam \VGA_B[2]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X9_Y34_N23
+cycloneive_io_obuf \hsync~output (
+	.i(\SVGA|hsync~q ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\hsync~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \hsync~output .bus_hold = "false";
+defparam \hsync~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X11_Y34_N2
+cycloneive_io_obuf \vsync~output (
+	.i(\SVGA|vsync~q ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\vsync~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \vsync~output .bus_hold = "false";
+defparam \vsync~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOIBUF_X27_Y0_N22
+cycloneive_io_ibuf \clk~input (
+	.i(clk),
+	.ibar(gnd),
+	.o(\clk~input_o ));
+// synopsys translate_off
+defparam \clk~input .bus_hold = "false";
+defparam \clk~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: CLKCTRL_G18
+cycloneive_clkctrl \clk~inputclkctrl (
+	.ena(vcc),
+	.inclk({vcc,vcc,vcc,\clk~input_o }),
+	.clkselect(2'b00),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.outclk(\clk~inputclkctrl_outclk ));
+// synopsys translate_off
+defparam \clk~inputclkctrl .clock_type = "global clock";
+defparam \clk~inputclkctrl .ena_register_mode = "none";
+// synopsys translate_on
+
+// Location: LCCOMB_X25_Y26_N14
+cycloneive_lcell_comb \enableMemory~feeder (
+// Equation(s):
+// \enableMemory~feeder_combout  = VCC
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.cin(gnd),
+	.combout(\enableMemory~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \enableMemory~feeder .lut_mask = 16'hFFFF;
+defparam \enableMemory~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X20_Y22_N4
+cycloneive_lcell_comb \SVGA|Add0~0 (
+// Equation(s):
+// \SVGA|Add0~0_combout  = \SVGA|pixel_x [0] $ (VCC)
+// \SVGA|Add0~1  = CARRY(\SVGA|pixel_x [0])
+
+	.dataa(gnd),
+	.datab(\SVGA|pixel_x [0]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(gnd),
+	.combout(\SVGA|Add0~0_combout ),
+	.cout(\SVGA|Add0~1 ));
+// synopsys translate_off
+defparam \SVGA|Add0~0 .lut_mask = 16'h33CC;
+defparam \SVGA|Add0~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X20_Y22_N5
+dffeas \SVGA|pixel_x[0] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\SVGA|Add0~0_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\SVGA|pixel_x [0]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \SVGA|pixel_x[0] .is_wysiwyg = "true";
+defparam \SVGA|pixel_x[0] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X20_Y22_N6
+cycloneive_lcell_comb \SVGA|Add0~2 (
+// Equation(s):
+// \SVGA|Add0~2_combout  = (\SVGA|pixel_x [1] & (!\SVGA|Add0~1 )) # (!\SVGA|pixel_x [1] & ((\SVGA|Add0~1 ) # (GND)))
+// \SVGA|Add0~3  = CARRY((!\SVGA|Add0~1 ) # (!\SVGA|pixel_x [1]))
+
+	.dataa(\SVGA|pixel_x [1]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\SVGA|Add0~1 ),
+	.combout(\SVGA|Add0~2_combout ),
+	.cout(\SVGA|Add0~3 ));
+// synopsys translate_off
+defparam \SVGA|Add0~2 .lut_mask = 16'h5A5F;
+defparam \SVGA|Add0~2 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X20_Y22_N7
+dffeas \SVGA|pixel_x[1] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\SVGA|Add0~2_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\SVGA|pixel_x [1]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \SVGA|pixel_x[1] .is_wysiwyg = "true";
+defparam \SVGA|pixel_x[1] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X20_Y22_N8
+cycloneive_lcell_comb \SVGA|Add0~4 (
+// Equation(s):
+// \SVGA|Add0~4_combout  = (\SVGA|pixel_x [2] & (\SVGA|Add0~3  $ (GND))) # (!\SVGA|pixel_x [2] & (!\SVGA|Add0~3  & VCC))
+// \SVGA|Add0~5  = CARRY((\SVGA|pixel_x [2] & !\SVGA|Add0~3 ))
+
+	.dataa(gnd),
+	.datab(\SVGA|pixel_x [2]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\SVGA|Add0~3 ),
+	.combout(\SVGA|Add0~4_combout ),
+	.cout(\SVGA|Add0~5 ));
+// synopsys translate_off
+defparam \SVGA|Add0~4 .lut_mask = 16'hC30C;
+defparam \SVGA|Add0~4 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X20_Y22_N9
+dffeas \SVGA|pixel_x[2] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\SVGA|Add0~4_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\SVGA|pixel_x [2]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \SVGA|pixel_x[2] .is_wysiwyg = "true";
+defparam \SVGA|pixel_x[2] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X20_Y22_N10
+cycloneive_lcell_comb \SVGA|Add0~6 (
+// Equation(s):
+// \SVGA|Add0~6_combout  = (\SVGA|pixel_x [3] & (!\SVGA|Add0~5 )) # (!\SVGA|pixel_x [3] & ((\SVGA|Add0~5 ) # (GND)))
+// \SVGA|Add0~7  = CARRY((!\SVGA|Add0~5 ) # (!\SVGA|pixel_x [3]))
+
+	.dataa(\SVGA|pixel_x [3]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\SVGA|Add0~5 ),
+	.combout(\SVGA|Add0~6_combout ),
+	.cout(\SVGA|Add0~7 ));
+// synopsys translate_off
+defparam \SVGA|Add0~6 .lut_mask = 16'h5A5F;
+defparam \SVGA|Add0~6 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X20_Y22_N11
+dffeas \SVGA|pixel_x[3] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\SVGA|Add0~6_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\SVGA|pixel_x [3]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \SVGA|pixel_x[3] .is_wysiwyg = "true";
+defparam \SVGA|pixel_x[3] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X20_Y22_N12
+cycloneive_lcell_comb \SVGA|Add0~8 (
+// Equation(s):
+// \SVGA|Add0~8_combout  = (\SVGA|pixel_x [4] & (\SVGA|Add0~7  $ (GND))) # (!\SVGA|pixel_x [4] & (!\SVGA|Add0~7  & VCC))
+// \SVGA|Add0~9  = CARRY((\SVGA|pixel_x [4] & !\SVGA|Add0~7 ))
+
+	.dataa(gnd),
+	.datab(\SVGA|pixel_x [4]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\SVGA|Add0~7 ),
+	.combout(\SVGA|Add0~8_combout ),
+	.cout(\SVGA|Add0~9 ));
+// synopsys translate_off
+defparam \SVGA|Add0~8 .lut_mask = 16'hC30C;
+defparam \SVGA|Add0~8 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: LCCOMB_X20_Y22_N14
+cycloneive_lcell_comb \SVGA|Add0~10 (
+// Equation(s):
+// \SVGA|Add0~10_combout  = (\SVGA|pixel_x [5] & (!\SVGA|Add0~9 )) # (!\SVGA|pixel_x [5] & ((\SVGA|Add0~9 ) # (GND)))
+// \SVGA|Add0~11  = CARRY((!\SVGA|Add0~9 ) # (!\SVGA|pixel_x [5]))
+
+	.dataa(gnd),
+	.datab(\SVGA|pixel_x [5]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\SVGA|Add0~9 ),
+	.combout(\SVGA|Add0~10_combout ),
+	.cout(\SVGA|Add0~11 ));
+// synopsys translate_off
+defparam \SVGA|Add0~10 .lut_mask = 16'h3C3F;
+defparam \SVGA|Add0~10 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: LCCOMB_X20_Y22_N16
+cycloneive_lcell_comb \SVGA|Add0~12 (
+// Equation(s):
+// \SVGA|Add0~12_combout  = (\SVGA|pixel_x [6] & (\SVGA|Add0~11  $ (GND))) # (!\SVGA|pixel_x [6] & (!\SVGA|Add0~11  & VCC))
+// \SVGA|Add0~13  = CARRY((\SVGA|pixel_x [6] & !\SVGA|Add0~11 ))
+
+	.dataa(gnd),
+	.datab(\SVGA|pixel_x [6]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\SVGA|Add0~11 ),
+	.combout(\SVGA|Add0~12_combout ),
+	.cout(\SVGA|Add0~13 ));
+// synopsys translate_off
+defparam \SVGA|Add0~12 .lut_mask = 16'hC30C;
+defparam \SVGA|Add0~12 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X20_Y22_N17
+dffeas \SVGA|pixel_x[6] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\SVGA|Add0~12_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\SVGA|pixel_x [6]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \SVGA|pixel_x[6] .is_wysiwyg = "true";
+defparam \SVGA|pixel_x[6] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X20_Y22_N18
+cycloneive_lcell_comb \SVGA|Add0~14 (
+// Equation(s):
+// \SVGA|Add0~14_combout  = (\SVGA|pixel_x [7] & (!\SVGA|Add0~13 )) # (!\SVGA|pixel_x [7] & ((\SVGA|Add0~13 ) # (GND)))
+// \SVGA|Add0~15  = CARRY((!\SVGA|Add0~13 ) # (!\SVGA|pixel_x [7]))
+
+	.dataa(gnd),
+	.datab(\SVGA|pixel_x [7]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\SVGA|Add0~13 ),
+	.combout(\SVGA|Add0~14_combout ),
+	.cout(\SVGA|Add0~15 ));
+// synopsys translate_off
+defparam \SVGA|Add0~14 .lut_mask = 16'h3C3F;
+defparam \SVGA|Add0~14 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X20_Y22_N19
+dffeas \SVGA|pixel_x[7] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\SVGA|Add0~14_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\SVGA|pixel_x [7]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \SVGA|pixel_x[7] .is_wysiwyg = "true";
+defparam \SVGA|pixel_x[7] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X20_Y22_N20
+cycloneive_lcell_comb \SVGA|Add0~16 (
+// Equation(s):
+// \SVGA|Add0~16_combout  = (\SVGA|pixel_x [8] & (\SVGA|Add0~15  $ (GND))) # (!\SVGA|pixel_x [8] & (!\SVGA|Add0~15  & VCC))
+// \SVGA|Add0~17  = CARRY((\SVGA|pixel_x [8] & !\SVGA|Add0~15 ))
+
+	.dataa(gnd),
+	.datab(\SVGA|pixel_x [8]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\SVGA|Add0~15 ),
+	.combout(\SVGA|Add0~16_combout ),
+	.cout(\SVGA|Add0~17 ));
+// synopsys translate_off
+defparam \SVGA|Add0~16 .lut_mask = 16'hC30C;
+defparam \SVGA|Add0~16 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X20_Y22_N21
+dffeas \SVGA|pixel_x[8] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\SVGA|Add0~16_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\SVGA|pixel_x [8]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \SVGA|pixel_x[8] .is_wysiwyg = "true";
+defparam \SVGA|pixel_x[8] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X20_Y22_N22
+cycloneive_lcell_comb \SVGA|Add0~18 (
+// Equation(s):
+// \SVGA|Add0~18_combout  = (\SVGA|pixel_x [9] & (!\SVGA|Add0~17 )) # (!\SVGA|pixel_x [9] & ((\SVGA|Add0~17 ) # (GND)))
+// \SVGA|Add0~19  = CARRY((!\SVGA|Add0~17 ) # (!\SVGA|pixel_x [9]))
+
+	.dataa(\SVGA|pixel_x [9]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\SVGA|Add0~17 ),
+	.combout(\SVGA|Add0~18_combout ),
+	.cout(\SVGA|Add0~19 ));
+// synopsys translate_off
+defparam \SVGA|Add0~18 .lut_mask = 16'h5A5F;
+defparam \SVGA|Add0~18 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X20_Y22_N23
+dffeas \SVGA|pixel_x[9] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\SVGA|Add0~18_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\SVGA|pixel_x [9]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \SVGA|pixel_x[9] .is_wysiwyg = "true";
+defparam \SVGA|pixel_x[9] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X20_Y22_N24
+cycloneive_lcell_comb \SVGA|Add0~20 (
+// Equation(s):
+// \SVGA|Add0~20_combout  = \SVGA|pixel_x [10] $ (!\SVGA|Add0~19 )
+
+	.dataa(\SVGA|pixel_x [10]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.cin(\SVGA|Add0~19 ),
+	.combout(\SVGA|Add0~20_combout ),
+	.cout());
+// synopsys translate_off
+defparam \SVGA|Add0~20 .lut_mask = 16'hA5A5;
+defparam \SVGA|Add0~20 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: LCCOMB_X21_Y22_N26
+cycloneive_lcell_comb \SVGA|Equal5~0 (
+// Equation(s):
+// \SVGA|Equal5~0_combout  = (!\SVGA|pixel_x [4] & (!\SVGA|pixel_x [7] & (!\SVGA|pixel_x [6] & \SVGA|pixel_x [3])))
+
+	.dataa(\SVGA|pixel_x [4]),
+	.datab(\SVGA|pixel_x [7]),
+	.datac(\SVGA|pixel_x [6]),
+	.datad(\SVGA|pixel_x [3]),
+	.cin(gnd),
+	.combout(\SVGA|Equal5~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \SVGA|Equal5~0 .lut_mask = 16'h0100;
+defparam \SVGA|Equal5~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X20_Y22_N30
+cycloneive_lcell_comb \SVGA|pixel_x~3 (
+// Equation(s):
+// \SVGA|pixel_x~3_combout  = (\SVGA|Add0~20_combout  & (((!\SVGA|Equal5~0_combout ) # (!\SVGA|Equal1~0_combout )) # (!\SVGA|Equal5~1_combout )))
+
+	.dataa(\SVGA|Equal5~1_combout ),
+	.datab(\SVGA|Equal1~0_combout ),
+	.datac(\SVGA|Add0~20_combout ),
+	.datad(\SVGA|Equal5~0_combout ),
+	.cin(gnd),
+	.combout(\SVGA|pixel_x~3_combout ),
+	.cout());
+// synopsys translate_off
+defparam \SVGA|pixel_x~3 .lut_mask = 16'h70F0;
+defparam \SVGA|pixel_x~3 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X20_Y22_N31
+dffeas \SVGA|pixel_x[10] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\SVGA|pixel_x~3_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\SVGA|pixel_x [10]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \SVGA|pixel_x[10] .is_wysiwyg = "true";
+defparam \SVGA|pixel_x[10] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X21_Y22_N24
+cycloneive_lcell_comb \SVGA|Equal5~1 (
+// Equation(s):
+// \SVGA|Equal5~1_combout  = (!\SVGA|pixel_x [8] & (!\SVGA|pixel_x [9] & \SVGA|pixel_x [10]))
+
+	.dataa(gnd),
+	.datab(\SVGA|pixel_x [8]),
+	.datac(\SVGA|pixel_x [9]),
+	.datad(\SVGA|pixel_x [10]),
+	.cin(gnd),
+	.combout(\SVGA|Equal5~1_combout ),
+	.cout());
+// synopsys translate_off
+defparam \SVGA|Equal5~1 .lut_mask = 16'h0300;
+defparam \SVGA|Equal5~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X20_Y22_N2
+cycloneive_lcell_comb \SVGA|pixel_x~2 (
+// Equation(s):
+// \SVGA|pixel_x~2_combout  = (\SVGA|Add0~8_combout  & (((!\SVGA|Equal5~0_combout ) # (!\SVGA|Equal5~1_combout )) # (!\SVGA|Equal1~0_combout )))
+
+	.dataa(\SVGA|Add0~8_combout ),
+	.datab(\SVGA|Equal1~0_combout ),
+	.datac(\SVGA|Equal5~1_combout ),
+	.datad(\SVGA|Equal5~0_combout ),
+	.cin(gnd),
+	.combout(\SVGA|pixel_x~2_combout ),
+	.cout());
+// synopsys translate_off
+defparam \SVGA|pixel_x~2 .lut_mask = 16'h2AAA;
+defparam \SVGA|pixel_x~2 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X20_Y22_N3
+dffeas \SVGA|pixel_x[4] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\SVGA|pixel_x~2_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\SVGA|pixel_x [4]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \SVGA|pixel_x[4] .is_wysiwyg = "true";
+defparam \SVGA|pixel_x[4] .power_up = "low";
+// synopsys translate_on
+
+// Location: FF_X20_Y22_N15
+dffeas \SVGA|pixel_x[5] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\SVGA|Add0~10_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\SVGA|pixel_x [5]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \SVGA|pixel_x[5] .is_wysiwyg = "true";
+defparam \SVGA|pixel_x[5] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X20_Y22_N28
+cycloneive_lcell_comb \SVGA|Equal1~0 (
+// Equation(s):
+// \SVGA|Equal1~0_combout  = (\SVGA|pixel_x [1] & (\SVGA|pixel_x [2] & (\SVGA|pixel_x [0] & !\SVGA|pixel_x [5])))
+
+	.dataa(\SVGA|pixel_x [1]),
+	.datab(\SVGA|pixel_x [2]),
+	.datac(\SVGA|pixel_x [0]),
+	.datad(\SVGA|pixel_x [5]),
+	.cin(gnd),
+	.combout(\SVGA|Equal1~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \SVGA|Equal1~0 .lut_mask = 16'h0080;
+defparam \SVGA|Equal1~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X21_Y22_N10
+cycloneive_lcell_comb \SVGA|Equal5~2 (
+// Equation(s):
+// \SVGA|Equal5~2_combout  = (\SVGA|Equal1~0_combout  & (\SVGA|Equal5~0_combout  & \SVGA|Equal5~1_combout ))
+
+	.dataa(gnd),
+	.datab(\SVGA|Equal1~0_combout ),
+	.datac(\SVGA|Equal5~0_combout ),
+	.datad(\SVGA|Equal5~1_combout ),
+	.cin(gnd),
+	.combout(\SVGA|Equal5~2_combout ),
+	.cout());
+// synopsys translate_off
+defparam \SVGA|Equal5~2 .lut_mask = 16'hC000;
+defparam \SVGA|Equal5~2 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X27_Y22_N4
+cycloneive_lcell_comb \SVGA|Add1~0 (
+// Equation(s):
+// \SVGA|Add1~0_combout  = \SVGA|pixel_y [0] $ (VCC)
+// \SVGA|Add1~1  = CARRY(\SVGA|pixel_y [0])
+
+	.dataa(gnd),
+	.datab(\SVGA|pixel_y [0]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(gnd),
+	.combout(\SVGA|Add1~0_combout ),
+	.cout(\SVGA|Add1~1 ));
+// synopsys translate_off
+defparam \SVGA|Add1~0 .lut_mask = 16'h33CC;
+defparam \SVGA|Add1~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X23_Y22_N24
+cycloneive_lcell_comb \SVGA|pixel_y[0]~4 (
+// Equation(s):
+// \SVGA|pixel_y[0]~4_combout  = (\SVGA|Add1~0_combout  & (((\SVGA|pixel_y [0] & !\SVGA|Equal5~2_combout )) # (!\SVGA|pixel_y[9]~0_combout ))) # (!\SVGA|Add1~0_combout  & (\SVGA|pixel_y [0] & (!\SVGA|Equal5~2_combout )))
+
+	.dataa(\SVGA|Add1~0_combout ),
+	.datab(\SVGA|pixel_y [0]),
+	.datac(\SVGA|Equal5~2_combout ),
+	.datad(\SVGA|pixel_y[9]~0_combout ),
+	.cin(gnd),
+	.combout(\SVGA|pixel_y[0]~4_combout ),
+	.cout());
+// synopsys translate_off
+defparam \SVGA|pixel_y[0]~4 .lut_mask = 16'h0CAE;
+defparam \SVGA|pixel_y[0]~4 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X25_Y22_N21
+dffeas \SVGA|pixel_y[0] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\SVGA|pixel_y[0]~4_combout ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\SVGA|pixel_y [0]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \SVGA|pixel_y[0] .is_wysiwyg = "true";
+defparam \SVGA|pixel_y[0] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X27_Y22_N6
+cycloneive_lcell_comb \SVGA|Add1~2 (
+// Equation(s):
+// \SVGA|Add1~2_combout  = (\SVGA|pixel_y [1] & (!\SVGA|Add1~1 )) # (!\SVGA|pixel_y [1] & ((\SVGA|Add1~1 ) # (GND)))
+// \SVGA|Add1~3  = CARRY((!\SVGA|Add1~1 ) # (!\SVGA|pixel_y [1]))
+
+	.dataa(\SVGA|pixel_y [1]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\SVGA|Add1~1 ),
+	.combout(\SVGA|Add1~2_combout ),
+	.cout(\SVGA|Add1~3 ));
+// synopsys translate_off
+defparam \SVGA|Add1~2 .lut_mask = 16'h5A5F;
+defparam \SVGA|Add1~2 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: LCCOMB_X25_Y22_N2
+cycloneive_lcell_comb \SVGA|pixel_y[1]~1 (
+// Equation(s):
+// \SVGA|pixel_y[1]~1_combout  = (\SVGA|pixel_y[9]~0_combout  & (!\SVGA|Equal5~2_combout  & (\SVGA|pixel_y [1]))) # (!\SVGA|pixel_y[9]~0_combout  & ((\SVGA|Add1~2_combout ) # ((!\SVGA|Equal5~2_combout  & \SVGA|pixel_y [1]))))
+
+	.dataa(\SVGA|pixel_y[9]~0_combout ),
+	.datab(\SVGA|Equal5~2_combout ),
+	.datac(\SVGA|pixel_y [1]),
+	.datad(\SVGA|Add1~2_combout ),
+	.cin(gnd),
+	.combout(\SVGA|pixel_y[1]~1_combout ),
+	.cout());
+// synopsys translate_off
+defparam \SVGA|pixel_y[1]~1 .lut_mask = 16'h7530;
+defparam \SVGA|pixel_y[1]~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X25_Y22_N3
+dffeas \SVGA|pixel_y[1] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\SVGA|pixel_y[1]~1_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\SVGA|pixel_y [1]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \SVGA|pixel_y[1] .is_wysiwyg = "true";
+defparam \SVGA|pixel_y[1] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X27_Y22_N8
+cycloneive_lcell_comb \SVGA|Add1~4 (
+// Equation(s):
+// \SVGA|Add1~4_combout  = (\SVGA|pixel_y [2] & (\SVGA|Add1~3  $ (GND))) # (!\SVGA|pixel_y [2] & (!\SVGA|Add1~3  & VCC))
+// \SVGA|Add1~5  = CARRY((\SVGA|pixel_y [2] & !\SVGA|Add1~3 ))
+
+	.dataa(\SVGA|pixel_y [2]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\SVGA|Add1~3 ),
+	.combout(\SVGA|Add1~4_combout ),
+	.cout(\SVGA|Add1~5 ));
+// synopsys translate_off
+defparam \SVGA|Add1~4 .lut_mask = 16'hA50A;
+defparam \SVGA|Add1~4 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: LCCOMB_X25_Y22_N0
+cycloneive_lcell_comb \SVGA|pixel_y[2]~10 (
+// Equation(s):
+// \SVGA|pixel_y[2]~10_combout  = (\SVGA|Equal5~2_combout  & (\SVGA|Add1~4_combout  & ((!\SVGA|pixel_y[9]~0_combout )))) # (!\SVGA|Equal5~2_combout  & ((\SVGA|pixel_y [2]) # ((\SVGA|Add1~4_combout  & !\SVGA|pixel_y[9]~0_combout ))))
+
+	.dataa(\SVGA|Equal5~2_combout ),
+	.datab(\SVGA|Add1~4_combout ),
+	.datac(\SVGA|pixel_y [2]),
+	.datad(\SVGA|pixel_y[9]~0_combout ),
+	.cin(gnd),
+	.combout(\SVGA|pixel_y[2]~10_combout ),
+	.cout());
+// synopsys translate_off
+defparam \SVGA|pixel_y[2]~10 .lut_mask = 16'h50DC;
+defparam \SVGA|pixel_y[2]~10 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X25_Y22_N1
+dffeas \SVGA|pixel_y[2] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\SVGA|pixel_y[2]~10_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\SVGA|pixel_y [2]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \SVGA|pixel_y[2] .is_wysiwyg = "true";
+defparam \SVGA|pixel_y[2] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X27_Y22_N10
+cycloneive_lcell_comb \SVGA|Add1~6 (
+// Equation(s):
+// \SVGA|Add1~6_combout  = (\SVGA|pixel_y [3] & (!\SVGA|Add1~5 )) # (!\SVGA|pixel_y [3] & ((\SVGA|Add1~5 ) # (GND)))
+// \SVGA|Add1~7  = CARRY((!\SVGA|Add1~5 ) # (!\SVGA|pixel_y [3]))
+
+	.dataa(gnd),
+	.datab(\SVGA|pixel_y [3]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\SVGA|Add1~5 ),
+	.combout(\SVGA|Add1~6_combout ),
+	.cout(\SVGA|Add1~7 ));
+// synopsys translate_off
+defparam \SVGA|Add1~6 .lut_mask = 16'h3C3F;
+defparam \SVGA|Add1~6 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: LCCOMB_X26_Y22_N12
+cycloneive_lcell_comb \SVGA|pixel_y[3]~3 (
+// Equation(s):
+// \SVGA|pixel_y[3]~3_combout  = (\SVGA|pixel_y [3] & (((\SVGA|Add1~6_combout  & !\SVGA|pixel_y[9]~0_combout )) # (!\SVGA|Equal5~2_combout ))) # (!\SVGA|pixel_y [3] & (\SVGA|Add1~6_combout  & (!\SVGA|pixel_y[9]~0_combout )))
+
+	.dataa(\SVGA|pixel_y [3]),
+	.datab(\SVGA|Add1~6_combout ),
+	.datac(\SVGA|pixel_y[9]~0_combout ),
+	.datad(\SVGA|Equal5~2_combout ),
+	.cin(gnd),
+	.combout(\SVGA|pixel_y[3]~3_combout ),
+	.cout());
+// synopsys translate_off
+defparam \SVGA|pixel_y[3]~3 .lut_mask = 16'h0CAE;
+defparam \SVGA|pixel_y[3]~3 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X25_Y22_N19
+dffeas \SVGA|pixel_y[3] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\SVGA|pixel_y[3]~3_combout ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\SVGA|pixel_y [3]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \SVGA|pixel_y[3] .is_wysiwyg = "true";
+defparam \SVGA|pixel_y[3] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X27_Y22_N12
+cycloneive_lcell_comb \SVGA|Add1~8 (
+// Equation(s):
+// \SVGA|Add1~8_combout  = (\SVGA|pixel_y [4] & (\SVGA|Add1~7  $ (GND))) # (!\SVGA|pixel_y [4] & (!\SVGA|Add1~7  & VCC))
+// \SVGA|Add1~9  = CARRY((\SVGA|pixel_y [4] & !\SVGA|Add1~7 ))
+
+	.dataa(\SVGA|pixel_y [4]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\SVGA|Add1~7 ),
+	.combout(\SVGA|Add1~8_combout ),
+	.cout(\SVGA|Add1~9 ));
+// synopsys translate_off
+defparam \SVGA|Add1~8 .lut_mask = 16'hA50A;
+defparam \SVGA|Add1~8 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: LCCOMB_X25_Y22_N12
+cycloneive_lcell_comb \SVGA|pixel_y[4]~2 (
+// Equation(s):
+// \SVGA|pixel_y[4]~2_combout  = (\SVGA|pixel_y[9]~0_combout  & (!\SVGA|Equal5~2_combout  & (\SVGA|pixel_y [4]))) # (!\SVGA|pixel_y[9]~0_combout  & ((\SVGA|Add1~8_combout ) # ((!\SVGA|Equal5~2_combout  & \SVGA|pixel_y [4]))))
+
+	.dataa(\SVGA|pixel_y[9]~0_combout ),
+	.datab(\SVGA|Equal5~2_combout ),
+	.datac(\SVGA|pixel_y [4]),
+	.datad(\SVGA|Add1~8_combout ),
+	.cin(gnd),
+	.combout(\SVGA|pixel_y[4]~2_combout ),
+	.cout());
+// synopsys translate_off
+defparam \SVGA|pixel_y[4]~2 .lut_mask = 16'h7530;
+defparam \SVGA|pixel_y[4]~2 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X25_Y22_N13
+dffeas \SVGA|pixel_y[4] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\SVGA|pixel_y[4]~2_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\SVGA|pixel_y [4]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \SVGA|pixel_y[4] .is_wysiwyg = "true";
+defparam \SVGA|pixel_y[4] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X21_Y22_N30
+cycloneive_lcell_comb \SVGA|always1~2 (
+// Equation(s):
+// \SVGA|always1~2_combout  = (\SVGA|pixel_y [4] & (\SVGA|pixel_y [3] & (\SVGA|pixel_y [0] & !\SVGA|pixel_y [1])))
+
+	.dataa(\SVGA|pixel_y [4]),
+	.datab(\SVGA|pixel_y [3]),
+	.datac(\SVGA|pixel_y [0]),
+	.datad(\SVGA|pixel_y [1]),
+	.cin(gnd),
+	.combout(\SVGA|always1~2_combout ),
+	.cout());
+// synopsys translate_off
+defparam \SVGA|always1~2 .lut_mask = 16'h0080;
+defparam \SVGA|always1~2 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X27_Y22_N14
+cycloneive_lcell_comb \SVGA|Add1~10 (
+// Equation(s):
+// \SVGA|Add1~10_combout  = (\SVGA|pixel_y [5] & (!\SVGA|Add1~9 )) # (!\SVGA|pixel_y [5] & ((\SVGA|Add1~9 ) # (GND)))
+// \SVGA|Add1~11  = CARRY((!\SVGA|Add1~9 ) # (!\SVGA|pixel_y [5]))
+
+	.dataa(gnd),
+	.datab(\SVGA|pixel_y [5]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\SVGA|Add1~9 ),
+	.combout(\SVGA|Add1~10_combout ),
+	.cout(\SVGA|Add1~11 ));
+// synopsys translate_off
+defparam \SVGA|Add1~10 .lut_mask = 16'h3C3F;
+defparam \SVGA|Add1~10 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: LCCOMB_X27_Y22_N16
+cycloneive_lcell_comb \SVGA|Add1~12 (
+// Equation(s):
+// \SVGA|Add1~12_combout  = (\SVGA|pixel_y [6] & (\SVGA|Add1~11  $ (GND))) # (!\SVGA|pixel_y [6] & (!\SVGA|Add1~11  & VCC))
+// \SVGA|Add1~13  = CARRY((\SVGA|pixel_y [6] & !\SVGA|Add1~11 ))
+
+	.dataa(\SVGA|pixel_y [6]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\SVGA|Add1~11 ),
+	.combout(\SVGA|Add1~12_combout ),
+	.cout(\SVGA|Add1~13 ));
+// synopsys translate_off
+defparam \SVGA|Add1~12 .lut_mask = 16'hA50A;
+defparam \SVGA|Add1~12 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: LCCOMB_X25_Y22_N16
+cycloneive_lcell_comb \SVGA|pixel_y[6]~8 (
+// Equation(s):
+// \SVGA|pixel_y[6]~8_combout  = (\SVGA|Equal5~2_combout  & (!\SVGA|pixel_y[9]~0_combout  & ((\SVGA|Add1~12_combout )))) # (!\SVGA|Equal5~2_combout  & ((\SVGA|pixel_y [6]) # ((!\SVGA|pixel_y[9]~0_combout  & \SVGA|Add1~12_combout ))))
+
+	.dataa(\SVGA|Equal5~2_combout ),
+	.datab(\SVGA|pixel_y[9]~0_combout ),
+	.datac(\SVGA|pixel_y [6]),
+	.datad(\SVGA|Add1~12_combout ),
+	.cin(gnd),
+	.combout(\SVGA|pixel_y[6]~8_combout ),
+	.cout());
+// synopsys translate_off
+defparam \SVGA|pixel_y[6]~8 .lut_mask = 16'h7350;
+defparam \SVGA|pixel_y[6]~8 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X25_Y22_N17
+dffeas \SVGA|pixel_y[6] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\SVGA|pixel_y[6]~8_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\SVGA|pixel_y [6]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \SVGA|pixel_y[6] .is_wysiwyg = "true";
+defparam \SVGA|pixel_y[6] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X27_Y22_N18
+cycloneive_lcell_comb \SVGA|Add1~14 (
+// Equation(s):
+// \SVGA|Add1~14_combout  = (\SVGA|pixel_y [7] & (!\SVGA|Add1~13 )) # (!\SVGA|pixel_y [7] & ((\SVGA|Add1~13 ) # (GND)))
+// \SVGA|Add1~15  = CARRY((!\SVGA|Add1~13 ) # (!\SVGA|pixel_y [7]))
+
+	.dataa(gnd),
+	.datab(\SVGA|pixel_y [7]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\SVGA|Add1~13 ),
+	.combout(\SVGA|Add1~14_combout ),
+	.cout(\SVGA|Add1~15 ));
+// synopsys translate_off
+defparam \SVGA|Add1~14 .lut_mask = 16'h3C3F;
+defparam \SVGA|Add1~14 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: LCCOMB_X25_Y22_N24
+cycloneive_lcell_comb \SVGA|pixel_y[7]~6 (
+// Equation(s):
+// \SVGA|pixel_y[7]~6_combout  = (\SVGA|pixel_y[9]~0_combout  & (!\SVGA|Equal5~2_combout  & (\SVGA|pixel_y [7]))) # (!\SVGA|pixel_y[9]~0_combout  & ((\SVGA|Add1~14_combout ) # ((!\SVGA|Equal5~2_combout  & \SVGA|pixel_y [7]))))
+
+	.dataa(\SVGA|pixel_y[9]~0_combout ),
+	.datab(\SVGA|Equal5~2_combout ),
+	.datac(\SVGA|pixel_y [7]),
+	.datad(\SVGA|Add1~14_combout ),
+	.cin(gnd),
+	.combout(\SVGA|pixel_y[7]~6_combout ),
+	.cout());
+// synopsys translate_off
+defparam \SVGA|pixel_y[7]~6 .lut_mask = 16'h7530;
+defparam \SVGA|pixel_y[7]~6 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X25_Y22_N25
+dffeas \SVGA|pixel_y[7] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\SVGA|pixel_y[7]~6_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\SVGA|pixel_y [7]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \SVGA|pixel_y[7] .is_wysiwyg = "true";
+defparam \SVGA|pixel_y[7] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X27_Y22_N20
+cycloneive_lcell_comb \SVGA|Add1~16 (
+// Equation(s):
+// \SVGA|Add1~16_combout  = (\SVGA|pixel_y [8] & (\SVGA|Add1~15  $ (GND))) # (!\SVGA|pixel_y [8] & (!\SVGA|Add1~15  & VCC))
+// \SVGA|Add1~17  = CARRY((\SVGA|pixel_y [8] & !\SVGA|Add1~15 ))
+
+	.dataa(\SVGA|pixel_y [8]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\SVGA|Add1~15 ),
+	.combout(\SVGA|Add1~16_combout ),
+	.cout(\SVGA|Add1~17 ));
+// synopsys translate_off
+defparam \SVGA|Add1~16 .lut_mask = 16'hA50A;
+defparam \SVGA|Add1~16 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: LCCOMB_X25_Y22_N22
+cycloneive_lcell_comb \SVGA|pixel_y[8]~7 (
+// Equation(s):
+// \SVGA|pixel_y[8]~7_combout  = (\SVGA|Equal5~2_combout  & (!\SVGA|pixel_y[9]~0_combout  & ((\SVGA|Add1~16_combout )))) # (!\SVGA|Equal5~2_combout  & ((\SVGA|pixel_y [8]) # ((!\SVGA|pixel_y[9]~0_combout  & \SVGA|Add1~16_combout ))))
+
+	.dataa(\SVGA|Equal5~2_combout ),
+	.datab(\SVGA|pixel_y[9]~0_combout ),
+	.datac(\SVGA|pixel_y [8]),
+	.datad(\SVGA|Add1~16_combout ),
+	.cin(gnd),
+	.combout(\SVGA|pixel_y[8]~7_combout ),
+	.cout());
+// synopsys translate_off
+defparam \SVGA|pixel_y[8]~7 .lut_mask = 16'h7350;
+defparam \SVGA|pixel_y[8]~7 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X25_Y22_N23
+dffeas \SVGA|pixel_y[8] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\SVGA|pixel_y[8]~7_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\SVGA|pixel_y [8]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \SVGA|pixel_y[8] .is_wysiwyg = "true";
+defparam \SVGA|pixel_y[8] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X27_Y22_N22
+cycloneive_lcell_comb \SVGA|Add1~18 (
+// Equation(s):
+// \SVGA|Add1~18_combout  = \SVGA|Add1~17  $ (\SVGA|pixel_y [9])
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\SVGA|pixel_y [9]),
+	.cin(\SVGA|Add1~17 ),
+	.combout(\SVGA|Add1~18_combout ),
+	.cout());
+// synopsys translate_off
+defparam \SVGA|Add1~18 .lut_mask = 16'h0FF0;
+defparam \SVGA|Add1~18 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: LCCOMB_X25_Y22_N10
+cycloneive_lcell_comb \SVGA|pixel_y[9]~5 (
+// Equation(s):
+// \SVGA|pixel_y[9]~5_combout  = (\SVGA|Equal5~2_combout  & (!\SVGA|pixel_y[9]~0_combout  & ((\SVGA|Add1~18_combout )))) # (!\SVGA|Equal5~2_combout  & ((\SVGA|pixel_y [9]) # ((!\SVGA|pixel_y[9]~0_combout  & \SVGA|Add1~18_combout ))))
+
+	.dataa(\SVGA|Equal5~2_combout ),
+	.datab(\SVGA|pixel_y[9]~0_combout ),
+	.datac(\SVGA|pixel_y [9]),
+	.datad(\SVGA|Add1~18_combout ),
+	.cin(gnd),
+	.combout(\SVGA|pixel_y[9]~5_combout ),
+	.cout());
+// synopsys translate_off
+defparam \SVGA|pixel_y[9]~5 .lut_mask = 16'h7350;
+defparam \SVGA|pixel_y[9]~5 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X25_Y22_N11
+dffeas \SVGA|pixel_y[9] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\SVGA|pixel_y[9]~5_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\SVGA|pixel_y [9]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \SVGA|pixel_y[9] .is_wysiwyg = "true";
+defparam \SVGA|pixel_y[9] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X27_Y22_N28
+cycloneive_lcell_comb \SVGA|always1~0 (
+// Equation(s):
+// \SVGA|always1~0_combout  = (!\SVGA|pixel_y [6] & (\SVGA|pixel_y [9] & (!\SVGA|pixel_y [8] & \SVGA|pixel_y [7])))
+
+	.dataa(\SVGA|pixel_y [6]),
+	.datab(\SVGA|pixel_y [9]),
+	.datac(\SVGA|pixel_y [8]),
+	.datad(\SVGA|pixel_y [7]),
+	.cin(gnd),
+	.combout(\SVGA|always1~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \SVGA|always1~0 .lut_mask = 16'h0400;
+defparam \SVGA|always1~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X27_Y22_N26
+cycloneive_lcell_comb \SVGA|always1~1 (
+// Equation(s):
+// \SVGA|always1~1_combout  = (!\SVGA|pixel_y [2] & (!\SVGA|pixel_y [5] & \SVGA|always1~0_combout ))
+
+	.dataa(\SVGA|pixel_y [2]),
+	.datab(gnd),
+	.datac(\SVGA|pixel_y [5]),
+	.datad(\SVGA|always1~0_combout ),
+	.cin(gnd),
+	.combout(\SVGA|always1~1_combout ),
+	.cout());
+// synopsys translate_off
+defparam \SVGA|always1~1 .lut_mask = 16'h0500;
+defparam \SVGA|always1~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X21_Y22_N0
+cycloneive_lcell_comb \SVGA|pixel_y[9]~0 (
+// Equation(s):
+// \SVGA|pixel_y[9]~0_combout  = ((\SVGA|always1~2_combout  & \SVGA|always1~1_combout )) # (!\SVGA|Equal5~2_combout )
+
+	.dataa(\SVGA|Equal5~2_combout ),
+	.datab(gnd),
+	.datac(\SVGA|always1~2_combout ),
+	.datad(\SVGA|always1~1_combout ),
+	.cin(gnd),
+	.combout(\SVGA|pixel_y[9]~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \SVGA|pixel_y[9]~0 .lut_mask = 16'hF555;
+defparam \SVGA|pixel_y[9]~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X25_Y22_N6
+cycloneive_lcell_comb \SVGA|pixel_y[5]~9 (
+// Equation(s):
+// \SVGA|pixel_y[5]~9_combout  = (\SVGA|Equal5~2_combout  & (!\SVGA|pixel_y[9]~0_combout  & ((\SVGA|Add1~10_combout )))) # (!\SVGA|Equal5~2_combout  & ((\SVGA|pixel_y [5]) # ((!\SVGA|pixel_y[9]~0_combout  & \SVGA|Add1~10_combout ))))
+
+	.dataa(\SVGA|Equal5~2_combout ),
+	.datab(\SVGA|pixel_y[9]~0_combout ),
+	.datac(\SVGA|pixel_y [5]),
+	.datad(\SVGA|Add1~10_combout ),
+	.cin(gnd),
+	.combout(\SVGA|pixel_y[5]~9_combout ),
+	.cout());
+// synopsys translate_off
+defparam \SVGA|pixel_y[5]~9 .lut_mask = 16'h7350;
+defparam \SVGA|pixel_y[5]~9 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X25_Y22_N7
+dffeas \SVGA|pixel_y[5] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\SVGA|pixel_y[5]~9_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\SVGA|pixel_y [5]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \SVGA|pixel_y[5] .is_wysiwyg = "true";
+defparam \SVGA|pixel_y[5] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X25_Y22_N14
+cycloneive_lcell_comb \SVGA|LessThan1~1 (
+// Equation(s):
+// \SVGA|LessThan1~1_combout  = ((!\SVGA|pixel_y [6] & (!\SVGA|pixel_y [8] & !\SVGA|pixel_y [7]))) # (!\SVGA|pixel_y [9])
+
+	.dataa(\SVGA|pixel_y [9]),
+	.datab(\SVGA|pixel_y [6]),
+	.datac(\SVGA|pixel_y [8]),
+	.datad(\SVGA|pixel_y [7]),
+	.cin(gnd),
+	.combout(\SVGA|LessThan1~1_combout ),
+	.cout());
+// synopsys translate_off
+defparam \SVGA|LessThan1~1 .lut_mask = 16'h5557;
+defparam \SVGA|LessThan1~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X25_Y22_N18
+cycloneive_lcell_comb \SVGA|LessThan1~2 (
+// Equation(s):
+// \SVGA|LessThan1~2_combout  = (!\SVGA|pixel_y [8] & (!\SVGA|pixel_y [7] & ((!\SVGA|pixel_y [4]) # (!\SVGA|pixel_y [3]))))
+
+	.dataa(\SVGA|pixel_y [8]),
+	.datab(\SVGA|pixel_y [7]),
+	.datac(\SVGA|pixel_y [3]),
+	.datad(\SVGA|pixel_y [4]),
+	.cin(gnd),
+	.combout(\SVGA|LessThan1~2_combout ),
+	.cout());
+// synopsys translate_off
+defparam \SVGA|LessThan1~2 .lut_mask = 16'h0111;
+defparam \SVGA|LessThan1~2 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X25_Y22_N28
+cycloneive_lcell_comb \SVGA|video_enable~0 (
+// Equation(s):
+// \SVGA|video_enable~0_combout  = (!\SVGA|pixel_x [10] & ((\SVGA|LessThan1~1_combout ) # ((!\SVGA|pixel_y [5] & \SVGA|LessThan1~2_combout ))))
+
+	.dataa(\SVGA|pixel_y [5]),
+	.datab(\SVGA|LessThan1~1_combout ),
+	.datac(\SVGA|LessThan1~2_combout ),
+	.datad(\SVGA|pixel_x [10]),
+	.cin(gnd),
+	.combout(\SVGA|video_enable~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \SVGA|video_enable~0 .lut_mask = 16'h00DC;
+defparam \SVGA|video_enable~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X20_Y22_N0
+cycloneive_lcell_comb \SVGA|video_enable~1 (
+// Equation(s):
+// \SVGA|video_enable~1_combout  = (!\SVGA|pixel_x [6] & (!\SVGA|pixel_x [5] & !\SVGA|pixel_x [7]))
+
+	.dataa(gnd),
+	.datab(\SVGA|pixel_x [6]),
+	.datac(\SVGA|pixel_x [5]),
+	.datad(\SVGA|pixel_x [7]),
+	.cin(gnd),
+	.combout(\SVGA|video_enable~1_combout ),
+	.cout());
+// synopsys translate_off
+defparam \SVGA|video_enable~1 .lut_mask = 16'h0003;
+defparam \SVGA|video_enable~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X20_Y22_N26
+cycloneive_lcell_comb \SVGA|video_enable~2 (
+// Equation(s):
+// \SVGA|video_enable~2_combout  = ((\SVGA|video_enable~1_combout ) # (!\SVGA|pixel_x [9])) # (!\SVGA|pixel_x [8])
+
+	.dataa(gnd),
+	.datab(\SVGA|pixel_x [8]),
+	.datac(\SVGA|pixel_x [9]),
+	.datad(\SVGA|video_enable~1_combout ),
+	.cin(gnd),
+	.combout(\SVGA|video_enable~2_combout ),
+	.cout());
+// synopsys translate_off
+defparam \SVGA|video_enable~2 .lut_mask = 16'hFF3F;
+defparam \SVGA|video_enable~2 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X25_Y22_N8
+cycloneive_lcell_comb \SVGA|LessThan1~3 (
+// Equation(s):
+// \SVGA|LessThan1~3_combout  = (!\SVGA|pixel_y [8] & (!\SVGA|pixel_y [6] & !\SVGA|pixel_y [7]))
+
+	.dataa(\SVGA|pixel_y [8]),
+	.datab(\SVGA|pixel_y [6]),
+	.datac(gnd),
+	.datad(\SVGA|pixel_y [7]),
+	.cin(gnd),
+	.combout(\SVGA|LessThan1~3_combout ),
+	.cout());
+// synopsys translate_off
+defparam \SVGA|LessThan1~3 .lut_mask = 16'h0011;
+defparam \SVGA|LessThan1~3 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X25_Y22_N20
+cycloneive_lcell_comb \printRGB_inst|barrier_inst|always0~3 (
+// Equation(s):
+// \printRGB_inst|barrier_inst|always0~3_combout  = (\SVGA|pixel_y [9] & (\SVGA|pixel_y [2] & (\SVGA|pixel_y [0] & \SVGA|pixel_y [1]))) # (!\SVGA|pixel_y [9] & ((\SVGA|pixel_y [2]) # ((\SVGA|pixel_y [0]) # (\SVGA|pixel_y [1]))))
+
+	.dataa(\SVGA|pixel_y [9]),
+	.datab(\SVGA|pixel_y [2]),
+	.datac(\SVGA|pixel_y [0]),
+	.datad(\SVGA|pixel_y [1]),
+	.cin(gnd),
+	.combout(\printRGB_inst|barrier_inst|always0~3_combout ),
+	.cout());
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|always0~3 .lut_mask = 16'hD554;
+defparam \printRGB_inst|barrier_inst|always0~3 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X25_Y22_N30
+cycloneive_lcell_comb \printRGB_inst|barrier_inst|always0~7 (
+// Equation(s):
+// \printRGB_inst|barrier_inst|always0~7_combout  = (\SVGA|pixel_y [4] & (\SVGA|pixel_y [3] & \printRGB_inst|barrier_inst|always0~3_combout ))
+
+	.dataa(\SVGA|pixel_y [4]),
+	.datab(\SVGA|pixel_y [3]),
+	.datac(gnd),
+	.datad(\printRGB_inst|barrier_inst|always0~3_combout ),
+	.cin(gnd),
+	.combout(\printRGB_inst|barrier_inst|always0~7_combout ),
+	.cout());
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|always0~7 .lut_mask = 16'h8800;
+defparam \printRGB_inst|barrier_inst|always0~7 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X25_Y22_N26
+cycloneive_lcell_comb \printRGB_inst|barrier_inst|always0~6 (
+// Equation(s):
+// \printRGB_inst|barrier_inst|always0~6_combout  = (\SVGA|pixel_y [9] & (((\printRGB_inst|barrier_inst|always0~7_combout  & \SVGA|pixel_y [5])) # (!\SVGA|LessThan1~3_combout ))) # (!\SVGA|pixel_y [9] & (\SVGA|LessThan1~3_combout  & 
+// (!\printRGB_inst|barrier_inst|always0~7_combout  & !\SVGA|pixel_y [5])))
+
+	.dataa(\SVGA|pixel_y [9]),
+	.datab(\SVGA|LessThan1~3_combout ),
+	.datac(\printRGB_inst|barrier_inst|always0~7_combout ),
+	.datad(\SVGA|pixel_y [5]),
+	.cin(gnd),
+	.combout(\printRGB_inst|barrier_inst|always0~6_combout ),
+	.cout());
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|always0~6 .lut_mask = 16'hA226;
+defparam \printRGB_inst|barrier_inst|always0~6 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X26_Y22_N6
+cycloneive_lcell_comb \printRGB_inst|barrier_inst|enable~0 (
+// Equation(s):
+// \printRGB_inst|barrier_inst|enable~0_combout  = (\SVGA|video_enable~0_combout  & ((\SVGA|video_enable~2_combout  & (\printRGB_inst|barrier_inst|always0~6_combout )) # (!\SVGA|video_enable~2_combout  & ((\printRGB_inst|barrier_inst|enable~q ))))) # 
+// (!\SVGA|video_enable~0_combout  & (((\printRGB_inst|barrier_inst|enable~q ))))
+
+	.dataa(\SVGA|video_enable~0_combout ),
+	.datab(\printRGB_inst|barrier_inst|always0~6_combout ),
+	.datac(\printRGB_inst|barrier_inst|enable~q ),
+	.datad(\SVGA|video_enable~2_combout ),
+	.cin(gnd),
+	.combout(\printRGB_inst|barrier_inst|enable~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|enable~0 .lut_mask = 16'hD8F0;
+defparam \printRGB_inst|barrier_inst|enable~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X26_Y22_N7
+dffeas \printRGB_inst|barrier_inst|enable (
+	.clk(!\clk~inputclkctrl_outclk ),
+	.d(\printRGB_inst|barrier_inst|enable~0_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\printRGB_inst|barrier_inst|enable~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|enable .is_wysiwyg = "true";
+defparam \printRGB_inst|barrier_inst|enable .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X26_Y22_N14
+cycloneive_lcell_comb \colour[1]~15 (
+// Equation(s):
+// \colour[1]~15_combout  = (\SVGA|video_enable~0_combout  & (\SVGA|video_enable~2_combout  & \printRGB_inst|barrier_inst|enable~q ))
+
+	.dataa(\SVGA|video_enable~0_combout ),
+	.datab(gnd),
+	.datac(\SVGA|video_enable~2_combout ),
+	.datad(\printRGB_inst|barrier_inst|enable~q ),
+	.cin(gnd),
+	.combout(\colour[1]~15_combout ),
+	.cout());
+// synopsys translate_off
+defparam \colour[1]~15 .lut_mask = 16'hA000;
+defparam \colour[1]~15 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X25_Y26_N15
+dffeas enableMemory(
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\enableMemory~feeder_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\colour[1]~15_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\enableMemory~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam enableMemory.is_wysiwyg = "true";
+defparam enableMemory.power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X26_Y22_N8
+cycloneive_lcell_comb \memorySprites_inst|read_enable5~0 (
+// Equation(s):
+// \memorySprites_inst|read_enable5~0_combout  = (\clk~input_o ) # (\enableMemory~q )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(\clk~input_o ),
+	.datad(\enableMemory~q ),
+	.cin(gnd),
+	.combout(\memorySprites_inst|read_enable5~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \memorySprites_inst|read_enable5~0 .lut_mask = 16'hFFF0;
+defparam \memorySprites_inst|read_enable5~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X26_Y22_N28
+cycloneive_lcell_comb \memorySprites_inst|read_enable5 (
+// Equation(s):
+// \memorySprites_inst|read_enable5~combout  = (\memorySprites_inst|read_enable5~0_combout  & ((\enableMemory~q ))) # (!\memorySprites_inst|read_enable5~0_combout  & (\memorySprites_inst|read_enable5~combout ))
+
+	.dataa(gnd),
+	.datab(\memorySprites_inst|read_enable5~combout ),
+	.datac(\memorySprites_inst|read_enable5~0_combout ),
+	.datad(\enableMemory~q ),
+	.cin(gnd),
+	.combout(\memorySprites_inst|read_enable5~combout ),
+	.cout());
+// synopsys translate_off
+defparam \memorySprites_inst|read_enable5 .lut_mask = 16'hFC0C;
+defparam \memorySprites_inst|read_enable5 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X21_Y25_N8
+cycloneive_lcell_comb \~GND (
+// Equation(s):
+// \~GND~combout  = GND
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.cin(gnd),
+	.combout(\~GND~combout ),
+	.cout());
+// synopsys translate_off
+defparam \~GND .lut_mask = 16'h0000;
+defparam \~GND .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X23_Y22_N6
+cycloneive_lcell_comb \printRGB_inst|barrier_inst|barrier_y[0]~5 (
+// Equation(s):
+// \printRGB_inst|barrier_inst|barrier_y[0]~5_combout  = \printRGB_inst|barrier_inst|barrier_y [0] $ (VCC)
+// \printRGB_inst|barrier_inst|barrier_y[0]~6  = CARRY(\printRGB_inst|barrier_inst|barrier_y [0])
+
+	.dataa(gnd),
+	.datab(\printRGB_inst|barrier_inst|barrier_y [0]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(gnd),
+	.combout(\printRGB_inst|barrier_inst|barrier_y[0]~5_combout ),
+	.cout(\printRGB_inst|barrier_inst|barrier_y[0]~6 ));
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|barrier_y[0]~5 .lut_mask = 16'h33CC;
+defparam \printRGB_inst|barrier_inst|barrier_y[0]~5 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X23_Y22_N8
+cycloneive_lcell_comb \printRGB_inst|barrier_inst|barrier_y[1]~9 (
+// Equation(s):
+// \printRGB_inst|barrier_inst|barrier_y[1]~9_combout  = (\printRGB_inst|barrier_inst|barrier_y [1] & (!\printRGB_inst|barrier_inst|barrier_y[0]~6 )) # (!\printRGB_inst|barrier_inst|barrier_y [1] & ((\printRGB_inst|barrier_inst|barrier_y[0]~6 ) # (GND)))
+// \printRGB_inst|barrier_inst|barrier_y[1]~10  = CARRY((!\printRGB_inst|barrier_inst|barrier_y[0]~6 ) # (!\printRGB_inst|barrier_inst|barrier_y [1]))
+
+	.dataa(\printRGB_inst|barrier_inst|barrier_y [1]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\printRGB_inst|barrier_inst|barrier_y[0]~6 ),
+	.combout(\printRGB_inst|barrier_inst|barrier_y[1]~9_combout ),
+	.cout(\printRGB_inst|barrier_inst|barrier_y[1]~10 ));
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|barrier_y[1]~9 .lut_mask = 16'h5A5F;
+defparam \printRGB_inst|barrier_inst|barrier_y[1]~9 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: LCCOMB_X21_Y22_N8
+cycloneive_lcell_comb \SVGA|Equal1~1 (
+// Equation(s):
+// \SVGA|Equal1~1_combout  = (!\SVGA|pixel_x [10] & (\SVGA|pixel_x [8] & (\SVGA|pixel_x [9] & \SVGA|Equal1~0_combout )))
+
+	.dataa(\SVGA|pixel_x [10]),
+	.datab(\SVGA|pixel_x [8]),
+	.datac(\SVGA|pixel_x [9]),
+	.datad(\SVGA|Equal1~0_combout ),
+	.cin(gnd),
+	.combout(\SVGA|Equal1~1_combout ),
+	.cout());
+// synopsys translate_off
+defparam \SVGA|Equal1~1 .lut_mask = 16'h4000;
+defparam \SVGA|Equal1~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X21_Y22_N6
+cycloneive_lcell_comb \SVGA|Equal1~2 (
+// Equation(s):
+// \SVGA|Equal1~2_combout  = (!\SVGA|pixel_x [7] & (\SVGA|Equal1~1_combout  & \SVGA|pixel_x [4]))
+
+	.dataa(gnd),
+	.datab(\SVGA|pixel_x [7]),
+	.datac(\SVGA|Equal1~1_combout ),
+	.datad(\SVGA|pixel_x [4]),
+	.cin(gnd),
+	.combout(\SVGA|Equal1~2_combout ),
+	.cout());
+// synopsys translate_off
+defparam \SVGA|Equal1~2 .lut_mask = 16'h3000;
+defparam \SVGA|Equal1~2 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X21_Y22_N14
+cycloneive_lcell_comb \printRGB_inst|barrier_inst|barrier_y[4]~8 (
+// Equation(s):
+// \printRGB_inst|barrier_inst|barrier_y[4]~8_combout  = (\printRGB_inst|barrier_inst|Equal2~1_combout ) # ((\SVGA|pixel_x [3] & (!\SVGA|pixel_x [6] & \SVGA|Equal1~2_combout )))
+
+	.dataa(\SVGA|pixel_x [3]),
+	.datab(\printRGB_inst|barrier_inst|Equal2~1_combout ),
+	.datac(\SVGA|pixel_x [6]),
+	.datad(\SVGA|Equal1~2_combout ),
+	.cin(gnd),
+	.combout(\printRGB_inst|barrier_inst|barrier_y[4]~8_combout ),
+	.cout());
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|barrier_y[4]~8 .lut_mask = 16'hCECC;
+defparam \printRGB_inst|barrier_inst|barrier_y[4]~8 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X23_Y22_N9
+dffeas \printRGB_inst|barrier_inst|barrier_y[1] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\printRGB_inst|barrier_inst|barrier_y[1]~9_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\printRGB_inst|barrier_inst|barrier_y[4]~7_combout ),
+	.sload(gnd),
+	.ena(\printRGB_inst|barrier_inst|barrier_y[4]~8_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\printRGB_inst|barrier_inst|barrier_y [1]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|barrier_y[1] .is_wysiwyg = "true";
+defparam \printRGB_inst|barrier_inst|barrier_y[1] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X23_Y22_N10
+cycloneive_lcell_comb \printRGB_inst|barrier_inst|barrier_y[2]~11 (
+// Equation(s):
+// \printRGB_inst|barrier_inst|barrier_y[2]~11_combout  = (\printRGB_inst|barrier_inst|barrier_y [2] & (\printRGB_inst|barrier_inst|barrier_y[1]~10  $ (GND))) # (!\printRGB_inst|barrier_inst|barrier_y [2] & (!\printRGB_inst|barrier_inst|barrier_y[1]~10  & 
+// VCC))
+// \printRGB_inst|barrier_inst|barrier_y[2]~12  = CARRY((\printRGB_inst|barrier_inst|barrier_y [2] & !\printRGB_inst|barrier_inst|barrier_y[1]~10 ))
+
+	.dataa(gnd),
+	.datab(\printRGB_inst|barrier_inst|barrier_y [2]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\printRGB_inst|barrier_inst|barrier_y[1]~10 ),
+	.combout(\printRGB_inst|barrier_inst|barrier_y[2]~11_combout ),
+	.cout(\printRGB_inst|barrier_inst|barrier_y[2]~12 ));
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|barrier_y[2]~11 .lut_mask = 16'hC30C;
+defparam \printRGB_inst|barrier_inst|barrier_y[2]~11 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X23_Y22_N11
+dffeas \printRGB_inst|barrier_inst|barrier_y[2] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\printRGB_inst|barrier_inst|barrier_y[2]~11_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\printRGB_inst|barrier_inst|barrier_y[4]~7_combout ),
+	.sload(gnd),
+	.ena(\printRGB_inst|barrier_inst|barrier_y[4]~8_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\printRGB_inst|barrier_inst|barrier_y [2]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|barrier_y[2] .is_wysiwyg = "true";
+defparam \printRGB_inst|barrier_inst|barrier_y[2] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X23_Y22_N12
+cycloneive_lcell_comb \printRGB_inst|barrier_inst|barrier_y[3]~13 (
+// Equation(s):
+// \printRGB_inst|barrier_inst|barrier_y[3]~13_combout  = (\printRGB_inst|barrier_inst|barrier_y [3] & (!\printRGB_inst|barrier_inst|barrier_y[2]~12 )) # (!\printRGB_inst|barrier_inst|barrier_y [3] & ((\printRGB_inst|barrier_inst|barrier_y[2]~12 ) # (GND)))
+// \printRGB_inst|barrier_inst|barrier_y[3]~14  = CARRY((!\printRGB_inst|barrier_inst|barrier_y[2]~12 ) # (!\printRGB_inst|barrier_inst|barrier_y [3]))
+
+	.dataa(gnd),
+	.datab(\printRGB_inst|barrier_inst|barrier_y [3]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\printRGB_inst|barrier_inst|barrier_y[2]~12 ),
+	.combout(\printRGB_inst|barrier_inst|barrier_y[3]~13_combout ),
+	.cout(\printRGB_inst|barrier_inst|barrier_y[3]~14 ));
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|barrier_y[3]~13 .lut_mask = 16'h3C3F;
+defparam \printRGB_inst|barrier_inst|barrier_y[3]~13 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X23_Y22_N13
+dffeas \printRGB_inst|barrier_inst|barrier_y[3] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\printRGB_inst|barrier_inst|barrier_y[3]~13_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\printRGB_inst|barrier_inst|barrier_y[4]~7_combout ),
+	.sload(gnd),
+	.ena(\printRGB_inst|barrier_inst|barrier_y[4]~8_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\printRGB_inst|barrier_inst|barrier_y [3]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|barrier_y[3] .is_wysiwyg = "true";
+defparam \printRGB_inst|barrier_inst|barrier_y[3] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X23_Y22_N14
+cycloneive_lcell_comb \printRGB_inst|barrier_inst|barrier_y[4]~15 (
+// Equation(s):
+// \printRGB_inst|barrier_inst|barrier_y[4]~15_combout  = \printRGB_inst|barrier_inst|barrier_y [4] $ (!\printRGB_inst|barrier_inst|barrier_y[3]~14 )
+
+	.dataa(gnd),
+	.datab(\printRGB_inst|barrier_inst|barrier_y [4]),
+	.datac(gnd),
+	.datad(gnd),
+	.cin(\printRGB_inst|barrier_inst|barrier_y[3]~14 ),
+	.combout(\printRGB_inst|barrier_inst|barrier_y[4]~15_combout ),
+	.cout());
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|barrier_y[4]~15 .lut_mask = 16'hC3C3;
+defparam \printRGB_inst|barrier_inst|barrier_y[4]~15 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X23_Y22_N15
+dffeas \printRGB_inst|barrier_inst|barrier_y[4] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\printRGB_inst|barrier_inst|barrier_y[4]~15_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\printRGB_inst|barrier_inst|barrier_y[4]~7_combout ),
+	.sload(gnd),
+	.ena(\printRGB_inst|barrier_inst|barrier_y[4]~8_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\printRGB_inst|barrier_inst|barrier_y [4]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|barrier_y[4] .is_wysiwyg = "true";
+defparam \printRGB_inst|barrier_inst|barrier_y[4] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X23_Y22_N20
+cycloneive_lcell_comb \printRGB_inst|barrier_inst|Equal2~0 (
+// Equation(s):
+// \printRGB_inst|barrier_inst|Equal2~0_combout  = (!\printRGB_inst|barrier_inst|barrier_y [2] & (\printRGB_inst|barrier_inst|barrier_y [3] & (\printRGB_inst|barrier_inst|barrier_y [0] & !\printRGB_inst|barrier_inst|barrier_y [1])))
+
+	.dataa(\printRGB_inst|barrier_inst|barrier_y [2]),
+	.datab(\printRGB_inst|barrier_inst|barrier_y [3]),
+	.datac(\printRGB_inst|barrier_inst|barrier_y [0]),
+	.datad(\printRGB_inst|barrier_inst|barrier_y [1]),
+	.cin(gnd),
+	.combout(\printRGB_inst|barrier_inst|Equal2~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|Equal2~0 .lut_mask = 16'h0040;
+defparam \printRGB_inst|barrier_inst|Equal2~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X23_Y22_N30
+cycloneive_lcell_comb \printRGB_inst|barrier_inst|Equal2~1 (
+// Equation(s):
+// \printRGB_inst|barrier_inst|Equal2~1_combout  = (\printRGB_inst|barrier_inst|barrier_y [4] & \printRGB_inst|barrier_inst|Equal2~0_combout )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(\printRGB_inst|barrier_inst|barrier_y [4]),
+	.datad(\printRGB_inst|barrier_inst|Equal2~0_combout ),
+	.cin(gnd),
+	.combout(\printRGB_inst|barrier_inst|Equal2~1_combout ),
+	.cout());
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|Equal2~1 .lut_mask = 16'hF000;
+defparam \printRGB_inst|barrier_inst|Equal2~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X27_Y22_N0
+cycloneive_lcell_comb \SVGA|LessThan1~0 (
+// Equation(s):
+// \SVGA|LessThan1~0_combout  = (\SVGA|pixel_y [4] & \SVGA|pixel_y [3])
+
+	.dataa(\SVGA|pixel_y [4]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\SVGA|pixel_y [3]),
+	.cin(gnd),
+	.combout(\SVGA|LessThan1~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \SVGA|LessThan1~0 .lut_mask = 16'hAA00;
+defparam \SVGA|LessThan1~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X27_Y22_N2
+cycloneive_lcell_comb \SVGA|always3~0 (
+// Equation(s):
+// \SVGA|always3~0_combout  = (\SVGA|pixel_y [2] & (\SVGA|pixel_y [9] & (\SVGA|pixel_y [5] & !\SVGA|pixel_y [0])))
+
+	.dataa(\SVGA|pixel_y [2]),
+	.datab(\SVGA|pixel_y [9]),
+	.datac(\SVGA|pixel_y [5]),
+	.datad(\SVGA|pixel_y [0]),
+	.cin(gnd),
+	.combout(\SVGA|always3~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \SVGA|always3~0 .lut_mask = 16'h0080;
+defparam \SVGA|always3~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X27_Y22_N24
+cycloneive_lcell_comb \SVGA|always3~1 (
+// Equation(s):
+// \SVGA|always3~1_combout  = (!\SVGA|pixel_y [7] & (\SVGA|LessThan1~0_combout  & (!\SVGA|pixel_y [8] & \SVGA|always3~0_combout )))
+
+	.dataa(\SVGA|pixel_y [7]),
+	.datab(\SVGA|LessThan1~0_combout ),
+	.datac(\SVGA|pixel_y [8]),
+	.datad(\SVGA|always3~0_combout ),
+	.cin(gnd),
+	.combout(\SVGA|always3~1_combout ),
+	.cout());
+// synopsys translate_off
+defparam \SVGA|always3~1 .lut_mask = 16'h0400;
+defparam \SVGA|always3~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X23_Y22_N0
+cycloneive_lcell_comb \printRGB_inst|barrier_inst|barrier_y[4]~7 (
+// Equation(s):
+// \printRGB_inst|barrier_inst|barrier_y[4]~7_combout  = (\printRGB_inst|barrier_inst|Equal2~1_combout ) # ((!\SVGA|pixel_y [6] & (\SVGA|pixel_y [1] & \SVGA|always3~1_combout )))
+
+	.dataa(\SVGA|pixel_y [6]),
+	.datab(\SVGA|pixel_y [1]),
+	.datac(\printRGB_inst|barrier_inst|Equal2~1_combout ),
+	.datad(\SVGA|always3~1_combout ),
+	.cin(gnd),
+	.combout(\printRGB_inst|barrier_inst|barrier_y[4]~7_combout ),
+	.cout());
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|barrier_y[4]~7 .lut_mask = 16'hF4F0;
+defparam \printRGB_inst|barrier_inst|barrier_y[4]~7 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X23_Y22_N7
+dffeas \printRGB_inst|barrier_inst|barrier_y[0] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\printRGB_inst|barrier_inst|barrier_y[0]~5_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(\printRGB_inst|barrier_inst|barrier_y[4]~7_combout ),
+	.sload(gnd),
+	.ena(\printRGB_inst|barrier_inst|barrier_y[4]~8_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\printRGB_inst|barrier_inst|barrier_y [0]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|barrier_y[0] .is_wysiwyg = "true";
+defparam \printRGB_inst|barrier_inst|barrier_y[0] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X26_Y22_N16
+cycloneive_lcell_comb \printRGB_inst|barrier_inst|Add2~0 (
+// Equation(s):
+// \printRGB_inst|barrier_inst|Add2~0_combout  = \printRGB_inst|barrier_inst|barrier_x [0] $ (VCC)
+// \printRGB_inst|barrier_inst|Add2~1  = CARRY(\printRGB_inst|barrier_inst|barrier_x [0])
+
+	.dataa(\printRGB_inst|barrier_inst|barrier_x [0]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(gnd),
+	.combout(\printRGB_inst|barrier_inst|Add2~0_combout ),
+	.cout(\printRGB_inst|barrier_inst|Add2~1 ));
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|Add2~0 .lut_mask = 16'h55AA;
+defparam \printRGB_inst|barrier_inst|Add2~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X26_Y22_N18
+cycloneive_lcell_comb \printRGB_inst|barrier_inst|Add2~2 (
+// Equation(s):
+// \printRGB_inst|barrier_inst|Add2~2_combout  = (\printRGB_inst|barrier_inst|barrier_x [1] & (!\printRGB_inst|barrier_inst|Add2~1 )) # (!\printRGB_inst|barrier_inst|barrier_x [1] & ((\printRGB_inst|barrier_inst|Add2~1 ) # (GND)))
+// \printRGB_inst|barrier_inst|Add2~3  = CARRY((!\printRGB_inst|barrier_inst|Add2~1 ) # (!\printRGB_inst|barrier_inst|barrier_x [1]))
+
+	.dataa(\printRGB_inst|barrier_inst|barrier_x [1]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\printRGB_inst|barrier_inst|Add2~1 ),
+	.combout(\printRGB_inst|barrier_inst|Add2~2_combout ),
+	.cout(\printRGB_inst|barrier_inst|Add2~3 ));
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|Add2~2 .lut_mask = 16'h5A5F;
+defparam \printRGB_inst|barrier_inst|Add2~2 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X26_Y22_N19
+dffeas \printRGB_inst|barrier_inst|barrier_x[1] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\printRGB_inst|barrier_inst|Add2~2_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\printRGB_inst|barrier_inst|always0~6_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\printRGB_inst|barrier_inst|barrier_x [1]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|barrier_x[1] .is_wysiwyg = "true";
+defparam \printRGB_inst|barrier_inst|barrier_x[1] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X26_Y22_N20
+cycloneive_lcell_comb \printRGB_inst|barrier_inst|Add2~4 (
+// Equation(s):
+// \printRGB_inst|barrier_inst|Add2~4_combout  = (\printRGB_inst|barrier_inst|barrier_x [2] & (\printRGB_inst|barrier_inst|Add2~3  $ (GND))) # (!\printRGB_inst|barrier_inst|barrier_x [2] & (!\printRGB_inst|barrier_inst|Add2~3  & VCC))
+// \printRGB_inst|barrier_inst|Add2~5  = CARRY((\printRGB_inst|barrier_inst|barrier_x [2] & !\printRGB_inst|barrier_inst|Add2~3 ))
+
+	.dataa(gnd),
+	.datab(\printRGB_inst|barrier_inst|barrier_x [2]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\printRGB_inst|barrier_inst|Add2~3 ),
+	.combout(\printRGB_inst|barrier_inst|Add2~4_combout ),
+	.cout(\printRGB_inst|barrier_inst|Add2~5 ));
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|Add2~4 .lut_mask = 16'hC30C;
+defparam \printRGB_inst|barrier_inst|Add2~4 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X26_Y22_N21
+dffeas \printRGB_inst|barrier_inst|barrier_x[2] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\printRGB_inst|barrier_inst|Add2~4_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\printRGB_inst|barrier_inst|always0~6_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\printRGB_inst|barrier_inst|barrier_x [2]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|barrier_x[2] .is_wysiwyg = "true";
+defparam \printRGB_inst|barrier_inst|barrier_x[2] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X26_Y22_N22
+cycloneive_lcell_comb \printRGB_inst|barrier_inst|Add2~6 (
+// Equation(s):
+// \printRGB_inst|barrier_inst|Add2~6_combout  = (\printRGB_inst|barrier_inst|barrier_x [3] & (!\printRGB_inst|barrier_inst|Add2~5 )) # (!\printRGB_inst|barrier_inst|barrier_x [3] & ((\printRGB_inst|barrier_inst|Add2~5 ) # (GND)))
+// \printRGB_inst|barrier_inst|Add2~7  = CARRY((!\printRGB_inst|barrier_inst|Add2~5 ) # (!\printRGB_inst|barrier_inst|barrier_x [3]))
+
+	.dataa(gnd),
+	.datab(\printRGB_inst|barrier_inst|barrier_x [3]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\printRGB_inst|barrier_inst|Add2~5 ),
+	.combout(\printRGB_inst|barrier_inst|Add2~6_combout ),
+	.cout(\printRGB_inst|barrier_inst|Add2~7 ));
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|Add2~6 .lut_mask = 16'h3C3F;
+defparam \printRGB_inst|barrier_inst|Add2~6 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: LCCOMB_X26_Y22_N0
+cycloneive_lcell_comb \printRGB_inst|barrier_inst|barrier_x~1 (
+// Equation(s):
+// \printRGB_inst|barrier_inst|barrier_x~1_combout  = (\printRGB_inst|barrier_inst|Add2~6_combout  & ((!\printRGB_inst|barrier_inst|Equal3~0_combout ) # (!\printRGB_inst|barrier_inst|barrier_x [4])))
+
+	.dataa(\printRGB_inst|barrier_inst|Add2~6_combout ),
+	.datab(gnd),
+	.datac(\printRGB_inst|barrier_inst|barrier_x [4]),
+	.datad(\printRGB_inst|barrier_inst|Equal3~0_combout ),
+	.cin(gnd),
+	.combout(\printRGB_inst|barrier_inst|barrier_x~1_combout ),
+	.cout());
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|barrier_x~1 .lut_mask = 16'h0AAA;
+defparam \printRGB_inst|barrier_inst|barrier_x~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X26_Y22_N1
+dffeas \printRGB_inst|barrier_inst|barrier_x[3] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\printRGB_inst|barrier_inst|barrier_x~1_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\printRGB_inst|barrier_inst|always0~6_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\printRGB_inst|barrier_inst|barrier_x [3]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|barrier_x[3] .is_wysiwyg = "true";
+defparam \printRGB_inst|barrier_inst|barrier_x[3] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X26_Y22_N30
+cycloneive_lcell_comb \printRGB_inst|barrier_inst|Equal3~0 (
+// Equation(s):
+// \printRGB_inst|barrier_inst|Equal3~0_combout  = (!\printRGB_inst|barrier_inst|barrier_x [0] & (!\printRGB_inst|barrier_inst|barrier_x [2] & (!\printRGB_inst|barrier_inst|barrier_x [1] & \printRGB_inst|barrier_inst|barrier_x [3])))
+
+	.dataa(\printRGB_inst|barrier_inst|barrier_x [0]),
+	.datab(\printRGB_inst|barrier_inst|barrier_x [2]),
+	.datac(\printRGB_inst|barrier_inst|barrier_x [1]),
+	.datad(\printRGB_inst|barrier_inst|barrier_x [3]),
+	.cin(gnd),
+	.combout(\printRGB_inst|barrier_inst|Equal3~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|Equal3~0 .lut_mask = 16'h0100;
+defparam \printRGB_inst|barrier_inst|Equal3~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X26_Y22_N24
+cycloneive_lcell_comb \printRGB_inst|barrier_inst|Add2~8 (
+// Equation(s):
+// \printRGB_inst|barrier_inst|Add2~8_combout  = \printRGB_inst|barrier_inst|barrier_x [4] $ (!\printRGB_inst|barrier_inst|Add2~7 )
+
+	.dataa(\printRGB_inst|barrier_inst|barrier_x [4]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.cin(\printRGB_inst|barrier_inst|Add2~7 ),
+	.combout(\printRGB_inst|barrier_inst|Add2~8_combout ),
+	.cout());
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|Add2~8 .lut_mask = 16'hA5A5;
+defparam \printRGB_inst|barrier_inst|Add2~8 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: LCCOMB_X26_Y22_N26
+cycloneive_lcell_comb \printRGB_inst|barrier_inst|barrier_x~2 (
+// Equation(s):
+// \printRGB_inst|barrier_inst|barrier_x~2_combout  = (\printRGB_inst|barrier_inst|Add2~8_combout  & ((!\printRGB_inst|barrier_inst|barrier_x [4]) # (!\printRGB_inst|barrier_inst|Equal3~0_combout )))
+
+	.dataa(\printRGB_inst|barrier_inst|Equal3~0_combout ),
+	.datab(gnd),
+	.datac(\printRGB_inst|barrier_inst|barrier_x [4]),
+	.datad(\printRGB_inst|barrier_inst|Add2~8_combout ),
+	.cin(gnd),
+	.combout(\printRGB_inst|barrier_inst|barrier_x~2_combout ),
+	.cout());
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|barrier_x~2 .lut_mask = 16'h5F00;
+defparam \printRGB_inst|barrier_inst|barrier_x~2 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X26_Y22_N27
+dffeas \printRGB_inst|barrier_inst|barrier_x[4] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\printRGB_inst|barrier_inst|barrier_x~2_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\printRGB_inst|barrier_inst|always0~6_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\printRGB_inst|barrier_inst|barrier_x [4]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|barrier_x[4] .is_wysiwyg = "true";
+defparam \printRGB_inst|barrier_inst|barrier_x[4] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X26_Y22_N10
+cycloneive_lcell_comb \printRGB_inst|barrier_inst|barrier_x~0 (
+// Equation(s):
+// \printRGB_inst|barrier_inst|barrier_x~0_combout  = (\printRGB_inst|barrier_inst|Add2~0_combout  & ((!\printRGB_inst|barrier_inst|Equal3~0_combout ) # (!\printRGB_inst|barrier_inst|barrier_x [4])))
+
+	.dataa(\printRGB_inst|barrier_inst|barrier_x [4]),
+	.datab(gnd),
+	.datac(\printRGB_inst|barrier_inst|Equal3~0_combout ),
+	.datad(\printRGB_inst|barrier_inst|Add2~0_combout ),
+	.cin(gnd),
+	.combout(\printRGB_inst|barrier_inst|barrier_x~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|barrier_x~0 .lut_mask = 16'h5F00;
+defparam \printRGB_inst|barrier_inst|barrier_x~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X26_Y22_N11
+dffeas \printRGB_inst|barrier_inst|barrier_x[0] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\printRGB_inst|barrier_inst|barrier_x~0_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\printRGB_inst|barrier_inst|always0~6_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\printRGB_inst|barrier_inst|barrier_x [0]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|barrier_x[0] .is_wysiwyg = "true";
+defparam \printRGB_inst|barrier_inst|barrier_x[0] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X24_Y22_N12
+cycloneive_lcell_comb \printRGB_inst|barrier_inst|addressBarrier[0]~10 (
+// Equation(s):
+// \printRGB_inst|barrier_inst|addressBarrier[0]~10_combout  = (\printRGB_inst|barrier_inst|barrier_y [0] & (\printRGB_inst|barrier_inst|barrier_x [0] $ (VCC))) # (!\printRGB_inst|barrier_inst|barrier_y [0] & (\printRGB_inst|barrier_inst|barrier_x [0] & 
+// VCC))
+// \printRGB_inst|barrier_inst|addressBarrier[0]~11  = CARRY((\printRGB_inst|barrier_inst|barrier_y [0] & \printRGB_inst|barrier_inst|barrier_x [0]))
+
+	.dataa(\printRGB_inst|barrier_inst|barrier_y [0]),
+	.datab(\printRGB_inst|barrier_inst|barrier_x [0]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(gnd),
+	.combout(\printRGB_inst|barrier_inst|addressBarrier[0]~10_combout ),
+	.cout(\printRGB_inst|barrier_inst|addressBarrier[0]~11 ));
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|addressBarrier[0]~10 .lut_mask = 16'h6688;
+defparam \printRGB_inst|barrier_inst|addressBarrier[0]~10 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X25_Y22_N4
+cycloneive_lcell_comb \printRGB_inst|barrier_inst|addressBarrier[0]~12 (
+// Equation(s):
+// \printRGB_inst|barrier_inst|addressBarrier[0]~12_combout  = (\SVGA|video_enable~0_combout  & (\printRGB_inst|barrier_inst|always0~6_combout  & \SVGA|video_enable~2_combout ))
+
+	.dataa(gnd),
+	.datab(\SVGA|video_enable~0_combout ),
+	.datac(\printRGB_inst|barrier_inst|always0~6_combout ),
+	.datad(\SVGA|video_enable~2_combout ),
+	.cin(gnd),
+	.combout(\printRGB_inst|barrier_inst|addressBarrier[0]~12_combout ),
+	.cout());
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|addressBarrier[0]~12 .lut_mask = 16'hC000;
+defparam \printRGB_inst|barrier_inst|addressBarrier[0]~12 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X25_Y22_N9
+dffeas \printRGB_inst|barrier_inst|addressBarrier[0] (
+	.clk(!\clk~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\printRGB_inst|barrier_inst|addressBarrier[0]~10_combout ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\printRGB_inst|barrier_inst|addressBarrier[0]~12_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\printRGB_inst|barrier_inst|addressBarrier [0]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|addressBarrier[0] .is_wysiwyg = "true";
+defparam \printRGB_inst|barrier_inst|addressBarrier[0] .power_up = "low";
+// synopsys translate_on
+
+// Location: FF_X23_Y25_N9
+dffeas \addressMemory[0] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\printRGB_inst|barrier_inst|addressBarrier [0]),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\colour[1]~15_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(addressMemory[0]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \addressMemory[0] .is_wysiwyg = "true";
+defparam \addressMemory[0] .power_up = "low";
+// synopsys translate_on
+
+// Location: CLKCTRL_G10
+cycloneive_clkctrl \enableMemory~clkctrl (
+	.ena(vcc),
+	.inclk({vcc,vcc,vcc,\enableMemory~q }),
+	.clkselect(2'b00),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.outclk(\enableMemory~clkctrl_outclk ));
+// synopsys translate_off
+defparam \enableMemory~clkctrl .clock_type = "global clock";
+defparam \enableMemory~clkctrl .ena_register_mode = "none";
+// synopsys translate_on
+
+// Location: LCCOMB_X23_Y25_N8
+cycloneive_lcell_comb \memorySprites_inst|address5[0] (
+// Equation(s):
+// \memorySprites_inst|address5 [0] = (GLOBAL(\enableMemory~clkctrl_outclk ) & ((addressMemory[0]))) # (!GLOBAL(\enableMemory~clkctrl_outclk ) & (\memorySprites_inst|address5 [0]))
+
+	.dataa(gnd),
+	.datab(\memorySprites_inst|address5 [0]),
+	.datac(addressMemory[0]),
+	.datad(\enableMemory~clkctrl_outclk ),
+	.cin(gnd),
+	.combout(\memorySprites_inst|address5 [0]),
+	.cout());
+// synopsys translate_off
+defparam \memorySprites_inst|address5[0] .lut_mask = 16'hF0CC;
+defparam \memorySprites_inst|address5[0] .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X24_Y22_N14
+cycloneive_lcell_comb \printRGB_inst|barrier_inst|addressBarrier[1]~13 (
+// Equation(s):
+// \printRGB_inst|barrier_inst|addressBarrier[1]~13_combout  = (\printRGB_inst|barrier_inst|barrier_y [1] & ((\printRGB_inst|barrier_inst|barrier_x [1] & (\printRGB_inst|barrier_inst|addressBarrier[0]~11  & VCC)) # (!\printRGB_inst|barrier_inst|barrier_x [1] 
+// & (!\printRGB_inst|barrier_inst|addressBarrier[0]~11 )))) # (!\printRGB_inst|barrier_inst|barrier_y [1] & ((\printRGB_inst|barrier_inst|barrier_x [1] & (!\printRGB_inst|barrier_inst|addressBarrier[0]~11 )) # (!\printRGB_inst|barrier_inst|barrier_x [1] & 
+// ((\printRGB_inst|barrier_inst|addressBarrier[0]~11 ) # (GND)))))
+// \printRGB_inst|barrier_inst|addressBarrier[1]~14  = CARRY((\printRGB_inst|barrier_inst|barrier_y [1] & (!\printRGB_inst|barrier_inst|barrier_x [1] & !\printRGB_inst|barrier_inst|addressBarrier[0]~11 )) # (!\printRGB_inst|barrier_inst|barrier_y [1] & 
+// ((!\printRGB_inst|barrier_inst|addressBarrier[0]~11 ) # (!\printRGB_inst|barrier_inst|barrier_x [1]))))
+
+	.dataa(\printRGB_inst|barrier_inst|barrier_y [1]),
+	.datab(\printRGB_inst|barrier_inst|barrier_x [1]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\printRGB_inst|barrier_inst|addressBarrier[0]~11 ),
+	.combout(\printRGB_inst|barrier_inst|addressBarrier[1]~13_combout ),
+	.cout(\printRGB_inst|barrier_inst|addressBarrier[1]~14 ));
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|addressBarrier[1]~13 .lut_mask = 16'h9617;
+defparam \printRGB_inst|barrier_inst|addressBarrier[1]~13 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X24_Y22_N15
+dffeas \printRGB_inst|barrier_inst|addressBarrier[1] (
+	.clk(!\clk~inputclkctrl_outclk ),
+	.d(\printRGB_inst|barrier_inst|addressBarrier[1]~13_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\printRGB_inst|barrier_inst|addressBarrier[0]~12_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\printRGB_inst|barrier_inst|addressBarrier [1]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|addressBarrier[1] .is_wysiwyg = "true";
+defparam \printRGB_inst|barrier_inst|addressBarrier[1] .power_up = "low";
+// synopsys translate_on
+
+// Location: FF_X23_Y25_N27
+dffeas \addressMemory[1] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\printRGB_inst|barrier_inst|addressBarrier [1]),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\colour[1]~15_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(addressMemory[1]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \addressMemory[1] .is_wysiwyg = "true";
+defparam \addressMemory[1] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X23_Y25_N26
+cycloneive_lcell_comb \memorySprites_inst|address5[1] (
+// Equation(s):
+// \memorySprites_inst|address5 [1] = (GLOBAL(\enableMemory~clkctrl_outclk ) & ((addressMemory[1]))) # (!GLOBAL(\enableMemory~clkctrl_outclk ) & (\memorySprites_inst|address5 [1]))
+
+	.dataa(\memorySprites_inst|address5 [1]),
+	.datab(gnd),
+	.datac(addressMemory[1]),
+	.datad(\enableMemory~clkctrl_outclk ),
+	.cin(gnd),
+	.combout(\memorySprites_inst|address5 [1]),
+	.cout());
+// synopsys translate_off
+defparam \memorySprites_inst|address5[1] .lut_mask = 16'hF0AA;
+defparam \memorySprites_inst|address5[1] .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X24_Y22_N16
+cycloneive_lcell_comb \printRGB_inst|barrier_inst|addressBarrier[2]~15 (
+// Equation(s):
+// \printRGB_inst|barrier_inst|addressBarrier[2]~15_combout  = ((\printRGB_inst|barrier_inst|barrier_y [2] $ (\printRGB_inst|barrier_inst|barrier_x [2] $ (!\printRGB_inst|barrier_inst|addressBarrier[1]~14 )))) # (GND)
+// \printRGB_inst|barrier_inst|addressBarrier[2]~16  = CARRY((\printRGB_inst|barrier_inst|barrier_y [2] & ((\printRGB_inst|barrier_inst|barrier_x [2]) # (!\printRGB_inst|barrier_inst|addressBarrier[1]~14 ))) # (!\printRGB_inst|barrier_inst|barrier_y [2] & 
+// (\printRGB_inst|barrier_inst|barrier_x [2] & !\printRGB_inst|barrier_inst|addressBarrier[1]~14 )))
+
+	.dataa(\printRGB_inst|barrier_inst|barrier_y [2]),
+	.datab(\printRGB_inst|barrier_inst|barrier_x [2]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\printRGB_inst|barrier_inst|addressBarrier[1]~14 ),
+	.combout(\printRGB_inst|barrier_inst|addressBarrier[2]~15_combout ),
+	.cout(\printRGB_inst|barrier_inst|addressBarrier[2]~16 ));
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|addressBarrier[2]~15 .lut_mask = 16'h698E;
+defparam \printRGB_inst|barrier_inst|addressBarrier[2]~15 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X24_Y22_N17
+dffeas \printRGB_inst|barrier_inst|addressBarrier[2] (
+	.clk(!\clk~inputclkctrl_outclk ),
+	.d(\printRGB_inst|barrier_inst|addressBarrier[2]~15_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\printRGB_inst|barrier_inst|addressBarrier[0]~12_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\printRGB_inst|barrier_inst|addressBarrier [2]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|addressBarrier[2] .is_wysiwyg = "true";
+defparam \printRGB_inst|barrier_inst|addressBarrier[2] .power_up = "low";
+// synopsys translate_on
+
+// Location: FF_X23_Y25_N1
+dffeas \addressMemory[2] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\printRGB_inst|barrier_inst|addressBarrier [2]),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\colour[1]~15_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(addressMemory[2]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \addressMemory[2] .is_wysiwyg = "true";
+defparam \addressMemory[2] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X23_Y25_N0
+cycloneive_lcell_comb \memorySprites_inst|address5[2] (
+// Equation(s):
+// \memorySprites_inst|address5 [2] = (GLOBAL(\enableMemory~clkctrl_outclk ) & ((addressMemory[2]))) # (!GLOBAL(\enableMemory~clkctrl_outclk ) & (\memorySprites_inst|address5 [2]))
+
+	.dataa(gnd),
+	.datab(\memorySprites_inst|address5 [2]),
+	.datac(addressMemory[2]),
+	.datad(\enableMemory~clkctrl_outclk ),
+	.cin(gnd),
+	.combout(\memorySprites_inst|address5 [2]),
+	.cout());
+// synopsys translate_off
+defparam \memorySprites_inst|address5[2] .lut_mask = 16'hF0CC;
+defparam \memorySprites_inst|address5[2] .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X23_Y22_N26
+cycloneive_lcell_comb \printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][3]~0 (
+// Equation(s):
+// \printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][3]~0_combout  = \printRGB_inst|barrier_inst|barrier_y [3] $ (\printRGB_inst|barrier_inst|barrier_y [0])
+
+	.dataa(gnd),
+	.datab(\printRGB_inst|barrier_inst|barrier_y [3]),
+	.datac(\printRGB_inst|barrier_inst|barrier_y [0]),
+	.datad(gnd),
+	.cin(gnd),
+	.combout(\printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][3]~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][3]~0 .lut_mask = 16'h3C3C;
+defparam \printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][3]~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X24_Y22_N18
+cycloneive_lcell_comb \printRGB_inst|barrier_inst|addressBarrier[3]~17 (
+// Equation(s):
+// \printRGB_inst|barrier_inst|addressBarrier[3]~17_combout  = (\printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][3]~0_combout  & ((\printRGB_inst|barrier_inst|barrier_x [3] & (\printRGB_inst|barrier_inst|addressBarrier[2]~16  & VCC)) # 
+// (!\printRGB_inst|barrier_inst|barrier_x [3] & (!\printRGB_inst|barrier_inst|addressBarrier[2]~16 )))) # (!\printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][3]~0_combout  & ((\printRGB_inst|barrier_inst|barrier_x [3] & 
+// (!\printRGB_inst|barrier_inst|addressBarrier[2]~16 )) # (!\printRGB_inst|barrier_inst|barrier_x [3] & ((\printRGB_inst|barrier_inst|addressBarrier[2]~16 ) # (GND)))))
+// \printRGB_inst|barrier_inst|addressBarrier[3]~18  = CARRY((\printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][3]~0_combout  & (!\printRGB_inst|barrier_inst|barrier_x [3] & !\printRGB_inst|barrier_inst|addressBarrier[2]~16 )) # 
+// (!\printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][3]~0_combout  & ((!\printRGB_inst|barrier_inst|addressBarrier[2]~16 ) # (!\printRGB_inst|barrier_inst|barrier_x [3]))))
+
+	.dataa(\printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][3]~0_combout ),
+	.datab(\printRGB_inst|barrier_inst|barrier_x [3]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\printRGB_inst|barrier_inst|addressBarrier[2]~16 ),
+	.combout(\printRGB_inst|barrier_inst|addressBarrier[3]~17_combout ),
+	.cout(\printRGB_inst|barrier_inst|addressBarrier[3]~18 ));
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|addressBarrier[3]~17 .lut_mask = 16'h9617;
+defparam \printRGB_inst|barrier_inst|addressBarrier[3]~17 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X24_Y22_N19
+dffeas \printRGB_inst|barrier_inst|addressBarrier[3] (
+	.clk(!\clk~inputclkctrl_outclk ),
+	.d(\printRGB_inst|barrier_inst|addressBarrier[3]~17_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\printRGB_inst|barrier_inst|addressBarrier[0]~12_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\printRGB_inst|barrier_inst|addressBarrier [3]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|addressBarrier[3] .is_wysiwyg = "true";
+defparam \printRGB_inst|barrier_inst|addressBarrier[3] .power_up = "low";
+// synopsys translate_on
+
+// Location: FF_X23_Y25_N3
+dffeas \addressMemory[3] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\printRGB_inst|barrier_inst|addressBarrier [3]),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\colour[1]~15_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(addressMemory[3]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \addressMemory[3] .is_wysiwyg = "true";
+defparam \addressMemory[3] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X23_Y25_N2
+cycloneive_lcell_comb \memorySprites_inst|address5[3] (
+// Equation(s):
+// \memorySprites_inst|address5 [3] = (GLOBAL(\enableMemory~clkctrl_outclk ) & ((addressMemory[3]))) # (!GLOBAL(\enableMemory~clkctrl_outclk ) & (\memorySprites_inst|address5 [3]))
+
+	.dataa(gnd),
+	.datab(\memorySprites_inst|address5 [3]),
+	.datac(addressMemory[3]),
+	.datad(\enableMemory~clkctrl_outclk ),
+	.cin(gnd),
+	.combout(\memorySprites_inst|address5 [3]),
+	.cout());
+// synopsys translate_off
+defparam \memorySprites_inst|address5[3] .lut_mask = 16'hF0CC;
+defparam \memorySprites_inst|address5[3] .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X23_Y22_N4
+cycloneive_lcell_comb \printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][4]~1 (
+// Equation(s):
+// \printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][4]~1_combout  = \printRGB_inst|barrier_inst|barrier_y [1] $ (((!\printRGB_inst|barrier_inst|barrier_y [3] & \printRGB_inst|barrier_inst|barrier_y [0])))
+
+	.dataa(\printRGB_inst|barrier_inst|barrier_y [3]),
+	.datab(gnd),
+	.datac(\printRGB_inst|barrier_inst|barrier_y [1]),
+	.datad(\printRGB_inst|barrier_inst|barrier_y [0]),
+	.cin(gnd),
+	.combout(\printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][4]~1_combout ),
+	.cout());
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][4]~1 .lut_mask = 16'hA5F0;
+defparam \printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][4]~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X24_Y22_N0
+cycloneive_lcell_comb \printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~0 (
+// Equation(s):
+// \printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~0_combout  = (\printRGB_inst|barrier_inst|barrier_y [4] & (\printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][4]~1_combout  $ (VCC))) # 
+// (!\printRGB_inst|barrier_inst|barrier_y [4] & (\printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][4]~1_combout  & VCC))
+// \printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~1  = CARRY((\printRGB_inst|barrier_inst|barrier_y [4] & \printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][4]~1_combout ))
+
+	.dataa(\printRGB_inst|barrier_inst|barrier_y [4]),
+	.datab(\printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][4]~1_combout ),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(gnd),
+	.combout(\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~0_combout ),
+	.cout(\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~1 ));
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~0 .lut_mask = 16'h6688;
+defparam \printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X24_Y22_N20
+cycloneive_lcell_comb \printRGB_inst|barrier_inst|addressBarrier[4]~19 (
+// Equation(s):
+// \printRGB_inst|barrier_inst|addressBarrier[4]~19_combout  = ((\printRGB_inst|barrier_inst|barrier_x [4] $ (\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~0_combout  $ (!\printRGB_inst|barrier_inst|addressBarrier[3]~18 )))) 
+// # (GND)
+// \printRGB_inst|barrier_inst|addressBarrier[4]~20  = CARRY((\printRGB_inst|barrier_inst|barrier_x [4] & ((\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~0_combout ) # (!\printRGB_inst|barrier_inst|addressBarrier[3]~18 ))) # 
+// (!\printRGB_inst|barrier_inst|barrier_x [4] & (\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~0_combout  & !\printRGB_inst|barrier_inst|addressBarrier[3]~18 )))
+
+	.dataa(\printRGB_inst|barrier_inst|barrier_x [4]),
+	.datab(\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~0_combout ),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\printRGB_inst|barrier_inst|addressBarrier[3]~18 ),
+	.combout(\printRGB_inst|barrier_inst|addressBarrier[4]~19_combout ),
+	.cout(\printRGB_inst|barrier_inst|addressBarrier[4]~20 ));
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|addressBarrier[4]~19 .lut_mask = 16'h698E;
+defparam \printRGB_inst|barrier_inst|addressBarrier[4]~19 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X24_Y22_N21
+dffeas \printRGB_inst|barrier_inst|addressBarrier[4] (
+	.clk(!\clk~inputclkctrl_outclk ),
+	.d(\printRGB_inst|barrier_inst|addressBarrier[4]~19_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\printRGB_inst|barrier_inst|addressBarrier[0]~12_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\printRGB_inst|barrier_inst|addressBarrier [4]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|addressBarrier[4] .is_wysiwyg = "true";
+defparam \printRGB_inst|barrier_inst|addressBarrier[4] .power_up = "low";
+// synopsys translate_on
+
+// Location: FF_X23_Y25_N29
+dffeas \addressMemory[4] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\printRGB_inst|barrier_inst|addressBarrier [4]),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\colour[1]~15_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(addressMemory[4]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \addressMemory[4] .is_wysiwyg = "true";
+defparam \addressMemory[4] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X23_Y25_N28
+cycloneive_lcell_comb \memorySprites_inst|address5[4] (
+// Equation(s):
+// \memorySprites_inst|address5 [4] = (GLOBAL(\enableMemory~clkctrl_outclk ) & ((addressMemory[4]))) # (!GLOBAL(\enableMemory~clkctrl_outclk ) & (\memorySprites_inst|address5 [4]))
+
+	.dataa(gnd),
+	.datab(\memorySprites_inst|address5 [4]),
+	.datac(addressMemory[4]),
+	.datad(\enableMemory~clkctrl_outclk ),
+	.cin(gnd),
+	.combout(\memorySprites_inst|address5 [4]),
+	.cout());
+// synopsys translate_off
+defparam \memorySprites_inst|address5[4] .lut_mask = 16'hF0CC;
+defparam \memorySprites_inst|address5[4] .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X23_Y22_N16
+cycloneive_lcell_comb \printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][5]~2 (
+// Equation(s):
+// \printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][5]~2_combout  = \printRGB_inst|barrier_inst|barrier_y [2] $ (((\printRGB_inst|barrier_inst|barrier_y [0] & (\printRGB_inst|barrier_inst|barrier_y [3] & !\printRGB_inst|barrier_inst|barrier_y [1])) # 
+// (!\printRGB_inst|barrier_inst|barrier_y [0] & ((\printRGB_inst|barrier_inst|barrier_y [1])))))
+
+	.dataa(\printRGB_inst|barrier_inst|barrier_y [3]),
+	.datab(\printRGB_inst|barrier_inst|barrier_y [0]),
+	.datac(\printRGB_inst|barrier_inst|barrier_y [1]),
+	.datad(\printRGB_inst|barrier_inst|barrier_y [2]),
+	.cin(gnd),
+	.combout(\printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][5]~2_combout ),
+	.cout());
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][5]~2 .lut_mask = 16'hC738;
+defparam \printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][5]~2 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X24_Y22_N2
+cycloneive_lcell_comb \printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~2 (
+// Equation(s):
+// \printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~2_combout  = (\printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][5]~2_combout  & (!\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~1 )) # 
+// (!\printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][5]~2_combout  & ((\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~1 ) # (GND)))
+// \printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~3  = CARRY((!\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~1 ) # (!\printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][5]~2_combout ))
+
+	.dataa(\printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][5]~2_combout ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~1 ),
+	.combout(\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~2_combout ),
+	.cout(\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~3 ));
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~2 .lut_mask = 16'h5A5F;
+defparam \printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~2 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: LCCOMB_X24_Y22_N22
+cycloneive_lcell_comb \printRGB_inst|barrier_inst|addressBarrier[5]~21 (
+// Equation(s):
+// \printRGB_inst|barrier_inst|addressBarrier[5]~21_combout  = (\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~2_combout  & (!\printRGB_inst|barrier_inst|addressBarrier[4]~20 )) # 
+// (!\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~2_combout  & ((\printRGB_inst|barrier_inst|addressBarrier[4]~20 ) # (GND)))
+// \printRGB_inst|barrier_inst|addressBarrier[5]~22  = CARRY((!\printRGB_inst|barrier_inst|addressBarrier[4]~20 ) # (!\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~2_combout ))
+
+	.dataa(gnd),
+	.datab(\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~2_combout ),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\printRGB_inst|barrier_inst|addressBarrier[4]~20 ),
+	.combout(\printRGB_inst|barrier_inst|addressBarrier[5]~21_combout ),
+	.cout(\printRGB_inst|barrier_inst|addressBarrier[5]~22 ));
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|addressBarrier[5]~21 .lut_mask = 16'h3C3F;
+defparam \printRGB_inst|barrier_inst|addressBarrier[5]~21 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X24_Y22_N23
+dffeas \printRGB_inst|barrier_inst|addressBarrier[5] (
+	.clk(!\clk~inputclkctrl_outclk ),
+	.d(\printRGB_inst|barrier_inst|addressBarrier[5]~21_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\printRGB_inst|barrier_inst|addressBarrier[0]~12_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\printRGB_inst|barrier_inst|addressBarrier [5]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|addressBarrier[5] .is_wysiwyg = "true";
+defparam \printRGB_inst|barrier_inst|addressBarrier[5] .power_up = "low";
+// synopsys translate_on
+
+// Location: FF_X23_Y25_N11
+dffeas \addressMemory[5] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\printRGB_inst|barrier_inst|addressBarrier [5]),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\colour[1]~15_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(addressMemory[5]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \addressMemory[5] .is_wysiwyg = "true";
+defparam \addressMemory[5] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X23_Y25_N10
+cycloneive_lcell_comb \memorySprites_inst|address5[5] (
+// Equation(s):
+// \memorySprites_inst|address5 [5] = (GLOBAL(\enableMemory~clkctrl_outclk ) & ((addressMemory[5]))) # (!GLOBAL(\enableMemory~clkctrl_outclk ) & (\memorySprites_inst|address5 [5]))
+
+	.dataa(\memorySprites_inst|address5 [5]),
+	.datab(gnd),
+	.datac(addressMemory[5]),
+	.datad(\enableMemory~clkctrl_outclk ),
+	.cin(gnd),
+	.combout(\memorySprites_inst|address5 [5]),
+	.cout());
+// synopsys translate_off
+defparam \memorySprites_inst|address5[5] .lut_mask = 16'hF0AA;
+defparam \memorySprites_inst|address5[5] .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X23_Y22_N2
+cycloneive_lcell_comb \printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][6]~3 (
+// Equation(s):
+// \printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][6]~3_combout  = (\printRGB_inst|barrier_inst|barrier_y [2] & ((\printRGB_inst|barrier_inst|barrier_y [1] & ((\printRGB_inst|barrier_inst|barrier_y [3]))) # (!\printRGB_inst|barrier_inst|barrier_y [1] & 
+// ((\printRGB_inst|barrier_inst|barrier_y [0]) # (!\printRGB_inst|barrier_inst|barrier_y [3]))))) # (!\printRGB_inst|barrier_inst|barrier_y [2] & (\printRGB_inst|barrier_inst|barrier_y [3] $ (((\printRGB_inst|barrier_inst|barrier_y [1] & 
+// \printRGB_inst|barrier_inst|barrier_y [0])))))
+
+	.dataa(\printRGB_inst|barrier_inst|barrier_y [2]),
+	.datab(\printRGB_inst|barrier_inst|barrier_y [1]),
+	.datac(\printRGB_inst|barrier_inst|barrier_y [0]),
+	.datad(\printRGB_inst|barrier_inst|barrier_y [3]),
+	.cin(gnd),
+	.combout(\printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][6]~3_combout ),
+	.cout());
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][6]~3 .lut_mask = 16'hBD62;
+defparam \printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][6]~3 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X24_Y22_N4
+cycloneive_lcell_comb \printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~4 (
+// Equation(s):
+// \printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~4_combout  = (\printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][6]~3_combout  & (\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~3  $ 
+// (GND))) # (!\printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][6]~3_combout  & (!\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~3  & VCC))
+// \printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~5  = CARRY((\printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][6]~3_combout  & !\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~3 ))
+
+	.dataa(\printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][6]~3_combout ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~3 ),
+	.combout(\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~4_combout ),
+	.cout(\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~5 ));
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~4 .lut_mask = 16'hA50A;
+defparam \printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~4 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: LCCOMB_X24_Y22_N24
+cycloneive_lcell_comb \printRGB_inst|barrier_inst|addressBarrier[6]~23 (
+// Equation(s):
+// \printRGB_inst|barrier_inst|addressBarrier[6]~23_combout  = (\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~4_combout  & (\printRGB_inst|barrier_inst|addressBarrier[5]~22  $ (GND))) # 
+// (!\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~4_combout  & (!\printRGB_inst|barrier_inst|addressBarrier[5]~22  & VCC))
+// \printRGB_inst|barrier_inst|addressBarrier[6]~24  = CARRY((\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~4_combout  & !\printRGB_inst|barrier_inst|addressBarrier[5]~22 ))
+
+	.dataa(gnd),
+	.datab(\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~4_combout ),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\printRGB_inst|barrier_inst|addressBarrier[5]~22 ),
+	.combout(\printRGB_inst|barrier_inst|addressBarrier[6]~23_combout ),
+	.cout(\printRGB_inst|barrier_inst|addressBarrier[6]~24 ));
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|addressBarrier[6]~23 .lut_mask = 16'hC30C;
+defparam \printRGB_inst|barrier_inst|addressBarrier[6]~23 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X24_Y22_N25
+dffeas \printRGB_inst|barrier_inst|addressBarrier[6] (
+	.clk(!\clk~inputclkctrl_outclk ),
+	.d(\printRGB_inst|barrier_inst|addressBarrier[6]~23_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\printRGB_inst|barrier_inst|addressBarrier[0]~12_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\printRGB_inst|barrier_inst|addressBarrier [6]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|addressBarrier[6] .is_wysiwyg = "true";
+defparam \printRGB_inst|barrier_inst|addressBarrier[6] .power_up = "low";
+// synopsys translate_on
+
+// Location: FF_X23_Y25_N5
+dffeas \addressMemory[6] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\printRGB_inst|barrier_inst|addressBarrier [6]),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\colour[1]~15_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(addressMemory[6]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \addressMemory[6] .is_wysiwyg = "true";
+defparam \addressMemory[6] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X23_Y25_N4
+cycloneive_lcell_comb \memorySprites_inst|address5[6] (
+// Equation(s):
+// \memorySprites_inst|address5 [6] = (GLOBAL(\enableMemory~clkctrl_outclk ) & ((addressMemory[6]))) # (!GLOBAL(\enableMemory~clkctrl_outclk ) & (\memorySprites_inst|address5 [6]))
+
+	.dataa(gnd),
+	.datab(\memorySprites_inst|address5 [6]),
+	.datac(addressMemory[6]),
+	.datad(\enableMemory~clkctrl_outclk ),
+	.cin(gnd),
+	.combout(\memorySprites_inst|address5 [6]),
+	.cout());
+// synopsys translate_off
+defparam \memorySprites_inst|address5[6] .lut_mask = 16'hF0CC;
+defparam \memorySprites_inst|address5[6] .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X23_Y22_N28
+cycloneive_lcell_comb \printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][7]~4 (
+// Equation(s):
+// \printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][7]~4_combout  = (\printRGB_inst|barrier_inst|barrier_y [2] & (((\printRGB_inst|barrier_inst|barrier_y [1] & !\printRGB_inst|barrier_inst|barrier_y [3])))) # (!\printRGB_inst|barrier_inst|barrier_y [2] 
+// & (\printRGB_inst|barrier_inst|barrier_y [3] & ((!\printRGB_inst|barrier_inst|barrier_y [1]) # (!\printRGB_inst|barrier_inst|barrier_y [0]))))
+
+	.dataa(\printRGB_inst|barrier_inst|barrier_y [0]),
+	.datab(\printRGB_inst|barrier_inst|barrier_y [1]),
+	.datac(\printRGB_inst|barrier_inst|barrier_y [2]),
+	.datad(\printRGB_inst|barrier_inst|barrier_y [3]),
+	.cin(gnd),
+	.combout(\printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][7]~4_combout ),
+	.cout());
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][7]~4 .lut_mask = 16'h07C0;
+defparam \printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][7]~4 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X24_Y22_N6
+cycloneive_lcell_comb \printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~6 (
+// Equation(s):
+// \printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~6_combout  = (\printRGB_inst|barrier_inst|barrier_y [4] & ((\printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][7]~4_combout  & 
+// (\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~5  & VCC)) # (!\printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][7]~4_combout  & (!\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~5 )))) 
+// # (!\printRGB_inst|barrier_inst|barrier_y [4] & ((\printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][7]~4_combout  & (!\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~5 )) # 
+// (!\printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][7]~4_combout  & ((\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~5 ) # (GND)))))
+// \printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~7  = CARRY((\printRGB_inst|barrier_inst|barrier_y [4] & (!\printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][7]~4_combout  & 
+// !\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~5 )) # (!\printRGB_inst|barrier_inst|barrier_y [4] & ((!\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~5 ) # 
+// (!\printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][7]~4_combout ))))
+
+	.dataa(\printRGB_inst|barrier_inst|barrier_y [4]),
+	.datab(\printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][7]~4_combout ),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~5 ),
+	.combout(\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~6_combout ),
+	.cout(\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~7 ));
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~6 .lut_mask = 16'h9617;
+defparam \printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~6 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: LCCOMB_X24_Y22_N26
+cycloneive_lcell_comb \printRGB_inst|barrier_inst|addressBarrier[7]~25 (
+// Equation(s):
+// \printRGB_inst|barrier_inst|addressBarrier[7]~25_combout  = (\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~6_combout  & (!\printRGB_inst|barrier_inst|addressBarrier[6]~24 )) # 
+// (!\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~6_combout  & ((\printRGB_inst|barrier_inst|addressBarrier[6]~24 ) # (GND)))
+// \printRGB_inst|barrier_inst|addressBarrier[7]~26  = CARRY((!\printRGB_inst|barrier_inst|addressBarrier[6]~24 ) # (!\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~6_combout ))
+
+	.dataa(\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~6_combout ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\printRGB_inst|barrier_inst|addressBarrier[6]~24 ),
+	.combout(\printRGB_inst|barrier_inst|addressBarrier[7]~25_combout ),
+	.cout(\printRGB_inst|barrier_inst|addressBarrier[7]~26 ));
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|addressBarrier[7]~25 .lut_mask = 16'h5A5F;
+defparam \printRGB_inst|barrier_inst|addressBarrier[7]~25 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X24_Y22_N27
+dffeas \printRGB_inst|barrier_inst|addressBarrier[7] (
+	.clk(!\clk~inputclkctrl_outclk ),
+	.d(\printRGB_inst|barrier_inst|addressBarrier[7]~25_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\printRGB_inst|barrier_inst|addressBarrier[0]~12_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\printRGB_inst|barrier_inst|addressBarrier [7]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|addressBarrier[7] .is_wysiwyg = "true";
+defparam \printRGB_inst|barrier_inst|addressBarrier[7] .power_up = "low";
+// synopsys translate_on
+
+// Location: FF_X23_Y25_N23
+dffeas \addressMemory[7] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\printRGB_inst|barrier_inst|addressBarrier [7]),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\colour[1]~15_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(addressMemory[7]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \addressMemory[7] .is_wysiwyg = "true";
+defparam \addressMemory[7] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X23_Y25_N22
+cycloneive_lcell_comb \memorySprites_inst|address5[7] (
+// Equation(s):
+// \memorySprites_inst|address5 [7] = (GLOBAL(\enableMemory~clkctrl_outclk ) & ((addressMemory[7]))) # (!GLOBAL(\enableMemory~clkctrl_outclk ) & (\memorySprites_inst|address5 [7]))
+
+	.dataa(\memorySprites_inst|address5 [7]),
+	.datab(gnd),
+	.datac(addressMemory[7]),
+	.datad(\enableMemory~clkctrl_outclk ),
+	.cin(gnd),
+	.combout(\memorySprites_inst|address5 [7]),
+	.cout());
+// synopsys translate_off
+defparam \memorySprites_inst|address5[7] .lut_mask = 16'hF0AA;
+defparam \memorySprites_inst|address5[7] .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X23_Y22_N18
+cycloneive_lcell_comb \printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][8]~5 (
+// Equation(s):
+// \printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][8]~5_combout  = (\printRGB_inst|barrier_inst|barrier_y [3] & ((\printRGB_inst|barrier_inst|barrier_y [2]) # ((\printRGB_inst|barrier_inst|barrier_y [1] & \printRGB_inst|barrier_inst|barrier_y [0]))))
+
+	.dataa(\printRGB_inst|barrier_inst|barrier_y [1]),
+	.datab(\printRGB_inst|barrier_inst|barrier_y [2]),
+	.datac(\printRGB_inst|barrier_inst|barrier_y [3]),
+	.datad(\printRGB_inst|barrier_inst|barrier_y [0]),
+	.cin(gnd),
+	.combout(\printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][8]~5_combout ),
+	.cout());
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][8]~5 .lut_mask = 16'hE0C0;
+defparam \printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][8]~5 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X24_Y22_N8
+cycloneive_lcell_comb \printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~8 (
+// Equation(s):
+// \printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~8_combout  = ((\printRGB_inst|barrier_inst|barrier_y [4] $ (\printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][8]~5_combout  $ 
+// (!\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~7 )))) # (GND)
+// \printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~9  = CARRY((\printRGB_inst|barrier_inst|barrier_y [4] & ((\printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][8]~5_combout ) # 
+// (!\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~7 ))) # (!\printRGB_inst|barrier_inst|barrier_y [4] & (\printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][8]~5_combout  & 
+// !\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~7 )))
+
+	.dataa(\printRGB_inst|barrier_inst|barrier_y [4]),
+	.datab(\printRGB_inst|barrier_inst|Mult0|mult_core|romout[0][8]~5_combout ),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~7 ),
+	.combout(\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~8_combout ),
+	.cout(\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~9 ));
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~8 .lut_mask = 16'h698E;
+defparam \printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~8 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: LCCOMB_X24_Y22_N28
+cycloneive_lcell_comb \printRGB_inst|barrier_inst|addressBarrier[8]~27 (
+// Equation(s):
+// \printRGB_inst|barrier_inst|addressBarrier[8]~27_combout  = (\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~8_combout  & (\printRGB_inst|barrier_inst|addressBarrier[7]~26  $ (GND))) # 
+// (!\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~8_combout  & (!\printRGB_inst|barrier_inst|addressBarrier[7]~26  & VCC))
+// \printRGB_inst|barrier_inst|addressBarrier[8]~28  = CARRY((\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~8_combout  & !\printRGB_inst|barrier_inst|addressBarrier[7]~26 ))
+
+	.dataa(gnd),
+	.datab(\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~8_combout ),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\printRGB_inst|barrier_inst|addressBarrier[7]~26 ),
+	.combout(\printRGB_inst|barrier_inst|addressBarrier[8]~27_combout ),
+	.cout(\printRGB_inst|barrier_inst|addressBarrier[8]~28 ));
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|addressBarrier[8]~27 .lut_mask = 16'hC30C;
+defparam \printRGB_inst|barrier_inst|addressBarrier[8]~27 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X24_Y22_N29
+dffeas \printRGB_inst|barrier_inst|addressBarrier[8] (
+	.clk(!\clk~inputclkctrl_outclk ),
+	.d(\printRGB_inst|barrier_inst|addressBarrier[8]~27_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\printRGB_inst|barrier_inst|addressBarrier[0]~12_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\printRGB_inst|barrier_inst|addressBarrier [8]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|addressBarrier[8] .is_wysiwyg = "true";
+defparam \printRGB_inst|barrier_inst|addressBarrier[8] .power_up = "low";
+// synopsys translate_on
+
+// Location: FF_X23_Y25_N25
+dffeas \addressMemory[8] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\printRGB_inst|barrier_inst|addressBarrier [8]),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\colour[1]~15_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(addressMemory[8]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \addressMemory[8] .is_wysiwyg = "true";
+defparam \addressMemory[8] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X23_Y25_N24
+cycloneive_lcell_comb \memorySprites_inst|address5[8] (
+// Equation(s):
+// \memorySprites_inst|address5 [8] = (GLOBAL(\enableMemory~clkctrl_outclk ) & ((addressMemory[8]))) # (!GLOBAL(\enableMemory~clkctrl_outclk ) & (\memorySprites_inst|address5 [8]))
+
+	.dataa(gnd),
+	.datab(\memorySprites_inst|address5 [8]),
+	.datac(addressMemory[8]),
+	.datad(\enableMemory~clkctrl_outclk ),
+	.cin(gnd),
+	.combout(\memorySprites_inst|address5 [8]),
+	.cout());
+// synopsys translate_off
+defparam \memorySprites_inst|address5[8] .lut_mask = 16'hF0CC;
+defparam \memorySprites_inst|address5[8] .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X24_Y22_N10
+cycloneive_lcell_comb \printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~10 (
+// Equation(s):
+// \printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~10_combout  = \printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~9 
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.cin(\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~9 ),
+	.combout(\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~10_combout ),
+	.cout());
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~10 .lut_mask = 16'hF0F0;
+defparam \printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~10 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: LCCOMB_X24_Y22_N30
+cycloneive_lcell_comb \printRGB_inst|barrier_inst|addressBarrier[9]~29 (
+// Equation(s):
+// \printRGB_inst|barrier_inst|addressBarrier[9]~29_combout  = \printRGB_inst|barrier_inst|addressBarrier[8]~28  $ (\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~10_combout )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\printRGB_inst|barrier_inst|Mult0|mult_core|padder|adder[0]|auto_generated|op_1~10_combout ),
+	.cin(\printRGB_inst|barrier_inst|addressBarrier[8]~28 ),
+	.combout(\printRGB_inst|barrier_inst|addressBarrier[9]~29_combout ),
+	.cout());
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|addressBarrier[9]~29 .lut_mask = 16'h0FF0;
+defparam \printRGB_inst|barrier_inst|addressBarrier[9]~29 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X24_Y22_N31
+dffeas \printRGB_inst|barrier_inst|addressBarrier[9] (
+	.clk(!\clk~inputclkctrl_outclk ),
+	.d(\printRGB_inst|barrier_inst|addressBarrier[9]~29_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\printRGB_inst|barrier_inst|addressBarrier[0]~12_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\printRGB_inst|barrier_inst|addressBarrier [9]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \printRGB_inst|barrier_inst|addressBarrier[9] .is_wysiwyg = "true";
+defparam \printRGB_inst|barrier_inst|addressBarrier[9] .power_up = "low";
+// synopsys translate_on
+
+// Location: FF_X23_Y25_N7
+dffeas \addressMemory[9] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\printRGB_inst|barrier_inst|addressBarrier [9]),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\colour[1]~15_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(addressMemory[9]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \addressMemory[9] .is_wysiwyg = "true";
+defparam \addressMemory[9] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X23_Y25_N6
+cycloneive_lcell_comb \memorySprites_inst|address5[9] (
+// Equation(s):
+// \memorySprites_inst|address5 [9] = (GLOBAL(\enableMemory~clkctrl_outclk ) & ((addressMemory[9]))) # (!GLOBAL(\enableMemory~clkctrl_outclk ) & (\memorySprites_inst|address5 [9]))
+
+	.dataa(\memorySprites_inst|address5 [9]),
+	.datab(gnd),
+	.datac(addressMemory[9]),
+	.datad(\enableMemory~clkctrl_outclk ),
+	.cin(gnd),
+	.combout(\memorySprites_inst|address5 [9]),
+	.cout());
+// synopsys translate_off
+defparam \memorySprites_inst|address5[9] .lut_mask = 16'hF0AA;
+defparam \memorySprites_inst|address5[9] .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: M9K_X22_Y25_N0
+cycloneive_ram_block \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0 (
+	.portawe(!\memorySprites_inst|read_enable5~combout ),
+	.portare(vcc),
+	.portaaddrstall(gnd),
+	.portbwe(gnd),
+	.portbre(vcc),
+	.portbaddrstall(gnd),
+	.clk0(\clk~inputclkctrl_outclk ),
+	.clk1(\clk~inputclkctrl_outclk ),
+	.ena0(!\memorySprites_inst|read_enable5~combout ),
+	.ena1(\memorySprites_inst|read_enable5~combout ),
+	.ena2(vcc),
+	.ena3(vcc),
+	.clr0(gnd),
+	.clr1(gnd),
+	.portadatain({gnd,gnd,gnd,\~GND~combout ,\~GND~combout ,\~GND~combout ,\~GND~combout ,\~GND~combout ,\~GND~combout }),
+	.portaaddr({\memorySprites_inst|address5 [9],\memorySprites_inst|address5 [8],\memorySprites_inst|address5 [7],\memorySprites_inst|address5 [6],\memorySprites_inst|address5 [5],\memorySprites_inst|address5 [4],\memorySprites_inst|address5 [3],\memorySprites_inst|address5 [2],
+\memorySprites_inst|address5 [1],\memorySprites_inst|address5 [0]}),
+	.portabyteenamasks(1'b1),
+	.portbdatain(9'b000000000),
+	.portbaddr({\memorySprites_inst|address5 [9],\memorySprites_inst|address5 [8],\memorySprites_inst|address5 [7],\memorySprites_inst|address5 [6],\memorySprites_inst|address5 [5],\memorySprites_inst|address5 [4],\memorySprites_inst|address5 [3],\memorySprites_inst|address5 [2],
+\memorySprites_inst|address5 [1],\memorySprites_inst|address5 [0]}),
+	.portbbyteenamasks(1'b1),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.portadataout(),
+	.portbdataout(\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0_PORTBDATAOUT_bus ));
+// synopsys translate_off
+defparam \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0 .clk0_core_clock_enable = "ena0";
+defparam \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0 .clk1_core_clock_enable = "ena1";
+defparam \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0 .clk1_input_clock_enable = "ena1";
+defparam \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0 .data_interleave_offset_in_bits = 1;
+defparam \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0 .data_interleave_width_in_bits = 1;
+defparam \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0 .init_file = "db/consoleFPGA.ram0_sram_c7907b4e.hdl.mif";
+defparam \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0 .init_file_layout = "port_a";
+defparam \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0 .logical_ram_name = "memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_0ki1:auto_generated|ALTSYNCRAM";
+defparam \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0 .mixed_port_feed_through_mode = "dont_care";
+defparam \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0 .operation_mode = "dual_port";
+defparam \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0 .port_a_address_clear = "none";
+defparam \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0 .port_a_address_width = 10;
+defparam \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0 .port_a_byte_enable_clock = "none";
+defparam \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0 .port_a_data_out_clear = "none";
+defparam \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0 .port_a_data_out_clock = "none";
+defparam \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0 .port_a_data_width = 9;
+defparam \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0 .port_a_first_address = 0;
+defparam \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0 .port_a_first_bit_number = 0;
+defparam \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0 .port_a_last_address = 1023;
+defparam \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0 .port_a_logical_ram_depth = 625;
+defparam \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0 .port_a_logical_ram_width = 8;
+defparam \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0 .port_a_read_during_write_mode = "new_data_with_nbe_read";
+defparam \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0 .port_b_address_clear = "none";
+defparam \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0 .port_b_address_clock = "clock1";
+defparam \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0 .port_b_address_width = 10;
+defparam \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0 .port_b_data_out_clear = "none";
+defparam \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0 .port_b_data_out_clock = "none";
+defparam \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0 .port_b_data_width = 9;
+defparam \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0 .port_b_first_address = 0;
+defparam \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0 .port_b_first_bit_number = 0;
+defparam \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0 .port_b_last_address = 1023;
+defparam \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0 .port_b_logical_ram_depth = 625;
+defparam \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0 .port_b_logical_ram_width = 8;
+defparam \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0 .port_b_read_during_write_mode = "new_data_with_nbe_read";
+defparam \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0 .port_b_read_enable_clock = "clock1";
+defparam \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0 .ram_block_type = "M9K";
+defparam \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0 .mem_init4 = 1024'h0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000;
+defparam \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0 .mem_init3 = 2048'h00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000;
+defparam \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0 .mem_init2 = 2048'h000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000A110A05022110A05028140A05028140A05028140A0440A00000000A0F0E8783C1E0F0783C1E0F0783C1E0F0783C1E0F0783A0F0280000110E85022140A05022110884422140A05022110A050220D0E84400000A0742814088341A0D0582C1A0D068341A0D068341A0B040682800000503C1408834160D0582C160B0683C160B058341E0D04020341400000281E08834160D06834160D0583C220D0582C1A1106;
+defparam \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0 .mem_init1 = 2048'h820161A0A00000110F0501A0F08834160B0682C1A0D05820100D0682C0E080D050060008878280D0683C1A0B058341A0B0582C160B0682C1608040682800000503C110682C1A0B0582C160B0582C160B058341A0D05820341400000281E08834160D0582C1608058341A0D0582C1A0D0682C101A0A00000140F044160B0682C160B06834160D0883C160B0583C1E080D05000000A078280B0582C160B06834160B0683C1A0B0582C1E0F040682800000503C140682C160D06834160B06834160B0682C160D05820341400000281E08834160D0883C160B058341A0B068341A0B0682C101A0A00000140F0441A0B0683C1A0B0682C160B0402C160B0582C10070;
+defparam \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0 .mem_init0 = 2048'hD05000000A078280D0582C160B05834160B05820160B0582C1607028682800000503A1407834160B0582C160D06834160B068341A0B03814341400000281E088341E11068341A0D0582C1A110682C160B0682006170A00000140F0441A0D078341A0B0402C160D07834160B068200A030B85000000A078200C0582C160B0401C100B0582C1008058200A000185C28000004C360D0482010080402010080402014070281C08030100C2E12000000A0F0D070341A0D068341A0D068341A0D06034170B8642E0E0380C0000030482A140A05028140A05028140A05028140A0502C140280006000180C0001000000000000000000000000603000000000000000000;
+// synopsys translate_on
+
+// Location: LCCOMB_X26_Y25_N8
+cycloneive_lcell_comb \colour~3 (
+// Equation(s):
+// \colour~3_combout  = (\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0~portbdataout  & (((\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a2  & 
+// \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a4 )))) # (!\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0~portbdataout  & ((\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a3  
+// & (\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a2 )) # (!\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a3  & ((\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a4 )))))
+
+	.dataa(\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a3 ),
+	.datab(\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a2 ),
+	.datac(\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a4 ),
+	.datad(\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0~portbdataout ),
+	.cin(gnd),
+	.combout(\colour~3_combout ),
+	.cout());
+// synopsys translate_off
+defparam \colour~3 .lut_mask = 16'hC0D8;
+defparam \colour~3 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X26_Y22_N2
+cycloneive_lcell_comb \colour~16 (
+// Equation(s):
+// \colour~16_combout  = (!\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a5  & ((\SVGA|video_enable~1_combout ) # ((!\SVGA|pixel_x [9]) # (!\SVGA|pixel_x [8]))))
+
+	.dataa(\SVGA|video_enable~1_combout ),
+	.datab(\SVGA|pixel_x [8]),
+	.datac(\SVGA|pixel_x [9]),
+	.datad(\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a5 ),
+	.cin(gnd),
+	.combout(\colour~16_combout ),
+	.cout());
+// synopsys translate_off
+defparam \colour~16 .lut_mask = 16'h00BF;
+defparam \colour~16 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X26_Y22_N4
+cycloneive_lcell_comb \colour~2 (
+// Equation(s):
+// \colour~2_combout  = (\printRGB_inst|barrier_inst|enable~q  & (\memorySprites_inst|read_enable5~combout  & (\SVGA|video_enable~0_combout  & \colour~16_combout )))
+
+	.dataa(\printRGB_inst|barrier_inst|enable~q ),
+	.datab(\memorySprites_inst|read_enable5~combout ),
+	.datac(\SVGA|video_enable~0_combout ),
+	.datad(\colour~16_combout ),
+	.cin(gnd),
+	.combout(\colour~2_combout ),
+	.cout());
+// synopsys translate_off
+defparam \colour~2 .lut_mask = 16'h8000;
+defparam \colour~2 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X26_Y25_N20
+cycloneive_lcell_comb \colour~4 (
+// Equation(s):
+// \colour~4_combout  = (\colour~2_combout  & (\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a2  $ (((\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a1 ) # (!\colour~3_combout )))))
+
+	.dataa(\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a1 ),
+	.datab(\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a2 ),
+	.datac(\colour~3_combout ),
+	.datad(\colour~2_combout ),
+	.cin(gnd),
+	.combout(\colour~4_combout ),
+	.cout());
+// synopsys translate_off
+defparam \colour~4 .lut_mask = 16'h6300;
+defparam \colour~4 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X26_Y25_N21
+dffeas \colour[6] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\colour~4_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(colour[6]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \colour[6] .is_wysiwyg = "true";
+defparam \colour[6] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X26_Y25_N0
+cycloneive_lcell_comb \VGA_R[0]~reg0feeder (
+// Equation(s):
+// \VGA_R[0]~reg0feeder_combout  = colour[6]
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(colour[6]),
+	.cin(gnd),
+	.combout(\VGA_R[0]~reg0feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \VGA_R[0]~reg0feeder .lut_mask = 16'hFF00;
+defparam \VGA_R[0]~reg0feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X26_Y25_N1
+dffeas \VGA_R[0]~reg0 (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\VGA_R[0]~reg0feeder_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\VGA_R[0]~reg0_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \VGA_R[0]~reg0 .is_wysiwyg = "true";
+defparam \VGA_R[0]~reg0 .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X26_Y25_N2
+cycloneive_lcell_comb \memorySprites_inst|element5_palette~0 (
+// Equation(s):
+// \memorySprites_inst|element5_palette~0_combout  = (\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a4  & (!\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a2  & 
+// (!\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a1  & !\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0~portbdataout )))
+
+	.dataa(\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a4 ),
+	.datab(\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a2 ),
+	.datac(\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a1 ),
+	.datad(\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0~portbdataout ),
+	.cin(gnd),
+	.combout(\memorySprites_inst|element5_palette~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \memorySprites_inst|element5_palette~0 .lut_mask = 16'h0002;
+defparam \memorySprites_inst|element5_palette~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X26_Y25_N10
+cycloneive_lcell_comb \colour~5 (
+// Equation(s):
+// \colour~5_combout  = (!\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a3  & (!\memorySprites_inst|element5_palette~0_combout  & \colour~2_combout ))
+
+	.dataa(\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a3 ),
+	.datab(\memorySprites_inst|element5_palette~0_combout ),
+	.datac(gnd),
+	.datad(\colour~2_combout ),
+	.cin(gnd),
+	.combout(\colour~5_combout ),
+	.cout());
+// synopsys translate_off
+defparam \colour~5 .lut_mask = 16'h1100;
+defparam \colour~5 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X26_Y25_N11
+dffeas \colour[7] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\colour~5_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(colour[7]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \colour[7] .is_wysiwyg = "true";
+defparam \colour[7] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X26_Y25_N6
+cycloneive_lcell_comb \VGA_R[1]~reg0feeder (
+// Equation(s):
+// \VGA_R[1]~reg0feeder_combout  = colour[7]
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(colour[7]),
+	.cin(gnd),
+	.combout(\VGA_R[1]~reg0feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \VGA_R[1]~reg0feeder .lut_mask = 16'hFF00;
+defparam \VGA_R[1]~reg0feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X26_Y25_N7
+dffeas \VGA_R[1]~reg0 (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\VGA_R[1]~reg0feeder_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\VGA_R[1]~reg0_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \VGA_R[1]~reg0 .is_wysiwyg = "true";
+defparam \VGA_R[1]~reg0 .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X26_Y25_N24
+cycloneive_lcell_comb \colour~6 (
+// Equation(s):
+// \colour~6_combout  = (!\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a3  & (!\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a2  & 
+// (!\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a1  & !\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0~portbdataout )))
+
+	.dataa(\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a3 ),
+	.datab(\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a2 ),
+	.datac(\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a1 ),
+	.datad(\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0~portbdataout ),
+	.cin(gnd),
+	.combout(\colour~6_combout ),
+	.cout());
+// synopsys translate_off
+defparam \colour~6 .lut_mask = 16'h0001;
+defparam \colour~6 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X25_Y25_N28
+cycloneive_lcell_comb \colour~7 (
+// Equation(s):
+// \colour~7_combout  = (\colour~2_combout  & ((\colour~6_combout ) # (!\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a4 )))
+
+	.dataa(gnd),
+	.datab(\colour~6_combout ),
+	.datac(\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a4 ),
+	.datad(\colour~2_combout ),
+	.cin(gnd),
+	.combout(\colour~7_combout ),
+	.cout());
+// synopsys translate_off
+defparam \colour~7 .lut_mask = 16'hCF00;
+defparam \colour~7 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X25_Y25_N29
+dffeas \colour[5] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\colour~7_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(colour[5]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \colour[5] .is_wysiwyg = "true";
+defparam \colour[5] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X24_Y25_N0
+cycloneive_lcell_comb \VGA_R[2]~reg0feeder (
+// Equation(s):
+// \VGA_R[2]~reg0feeder_combout  = colour[5]
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(colour[5]),
+	.cin(gnd),
+	.combout(\VGA_R[2]~reg0feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \VGA_R[2]~reg0feeder .lut_mask = 16'hFF00;
+defparam \VGA_R[2]~reg0feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X24_Y25_N1
+dffeas \VGA_R[2]~reg0 (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\VGA_R[2]~reg0feeder_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\VGA_R[2]~reg0_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \VGA_R[2]~reg0 .is_wysiwyg = "true";
+defparam \VGA_R[2]~reg0 .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X26_Y25_N12
+cycloneive_lcell_comb \memorySprites_inst|element5_palette~2 (
+// Equation(s):
+// \memorySprites_inst|element5_palette~2_combout  = (\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a1  & ((\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a3 ) # 
+// ((\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0~portbdataout ) # (!\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a4 )))) # 
+// (!\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a1  & (((!\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a4  & \memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0~portbdataout 
+// ))))
+
+	.dataa(\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a3 ),
+	.datab(\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a1 ),
+	.datac(\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a4 ),
+	.datad(\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0~portbdataout ),
+	.cin(gnd),
+	.combout(\memorySprites_inst|element5_palette~2_combout ),
+	.cout());
+// synopsys translate_off
+defparam \memorySprites_inst|element5_palette~2 .lut_mask = 16'hCF8C;
+defparam \memorySprites_inst|element5_palette~2 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X26_Y25_N26
+cycloneive_lcell_comb \memorySprites_inst|element5_palette~1 (
+// Equation(s):
+// \memorySprites_inst|element5_palette~1_combout  = (!\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a1  & (\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a4  & 
+// ((\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a3 ) # (!\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0~portbdataout ))))
+
+	.dataa(\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a3 ),
+	.datab(\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a1 ),
+	.datac(\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a4 ),
+	.datad(\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0~portbdataout ),
+	.cin(gnd),
+	.combout(\memorySprites_inst|element5_palette~1_combout ),
+	.cout());
+// synopsys translate_off
+defparam \memorySprites_inst|element5_palette~1 .lut_mask = 16'h2030;
+defparam \memorySprites_inst|element5_palette~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X26_Y25_N4
+cycloneive_lcell_comb \colour~8 (
+// Equation(s):
+// \colour~8_combout  = (\colour~2_combout  & ((\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a2  & (!\memorySprites_inst|element5_palette~2_combout )) # (!\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a2 
+//  & ((!\memorySprites_inst|element5_palette~1_combout )))))
+
+	.dataa(\memorySprites_inst|element5_palette~2_combout ),
+	.datab(\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a2 ),
+	.datac(\memorySprites_inst|element5_palette~1_combout ),
+	.datad(\colour~2_combout ),
+	.cin(gnd),
+	.combout(\colour~8_combout ),
+	.cout());
+// synopsys translate_off
+defparam \colour~8 .lut_mask = 16'h4700;
+defparam \colour~8 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X26_Y25_N5
+dffeas \colour[3] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\colour~8_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(colour[3]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \colour[3] .is_wysiwyg = "true";
+defparam \colour[3] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X25_Y25_N0
+cycloneive_lcell_comb \VGA_G[0]~reg0feeder (
+// Equation(s):
+// \VGA_G[0]~reg0feeder_combout  = colour[3]
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(colour[3]),
+	.cin(gnd),
+	.combout(\VGA_G[0]~reg0feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \VGA_G[0]~reg0feeder .lut_mask = 16'hFF00;
+defparam \VGA_G[0]~reg0feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X25_Y25_N1
+dffeas \VGA_G[0]~reg0 (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\VGA_G[0]~reg0feeder_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\VGA_G[0]~reg0_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \VGA_G[0]~reg0 .is_wysiwyg = "true";
+defparam \VGA_G[0]~reg0 .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X26_Y25_N30
+cycloneive_lcell_comb \colour~9 (
+// Equation(s):
+// \colour~9_combout  = (\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a3  & (!\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a1  & 
+// (\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a4  & !\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a2 )))
+
+	.dataa(\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a3 ),
+	.datab(\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a1 ),
+	.datac(\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a4 ),
+	.datad(\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a2 ),
+	.cin(gnd),
+	.combout(\colour~9_combout ),
+	.cout());
+// synopsys translate_off
+defparam \colour~9 .lut_mask = 16'h0020;
+defparam \colour~9 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X26_Y25_N18
+cycloneive_lcell_comb \colour~10 (
+// Equation(s):
+// \colour~10_combout  = (\colour~2_combout  & ((\colour~9_combout ) # ((!\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a3  & !\memorySprites_inst|element5_palette~0_combout ))))
+
+	.dataa(\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a3 ),
+	.datab(\memorySprites_inst|element5_palette~0_combout ),
+	.datac(\colour~9_combout ),
+	.datad(\colour~2_combout ),
+	.cin(gnd),
+	.combout(\colour~10_combout ),
+	.cout());
+// synopsys translate_off
+defparam \colour~10 .lut_mask = 16'hF100;
+defparam \colour~10 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X26_Y25_N19
+dffeas \colour[4] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\colour~10_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(colour[4]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \colour[4] .is_wysiwyg = "true";
+defparam \colour[4] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X25_Y25_N6
+cycloneive_lcell_comb \VGA_G[1]~reg0feeder (
+// Equation(s):
+// \VGA_G[1]~reg0feeder_combout  = colour[4]
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(colour[4]),
+	.cin(gnd),
+	.combout(\VGA_G[1]~reg0feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \VGA_G[1]~reg0feeder .lut_mask = 16'hFF00;
+defparam \VGA_G[1]~reg0feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X25_Y25_N7
+dffeas \VGA_G[1]~reg0 (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\VGA_G[1]~reg0feeder_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\VGA_G[1]~reg0_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \VGA_G[1]~reg0 .is_wysiwyg = "true";
+defparam \VGA_G[1]~reg0 .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X24_Y25_N14
+cycloneive_lcell_comb \VGA_G[2]~reg0feeder (
+// Equation(s):
+// \VGA_G[2]~reg0feeder_combout  = colour[5]
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(colour[5]),
+	.cin(gnd),
+	.combout(\VGA_G[2]~reg0feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \VGA_G[2]~reg0feeder .lut_mask = 16'hFF00;
+defparam \VGA_G[2]~reg0feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X24_Y25_N15
+dffeas \VGA_G[2]~reg0 (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\VGA_G[2]~reg0feeder_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\VGA_G[2]~reg0_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \VGA_G[2]~reg0 .is_wysiwyg = "true";
+defparam \VGA_G[2]~reg0 .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X26_Y25_N16
+cycloneive_lcell_comb \memorySprites_inst|element5_palette~3 (
+// Equation(s):
+// \memorySprites_inst|element5_palette~3_combout  = (\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a1 ) # ((\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a3  & 
+// (!\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a4 )) # (!\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a3  & ((\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0~portbdataout 
+// ))))
+
+	.dataa(\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a3 ),
+	.datab(\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a1 ),
+	.datac(\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a4 ),
+	.datad(\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a0~portbdataout ),
+	.cin(gnd),
+	.combout(\memorySprites_inst|element5_palette~3_combout ),
+	.cout());
+// synopsys translate_off
+defparam \memorySprites_inst|element5_palette~3 .lut_mask = 16'hDFCE;
+defparam \memorySprites_inst|element5_palette~3 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X26_Y25_N14
+cycloneive_lcell_comb \colour~11 (
+// Equation(s):
+// \colour~11_combout  = (!\memorySprites_inst|element5_palette~3_combout ) # (!\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a2 )
+
+	.dataa(gnd),
+	.datab(\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a2 ),
+	.datac(gnd),
+	.datad(\memorySprites_inst|element5_palette~3_combout ),
+	.cin(gnd),
+	.combout(\colour~11_combout ),
+	.cout());
+// synopsys translate_off
+defparam \colour~11 .lut_mask = 16'h33FF;
+defparam \colour~11 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X26_Y25_N28
+cycloneive_lcell_comb \colour~12 (
+// Equation(s):
+// \colour~12_combout  = (\colour~11_combout  & (\colour~2_combout  & ((!\memorySprites_inst|element5_palette~0_combout ) # (!\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a3 ))))
+
+	.dataa(\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a3 ),
+	.datab(\memorySprites_inst|element5_palette~0_combout ),
+	.datac(\colour~11_combout ),
+	.datad(\colour~2_combout ),
+	.cin(gnd),
+	.combout(\colour~12_combout ),
+	.cout());
+// synopsys translate_off
+defparam \colour~12 .lut_mask = 16'h7000;
+defparam \colour~12 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X26_Y25_N29
+dffeas \colour[0] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\colour~12_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(colour[0]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \colour[0] .is_wysiwyg = "true";
+defparam \colour[0] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X25_Y25_N12
+cycloneive_lcell_comb \VGA_B[0]~reg0feeder (
+// Equation(s):
+// \VGA_B[0]~reg0feeder_combout  = colour[0]
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(colour[0]),
+	.cin(gnd),
+	.combout(\VGA_B[0]~reg0feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \VGA_B[0]~reg0feeder .lut_mask = 16'hFF00;
+defparam \VGA_B[0]~reg0feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X25_Y25_N13
+dffeas \VGA_B[0]~reg0 (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\VGA_B[0]~reg0feeder_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\VGA_B[0]~reg0_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \VGA_B[0]~reg0 .is_wysiwyg = "true";
+defparam \VGA_B[0]~reg0 .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X26_Y25_N22
+cycloneive_lcell_comb \colour~13 (
+// Equation(s):
+// \colour~13_combout  = (\colour~2_combout  & ((\memorySprites_inst|element5_palette~0_combout ) # (!\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a3 )))
+
+	.dataa(\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a3 ),
+	.datab(\memorySprites_inst|element5_palette~0_combout ),
+	.datac(gnd),
+	.datad(\colour~2_combout ),
+	.cin(gnd),
+	.combout(\colour~13_combout ),
+	.cout());
+// synopsys translate_off
+defparam \colour~13 .lut_mask = 16'hDD00;
+defparam \colour~13 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X26_Y25_N23
+dffeas \colour[1] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\colour~13_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(colour[1]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \colour[1] .is_wysiwyg = "true";
+defparam \colour[1] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X25_Y25_N2
+cycloneive_lcell_comb \VGA_B[1]~reg0feeder (
+// Equation(s):
+// \VGA_B[1]~reg0feeder_combout  = colour[1]
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(colour[1]),
+	.cin(gnd),
+	.combout(\VGA_B[1]~reg0feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \VGA_B[1]~reg0feeder .lut_mask = 16'hFF00;
+defparam \VGA_B[1]~reg0feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X25_Y25_N3
+dffeas \VGA_B[1]~reg0 (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\VGA_B[1]~reg0feeder_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\VGA_B[1]~reg0_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \VGA_B[1]~reg0 .is_wysiwyg = "true";
+defparam \VGA_B[1]~reg0 .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X25_Y25_N26
+cycloneive_lcell_comb \colour~14 (
+// Equation(s):
+// \colour~14_combout  = (!\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a4  & \colour~2_combout )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(\memorySprites_inst|element5|memory_array_rtl_0|auto_generated|ram_block1a4 ),
+	.datad(\colour~2_combout ),
+	.cin(gnd),
+	.combout(\colour~14_combout ),
+	.cout());
+// synopsys translate_off
+defparam \colour~14 .lut_mask = 16'h0F00;
+defparam \colour~14 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X25_Y25_N27
+dffeas \colour[2] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\colour~14_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(colour[2]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \colour[2] .is_wysiwyg = "true";
+defparam \colour[2] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X24_Y25_N24
+cycloneive_lcell_comb \VGA_B[2]~reg0feeder (
+// Equation(s):
+// \VGA_B[2]~reg0feeder_combout  = colour[2]
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(colour[2]),
+	.cin(gnd),
+	.combout(\VGA_B[2]~reg0feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \VGA_B[2]~reg0feeder .lut_mask = 16'hFF00;
+defparam \VGA_B[2]~reg0feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X24_Y25_N25
+dffeas \VGA_B[2]~reg0 (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\VGA_B[2]~reg0feeder_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\VGA_B[2]~reg0_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \VGA_B[2]~reg0 .is_wysiwyg = "true";
+defparam \VGA_B[2]~reg0 .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X21_Y22_N18
+cycloneive_lcell_comb \SVGA|Equal2~0 (
+// Equation(s):
+// \SVGA|Equal2~0_combout  = (!\SVGA|pixel_x [4] & (\SVGA|pixel_x [7] & (\SVGA|pixel_x [6] & \SVGA|pixel_x [3])))
+
+	.dataa(\SVGA|pixel_x [4]),
+	.datab(\SVGA|pixel_x [7]),
+	.datac(\SVGA|pixel_x [6]),
+	.datad(\SVGA|pixel_x [3]),
+	.cin(gnd),
+	.combout(\SVGA|Equal2~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \SVGA|Equal2~0 .lut_mask = 16'h4000;
+defparam \SVGA|Equal2~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X21_Y22_N20
+cycloneive_lcell_comb \SVGA|hsync~0 (
+// Equation(s):
+// \SVGA|hsync~0_combout  = (\SVGA|hsync~q  & ((!\SVGA|Equal2~0_combout ) # (!\SVGA|Equal1~1_combout )))
+
+	.dataa(gnd),
+	.datab(\SVGA|hsync~q ),
+	.datac(\SVGA|Equal1~1_combout ),
+	.datad(\SVGA|Equal2~0_combout ),
+	.cin(gnd),
+	.combout(\SVGA|hsync~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \SVGA|hsync~0 .lut_mask = 16'h0CCC;
+defparam \SVGA|hsync~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X21_Y22_N4
+cycloneive_lcell_comb \SVGA|hsync~1 (
+// Equation(s):
+// \SVGA|hsync~1_combout  = (\SVGA|hsync~0_combout ) # ((!\SVGA|pixel_x [3] & (\SVGA|pixel_x [6] & \SVGA|Equal1~2_combout )))
+
+	.dataa(\SVGA|pixel_x [3]),
+	.datab(\SVGA|hsync~0_combout ),
+	.datac(\SVGA|pixel_x [6]),
+	.datad(\SVGA|Equal1~2_combout ),
+	.cin(gnd),
+	.combout(\SVGA|hsync~1_combout ),
+	.cout());
+// synopsys translate_off
+defparam \SVGA|hsync~1 .lut_mask = 16'hDCCC;
+defparam \SVGA|hsync~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X21_Y22_N5
+dffeas \SVGA|hsync (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\SVGA|hsync~1_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\SVGA|hsync~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \SVGA|hsync .is_wysiwyg = "true";
+defparam \SVGA|hsync .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X21_Y22_N16
+cycloneive_lcell_comb \SVGA|vsync~1 (
+// Equation(s):
+// \SVGA|vsync~1_combout  = (\SVGA|Equal5~2_combout  & ((\SVGA|vsync~q ) # ((\SVGA|pixel_y [6] & \SVGA|always3~1_combout ))))
+
+	.dataa(\SVGA|Equal5~2_combout ),
+	.datab(\SVGA|pixel_y [6]),
+	.datac(\SVGA|vsync~q ),
+	.datad(\SVGA|always3~1_combout ),
+	.cin(gnd),
+	.combout(\SVGA|vsync~1_combout ),
+	.cout());
+// synopsys translate_off
+defparam \SVGA|vsync~1 .lut_mask = 16'hA8A0;
+defparam \SVGA|vsync~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X21_Y22_N28
+cycloneive_lcell_comb \SVGA|vsync~0 (
+// Equation(s):
+// \SVGA|vsync~0_combout  = (!\SVGA|pixel_y [4] & (!\SVGA|pixel_y [3] & (!\SVGA|pixel_y [0] & \SVGA|always1~1_combout )))
+
+	.dataa(\SVGA|pixel_y [4]),
+	.datab(\SVGA|pixel_y [3]),
+	.datac(\SVGA|pixel_y [0]),
+	.datad(\SVGA|always1~1_combout ),
+	.cin(gnd),
+	.combout(\SVGA|vsync~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \SVGA|vsync~0 .lut_mask = 16'h0100;
+defparam \SVGA|vsync~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X21_Y22_N22
+cycloneive_lcell_comb \SVGA|vsync~2 (
+// Equation(s):
+// \SVGA|vsync~2_combout  = (\SVGA|vsync~1_combout  & (((\SVGA|vsync~q  & !\SVGA|vsync~0_combout )) # (!\SVGA|pixel_y [1]))) # (!\SVGA|vsync~1_combout  & (((\SVGA|vsync~q ))))
+
+	.dataa(\SVGA|pixel_y [1]),
+	.datab(\SVGA|vsync~1_combout ),
+	.datac(\SVGA|vsync~q ),
+	.datad(\SVGA|vsync~0_combout ),
+	.cin(gnd),
+	.combout(\SVGA|vsync~2_combout ),
+	.cout());
+// synopsys translate_off
+defparam \SVGA|vsync~2 .lut_mask = 16'h74F4;
+defparam \SVGA|vsync~2 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X21_Y22_N23
+dffeas \SVGA|vsync (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\SVGA|vsync~2_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\SVGA|vsync~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \SVGA|vsync .is_wysiwyg = "true";
+defparam \SVGA|vsync .power_up = "low";
+// synopsys translate_on
+
+// Location: IOIBUF_X53_Y9_N8
+cycloneive_io_ibuf \reset~input (
+	.i(reset),
+	.ibar(gnd),
+	.o(\reset~input_o ));
+// synopsys translate_off
+defparam \reset~input .bus_hold = "false";
+defparam \reset~input .simulate_z_as = "z";
+// synopsys translate_on
+
+assign VGA_R[0] = \VGA_R[0]~output_o ;
+
+assign VGA_R[1] = \VGA_R[1]~output_o ;
+
+assign VGA_R[2] = \VGA_R[2]~output_o ;
+
+assign VGA_G[0] = \VGA_G[0]~output_o ;
+
+assign VGA_G[1] = \VGA_G[1]~output_o ;
+
+assign VGA_G[2] = \VGA_G[2]~output_o ;
+
+assign VGA_B[0] = \VGA_B[0]~output_o ;
+
+assign VGA_B[1] = \VGA_B[1]~output_o ;
+
+assign VGA_B[2] = \VGA_B[2]~output_o ;
+
+assign hsync = \hsync~output_o ;
+
+assign vsync = \vsync~output_o ;
+
+endmodule
+
+module hard_block (
+
+	devpor,
+	devclrn,
+	devoe);
+
+// Design Ports Information
+// ~ALTERA_ASDO_DATA1~	=>  Location: PIN_C1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ~ALTERA_FLASH_nCE_nCSO~	=>  Location: PIN_D2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ~ALTERA_DCLK~	=>  Location: PIN_H1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ~ALTERA_DATA0~	=>  Location: PIN_H2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ~ALTERA_nCEO~	=>  Location: PIN_F16,	 I/O Standard: 2.5 V,	 Current Strength: 8mA
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \~ALTERA_ASDO_DATA1~~padout ;
+wire \~ALTERA_FLASH_nCE_nCSO~~padout ;
+wire \~ALTERA_DATA0~~padout ;
+wire \~ALTERA_ASDO_DATA1~~ibuf_o ;
+wire \~ALTERA_FLASH_nCE_nCSO~~ibuf_o ;
+wire \~ALTERA_DATA0~~ibuf_o ;
+
+
+endmodule

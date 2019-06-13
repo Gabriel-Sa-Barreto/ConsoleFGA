@@ -53,10 +53,10 @@ always @ (posedge clk) begin
 	/////////////////////////////////////////////////////////////////////////////////////////////////////
 end 
 
-
+/*
 always @ (nextFruit) begin
-	current_x <= $urandom$750;
-	current_y <= $urandom$550;
+	current_x <= 0;//$urandom$750;
+	current_y <= 0;//$urandom$550;
 end 
-
+*/
 endmodule
