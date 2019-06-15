@@ -21,36 +21,19 @@ barrier barrier_inst //The barrier consist in the fourth element on sprites memo
 	.clk(clk) ,	            			// input  clk_sig
 	.reset(reset),
 	.active(active),
-	.pixel_x(pixel_x) ,	   			// input [10:0] pixel_x_sig
-	.pixel_y(pixel_y) ,	   			// input [9:0] pixel_y_sig
+	.p_x(pixel_x) ,	   			// input [10:0] pixel_x_sig
+	.p_y(pixel_y) ,	   			// input [9:0] pixel_y_sig
 	.enable(enableBarrier) ,			// output  enable_sig
-	.addressBarrier(addressBarrier)  // output [9:0] addressBarrier_sig
+	.address(addressBarrier)  // output [9:0] addressBarrier_sig
 );
 
-/*
-fruits fruits_inst
-(
-	.clk(clk) ,							// input  clk_sig
-	.reset(reset) ,					// input  reset_sig
-	.pixel_x(pixel_x) ,				// input [10:0] pixel_x_sig
-	.pixel_y(pixel_y) ,				// input [9:0] pixel_y_sig
-	.nextFruit(nextFruit) ,			// input  nextFruit_sig
-	.enable(enableFruit) ,			// output  enable_sig
-	.addressFruit(addressFruit) 	// output [9:0] addressFruit_sig
-);
-*/
-always @ (*)
+always @ (posedge clk)
 begin
 	if(enableBarrier) begin 
 		element <= 5;
 		address <= addressBarrier;
 		ready   <= 1;
 	end 
-	/*else if(enableFruit) begin
-		element <= 1;
-		address <= addressFruit;
-		ready   <= 1;
-	end*/
 	else begin
 		ready   <= 0;
 		address <= 0;

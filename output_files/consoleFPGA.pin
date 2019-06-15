@@ -240,8 +240,8 @@ GND                          : L9        : gnd    :                   :         
 GND                          : L10       : gnd    :                   :         :           :                
 GND                          : L11       : gnd    :                   :         :           :                
 VCCA4                        : L12       : power  :                   : 2.5V    :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : L13       :        :                   :         : 5         :                
-reset                        : L14       : input  : 2.5 V             :         : 5         : N              
+reset                        : L13       : input  : 2.5 V             :         : 5         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : L14       :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : L15       :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : L16       :        :                   :         : 5         :                
 GND+                         : M1        :        :                   :         : 2         :                

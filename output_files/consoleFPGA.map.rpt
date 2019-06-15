@@ -1,5 +1,5 @@
 Analysis & Synthesis report for consoleFPGA
-Thu Jun 13 23:16:34 2019
+Sat Jun 15 00:17:02 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -20,7 +20,7 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
  12. General Register Statistics
  13. Registers Packed Into Inferred Megafunctions
  14. Multiplexer Restructuring Statistics (Restructuring Performed)
- 15. Source assignments for memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_0ki1:auto_generated
+ 15. Source assignments for memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_f4h1:auto_generated
  16. Parameter Settings for User Entity Instance: SVGA_sync:SVGA
  17. Parameter Settings for User Entity Instance: memorySprites:memorySprites_inst
  18. Parameter Settings for User Entity Instance: memorySprites:memorySprites_inst|sram:element1
@@ -30,21 +30,24 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
  22. Parameter Settings for User Entity Instance: memorySprites:memorySprites_inst|sram:element5
  23. Parameter Settings for User Entity Instance: printRGB:printRGB_inst
  24. Parameter Settings for Inferred Entity Instance: memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0
- 25. Parameter Settings for Inferred Entity Instance: printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult0
- 26. altsyncram Parameter Settings by Entity Instance
- 27. lpm_mult Parameter Settings by Entity Instance
- 28. Port Connectivity Checks: "printRGB:printRGB_inst"
- 29. Port Connectivity Checks: "memorySprites:memorySprites_inst|sram:element5"
- 30. Port Connectivity Checks: "memorySprites:memorySprites_inst|sram:element4"
- 31. Port Connectivity Checks: "memorySprites:memorySprites_inst|sram:element3"
- 32. Port Connectivity Checks: "memorySprites:memorySprites_inst|sram:element2"
- 33. Port Connectivity Checks: "memorySprites:memorySprites_inst|sram:element1"
- 34. Port Connectivity Checks: "memorySprites:memorySprites_inst"
- 35. Port Connectivity Checks: "SVGA_sync:SVGA"
- 36. Post-Synthesis Netlist Statistics for Top Partition
- 37. Elapsed Time Per Partition
- 38. Analysis & Synthesis Messages
- 39. Analysis & Synthesis Suppressed Messages
+ 25. Parameter Settings for Inferred Entity Instance: printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult1
+ 26. Parameter Settings for Inferred Entity Instance: printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult0
+ 27. Parameter Settings for Inferred Entity Instance: printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult3
+ 28. Parameter Settings for Inferred Entity Instance: printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult2
+ 29. altsyncram Parameter Settings by Entity Instance
+ 30. lpm_mult Parameter Settings by Entity Instance
+ 31. Port Connectivity Checks: "printRGB:printRGB_inst"
+ 32. Port Connectivity Checks: "memorySprites:memorySprites_inst|sram:element5"
+ 33. Port Connectivity Checks: "memorySprites:memorySprites_inst|sram:element4"
+ 34. Port Connectivity Checks: "memorySprites:memorySprites_inst|sram:element3"
+ 35. Port Connectivity Checks: "memorySprites:memorySprites_inst|sram:element2"
+ 36. Port Connectivity Checks: "memorySprites:memorySprites_inst|sram:element1"
+ 37. Port Connectivity Checks: "memorySprites:memorySprites_inst"
+ 38. Port Connectivity Checks: "SVGA_sync:SVGA"
+ 39. Post-Synthesis Netlist Statistics for Top Partition
+ 40. Elapsed Time Per Partition
+ 41. Analysis & Synthesis Messages
+ 42. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -70,15 +73,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Jun 13 23:16:34 2019       ;
+; Analysis & Synthesis Status        ; Successful - Sat Jun 15 00:17:02 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; consoleFPGA                                 ;
 ; Top-level Entity Name              ; top                                         ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 155                                         ;
-;     Total combinational functions  ; 135                                         ;
-;     Dedicated logic registers      ; 72                                          ;
-; Total registers                    ; 72                                          ;
+; Total logic elements               ; 311                                         ;
+;     Total combinational functions  ; 311                                         ;
+;     Dedicated logic registers      ; 67                                          ;
+; Total registers                    ; 67                                          ;
 ; Total pins                         ; 13                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 3,750                                       ;
@@ -203,7 +206,7 @@ refer to the applicable agreement for further details.
 ; Modulos/printRGB.v                        ; yes             ; User Verilog HDL File                                 ; /home/gabriel/Documentos/ConsoleFPGA/Modulos/printRGB.v                          ;         ;
 ; sprites/background/background_palette.mem ; yes             ; Auto-Found Unspecified File                           ; /home/gabriel/Documentos/ConsoleFPGA/sprites/background/background_palette.mem   ;         ;
 ; sprites/sprites25x25/apple_palette.mem    ; yes             ; Auto-Found Unspecified File                           ; /home/gabriel/Documentos/ConsoleFPGA/sprites/sprites25x25/apple_palette.mem      ;         ;
-; sprites/block/block_palette.mem           ; yes             ; Auto-Found Unspecified File                           ; /home/gabriel/Documentos/ConsoleFPGA/sprites/block/block_palette.mem             ;         ;
+; sprites/block/block2_palette.mem          ; yes             ; Auto-Found Unspecified File                           ; /home/gabriel/Documentos/ConsoleFPGA/sprites/block/block2_palette.mem            ;         ;
 ; altsyncram.tdf                            ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf          ;         ;
 ; stratix_ram_block.inc                     ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc   ;         ;
 ; lpm_mux.inc                               ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/lpm_mux.inc             ;         ;
@@ -213,8 +216,8 @@ refer to the applicable agreement for further details.
 ; altrom.inc                                ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altrom.inc              ;         ;
 ; altram.inc                                ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altram.inc              ;         ;
 ; altdpram.inc                              ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altdpram.inc            ;         ;
-; db/altsyncram_0ki1.tdf                    ; yes             ; Auto-Generated Megafunction                           ; /home/gabriel/Documentos/ConsoleFPGA/db/altsyncram_0ki1.tdf                      ;         ;
-; db/consoleFPGA.ram0_sram_c7907b4e.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; /home/gabriel/Documentos/ConsoleFPGA/db/consoleFPGA.ram0_sram_c7907b4e.hdl.mif   ;         ;
+; db/altsyncram_f4h1.tdf                    ; yes             ; Auto-Generated Megafunction                           ; /home/gabriel/Documentos/ConsoleFPGA/db/altsyncram_f4h1.tdf                      ;         ;
+; db/consoleFPGA.ram0_sram_76955e8c.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; /home/gabriel/Documentos/ConsoleFPGA/db/consoleFPGA.ram0_sram_76955e8c.hdl.mif   ;         ;
 ; lpm_mult.tdf                              ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/lpm_mult.tdf            ;         ;
 ; lpm_add_sub.inc                           ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/lpm_add_sub.inc         ;         ;
 ; multcore.inc                              ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/multcore.inc            ;         ;
@@ -244,20 +247,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 155       ;
+; Estimated Total logic elements              ; 311       ;
 ;                                             ;           ;
-; Total combinational functions               ; 135       ;
+; Total combinational functions               ; 311       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 51        ;
-;     -- 3 input functions                    ; 38        ;
-;     -- <=2 input functions                  ; 46        ;
+;     -- 4 input functions                    ; 130       ;
+;     -- 3 input functions                    ; 71        ;
+;     -- <=2 input functions                  ; 110       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 94        ;
-;     -- arithmetic mode                      ; 41        ;
+;     -- normal mode                          ; 208       ;
+;     -- arithmetic mode                      ; 103       ;
 ;                                             ;           ;
-; Total registers                             ; 72        ;
-;     -- Dedicated logic registers            ; 72        ;
+; Total registers                             ; 67        ;
+;     -- Dedicated logic registers            ; 67        ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 13        ;
@@ -266,9 +269,9 @@ refer to the applicable agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 79        ;
-; Total fan-out                               ; 682       ;
-; Average fan-out                             ; 2.85      ;
+; Maximum fan-out                             ; 73        ;
+; Total fan-out                               ; 1177      ;
+; Average fan-out                             ; 2.87      ;
 +---------------------------------------------+-----------+
 
 
@@ -277,19 +280,34 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                        ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                ; Entity Name     ; Library Name ;
 +---------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |top                                              ; 135 (16)            ; 72 (28)                   ; 3750        ; 0            ; 0       ; 0         ; 13   ; 0            ; |top                                                                                                                                               ; top             ; work         ;
-;    |SVGA_sync:SVGA|                               ; 58 (58)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|SVGA_sync:SVGA                                                                                                                                ; SVGA_sync       ; work         ;
+; |top                                              ; 311 (42)            ; 67 (9)                    ; 3750        ; 0            ; 0       ; 0         ; 13   ; 0            ; |top                                                                                                                                               ; top             ; work         ;
+;    |SVGA_sync:SVGA|                               ; 51 (51)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|SVGA_sync:SVGA                                                                                                                                ; SVGA_sync       ; work         ;
 ;    |memorySprites:memorySprites_inst|             ; 16 (16)             ; 0 (0)                     ; 3750        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|memorySprites:memorySprites_inst                                                                                                              ; memorySprites   ; work         ;
 ;       |sram:element5|                             ; 0 (0)               ; 0 (0)                     ; 3750        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|memorySprites:memorySprites_inst|sram:element5                                                                                                ; sram            ; work         ;
 ;          |altsyncram:memory_array_rtl_0|          ; 0 (0)               ; 0 (0)                     ; 3750        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0                                                                  ; altsyncram      ; work         ;
-;             |altsyncram_0ki1:auto_generated|      ; 0 (0)               ; 0 (0)                     ; 3750        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_0ki1:auto_generated                                   ; altsyncram_0ki1 ; work         ;
-;    |printRGB:printRGB_inst|                       ; 45 (0)              ; 21 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst                                                                                                                        ; printRGB        ; work         ;
-;       |barrier:barrier_inst|                      ; 45 (33)             ; 21 (21)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst                                                                                                   ; barrier         ; work         ;
+;             |altsyncram_f4h1:auto_generated|      ; 0 (0)               ; 0 (0)                     ; 3750        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_f4h1:auto_generated                                   ; altsyncram_f4h1 ; work         ;
+;    |printRGB:printRGB_inst|                       ; 202 (33)            ; 35 (11)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst                                                                                                                        ; printRGB        ; work         ;
+;       |barrier:barrier_inst|                      ; 169 (121)           ; 24 (24)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst                                                                                                   ; barrier         ; work         ;
 ;          |lpm_mult:Mult0|                         ; 12 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult0                                                                                    ; lpm_mult        ; work         ;
 ;             |multcore:mult_core|                  ; 12 (6)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult0|multcore:mult_core                                                                 ; multcore        ; work         ;
 ;                |mpar_add:padder|                  ; 6 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder                                                 ; mpar_add        ; work         ;
 ;                   |lpm_add_sub:adder[0]|          ; 6 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                            ; lpm_add_sub     ; work         ;
 ;                      |add_sub_bfh:auto_generated| ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_bfh:auto_generated ; add_sub_bfh     ; work         ;
+;          |lpm_mult:Mult1|                         ; 12 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult1                                                                                    ; lpm_mult        ; work         ;
+;             |multcore:mult_core|                  ; 12 (6)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult1|multcore:mult_core                                                                 ; multcore        ; work         ;
+;                |mpar_add:padder|                  ; 6 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder                                                 ; mpar_add        ; work         ;
+;                   |lpm_add_sub:adder[0]|          ; 6 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                            ; lpm_add_sub     ; work         ;
+;                      |add_sub_bfh:auto_generated| ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_bfh:auto_generated ; add_sub_bfh     ; work         ;
+;          |lpm_mult:Mult2|                         ; 12 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult2                                                                                    ; lpm_mult        ; work         ;
+;             |multcore:mult_core|                  ; 12 (6)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult2|multcore:mult_core                                                                 ; multcore        ; work         ;
+;                |mpar_add:padder|                  ; 6 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult2|multcore:mult_core|mpar_add:padder                                                 ; mpar_add        ; work         ;
+;                   |lpm_add_sub:adder[0]|          ; 6 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult2|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                            ; lpm_add_sub     ; work         ;
+;                      |add_sub_bfh:auto_generated| ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult2|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_bfh:auto_generated ; add_sub_bfh     ; work         ;
+;          |lpm_mult:Mult3|                         ; 12 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult3                                                                                    ; lpm_mult        ; work         ;
+;             |multcore:mult_core|                  ; 12 (6)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult3|multcore:mult_core                                                                 ; multcore        ; work         ;
+;                |mpar_add:padder|                  ; 6 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult3|multcore:mult_core|mpar_add:padder                                                 ; mpar_add        ; work         ;
+;                   |lpm_add_sub:adder[0]|          ; 6 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult3|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                            ; lpm_add_sub     ; work         ;
+;                      |add_sub_bfh:auto_generated| ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult3|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_bfh:auto_generated ; add_sub_bfh     ; work         ;
 +---------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -299,28 +317,36 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+-------------------------------------------+
 ; Name                                                                                                                   ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF                                       ;
 +------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+-------------------------------------------+
-; memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_0ki1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 625          ; 8            ; 625          ; 8            ; 5000 ; db/consoleFPGA.ram0_sram_c7907b4e.hdl.mif ;
+; memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_f4h1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 625          ; 8            ; 625          ; 8            ; 5000 ; db/consoleFPGA.ram0_sram_76955e8c.hdl.mif ;
 +------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+-------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                                          ;
-+-----------------------------------------------------+-----------------------------------------------+------------------------+
-; Latch Name                                          ; Latch Enable Signal                           ; Free of Timing Hazards ;
-+-----------------------------------------------------+-----------------------------------------------+------------------------+
-; memorySprites:memorySprites_inst|read_enable5       ; memorySprites:memorySprites_inst|read_enable5 ; yes                    ;
-; memorySprites:memorySprites_inst|address5[0]        ; enableMemory                                  ; yes                    ;
-; memorySprites:memorySprites_inst|address5[1]        ; enableMemory                                  ; yes                    ;
-; memorySprites:memorySprites_inst|address5[2]        ; enableMemory                                  ; yes                    ;
-; memorySprites:memorySprites_inst|address5[3]        ; enableMemory                                  ; yes                    ;
-; memorySprites:memorySprites_inst|address5[4]        ; enableMemory                                  ; yes                    ;
-; memorySprites:memorySprites_inst|address5[5]        ; enableMemory                                  ; yes                    ;
-; memorySprites:memorySprites_inst|address5[6]        ; enableMemory                                  ; yes                    ;
-; memorySprites:memorySprites_inst|address5[7]        ; enableMemory                                  ; yes                    ;
-; memorySprites:memorySprites_inst|address5[8]        ; enableMemory                                  ; yes                    ;
-; memorySprites:memorySprites_inst|address5[9]        ; enableMemory                                  ; yes                    ;
-; Number of user-specified and inferred latches = 11  ;                                               ;                        ;
-+-----------------------------------------------------+-----------------------------------------------+------------------------+
++------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                        ;
++-----------------------------------------------------+-----------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal         ; Free of Timing Hazards ;
++-----------------------------------------------------+-----------------------------+------------------------+
+; colour[6]                                           ; SVGA_sync:SVGA|video_enable ; yes                    ;
+; colour[7]                                           ; SVGA_sync:SVGA|video_enable ; yes                    ;
+; colour[8]                                           ; SVGA_sync:SVGA|video_enable ; yes                    ;
+; colour[3]                                           ; SVGA_sync:SVGA|video_enable ; yes                    ;
+; colour[4]                                           ; SVGA_sync:SVGA|video_enable ; yes                    ;
+; colour[5]                                           ; SVGA_sync:SVGA|video_enable ; yes                    ;
+; colour[0]                                           ; SVGA_sync:SVGA|video_enable ; yes                    ;
+; colour[1]                                           ; SVGA_sync:SVGA|video_enable ; yes                    ;
+; colour[2]                                           ; SVGA_sync:SVGA|video_enable ; yes                    ;
+; addressMemory[0]                                    ; addressMemory[0]            ; yes                    ;
+; addressMemory[1]                                    ; addressMemory[0]            ; yes                    ;
+; addressMemory[2]                                    ; addressMemory[0]            ; yes                    ;
+; addressMemory[3]                                    ; addressMemory[0]            ; yes                    ;
+; addressMemory[4]                                    ; addressMemory[0]            ; yes                    ;
+; addressMemory[5]                                    ; addressMemory[0]            ; yes                    ;
+; addressMemory[6]                                    ; addressMemory[0]            ; yes                    ;
+; addressMemory[7]                                    ; addressMemory[0]            ; yes                    ;
+; addressMemory[8]                                    ; addressMemory[0]            ; yes                    ;
+; addressMemory[9]                                    ; addressMemory[0]            ; yes                    ;
+; Number of user-specified and inferred latches = 19  ;                             ;                        ;
++-----------------------------------------------------+-----------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
@@ -329,29 +355,25 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-------------------------------------------------------------+---------------------------------------------+
 ; Register name                                               ; Reason for Removal                          ;
 +-------------------------------------------------------------+---------------------------------------------+
-; elementMemory[0]                                            ; Stuck at VCC due to stuck port data_in      ;
-; elementMemory[1]                                            ; Stuck at GND due to stuck port data_in      ;
-; elementMemory[2]                                            ; Stuck at VCC due to stuck port data_in      ;
+; printRGB:printRGB_inst|element[0]                           ; Stuck at VCC due to stuck port data_in      ;
+; printRGB:printRGB_inst|element[1]                           ; Stuck at GND due to stuck port data_in      ;
+; printRGB:printRGB_inst|element[2]                           ; Stuck at VCC due to stuck port data_in      ;
+; memorySprites:memorySprites_inst|sram:element1|o_data[0..5] ; Lost fanout                                 ;
 ; memorySprites:memorySprites_inst|sram:element4|o_data[0..5] ; Stuck at GND due to stuck port clock_enable ;
-; memorySprites:memorySprites_inst|sram:element1|o_data[0..5] ; Stuck at GND due to stuck port clock_enable ;
-; colour[8]                                                   ; Merged with colour[5]                       ;
-; Total Number of Removed Registers = 16                      ;                                             ;
+; Total Number of Removed Registers = 15                      ;                                             ;
 +-------------------------------------------------------------+---------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                              ;
-+------------------+---------------------------+-----------------------------------------------------------+
-; Register name    ; Reason for Removal        ; Registers Removed due to This Register                    ;
-+------------------+---------------------------+-----------------------------------------------------------+
-; elementMemory[0] ; Stuck at VCC              ; memorySprites:memorySprites_inst|sram:element4|o_data[0], ;
-;                  ; due to stuck port data_in ; memorySprites:memorySprites_inst|sram:element4|o_data[1], ;
-;                  ;                           ; memorySprites:memorySprites_inst|sram:element4|o_data[2], ;
-;                  ;                           ; memorySprites:memorySprites_inst|sram:element4|o_data[3], ;
-;                  ;                           ; memorySprites:memorySprites_inst|sram:element4|o_data[4], ;
-;                  ;                           ; memorySprites:memorySprites_inst|sram:element1|o_data[0], ;
-;                  ;                           ; memorySprites:memorySprites_inst|sram:element1|o_data[1]  ;
-+------------------+---------------------------+-----------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                               ;
++-----------------------------------+---------------------------+-----------------------------------------------------------+
+; Register name                     ; Reason for Removal        ; Registers Removed due to This Register                    ;
++-----------------------------------+---------------------------+-----------------------------------------------------------+
+; printRGB:printRGB_inst|element[0] ; Stuck at VCC              ; memorySprites:memorySprites_inst|sram:element4|o_data[0], ;
+;                                   ; due to stuck port data_in ; memorySprites:memorySprites_inst|sram:element4|o_data[1], ;
+;                                   ;                           ; memorySprites:memorySprites_inst|sram:element4|o_data[2], ;
+;                                   ;                           ; memorySprites:memorySprites_inst|sram:element4|o_data[3]  ;
++-----------------------------------+---------------------------+-----------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -359,12 +381,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 72    ;
-; Number of registers using Synchronous Clear  ; 5     ;
+; Total registers                              ; 67    ;
+; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 31    ;
+; Number of registers using Clock Enable       ; 16    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -378,19 +400,22 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-------------------------------------------------------------+-------------------------------------------------------------------+------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                              ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |top|SVGA_sync:SVGA|pixel_y[3]                                ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |top|colour[1]                                                ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |top|printRGB:printRGB_inst|barrier:barrier_inst|barrier_y[4] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------+
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |top|SVGA_sync:SVGA|pixel_y[9]                                           ;
+; 7:1                ; 10 bits   ; 40 LEs        ; 30 LEs               ; 10 LEs                 ; Yes        ; |top|printRGB:printRGB_inst|address[9]                                   ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |top|SVGA_sync:SVGA|pixel_y[0]                                           ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |top|printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierLeft[4]  ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |top|printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierRight[0] ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; No         ; |top|colour                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_0ki1:auto_generated ;
+; Source assignments for memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_f4h1:auto_generated ;
 +---------------------------------+--------------------+------+----------------------------------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                                                   ;
 +---------------------------------+--------------------+------+----------------------------------------------------------------------+
@@ -479,16 +504,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: memorySprites:memorySprites_inst|sram:element5    ;
-+----------------+--------------------------------------------------------------+----------------+
-; Parameter Name ; Value                                                        ; Type           ;
-+----------------+--------------------------------------------------------------+----------------+
-; ADDR_WIDTH     ; 12                                                           ; Signed Integer ;
-; DATA_WIDTH     ; 8                                                            ; Signed Integer ;
-; DEPTH          ; 625                                                          ; Signed Integer ;
-; MEMFILE        ; /home/gabriel/Documentos/ConsoleFPGA/sprites/block/block.mem ; String         ;
-+----------------+--------------------------------------------------------------+----------------+
++-------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: memorySprites:memorySprites_inst|sram:element5     ;
++----------------+---------------------------------------------------------------+----------------+
+; Parameter Name ; Value                                                         ; Type           ;
++----------------+---------------------------------------------------------------+----------------+
+; ADDR_WIDTH     ; 12                                                            ; Signed Integer ;
+; DATA_WIDTH     ; 8                                                             ; Signed Integer ;
+; DEPTH          ; 625                                                           ; Signed Integer ;
+; MEMFILE        ; /home/gabriel/Documentos/ConsoleFPGA/sprites/block/block2.mem ; String         ;
++----------------+---------------------------------------------------------------+----------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -497,7 +522,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+--------------------------------------------+
 ; Parameter Name ; Value ; Type                                       ;
 +----------------+-------+--------------------------------------------+
-; ELEMENT        ; 5     ; Signed Integer                             ;
+; ELEMENT        ; 3     ; Signed Integer                             ;
 +----------------+-------+--------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -545,7 +570,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                 ; Untyped                                      ;
 ; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                      ; Untyped                                      ;
 ; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                      ; Untyped                                      ;
-; INIT_FILE                          ; db/consoleFPGA.ram0_sram_c7907b4e.hdl.mif ; Untyped                                      ;
+; INIT_FILE                          ; db/consoleFPGA.ram0_sram_76955e8c.hdl.mif ; Untyped                                      ;
 ; INIT_FILE_LAYOUT                   ; PORT_A                                    ; Untyped                                      ;
 ; MAXIMUM_DEPTH                      ; 0                                         ; Untyped                                      ;
 ; CLOCK_ENABLE_INPUT_A               ; NORMAL                                    ; Untyped                                      ;
@@ -558,8 +583,43 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                     ; Untyped                                      ;
 ; WIDTH_ECCSTATUS                    ; 3                                         ; Untyped                                      ;
 ; DEVICE_FAMILY                      ; Cyclone IV E                              ; Untyped                                      ;
-; CBXI_PARAMETER                     ; altsyncram_0ki1                           ; Untyped                                      ;
+; CBXI_PARAMETER                     ; altsyncram_f4h1                           ; Untyped                                      ;
 +------------------------------------+-------------------------------------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult1 ;
++------------------------------------------------+--------------+---------------------------------------------+
+; Parameter Name                                 ; Value        ; Type                                        ;
++------------------------------------------------+--------------+---------------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY                                  ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY                                ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE                                ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE                              ;
+; LPM_WIDTHA                                     ; 5            ; Untyped                                     ;
+; LPM_WIDTHB                                     ; 5            ; Untyped                                     ;
+; LPM_WIDTHP                                     ; 10           ; Untyped                                     ;
+; LPM_WIDTHR                                     ; 10           ; Untyped                                     ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                                     ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                                     ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                                     ;
+; LATENCY                                        ; 0            ; Untyped                                     ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                                     ;
+; INPUT_B_IS_CONSTANT                            ; YES          ; Untyped                                     ;
+; USE_EAB                                        ; OFF          ; Untyped                                     ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped                                     ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                                     ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                                     ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K                         ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                                     ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                                     ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                                     ;
+; CBXI_PARAMETER                                 ; NOTHING      ; Untyped                                     ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                                     ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                                     ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                                     ;
++------------------------------------------------+--------------+---------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -580,8 +640,78 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                                     ;
 ; LPM_PIPELINE                                   ; 0            ; Untyped                                     ;
 ; LATENCY                                        ; 0            ; Untyped                                     ;
-; INPUT_A_IS_CONSTANT                            ; YES          ; Untyped                                     ;
-; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped                                     ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                                     ;
+; INPUT_B_IS_CONSTANT                            ; YES          ; Untyped                                     ;
+; USE_EAB                                        ; OFF          ; Untyped                                     ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped                                     ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                                     ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                                     ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K                         ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                                     ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                                     ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                                     ;
+; CBXI_PARAMETER                                 ; NOTHING      ; Untyped                                     ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                                     ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                                     ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                                     ;
++------------------------------------------------+--------------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult3 ;
++------------------------------------------------+--------------+---------------------------------------------+
+; Parameter Name                                 ; Value        ; Type                                        ;
++------------------------------------------------+--------------+---------------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY                                  ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY                                ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE                                ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE                              ;
+; LPM_WIDTHA                                     ; 5            ; Untyped                                     ;
+; LPM_WIDTHB                                     ; 5            ; Untyped                                     ;
+; LPM_WIDTHP                                     ; 10           ; Untyped                                     ;
+; LPM_WIDTHR                                     ; 10           ; Untyped                                     ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                                     ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                                     ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                                     ;
+; LATENCY                                        ; 0            ; Untyped                                     ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                                     ;
+; INPUT_B_IS_CONSTANT                            ; YES          ; Untyped                                     ;
+; USE_EAB                                        ; OFF          ; Untyped                                     ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped                                     ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                                     ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                                     ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K                         ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                                     ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                                     ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                                     ;
+; CBXI_PARAMETER                                 ; NOTHING      ; Untyped                                     ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                                     ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                                     ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                                     ;
++------------------------------------------------+--------------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult2 ;
++------------------------------------------------+--------------+---------------------------------------------+
+; Parameter Name                                 ; Value        ; Type                                        ;
++------------------------------------------------+--------------+---------------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY                                  ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY                                ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE                                ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE                              ;
+; LPM_WIDTHA                                     ; 5            ; Untyped                                     ;
+; LPM_WIDTHB                                     ; 5            ; Untyped                                     ;
+; LPM_WIDTHP                                     ; 10           ; Untyped                                     ;
+; LPM_WIDTHR                                     ; 10           ; Untyped                                     ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                                     ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                                     ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                                     ;
+; LATENCY                                        ; 0            ; Untyped                                     ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                                     ;
+; INPUT_B_IS_CONSTANT                            ; YES          ; Untyped                                     ;
 ; USE_EAB                                        ; OFF          ; Untyped                                     ;
 ; MAXIMIZE_SPEED                                 ; 5            ; Untyped                                     ;
 ; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                                     ;
@@ -623,14 +753,47 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------------------------------+------------------------------------------------------------+
 ; Name                                  ; Value                                                      ;
 +---------------------------------------+------------------------------------------------------------+
-; Number of entity instances            ; 1                                                          ;
+; Number of entity instances            ; 4                                                          ;
+; Entity Instance                       ; printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult1 ;
+;     -- LPM_WIDTHA                     ; 5                                                          ;
+;     -- LPM_WIDTHB                     ; 5                                                          ;
+;     -- LPM_WIDTHP                     ; 10                                                         ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                                   ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                         ;
+;     -- INPUT_B_IS_CONSTANT            ; YES                                                        ;
+;     -- USE_EAB                        ; OFF                                                        ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                       ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                         ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                         ;
 ; Entity Instance                       ; printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult0 ;
 ;     -- LPM_WIDTHA                     ; 5                                                          ;
 ;     -- LPM_WIDTHB                     ; 5                                                          ;
 ;     -- LPM_WIDTHP                     ; 10                                                         ;
 ;     -- LPM_REPRESENTATION             ; UNSIGNED                                                   ;
-;     -- INPUT_A_IS_CONSTANT            ; YES                                                        ;
-;     -- INPUT_B_IS_CONSTANT            ; NO                                                         ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                         ;
+;     -- INPUT_B_IS_CONSTANT            ; YES                                                        ;
+;     -- USE_EAB                        ; OFF                                                        ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                       ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                         ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                         ;
+; Entity Instance                       ; printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult3 ;
+;     -- LPM_WIDTHA                     ; 5                                                          ;
+;     -- LPM_WIDTHB                     ; 5                                                          ;
+;     -- LPM_WIDTHP                     ; 10                                                         ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                                   ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                         ;
+;     -- INPUT_B_IS_CONSTANT            ; YES                                                        ;
+;     -- USE_EAB                        ; OFF                                                        ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                       ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                         ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                         ;
+; Entity Instance                       ; printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult2 ;
+;     -- LPM_WIDTHA                     ; 5                                                          ;
+;     -- LPM_WIDTHB                     ; 5                                                          ;
+;     -- LPM_WIDTHP                     ; 10                                                         ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                                   ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                         ;
+;     -- INPUT_B_IS_CONSTANT            ; YES                                                        ;
 ;     -- USE_EAB                        ; OFF                                                        ;
 ;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                       ;
 ;     -- INPUT_A_FIXED_VALUE            ; Bx                                                         ;
@@ -638,16 +801,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------------------------------+------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "printRGB:printRGB_inst"                                                                                                                                                                  ;
-+------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port       ; Type   ; Severity ; Details                                                                                                                                                                            ;
-+------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; reset      ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; reset[-1]  ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
-; element    ; Output ; Warning  ; Output or bidir port (5 bits) is wider than the port expression (4 bits) it drives; bit(s) "element[4..4]" have no fanouts                                                         ;
-; element[4] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
-+------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "printRGB:printRGB_inst"                                                                                                                                                                 ;
++-----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                                                                                                            ;
++-----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; reset     ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; reset[-1] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; element   ; Output ; Warning  ; Output or bidir port (3 bits) is smaller than the port expression (4 bits) it drives.  The 1 most-significant bit(s) in the port expression will be connected to GND.              ;
++-----------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -739,24 +901,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 13                          ;
-; cycloneiii_ff         ; 72                          ;
-;     ENA               ; 26                          ;
-;     ENA SCLR          ; 5                           ;
-;     plain             ; 41                          ;
-; cycloneiii_lcell_comb ; 135                         ;
-;     arith             ; 41                          ;
-;         2 data inputs ; 33                          ;
-;         3 data inputs ; 8                           ;
-;     normal            ; 94                          ;
-;         0 data inputs ; 2                           ;
-;         1 data inputs ; 5                           ;
-;         2 data inputs ; 6                           ;
-;         3 data inputs ; 30                          ;
-;         4 data inputs ; 51                          ;
+; cycloneiii_ff         ; 67                          ;
+;     ENA               ; 16                          ;
+;     plain             ; 51                          ;
+; cycloneiii_lcell_comb ; 311                         ;
+;     arith             ; 103                         ;
+;         2 data inputs ; 71                          ;
+;         3 data inputs ; 32                          ;
+;     normal            ; 208                         ;
+;         0 data inputs ; 5                           ;
+;         1 data inputs ; 12                          ;
+;         2 data inputs ; 22                          ;
+;         3 data inputs ; 39                          ;
+;         4 data inputs ; 130                         ;
 ; cycloneiii_ram_block  ; 6                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 4.00                        ;
-; Average LUT depth     ; 2.47                        ;
+; Max LUT depth         ; 7.00                        ;
+; Average LUT depth     ; 4.57                        ;
 +-----------------------+-----------------------------+
 
 
@@ -765,7 +926,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -775,12 +936,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Thu Jun 13 23:16:13 2019
+    Info: Processing started: Sat Jun 15 00:16:39 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off consoleFPGA -c consoleFPGA
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file Modulos/barrier.v
-    Info (12023): Found entity 1: barrier File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 2
+    Info (12023): Found entity 1: barrier File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file Modulos/memorySprites.v
     Info (12023): Found entity 1: memorySprites File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file Modulos/moduloSram/sram.v
@@ -796,7 +957,34 @@ Info (12021): Found 1 design units, including 1 entities, in source file Modulos
 Info (12021): Found 1 design units, including 1 entities, in source file Modulos/LFSR.v
     Info (12023): Found entity 1: LFSR File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/LFSR.v Line: 1
 Info (12127): Elaborating entity "top" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at top.v(70): truncated value with size 4 to match size of target (3) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 70
+Warning (10230): Verilog HDL assignment warning at top.v(71): truncated value with size 4 to match size of target (3) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 71
+Warning (10240): Verilog HDL Always Construct warning at top.v(66): inferring latch(es) for variable "colour", which holds its previous value in one or more paths through the always construct File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 66
+Warning (10240): Verilog HDL Always Construct warning at top.v(66): inferring latch(es) for variable "elementMemory", which holds its previous value in one or more paths through the always construct File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 66
+Warning (10240): Verilog HDL Always Construct warning at top.v(66): inferring latch(es) for variable "addressMemory", which holds its previous value in one or more paths through the always construct File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 66
+Warning (10240): Verilog HDL Always Construct warning at top.v(66): inferring latch(es) for variable "enableMemory", which holds its previous value in one or more paths through the always construct File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 66
+Info (10041): Inferred latch for "enableMemory" at top.v(66) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 66
+Info (10041): Inferred latch for "addressMemory[0]" at top.v(66) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 66
+Info (10041): Inferred latch for "addressMemory[1]" at top.v(66) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 66
+Info (10041): Inferred latch for "addressMemory[2]" at top.v(66) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 66
+Info (10041): Inferred latch for "addressMemory[3]" at top.v(66) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 66
+Info (10041): Inferred latch for "addressMemory[4]" at top.v(66) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 66
+Info (10041): Inferred latch for "addressMemory[5]" at top.v(66) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 66
+Info (10041): Inferred latch for "addressMemory[6]" at top.v(66) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 66
+Info (10041): Inferred latch for "addressMemory[7]" at top.v(66) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 66
+Info (10041): Inferred latch for "addressMemory[8]" at top.v(66) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 66
+Info (10041): Inferred latch for "addressMemory[9]" at top.v(66) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 66
+Info (10041): Inferred latch for "elementMemory[0]" at top.v(66) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 66
+Info (10041): Inferred latch for "elementMemory[1]" at top.v(66) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 66
+Info (10041): Inferred latch for "elementMemory[2]" at top.v(66) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 66
+Info (10041): Inferred latch for "colour[0]" at top.v(66) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 66
+Info (10041): Inferred latch for "colour[1]" at top.v(66) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 66
+Info (10041): Inferred latch for "colour[2]" at top.v(66) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 66
+Info (10041): Inferred latch for "colour[3]" at top.v(66) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 66
+Info (10041): Inferred latch for "colour[4]" at top.v(66) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 66
+Info (10041): Inferred latch for "colour[5]" at top.v(66) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 66
+Info (10041): Inferred latch for "colour[6]" at top.v(66) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 66
+Info (10041): Inferred latch for "colour[7]" at top.v(66) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 66
+Info (10041): Inferred latch for "colour[8]" at top.v(66) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 66
 Info (12128): Elaborating entity "SVGA_sync" for hierarchy "SVGA_sync:SVGA" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 40
 Warning (10230): Verilog HDL assignment warning at SVGA_sync.v(59): truncated value with size 32 to match size of target (11) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/SVGAGrafico/SVGA_sync.v Line: 59
 Warning (10230): Verilog HDL assignment warning at SVGA_sync.v(80): truncated value with size 32 to match size of target (10) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/SVGAGrafico/SVGA_sync.v Line: 80
@@ -839,61 +1027,61 @@ Warning (10030): Net "element5_palette.waddr_a" at memorySprites.v(14) has no dr
 Warning (10030): Net "element1_palette.we_a" at memorySprites.v(10) has no driver or initial value, using a default initial value '0' File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 10
 Warning (10030): Net "element4_palette.we_a" at memorySprites.v(13) has no driver or initial value, using a default initial value '0' File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 13
 Warning (10030): Net "element5_palette.we_a" at memorySprites.v(14) has no driver or initial value, using a default initial value '0' File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 14
-Info (10041): Inferred latch for "address1[0]" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "address1[1]" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "address1[2]" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "address1[3]" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "address1[4]" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "address1[5]" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "address1[6]" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "address1[7]" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "address1[8]" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "address1[9]" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "address2[0]" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "address2[1]" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "address2[2]" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "address2[3]" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "address2[4]" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "address2[5]" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "address2[6]" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "address2[7]" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "address2[8]" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "address2[9]" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "address3[0]" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "address3[1]" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "address3[2]" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "address3[3]" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "address3[4]" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "address3[5]" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "address3[6]" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "address3[7]" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "address3[8]" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "address3[9]" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "address4[0]" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "address4[1]" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "address4[2]" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "address4[3]" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "address4[4]" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "address4[5]" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "address4[6]" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "address4[7]" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "address4[8]" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "address4[9]" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "address5[0]" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "address5[1]" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "address5[2]" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "address5[3]" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "address5[4]" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "address5[5]" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "address5[6]" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "address5[7]" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "address5[8]" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "address5[9]" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "read_enable5" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "read_enable4" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "read_enable3" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "read_enable2" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Info (10041): Inferred latch for "read_enable1" at memorySprites.v(84) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
+Info (10041): Inferred latch for "address1[0]" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "address1[1]" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "address1[2]" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "address1[3]" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "address1[4]" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "address1[5]" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "address1[6]" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "address1[7]" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "address1[8]" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "address1[9]" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "read_enable1" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "address2[0]" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "address2[1]" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "address2[2]" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "address2[3]" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "address2[4]" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "address2[5]" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "address2[6]" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "address2[7]" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "address2[8]" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "address2[9]" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "read_enable2" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "address3[0]" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "address3[1]" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "address3[2]" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "address3[3]" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "address3[4]" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "address3[5]" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "address3[6]" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "address3[7]" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "address3[8]" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "address3[9]" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "read_enable3" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "address4[0]" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "address4[1]" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "address4[2]" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "address4[3]" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "address4[4]" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "address4[5]" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "address4[6]" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "address4[7]" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "address4[8]" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "address4[9]" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "read_enable4" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "address5[0]" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "address5[1]" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "address5[2]" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "address5[3]" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "address5[4]" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "address5[5]" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "address5[6]" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "address5[7]" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "address5[8]" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "address5[9]" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Info (10041): Inferred latch for "read_enable5" at memorySprites.v(94) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
 Info (12128): Elaborating entity "sram" for hierarchy "memorySprites:memorySprites_inst|sram:element1" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 147
 Info (10648): Verilog HDL Display System Task info at sram.v(25): /home/gabriel/Documentos/ConsoleFPGA/spri¿‘‘ì‹ﬁŸâ· ‡°®s?S±4A3˛¬ File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/moduloSram/sram.v Line: 25
 Info (12128): Elaborating entity "sram" for hierarchy "memorySprites:memorySprites_inst|sram:element2" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 162
@@ -901,41 +1089,58 @@ Info (12128): Elaborating entity "sram" for hierarchy "memorySprites:memorySprit
 Info (12128): Elaborating entity "sram" for hierarchy "memorySprites:memorySprites_inst|sram:element4" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 192
 Info (10648): Verilog HDL Display System Task info at sram.v(25): /home/gabriel/Documentos/ConsoleFPGA/sprites{—¬«‘’Ÿè‚”—û’§>DPR∂6@3˛¬ File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/moduloSram/sram.v Line: 25
 Info (12128): Elaborating entity "sram" for hierarchy "memorySprites:memorySprites_inst|sram:element5" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 206
-Info (10648): Verilog HDL Display System Task info at sram.v(25): /home/gabriel/Documentos/ConsoleFPì∞ê◊Ÿ‡–î“ÿú—ﬂ§>@O∞+G3˛¬ File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/moduloSram/sram.v Line: 25
+Info (10648): Verilog HDL Display System Task info at sram.v(25): /home/gabriel/Documentos/ConsoleFPGçû‘‘€◊€Ö‡îœ€‚¨?JR§33˛¬ File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/moduloSram/sram.v Line: 25
 Info (12128): Elaborating entity "printRGB" for hierarchy "printRGB:printRGB_inst" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 63
-Warning (10240): Verilog HDL Always Construct warning at printRGB.v(44): inferring latch(es) for variable "element", which holds its previous value in one or more paths through the always construct File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/printRGB.v Line: 44
-Info (10041): Inferred latch for "element[0]" at printRGB.v(44) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/printRGB.v Line: 44
-Info (10041): Inferred latch for "element[1]" at printRGB.v(44) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/printRGB.v Line: 44
-Info (10041): Inferred latch for "element[2]" at printRGB.v(44) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/printRGB.v Line: 44
-Info (10041): Inferred latch for "element[3]" at printRGB.v(44) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/printRGB.v Line: 44
-Info (10041): Inferred latch for "element[4]" at printRGB.v(44) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/printRGB.v Line: 44
 Info (12128): Elaborating entity "barrier" for hierarchy "printRGB:printRGB_inst|barrier:barrier_inst" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/printRGB.v Line: 28
-Warning (10230): Verilog HDL assignment warning at barrier.v(31): truncated value with size 32 to match size of target (10) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 31
-Warning (10230): Verilog HDL assignment warning at barrier.v(46): truncated value with size 32 to match size of target (5) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 46
-Warning (10230): Verilog HDL assignment warning at barrier.v(52): truncated value with size 32 to match size of target (5) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 52
-Warning (14025): LATCH primitive "memorySprites:memorySprites_inst|address4[1]" is permanently disabled File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Warning (14025): LATCH primitive "memorySprites:memorySprites_inst|address4[2]" is permanently disabled File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Warning (14025): LATCH primitive "memorySprites:memorySprites_inst|address4[3]" is permanently disabled File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Warning (14025): LATCH primitive "memorySprites:memorySprites_inst|address4[4]" is permanently disabled File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Warning (14025): LATCH primitive "memorySprites:memorySprites_inst|address4[5]" is permanently disabled File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Warning (14025): LATCH primitive "memorySprites:memorySprites_inst|address4[6]" is permanently disabled File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Warning (14025): LATCH primitive "memorySprites:memorySprites_inst|address4[7]" is permanently disabled File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Warning (14025): LATCH primitive "memorySprites:memorySprites_inst|address4[8]" is permanently disabled File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Warning (14025): LATCH primitive "memorySprites:memorySprites_inst|address4[9]" is permanently disabled File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Warning (14025): LATCH primitive "memorySprites:memorySprites_inst|address1[7]" is permanently disabled File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Warning (14025): LATCH primitive "memorySprites:memorySprites_inst|address1[6]" is permanently disabled File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Warning (14025): LATCH primitive "memorySprites:memorySprites_inst|address1[5]" is permanently disabled File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Warning (14025): LATCH primitive "memorySprites:memorySprites_inst|address1[4]" is permanently disabled File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Warning (14025): LATCH primitive "memorySprites:memorySprites_inst|address1[3]" is permanently disabled File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Warning (14025): LATCH primitive "memorySprites:memorySprites_inst|address1[2]" is permanently disabled File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Warning (14025): LATCH primitive "memorySprites:memorySprites_inst|address1[1]" is permanently disabled File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Warning (14025): LATCH primitive "memorySprites:memorySprites_inst|address1[0]" is permanently disabled File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Warning (14025): LATCH primitive "memorySprites:memorySprites_inst|address4[0]" is permanently disabled File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Warning (14025): LATCH primitive "memorySprites:memorySprites_inst|address1[9]" is permanently disabled File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
-Warning (14025): LATCH primitive "memorySprites:memorySprites_inst|address1[8]" is permanently disabled File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 84
+Warning (10230): Verilog HDL assignment warning at barrier.v(33): truncated value with size 32 to match size of target (5) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 33
+Warning (10230): Verilog HDL assignment warning at barrier.v(34): truncated value with size 6 to match size of target (5) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 34
+Warning (10230): Verilog HDL assignment warning at barrier.v(36): truncated value with size 32 to match size of target (10) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 36
+Warning (10230): Verilog HDL assignment warning at barrier.v(41): truncated value with size 32 to match size of target (5) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 41
+Warning (10230): Verilog HDL assignment warning at barrier.v(42): truncated value with size 6 to match size of target (5) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 42
+Warning (10230): Verilog HDL assignment warning at barrier.v(44): truncated value with size 32 to match size of target (10) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 44
+Warning (10230): Verilog HDL assignment warning at barrier.v(49): truncated value with size 6 to match size of target (5) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 49
+Warning (10230): Verilog HDL assignment warning at barrier.v(50): truncated value with size 11 to match size of target (5) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 50
+Warning (10230): Verilog HDL assignment warning at barrier.v(52): truncated value with size 32 to match size of target (10) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 52
+Warning (10230): Verilog HDL assignment warning at barrier.v(57): truncated value with size 6 to match size of target (5) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 57
+Warning (10230): Verilog HDL assignment warning at barrier.v(58): truncated value with size 32 to match size of target (5) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 58
+Warning (10230): Verilog HDL assignment warning at barrier.v(60): truncated value with size 32 to match size of target (10) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 60
+Warning (10230): Verilog HDL assignment warning at barrier.v(68): truncated value with size 32 to match size of target (6) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 68
+Warning (10230): Verilog HDL assignment warning at barrier.v(73): truncated value with size 32 to match size of target (6) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 73
+Warning (10230): Verilog HDL assignment warning at barrier.v(80): truncated value with size 32 to match size of target (6) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 80
+Warning (10230): Verilog HDL assignment warning at barrier.v(89): truncated value with size 32 to match size of target (6) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 89
+Warning (14025): LATCH primitive "memorySprites:memorySprites_inst|address1[6]" is permanently disabled File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Warning (14025): LATCH primitive "memorySprites:memorySprites_inst|address1[5]" is permanently disabled File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Warning (14025): LATCH primitive "memorySprites:memorySprites_inst|address1[4]" is permanently disabled File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Warning (14025): LATCH primitive "memorySprites:memorySprites_inst|address1[3]" is permanently disabled File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Warning (14025): LATCH primitive "memorySprites:memorySprites_inst|address1[2]" is permanently disabled File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Warning (14025): LATCH primitive "memorySprites:memorySprites_inst|address1[1]" is permanently disabled File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Warning (14025): LATCH primitive "memorySprites:memorySprites_inst|address1[0]" is permanently disabled File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Warning (14025): LATCH primitive "memorySprites:memorySprites_inst|address1[9]" is permanently disabled File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Warning (14025): LATCH primitive "memorySprites:memorySprites_inst|address1[8]" is permanently disabled File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Warning (14025): LATCH primitive "memorySprites:memorySprites_inst|address1[7]" is permanently disabled File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Warning (14025): LATCH primitive "memorySprites:memorySprites_inst|address4[1]" is permanently disabled File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Warning (14025): LATCH primitive "memorySprites:memorySprites_inst|address4[2]" is permanently disabled File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Warning (14025): LATCH primitive "memorySprites:memorySprites_inst|address4[3]" is permanently disabled File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Warning (14025): LATCH primitive "memorySprites:memorySprites_inst|address4[4]" is permanently disabled File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Warning (14025): LATCH primitive "memorySprites:memorySprites_inst|address4[5]" is permanently disabled File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Warning (14025): LATCH primitive "memorySprites:memorySprites_inst|address4[6]" is permanently disabled File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Warning (14025): LATCH primitive "memorySprites:memorySprites_inst|address4[7]" is permanently disabled File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Warning (14025): LATCH primitive "memorySprites:memorySprites_inst|address4[8]" is permanently disabled File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Warning (14025): LATCH primitive "memorySprites:memorySprites_inst|address4[9]" is permanently disabled File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Warning (14025): LATCH primitive "memorySprites:memorySprites_inst|address4[0]" is permanently disabled File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
 Warning (276027): Inferred dual-clock RAM node "memorySprites:memorySprites_inst|sram:element5|memory_array_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
 Info (276014): Found 1 instances of uninferred RAM logic
     Info (276004): RAM logic "memorySprites:memorySprites_inst|element5_palette" is uninferred due to inappropriate RAM size File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 14
+Warning (14026): LATCH primitive "memorySprites:memorySprites_inst|address5[0]" is permanently enabled File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Warning (14026): LATCH primitive "memorySprites:memorySprites_inst|address5[1]" is permanently enabled File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Warning (14026): LATCH primitive "memorySprites:memorySprites_inst|address5[2]" is permanently enabled File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Warning (14026): LATCH primitive "memorySprites:memorySprites_inst|address5[3]" is permanently enabled File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Warning (14026): LATCH primitive "memorySprites:memorySprites_inst|address5[4]" is permanently enabled File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Warning (14026): LATCH primitive "memorySprites:memorySprites_inst|address5[5]" is permanently enabled File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Warning (14026): LATCH primitive "memorySprites:memorySprites_inst|address5[6]" is permanently enabled File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Warning (14026): LATCH primitive "memorySprites:memorySprites_inst|address5[7]" is permanently enabled File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Warning (14026): LATCH primitive "memorySprites:memorySprites_inst|address5[8]" is permanently enabled File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
+Warning (14026): LATCH primitive "memorySprites:memorySprites_inst|address5[9]" is permanently enabled File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 94
 Info (19000): Inferred 1 megafunctions from design logic
     Info (276029): Inferred altsyncram megafunction from the following design logic: "memorySprites:memorySprites_inst|sram:element5|memory_array_rtl_0" 
         Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
@@ -952,9 +1157,12 @@ Info (19000): Inferred 1 megafunctions from design logic
         Info (286033): Parameter ADDRESS_REG_B set to CLOCK1
         Info (286033): Parameter INDATA_ACLR_A set to NONE
         Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
-        Info (286033): Parameter INIT_FILE set to db/consoleFPGA.ram0_sram_c7907b4e.hdl.mif
-Info (278001): Inferred 1 megafunctions from design logic
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "printRGB:printRGB_inst|barrier:barrier_inst|Mult0" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 31
+        Info (286033): Parameter INIT_FILE set to db/consoleFPGA.ram0_sram_76955e8c.hdl.mif
+Info (278001): Inferred 4 megafunctions from design logic
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "printRGB:printRGB_inst|barrier:barrier_inst|Mult1" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 44
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "printRGB:printRGB_inst|barrier:barrier_inst|Mult0" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 36
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "printRGB:printRGB_inst|barrier:barrier_inst|Mult3" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 60
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "printRGB:printRGB_inst|barrier:barrier_inst|Mult2" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 52
 Info (12130): Elaborated megafunction instantiation "memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0"
 Info (12133): Instantiated megafunction "memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
@@ -971,48 +1179,58 @@ Info (12133): Instantiated megafunction "memorySprites:memorySprites_inst|sram:e
     Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK1"
     Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
     Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
-    Info (12134): Parameter "INIT_FILE" = "db/consoleFPGA.ram0_sram_c7907b4e.hdl.mif"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_0ki1.tdf
-    Info (12023): Found entity 1: altsyncram_0ki1 File: /home/gabriel/Documentos/ConsoleFPGA/db/altsyncram_0ki1.tdf Line: 27
-Info (12130): Elaborated megafunction instantiation "printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult0" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 31
-Info (12133): Instantiated megafunction "printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult0" with the following parameter: File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 31
+    Info (12134): Parameter "INIT_FILE" = "db/consoleFPGA.ram0_sram_76955e8c.hdl.mif"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_f4h1.tdf
+    Info (12023): Found entity 1: altsyncram_f4h1 File: /home/gabriel/Documentos/ConsoleFPGA/db/altsyncram_f4h1.tdf Line: 27
+Info (12130): Elaborated megafunction instantiation "printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult1" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 44
+Info (12133): Instantiated megafunction "printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult1" with the following parameter: File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 44
     Info (12134): Parameter "LPM_WIDTHA" = "5"
     Info (12134): Parameter "LPM_WIDTHB" = "5"
     Info (12134): Parameter "LPM_WIDTHP" = "10"
     Info (12134): Parameter "LPM_WIDTHR" = "10"
     Info (12134): Parameter "LPM_WIDTHS" = "1"
     Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
-    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "YES"
-    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "YES"
     Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
-Info (12131): Elaborated megafunction instantiation "printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult0|multcore:mult_core", which is child of megafunction instantiation "printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult0" File: /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 308
-Info (12131): Elaborated megafunction instantiation "printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult0" File: /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/multcore.tdf Line: 228
-Info (12131): Elaborated megafunction instantiation "printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]", which is child of megafunction instantiation "printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult0" File: /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/mpar_add.tdf Line: 78
+Info (12131): Elaborated megafunction instantiation "printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult1|multcore:mult_core", which is child of megafunction instantiation "printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult1" File: /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 308
+Info (12131): Elaborated megafunction instantiation "printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult1" File: /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/multcore.tdf Line: 228
+Info (12131): Elaborated megafunction instantiation "printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]", which is child of megafunction instantiation "printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult1" File: /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/mpar_add.tdf Line: 78
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_bfh.tdf
     Info (12023): Found entity 1: add_sub_bfh File: /home/gabriel/Documentos/ConsoleFPGA/db/add_sub_bfh.tdf Line: 22
-Info (12131): Elaborated megafunction instantiation "printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult0|altshift:external_latency_ffs", which is child of megafunction instantiation "printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult0" File: /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 351
+Info (12131): Elaborated megafunction instantiation "printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult1|altshift:external_latency_ffs", which is child of megafunction instantiation "printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult1" File: /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 351
+Info (12130): Elaborated megafunction instantiation "printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult0" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 36
+Info (12133): Instantiated megafunction "printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult0" with the following parameter: File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 36
+    Info (12134): Parameter "LPM_WIDTHA" = "5"
+    Info (12134): Parameter "LPM_WIDTHB" = "5"
+    Info (12134): Parameter "LPM_WIDTHP" = "10"
+    Info (12134): Parameter "LPM_WIDTHR" = "10"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "YES"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
 Warning (14284): Synthesized away the following node(s):
     Warning (14285): Synthesized away the following RAM node(s):
-        Warning (14320): Synthesized away node "memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_0ki1:auto_generated|ram_block1a6" File: /home/gabriel/Documentos/ConsoleFPGA/db/altsyncram_0ki1.tdf Line: 231
-        Warning (14320): Synthesized away node "memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_0ki1:auto_generated|ram_block1a7" File: /home/gabriel/Documentos/ConsoleFPGA/db/altsyncram_0ki1.tdf Line: 263
+        Warning (14320): Synthesized away node "memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_f4h1:auto_generated|ram_block1a6" File: /home/gabriel/Documentos/ConsoleFPGA/db/altsyncram_f4h1.tdf Line: 229
+        Warning (14320): Synthesized away node "memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_f4h1:auto_generated|ram_block1a7" File: /home/gabriel/Documentos/ConsoleFPGA/db/altsyncram_f4h1.tdf Line: 261
 Warning (12241): 7 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Warning (13012): Latch memorySprites:memorySprites_inst|read_enable5 has unsafe behavior File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 21
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal enableMemory File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 23
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 6 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file /home/gabriel/Documentos/ConsoleFPGA/output_files/consoleFPGA.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "reset" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 4
-Info (21057): Implemented 174 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 340 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 11 output pins
-    Info (21061): Implemented 155 logic cells
+    Info (21061): Implemented 321 logic cells
     Info (21064): Implemented 6 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 76 warnings
-    Info: Peak virtual memory: 1012 megabytes
-    Info: Processing ended: Thu Jun 13 23:16:34 2019
-    Info: Elapsed time: 00:00:21
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 100 warnings
+    Info: Peak virtual memory: 1013 megabytes
+    Info: Processing ended: Sat Jun 15 00:17:02 2019
+    Info: Elapsed time: 00:00:23
     Info: Total CPU time (on all processors): 00:00:51
 
 
