@@ -49,8 +49,8 @@ memorySprites_inst
 	.dataout(dataout) 					// output [11:0] dataout_sig
 );
 
-
-printRGB printRGB_inst
+printRGB #(.ELEMENT(3))
+printRGB_inst
 (
 	.clk(clk) ,	        	  // input  clk_sig
 	.reset(0) ,	     		  // input  reset_sig
@@ -62,32 +62,21 @@ printRGB printRGB_inst
 	.address(address) 	  // output [9:0] address_sig
 );
 
-
-always @ (posedge clk)
-begin
+always @ (*) begin
 	if(video_enable) begin
+		colour[8:6] = dataout[11:9];
+		colour[5:3] = dataout[7:5]; 
+		colour[2:0] = dataout[3:1];
 		if(ready) begin
-			elementMemory <= element;
-			addressMemory <= address;
-			enableMemory  <= ready;
-			colour[8:6] <= dataout[11:9];
-			colour[5:3] <= dataout[7:5]; 
-			colour[2:0] <= dataout[3:1];
-		end
-		else begin
-			colour <= 0;
-			colour <= 0; 
-			colour <= 0;
-		end
-	end
-	else begin
-		colour <= 0;
-		colour <= 0; 
-		colour <= 0;
+			elementMemory = element;
+			addressMemory = address;
+			enableMemory  = ready;
+		end 
+		else colour = 0;
 	end
 end
 
-always @ (posedge clk) begin
+always @ (negedge clk) begin
 	VGA_R <= colour[8:6];
 	VGA_G <= colour[5:3];
 	VGA_B <= colour[2:0];

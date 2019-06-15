@@ -47,7 +47,7 @@ begin
    read_enable5 = 0;
 	$readmemh("/home/gabriel/Documentos/ConsoleFPGA/sprites/sprites25x25/apple_palette.mem",    element1_palette);
 	$readmemh("/home/gabriel/Documentos/ConsoleFPGA/sprites/background/background_palette.mem", element4_palette);
-	$readmemh("/home/gabriel/Documentos/ConsoleFPGA/sprites/block/block_palette.mem",           element5_palette); 
+	$readmemh("/home/gabriel/Documentos/ConsoleFPGA/sprites/block/block2_palette.mem",           element5_palette); 
 end							 
 							 
 							 
@@ -85,38 +85,38 @@ always @ (read_enable)
 begin
    /*A cada pulso de clock que corresponde a um pixel de um elemento, desativa-se a leitura do ultimo elemento verificado.*/
 	if(clk) begin
-		if(read_enable1 == 1)      read_enable1 <= 0;
-		else if(read_enable2 == 1) read_enable2 <= 0;
-		else if(read_enable3 == 1) read_enable3 <= 0;
-		else if(read_enable4 == 1) read_enable4 <= 0;
-		else                       read_enable5 <= 0;
+		if(read_enable1 == 1)      read_enable1 = 0;
+		else if(read_enable2 == 1) read_enable2 = 0;
+		else if(read_enable3 == 1) read_enable3 = 0;
+		else if(read_enable4 == 1) read_enable4 = 0;
+		else                       read_enable5 = 0;
 	end
 	if(read_enable) begin
 		case(element)
 			3'd1: 
 			begin
-				read_enable1 <= read_enable;
-				address1 <= address_sprite;
+				read_enable1 = read_enable;
+				address1 = address_sprite;
 			end
 			3'd2: 
 			begin
-				read_enable2 <= read_enable;
-				address2 <= address_sprite;
+				read_enable2 = read_enable;
+				address2 = address_sprite;
 			end
 			3'd3: 
 			begin
-				read_enable3 <= read_enable;
-				address3 <= address_sprite;
+				read_enable3 = read_enable;
+				address3 = address_sprite;
 			end
 			3'd4: 
 			begin
-				read_enable4 <= read_enable;
-				address4 <= address_sprite;
+				read_enable4 = read_enable;
+				address4 = address_sprite;
 			end
 			3'd5: 
 			begin
-				read_enable5 <= read_enable;
-				address5 <= address_sprite;
+				read_enable5 = read_enable;
+				address5 = address_sprite;
 			end
 		endcase
 	end
@@ -124,12 +124,12 @@ end
 
 always @ (ready1 or ready2 or ready3 or ready4 or ready5 ) 
 begin
-	if(ready1)      dataout <= element1_palette[colour1];
-	else if(ready2) dataout <= element2_palette[colour2];
-	else if(ready3) dataout <= element3_palette[colour3];
-	else if(ready4) dataout <= element4_palette[colour4];
-	else if(ready5) dataout <= element5_palette[colour5];
-	else            dataout <= 0;
+	if(ready1)      dataout = element1_palette[colour1];
+	else if(ready2) dataout = element2_palette[colour2];
+	else if(ready3) dataout = element3_palette[colour3];
+	else if(ready4) dataout = element4_palette[colour4];
+	else if(ready5) dataout = element5_palette[colour5];
+	else            dataout = 0;
 end	
 						 
 sram #(     
@@ -195,7 +195,7 @@ sram #(
 		.ADDR_WIDTH(element5_VRAM_A_WIDTH), 
       .DATA_WIDTH(VRAM_D_WIDTH), 
       .DEPTH(element5_VRAM_DEPTH), 
-      .MEMFILE("/home/gabriel/Documentos/ConsoleFPGA/sprites/block/block.mem"))
+      .MEMFILE("/home/gabriel/Documentos/ConsoleFPGA/sprites/block/block2.mem"))
    element5 (
 		.i_clk(clk) ,	        
 		.i_addr(address5) ,	   
