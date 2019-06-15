@@ -29,7 +29,7 @@ begin
 	enable  = 0;
 	if(active) begin //if is on screen active area. 
 			//barrier up
-			if( p_y >= 0 && p_y <= 24 ) begin
+			if( p_y <= 24 ) begin
 				row    = (p_y + offset_barrierUp) - offset_barrierUp;
 				column = counter_BarrierUp;
 				enable = 1;
@@ -63,7 +63,7 @@ begin
 end
 
 always @ (posedge clk) begin
-	if( p_y >= 0 && p_y <= 24 ) begin
+	if( p_y <= 24 ) begin
 		if(counter_BarrierUp == 25) counter_BarrierUp <= 0;
 		else counter_BarrierUp <= counter_BarrierUp + 1;
 	end
