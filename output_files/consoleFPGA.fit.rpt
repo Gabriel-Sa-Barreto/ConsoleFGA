@@ -1,5 +1,5 @@
 Fitter report for consoleFPGA
-Sat Jun 15 00:17:14 2019
+Sat Jun 15 23:17:44 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -28,22 +28,23 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
  20. Control Signals
  21. Global & Other Fast Signals
  22. Fitter RAM Summary
- 23. |top|memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_f4h1:auto_generated|ALTSYNCRAM
- 24. Routing Usage Summary
- 25. LAB Logic Elements
- 26. LAB-wide Signals
- 27. LAB Signals Sourced
- 28. LAB Signals Sourced Out
- 29. LAB Distinct Inputs
- 30. I/O Rules Summary
- 31. I/O Rules Details
- 32. I/O Rules Matrix
- 33. Fitter Device Options
- 34. Operating Settings and Conditions
- 35. Estimated Delay Added for Hold Timing Summary
- 36. Estimated Delay Added for Hold Timing Details
- 37. Fitter Messages
- 38. Fitter Suppressed Messages
+ 23. |top|memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_rii1:auto_generated|ALTSYNCRAM
+ 24. |top|memorySprites:memorySprites_inst|sram:element1|altsyncram:memory_array_rtl_0|altsyncram_tgi1:auto_generated|ALTSYNCRAM
+ 25. Routing Usage Summary
+ 26. LAB Logic Elements
+ 27. LAB-wide Signals
+ 28. LAB Signals Sourced
+ 29. LAB Signals Sourced Out
+ 30. LAB Distinct Inputs
+ 31. I/O Rules Summary
+ 32. I/O Rules Details
+ 33. I/O Rules Matrix
+ 34. Fitter Device Options
+ 35. Operating Settings and Conditions
+ 36. Estimated Delay Added for Hold Timing Summary
+ 37. Estimated Delay Added for Hold Timing Details
+ 38. Fitter Messages
+ 39. Fitter Suppressed Messages
 
 
 
@@ -69,20 +70,20 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Sat Jun 15 00:17:14 2019       ;
+; Fitter Status                      ; Successful - Sat Jun 15 23:17:44 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; consoleFPGA                                 ;
 ; Top-level Entity Name              ; top                                         ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE22F17C6                                ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 318 / 22,320 ( 1 % )                        ;
-;     Total combinational functions  ; 311 / 22,320 ( 1 % )                        ;
-;     Dedicated logic registers      ; 67 / 22,320 ( < 1 % )                       ;
-; Total registers                    ; 67                                          ;
+; Total logic elements               ; 410 / 22,320 ( 2 % )                        ;
+;     Total combinational functions  ; 404 / 22,320 ( 2 % )                        ;
+;     Dedicated logic registers      ; 78 / 22,320 ( < 1 % )                       ;
+; Total registers                    ; 78                                          ;
 ; Total pins                         ; 13 / 154 ( 8 % )                            ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 3,750 / 608,256 ( < 1 % )                   ;
+; Total memory bits                  ; 7,500 / 608,256 ( 1 % )                     ;
 ; Embedded Multiplier 9-bit elements ; 0 / 132 ( 0 % )                             ;
 ; Total PLLs                         ; 0 / 4 ( 0 % )                               ;
 +------------------------------------+---------------------------------------------+
@@ -161,7 +162,7 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   1.8%      ;
+;     Processor 2            ;   1.9%      ;
 +----------------------------+-------------+
 
 
@@ -171,8 +172,8 @@ refer to the applicable agreement for further details.
 ; Type                ; Total [A + B]      ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+--------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                    ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 423 ) ; 0.00 % ( 0 / 423 )         ; 0.00 % ( 0 / 423 )       ;
-;     -- Achieved     ; 0.00 % ( 0 / 423 ) ; 0.00 % ( 0 / 423 )         ; 0.00 % ( 0 / 423 )       ;
+;     -- Requested    ; 0.00 % ( 0 / 533 ) ; 0.00 % ( 0 / 533 )         ; 0.00 % ( 0 / 533 )       ;
+;     -- Achieved     ; 0.00 % ( 0 / 533 ) ; 0.00 % ( 0 / 533 )         ; 0.00 % ( 0 / 533 )       ;
 ;                     ;                    ;                            ;                          ;
 ; Routing (by net)    ;                    ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )   ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -195,7 +196,7 @@ refer to the applicable agreement for further details.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 413 )    ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 523 )    ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 10 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -206,55 +207,55 @@ refer to the applicable agreement for further details.
 The pin-out file can be found in /home/gabriel/Documentos/ConsoleFPGA/output_files/consoleFPGA.pin.
 
 
-+-------------------------------------------------------------------------+
-; Fitter Resource Usage Summary                                           ;
-+---------------------------------------------+---------------------------+
-; Resource                                    ; Usage                     ;
-+---------------------------------------------+---------------------------+
-; Total logic elements                        ; 318 / 22,320 ( 1 % )      ;
-;     -- Combinational with no register       ; 251                       ;
-;     -- Register only                        ; 7                         ;
-;     -- Combinational with a register        ; 60                        ;
-;                                             ;                           ;
-; Logic element usage by number of LUT inputs ;                           ;
-;     -- 4 input functions                    ; 130                       ;
-;     -- 3 input functions                    ; 71                        ;
-;     -- <=2 input functions                  ; 110                       ;
-;     -- Register only                        ; 7                         ;
-;                                             ;                           ;
-; Logic elements by mode                      ;                           ;
-;     -- normal mode                          ; 208                       ;
-;     -- arithmetic mode                      ; 103                       ;
-;                                             ;                           ;
-; Total registers*                            ; 67 / 23,018 ( < 1 % )     ;
-;     -- Dedicated logic registers            ; 67 / 22,320 ( < 1 % )     ;
-;     -- I/O registers                        ; 0 / 698 ( 0 % )           ;
-;                                             ;                           ;
-; Total LABs:  partially or completely used   ; 23 / 1,395 ( 2 % )        ;
-; Virtual pins                                ; 0                         ;
-; I/O pins                                    ; 13 / 154 ( 8 % )          ;
-;     -- Clock pins                           ; 1 / 7 ( 14 % )            ;
-;     -- Dedicated input pins                 ; 0 / 9 ( 0 % )             ;
-;                                             ;                           ;
-; M9Ks                                        ; 1 / 66 ( 2 % )            ;
-; Total block memory bits                     ; 3,750 / 608,256 ( < 1 % ) ;
-; Total block memory implementation bits      ; 9,216 / 608,256 ( 2 % )   ;
-; Embedded Multiplier 9-bit elements          ; 0 / 132 ( 0 % )           ;
-; PLLs                                        ; 0 / 4 ( 0 % )             ;
-; Global signals                              ; 3                         ;
-;     -- Global clocks                        ; 3 / 20 ( 15 % )           ;
-; JTAGs                                       ; 0 / 1 ( 0 % )             ;
-; CRC blocks                                  ; 0 / 1 ( 0 % )             ;
-; ASMI blocks                                 ; 0 / 1 ( 0 % )             ;
-; Oscillator blocks                           ; 0 / 1 ( 0 % )             ;
-; Impedance control blocks                    ; 0 / 4 ( 0 % )             ;
-; Average interconnect usage (total/H/V)      ; 0.5% / 0.4% / 0.6%        ;
-; Peak interconnect usage (total/H/V)         ; 3.2% / 3.1% / 3.3%        ;
-; Maximum fan-out                             ; 97                        ;
-; Highest non-global fan-out                  ; 20                        ;
-; Total fan-out                               ; 1065                      ;
-; Average fan-out                             ; 2.51                      ;
-+---------------------------------------------+---------------------------+
++------------------------------------------------------------------------+
+; Fitter Resource Usage Summary                                          ;
++---------------------------------------------+--------------------------+
+; Resource                                    ; Usage                    ;
++---------------------------------------------+--------------------------+
+; Total logic elements                        ; 410 / 22,320 ( 2 % )     ;
+;     -- Combinational with no register       ; 332                      ;
+;     -- Register only                        ; 6                        ;
+;     -- Combinational with a register        ; 72                       ;
+;                                             ;                          ;
+; Logic element usage by number of LUT inputs ;                          ;
+;     -- 4 input functions                    ; 181                      ;
+;     -- 3 input functions                    ; 104                      ;
+;     -- <=2 input functions                  ; 119                      ;
+;     -- Register only                        ; 6                        ;
+;                                             ;                          ;
+; Logic elements by mode                      ;                          ;
+;     -- normal mode                          ; 287                      ;
+;     -- arithmetic mode                      ; 117                      ;
+;                                             ;                          ;
+; Total registers*                            ; 78 / 23,018 ( < 1 % )    ;
+;     -- Dedicated logic registers            ; 78 / 22,320 ( < 1 % )    ;
+;     -- I/O registers                        ; 0 / 698 ( 0 % )          ;
+;                                             ;                          ;
+; Total LABs:  partially or completely used   ; 32 / 1,395 ( 2 % )       ;
+; Virtual pins                                ; 0                        ;
+; I/O pins                                    ; 13 / 154 ( 8 % )         ;
+;     -- Clock pins                           ; 1 / 7 ( 14 % )           ;
+;     -- Dedicated input pins                 ; 0 / 9 ( 0 % )            ;
+;                                             ;                          ;
+; M9Ks                                        ; 2 / 66 ( 3 % )           ;
+; Total block memory bits                     ; 7,500 / 608,256 ( 1 % )  ;
+; Total block memory implementation bits      ; 18,432 / 608,256 ( 3 % ) ;
+; Embedded Multiplier 9-bit elements          ; 0 / 132 ( 0 % )          ;
+; PLLs                                        ; 0 / 4 ( 0 % )            ;
+; Global signals                              ; 3                        ;
+;     -- Global clocks                        ; 3 / 20 ( 15 % )          ;
+; JTAGs                                       ; 0 / 1 ( 0 % )            ;
+; CRC blocks                                  ; 0 / 1 ( 0 % )            ;
+; ASMI blocks                                 ; 0 / 1 ( 0 % )            ;
+; Oscillator blocks                           ; 0 / 1 ( 0 % )            ;
+; Impedance control blocks                    ; 0 / 4 ( 0 % )            ;
+; Average interconnect usage (total/H/V)      ; 0.7% / 0.6% / 0.8%       ;
+; Peak interconnect usage (total/H/V)         ; 4.4% / 3.4% / 5.8%       ;
+; Maximum fan-out                             ; 110                      ;
+; Highest non-global fan-out                  ; 22                       ;
+; Total fan-out                               ; 1399                     ;
+; Average fan-out                             ; 2.65                     ;
++---------------------------------------------+--------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
 
@@ -266,33 +267,33 @@ The pin-out file can be found in /home/gabriel/Documentos/ConsoleFPGA/output_fil
 +---------------------------------------------+----------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                  ; Low                            ;
 ;                                             ;                      ;                                ;
-; Total logic elements                        ; 318 / 22320 ( 1 % )  ; 0 / 22320 ( 0 % )              ;
-;     -- Combinational with no register       ; 251                  ; 0                              ;
-;     -- Register only                        ; 7                    ; 0                              ;
-;     -- Combinational with a register        ; 60                   ; 0                              ;
+; Total logic elements                        ; 410 / 22320 ( 2 % )  ; 0 / 22320 ( 0 % )              ;
+;     -- Combinational with no register       ; 332                  ; 0                              ;
+;     -- Register only                        ; 6                    ; 0                              ;
+;     -- Combinational with a register        ; 72                   ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Logic element usage by number of LUT inputs ;                      ;                                ;
-;     -- 4 input functions                    ; 130                  ; 0                              ;
-;     -- 3 input functions                    ; 71                   ; 0                              ;
-;     -- <=2 input functions                  ; 110                  ; 0                              ;
-;     -- Register only                        ; 7                    ; 0                              ;
+;     -- 4 input functions                    ; 181                  ; 0                              ;
+;     -- 3 input functions                    ; 104                  ; 0                              ;
+;     -- <=2 input functions                  ; 119                  ; 0                              ;
+;     -- Register only                        ; 6                    ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Logic elements by mode                      ;                      ;                                ;
-;     -- normal mode                          ; 208                  ; 0                              ;
-;     -- arithmetic mode                      ; 103                  ; 0                              ;
+;     -- normal mode                          ; 287                  ; 0                              ;
+;     -- arithmetic mode                      ; 117                  ; 0                              ;
 ;                                             ;                      ;                                ;
-; Total registers                             ; 67                   ; 0                              ;
-;     -- Dedicated logic registers            ; 67 / 22320 ( < 1 % ) ; 0 / 22320 ( 0 % )              ;
+; Total registers                             ; 78                   ; 0                              ;
+;     -- Dedicated logic registers            ; 78 / 22320 ( < 1 % ) ; 0 / 22320 ( 0 % )              ;
 ;     -- I/O registers                        ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
-; Total LABs:  partially or completely used   ; 23 / 1395 ( 2 % )    ; 0 / 1395 ( 0 % )               ;
+; Total LABs:  partially or completely used   ; 32 / 1395 ( 2 % )    ; 0 / 1395 ( 0 % )               ;
 ;                                             ;                      ;                                ;
 ; Virtual pins                                ; 0                    ; 0                              ;
 ; I/O pins                                    ; 13                   ; 0                              ;
 ; Embedded Multiplier 9-bit elements          ; 0 / 132 ( 0 % )      ; 0 / 132 ( 0 % )                ;
-; Total memory bits                           ; 3750                 ; 0                              ;
-; Total RAM block bits                        ; 9216                 ; 0                              ;
-; M9K                                         ; 1 / 66 ( 1 % )       ; 0 / 66 ( 0 % )                 ;
+; Total memory bits                           ; 7500                 ; 0                              ;
+; Total RAM block bits                        ; 18432                ; 0                              ;
+; M9K                                         ; 2 / 66 ( 3 % )       ; 0 / 66 ( 0 % )                 ;
 ; Clock control block                         ; 3 / 24 ( 12 % )      ; 0 / 24 ( 0 % )                 ;
 ;                                             ;                      ;                                ;
 ; Connections                                 ;                      ;                                ;
@@ -302,8 +303,8 @@ The pin-out file can be found in /home/gabriel/Documentos/ConsoleFPGA/output_fil
 ;     -- Registered Output Connections        ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Internal Connections                        ;                      ;                                ;
-;     -- Total Connections                    ; 1143                 ; 5                              ;
-;     -- Registered Connections               ; 334                  ; 0                              ;
+;     -- Total Connections                    ; 1563                 ; 5                              ;
+;     -- Registered Connections               ; 384                  ; 0                              ;
 ;                                             ;                      ;                                ;
 ; External Connections                        ;                      ;                                ;
 ;     -- Top                                  ; 0                    ; 0                              ;
@@ -335,8 +336,8 @@ The pin-out file can be found in /home/gabriel/Documentos/ConsoleFPGA/output_fil
 +-------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
 ; Name  ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination Control Block ; Location assigned by ; Slew Rate ;
 +-------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
-; clk   ; R8    ; 3        ; 27           ; 0            ; 21           ; 69                    ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
-; reset ; L13   ; 5        ; 53           ; 10           ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
+; clk   ; R8    ; 3        ; 27           ; 0            ; 21           ; 84                    ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; reset ; N8    ; 3        ; 20           ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ; no        ;
 +-------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
 
 
@@ -395,9 +396,9 @@ The pin-out file can be found in /home/gabriel/Documentos/ConsoleFPGA/output_fil
 +----------+-----------------+---------------+--------------+
 ; 1        ; 4 / 14 ( 29 % ) ; 2.5V          ; --           ;
 ; 2        ; 0 / 16 ( 0 % )  ; 2.5V          ; --           ;
-; 3        ; 1 / 25 ( 4 % )  ; 2.5V          ; --           ;
+; 3        ; 2 / 25 ( 8 % )  ; 2.5V          ; --           ;
 ; 4        ; 0 / 20 ( 0 % )  ; 2.5V          ; --           ;
-; 5        ; 1 / 18 ( 6 % )  ; 2.5V          ; --           ;
+; 5        ; 0 / 18 ( 0 % )  ; 2.5V          ; --           ;
 ; 6        ; 1 / 13 ( 8 % )  ; 2.5V          ; --           ;
 ; 7        ; 2 / 24 ( 8 % )  ; 2.5V          ; --           ;
 ; 8        ; 9 / 24 ( 38 % ) ; 2.5V          ; --           ;
@@ -582,7 +583,7 @@ The pin-out file can be found in /home/gabriel/Documentos/ConsoleFPGA/output_fil
 ; L10      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; L11      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; L12      ;            ; --       ; VCCA4                                                     ; power  ;              ; 2.5V    ; --         ;                 ; --       ; --           ;
-; L13      ; 136        ; 5        ; reset                                                     ; input  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
+; L13      ; 136        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; L14      ; 134        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; L15      ; 138        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; L16      ; 137        ; 5        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -609,7 +610,7 @@ The pin-out file can be found in /home/gabriel/Documentos/ConsoleFPGA/output_fil
 ; N5       ; 62         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; N6       ; 63         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; N7       ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; N8       ; 82         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; N8       ; 82         ; 3        ; reset                                                     ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; N9       ; 93         ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; N10      ;            ;          ; GND                                                       ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; N11      ; 112        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -697,14 +698,17 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +---------------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                        ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                                                                                                ; Entity Name     ; Library Name ;
 +---------------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |top                                              ; 318 (50)    ; 67 (9)                    ; 0 (0)         ; 3750        ; 1    ; 0            ; 0       ; 0         ; 13   ; 0            ; 251 (41)     ; 7 (7)             ; 60 (1)           ; |top                                                                                                                                               ; top             ; work         ;
-;    |SVGA_sync:SVGA|                               ; 51 (51)     ; 23 (23)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 28 (28)      ; 0 (0)             ; 23 (23)          ; |top|SVGA_sync:SVGA                                                                                                                                ; SVGA_sync       ; work         ;
-;    |memorySprites:memorySprites_inst|             ; 16 (16)     ; 0 (0)                     ; 0 (0)         ; 3750        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 15 (15)      ; 0 (0)             ; 1 (1)            ; |top|memorySprites:memorySprites_inst                                                                                                              ; memorySprites   ; work         ;
+; |top                                              ; 410 (60)    ; 78 (9)                    ; 0 (0)         ; 7500        ; 2    ; 0            ; 0       ; 0         ; 13   ; 0            ; 332 (51)     ; 6 (0)             ; 72 (9)           ; |top                                                                                                                                               ; top             ; work         ;
+;    |SVGA_sync:SVGA|                               ; 52 (52)     ; 23 (23)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 27 (27)      ; 0 (0)             ; 25 (25)          ; |top|SVGA_sync:SVGA                                                                                                                                ; SVGA_sync       ; work         ;
+;    |memorySprites:memorySprites_inst|             ; 63 (63)     ; 0 (0)                     ; 0 (0)         ; 7500        ; 2    ; 0            ; 0       ; 0         ; 0    ; 0            ; 63 (63)      ; 0 (0)             ; 0 (0)            ; |top|memorySprites:memorySprites_inst                                                                                                              ; memorySprites   ; work         ;
+;       |sram:element1|                             ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 3750        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |top|memorySprites:memorySprites_inst|sram:element1                                                                                                ; sram            ; work         ;
+;          |altsyncram:memory_array_rtl_0|          ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 3750        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |top|memorySprites:memorySprites_inst|sram:element1|altsyncram:memory_array_rtl_0                                                                  ; altsyncram      ; work         ;
+;             |altsyncram_tgi1:auto_generated|      ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 3750        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |top|memorySprites:memorySprites_inst|sram:element1|altsyncram:memory_array_rtl_0|altsyncram_tgi1:auto_generated                                   ; altsyncram_tgi1 ; work         ;
 ;       |sram:element5|                             ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 3750        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |top|memorySprites:memorySprites_inst|sram:element5                                                                                                ; sram            ; work         ;
 ;          |altsyncram:memory_array_rtl_0|          ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 3750        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |top|memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0                                                                  ; altsyncram      ; work         ;
-;             |altsyncram_f4h1:auto_generated|      ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 3750        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |top|memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_f4h1:auto_generated                                   ; altsyncram_f4h1 ; work         ;
-;    |printRGB:printRGB_inst|                       ; 202 (34)    ; 35 (11)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 167 (23)     ; 0 (0)             ; 35 (10)          ; |top|printRGB:printRGB_inst                                                                                                                        ; printRGB        ; work         ;
-;       |barrier:barrier_inst|                      ; 169 (121)   ; 24 (24)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 144 (96)     ; 0 (0)             ; 25 (25)          ; |top|printRGB:printRGB_inst|barrier:barrier_inst                                                                                                   ; barrier         ; work         ;
+;             |altsyncram_rii1:auto_generated|      ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 3750        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |top|memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_rii1:auto_generated                                   ; altsyncram_rii1 ; work         ;
+;    |printRGB:printRGB_inst|                       ; 237 (40)    ; 46 (12)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 191 (28)     ; 6 (1)             ; 40 (10)          ; |top|printRGB:printRGB_inst                                                                                                                        ; printRGB        ; work         ;
+;       |barrier:barrier_inst|                      ; 169 (122)   ; 24 (24)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 144 (97)     ; 1 (1)             ; 24 (23)          ; |top|printRGB:printRGB_inst|barrier:barrier_inst                                                                                                   ; barrier         ; work         ;
 ;          |lpm_mult:Mult0|                         ; 12 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 12 (0)       ; 0 (0)             ; 0 (0)            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult0                                                                                    ; lpm_mult        ; work         ;
 ;             |multcore:mult_core|                  ; 12 (6)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 12 (6)       ; 0 (0)             ; 0 (0)            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult0|multcore:mult_core                                                                 ; multcore        ; work         ;
 ;                |mpar_add:padder|                  ; 6 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 6 (0)        ; 0 (0)             ; 0 (0)            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder                                                 ; mpar_add        ; work         ;
@@ -720,11 +724,17 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ;                |mpar_add:padder|                  ; 6 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 6 (0)        ; 0 (0)             ; 0 (0)            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult2|multcore:mult_core|mpar_add:padder                                                 ; mpar_add        ; work         ;
 ;                   |lpm_add_sub:adder[0]|          ; 6 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 6 (0)        ; 0 (0)             ; 0 (0)            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult2|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                            ; lpm_add_sub     ; work         ;
 ;                      |add_sub_bfh:auto_generated| ; 6 (6)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 0 (0)            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult2|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_bfh:auto_generated ; add_sub_bfh     ; work         ;
-;          |lpm_mult:Mult3|                         ; 12 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 12 (0)       ; 0 (0)             ; 0 (0)            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult3                                                                                    ; lpm_mult        ; work         ;
-;             |multcore:mult_core|                  ; 12 (6)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 12 (6)       ; 0 (0)             ; 0 (0)            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult3|multcore:mult_core                                                                 ; multcore        ; work         ;
+;          |lpm_mult:Mult3|                         ; 12 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 11 (0)       ; 0 (0)             ; 1 (0)            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult3                                                                                    ; lpm_mult        ; work         ;
+;             |multcore:mult_core|                  ; 12 (6)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 11 (5)       ; 0 (0)             ; 1 (1)            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult3|multcore:mult_core                                                                 ; multcore        ; work         ;
 ;                |mpar_add:padder|                  ; 6 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 6 (0)        ; 0 (0)             ; 0 (0)            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult3|multcore:mult_core|mpar_add:padder                                                 ; mpar_add        ; work         ;
 ;                   |lpm_add_sub:adder[0]|          ; 6 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 6 (0)        ; 0 (0)             ; 0 (0)            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult3|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                            ; lpm_add_sub     ; work         ;
 ;                      |add_sub_bfh:auto_generated| ; 6 (6)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 0 (0)            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult3|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_bfh:auto_generated ; add_sub_bfh     ; work         ;
+;       |fruits:fruits_inst|                        ; 30 (20)     ; 10 (10)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 19 (9)       ; 4 (4)             ; 7 (5)            ; |top|printRGB:printRGB_inst|fruits:fruits_inst                                                                                                     ; fruits          ; work         ;
+;          |lpm_mult:Mult0|                         ; 12 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 10 (0)       ; 0 (0)             ; 2 (0)            ; |top|printRGB:printRGB_inst|fruits:fruits_inst|lpm_mult:Mult0                                                                                      ; lpm_mult        ; work         ;
+;             |multcore:mult_core|                  ; 12 (6)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 10 (4)       ; 0 (0)             ; 2 (2)            ; |top|printRGB:printRGB_inst|fruits:fruits_inst|lpm_mult:Mult0|multcore:mult_core                                                                   ; multcore        ; work         ;
+;                |mpar_add:padder|                  ; 6 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 6 (0)        ; 0 (0)             ; 0 (0)            ; |top|printRGB:printRGB_inst|fruits:fruits_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder                                                   ; mpar_add        ; work         ;
+;                   |lpm_add_sub:adder[0]|          ; 6 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 6 (0)        ; 0 (0)             ; 0 (0)            ; |top|printRGB:printRGB_inst|fruits:fruits_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                              ; lpm_add_sub     ; work         ;
+;                      |add_sub_bfh:auto_generated| ; 6 (6)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 0 (0)            ; |top|printRGB:printRGB_inst|fruits:fruits_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_bfh:auto_generated   ; add_sub_bfh     ; work         ;
 +---------------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -760,46 +770,55 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------+-------------------+---------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Control Signals                                                                                                                                                                                    ;
-+-----------------------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; Name                                                                  ; Location           ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+-----------------------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; SVGA_sync:SVGA|video_enable~0                                         ; LCCOMB_X20_Y10_N4  ; 9       ; Latch enable ; yes    ; Global Clock         ; GCLK4            ; --                        ;
-; addressMemory[0]~0                                                    ; LCCOMB_X20_Y10_N12 ; 10      ; Latch enable ; yes    ; Global Clock         ; GCLK3            ; --                        ;
-; clk                                                                   ; PIN_R8             ; 14      ; Clock        ; no     ; --                   ; --               ; --                        ;
-; clk                                                                   ; PIN_R8             ; 55      ; Clock        ; yes    ; Global Clock         ; GCLK18           ; --                        ;
-; printRGB:printRGB_inst|barrier:barrier_inst|LessThan1~3               ; LCCOMB_X23_Y8_N24  ; 12      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; printRGB:printRGB_inst|barrier:barrier_inst|LessThan2~1               ; LCCOMB_X21_Y10_N28 ; 11      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierLeft[4]~0  ; LCCOMB_X19_Y10_N26 ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierRight[4]~3 ; LCCOMB_X19_Y10_N2  ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-+-----------------------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                                                                                                  ;
++-----------------------------------------------------------------------+--------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
+; Name                                                                  ; Location           ; Fan-Out ; Usage                      ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++-----------------------------------------------------------------------+--------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
+; VGA_R[1]~2                                                            ; LCCOMB_X27_Y11_N26 ; 11      ; Latch enable               ; yes    ; Global Clock         ; GCLK19           ; --                        ;
+; clk                                                                   ; PIN_R8             ; 16      ; Clock                      ; no     ; --                   ; --               ; --                        ;
+; clk                                                                   ; PIN_R8             ; 67      ; Clock                      ; yes    ; Global Clock         ; GCLK18           ; --                        ;
+; elementMemory[2]                                                      ; LCCOMB_X28_Y13_N26 ; 20      ; Latch enable               ; yes    ; Global Clock         ; GCLK17           ; --                        ;
+; memorySprites:memorySprites_inst|read_enable1                         ; LCCOMB_X28_Y13_N24 ; 20      ; Clock enable, Write enable ; no     ; --                   ; --               ; --                        ;
+; memorySprites:memorySprites_inst|read_enable1~0                       ; LCCOMB_X28_Y13_N2  ; 1       ; Latch enable               ; no     ; --                   ; --               ; --                        ;
+; memorySprites:memorySprites_inst|read_enable5                         ; LCCOMB_X28_Y13_N30 ; 5       ; Clock enable, Write enable ; no     ; --                   ; --               ; --                        ;
+; memorySprites:memorySprites_inst|read_enable5~0                       ; LCCOMB_X28_Y13_N28 ; 1       ; Latch enable               ; no     ; --                   ; --               ; --                        ;
+; printRGB:printRGB_inst|address[3]~17                                  ; LCCOMB_X27_Y11_N30 ; 10      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; printRGB:printRGB_inst|barrier:barrier_inst|LessThan0~3               ; LCCOMB_X27_Y7_N0   ; 15      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; printRGB:printRGB_inst|barrier:barrier_inst|LessThan1~1               ; LCCOMB_X27_Y7_N28  ; 14      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierLeft[4]~2  ; LCCOMB_X28_Y11_N6  ; 5       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierRight[4]~1 ; LCCOMB_X29_Y12_N2  ; 5       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; printRGB:printRGB_inst|barrier:barrier_inst|enable~0                  ; LCCOMB_X27_Y11_N6  ; 10      ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
+; printRGB:printRGB_inst|fruits:fruits_inst|enable~6                    ; LCCOMB_X27_Y11_N0  ; 13      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; printRGB:printRGB_inst|ready~1                                        ; LCCOMB_X27_Y11_N14 ; 11      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
++-----------------------------------------------------------------------+--------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Global & Other Fast Signals                                                                                                                                               ;
-+-------------------------------+--------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; Name                          ; Location           ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+-------------------------------+--------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; SVGA_sync:SVGA|video_enable~0 ; LCCOMB_X20_Y10_N4  ; 9       ; 0                                    ; Global Clock         ; GCLK4            ; --                        ;
-; addressMemory[0]~0            ; LCCOMB_X20_Y10_N12 ; 10      ; 0                                    ; Global Clock         ; GCLK3            ; --                        ;
-; clk                           ; PIN_R8             ; 55      ; 21                                   ; Global Clock         ; GCLK18           ; --                        ;
-+-------------------------------+--------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Global & Other Fast Signals                                                                                                                                  ;
++------------------+--------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
+; Name             ; Location           ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++------------------+--------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
+; VGA_R[1]~2       ; LCCOMB_X27_Y11_N26 ; 11      ; 0                                    ; Global Clock         ; GCLK19           ; --                        ;
+; clk              ; PIN_R8             ; 67      ; 0                                    ; Global Clock         ; GCLK18           ; --                        ;
+; elementMemory[2] ; LCCOMB_X28_Y13_N26 ; 20      ; 0                                    ; Global Clock         ; GCLK17           ; --                        ;
++------------------+--------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fitter RAM Summary                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     ;
-+------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+-------------------------------------------+---------------+----------------------+------------------------+------------------------+----------+------------------------+---------------+
-; Name                                                                                                                   ; Type ; Mode             ; Clock Mode   ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Port A Input Registers ; Port A Output Registers ; Port B Input Registers ; Port B Output Registers ; Size ; Implementation Port A Depth ; Implementation Port A Width ; Implementation Port B Depth ; Implementation Port B Width ; Implementation Bits ; M9Ks ; MIF                                       ; Location      ; Mixed Width RDW Mode ; Port A RDW Mode        ; Port B RDW Mode        ; ECC Mode ; ECC Pipeline Registers ; Fits in MLABs ;
-+------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+-------------------------------------------+---------------+----------------------+------------------------+------------------------+----------+------------------------+---------------+
-; memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_f4h1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; Single Clock ; 625          ; 8            ; 625          ; 8            ; yes                    ; no                      ; yes                    ; no                      ; 5000 ; 625                         ; 6                           ; 625                         ; 6                           ; 3750                ; 1    ; db/consoleFPGA.ram0_sram_76955e8c.hdl.mif ; M9K_X22_Y7_N0 ; Don't care           ; New data with NBE Read ; New data with NBE Read ; Off      ; No                     ; No - Unknown  ;
-+------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+-------------------------------------------+---------------+----------------------+------------------------+------------------------+----------+------------------------+---------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter RAM Summary                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ;
++------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+-------------------------------------------+----------------+----------------------+------------------------+------------------------+----------+------------------------+---------------+
+; Name                                                                                                                   ; Type ; Mode             ; Clock Mode   ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Port A Input Registers ; Port A Output Registers ; Port B Input Registers ; Port B Output Registers ; Size ; Implementation Port A Depth ; Implementation Port A Width ; Implementation Port B Depth ; Implementation Port B Width ; Implementation Bits ; M9Ks ; MIF                                       ; Location       ; Mixed Width RDW Mode ; Port A RDW Mode        ; Port B RDW Mode        ; ECC Mode ; ECC Pipeline Registers ; Fits in MLABs ;
++------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+-------------------------------------------+----------------+----------------------+------------------------+------------------------+----------+------------------------+---------------+
+; memorySprites:memorySprites_inst|sram:element1|altsyncram:memory_array_rtl_0|altsyncram_tgi1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; Single Clock ; 625          ; 8            ; 625          ; 8            ; yes                    ; no                      ; yes                    ; no                      ; 5000 ; 625                         ; 6                           ; 625                         ; 6                           ; 3750                ; 1    ; db/consoleFPGA.ram0_sram_646a7550.hdl.mif ; M9K_X33_Y13_N0 ; Don't care           ; New data with NBE Read ; New data with NBE Read ; Off      ; No                     ; No - Unknown  ;
+; memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_rii1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; Single Clock ; 625          ; 8            ; 625          ; 8            ; yes                    ; no                      ; yes                    ; no                      ; 5000 ; 625                         ; 6                           ; 625                         ; 6                           ; 3750                ; 1    ; db/consoleFPGA.ram0_sram_76955e8c.hdl.mif ; M9K_X33_Y12_N0 ; Don't care           ; New data with NBE Read ; New data with NBE Read ; Off      ; No                     ; No - Unknown  ;
++------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+-------------------------------------------+----------------+----------------------+------------------------+------------------------+----------+------------------------+---------------+
 Note: Fitter may spread logical memories into multiple blocks to improve timing. The actual required RAM blocks can be found in the Fitter Resource Usage section.
 
 
 RAM content values are presented in the following format: (Binary) (Octal) (Decimal) (Hexadecimal) 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; |top|memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_f4h1:auto_generated|ALTSYNCRAM                                                                                                                                      ;
+; |top|memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_rii1:auto_generated|ALTSYNCRAM                                                                                                                                      ;
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ;   Addr   ;              +0              ;              +1              ;              +2              ;              +3              ;              +4              ;              +5              ;              +6              ;              +7              ;
 +----------+------------------------------+------------------------------+------------------------------+------------------------------+------------------------------+------------------------------+------------------------------+------------------------------+
@@ -884,42 +903,129 @@ RAM content values are presented in the following format: (Binary) (Octal) (Deci
 ;624;(00000000) (0) (0) (00)    ;
 
 
+RAM content values are presented in the following format: (Binary) (Octal) (Decimal) (Hexadecimal) 
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; |top|memorySprites:memorySprites_inst|sram:element1|altsyncram:memory_array_rtl_0|altsyncram_tgi1:auto_generated|ALTSYNCRAM                                                                                                                                      ;
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+;   Addr   ;              +0              ;              +1              ;              +2              ;              +3              ;              +4              ;              +5              ;              +6              ;              +7              ;
++----------+------------------------------+------------------------------+------------------------------+------------------------------+------------------------------+------------------------------+------------------------------+------------------------------+
+;0;(00000000) (0) (0) (00)    ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;
+;8;(00000000) (0) (0) (00)    ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00001010) (12) (10) (0A)   ;
+;16;(00011011) (33) (27) (1B)    ;(00010000) (20) (16) (10)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;
+;24;(00000000) (0) (0) (00)    ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;
+;32;(00000000) (0) (0) (00)    ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00001011) (13) (11) (0B)   ;
+;40;(00111011) (73) (59) (3B)    ;(00111100) (74) (60) (3C)   ;(00011100) (34) (28) (1C)   ;(00000111) (7) (7) (07)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;
+;48;(00000000) (0) (0) (00)    ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00001101) (15) (13) (0D)   ;(00001110) (16) (14) (0E)   ;(00001101) (15) (13) (0D)   ;(00001101) (15) (13) (0D)   ;
+;56;(00001111) (17) (15) (0F)    ;(00001111) (17) (15) (0F)   ;(00001110) (16) (14) (0E)   ;(00001101) (15) (13) (0D)   ;(00000011) (3) (3) (03)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00001010) (12) (10) (0A)   ;
+;64;(00111011) (73) (59) (3B)    ;(00111010) (72) (58) (3A)   ;(00111100) (74) (60) (3C)   ;(00111011) (73) (59) (3B)   ;(00000111) (7) (7) (07)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;
+;72;(00000000) (0) (0) (00)    ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00001110) (16) (14) (0E)   ;(00010010) (22) (18) (12)   ;(00010001) (21) (17) (11)   ;
+;80;(00010001) (21) (17) (11)    ;(00010010) (22) (18) (12)   ;(00010010) (22) (18) (12)   ;(00010001) (21) (17) (11)   ;(00010001) (21) (17) (11)   ;(00001111) (17) (15) (0F)   ;(00000111) (7) (7) (07)   ;(00000001) (1) (1) (01)   ;
+;88;(00011011) (33) (27) (1B)    ;(00111010) (72) (58) (3A)   ;(00111100) (74) (60) (3C)   ;(00011011) (33) (27) (1B)   ;(00001010) (12) (10) (0A)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;
+;96;(00000000) (0) (0) (00)    ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00001101) (15) (13) (0D)   ;(00011101) (35) (29) (1D)   ;
+;104;(00010011) (23) (19) (13)    ;(00010011) (23) (19) (13)   ;(00011110) (36) (30) (1E)   ;(00010011) (23) (19) (13)   ;(00010011) (23) (19) (13)   ;(00010010) (22) (18) (12)   ;(00010001) (21) (17) (11)   ;(00001111) (17) (15) (0F)   ;
+;112;(00001110) (16) (14) (0E)    ;(00111011) (73) (59) (3B)   ;(00111110) (76) (62) (3E)   ;(00001110) (16) (14) (0E)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;
+;120;(00000000) (0) (0) (00)    ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;
+;128;(00001111) (17) (15) (0F)    ;(00011110) (36) (30) (1E)   ;(00010011) (23) (19) (13)   ;(00010011) (23) (19) (13)   ;(00011110) (36) (30) (1E)   ;(00011110) (36) (30) (1E)   ;(00011110) (36) (30) (1E)   ;(00011110) (36) (30) (1E)   ;
+;136;(00010001) (21) (17) (11)    ;(00011011) (33) (27) (1B)   ;(00111110) (76) (62) (3E)   ;(00001110) (16) (14) (0E)   ;(00000010) (2) (2) (02)   ;(00000110) (6) (6) (06)   ;(00001000) (10) (8) (08)   ;(00001000) (10) (8) (08)   ;
+;144;(00000101) (5) (5) (05)    ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;
+;152;(00000000) (0) (0) (00)    ;(00000001) (1) (1) (01)   ;(00010000) (20) (16) (10)   ;(00011101) (35) (29) (1D)   ;(00011110) (36) (30) (1E)   ;(00010011) (23) (19) (13)   ;(00010011) (23) (19) (13)   ;(00010011) (23) (19) (13)   ;
+;160;(00011110) (36) (30) (1E)    ;(00011110) (36) (30) (1E)   ;(00111111) (77) (63) (3F)   ;(00111100) (74) (60) (3C)   ;(00101111) (57) (47) (2F)   ;(00110001) (61) (49) (31)   ;(00110100) (64) (52) (34)   ;(00110100) (64) (52) (34)   ;
+;168;(00110110) (66) (54) (36)    ;(00110101) (65) (53) (35)   ;(00011100) (34) (28) (1C)   ;(00001000) (10) (8) (08)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;
+;176;(00000000) (0) (0) (00)    ;(00000000) (0) (0) (00)   ;(00001001) (11) (9) (09)   ;(00110001) (61) (49) (31)   ;(00110101) (65) (53) (35)   ;(00111011) (73) (59) (3B)   ;(00111110) (76) (62) (3E)   ;(00111111) (77) (63) (3F)   ;
+;184;(00111110) (76) (62) (3E)    ;(00111100) (74) (60) (3C)   ;(00111110) (76) (62) (3E)   ;(00111111) (77) (63) (3F)   ;(00111101) (75) (61) (3D)   ;(00101101) (55) (45) (2D)   ;(00101101) (55) (45) (2D)   ;(00101101) (55) (45) (2D)   ;
+;192;(00101100) (54) (44) (2C)    ;(00100111) (47) (39) (27)   ;(00100010) (42) (34) (22)   ;(00110011) (63) (51) (33)   ;(00110010) (62) (50) (32)   ;(00001001) (11) (9) (09)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;
+;200;(00000000) (0) (0) (00)    ;(00000000) (0) (0) (00)   ;(00000101) (5) (5) (05)   ;(00110001) (61) (49) (31)   ;(00100101) (45) (37) (25)   ;(00010111) (27) (23) (17)   ;(00100100) (44) (36) (24)   ;(00101100) (54) (44) (2C)   ;
+;208;(00101100) (54) (44) (2C)    ;(00101010) (52) (42) (2A)   ;(00101100) (54) (44) (2C)   ;(00111000) (70) (56) (38)   ;(00111101) (75) (61) (3D)   ;(00111001) (71) (57) (39)   ;(00101110) (56) (46) (2E)   ;(00101100) (54) (44) (2C)   ;
+;216;(00101100) (54) (44) (2C)    ;(00101101) (55) (45) (2D)   ;(00101100) (54) (44) (2C)   ;(00100011) (43) (35) (23)   ;(00010110) (26) (22) (16)   ;(00100110) (46) (38) (26)   ;(00111010) (72) (58) (3A)   ;(00000010) (2) (2) (02)   ;
+;224;(00000000) (0) (0) (00)    ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00011010) (32) (26) (1A)   ;(00110000) (60) (48) (30)   ;(00010100) (24) (20) (14)   ;(00100001) (41) (33) (21)   ;(00101010) (52) (42) (2A)   ;
+;232;(00101100) (54) (44) (2C)    ;(00101100) (54) (44) (2C)   ;(00101010) (52) (42) (2A)   ;(00101010) (52) (42) (2A)   ;(00101010) (52) (42) (2A)   ;(00101010) (52) (42) (2A)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;
+;240;(00101100) (54) (44) (2C)    ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101010) (52) (42) (2A)   ;(00101100) (54) (44) (2C)   ;(00100001) (41) (33) (21)   ;(00010111) (27) (23) (17)   ;(00110111) (67) (55) (37)   ;
+;248;(00001100) (14) (12) (0C)    ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000100) (4) (4) (04)   ;(00110010) (62) (50) (32)   ;(00011111) (37) (31) (1F)   ;(00010100) (24) (20) (14)   ;(00100110) (46) (38) (26)   ;
+;256;(00101101) (55) (45) (2D)    ;(00101101) (55) (45) (2D)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101011) (53) (43) (2B)   ;(00101100) (54) (44) (2C)   ;
+;264;(00101100) (54) (44) (2C)    ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101101) (55) (45) (2D)   ;(00101010) (52) (42) (2A)   ;(00101101) (55) (45) (2D)   ;(00100011) (43) (35) (23)   ;(00010100) (24) (20) (14)   ;
+;272;(00100110) (46) (38) (26)    ;(00101111) (57) (47) (2F)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00001011) (13) (11) (0B)   ;(00110011) (63) (51) (33)   ;(00010100) (24) (20) (14)   ;(00010111) (27) (23) (17)   ;
+;280;(00100111) (47) (39) (27)    ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;
+;288;(00101100) (54) (44) (2C)    ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101101) (55) (45) (2D)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101101) (55) (45) (2D)   ;(00100100) (44) (36) (24)   ;
+;296;(00010100) (24) (20) (14)    ;(00100001) (41) (33) (21)   ;(00110101) (65) (53) (35)   ;(00000010) (2) (2) (02)   ;(00000000) (0) (0) (00)   ;(00010101) (25) (21) (15)   ;(00101000) (50) (40) (28)   ;(00010100) (24) (20) (14)   ;
+;304;(00010111) (27) (23) (17)    ;(00101001) (51) (41) (29)   ;(00101101) (55) (45) (2D)   ;(00101101) (55) (45) (2D)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;
+;312;(00101100) (54) (44) (2C)    ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;
+;320;(00101001) (51) (41) (29)    ;(00010110) (26) (22) (16)   ;(00100000) (40) (32) (20)   ;(00110101) (65) (53) (35)   ;(00000101) (5) (5) (05)   ;(00000000) (0) (0) (00)   ;(00011010) (32) (26) (1A)   ;(00101000) (50) (40) (28)   ;
+;328;(00010100) (24) (20) (14)    ;(00010111) (27) (23) (17)   ;(00101001) (51) (41) (29)   ;(00101101) (55) (45) (2D)   ;(00101101) (55) (45) (2D)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;
+;336;(00101100) (54) (44) (2C)    ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;
+;344;(00101100) (54) (44) (2C)    ;(00101001) (51) (41) (29)   ;(00010110) (26) (22) (16)   ;(00100000) (40) (32) (20)   ;(00110101) (65) (53) (35)   ;(00000100) (4) (4) (04)   ;(00000000) (0) (0) (00)   ;(00011010) (32) (26) (1A)   ;
+;352;(00101001) (51) (41) (29)    ;(00010110) (26) (22) (16)   ;(00010111) (27) (23) (17)   ;(00101001) (51) (41) (29)   ;(00101101) (55) (45) (2D)   ;(00101101) (55) (45) (2D)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;
+;360;(00101100) (54) (44) (2C)    ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;
+;368;(00101100) (54) (44) (2C)    ;(00101100) (54) (44) (2C)   ;(00101001) (51) (41) (29)   ;(00010110) (26) (22) (16)   ;(00100011) (43) (35) (23)   ;(00110001) (61) (49) (31)   ;(00000010) (2) (2) (02)   ;(00000000) (0) (0) (00)   ;
+;376;(00011001) (31) (25) (19)    ;(00101100) (54) (44) (2C)   ;(00011000) (30) (24) (18)   ;(00010110) (26) (22) (16)   ;(00101000) (50) (40) (28)   ;(00101101) (55) (45) (2D)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;
+;384;(00101100) (54) (44) (2C)    ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;
+;392;(00101100) (54) (44) (2C)    ;(00101100) (54) (44) (2C)   ;(00101101) (55) (45) (2D)   ;(00101001) (51) (41) (29)   ;(00010100) (24) (20) (14)   ;(00110000) (60) (48) (30)   ;(00011100) (34) (28) (1C)   ;(00000000) (0) (0) (00)   ;
+;400;(00000000) (0) (0) (00)    ;(00001001) (11) (9) (09)   ;(00110111) (67) (55) (37)   ;(00100000) (40) (32) (20)   ;(00010100) (24) (20) (14)   ;(00100101) (45) (37) (25)   ;(00101011) (53) (43) (2B)   ;(00101100) (54) (44) (2C)   ;
+;408;(00101100) (54) (44) (2C)    ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;
+;416;(00101100) (54) (44) (2C)    ;(00101100) (54) (44) (2C)   ;(00101010) (52) (42) (2A)   ;(00101010) (52) (42) (2A)   ;(00100110) (46) (38) (26)   ;(00010111) (27) (23) (17)   ;(00110100) (64) (52) (34)   ;(00001100) (14) (12) (0C)   ;
+;424;(00000000) (0) (0) (00)    ;(00000000) (0) (0) (00)   ;(00000010) (2) (2) (02)   ;(00111010) (72) (58) (3A)   ;(00100110) (46) (38) (26)   ;(00010100) (24) (20) (14)   ;(00100000) (40) (32) (20)   ;(00101010) (52) (42) (2A)   ;
+;432;(00101100) (54) (44) (2C)    ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;
+;440;(00101100) (54) (44) (2C)    ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101010) (52) (42) (2A)   ;(00101100) (54) (44) (2C)   ;(00100000) (40) (32) (20)   ;(00100001) (41) (33) (21)   ;(00110010) (62) (50) (32)   ;
+;448;(00000101) (5) (5) (05)    ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00001011) (13) (11) (0B)   ;(00111000) (70) (56) (38)   ;(00100000) (40) (32) (20)   ;(00010111) (27) (23) (17)   ;
+;456;(00100111) (47) (39) (27)    ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;
+;464;(00101100) (54) (44) (2C)    ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101000) (50) (40) (28)   ;(00011111) (37) (31) (1F)   ;(00110100) (64) (52) (34)   ;
+;472;(00011010) (32) (26) (1A)    ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000010) (2) (2) (02)   ;(00101111) (57) (47) (2F)   ;(00110011) (63) (51) (33)   ;
+;480;(00010111) (27) (23) (17)    ;(00100010) (42) (34) (22)   ;(00101100) (54) (44) (2C)   ;(00101101) (55) (45) (2D)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;
+;488;(00101100) (54) (44) (2C)    ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101010) (52) (42) (2A)   ;(00101001) (51) (41) (29)   ;(00100011) (43) (35) (23)   ;(00100110) (46) (38) (26)   ;
+;496;(00110110) (66) (54) (36)    ;(00001000) (10) (8) (08)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00001000) (10) (8) (08)   ;
+;504;(00110010) (62) (50) (32)    ;(00101000) (50) (40) (28)   ;(00010111) (27) (23) (17)   ;(00101000) (50) (40) (28)   ;(00100111) (47) (39) (27)   ;(00100111) (47) (39) (27)   ;(00101100) (54) (44) (2C)   ;(00101010) (52) (42) (2A)   ;
+;512;(00101010) (52) (42) (2A)    ;(00101100) (54) (44) (2C)   ;(00101101) (55) (45) (2D)   ;(00101100) (54) (44) (2C)   ;(00101101) (55) (45) (2D)   ;(00101101) (55) (45) (2D)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;
+;520;(00111000) (70) (56) (38)    ;(00001100) (14) (12) (0C)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;
+;528;(00000000) (0) (0) (00)    ;(00001001) (11) (9) (09)   ;(00110110) (66) (54) (36)   ;(00101001) (51) (41) (29)   ;(00101000) (50) (40) (28)   ;(00010110) (26) (22) (16)   ;(00010111) (27) (23) (17)   ;(00101001) (51) (41) (29)   ;
+;536;(00101100) (54) (44) (2C)    ;(00101100) (54) (44) (2C)   ;(00101010) (52) (42) (2A)   ;(00101100) (54) (44) (2C)   ;(00101100) (54) (44) (2C)   ;(00101101) (55) (45) (2D)   ;(00101100) (54) (44) (2C)   ;(00101010) (52) (42) (2A)   ;
+;544;(00111000) (70) (56) (38)    ;(00011010) (32) (26) (1A)   ;(00000001) (1) (1) (01)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;
+;552;(00000000) (0) (0) (00)    ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00001001) (11) (9) (09)   ;(00111010) (72) (58) (3A)   ;(00110111) (67) (55) (37)   ;(00100011) (43) (35) (23)   ;(00100011) (43) (35) (23)   ;
+;560;(00101010) (52) (42) (2A)    ;(00101101) (55) (45) (2D)   ;(00111000) (70) (56) (38)   ;(00110111) (67) (55) (37)   ;(00101100) (54) (44) (2C)   ;(00101101) (55) (45) (2D)   ;(00101101) (55) (45) (2D)   ;(00101101) (55) (45) (2D)   ;
+;568;(00111000) (70) (56) (38)    ;(00011010) (32) (26) (1A)   ;(00000010) (2) (2) (02)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;
+;576;(00000000) (0) (0) (00)    ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000101) (5) (5) (05)   ;(00011001) (31) (25) (19)   ;(00101111) (57) (47) (2F)   ;
+;584;(00110010) (62) (50) (32)    ;(00110101) (65) (53) (35)   ;(00101111) (57) (47) (2F)   ;(00001100) (14) (12) (0C)   ;(00011010) (32) (26) (1A)   ;(00110000) (60) (48) (30)   ;(00110101) (65) (53) (35)   ;(00110010) (62) (50) (32)   ;
+;592;(00011100) (34) (28) (1C)    ;(00001011) (13) (11) (0B)   ;(00000001) (1) (1) (01)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;
+;600;(00000000) (0) (0) (00)    ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;
+;608;(00000001) (1) (1) (01)    ;(00000101) (5) (5) (05)   ;(00000101) (5) (5) (05)   ;(00000010) (2) (2) (02)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000010) (2) (2) (02)   ;(00000101) (5) (5) (05)   ;
+;616;(00000011) (3) (3) (03)    ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;
+;624;(00000000) (0) (0) (00)    ;
+
+
 +------------------------------------------------+
 ; Routing Usage Summary                          ;
 +-----------------------+------------------------+
 ; Routing Resource Type ; Usage                  ;
 +-----------------------+------------------------+
-; Block interconnects   ; 396 / 71,559 ( < 1 % ) ;
-; C16 interconnects     ; 21 / 2,597 ( < 1 % )   ;
-; C4 interconnects      ; 266 / 46,848 ( < 1 % ) ;
-; Direct links          ; 91 / 71,559 ( < 1 % )  ;
+; Block interconnects   ; 550 / 71,559 ( < 1 % ) ;
+; C16 interconnects     ; 18 / 2,597 ( < 1 % )   ;
+; C4 interconnects      ; 365 / 46,848 ( < 1 % ) ;
+; Direct links          ; 87 / 71,559 ( < 1 % )  ;
 ; Global clocks         ; 3 / 20 ( 15 % )        ;
-; Local interconnects   ; 169 / 24,624 ( < 1 % ) ;
-; R24 interconnects     ; 11 / 2,496 ( < 1 % )   ;
-; R4 interconnects      ; 238 / 62,424 ( < 1 % ) ;
+; Local interconnects   ; 218 / 24,624 ( < 1 % ) ;
+; R24 interconnects     ; 13 / 2,496 ( < 1 % )   ;
+; R4 interconnects      ; 359 / 62,424 ( < 1 % ) ;
 +-----------------------+------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Logic Elements                                                         ;
 +---------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 13.83) ; Number of LABs  (Total = 23) ;
+; Number of Logic Elements  (Average = 12.81) ; Number of LABs  (Total = 32) ;
 +---------------------------------------------+------------------------------+
 ; 1                                           ; 0                            ;
 ; 2                                           ; 0                            ;
-; 3                                           ; 2                            ;
+; 3                                           ; 1                            ;
 ; 4                                           ; 0                            ;
-; 5                                           ; 0                            ;
+; 5                                           ; 2                            ;
 ; 6                                           ; 1                            ;
-; 7                                           ; 0                            ;
-; 8                                           ; 1                            ;
-; 9                                           ; 0                            ;
+; 7                                           ; 2                            ;
+; 8                                           ; 0                            ;
+; 9                                           ; 2                            ;
 ; 10                                          ; 0                            ;
-; 11                                          ; 0                            ;
-; 12                                          ; 0                            ;
+; 11                                          ; 2                            ;
+; 12                                          ; 2                            ;
 ; 13                                          ; 0                            ;
 ; 14                                          ; 3                            ;
-; 15                                          ; 0                            ;
+; 15                                          ; 1                            ;
 ; 16                                          ; 16                           ;
 +---------------------------------------------+------------------------------+
 
@@ -927,43 +1033,45 @@ RAM content values are presented in the following format: (Binary) (Octal) (Deci
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 0.83) ; Number of LABs  (Total = 23) ;
+; LAB-wide Signals  (Average = 1.06) ; Number of LABs  (Total = 32) ;
 +------------------------------------+------------------------------+
-; 1 Clock                            ; 15                           ;
-; 1 Clock enable                     ; 1                            ;
-; 2 Clocks                           ; 3                            ;
+; 1 Clock                            ; 16                           ;
+; 1 Clock enable                     ; 10                           ;
+; 1 Sync. clear                      ; 2                            ;
+; 1 Sync. load                       ; 2                            ;
+; 2 Clocks                           ; 4                            ;
 +------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 16.74) ; Number of LABs  (Total = 23) ;
+; Number of Signals Sourced  (Average = 15.22) ; Number of LABs  (Total = 32) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
 ; 1                                            ; 0                            ;
 ; 2                                            ; 0                            ;
 ; 3                                            ; 1                            ;
-; 4                                            ; 1                            ;
-; 5                                            ; 0                            ;
-; 6                                            ; 1                            ;
-; 7                                            ; 0                            ;
+; 4                                            ; 0                            ;
+; 5                                            ; 1                            ;
+; 6                                            ; 2                            ;
+; 7                                            ; 2                            ;
 ; 8                                            ; 0                            ;
 ; 9                                            ; 1                            ;
 ; 10                                           ; 0                            ;
 ; 11                                           ; 0                            ;
-; 12                                           ; 0                            ;
-; 13                                           ; 0                            ;
-; 14                                           ; 0                            ;
-; 15                                           ; 0                            ;
-; 16                                           ; 4                            ;
-; 17                                           ; 2                            ;
-; 18                                           ; 1                            ;
-; 19                                           ; 3                            ;
-; 20                                           ; 4                            ;
+; 12                                           ; 1                            ;
+; 13                                           ; 1                            ;
+; 14                                           ; 1                            ;
+; 15                                           ; 1                            ;
+; 16                                           ; 5                            ;
+; 17                                           ; 3                            ;
+; 18                                           ; 7                            ;
+; 19                                           ; 0                            ;
+; 20                                           ; 0                            ;
 ; 21                                           ; 3                            ;
 ; 22                                           ; 1                            ;
-; 23                                           ; 0                            ;
+; 23                                           ; 1                            ;
 ; 24                                           ; 0                            ;
 ; 25                                           ; 1                            ;
 +----------------------------------------------+------------------------------+
@@ -972,24 +1080,24 @@ RAM content values are presented in the following format: (Binary) (Octal) (Deci
 +--------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                        ;
 +-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 8.26) ; Number of LABs  (Total = 23) ;
+; Number of Signals Sourced Out  (Average = 8.03) ; Number of LABs  (Total = 32) ;
 +-------------------------------------------------+------------------------------+
 ; 0                                               ; 0                            ;
-; 1                                               ; 0                            ;
+; 1                                               ; 1                            ;
 ; 2                                               ; 2                            ;
-; 3                                               ; 3                            ;
-; 4                                               ; 2                            ;
-; 5                                               ; 2                            ;
-; 6                                               ; 0                            ;
+; 3                                               ; 4                            ;
+; 4                                               ; 1                            ;
+; 5                                               ; 3                            ;
+; 6                                               ; 3                            ;
 ; 7                                               ; 1                            ;
-; 8                                               ; 1                            ;
-; 9                                               ; 0                            ;
-; 10                                              ; 4                            ;
-; 11                                              ; 2                            ;
-; 12                                              ; 2                            ;
-; 13                                              ; 2                            ;
+; 8                                               ; 0                            ;
+; 9                                               ; 2                            ;
+; 10                                              ; 5                            ;
+; 11                                              ; 3                            ;
+; 12                                              ; 4                            ;
+; 13                                              ; 0                            ;
 ; 14                                              ; 0                            ;
-; 15                                              ; 0                            ;
+; 15                                              ; 1                            ;
 ; 16                                              ; 2                            ;
 +-------------------------------------------------+------------------------------+
 
@@ -997,33 +1105,46 @@ RAM content values are presented in the following format: (Binary) (Octal) (Deci
 +-----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 12.78) ; Number of LABs  (Total = 23) ;
+; Number of Distinct Inputs  (Average = 13.22) ; Number of LABs  (Total = 32) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
 ; 1                                            ; 0                            ;
-; 2                                            ; 0                            ;
-; 3                                            ; 0                            ;
+; 2                                            ; 1                            ;
+; 3                                            ; 2                            ;
 ; 4                                            ; 3                            ;
-; 5                                            ; 0                            ;
+; 5                                            ; 1                            ;
 ; 6                                            ; 1                            ;
-; 7                                            ; 0                            ;
-; 8                                            ; 0                            ;
-; 9                                            ; 2                            ;
-; 10                                           ; 4                            ;
-; 11                                           ; 2                            ;
-; 12                                           ; 1                            ;
+; 7                                            ; 2                            ;
+; 8                                            ; 1                            ;
+; 9                                            ; 0                            ;
+; 10                                           ; 3                            ;
+; 11                                           ; 0                            ;
+; 12                                           ; 2                            ;
 ; 13                                           ; 0                            ;
 ; 14                                           ; 0                            ;
 ; 15                                           ; 5                            ;
-; 16                                           ; 0                            ;
-; 17                                           ; 0                            ;
-; 18                                           ; 0                            ;
-; 19                                           ; 1                            ;
-; 20                                           ; 0                            ;
-; 21                                           ; 2                            ;
-; 22                                           ; 0                            ;
+; 16                                           ; 1                            ;
+; 17                                           ; 3                            ;
+; 18                                           ; 1                            ;
+; 19                                           ; 0                            ;
+; 20                                           ; 1                            ;
+; 21                                           ; 1                            ;
+; 22                                           ; 1                            ;
 ; 23                                           ; 0                            ;
-; 24                                           ; 2                            ;
+; 24                                           ; 1                            ;
+; 25                                           ; 0                            ;
+; 26                                           ; 0                            ;
+; 27                                           ; 0                            ;
+; 28                                           ; 0                            ;
+; 29                                           ; 0                            ;
+; 30                                           ; 0                            ;
+; 31                                           ; 0                            ;
+; 32                                           ; 1                            ;
+; 33                                           ; 0                            ;
+; 34                                           ; 0                            ;
+; 35                                           ; 0                            ;
+; 36                                           ; 0                            ;
+; 37                                           ; 1                            ;
 +----------------------------------------------+------------------------------+
 
 
@@ -1140,80 +1261,95 @@ RAM content values are presented in the following format: (Binary) (Octal) (Deci
 +---------------------------+--------+
 
 
-+------------------------------------------------------------------+
-; Estimated Delay Added for Hold Timing Summary                    ;
-+-----------------+----------------------------+-------------------+
-; Source Clock(s) ; Destination Clock(s)       ; Delay Added in ns ;
-+-----------------+----------------------------+-------------------+
-; clk             ; clk                        ; 55.1              ;
-; clk             ; SVGA_sync:SVGA|pixel_x[10] ; 28.7              ;
-+-----------------+----------------------------+-------------------+
++-----------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Summary                         ;
++----------------------------+----------------------+-------------------+
+; Source Clock(s)            ; Destination Clock(s) ; Delay Added in ns ;
++----------------------------+----------------------+-------------------+
+; clk                        ; clk                  ; 99.7              ;
+; clk,elementMemory[2]       ; clk                  ; 42.7              ;
+; SVGA_sync:SVGA|pixel_x[10] ; clk,elementMemory[2] ; 5.5               ;
++----------------------------+----------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using the Timing Analyzer.
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Estimated Delay Added for Hold Timing Details                                                                                                                 ;
-+---------------------------------------------------------------------+---------------------------------------------------------------------+-------------------+
-; Source Register                                                     ; Destination Register                                                ; Delay Added in ns ;
-+---------------------------------------------------------------------+---------------------------------------------------------------------+-------------------+
-; SVGA_sync:SVGA|pixel_x[10]                                          ; SVGA_sync:SVGA|pixel_x[10]                                          ; 2.246             ;
-; printRGB:printRGB_inst|address[0]                                   ; addressMemory[0]                                                    ; 2.099             ;
-; printRGB:printRGB_inst|address[1]                                   ; addressMemory[1]                                                    ; 2.099             ;
-; printRGB:printRGB_inst|address[2]                                   ; addressMemory[2]                                                    ; 2.099             ;
-; printRGB:printRGB_inst|address[3]                                   ; addressMemory[3]                                                    ; 2.099             ;
-; printRGB:printRGB_inst|address[4]                                   ; addressMemory[4]                                                    ; 2.099             ;
-; printRGB:printRGB_inst|address[5]                                   ; addressMemory[5]                                                    ; 2.099             ;
-; printRGB:printRGB_inst|address[6]                                   ; addressMemory[6]                                                    ; 2.099             ;
-; printRGB:printRGB_inst|address[7]                                   ; addressMemory[7]                                                    ; 2.099             ;
-; printRGB:printRGB_inst|address[8]                                   ; addressMemory[8]                                                    ; 2.097             ;
-; printRGB:printRGB_inst|address[9]                                   ; addressMemory[9]                                                    ; 2.097             ;
-; SVGA_sync:SVGA|pixel_x[2]                                           ; SVGA_sync:SVGA|pixel_x[10]                                          ; 2.018             ;
-; SVGA_sync:SVGA|pixel_x[1]                                           ; SVGA_sync:SVGA|pixel_x[10]                                          ; 2.018             ;
-; SVGA_sync:SVGA|pixel_x[0]                                           ; SVGA_sync:SVGA|pixel_x[10]                                          ; 2.018             ;
-; SVGA_sync:SVGA|pixel_x[9]                                           ; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierRight[5] ; 1.943             ;
-; SVGA_sync:SVGA|pixel_x[7]                                           ; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierRight[5] ; 1.943             ;
-; SVGA_sync:SVGA|pixel_x[6]                                           ; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierRight[5] ; 1.943             ;
-; SVGA_sync:SVGA|pixel_x[5]                                           ; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierRight[5] ; 1.943             ;
-; SVGA_sync:SVGA|pixel_x[8]                                           ; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierRight[5] ; 1.943             ;
-; SVGA_sync:SVGA|pixel_x[3]                                           ; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierRight[5] ; 1.943             ;
-; SVGA_sync:SVGA|pixel_x[4]                                           ; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierRight[5] ; 1.943             ;
-; SVGA_sync:SVGA|pixel_y[7]                                           ; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierRight[5] ; 1.597             ;
-; SVGA_sync:SVGA|pixel_y[8]                                           ; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierRight[5] ; 1.597             ;
-; SVGA_sync:SVGA|pixel_y[6]                                           ; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierRight[5] ; 1.597             ;
-; SVGA_sync:SVGA|pixel_y[5]                                           ; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierRight[5] ; 1.597             ;
-; SVGA_sync:SVGA|pixel_y[4]                                           ; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierRight[5] ; 1.597             ;
-; SVGA_sync:SVGA|pixel_y[2]                                           ; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierRight[5] ; 1.597             ;
-; SVGA_sync:SVGA|pixel_y[3]                                           ; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierRight[5] ; 1.597             ;
-; SVGA_sync:SVGA|pixel_y[0]                                           ; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierRight[5] ; 1.597             ;
-; SVGA_sync:SVGA|pixel_y[1]                                           ; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierRight[5] ; 1.597             ;
-; SVGA_sync:SVGA|pixel_y[9]                                           ; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierRight[5] ; 1.597             ;
-; printRGB:printRGB_inst|ready                                        ; colour[1]                                                           ; 1.286             ;
-; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierUp[2]    ; printRGB:printRGB_inst|address[2]                                   ; 0.697             ;
-; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierUp[1]    ; printRGB:printRGB_inst|address[2]                                   ; 0.697             ;
-; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierUp[0]    ; printRGB:printRGB_inst|address[2]                                   ; 0.697             ;
-; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierLeft[2]  ; printRGB:printRGB_inst|address[2]                                   ; 0.697             ;
-; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierLeft[1]  ; printRGB:printRGB_inst|address[2]                                   ; 0.697             ;
-; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierLeft[0]  ; printRGB:printRGB_inst|address[2]                                   ; 0.697             ;
-; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierLeft[4]  ; printRGB:printRGB_inst|address[9]                                   ; 0.684             ;
-; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierLeft[3]  ; printRGB:printRGB_inst|address[9]                                   ; 0.684             ;
-; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierRight[4] ; printRGB:printRGB_inst|address[9]                                   ; 0.684             ;
-; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierRight[3] ; printRGB:printRGB_inst|address[9]                                   ; 0.684             ;
-; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierRight[2] ; printRGB:printRGB_inst|address[9]                                   ; 0.684             ;
-; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierRight[1] ; printRGB:printRGB_inst|address[9]                                   ; 0.684             ;
-; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierRight[0] ; printRGB:printRGB_inst|address[9]                                   ; 0.684             ;
-; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierUp[4]    ; printRGB:printRGB_inst|address[4]                                   ; 0.670             ;
-; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierUp[3]    ; printRGB:printRGB_inst|address[4]                                   ; 0.670             ;
-; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierLeft[5]  ; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierLeft[4]  ; 0.466             ;
-; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierRight[5] ; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierRight[4] ; 0.464             ;
-; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierDown[2]  ; printRGB:printRGB_inst|address[2]                                   ; 0.395             ;
-; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierDown[1]  ; printRGB:printRGB_inst|address[2]                                   ; 0.395             ;
-; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierDown[0]  ; printRGB:printRGB_inst|address[2]                                   ; 0.395             ;
-; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierDown[4]  ; printRGB:printRGB_inst|address[4]                                   ; 0.344             ;
-; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierDown[3]  ; printRGB:printRGB_inst|address[4]                                   ; 0.344             ;
-; clk                                                                 ; SVGA_sync:SVGA|pixel_y[4]                                           ; 0.059             ;
-+---------------------------------------------------------------------+---------------------------------------------------------------------+-------------------+
-Note: This table only shows the top 55 path(s) that have the largest delay added for hold.
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Details                                                                                                                                                                                                                                                                 ;
++---------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+-------------------+
+; Source Register                                                                                                                             ; Destination Register                                                                                                                        ; Delay Added in ns ;
++---------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+-------------------+
+; SVGA_sync:SVGA|pixel_y[7]                                                                                                                   ; printRGB:printRGB_inst|element[2]                                                                                                           ; 3.189             ;
+; SVGA_sync:SVGA|pixel_y[6]                                                                                                                   ; printRGB:printRGB_inst|element[2]                                                                                                           ; 3.189             ;
+; SVGA_sync:SVGA|pixel_y[5]                                                                                                                   ; printRGB:printRGB_inst|element[2]                                                                                                           ; 3.189             ;
+; SVGA_sync:SVGA|pixel_y[8]                                                                                                                   ; printRGB:printRGB_inst|element[2]                                                                                                           ; 3.189             ;
+; SVGA_sync:SVGA|pixel_y[4]                                                                                                                   ; printRGB:printRGB_inst|element[2]                                                                                                           ; 3.189             ;
+; SVGA_sync:SVGA|pixel_y[3]                                                                                                                   ; printRGB:printRGB_inst|element[2]                                                                                                           ; 3.189             ;
+; SVGA_sync:SVGA|pixel_y[9]                                                                                                                   ; printRGB:printRGB_inst|element[2]                                                                                                           ; 3.189             ;
+; SVGA_sync:SVGA|pixel_x[9]                                                                                                                   ; printRGB:printRGB_inst|element[2]                                                                                                           ; 3.189             ;
+; SVGA_sync:SVGA|pixel_x[7]                                                                                                                   ; printRGB:printRGB_inst|element[2]                                                                                                           ; 3.189             ;
+; SVGA_sync:SVGA|pixel_x[6]                                                                                                                   ; printRGB:printRGB_inst|element[2]                                                                                                           ; 3.189             ;
+; SVGA_sync:SVGA|pixel_x[5]                                                                                                                   ; printRGB:printRGB_inst|element[2]                                                                                                           ; 3.189             ;
+; SVGA_sync:SVGA|pixel_x[8]                                                                                                                   ; printRGB:printRGB_inst|element[2]                                                                                                           ; 3.189             ;
+; SVGA_sync:SVGA|pixel_x[10]                                                                                                                  ; printRGB:printRGB_inst|element[2]                                                                                                           ; 3.189             ;
+; memorySprites:memorySprites_inst|read_enable5                                                                                               ; VGA_G[1]~reg0                                                                                                                               ; 2.932             ;
+; elementMemory[2]                                                                                                                            ; memorySprites:memorySprites_inst|read_enable5                                                                                               ; 2.749             ;
+; SVGA_sync:SVGA|pixel_y[2]                                                                                                                   ; printRGB:printRGB_inst|element[2]                                                                                                           ; 2.222             ;
+; SVGA_sync:SVGA|pixel_y[0]                                                                                                                   ; printRGB:printRGB_inst|element[2]                                                                                                           ; 2.222             ;
+; SVGA_sync:SVGA|pixel_y[1]                                                                                                                   ; printRGB:printRGB_inst|element[2]                                                                                                           ; 2.222             ;
+; SVGA_sync:SVGA|pixel_x[4]                                                                                                                   ; printRGB:printRGB_inst|element[2]                                                                                                           ; 2.222             ;
+; SVGA_sync:SVGA|pixel_x[3]                                                                                                                   ; printRGB:printRGB_inst|element[2]                                                                                                           ; 2.222             ;
+; SVGA_sync:SVGA|pixel_x[2]                                                                                                                   ; printRGB:printRGB_inst|element[2]                                                                                                           ; 2.222             ;
+; SVGA_sync:SVGA|pixel_x[1]                                                                                                                   ; printRGB:printRGB_inst|element[2]                                                                                                           ; 2.222             ;
+; SVGA_sync:SVGA|pixel_x[0]                                                                                                                   ; SVGA_sync:SVGA|pixel_x[4]                                                                                                                   ; 2.207             ;
+; memorySprites:memorySprites_inst|read_enable1                                                                                               ; memorySprites:memorySprites_inst|sram:element1|altsyncram:memory_array_rtl_0|altsyncram_tgi1:auto_generated|ram_block1a2~porta_we_reg       ; 2.074             ;
+; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierUp[2]                                                                            ; printRGB:printRGB_inst|address[2]                                                                                                           ; 1.329             ;
+; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierUp[1]                                                                            ; printRGB:printRGB_inst|address[2]                                                                                                           ; 1.329             ;
+; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierUp[0]                                                                            ; printRGB:printRGB_inst|address[2]                                                                                                           ; 1.329             ;
+; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierLeft[2]                                                                          ; printRGB:printRGB_inst|address[2]                                                                                                           ; 1.329             ;
+; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierLeft[1]                                                                          ; printRGB:printRGB_inst|address[2]                                                                                                           ; 1.329             ;
+; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierLeft[0]                                                                          ; printRGB:printRGB_inst|address[2]                                                                                                           ; 1.329             ;
+; memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_rii1:auto_generated|ram_block1a5~portb_address_reg0 ; VGA_G[1]~reg0                                                                                                                               ; 1.117             ;
+; memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_rii1:auto_generated|ram_block1a2~portb_address_reg0 ; VGA_G[1]~reg0                                                                                                                               ; 1.117             ;
+; memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_rii1:auto_generated|ram_block1a0~portb_address_reg0 ; VGA_G[1]~reg0                                                                                                                               ; 1.117             ;
+; memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_rii1:auto_generated|ram_block1a1~portb_address_reg0 ; VGA_G[1]~reg0                                                                                                                               ; 1.117             ;
+; memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_rii1:auto_generated|ram_block1a4~portb_address_reg0 ; VGA_G[1]~reg0                                                                                                                               ; 1.117             ;
+; printRGB:printRGB_inst|ready                                                                                                                ; VGA_G[1]~reg0                                                                                                                               ; 1.117             ;
+; memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_rii1:auto_generated|ram_block1a3~portb_address_reg0 ; VGA_G[1]~reg0                                                                                                                               ; 1.117             ;
+; memorySprites:memorySprites_inst|sram:element1|altsyncram:memory_array_rtl_0|altsyncram_tgi1:auto_generated|ram_block1a0~portb_address_reg0 ; VGA_G[1]~reg0                                                                                                                               ; 1.113             ;
+; memorySprites:memorySprites_inst|sram:element1|altsyncram:memory_array_rtl_0|altsyncram_tgi1:auto_generated|ram_block1a3~portb_address_reg0 ; VGA_G[1]~reg0                                                                                                                               ; 1.113             ;
+; memorySprites:memorySprites_inst|sram:element1|altsyncram:memory_array_rtl_0|altsyncram_tgi1:auto_generated|ram_block1a1~portb_address_reg0 ; VGA_G[1]~reg0                                                                                                                               ; 1.113             ;
+; memorySprites:memorySprites_inst|sram:element1|altsyncram:memory_array_rtl_0|altsyncram_tgi1:auto_generated|ram_block1a4~portb_address_reg0 ; VGA_G[1]~reg0                                                                                                                               ; 1.113             ;
+; memorySprites:memorySprites_inst|sram:element1|altsyncram:memory_array_rtl_0|altsyncram_tgi1:auto_generated|ram_block1a5~portb_address_reg0 ; VGA_G[1]~reg0                                                                                                                               ; 1.113             ;
+; memorySprites:memorySprites_inst|sram:element1|altsyncram:memory_array_rtl_0|altsyncram_tgi1:auto_generated|ram_block1a2~portb_address_reg0 ; VGA_G[1]~reg0                                                                                                                               ; 1.113             ;
+; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierRight[4]                                                                         ; printRGB:printRGB_inst|address[5]                                                                                                           ; 0.846             ;
+; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierRight[3]                                                                         ; printRGB:printRGB_inst|address[5]                                                                                                           ; 0.846             ;
+; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierRight[2]                                                                         ; printRGB:printRGB_inst|address[5]                                                                                                           ; 0.846             ;
+; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierRight[1]                                                                         ; printRGB:printRGB_inst|address[1]                                                                                                           ; 0.846             ;
+; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierRight[0]                                                                         ; printRGB:printRGB_inst|address[1]                                                                                                           ; 0.846             ;
+; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierLeft[4]                                                                          ; printRGB:printRGB_inst|address[5]                                                                                                           ; 0.846             ;
+; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierLeft[3]                                                                          ; printRGB:printRGB_inst|address[5]                                                                                                           ; 0.846             ;
+; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierUp[4]                                                                            ; printRGB:printRGB_inst|address[4]                                                                                                           ; 0.838             ;
+; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierUp[3]                                                                            ; printRGB:printRGB_inst|address[4]                                                                                                           ; 0.838             ;
+; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierDown[2]                                                                          ; printRGB:printRGB_inst|address[2]                                                                                                           ; 0.653             ;
+; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierDown[1]                                                                          ; printRGB:printRGB_inst|address[2]                                                                                                           ; 0.653             ;
+; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierDown[0]                                                                          ; printRGB:printRGB_inst|address[2]                                                                                                           ; 0.653             ;
+; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierDown[3]                                                                          ; printRGB:printRGB_inst|address[3]                                                                                                           ; 0.549             ;
+; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierRight[5]                                                                         ; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierRight[4]                                                                         ; 0.512             ;
+; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierLeft[5]                                                                          ; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierLeft[4]                                                                          ; 0.495             ;
+; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierDown[4]                                                                          ; printRGB:printRGB_inst|address[5]                                                                                                           ; 0.467             ;
+; memorySprites:memorySprites_inst|address1[6]                                                                                                ; memorySprites:memorySprites_inst|sram:element1|altsyncram:memory_array_rtl_0|altsyncram_tgi1:auto_generated|ram_block1a2~porta_address_reg0 ; 0.378             ;
+; memorySprites:memorySprites_inst|address1[5]                                                                                                ; memorySprites:memorySprites_inst|sram:element1|altsyncram:memory_array_rtl_0|altsyncram_tgi1:auto_generated|ram_block1a2~porta_address_reg0 ; 0.378             ;
+; printRGB:printRGB_inst|element[2]                                                                                                           ; elementMemory[2]                                                                                                                            ; 0.201             ;
+; printRGB:printRGB_inst|address[9]                                                                                                           ; addressMemory[9]                                                                                                                            ; 0.183             ;
+; printRGB:printRGB_inst|address[7]                                                                                                           ; addressMemory[7]                                                                                                                            ; 0.169             ;
+; printRGB:printRGB_inst|address[8]                                                                                                           ; addressMemory[8]                                                                                                                            ; 0.165             ;
+; memorySprites:memorySprites_inst|address1[4]                                                                                                ; memorySprites:memorySprites_inst|sram:element1|altsyncram:memory_array_rtl_0|altsyncram_tgi1:auto_generated|ram_block1a2~porta_address_reg0 ; 0.135             ;
+; memorySprites:memorySprites_inst|address1[1]                                                                                                ; memorySprites:memorySprites_inst|sram:element1|altsyncram:memory_array_rtl_0|altsyncram_tgi1:auto_generated|ram_block1a2~porta_address_reg0 ; 0.128             ;
+; memorySprites:memorySprites_inst|address1[0]                                                                                                ; memorySprites:memorySprites_inst|sram:element1|altsyncram:memory_array_rtl_0|altsyncram_tgi1:auto_generated|ram_block1a2~porta_address_reg0 ; 0.128             ;
+; printRGB:printRGB_inst|address[2]                                                                                                           ; addressMemory[2]                                                                                                                            ; 0.116             ;
++---------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+-------------------+
+Note: This table only shows the top 69 path(s) that have the largest delay added for hold.
 
 
 +-----------------+
@@ -1224,8 +1360,6 @@ Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors
 Info (119006): Selected device EP4CE22F17C6 for design "consoleFPGA"
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
-Warning (18550): Found RAM instances implemented as ROM because the write logic is disabled. One instance is listed below as an example.
-    Info (119043): Atom "memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_f4h1:auto_generated|ram_block1a0" is instantiated as RAM, but it is actually implemented as ROM function because the write logic is always disabled
 Info (171003): Fitter is performing an Auto Fit compilation, which may decrease Fitter effort to reduce compilation time
 Warning (292013): Feature LogicLock is only available with a valid subscription license. You can purchase a software subscription to gain full access to this feature.
 Info (176444): Device migration not selected. If you intend to use device migration later, you may need to change the pin assignments as they may be incompatible with other devices
@@ -1241,7 +1375,7 @@ Info (169124): Fitter converted 5 user pins into dedicated programming pins
 Warning (15714): Some pins have incomplete I/O assignments. Refer to the I/O Assignment Warnings report for details
 Info (176045): Design uses memory blocks. Violating setup or hold times of memory block address registers for either read or write operations could cause memory contents to be corrupted. Make sure that all memory block address registers meet the setup and hold time requirements.
 Critical Warning (169085): No exact pin location assignment(s) for 1 pins of 13 total pins. For the list of pins please refer to the I/O Assignment Warnings table in the fitter report.
-Warning (335093): The Timing Analyzer is analyzing 19 combinational loops as latches. For more details, run the Check Timing command in the Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
+Warning (335093): The Timing Analyzer is analyzing 33 combinational loops as latches. For more details, run the Check Timing command in the Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'consoleFPGA.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332144): No user constrained base clocks found in the design
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
@@ -1250,24 +1384,27 @@ Info (332130): Timing requirements not specified -- quality metrics such as perf
 Info (176353): Automatically promoted node clk~input (placed in PIN R8 (CLK15, DIFFCLK_6p)) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 3
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G18
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node SVGA_sync:SVGA|pixel_x[9] File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/SVGAGrafico/SVGA_sync.v Line: 53
-        Info (176357): Destination node SVGA_sync:SVGA|pixel_x[8] File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/SVGAGrafico/SVGA_sync.v Line: 53
-        Info (176357): Destination node SVGA_sync:SVGA|pixel_x[5] File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/SVGAGrafico/SVGA_sync.v Line: 53
-        Info (176357): Destination node SVGA_sync:SVGA|pixel_x[7] File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/SVGAGrafico/SVGA_sync.v Line: 53
-        Info (176357): Destination node SVGA_sync:SVGA|pixel_x[6] File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/SVGAGrafico/SVGA_sync.v Line: 53
-        Info (176357): Destination node SVGA_sync:SVGA|pixel_y[4] File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/SVGAGrafico/SVGA_sync.v Line: 72
         Info (176357): Destination node SVGA_sync:SVGA|pixel_y[3] File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/SVGAGrafico/SVGA_sync.v Line: 72
-        Info (176357): Destination node SVGA_sync:SVGA|pixel_y[9] File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/SVGAGrafico/SVGA_sync.v Line: 72
+        Info (176357): Destination node SVGA_sync:SVGA|pixel_y[4] File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/SVGAGrafico/SVGA_sync.v Line: 72
+        Info (176357): Destination node SVGA_sync:SVGA|pixel_y[5] File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/SVGAGrafico/SVGA_sync.v Line: 72
+        Info (176357): Destination node SVGA_sync:SVGA|pixel_y[6] File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/SVGAGrafico/SVGA_sync.v Line: 72
         Info (176357): Destination node SVGA_sync:SVGA|pixel_y[7] File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/SVGAGrafico/SVGA_sync.v Line: 72
         Info (176357): Destination node SVGA_sync:SVGA|pixel_y[8] File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/SVGAGrafico/SVGA_sync.v Line: 72
+        Info (176357): Destination node SVGA_sync:SVGA|pixel_y[9] File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/SVGAGrafico/SVGA_sync.v Line: 72
+        Info (176357): Destination node SVGA_sync:SVGA|pixel_x[5] File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/SVGAGrafico/SVGA_sync.v Line: 53
+        Info (176357): Destination node SVGA_sync:SVGA|pixel_x[6] File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/SVGAGrafico/SVGA_sync.v Line: 53
+        Info (176357): Destination node SVGA_sync:SVGA|pixel_x[7] File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/SVGAGrafico/SVGA_sync.v Line: 53
         Info (176358): Non-global destination nodes limited to 10 nodes
-Info (176353): Automatically promoted node addressMemory[0]~0  File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 66
-    Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
-Info (176353): Automatically promoted node SVGA_sync:SVGA|video_enable~0  File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/SVGAGrafico/SVGA_sync.v Line: 26
+Info (176353): Automatically promoted node elementMemory[2]  File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 77
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node printRGB:printRGB_inst|barrier:barrier_inst|enable~1 File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 7
-        Info (176357): Destination node addressMemory[0]~0 File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 66
+        Info (176357): Destination node memorySprites:memorySprites_inst|read_enable1~0 File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 17
+        Info (176357): Destination node memorySprites:memorySprites_inst|read_enable5~0 File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 21
+        Info (176357): Destination node memorySprites:memorySprites_inst|read_enable1 File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 17
+        Info (176357): Destination node memorySprites:memorySprites_inst|read_enable5 File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 21
+        Info (176357): Destination node elementMemory[2] File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 77
+Info (176353): Automatically promoted node VGA_R[1]~2  File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 80
+    Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
 Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
@@ -1284,31 +1421,31 @@ Info (176215): I/O bank details before I/O pin placement
         Info (176213): I/O bank number 6 does not use VREF pins and has undetermined VCCIO pins. 1 total pin(s) used --  12 pins available
         Info (176213): I/O bank number 7 does not use VREF pins and has 2.5V VCCIO pins. 2 total pin(s) used --  22 pins available
         Info (176213): I/O bank number 8 does not use VREF pins and has 2.5V VCCIO pins. 9 total pin(s) used --  15 pins available
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:02
 Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:01
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:02
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 2% of the available device resources in the region that extends from location X21_Y0 to location X31_Y10
+    Info (170196): Router estimated peak interconnect usage is 3% of the available device resources in the region that extends from location X21_Y11 to location X31_Y22
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:02
-Info (11888): Total time spent on timing analysis during the Fitter is 0.43 seconds.
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:05
+Info (11888): Total time spent on timing analysis during the Fitter is 0.73 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:02
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Info (144001): Generated suppressed messages file /home/gabriel/Documentos/ConsoleFPGA/output_files/consoleFPGA.fit.smsg
-Info: Quartus Prime Fitter was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 1285 megabytes
-    Info: Processing ended: Sat Jun 15 00:17:14 2019
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:14
+Info: Quartus Prime Fitter was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 1287 megabytes
+    Info: Processing ended: Sat Jun 15 23:17:44 2019
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:18
 
 
 +----------------------------+

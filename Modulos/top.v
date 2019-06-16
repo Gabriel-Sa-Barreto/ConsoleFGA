@@ -74,6 +74,7 @@ always @ (*) begin
 		end 
 		else colour = 0;
 	end
+	else colour = 0;
 end
 
 always @ (negedge clk) begin
