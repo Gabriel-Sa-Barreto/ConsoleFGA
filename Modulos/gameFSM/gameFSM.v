@@ -11,6 +11,7 @@
 module gameFSM(
 	input clk,
 	input reset,
+	input resetFSM,
 	input startGame,
 	input pauseGame,
 	input dead,
@@ -25,7 +26,7 @@ STATES:
  - RESET: this state is responsable for restart all system and its components.
  - GAMEOVER: the game is over
 */
-parameter [2:0] START    = 0,
+parameter [2:0]      START    = 0,
 					 PLAYING  = 1,
 					 PAUSE    = 2,
 					 RESET    = 3,
@@ -33,9 +34,8 @@ parameter [2:0] START    = 0,
 		
 reg [4:0] state,next;
 
-
-always @ (posedge clk or posedge reset) begin
-	if(reset) begin
+always @ (posedge clk or posedge resetFSM) begin
+	if(resetFSM) begin
 		state        <= 5'b0;
 		state[RESET] <= 1'b1;
 	end
@@ -46,29 +46,39 @@ end
 always @ (state or startGame or pauseGame or dead or reset) 
 begin
 	next = 5'b0;
-	case(state)
-		state[START]: if(!startGame) next[START]   <= 1'b1;
-						  else           next[PLAYING] <= 1'b1;
+	case(1'b1)
+		state[START]: begin
+			if(!startGame) next[START]   = 1'b1;
+			else           next[PLAYING] = 1'b1;
+		end
+		state[PLAYING]: begin
+			if(pauseGame)  next[PAUSE]    = 1'b1;
+			else if(reset) next[RESET]    = 1'b1;
+			else if(dead)  next[GAMEOVER] = 1'b1;
 		
-		state[PLAYING]: if(pauseGame)  next[PAUSE]    <= 1'b1;
-						    else if(reset) next[RESET]    <= 1'b1;
-							 else if(dead)  next[GAMEOVER] <= 1'b1;
+		end
+		state[PAUSE]:  begin
+			if(pauseGame)  next[PAUSE] = 1'b1;
+			else if(reset)  next[RESET] = 1'b1;
 		
-		state[PAUSE]:  if(!pauseGame)  next[PAUSE] <= 1'b1;
-							else if(reset)  next[RESET] <= 1'b1;
-		
-		state[RESET]:  if(startGame)   next[PLAYING] <= 1'b1;
-		state[GAMEOVER]: if(startGame) next[RESET] <= 1'b1;
+		end
+		state[RESET]:  begin
+			if(startGame)  next[START] = 1'b1;
+			else next[RESET] = 1'b1;
+		end
+
+		state[GAMEOVER]: if(startGame) next[RESET]  = 1'b1;
 	endcase
 end
 
-always @ (posedge clk) begin
-	case(next)
-		next[START]:    dataout <= 3'b000;
-		next[PLAYING]:  dataout <= 3'b001;
-		next[PAUSE]:    dataout <= 3'b010;
-		next[RESET]:    dataout <= 3'b011;
-		next[GAMEOVER]: dataout <= 3'b100;
-	endcase
+always @ (negedge clk) begin
+		case(1'b1)
+			next[START]:    dataout <= 3'b000;
+			next[PLAYING]:  dataout <= 3'b001;
+			next[PAUSE]:    dataout <= 3'b010;
+			next[RESET]:    dataout <= 3'b011;
+			next[GAMEOVER]: dataout <= 3'b100;
+		endcase
 end
+
 endmodule

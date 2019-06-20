@@ -58,12 +58,12 @@ begin
 		
 		end
 		state[PAUSE]:  begin
-			if(!pauseGame)  next[PAUSE] = 1'b1;
+			if(pauseGame)  next[PAUSE] = 1'b1;
 			else if(reset)  next[RESET] = 1'b1;
 		
 		end
 		state[RESET]:  begin
-			if(startGame)  next[PLAYING] = 1'b1;
+			if(startGame)  next[START] = 1'b1;
 			else next[RESET] = 1'b1;
 		end
 

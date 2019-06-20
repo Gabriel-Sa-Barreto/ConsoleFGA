@@ -19,42 +19,86 @@ begin
 end
 
 initial begin
+	//reset the game FSM
 	resetFSM = 1;
 	@ (posedge clk); 
 	
 	resetFSM = 0;
 	@ (posedge clk); 
 	outputFSM(dataout);
+	//////////////////////////////
 
+	//State RESET
 	startGame = 0;
 	pauseGame = 0;
 	dead      = 0;
 	reset     = 1;
-	//#timeout; 
 	@ (posedge clk);
 	outputFSM(dataout);
 
+
+	//State START
 	startGame = 1;
 	pauseGame = 0;
 	dead      = 0;
 	reset     = 0;
-	//#timeout; 
 	@ (posedge clk);
 	outputFSM(dataout);
 
-	startGame = 0;
+	//State PLAYING
+	startGame = 1;
 	pauseGame = 0;
-	dead      = 1;
+	dead      = 0;
 	reset     = 0;
-	//#timeout; 
 	@ (posedge clk);
 	outputFSM(dataout);
 
+
+	//State PAUSE
 	startGame = 0;
 	pauseGame = 1;
 	dead      = 0;
 	reset     = 0;
-	//#timeout; 
+	@ (posedge clk);
+	outputFSM(dataout);
+
+	//State RESET
+	startGame = 0;
+	pauseGame = 0;
+	dead      = 0;
+	reset     = 1;
+	@ (posedge clk);
+	outputFSM(dataout);
+
+	//State START
+	startGame = 1;
+	pauseGame = 0;
+	dead      = 0;
+	reset     = 0;
+	@ (posedge clk);
+	outputFSM(dataout);
+
+	//State PLAYING
+	startGame = 1;
+	pauseGame = 0;
+	dead      = 0;
+	reset     = 0;
+	@ (posedge clk);
+	outputFSM(dataout);
+
+	//State DEAD
+	startGame = 0;
+	pauseGame = 0;
+	dead      = 1;
+	reset     = 0; 
+	@ (posedge clk);
+	outputFSM(dataout);
+
+	//Continue on state DEAD
+	startGame = 0;
+	pauseGame = 1;
+	dead      = 0;
+	reset     = 0; 
 	@ (posedge clk);
 	outputFSM(dataout);
 
