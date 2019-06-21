@@ -1,5 +1,5 @@
 Analysis & Synthesis report for consoleFPGA
-Sat Jun 15 23:17:28 2019
+Fri Jun 21 17:22:52 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -16,42 +16,45 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   8. Analysis & Synthesis RAM Summary
   9. User-Specified and Inferred Latches
  10. Registers Removed During Synthesis
- 11. General Register Statistics
- 12. Registers Packed Into Inferred Megafunctions
- 13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Source assignments for memorySprites:memorySprites_inst|sram:element4|altsyncram:memory_array_rtl_0|altsyncram_9gi1:auto_generated
- 15. Source assignments for memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_rii1:auto_generated
- 16. Source assignments for memorySprites:memorySprites_inst|sram:element1|altsyncram:memory_array_rtl_0|altsyncram_tgi1:auto_generated
- 17. Parameter Settings for User Entity Instance: SVGA_sync:SVGA
- 18. Parameter Settings for User Entity Instance: memorySprites:memorySprites_inst
- 19. Parameter Settings for User Entity Instance: memorySprites:memorySprites_inst|sram:element1
- 20. Parameter Settings for User Entity Instance: memorySprites:memorySprites_inst|sram:element2
- 21. Parameter Settings for User Entity Instance: memorySprites:memorySprites_inst|sram:element3
- 22. Parameter Settings for User Entity Instance: memorySprites:memorySprites_inst|sram:element4
- 23. Parameter Settings for User Entity Instance: memorySprites:memorySprites_inst|sram:element5
- 24. Parameter Settings for User Entity Instance: printRGB:printRGB_inst
- 25. Parameter Settings for Inferred Entity Instance: memorySprites:memorySprites_inst|sram:element4|altsyncram:memory_array_rtl_0
- 26. Parameter Settings for Inferred Entity Instance: memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0
- 27. Parameter Settings for Inferred Entity Instance: memorySprites:memorySprites_inst|sram:element1|altsyncram:memory_array_rtl_0
- 28. Parameter Settings for Inferred Entity Instance: printRGB:printRGB_inst|fruits:fruits_inst|lpm_mult:Mult0
- 29. Parameter Settings for Inferred Entity Instance: printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult1
- 30. Parameter Settings for Inferred Entity Instance: printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult0
- 31. Parameter Settings for Inferred Entity Instance: printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult3
- 32. Parameter Settings for Inferred Entity Instance: printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult2
- 33. altsyncram Parameter Settings by Entity Instance
- 34. lpm_mult Parameter Settings by Entity Instance
- 35. Port Connectivity Checks: "printRGB:printRGB_inst"
- 36. Port Connectivity Checks: "memorySprites:memorySprites_inst|sram:element5"
- 37. Port Connectivity Checks: "memorySprites:memorySprites_inst|sram:element4"
- 38. Port Connectivity Checks: "memorySprites:memorySprites_inst|sram:element3"
- 39. Port Connectivity Checks: "memorySprites:memorySprites_inst|sram:element2"
- 40. Port Connectivity Checks: "memorySprites:memorySprites_inst|sram:element1"
- 41. Port Connectivity Checks: "memorySprites:memorySprites_inst"
- 42. Port Connectivity Checks: "SVGA_sync:SVGA"
- 43. Post-Synthesis Netlist Statistics for Top Partition
- 44. Elapsed Time Per Partition
- 45. Analysis & Synthesis Messages
- 46. Analysis & Synthesis Suppressed Messages
+ 11. Removed Registers Triggering Further Register Optimizations
+ 12. General Register Statistics
+ 13. Registers Packed Into Inferred Megafunctions
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Source assignments for memorySprites:memorySprites_inst|sram:element4|altsyncram:memory_array_rtl_0|altsyncram_9gi1:auto_generated
+ 16. Source assignments for memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_rii1:auto_generated
+ 17. Source assignments for memorySprites:memorySprites_inst|sram:element1|altsyncram:memory_array_rtl_0|altsyncram_tgi1:auto_generated
+ 18. Parameter Settings for User Entity Instance: SVGA_sync:SVGA
+ 19. Parameter Settings for User Entity Instance: memorySprites:memorySprites_inst
+ 20. Parameter Settings for User Entity Instance: memorySprites:memorySprites_inst|sram:element1
+ 21. Parameter Settings for User Entity Instance: memorySprites:memorySprites_inst|sram:element2
+ 22. Parameter Settings for User Entity Instance: memorySprites:memorySprites_inst|sram:element3
+ 23. Parameter Settings for User Entity Instance: memorySprites:memorySprites_inst|sram:element4
+ 24. Parameter Settings for User Entity Instance: memorySprites:memorySprites_inst|sram:element5
+ 25. Parameter Settings for User Entity Instance: printRGB:printRGB_inst
+ 26. Parameter Settings for User Entity Instance: printRGB:printRGB_inst|printSprite:spriteFruit
+ 27. Parameter Settings for Inferred Entity Instance: memorySprites:memorySprites_inst|sram:element4|altsyncram:memory_array_rtl_0
+ 28. Parameter Settings for Inferred Entity Instance: memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0
+ 29. Parameter Settings for Inferred Entity Instance: memorySprites:memorySprites_inst|sram:element1|altsyncram:memory_array_rtl_0
+ 30. Parameter Settings for Inferred Entity Instance: printRGB:printRGB_inst|printSprite:spriteFruit|lpm_mult:Mult0
+ 31. Parameter Settings for Inferred Entity Instance: printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult1
+ 32. Parameter Settings for Inferred Entity Instance: printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult0
+ 33. Parameter Settings for Inferred Entity Instance: printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult3
+ 34. Parameter Settings for Inferred Entity Instance: printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult2
+ 35. altsyncram Parameter Settings by Entity Instance
+ 36. lpm_mult Parameter Settings by Entity Instance
+ 37. Port Connectivity Checks: "printRGB:printRGB_inst|printSprite:spriteFruit"
+ 38. Port Connectivity Checks: "printRGB:printRGB_inst"
+ 39. Port Connectivity Checks: "memorySprites:memorySprites_inst|sram:element5"
+ 40. Port Connectivity Checks: "memorySprites:memorySprites_inst|sram:element4"
+ 41. Port Connectivity Checks: "memorySprites:memorySprites_inst|sram:element3"
+ 42. Port Connectivity Checks: "memorySprites:memorySprites_inst|sram:element2"
+ 43. Port Connectivity Checks: "memorySprites:memorySprites_inst|sram:element1"
+ 44. Port Connectivity Checks: "memorySprites:memorySprites_inst"
+ 45. Port Connectivity Checks: "SVGA_sync:SVGA"
+ 46. Post-Synthesis Netlist Statistics for Top Partition
+ 47. Elapsed Time Per Partition
+ 48. Analysis & Synthesis Messages
+ 49. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -77,15 +80,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Jun 15 23:17:28 2019       ;
+; Analysis & Synthesis Status        ; Successful - Fri Jun 21 17:22:52 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; consoleFPGA                                 ;
 ; Top-level Entity Name              ; top                                         ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 410                                         ;
-;     Total combinational functions  ; 404                                         ;
-;     Dedicated logic registers      ; 78                                          ;
-; Total registers                    ; 78                                          ;
+; Total logic elements               ; 409                                         ;
+;     Total combinational functions  ; 403                                         ;
+;     Dedicated logic registers      ; 80                                          ;
+; Total registers                    ; 80                                          ;
 ; Total pins                         ; 13                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 7,500                                       ;
@@ -197,60 +200,60 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                           ;
-+-------------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path          ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                     ; Library ;
-+-------------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------------------+---------+
-; Modulos/barrier.v                         ; yes             ; User Verilog HDL File                                 ; /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v                           ;         ;
-; Modulos/memorySprites.v                   ; yes             ; User Verilog HDL File                                 ; /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v                     ;         ;
-; Modulos/moduloSram/sram.v                 ; yes             ; User Verilog HDL File                                 ; /home/gabriel/Documentos/ConsoleFPGA/Modulos/moduloSram/sram.v                   ;         ;
-; Modulos/SVGAGrafico/SVGA_sync.v           ; yes             ; User Verilog HDL File                                 ; /home/gabriel/Documentos/ConsoleFPGA/Modulos/SVGAGrafico/SVGA_sync.v             ;         ;
-; Modulos/top.v                             ; yes             ; User Verilog HDL File                                 ; /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v                               ;         ;
-; Modulos/printRGB.v                        ; yes             ; User Verilog HDL File                                 ; /home/gabriel/Documentos/ConsoleFPGA/Modulos/printRGB.v                          ;         ;
-; Modulos/fruits.v                          ; yes             ; User Verilog HDL File                                 ; /home/gabriel/Documentos/ConsoleFPGA/Modulos/fruits.v                            ;         ;
-; sprites/background/background_palette.mem ; yes             ; Auto-Found Unspecified File                           ; /home/gabriel/Documentos/ConsoleFPGA/sprites/background/background_palette.mem   ;         ;
-; sprites/sprites25x25/apple_palette.mem    ; yes             ; Auto-Found Unspecified File                           ; /home/gabriel/Documentos/ConsoleFPGA/sprites/sprites25x25/apple_palette.mem      ;         ;
-; sprites/block/block2_palette.mem          ; yes             ; Auto-Found Unspecified File                           ; /home/gabriel/Documentos/ConsoleFPGA/sprites/block/block2_palette.mem            ;         ;
-; altsyncram.tdf                            ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf          ;         ;
-; stratix_ram_block.inc                     ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc   ;         ;
-; lpm_mux.inc                               ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/lpm_mux.inc             ;         ;
-; lpm_decode.inc                            ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/lpm_decode.inc          ;         ;
-; aglobal181.inc                            ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc          ;         ;
-; a_rdenreg.inc                             ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/a_rdenreg.inc           ;         ;
-; altrom.inc                                ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altrom.inc              ;         ;
-; altram.inc                                ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altram.inc              ;         ;
-; altdpram.inc                              ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altdpram.inc            ;         ;
-; db/altsyncram_9gi1.tdf                    ; yes             ; Auto-Generated Megafunction                           ; /home/gabriel/Documentos/ConsoleFPGA/db/altsyncram_9gi1.tdf                      ;         ;
-; db/consoleFPGA.ram0_sram_cb34bf39.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; /home/gabriel/Documentos/ConsoleFPGA/db/consoleFPGA.ram0_sram_cb34bf39.hdl.mif   ;         ;
-; db/decode_jsa.tdf                         ; yes             ; Auto-Generated Megafunction                           ; /home/gabriel/Documentos/ConsoleFPGA/db/decode_jsa.tdf                           ;         ;
-; db/mux_3nb.tdf                            ; yes             ; Auto-Generated Megafunction                           ; /home/gabriel/Documentos/ConsoleFPGA/db/mux_3nb.tdf                              ;         ;
-; db/altsyncram_rii1.tdf                    ; yes             ; Auto-Generated Megafunction                           ; /home/gabriel/Documentos/ConsoleFPGA/db/altsyncram_rii1.tdf                      ;         ;
-; db/consoleFPGA.ram0_sram_76955e8c.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; /home/gabriel/Documentos/ConsoleFPGA/db/consoleFPGA.ram0_sram_76955e8c.hdl.mif   ;         ;
-; db/altsyncram_tgi1.tdf                    ; yes             ; Auto-Generated Megafunction                           ; /home/gabriel/Documentos/ConsoleFPGA/db/altsyncram_tgi1.tdf                      ;         ;
-; db/consoleFPGA.ram0_sram_646a7550.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; /home/gabriel/Documentos/ConsoleFPGA/db/consoleFPGA.ram0_sram_646a7550.hdl.mif   ;         ;
-; lpm_mult.tdf                              ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/lpm_mult.tdf            ;         ;
-; lpm_add_sub.inc                           ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/lpm_add_sub.inc         ;         ;
-; multcore.inc                              ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/multcore.inc            ;         ;
-; bypassff.inc                              ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/bypassff.inc            ;         ;
-; altshift.inc                              ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altshift.inc            ;         ;
-; multcore.tdf                              ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/multcore.tdf            ;         ;
-; csa_add.inc                               ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/csa_add.inc             ;         ;
-; mpar_add.inc                              ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/mpar_add.inc            ;         ;
-; muleabz.inc                               ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/muleabz.inc             ;         ;
-; mul_lfrg.inc                              ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/mul_lfrg.inc            ;         ;
-; mul_boothc.inc                            ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/mul_boothc.inc          ;         ;
-; alt_ded_mult.inc                          ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/alt_ded_mult.inc        ;         ;
-; alt_ded_mult_y.inc                        ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/alt_ded_mult_y.inc      ;         ;
-; dffpipe.inc                               ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/dffpipe.inc             ;         ;
-; mpar_add.tdf                              ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/mpar_add.tdf            ;         ;
-; lpm_add_sub.tdf                           ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/lpm_add_sub.tdf         ;         ;
-; addcore.inc                               ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/addcore.inc             ;         ;
-; look_add.inc                              ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/look_add.inc            ;         ;
-; alt_stratix_add_sub.inc                   ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/alt_stratix_add_sub.inc ;         ;
-; db/add_sub_bfh.tdf                        ; yes             ; Auto-Generated Megafunction                           ; /home/gabriel/Documentos/ConsoleFPGA/db/add_sub_bfh.tdf                          ;         ;
-; altshift.tdf                              ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altshift.tdf            ;         ;
-+-------------------------------------------+-----------------+-------------------------------------------------------+----------------------------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                               ;
++----------------------------------------------+-----------------+-------------------------------------------------------+-----------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path             ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                      ; Library ;
++----------------------------------------------+-----------------+-------------------------------------------------------+-----------------------------------------------------------------------------------+---------+
+; Modulos/module_of_print_sprite/printSprite.v ; yes             ; User Verilog HDL File                                 ; /home/gabriel/Documentos/ConsoleFPGA/Modulos/module_of_print_sprite/printSprite.v ;         ;
+; Modulos/barrier.v                            ; yes             ; User Verilog HDL File                                 ; /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v                            ;         ;
+; Modulos/memorySprites.v                      ; yes             ; User Verilog HDL File                                 ; /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v                      ;         ;
+; Modulos/moduloSram/sram.v                    ; yes             ; User Verilog HDL File                                 ; /home/gabriel/Documentos/ConsoleFPGA/Modulos/moduloSram/sram.v                    ;         ;
+; Modulos/SVGAGrafico/SVGA_sync.v              ; yes             ; User Verilog HDL File                                 ; /home/gabriel/Documentos/ConsoleFPGA/Modulos/SVGAGrafico/SVGA_sync.v              ;         ;
+; Modulos/top.v                                ; yes             ; User Verilog HDL File                                 ; /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v                                ;         ;
+; Modulos/printRGB.v                           ; yes             ; User Verilog HDL File                                 ; /home/gabriel/Documentos/ConsoleFPGA/Modulos/printRGB.v                           ;         ;
+; sprites/background/background_palette.mem    ; yes             ; Auto-Found Unspecified File                           ; /home/gabriel/Documentos/ConsoleFPGA/sprites/background/background_palette.mem    ;         ;
+; sprites/sprites25x25/apple_palette.mem       ; yes             ; Auto-Found Unspecified File                           ; /home/gabriel/Documentos/ConsoleFPGA/sprites/sprites25x25/apple_palette.mem       ;         ;
+; sprites/block/block2_palette.mem             ; yes             ; Auto-Found Unspecified File                           ; /home/gabriel/Documentos/ConsoleFPGA/sprites/block/block2_palette.mem             ;         ;
+; altsyncram.tdf                               ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf           ;         ;
+; stratix_ram_block.inc                        ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc    ;         ;
+; lpm_mux.inc                                  ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/lpm_mux.inc              ;         ;
+; lpm_decode.inc                               ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/lpm_decode.inc           ;         ;
+; aglobal181.inc                               ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc           ;         ;
+; a_rdenreg.inc                                ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/a_rdenreg.inc            ;         ;
+; altrom.inc                                   ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altrom.inc               ;         ;
+; altram.inc                                   ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altram.inc               ;         ;
+; altdpram.inc                                 ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altdpram.inc             ;         ;
+; db/altsyncram_9gi1.tdf                       ; yes             ; Auto-Generated Megafunction                           ; /home/gabriel/Documentos/ConsoleFPGA/db/altsyncram_9gi1.tdf                       ;         ;
+; db/consoleFPGA.ram0_sram_cb34bf39.hdl.mif    ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; /home/gabriel/Documentos/ConsoleFPGA/db/consoleFPGA.ram0_sram_cb34bf39.hdl.mif    ;         ;
+; db/decode_jsa.tdf                            ; yes             ; Auto-Generated Megafunction                           ; /home/gabriel/Documentos/ConsoleFPGA/db/decode_jsa.tdf                            ;         ;
+; db/mux_3nb.tdf                               ; yes             ; Auto-Generated Megafunction                           ; /home/gabriel/Documentos/ConsoleFPGA/db/mux_3nb.tdf                               ;         ;
+; db/altsyncram_rii1.tdf                       ; yes             ; Auto-Generated Megafunction                           ; /home/gabriel/Documentos/ConsoleFPGA/db/altsyncram_rii1.tdf                       ;         ;
+; db/consoleFPGA.ram0_sram_76955e8c.hdl.mif    ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; /home/gabriel/Documentos/ConsoleFPGA/db/consoleFPGA.ram0_sram_76955e8c.hdl.mif    ;         ;
+; db/altsyncram_tgi1.tdf                       ; yes             ; Auto-Generated Megafunction                           ; /home/gabriel/Documentos/ConsoleFPGA/db/altsyncram_tgi1.tdf                       ;         ;
+; db/consoleFPGA.ram0_sram_646a7550.hdl.mif    ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; /home/gabriel/Documentos/ConsoleFPGA/db/consoleFPGA.ram0_sram_646a7550.hdl.mif    ;         ;
+; lpm_mult.tdf                                 ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/lpm_mult.tdf             ;         ;
+; lpm_add_sub.inc                              ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/lpm_add_sub.inc          ;         ;
+; multcore.inc                                 ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/multcore.inc             ;         ;
+; bypassff.inc                                 ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/bypassff.inc             ;         ;
+; altshift.inc                                 ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altshift.inc             ;         ;
+; multcore.tdf                                 ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/multcore.tdf             ;         ;
+; csa_add.inc                                  ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/csa_add.inc              ;         ;
+; mpar_add.inc                                 ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/mpar_add.inc             ;         ;
+; muleabz.inc                                  ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/muleabz.inc              ;         ;
+; mul_lfrg.inc                                 ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/mul_lfrg.inc             ;         ;
+; mul_boothc.inc                               ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/mul_boothc.inc           ;         ;
+; alt_ded_mult.inc                             ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/alt_ded_mult.inc         ;         ;
+; alt_ded_mult_y.inc                           ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/alt_ded_mult_y.inc       ;         ;
+; dffpipe.inc                                  ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/dffpipe.inc              ;         ;
+; mpar_add.tdf                                 ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/mpar_add.tdf             ;         ;
+; lpm_add_sub.tdf                              ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/lpm_add_sub.tdf          ;         ;
+; addcore.inc                                  ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/addcore.inc              ;         ;
+; look_add.inc                                 ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/look_add.inc             ;         ;
+; alt_stratix_add_sub.inc                      ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/alt_stratix_add_sub.inc  ;         ;
+; db/add_sub_bfh.tdf                           ; yes             ; Auto-Generated Megafunction                           ; /home/gabriel/Documentos/ConsoleFPGA/db/add_sub_bfh.tdf                           ;         ;
+; altshift.tdf                                 ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altshift.tdf             ;         ;
++----------------------------------------------+-----------------+-------------------------------------------------------+-----------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------+
@@ -258,20 +261,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 410       ;
+; Estimated Total logic elements              ; 409       ;
 ;                                             ;           ;
-; Total combinational functions               ; 404       ;
+; Total combinational functions               ; 403       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 181       ;
-;     -- 3 input functions                    ; 104       ;
-;     -- <=2 input functions                  ; 119       ;
+;     -- 4 input functions                    ; 179       ;
+;     -- 3 input functions                    ; 110       ;
+;     -- <=2 input functions                  ; 114       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 287       ;
+;     -- normal mode                          ; 286       ;
 ;     -- arithmetic mode                      ; 117       ;
 ;                                             ;           ;
-; Total registers                             ; 78        ;
-;     -- Dedicated logic registers            ; 78        ;
+; Total registers                             ; 80        ;
+;     -- Dedicated logic registers            ; 80        ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 13        ;
@@ -280,55 +283,55 @@ refer to the applicable agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 92        ;
-; Total fan-out                               ; 1649      ;
-; Average fan-out                             ; 3.17      ;
+; Maximum fan-out                             ; 94        ;
+; Total fan-out                               ; 1657      ;
+; Average fan-out                             ; 3.18      ;
 +---------------------------------------------+-----------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                ;
-+---------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; Compilation Hierarchy Node                        ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                ; Entity Name     ; Library Name ;
-+---------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |top                                              ; 404 (60)            ; 78 (9)                    ; 7500        ; 0            ; 0       ; 0         ; 13   ; 0            ; |top                                                                                                                                               ; top             ; work         ;
-;    |SVGA_sync:SVGA|                               ; 52 (52)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|SVGA_sync:SVGA                                                                                                                                ; SVGA_sync       ; work         ;
-;    |memorySprites:memorySprites_inst|             ; 63 (63)             ; 0 (0)                     ; 7500        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|memorySprites:memorySprites_inst                                                                                                              ; memorySprites   ; work         ;
-;       |sram:element1|                             ; 0 (0)               ; 0 (0)                     ; 3750        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|memorySprites:memorySprites_inst|sram:element1                                                                                                ; sram            ; work         ;
-;          |altsyncram:memory_array_rtl_0|          ; 0 (0)               ; 0 (0)                     ; 3750        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|memorySprites:memorySprites_inst|sram:element1|altsyncram:memory_array_rtl_0                                                                  ; altsyncram      ; work         ;
-;             |altsyncram_tgi1:auto_generated|      ; 0 (0)               ; 0 (0)                     ; 3750        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|memorySprites:memorySprites_inst|sram:element1|altsyncram:memory_array_rtl_0|altsyncram_tgi1:auto_generated                                   ; altsyncram_tgi1 ; work         ;
-;       |sram:element5|                             ; 0 (0)               ; 0 (0)                     ; 3750        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|memorySprites:memorySprites_inst|sram:element5                                                                                                ; sram            ; work         ;
-;          |altsyncram:memory_array_rtl_0|          ; 0 (0)               ; 0 (0)                     ; 3750        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0                                                                  ; altsyncram      ; work         ;
-;             |altsyncram_rii1:auto_generated|      ; 0 (0)               ; 0 (0)                     ; 3750        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_rii1:auto_generated                                   ; altsyncram_rii1 ; work         ;
-;    |printRGB:printRGB_inst|                       ; 229 (38)            ; 46 (12)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst                                                                                                                        ; printRGB        ; work         ;
-;       |barrier:barrier_inst|                      ; 168 (120)           ; 24 (24)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst                                                                                                   ; barrier         ; work         ;
-;          |lpm_mult:Mult0|                         ; 12 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult0                                                                                    ; lpm_mult        ; work         ;
-;             |multcore:mult_core|                  ; 12 (6)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult0|multcore:mult_core                                                                 ; multcore        ; work         ;
-;                |mpar_add:padder|                  ; 6 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder                                                 ; mpar_add        ; work         ;
-;                   |lpm_add_sub:adder[0]|          ; 6 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                            ; lpm_add_sub     ; work         ;
-;                      |add_sub_bfh:auto_generated| ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_bfh:auto_generated ; add_sub_bfh     ; work         ;
-;          |lpm_mult:Mult1|                         ; 12 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult1                                                                                    ; lpm_mult        ; work         ;
-;             |multcore:mult_core|                  ; 12 (6)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult1|multcore:mult_core                                                                 ; multcore        ; work         ;
-;                |mpar_add:padder|                  ; 6 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder                                                 ; mpar_add        ; work         ;
-;                   |lpm_add_sub:adder[0]|          ; 6 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                            ; lpm_add_sub     ; work         ;
-;                      |add_sub_bfh:auto_generated| ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_bfh:auto_generated ; add_sub_bfh     ; work         ;
-;          |lpm_mult:Mult2|                         ; 12 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult2                                                                                    ; lpm_mult        ; work         ;
-;             |multcore:mult_core|                  ; 12 (6)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult2|multcore:mult_core                                                                 ; multcore        ; work         ;
-;                |mpar_add:padder|                  ; 6 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult2|multcore:mult_core|mpar_add:padder                                                 ; mpar_add        ; work         ;
-;                   |lpm_add_sub:adder[0]|          ; 6 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult2|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                            ; lpm_add_sub     ; work         ;
-;                      |add_sub_bfh:auto_generated| ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult2|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_bfh:auto_generated ; add_sub_bfh     ; work         ;
-;          |lpm_mult:Mult3|                         ; 12 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult3                                                                                    ; lpm_mult        ; work         ;
-;             |multcore:mult_core|                  ; 12 (6)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult3|multcore:mult_core                                                                 ; multcore        ; work         ;
-;                |mpar_add:padder|                  ; 6 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult3|multcore:mult_core|mpar_add:padder                                                 ; mpar_add        ; work         ;
-;                   |lpm_add_sub:adder[0]|          ; 6 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult3|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                            ; lpm_add_sub     ; work         ;
-;                      |add_sub_bfh:auto_generated| ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult3|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_bfh:auto_generated ; add_sub_bfh     ; work         ;
-;       |fruits:fruits_inst|                        ; 23 (11)             ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|fruits:fruits_inst                                                                                                     ; fruits          ; work         ;
-;          |lpm_mult:Mult0|                         ; 12 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|fruits:fruits_inst|lpm_mult:Mult0                                                                                      ; lpm_mult        ; work         ;
-;             |multcore:mult_core|                  ; 12 (6)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|fruits:fruits_inst|lpm_mult:Mult0|multcore:mult_core                                                                   ; multcore        ; work         ;
-;                |mpar_add:padder|                  ; 6 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|fruits:fruits_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder                                                   ; mpar_add        ; work         ;
-;                   |lpm_add_sub:adder[0]|          ; 6 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|fruits:fruits_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                              ; lpm_add_sub     ; work         ;
-;                      |add_sub_bfh:auto_generated| ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|fruits:fruits_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_bfh:auto_generated   ; add_sub_bfh     ; work         ;
-+---------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                   ;
++---------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node                        ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                   ; Entity Name     ; Library Name ;
++---------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; |top                                              ; 403 (62)            ; 80 (9)                    ; 7500        ; 0            ; 0       ; 0         ; 13   ; 0            ; |top                                                                                                                                                  ; top             ; work         ;
+;    |SVGA_sync:SVGA|                               ; 51 (51)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|SVGA_sync:SVGA                                                                                                                                   ; SVGA_sync       ; work         ;
+;    |memorySprites:memorySprites_inst|             ; 59 (59)             ; 0 (0)                     ; 7500        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|memorySprites:memorySprites_inst                                                                                                                 ; memorySprites   ; work         ;
+;       |sram:element1|                             ; 0 (0)               ; 0 (0)                     ; 3750        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|memorySprites:memorySprites_inst|sram:element1                                                                                                   ; sram            ; work         ;
+;          |altsyncram:memory_array_rtl_0|          ; 0 (0)               ; 0 (0)                     ; 3750        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|memorySprites:memorySprites_inst|sram:element1|altsyncram:memory_array_rtl_0                                                                     ; altsyncram      ; work         ;
+;             |altsyncram_tgi1:auto_generated|      ; 0 (0)               ; 0 (0)                     ; 3750        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|memorySprites:memorySprites_inst|sram:element1|altsyncram:memory_array_rtl_0|altsyncram_tgi1:auto_generated                                      ; altsyncram_tgi1 ; work         ;
+;       |sram:element5|                             ; 0 (0)               ; 0 (0)                     ; 3750        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|memorySprites:memorySprites_inst|sram:element5                                                                                                   ; sram            ; work         ;
+;          |altsyncram:memory_array_rtl_0|          ; 0 (0)               ; 0 (0)                     ; 3750        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0                                                                     ; altsyncram      ; work         ;
+;             |altsyncram_rii1:auto_generated|      ; 0 (0)               ; 0 (0)                     ; 3750        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_rii1:auto_generated                                      ; altsyncram_rii1 ; work         ;
+;    |printRGB:printRGB_inst|                       ; 231 (38)            ; 48 (12)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst                                                                                                                           ; printRGB        ; work         ;
+;       |barrier:barrier_inst|                      ; 167 (119)           ; 24 (24)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst                                                                                                      ; barrier         ; work         ;
+;          |lpm_mult:Mult0|                         ; 12 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult0                                                                                       ; lpm_mult        ; work         ;
+;             |multcore:mult_core|                  ; 12 (6)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult0|multcore:mult_core                                                                    ; multcore        ; work         ;
+;                |mpar_add:padder|                  ; 6 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder                                                    ; mpar_add        ; work         ;
+;                   |lpm_add_sub:adder[0]|          ; 6 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                               ; lpm_add_sub     ; work         ;
+;                      |add_sub_bfh:auto_generated| ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_bfh:auto_generated    ; add_sub_bfh     ; work         ;
+;          |lpm_mult:Mult1|                         ; 12 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult1                                                                                       ; lpm_mult        ; work         ;
+;             |multcore:mult_core|                  ; 12 (6)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult1|multcore:mult_core                                                                    ; multcore        ; work         ;
+;                |mpar_add:padder|                  ; 6 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder                                                    ; mpar_add        ; work         ;
+;                   |lpm_add_sub:adder[0]|          ; 6 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                               ; lpm_add_sub     ; work         ;
+;                      |add_sub_bfh:auto_generated| ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_bfh:auto_generated    ; add_sub_bfh     ; work         ;
+;          |lpm_mult:Mult2|                         ; 12 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult2                                                                                       ; lpm_mult        ; work         ;
+;             |multcore:mult_core|                  ; 12 (6)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult2|multcore:mult_core                                                                    ; multcore        ; work         ;
+;                |mpar_add:padder|                  ; 6 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult2|multcore:mult_core|mpar_add:padder                                                    ; mpar_add        ; work         ;
+;                   |lpm_add_sub:adder[0]|          ; 6 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult2|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                               ; lpm_add_sub     ; work         ;
+;                      |add_sub_bfh:auto_generated| ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult2|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_bfh:auto_generated    ; add_sub_bfh     ; work         ;
+;          |lpm_mult:Mult3|                         ; 12 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult3                                                                                       ; lpm_mult        ; work         ;
+;             |multcore:mult_core|                  ; 12 (6)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult3|multcore:mult_core                                                                    ; multcore        ; work         ;
+;                |mpar_add:padder|                  ; 6 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult3|multcore:mult_core|mpar_add:padder                                                    ; mpar_add        ; work         ;
+;                   |lpm_add_sub:adder[0]|          ; 6 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult3|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                               ; lpm_add_sub     ; work         ;
+;                      |add_sub_bfh:auto_generated| ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult3|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_bfh:auto_generated    ; add_sub_bfh     ; work         ;
+;       |printSprite:spriteFruit|                   ; 26 (13)             ; 12 (12)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|printSprite:spriteFruit                                                                                                   ; printSprite     ; work         ;
+;          |lpm_mult:Mult0|                         ; 13 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|printSprite:spriteFruit|lpm_mult:Mult0                                                                                    ; lpm_mult        ; work         ;
+;             |multcore:mult_core|                  ; 13 (7)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|printSprite:spriteFruit|lpm_mult:Mult0|multcore:mult_core                                                                 ; multcore        ; work         ;
+;                |mpar_add:padder|                  ; 6 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|printSprite:spriteFruit|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder                                                 ; mpar_add        ; work         ;
+;                   |lpm_add_sub:adder[0]|          ; 6 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|printSprite:spriteFruit|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                            ; lpm_add_sub     ; work         ;
+;                      |add_sub_bfh:auto_generated| ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|printSprite:spriteFruit|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_bfh:auto_generated ; add_sub_bfh     ; work         ;
++---------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -385,15 +388,41 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+--------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                             ;
-+---------------------------------------+----------------------------------------+
-; Register name                         ; Reason for Removal                     ;
-+---------------------------------------+----------------------------------------+
-; printRGB:printRGB_inst|element[1]     ; Stuck at GND due to stuck port data_in ;
-; printRGB:printRGB_inst|element[0]     ; Stuck at VCC due to stuck port data_in ;
-; Total Number of Removed Registers = 2 ;                                        ;
-+---------------------------------------+----------------------------------------+
++---------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                      ;
++----------------------------------------------------------------+----------------------------------------+
+; Register name                                                  ; Reason for Removal                     ;
++----------------------------------------------------------------+----------------------------------------+
+; printRGB:printRGB_inst|printSprite:spriteFruit|current_x[9,10] ; Stuck at GND due to stuck port clock   ;
+; printRGB:printRGB_inst|printSprite:spriteFruit|current_x[8]    ; Stuck at VCC due to stuck port clock   ;
+; printRGB:printRGB_inst|printSprite:spriteFruit|current_x[6,7]  ; Stuck at GND due to stuck port clock   ;
+; printRGB:printRGB_inst|printSprite:spriteFruit|current_x[5]    ; Stuck at VCC due to stuck port clock   ;
+; printRGB:printRGB_inst|printSprite:spriteFruit|current_x[4]    ; Stuck at GND due to stuck port clock   ;
+; printRGB:printRGB_inst|printSprite:spriteFruit|current_x[2,3]  ; Stuck at VCC due to stuck port clock   ;
+; printRGB:printRGB_inst|printSprite:spriteFruit|current_x[0,1]  ; Stuck at GND due to stuck port clock   ;
+; printRGB:printRGB_inst|printSprite:spriteFruit|current_y[9]    ; Stuck at GND due to stuck port clock   ;
+; printRGB:printRGB_inst|printSprite:spriteFruit|current_y[7,8]  ; Stuck at VCC due to stuck port clock   ;
+; printRGB:printRGB_inst|printSprite:spriteFruit|current_y[5,6]  ; Stuck at GND due to stuck port clock   ;
+; printRGB:printRGB_inst|printSprite:spriteFruit|current_y[4]    ; Stuck at VCC due to stuck port clock   ;
+; printRGB:printRGB_inst|printSprite:spriteFruit|current_y[0..3] ; Stuck at GND due to stuck port clock   ;
+; printRGB:printRGB_inst|printSprite:spriteFruit|element[1,2]    ; Stuck at GND due to stuck port clock   ;
+; printRGB:printRGB_inst|printSprite:spriteFruit|element[0]      ; Stuck at VCC due to stuck port clock   ;
+; printRGB:printRGB_inst|element[1]                              ; Stuck at GND due to stuck port data_in ;
+; printRGB:printRGB_inst|element[0]                              ; Stuck at VCC due to stuck port data_in ;
+; Total Number of Removed Registers = 26                         ;                                        ;
++----------------------------------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                  ;
++-----------------------------------------------------------+-------------------------+----------------------------------------+
+; Register name                                             ; Reason for Removal      ; Registers Removed due to This Register ;
++-----------------------------------------------------------+-------------------------+----------------------------------------+
+; printRGB:printRGB_inst|printSprite:spriteFruit|element[1] ; Stuck at GND            ; printRGB:printRGB_inst|element[1]      ;
+;                                                           ; due to stuck port clock ;                                        ;
+; printRGB:printRGB_inst|printSprite:spriteFruit|element[0] ; Stuck at VCC            ; printRGB:printRGB_inst|element[0]      ;
+;                                                           ; due to stuck port clock ;                                        ;
++-----------------------------------------------------------+-------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -401,12 +430,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 78    ;
+; Total registers                              ; 80    ;
 ; Number of registers using Synchronous Clear  ; 10    ;
 ; Number of registers using Synchronous Load   ; 10    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 36    ;
+; Number of registers using Clock Enable       ; 38    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -566,6 +595,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+--------------------------------------------+
 ; ELEMENT        ; 3     ; Signed Integer                             ;
 +----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: printRGB:printRGB_inst|printSprite:spriteFruit ;
++---------------------+-------+---------------------------------------------------------------+
+; Parameter Name      ; Value ; Type                                                          ;
++---------------------+-------+---------------------------------------------------------------+
+; initialPosition_x   ; 300   ; Signed Integer                                                ;
+; initialPosition_y   ; 400   ; Signed Integer                                                ;
+; amountMemoryElement ; 3     ; Signed Integer                                                ;
+; memoryElement       ; 1     ; Signed Integer                                                ;
+; addr_width          ; 10    ; Signed Integer                                                ;
+; width_x             ; 6     ; Signed Integer                                                ;
+; width_y             ; 6     ; Signed Integer                                                ;
+; sizeSprite_x        ; 25    ; Signed Integer                                                ;
+; sizeSprite_y        ; 25    ; Signed Integer                                                ;
++---------------------+-------+---------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -752,38 +799,38 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: printRGB:printRGB_inst|fruits:fruits_inst|lpm_mult:Mult0 ;
-+------------------------------------------------+--------------+-------------------------------------------+
-; Parameter Name                                 ; Value        ; Type                                      ;
-+------------------------------------------------+--------------+-------------------------------------------+
-; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY                                ;
-; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY                              ;
-; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE                              ;
-; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE                            ;
-; LPM_WIDTHA                                     ; 5            ; Untyped                                   ;
-; LPM_WIDTHB                                     ; 5            ; Untyped                                   ;
-; LPM_WIDTHP                                     ; 10           ; Untyped                                   ;
-; LPM_WIDTHR                                     ; 10           ; Untyped                                   ;
-; LPM_WIDTHS                                     ; 1            ; Untyped                                   ;
-; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                                   ;
-; LPM_PIPELINE                                   ; 0            ; Untyped                                   ;
-; LATENCY                                        ; 0            ; Untyped                                   ;
-; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                                   ;
-; INPUT_B_IS_CONSTANT                            ; YES          ; Untyped                                   ;
-; USE_EAB                                        ; OFF          ; Untyped                                   ;
-; MAXIMIZE_SPEED                                 ; 5            ; Untyped                                   ;
-; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                                   ;
-; CARRY_CHAIN                                    ; MANUAL       ; Untyped                                   ;
-; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K                       ;
-; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                                   ;
-; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                                   ;
-; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                                   ;
-; CBXI_PARAMETER                                 ; NOTHING      ; Untyped                                   ;
-; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                                   ;
-; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                                   ;
-; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                                   ;
-+------------------------------------------------+--------------+-------------------------------------------+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: printRGB:printRGB_inst|printSprite:spriteFruit|lpm_mult:Mult0 ;
++------------------------------------------------+--------------+------------------------------------------------+
+; Parameter Name                                 ; Value        ; Type                                           ;
++------------------------------------------------+--------------+------------------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY                                     ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY                                   ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE                                   ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE                                 ;
+; LPM_WIDTHA                                     ; 6            ; Untyped                                        ;
+; LPM_WIDTHB                                     ; 5            ; Untyped                                        ;
+; LPM_WIDTHP                                     ; 11           ; Untyped                                        ;
+; LPM_WIDTHR                                     ; 11           ; Untyped                                        ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                                        ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                                        ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                                        ;
+; LATENCY                                        ; 0            ; Untyped                                        ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                                        ;
+; INPUT_B_IS_CONSTANT                            ; YES          ; Untyped                                        ;
+; USE_EAB                                        ; OFF          ; Untyped                                        ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped                                        ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                                        ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                                        ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K                            ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                                        ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                                        ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                                        ;
+; CBXI_PARAMETER                                 ; NOTHING      ; Untyped                                        ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                                        ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                                        ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                                        ;
++------------------------------------------------+--------------+------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -969,68 +1016,87 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------+
-; lpm_mult Parameter Settings by Entity Instance                                                     ;
-+---------------------------------------+------------------------------------------------------------+
-; Name                                  ; Value                                                      ;
-+---------------------------------------+------------------------------------------------------------+
-; Number of entity instances            ; 5                                                          ;
-; Entity Instance                       ; printRGB:printRGB_inst|fruits:fruits_inst|lpm_mult:Mult0   ;
-;     -- LPM_WIDTHA                     ; 5                                                          ;
-;     -- LPM_WIDTHB                     ; 5                                                          ;
-;     -- LPM_WIDTHP                     ; 10                                                         ;
-;     -- LPM_REPRESENTATION             ; UNSIGNED                                                   ;
-;     -- INPUT_A_IS_CONSTANT            ; NO                                                         ;
-;     -- INPUT_B_IS_CONSTANT            ; YES                                                        ;
-;     -- USE_EAB                        ; OFF                                                        ;
-;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                       ;
-;     -- INPUT_A_FIXED_VALUE            ; Bx                                                         ;
-;     -- INPUT_B_FIXED_VALUE            ; Bx                                                         ;
-; Entity Instance                       ; printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult1 ;
-;     -- LPM_WIDTHA                     ; 5                                                          ;
-;     -- LPM_WIDTHB                     ; 5                                                          ;
-;     -- LPM_WIDTHP                     ; 10                                                         ;
-;     -- LPM_REPRESENTATION             ; UNSIGNED                                                   ;
-;     -- INPUT_A_IS_CONSTANT            ; NO                                                         ;
-;     -- INPUT_B_IS_CONSTANT            ; YES                                                        ;
-;     -- USE_EAB                        ; OFF                                                        ;
-;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                       ;
-;     -- INPUT_A_FIXED_VALUE            ; Bx                                                         ;
-;     -- INPUT_B_FIXED_VALUE            ; Bx                                                         ;
-; Entity Instance                       ; printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult0 ;
-;     -- LPM_WIDTHA                     ; 5                                                          ;
-;     -- LPM_WIDTHB                     ; 5                                                          ;
-;     -- LPM_WIDTHP                     ; 10                                                         ;
-;     -- LPM_REPRESENTATION             ; UNSIGNED                                                   ;
-;     -- INPUT_A_IS_CONSTANT            ; NO                                                         ;
-;     -- INPUT_B_IS_CONSTANT            ; YES                                                        ;
-;     -- USE_EAB                        ; OFF                                                        ;
-;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                       ;
-;     -- INPUT_A_FIXED_VALUE            ; Bx                                                         ;
-;     -- INPUT_B_FIXED_VALUE            ; Bx                                                         ;
-; Entity Instance                       ; printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult3 ;
-;     -- LPM_WIDTHA                     ; 5                                                          ;
-;     -- LPM_WIDTHB                     ; 5                                                          ;
-;     -- LPM_WIDTHP                     ; 10                                                         ;
-;     -- LPM_REPRESENTATION             ; UNSIGNED                                                   ;
-;     -- INPUT_A_IS_CONSTANT            ; NO                                                         ;
-;     -- INPUT_B_IS_CONSTANT            ; YES                                                        ;
-;     -- USE_EAB                        ; OFF                                                        ;
-;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                       ;
-;     -- INPUT_A_FIXED_VALUE            ; Bx                                                         ;
-;     -- INPUT_B_FIXED_VALUE            ; Bx                                                         ;
-; Entity Instance                       ; printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult2 ;
-;     -- LPM_WIDTHA                     ; 5                                                          ;
-;     -- LPM_WIDTHB                     ; 5                                                          ;
-;     -- LPM_WIDTHP                     ; 10                                                         ;
-;     -- LPM_REPRESENTATION             ; UNSIGNED                                                   ;
-;     -- INPUT_A_IS_CONSTANT            ; NO                                                         ;
-;     -- INPUT_B_IS_CONSTANT            ; YES                                                        ;
-;     -- USE_EAB                        ; OFF                                                        ;
-;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                       ;
-;     -- INPUT_A_FIXED_VALUE            ; Bx                                                         ;
-;     -- INPUT_B_FIXED_VALUE            ; Bx                                                         ;
-+---------------------------------------+------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                                                        ;
++---------------------------------------+---------------------------------------------------------------+
+; Name                                  ; Value                                                         ;
++---------------------------------------+---------------------------------------------------------------+
+; Number of entity instances            ; 5                                                             ;
+; Entity Instance                       ; printRGB:printRGB_inst|printSprite:spriteFruit|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 6                                                             ;
+;     -- LPM_WIDTHB                     ; 5                                                             ;
+;     -- LPM_WIDTHP                     ; 11                                                            ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                                      ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                            ;
+;     -- INPUT_B_IS_CONSTANT            ; YES                                                           ;
+;     -- USE_EAB                        ; OFF                                                           ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                          ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                            ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                            ;
+; Entity Instance                       ; printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult1    ;
+;     -- LPM_WIDTHA                     ; 5                                                             ;
+;     -- LPM_WIDTHB                     ; 5                                                             ;
+;     -- LPM_WIDTHP                     ; 10                                                            ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                                      ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                            ;
+;     -- INPUT_B_IS_CONSTANT            ; YES                                                           ;
+;     -- USE_EAB                        ; OFF                                                           ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                          ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                            ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                            ;
+; Entity Instance                       ; printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult0    ;
+;     -- LPM_WIDTHA                     ; 5                                                             ;
+;     -- LPM_WIDTHB                     ; 5                                                             ;
+;     -- LPM_WIDTHP                     ; 10                                                            ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                                      ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                            ;
+;     -- INPUT_B_IS_CONSTANT            ; YES                                                           ;
+;     -- USE_EAB                        ; OFF                                                           ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                          ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                            ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                            ;
+; Entity Instance                       ; printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult3    ;
+;     -- LPM_WIDTHA                     ; 5                                                             ;
+;     -- LPM_WIDTHB                     ; 5                                                             ;
+;     -- LPM_WIDTHP                     ; 10                                                            ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                                      ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                            ;
+;     -- INPUT_B_IS_CONSTANT            ; YES                                                           ;
+;     -- USE_EAB                        ; OFF                                                           ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                          ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                            ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                            ;
+; Entity Instance                       ; printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult2    ;
+;     -- LPM_WIDTHA                     ; 5                                                             ;
+;     -- LPM_WIDTHB                     ; 5                                                             ;
+;     -- LPM_WIDTHP                     ; 10                                                            ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                                      ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                            ;
+;     -- INPUT_B_IS_CONSTANT            ; YES                                                           ;
+;     -- USE_EAB                        ; OFF                                                           ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                          ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                            ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                            ;
++---------------------------------------+---------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "printRGB:printRGB_inst|printSprite:spriteFruit"                                                                                                                                                      ;
++-----------------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port                  ; Type   ; Severity ; Details                                                                                                                                                                             ;
++-----------------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; offset_x              ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (6 bits) it drives.  The 26 most-significant bit(s) in the expression will be dangling if they have no other fanouts.  ;
+; offset_x[5..0]        ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; offset_y              ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (6 bits) it drives.  The 26 most-significant bit(s) in the expression will be dangling if they have no other fanouts.  ;
+; offset_y[5..0]        ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; new_position_x        ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (11 bits) it drives.  The 21 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; new_position_x[10..0] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; new_position_y        ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (10 bits) it drives.  The 22 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; new_position_y[9..0]  ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; moveSprite            ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts.  ;
+; moveSprite[-1]        ; Input  ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; element               ; Output ; Warning  ; Output or bidir port (3 bits) is smaller than the port expression (5 bits) it drives.  The 2 most-significant bit(s) in the port expression will be connected to GND.               ;
++-----------------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1133,20 +1199,20 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 13                          ;
-; cycloneiii_ff         ; 78                          ;
-;     ENA               ; 26                          ;
+; cycloneiii_ff         ; 80                          ;
+;     ENA               ; 28                          ;
 ;     ENA SCLR SLD      ; 10                          ;
 ;     plain             ; 42                          ;
-; cycloneiii_lcell_comb ; 404                         ;
+; cycloneiii_lcell_comb ; 403                         ;
 ;     arith             ; 117                         ;
-;         2 data inputs ; 77                          ;
-;         3 data inputs ; 40                          ;
-;     normal            ; 287                         ;
-;         0 data inputs ; 6                           ;
+;         2 data inputs ; 75                          ;
+;         3 data inputs ; 42                          ;
+;     normal            ; 286                         ;
+;         0 data inputs ; 5                           ;
 ;         1 data inputs ; 15                          ;
-;         2 data inputs ; 21                          ;
-;         3 data inputs ; 64                          ;
-;         4 data inputs ; 181                         ;
+;         2 data inputs ; 19                          ;
+;         3 data inputs ; 68                          ;
+;         4 data inputs ; 179                         ;
 ; cycloneiii_ram_block  ; 12                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 6.00                        ;
@@ -1169,10 +1235,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sat Jun 15 23:17:05 2019
+    Info: Processing started: Fri Jun 21 17:22:28 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off consoleFPGA -c consoleFPGA
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file Modulos/module_of_print_sprite/printSprite.v
+    Info (12023): Found entity 1: printSprite File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/module_of_print_sprite/printSprite.v Line: 16
 Info (12021): Found 1 design units, including 1 entities, in source file Modulos/barrier.v
     Info (12023): Found entity 1: barrier File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file Modulos/memorySprites.v
@@ -1189,6 +1257,10 @@ Info (12021): Found 1 design units, including 1 entities, in source file Modulos
     Info (12023): Found entity 1: fruits File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/fruits.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file Modulos/LFSR.v
     Info (12023): Found entity 1: LFSR File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/LFSR.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file Modulos/movementModule/movementModule.v
+    Info (12023): Found entity 1: movementModule File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/movementModule/movementModule.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file Modulos/movementModule/spriteMoveFSM.v
+    Info (12023): Found entity 1: spriteMoveFSM File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/movementModule/spriteMoveFSM.v Line: 1
 Info (12127): Elaborating entity "top" for the top level hierarchy
 Warning (10230): Verilog HDL assignment warning at top.v(71): truncated value with size 4 to match size of target (3) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 71
 Warning (10240): Verilog HDL Always Construct warning at top.v(66): inferring latch(es) for variable "elementMemory", which holds its previous value in one or more paths through the always construct File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 66
@@ -1314,6 +1386,7 @@ Info (10648): Verilog HDL Display System Task info at sram.v(25): /home/gabriel/
 Info (12128): Elaborating entity "sram" for hierarchy "memorySprites:memorySprites_inst|sram:element5" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 206
 Info (10648): Verilog HDL Display System Task info at sram.v(25): /home/gabriel/Documentos/ConsoleFPGçû‘‘€◊€Ö‡îœ€‚¨?JR§33˛¬ File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/moduloSram/sram.v Line: 25
 Info (12128): Elaborating entity "printRGB" for hierarchy "printRGB:printRGB_inst" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 63
+Warning (10230): Verilog HDL assignment warning at printRGB.v(81): truncated value with size 5 to match size of target (3) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/printRGB.v Line: 81
 Info (12128): Elaborating entity "barrier" for hierarchy "printRGB:printRGB_inst|barrier:barrier_inst" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/printRGB.v Line: 28
 Warning (10230): Verilog HDL assignment warning at barrier.v(33): truncated value with size 32 to match size of target (5) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 33
 Warning (10230): Verilog HDL assignment warning at barrier.v(34): truncated value with size 6 to match size of target (5) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 34
@@ -1331,10 +1404,16 @@ Warning (10230): Verilog HDL assignment warning at barrier.v(68): truncated valu
 Warning (10230): Verilog HDL assignment warning at barrier.v(73): truncated value with size 32 to match size of target (6) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 73
 Warning (10230): Verilog HDL assignment warning at barrier.v(80): truncated value with size 32 to match size of target (6) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 80
 Warning (10230): Verilog HDL assignment warning at barrier.v(89): truncated value with size 32 to match size of target (6) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 89
-Info (12128): Elaborating entity "fruits" for hierarchy "printRGB:printRGB_inst|fruits:fruits_inst" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/printRGB.v Line: 40
-Warning (10230): Verilog HDL assignment warning at fruits.v(32): truncated value with size 32 to match size of target (10) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/fruits.v Line: 32
-Warning (10230): Verilog HDL assignment warning at fruits.v(42): truncated value with size 10 to match size of target (5) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/fruits.v Line: 42
-Warning (10230): Verilog HDL assignment warning at fruits.v(43): truncated value with size 11 to match size of target (5) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/fruits.v Line: 43
+Info (12128): Elaborating entity "printSprite" for hierarchy "printRGB:printRGB_inst|printSprite:spriteFruit" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/printRGB.v Line: 55
+Warning (10230): Verilog HDL assignment warning at printSprite.v(53): truncated value with size 32 to match size of target (11) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/module_of_print_sprite/printSprite.v Line: 53
+Warning (10230): Verilog HDL assignment warning at printSprite.v(54): truncated value with size 32 to match size of target (10) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/module_of_print_sprite/printSprite.v Line: 54
+Warning (10230): Verilog HDL assignment warning at printSprite.v(55): truncated value with size 32 to match size of target (3) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/module_of_print_sprite/printSprite.v Line: 55
+Warning (10230): Verilog HDL assignment warning at printSprite.v(67): truncated value with size 32 to match size of target (10) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/module_of_print_sprite/printSprite.v Line: 67
+Warning (10230): Verilog HDL assignment warning at printSprite.v(85): truncated value with size 32 to match size of target (11) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/module_of_print_sprite/printSprite.v Line: 85
+Warning (10230): Verilog HDL assignment warning at printSprite.v(86): truncated value with size 32 to match size of target (10) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/module_of_print_sprite/printSprite.v Line: 86
+Warning (10230): Verilog HDL assignment warning at printSprite.v(87): truncated value with size 32 to match size of target (3) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/module_of_print_sprite/printSprite.v Line: 87
+Warning (10230): Verilog HDL assignment warning at printSprite.v(94): truncated value with size 10 to match size of target (6) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/module_of_print_sprite/printSprite.v Line: 94
+Warning (10230): Verilog HDL assignment warning at printSprite.v(95): truncated value with size 11 to match size of target (6) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/module_of_print_sprite/printSprite.v Line: 95
 Warning (276027): Inferred dual-clock RAM node "memorySprites:memorySprites_inst|sram:element5|memory_array_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
 Warning (276027): Inferred dual-clock RAM node "memorySprites:memorySprites_inst|sram:element4|memory_array_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
 Warning (276027): Inferred dual-clock RAM node "memorySprites:memorySprites_inst|sram:element1|memory_array_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
@@ -1402,7 +1481,7 @@ Info (19000): Inferred 3 megafunctions from design logic
         Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
         Info (286033): Parameter INIT_FILE set to db/consoleFPGA.ram0_sram_646a7550.hdl.mif
 Info (278001): Inferred 5 megafunctions from design logic
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "printRGB:printRGB_inst|fruits:fruits_inst|Mult0" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/fruits.v Line: 32
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "printRGB:printRGB_inst|printSprite:spriteFruit|Mult0" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/module_of_print_sprite/printSprite.v Line: 67
     Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "printRGB:printRGB_inst|barrier:barrier_inst|Mult1" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 44
     Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "printRGB:printRGB_inst|barrier:barrier_inst|Mult0" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 36
     Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "printRGB:printRGB_inst|barrier:barrier_inst|Mult3" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 60
@@ -1468,8 +1547,25 @@ Info (12133): Instantiated megafunction "memorySprites:memorySprites_inst|sram:e
     Info (12134): Parameter "INIT_FILE" = "db/consoleFPGA.ram0_sram_646a7550.hdl.mif"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_tgi1.tdf
     Info (12023): Found entity 1: altsyncram_tgi1 File: /home/gabriel/Documentos/ConsoleFPGA/db/altsyncram_tgi1.tdf Line: 27
-Info (12130): Elaborated megafunction instantiation "printRGB:printRGB_inst|fruits:fruits_inst|lpm_mult:Mult0" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/fruits.v Line: 32
-Info (12133): Instantiated megafunction "printRGB:printRGB_inst|fruits:fruits_inst|lpm_mult:Mult0" with the following parameter: File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/fruits.v Line: 32
+Info (12130): Elaborated megafunction instantiation "printRGB:printRGB_inst|printSprite:spriteFruit|lpm_mult:Mult0" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/module_of_print_sprite/printSprite.v Line: 67
+Info (12133): Instantiated megafunction "printRGB:printRGB_inst|printSprite:spriteFruit|lpm_mult:Mult0" with the following parameter: File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/module_of_print_sprite/printSprite.v Line: 67
+    Info (12134): Parameter "LPM_WIDTHA" = "6"
+    Info (12134): Parameter "LPM_WIDTHB" = "5"
+    Info (12134): Parameter "LPM_WIDTHP" = "11"
+    Info (12134): Parameter "LPM_WIDTHR" = "11"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "YES"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12131): Elaborated megafunction instantiation "printRGB:printRGB_inst|printSprite:spriteFruit|lpm_mult:Mult0|multcore:mult_core", which is child of megafunction instantiation "printRGB:printRGB_inst|printSprite:spriteFruit|lpm_mult:Mult0" File: /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 308
+Info (12131): Elaborated megafunction instantiation "printRGB:printRGB_inst|printSprite:spriteFruit|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "printRGB:printRGB_inst|printSprite:spriteFruit|lpm_mult:Mult0" File: /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/multcore.tdf Line: 228
+Info (12131): Elaborated megafunction instantiation "printRGB:printRGB_inst|printSprite:spriteFruit|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]", which is child of megafunction instantiation "printRGB:printRGB_inst|printSprite:spriteFruit|lpm_mult:Mult0" File: /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/mpar_add.tdf Line: 78
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_bfh.tdf
+    Info (12023): Found entity 1: add_sub_bfh File: /home/gabriel/Documentos/ConsoleFPGA/db/add_sub_bfh.tdf Line: 22
+Info (12131): Elaborated megafunction instantiation "printRGB:printRGB_inst|printSprite:spriteFruit|lpm_mult:Mult0|altshift:external_latency_ffs", which is child of megafunction instantiation "printRGB:printRGB_inst|printSprite:spriteFruit|lpm_mult:Mult0" File: /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 351
+Info (12130): Elaborated megafunction instantiation "printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult1" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 44
+Info (12133): Instantiated megafunction "printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult1" with the following parameter: File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 44
     Info (12134): Parameter "LPM_WIDTHA" = "5"
     Info (12134): Parameter "LPM_WIDTHB" = "5"
     Info (12134): Parameter "LPM_WIDTHP" = "10"
@@ -1479,14 +1575,11 @@ Info (12133): Instantiated megafunction "printRGB:printRGB_inst|fruits:fruits_in
     Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
     Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "YES"
     Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
-Info (12131): Elaborated megafunction instantiation "printRGB:printRGB_inst|fruits:fruits_inst|lpm_mult:Mult0|multcore:mult_core", which is child of megafunction instantiation "printRGB:printRGB_inst|fruits:fruits_inst|lpm_mult:Mult0" File: /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 308
-Info (12131): Elaborated megafunction instantiation "printRGB:printRGB_inst|fruits:fruits_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "printRGB:printRGB_inst|fruits:fruits_inst|lpm_mult:Mult0" File: /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/multcore.tdf Line: 228
-Info (12131): Elaborated megafunction instantiation "printRGB:printRGB_inst|fruits:fruits_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]", which is child of megafunction instantiation "printRGB:printRGB_inst|fruits:fruits_inst|lpm_mult:Mult0" File: /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/mpar_add.tdf Line: 78
-Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_bfh.tdf
-    Info (12023): Found entity 1: add_sub_bfh File: /home/gabriel/Documentos/ConsoleFPGA/db/add_sub_bfh.tdf Line: 22
-Info (12131): Elaborated megafunction instantiation "printRGB:printRGB_inst|fruits:fruits_inst|lpm_mult:Mult0|altshift:external_latency_ffs", which is child of megafunction instantiation "printRGB:printRGB_inst|fruits:fruits_inst|lpm_mult:Mult0" File: /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 351
-Info (12130): Elaborated megafunction instantiation "printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult1" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 44
-Info (12133): Instantiated megafunction "printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult1" with the following parameter: File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 44
+Info (12131): Elaborated megafunction instantiation "printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult1|multcore:mult_core", which is child of megafunction instantiation "printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult1" File: /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 308
+Info (12131): Elaborated megafunction instantiation "printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult1" File: /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/multcore.tdf Line: 228
+Info (12131): Elaborated megafunction instantiation "printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult1|altshift:external_latency_ffs", which is child of megafunction instantiation "printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult1" File: /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 351
+Info (12130): Elaborated megafunction instantiation "printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult0" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 36
+Info (12133): Instantiated megafunction "printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult0" with the following parameter: File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 36
     Info (12134): Parameter "LPM_WIDTHA" = "5"
     Info (12134): Parameter "LPM_WIDTHB" = "5"
     Info (12134): Parameter "LPM_WIDTHP" = "10"
@@ -1518,7 +1611,7 @@ Warning (14284): Synthesized away the following node(s):
         Warning (14320): Synthesized away node "memorySprites:memorySprites_inst|sram:element4|altsyncram:memory_array_rtl_0|altsyncram_9gi1:auto_generated|ram_block1a13" File: /home/gabriel/Documentos/ConsoleFPGA/db/altsyncram_9gi1.tdf Line: 463
         Warning (14320): Synthesized away node "memorySprites:memorySprites_inst|sram:element4|altsyncram:memory_array_rtl_0|altsyncram_9gi1:auto_generated|ram_block1a14" File: /home/gabriel/Documentos/ConsoleFPGA/db/altsyncram_9gi1.tdf Line: 495
         Warning (14320): Synthesized away node "memorySprites:memorySprites_inst|sram:element4|altsyncram:memory_array_rtl_0|altsyncram_9gi1:auto_generated|ram_block1a15" File: /home/gabriel/Documentos/ConsoleFPGA/db/altsyncram_9gi1.tdf Line: 527
-Warning (12241): 7 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12241): 8 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13012): Latch memorySprites:memorySprites_inst|read_enable1 has unsafe behavior File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 17
     Warning (13013): Ports D and ENA on the latch are fed by the same signal elementMemory[2] File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 77
 Warning (13012): Latch memorySprites:memorySprites_inst|read_enable5 has unsafe behavior File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 21
@@ -1529,16 +1622,16 @@ Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "reset" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 4
-Info (21057): Implemented 436 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 435 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 11 output pins
-    Info (21061): Implemented 411 logic cells
+    Info (21061): Implemented 410 logic cells
     Info (21064): Implemented 12 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 106 warnings
-    Info: Peak virtual memory: 1008 megabytes
-    Info: Processing ended: Sat Jun 15 23:17:28 2019
-    Info: Elapsed time: 00:00:23
-    Info: Total CPU time (on all processors): 00:00:53
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 113 warnings
+    Info: Peak virtual memory: 1011 megabytes
+    Info: Processing ended: Fri Jun 21 17:22:52 2019
+    Info: Elapsed time: 00:00:24
+    Info: Total CPU time (on all processors): 00:00:54
 
 
 +------------------------------------------+

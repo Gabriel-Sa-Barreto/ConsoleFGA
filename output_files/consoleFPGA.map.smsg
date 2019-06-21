@@ -1,1 +1,3 @@
+Warning (10268): Verilog HDL information at printSprite.v(79): always construct contains both blocking and non-blocking assignments File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/module_of_print_sprite/printSprite.v Line: 79
 Info (10281): Verilog HDL Declaration information at printRGB.v(1): object "ELEMENT" differs only in case from object "element" in the same scope File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/printRGB.v Line: 1
+Info (10281): Verilog HDL Declaration information at movementModule.v(2): object "ELEMENT" differs only in case from object "element" in the same scope File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/movementModule/movementModule.v Line: 2
