@@ -4,7 +4,7 @@
 # 2 compiles, 0 failed with no errors.
 vsim work.testGameFSM -t ns
 # vsim work.testGameFSM -t ns 
-# Start time: 21:28:24 on Jun 19,2019
+# Start time: 12:18:33 on Jun 20,2019
 # Loading work.testGameFSM
 # Loading work.gameFSM
 add wave -position insertpoint sim:/testGameFSM/*
@@ -29,50 +29,17 @@ run -all
 # 0: 
 # 0: 
 # //////////////////////////////
-# State: start
-# 0: 
-# 1: 
-# 0: 
-# 0: 
-# //////////////////////////////
-# State: start
-# 0: 
-# 0: 
-# 0: 
-# 1: 
-# //////////////////////////////
 # State: PLAYING
 # 1: 
 # 0: 
 # 0: 
 # 0: 
 # //////////////////////////////
-# State: GAMEOVER
-# 0: 
-# 0: 
-# 1: 
-# 0: 
-# //////////////////////////////
-# State: GAMEOVER
+# State: PAUSE
 # 0: 
 # 1: 
 # 0: 
 # 0: 
-# //////////////////////////////
-# Compile of testGameFSM.v was successful.
-# Compile of gameFSM.v was successful.
-# 2 compiles, 0 failed with no errors.
-restart
-# Loading work.testGameFSM
-# Loading work.gameFSM
-force -freeze sim:/testGameFSM/clk 1 0, 0 {10 ns} -r 20
-run -all
-# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
-# State: RESET
-# x: 
-# x: 
-# x: 
-# x: 
 # //////////////////////////////
 # State: RESET
 # 0: 
@@ -92,39 +59,21 @@ run -all
 # 0: 
 # 0: 
 # //////////////////////////////
-# State: PAUSE
-# 0: 
-# 1: 
-# 0: 
-# 0: 
-# //////////////////////////////
-# State: PAUSE
-# 0: 
-# 0: 
-# 0: 
-# 1: 
-# //////////////////////////////
-# State: PAUSE
-# 1: 
-# 0: 
-# 0: 
-# 0: 
-# //////////////////////////////
-# State: PAUSE
-# 1: 
-# 0: 
-# 0: 
-# 0: 
-# //////////////////////////////
-# State: PAUSE
+# State: GAMEOVER
 # 0: 
 # 0: 
 # 1: 
 # 0: 
 # //////////////////////////////
-# State: PAUSE
+# State: GAMEOVER
 # 0: 
 # 1: 
+# 0: 
+# 0: 
+# //////////////////////////////
+# State: GAMEOVER
+# 1: 
+# 0: 
 # 0: 
 # 0: 
 # //////////////////////////////
@@ -197,74 +146,15 @@ run -all
 # 0: 
 # 0: 
 # //////////////////////////////
-# Compile of testGameFSM.v was successful.
-# Compile of gameFSM.v was successful.
-# 2 compiles, 0 failed with no errors.
-restart
-# Loading work.testGameFSM
-# Loading work.gameFSM
-force -freeze sim:/testGameFSM/clk 1 0, 0 {10 ns} -r 20
-run -all
-# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
 # State: RESET
-# x: 
-# x: 
-# x: 
-# x: 
-# //////////////////////////////
-# State: RESET
-# 0: 
-# 0: 
-# 0: 
-# 1: 
-# //////////////////////////////
-# State: start
 # 1: 
 # 0: 
 # 0: 
 # 0: 
 # //////////////////////////////
-# State: PLAYING
-# 1: 
-# 0: 
-# 0: 
-# 0: 
-# //////////////////////////////
-# State: PAUSE
-# 0: 
-# 1: 
-# 0: 
-# 0: 
-# //////////////////////////////
-# State: RESET
-# 0: 
-# 0: 
-# 0: 
-# 1: 
-# //////////////////////////////
-# State: start
-# 1: 
-# 0: 
-# 0: 
-# 0: 
-# //////////////////////////////
-# State: PLAYING
-# 1: 
-# 0: 
-# 0: 
-# 0: 
-# //////////////////////////////
-# State: GAMEOVER
-# 0: 
-# 0: 
-# 1: 
-# 0: 
-# //////////////////////////////
-# State: GAMEOVER
-# 0: 
-# 1: 
-# 0: 
-# 0: 
-# //////////////////////////////
-# End time: 21:42:10 on Jun 19,2019, Elapsed time: 0:13:46
-# Errors: 0, Warnings: 4
+# End time: 12:34:42 on Jun 20,2019, Elapsed time: 0:16:09
+# Errors: 0, Warnings: 2
+# Closing project /home/gabriel/Documentos/ConsoleFPGA/testbenchs/module game FSM/testGameFSM.mpf
+# reading /opt/intelFPGA_lite/18.1/modelsim_ase/linuxaloem/../modelsim.ini
+# Loading project testSpriteMoveFSM
+# Compile of spriteMoveFSM.v was successful.

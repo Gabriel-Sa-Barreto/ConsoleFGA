@@ -102,6 +102,14 @@ initial begin
 	@ (posedge clk);
 	outputFSM(dataout);
 
+	//State start
+	startGame = 1;
+	pauseGame = 0;
+	dead      = 0;
+	reset     = 0; 
+	@ (posedge clk);
+	outputFSM(dataout);
+
 end
 
 

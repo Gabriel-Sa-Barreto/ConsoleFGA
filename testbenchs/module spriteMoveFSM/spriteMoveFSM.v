@@ -8,11 +8,11 @@ module spriteMoveFSM(
 	 output reg [2:0] dataout
 );
 
-parameter [4:0]  DEF_STATE   = 0, //default state
-					  LEFT_STATE  = 0,
-					  RIGHT_STATE = 0,
-					  UP_STATE    = 0,
-					  DOWN_STATE  = 0;
+parameter [4:0] DEF_STATE   = 0, //default state
+			    LEFT_STATE  = 1,
+				RIGHT_STATE = 2,
+				UP_STATE    = 3,
+				DOWN_STATE  = 4;
 
 reg [4:0] state,next;
 

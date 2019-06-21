@@ -9,13 +9,13 @@ z2
 cModel Technology
 d/home/gabriel/Documentos/ConsoleFPGA/testbenchs/module barrier
 vgameFSM
-Z0 !s110 1560991065
+Z0 !s110 1561044667
 !i10b 1
-!s100 <iA`5TOdTA7S4N<BSLf`@2
-InI56_LUg22W[AZ<^P1:j`1
+!s100 GiC9BV^fYF869>DzI]F=N3
+IeB5bnC^d1g0Gck6Td`=ML2
 Z1 VDg1SIo80bB@j0V0VzS_@n1
 Z2 d/home/gabriel/Documentos/ConsoleFPGA/testbenchs/module game FSM
-w1560990887
+w1561044658
 8/home/gabriel/Documentos/ConsoleFPGA/testbenchs/module game FSM/gameFSM.v
 F/home/gabriel/Documentos/ConsoleFPGA/testbenchs/module game FSM/gameFSM.v
 L0 11
@@ -23,21 +23,21 @@ Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-!s108 1560991065.000000
+Z4 !s108 1561044667.000000
 !s107 /home/gabriel/Documentos/ConsoleFPGA/testbenchs/module game FSM/gameFSM.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/gabriel/Documentos/ConsoleFPGA/testbenchs/module game FSM/gameFSM.v|
 !i113 1
-Z4 o-work work
-Z5 tCvgOpt 0
+Z5 o-work work
+Z6 tCvgOpt 0
 ngame@f@s@m
 vtestGameFSM
 R0
 !i10b 1
-!s100 i<;]Tkn9<DAaI;OE9bQF81
-I`I_:DVFD67m=5lCgSWRYE1
+!s100 eYbc1d7AcB;>a]lmVWP:O3
+IzEV_Q5[dJno8BmIi[fLVl1
 R1
 R2
-w1560991058
+w1561043880
 8/home/gabriel/Documentos/ConsoleFPGA/testbenchs/module game FSM/testGameFSM.v
 F/home/gabriel/Documentos/ConsoleFPGA/testbenchs/module game FSM/testGameFSM.v
 L0 1
@@ -45,10 +45,10 @@ R3
 r1
 !s85 0
 31
-!s108 1560991064.000000
+R4
 !s107 /home/gabriel/Documentos/ConsoleFPGA/testbenchs/module game FSM/testGameFSM.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/gabriel/Documentos/ConsoleFPGA/testbenchs/module game FSM/testGameFSM.v|
 !i113 1
-R4
 R5
+R6
 ntest@game@f@s@m

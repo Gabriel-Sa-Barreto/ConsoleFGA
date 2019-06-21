@@ -26,7 +26,7 @@ STATES:
  - RESET: this state is responsable for restart all system and its components.
  - GAMEOVER: the game is over
 */
-parameter [2:0]      START    = 0,
+parameter [4:0]      START    = 0,
 					 PLAYING  = 1,
 					 PAUSE    = 2,
 					 RESET    = 3,
@@ -38,6 +38,8 @@ always @ (posedge clk or posedge resetFSM) begin
 	if(resetFSM) begin
 		state        <= 5'b0;
 		state[RESET] <= 1'b1;
+		next[RESET]  <= 1'b1;
+
 	end
 	else state <= next;
 end
@@ -48,18 +50,20 @@ begin
 	next = 5'b0;
 	case(1'b1)
 		state[START]: begin
-			if(!startGame) next[START]   = 1'b1;
-			else           next[PLAYING] = 1'b1;
+			if(startGame)  next[PLAYING]  = 1'b1;
+			else           next[START]    = 1'b1;
 		end
 		state[PLAYING]: begin
 			if(pauseGame)  next[PAUSE]    = 1'b1;
 			else if(reset) next[RESET]    = 1'b1;
 			else if(dead)  next[GAMEOVER] = 1'b1;
+			else           next[PLAYING]  = 1'b1;
 		
 		end
 		state[PAUSE]:  begin
-			if(pauseGame)  next[PAUSE] = 1'b1;
+			if(pauseGame)   next[PAUSE] = 1'b1;
 			else if(reset)  next[RESET] = 1'b1;
+			else            next[PAUSE] = 1'b1; 
 		
 		end
 		state[RESET]:  begin
@@ -67,7 +71,11 @@ begin
 			else next[RESET] = 1'b1;
 		end
 
-		state[GAMEOVER]: if(startGame) next[RESET]  = 1'b1;
+		state[GAMEOVER]: begin
+			if(startGame) next[RESET]  = 1'b1;
+			else next[GAMEOVER]  = 1'b1;
+		end
+
 	endcase
 end
 
