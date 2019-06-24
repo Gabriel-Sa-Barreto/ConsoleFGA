@@ -24,10 +24,25 @@ reg  enableMemory;
 
 reg [9:0] addressMemory;
 reg [8:0] colour;
-
+integer i;
+//////////////PHRASES///////////////////////////////
+//PRESS START TO BEGIN
+//GAME OVER
+//GAME PAUSED
+//GAME RESET
+reg [7:0] phraseSTART [16:0];
+reg [7:0] phrasesGAMEOVER [7:0];
+reg [7:0] phrasesPAUSE [9:0];
+reg [7:0] phrasesRESET [8:0];
+////////////////////////////////////////////////////
 initial begin
 	enableMemory = 0;
 		  colour  = 0;
+	/////////////////////////////////////////////////
+	$readmemb("/home/gabriel/Documentos/ConsoleFPGA/modulos/phraseSTART.txt",    phraseSTART);
+	$readmemb("/home/gabriel/Documentos/ConsoleFPGA/modulos/phraseGAMEOVER.txt", phraseGAMEOVER);
+	$readmemb("/home/gabriel/Documentos/ConsoleFPGA/modulos/phrasePAUSE.txt",    phrasePAUSE);
+	$readmemb("/home/gabriel/Documentos/ConsoleFPGA/modulos/phraseRESET.txt",    phraseRESET);		  
 end
 
 SVGA_sync	SVGA(.clock(clk),

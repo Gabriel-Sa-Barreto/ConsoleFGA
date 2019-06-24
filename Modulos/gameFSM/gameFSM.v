@@ -34,6 +34,13 @@ parameter [4:0]      START    = 0,
 		
 reg [4:0] state,next;
 
+
+initial begin
+	state        = 5'b0; 
+   state[START] = 1'b1;
+	next[START]  = 1'b1;
+end
+
 always @ (posedge clk or posedge resetFSM) begin
 	if(resetFSM) begin
 		state        <= 5'b0;
