@@ -19,16 +19,24 @@ begin
 end
 
 initial begin
-	//reset the game FSM
+	/*//reset the game FSM
 	resetFSM = 1;
-	@ (posedge clk); 
+	@ (posedge clk);*/ 
 	
 	resetFSM = 0;
 	@ (posedge clk); 
 	outputFSM(dataout);
 	//////////////////////////////
 
-	//State RESET
+	//State START
+	startGame = 1;
+	pauseGame = 0;
+	dead      = 0;
+	reset     = 0;
+	@ (posedge clk);
+	outputFSM(dataout);
+
+	//State START
 	startGame = 0;
 	pauseGame = 0;
 	dead      = 0;
@@ -37,7 +45,7 @@ initial begin
 	outputFSM(dataout);
 
 
-	//State START
+	//State PLAYING
 	startGame = 1;
 	pauseGame = 0;
 	dead      = 0;
@@ -102,7 +110,7 @@ initial begin
 	@ (posedge clk);
 	outputFSM(dataout);
 
-	//State start
+	//State RESET
 	startGame = 1;
 	pauseGame = 0;
 	dead      = 0;
@@ -121,6 +129,7 @@ task outputFSM;
 		else if(dataout == 3'b010) $display("State: PAUSE");
 		else if(dataout == 3'b011) $display("State: RESET");
 		else if(dataout == 3'b100) $display("State: GAMEOVER");
+		else $display("Sem estado definido");
 	$display("%d: ", startGame);
 	$display("%d: ", pauseGame);
 	$display("%d: ", dead);
@@ -137,7 +146,7 @@ gameFSM game_fsm_inst(
 	.startGame(startGame),    //input startGame signal
 	.pauseGame(pauseGame),    //input pauseGame signal
 	.dead(dead),              //input dead signal
-	.dataout(dataout)         //output [2:0] dataout
+	.stateGame(dataout)         //output [2:0] dataout
 );
 
 endmodule

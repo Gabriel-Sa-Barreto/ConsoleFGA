@@ -4,10 +4,15 @@ module printRGB #(parameter ELEMENT = 5)(
 		input  wire         active,
 		input  wire [10:0]  pixel_x, //current pixel from VGA h_sync 
 		input  wire [9:0]   pixel_y, //curent pixel from VGA  v_sync
+		input  wire [2:0]   stateGame,
 		output  reg         ready,
 		output  reg [ELEMENT-1:0] element,
 		output  reg [9:0]   address
 );
+
+reg [ELEMENT-1:0] reg_element;
+reg [9:0]reg_address;
+reg      reg_ready;
 
 //wire       nextFruit;  //the signal that report for generate a new coordinate to fruit sprite 
 wire [4:0] elementFruit;
@@ -95,7 +100,7 @@ spriteHeart1
 );
 
 printSprite 
-#(.initialPosition_x(733),
+#(.initialPosition_x(734),
   .initialPosition_y(30), 
   .amountMemoryElement(4), 
   .memoryElement(2),
@@ -122,7 +127,7 @@ spriteHeart2
 );
 
 printSprite 
-#(.initialPosition_x(749),
+#(.initialPosition_x(751),
   .initialPosition_y(30), 
   .amountMemoryElement(4), 
   .memoryElement(2),
@@ -148,36 +153,52 @@ spriteHeart3
 	.enable(enableHeart3) 	   // output  enable_sig
 );
 
-always @ (negedge clk)
+always @ (*)
 begin
 	if(enableBarrier) begin 
-		element <= 5;
-		address <= addressBarrier;
-		ready   <= 1;
+		reg_element = 5;
+		reg_address = addressBarrier;
+		reg_ready   = 1;
 	end 
-	else if(enableFruit) begin
-		element <= elementFruit;
-		address <= addressFruit;
-		ready   <= 1;
+	else if(enableFruit && stateGame == 3'b001) begin
+		reg_element = elementFruit;
+		reg_address = addressFruit;
+		reg_ready   = 1;
 	end
-	else if(enableHeart1) begin
-		element <= elementHeart1;
-		address <= addressHeart1;
-		ready   <= 1;
+	else if(enableHeart1 && stateGame == 3'b001) begin
+		reg_element = elementHeart1;
+		reg_address = addressHeart1;
+		reg_ready   = 1;
 	end
-	else if(enableHeart2) begin
-		element <= elementHeart2;
-		address <= addressHeart2;
-		ready   <= 1;
+	else if(enableHeart2 && stateGame == 3'b001) begin
+		reg_element = elementHeart2;
+		reg_address = addressHeart2;
+		reg_ready   = 1;
 	end
-	else if(enableHeart3) begin
-		element <= elementHeart3;
-		address <= addressHeart3;
-		ready   <= 1;
+	else if(enableHeart3 && stateGame == 3'b001) begin
+		reg_element = elementHeart3;
+		reg_address = addressHeart3;
+		reg_ready   = 1;
 	end
 	else begin
+		reg_ready   = 0;
+		reg_element = 0;
+		reg_address = 0; 
+	end
+end
+
+always @ (negedge clk) begin
+	if(active) begin
+		element <= reg_element;
+		address <= reg_address;
+		ready   <= reg_ready;
+	end
+	else begin
+		element <= 0;
+		address <= 0;
 		ready   <= 0;
 	end
 end
+
 
 endmodule

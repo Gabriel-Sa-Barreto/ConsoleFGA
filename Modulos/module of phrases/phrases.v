@@ -6,9 +6,10 @@ module phrases(
 	input wire [8:0]  letterColor,
 	input wire [10:0] pixel_x,
 	input wire [9:0]  pixel_y,
-	input wire [8:0]  letters,
+	input wire [7:0]  letters,
 	input wire [12:0] address,
-	output reg [8:0]  colors
+	output reg [8:0]  colors,
+	output reg        dataReady
 );
 
 reg [8:0] colour;
@@ -36,11 +37,11 @@ RAM				 Map(.clock(clk),
 					 .write_enable(ready),
 					 .address_wr(address),
 					 .address_rd(ram_address),
-					 .data_in(ASCII),
+					 .data_in(letters),
 					 .data_out(ram_data)
 					);
 
-ROM		  		Font(.clock(clock),
+ROM		  		Font(.clock(clk),
 					 .enable_rom(1'b1),
 					 .address(rom_address),
 					 .data_out(rom_data)
@@ -48,10 +49,12 @@ ROM		  		Font(.clock(clock),
 
 always @ *
 	begin
-		if (video_enable) begin
+		if (videoEnable) begin
 				if (pixel) begin
-						colors = colour; 
+						colors    = colour;
+						dataReady = 1;
 				end
+				else dataReady  = 0;
 		end
 	end
 

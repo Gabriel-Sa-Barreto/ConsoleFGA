@@ -9,13 +9,13 @@
 //////////////////////////////////////////////////////////////////////////////////
 */
 module gameFSM(
-	input clk,
-	input reset,
-	input resetFSM,
-	input startGame,
-	input pauseGame,
-	input dead,
-	output reg [2:0] dataout
+	input wire clk,
+	input wire reset,
+	input wire resetFSM,
+	input wire startGame,
+	input wire pauseGame,
+	input wire dead,
+	output wire [2:0] stateGame
 );
 
 /*
@@ -26,74 +26,67 @@ STATES:
  - RESET: this state is responsable for restart all system and its components.
  - GAMEOVER: the game is over
 */
-parameter [4:0]      START    = 0,
-					 PLAYING  = 1,
-					 PAUSE    = 2,
-					 RESET    = 3,
-					 GAMEOVER = 4;
+parameter [2:0] START    = 3'b000,
+					  PLAYING  = 3'b001,
+					  PAUSE    = 3'b010,
+					  RESET    = 3'b011,
+					  GAMEOVER = 3'b100;
 		
-reg [4:0] state,next;
-
-
-initial begin
-	state        = 5'b0; 
-   state[START] = 1'b1;
-	next[START]  = 1'b1;
-end
+reg [2:0] state,next;
+reg [2:0] dataout;
 
 always @ (posedge clk or posedge resetFSM) begin
-	if(resetFSM) begin
-		state        <= 5'b0;
-		state[RESET] <= 1'b1;
-		next[RESET]  <= 1'b1;
-
-	end
-	else state <= next;
+	if(resetFSM) state <=  RESET;
+	else         state <= next;
 end
 
 //This always block do the transitions of state.
 always @ (state or startGame or pauseGame or dead or reset) 
 begin
-	next = 5'b0;
-	case(1'b1)
-		state[START]: begin
-			if(startGame)  next[PLAYING]  = 1'b1;
-			else           next[START]    = 1'b1;
+	next = 3'bx;
+	case(state)
+		START: begin
+			if(startGame)  next = PLAYING;
+			else           next = START;
 		end
-		state[PLAYING]: begin
-			if(pauseGame)  next[PAUSE]    = 1'b1;
-			else if(reset) next[RESET]    = 1'b1;
-			else if(dead)  next[GAMEOVER] = 1'b1;
-			else           next[PLAYING]  = 1'b1;
+		PLAYING: begin
+			if(pauseGame)  next  = PAUSE;
+			else if(reset) next  = RESET;
+			else if(dead)  next  = GAMEOVER;
+			else           next  = PLAYING;
 		
 		end
-		state[PAUSE]:  begin
-			if(pauseGame)   next[PAUSE] = 1'b1;
-			else if(reset)  next[RESET] = 1'b1;
-			else            next[PAUSE] = 1'b1; 
+		PAUSE:  begin
+			if(pauseGame)      next = PAUSE;
+			else if(startGame) next = PLAYING;
+			else if(reset)     next = RESET;
+			else               next = PAUSE; 
 		
 		end
-		state[RESET]:  begin
-			if(startGame)  next[START] = 1'b1;
-			else next[RESET] = 1'b1;
+		RESET:  begin
+			if(startGame) next = START;
+			else          next = RESET;
 		end
 
-		state[GAMEOVER]: begin
-			if(startGame) next[RESET]  = 1'b1;
-			else next[GAMEOVER]  = 1'b1;
+		GAMEOVER: begin
+			if(startGame) next = RESET;
+			else          next = GAMEOVER;
 		end
-
+	
+		default: next = START;		
 	endcase
 end
 
 always @ (negedge clk) begin
-		case(1'b1)
-			next[START]:    dataout <= 3'b000;
-			next[PLAYING]:  dataout <= 3'b001;
-			next[PAUSE]:    dataout <= 3'b010;
-			next[RESET]:    dataout <= 3'b011;
-			next[GAMEOVER]: dataout <= 3'b100;
-		endcase
+	case(state)
+		START:    dataout <= 3'b000;
+		PLAYING:  dataout <= 3'b001;
+		PAUSE:    dataout <= 3'b010;
+		RESET:    dataout <= 3'b011;
+		GAMEOVER: dataout <= 3'b100;
+	endcase
 end
+
+assign stateGame = dataout;
 
 endmodule

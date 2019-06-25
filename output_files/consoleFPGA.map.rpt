@@ -1,5 +1,5 @@
 Analysis & Synthesis report for consoleFPGA
-Sun Jun 23 22:04:17 2019
+Tue Jun 25 00:41:30 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -14,54 +14,57 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
-  9. User-Specified and Inferred Latches
- 10. Registers Removed During Synthesis
- 11. General Register Statistics
- 12. Registers Packed Into Inferred Megafunctions
- 13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Source assignments for memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_rii1:auto_generated
- 15. Source assignments for memorySprites:memorySprites_inst|sram:element4|altsyncram:memory_array_rtl_0|altsyncram_rqi1:auto_generated
- 16. Source assignments for memorySprites:memorySprites_inst|sram:element2|altsyncram:memory_array_rtl_0|altsyncram_9ei1:auto_generated
- 17. Source assignments for memorySprites:memorySprites_inst|sram:element1|altsyncram:memory_array_rtl_0|altsyncram_tgi1:auto_generated
- 18. Parameter Settings for User Entity Instance: SVGA_sync:SVGA
- 19. Parameter Settings for User Entity Instance: memorySprites:memorySprites_inst
- 20. Parameter Settings for User Entity Instance: memorySprites:memorySprites_inst|sram:element1
- 21. Parameter Settings for User Entity Instance: memorySprites:memorySprites_inst|sram:element2
- 22. Parameter Settings for User Entity Instance: memorySprites:memorySprites_inst|sram:element3
- 23. Parameter Settings for User Entity Instance: memorySprites:memorySprites_inst|sram:element4
- 24. Parameter Settings for User Entity Instance: memorySprites:memorySprites_inst|sram:element5
- 25. Parameter Settings for User Entity Instance: printRGB:printRGB_inst
- 26. Parameter Settings for User Entity Instance: printRGB:printRGB_inst|printSprite:spriteFruit
- 27. Parameter Settings for User Entity Instance: printRGB:printRGB_inst|printSprite:spriteHeart1
- 28. Parameter Settings for User Entity Instance: printRGB:printRGB_inst|printSprite:spriteHeart2
- 29. Parameter Settings for User Entity Instance: printRGB:printRGB_inst|printSprite:spriteHeart3
- 30. Parameter Settings for Inferred Entity Instance: memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0
- 31. Parameter Settings for Inferred Entity Instance: memorySprites:memorySprites_inst|sram:element4|altsyncram:memory_array_rtl_0
- 32. Parameter Settings for Inferred Entity Instance: memorySprites:memorySprites_inst|sram:element2|altsyncram:memory_array_rtl_0
- 33. Parameter Settings for Inferred Entity Instance: memorySprites:memorySprites_inst|sram:element1|altsyncram:memory_array_rtl_0
- 34. Parameter Settings for Inferred Entity Instance: printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult1
- 35. Parameter Settings for Inferred Entity Instance: printRGB:printRGB_inst|printSprite:spriteFruit|lpm_mult:Mult0
- 36. Parameter Settings for Inferred Entity Instance: printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult0
- 37. Parameter Settings for Inferred Entity Instance: printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult3
- 38. Parameter Settings for Inferred Entity Instance: printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult2
- 39. altsyncram Parameter Settings by Entity Instance
- 40. lpm_mult Parameter Settings by Entity Instance
- 41. Port Connectivity Checks: "printRGB:printRGB_inst|printSprite:spriteHeart3"
- 42. Port Connectivity Checks: "printRGB:printRGB_inst|printSprite:spriteHeart2"
- 43. Port Connectivity Checks: "printRGB:printRGB_inst|printSprite:spriteHeart1"
- 44. Port Connectivity Checks: "printRGB:printRGB_inst|printSprite:spriteFruit"
- 45. Port Connectivity Checks: "printRGB:printRGB_inst"
- 46. Port Connectivity Checks: "memorySprites:memorySprites_inst|sram:element5"
- 47. Port Connectivity Checks: "memorySprites:memorySprites_inst|sram:element4"
- 48. Port Connectivity Checks: "memorySprites:memorySprites_inst|sram:element3"
- 49. Port Connectivity Checks: "memorySprites:memorySprites_inst|sram:element2"
- 50. Port Connectivity Checks: "memorySprites:memorySprites_inst|sram:element1"
- 51. Port Connectivity Checks: "memorySprites:memorySprites_inst"
- 52. Port Connectivity Checks: "SVGA_sync:SVGA"
- 53. Post-Synthesis Netlist Statistics for Top Partition
- 54. Elapsed Time Per Partition
- 55. Analysis & Synthesis Messages
- 56. Analysis & Synthesis Suppressed Messages
+  9. State Machine - |top|gameFSM:gameFSM_inst|state
+ 10. User-Specified and Inferred Latches
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Registers Packed Into Inferred Megafunctions
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Source assignments for memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_rii1:auto_generated
+ 16. Source assignments for memorySprites:memorySprites_inst|sram:element4|altsyncram:memory_array_rtl_0|altsyncram_rqi1:auto_generated
+ 17. Source assignments for memorySprites:memorySprites_inst|sram:element2|altsyncram:memory_array_rtl_0|altsyncram_9ei1:auto_generated
+ 18. Source assignments for memorySprites:memorySprites_inst|sram:element1|altsyncram:memory_array_rtl_0|altsyncram_tgi1:auto_generated
+ 19. Parameter Settings for User Entity Instance: SVGA_sync:SVGA
+ 20. Parameter Settings for User Entity Instance: memorySprites:memorySprites_inst
+ 21. Parameter Settings for User Entity Instance: memorySprites:memorySprites_inst|sram:element1
+ 22. Parameter Settings for User Entity Instance: memorySprites:memorySprites_inst|sram:element2
+ 23. Parameter Settings for User Entity Instance: memorySprites:memorySprites_inst|sram:element3
+ 24. Parameter Settings for User Entity Instance: memorySprites:memorySprites_inst|sram:element4
+ 25. Parameter Settings for User Entity Instance: memorySprites:memorySprites_inst|sram:element5
+ 26. Parameter Settings for User Entity Instance: printRGB:printRGB_inst
+ 27. Parameter Settings for User Entity Instance: printRGB:printRGB_inst|printSprite:spriteFruit
+ 28. Parameter Settings for User Entity Instance: printRGB:printRGB_inst|printSprite:spriteHeart1
+ 29. Parameter Settings for User Entity Instance: printRGB:printRGB_inst|printSprite:spriteHeart2
+ 30. Parameter Settings for User Entity Instance: printRGB:printRGB_inst|printSprite:spriteHeart3
+ 31. Parameter Settings for User Entity Instance: gameFSM:gameFSM_inst
+ 32. Parameter Settings for Inferred Entity Instance: memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0
+ 33. Parameter Settings for Inferred Entity Instance: memorySprites:memorySprites_inst|sram:element4|altsyncram:memory_array_rtl_0
+ 34. Parameter Settings for Inferred Entity Instance: memorySprites:memorySprites_inst|sram:element2|altsyncram:memory_array_rtl_0
+ 35. Parameter Settings for Inferred Entity Instance: memorySprites:memorySprites_inst|sram:element1|altsyncram:memory_array_rtl_0
+ 36. Parameter Settings for Inferred Entity Instance: printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult1
+ 37. Parameter Settings for Inferred Entity Instance: printRGB:printRGB_inst|printSprite:spriteFruit|lpm_mult:Mult0
+ 38. Parameter Settings for Inferred Entity Instance: printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult0
+ 39. Parameter Settings for Inferred Entity Instance: printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult3
+ 40. Parameter Settings for Inferred Entity Instance: printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult2
+ 41. altsyncram Parameter Settings by Entity Instance
+ 42. lpm_mult Parameter Settings by Entity Instance
+ 43. Port Connectivity Checks: "gameFSM:gameFSM_inst"
+ 44. Port Connectivity Checks: "printRGB:printRGB_inst|printSprite:spriteHeart3"
+ 45. Port Connectivity Checks: "printRGB:printRGB_inst|printSprite:spriteHeart2"
+ 46. Port Connectivity Checks: "printRGB:printRGB_inst|printSprite:spriteHeart1"
+ 47. Port Connectivity Checks: "printRGB:printRGB_inst|printSprite:spriteFruit"
+ 48. Port Connectivity Checks: "printRGB:printRGB_inst"
+ 49. Port Connectivity Checks: "memorySprites:memorySprites_inst|sram:element5"
+ 50. Port Connectivity Checks: "memorySprites:memorySprites_inst|sram:element4"
+ 51. Port Connectivity Checks: "memorySprites:memorySprites_inst|sram:element3"
+ 52. Port Connectivity Checks: "memorySprites:memorySprites_inst|sram:element2"
+ 53. Port Connectivity Checks: "memorySprites:memorySprites_inst|sram:element1"
+ 54. Port Connectivity Checks: "memorySprites:memorySprites_inst"
+ 55. Port Connectivity Checks: "SVGA_sync:SVGA"
+ 56. Post-Synthesis Netlist Statistics for Top Partition
+ 57. Elapsed Time Per Partition
+ 58. Analysis & Synthesis Messages
+ 59. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -87,16 +90,16 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Jun 23 22:04:17 2019       ;
+; Analysis & Synthesis Status        ; Successful - Tue Jun 25 00:41:30 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; consoleFPGA                                 ;
 ; Top-level Entity Name              ; top                                         ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 543                                         ;
-;     Total combinational functions  ; 522                                         ;
-;     Dedicated logic registers      ; 106                                         ;
-; Total registers                    ; 106                                         ;
-; Total pins                         ; 13                                          ;
+; Total logic elements               ; 561                                         ;
+;     Total combinational functions  ; 544                                         ;
+;     Dedicated logic registers      ; 114                                         ;
+; Total registers                    ; 114                                         ;
+; Total pins                         ; 20                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 15,180                                      ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -212,6 +215,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------+-----------------+-------------------------------------------------------+-----------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path             ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                      ; Library ;
 +----------------------------------------------+-----------------+-------------------------------------------------------+-----------------------------------------------------------------------------------+---------+
+; Modulos/gameFSM/gameFSM.v                    ; yes             ; User Verilog HDL File                                 ; /home/gabriel/Documentos/ConsoleFPGA/Modulos/gameFSM/gameFSM.v                    ;         ;
 ; Modulos/module_of_print_sprite/printSprite.v ; yes             ; User Verilog HDL File                                 ; /home/gabriel/Documentos/ConsoleFPGA/Modulos/module_of_print_sprite/printSprite.v ;         ;
 ; Modulos/barrier.v                            ; yes             ; User Verilog HDL File                                 ; /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v                            ;         ;
 ; Modulos/memorySprites.v                      ; yes             ; User Verilog HDL File                                 ; /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v                      ;         ;
@@ -223,6 +227,10 @@ refer to the applicable agreement for further details.
 ; sprites/background/background_palette.mem    ; yes             ; Auto-Found Unspecified File                           ; /home/gabriel/Documentos/ConsoleFPGA/sprites/background/background_palette.mem    ;         ;
 ; sprites/sprites25x25/apple_palette.mem       ; yes             ; Auto-Found Unspecified File                           ; /home/gabriel/Documentos/ConsoleFPGA/sprites/sprites25x25/apple_palette.mem       ;         ;
 ; sprites/block/block2_palette.mem             ; yes             ; Auto-Found Unspecified File                           ; /home/gabriel/Documentos/ConsoleFPGA/sprites/block/block2_palette.mem             ;         ;
+; Modulos/phrasePAUSE.txt                      ; yes             ; Auto-Found File                                       ; /home/gabriel/Documentos/ConsoleFPGA/Modulos/phrasePAUSE.txt                      ;         ;
+; Modulos/phraseSTART.txt                      ; yes             ; Auto-Found File                                       ; /home/gabriel/Documentos/ConsoleFPGA/Modulos/phraseSTART.txt                      ;         ;
+; Modulos/phraseGAMEOVER.txt                   ; yes             ; Auto-Found File                                       ; /home/gabriel/Documentos/ConsoleFPGA/Modulos/phraseGAMEOVER.txt                   ;         ;
+; Modulos/phraseRESET.txt                      ; yes             ; Auto-Found File                                       ; /home/gabriel/Documentos/ConsoleFPGA/Modulos/phraseRESET.txt                      ;         ;
 ; altsyncram.tdf                               ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf           ;         ;
 ; stratix_ram_block.inc                        ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc    ;         ;
 ; lpm_mux.inc                                  ; yes             ; Megafunction                                          ; /opt/intelFPGA_lite/18.1/quartus/libraries/megafunctions/lpm_mux.inc              ;         ;
@@ -271,31 +279,31 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 543       ;
+; Estimated Total logic elements              ; 561       ;
 ;                                             ;           ;
-; Total combinational functions               ; 522       ;
+; Total combinational functions               ; 544       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 233       ;
-;     -- 3 input functions                    ; 154       ;
-;     -- <=2 input functions                  ; 135       ;
+;     -- 4 input functions                    ; 242       ;
+;     -- 3 input functions                    ; 163       ;
+;     -- <=2 input functions                  ; 139       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 405       ;
+;     -- normal mode                          ; 427       ;
 ;     -- arithmetic mode                      ; 117       ;
 ;                                             ;           ;
-; Total registers                             ; 106       ;
-;     -- Dedicated logic registers            ; 106       ;
+; Total registers                             ; 114       ;
+;     -- Dedicated logic registers            ; 114       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
-; I/O pins                                    ; 13        ;
+; I/O pins                                    ; 20        ;
 ; Total memory bits                           ; 15180     ;
 ;                                             ;           ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 134       ;
-; Total fan-out                               ; 2245      ;
-; Average fan-out                             ; 3.31      ;
+; Maximum fan-out                             ; 142       ;
+; Total fan-out                               ; 2329      ;
+; Average fan-out                             ; 3.23      ;
 +---------------------------------------------+-----------+
 
 
@@ -304,8 +312,9 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                        ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                   ; Entity Name     ; Library Name ;
 +---------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |top                                              ; 522 (41)            ; 106 (9)                   ; 15180       ; 0            ; 0       ; 0         ; 13   ; 0            ; |top                                                                                                                                                  ; top             ; work         ;
-;    |SVGA_sync:SVGA|                               ; 56 (56)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|SVGA_sync:SVGA                                                                                                                                   ; SVGA_sync       ; work         ;
+; |top                                              ; 544 (41)            ; 114 (9)                   ; 15180       ; 0            ; 0       ; 0         ; 20   ; 0            ; |top                                                                                                                                                  ; top             ; work         ;
+;    |SVGA_sync:SVGA|                               ; 55 (55)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|SVGA_sync:SVGA                                                                                                                                   ; SVGA_sync       ; work         ;
+;    |gameFSM:gameFSM_inst|                         ; 12 (12)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|gameFSM:gameFSM_inst                                                                                                                             ; gameFSM         ; work         ;
 ;    |memorySprites:memorySprites_inst|             ; 142 (142)           ; 0 (0)                     ; 15180       ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|memorySprites:memorySprites_inst                                                                                                                 ; memorySprites   ; work         ;
 ;       |sram:element1|                             ; 0 (0)               ; 0 (0)                     ; 3750        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|memorySprites:memorySprites_inst|sram:element1                                                                                                   ; sram            ; work         ;
 ;          |altsyncram:memory_array_rtl_0|          ; 0 (0)               ; 0 (0)                     ; 3750        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|memorySprites:memorySprites_inst|sram:element1|altsyncram:memory_array_rtl_0                                                                     ; altsyncram      ; work         ;
@@ -319,8 +328,8 @@ refer to the applicable agreement for further details.
 ;       |sram:element5|                             ; 0 (0)               ; 0 (0)                     ; 3750        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|memorySprites:memorySprites_inst|sram:element5                                                                                                   ; sram            ; work         ;
 ;          |altsyncram:memory_array_rtl_0|          ; 0 (0)               ; 0 (0)                     ; 3750        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0                                                                     ; altsyncram      ; work         ;
 ;             |altsyncram_rii1:auto_generated|      ; 0 (0)               ; 0 (0)                     ; 3750        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_rii1:auto_generated                                      ; altsyncram_rii1 ; work         ;
-;    |printRGB:printRGB_inst|                       ; 283 (63)            ; 74 (14)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst                                                                                                                           ; printRGB        ; work         ;
-;       |barrier:barrier_inst|                      ; 164 (116)           ; 24 (24)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst                                                                                                      ; barrier         ; work         ;
+;    |printRGB:printRGB_inst|                       ; 294 (67)            ; 74 (14)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst                                                                                                                           ; printRGB        ; work         ;
+;       |barrier:barrier_inst|                      ; 163 (115)           ; 24 (24)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst                                                                                                      ; barrier         ; work         ;
 ;          |lpm_mult:Mult0|                         ; 12 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult0                                                                                       ; lpm_mult        ; work         ;
 ;             |multcore:mult_core|                  ; 12 (6)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult0|multcore:mult_core                                                                    ; multcore        ; work         ;
 ;                |mpar_add:padder|                  ; 6 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder                                                    ; mpar_add        ; work         ;
@@ -347,9 +356,9 @@ refer to the applicable agreement for further details.
 ;                |mpar_add:padder|                  ; 6 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|printSprite:spriteFruit|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder                                                 ; mpar_add        ; work         ;
 ;                   |lpm_add_sub:adder[0]|          ; 6 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|printSprite:spriteFruit|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                            ; lpm_add_sub     ; work         ;
 ;                      |add_sub_bfh:auto_generated| ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|printSprite:spriteFruit|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_bfh:auto_generated ; add_sub_bfh     ; work         ;
-;       |printSprite:spriteHeart1|                  ; 3 (3)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|printSprite:spriteHeart1                                                                                                  ; printSprite     ; work         ;
-;       |printSprite:spriteHeart2|                  ; 6 (6)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|printSprite:spriteHeart2                                                                                                  ; printSprite     ; work         ;
-;       |printSprite:spriteHeart3|                  ; 12 (12)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|printSprite:spriteHeart3                                                                                                  ; printSprite     ; work         ;
+;       |printSprite:spriteHeart1|                  ; 11 (11)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|printSprite:spriteHeart1                                                                                                  ; printSprite     ; work         ;
+;       |printSprite:spriteHeart2|                  ; 7 (7)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|printSprite:spriteHeart2                                                                                                  ; printSprite     ; work         ;
+;       |printSprite:spriteHeart3|                  ; 11 (11)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|printSprite:spriteHeart3                                                                                                  ; printSprite     ; work         ;
 +---------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -366,6 +375,20 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+-------------------------------------------+
 
 
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------+
+; State Machine - |top|gameFSM:gameFSM_inst|state                                           ;
++----------------+-------------+-------------+---------------+-------------+----------------+
+; Name           ; state.START ; state.PAUSE ; state.PLAYING ; state.RESET ; state.GAMEOVER ;
++----------------+-------------+-------------+---------------+-------------+----------------+
+; state.RESET    ; 0           ; 0           ; 0             ; 0           ; 0              ;
+; state.PLAYING  ; 0           ; 0           ; 1             ; 1           ; 0              ;
+; state.PAUSE    ; 0           ; 1           ; 0             ; 1           ; 0              ;
+; state.START    ; 1           ; 0           ; 0             ; 1           ; 0              ;
+; state.GAMEOVER ; 0           ; 0           ; 0             ; 1           ; 1              ;
++----------------+-------------+-------------+---------------+-------------+----------------+
+
+
 +------------------------------------------------------------------------------------------------------------------------------+
 ; User-Specified and Inferred Latches                                                                                          ;
 +-----------------------------------------------------+-----------------------------------------------+------------------------+
@@ -376,9 +399,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; memorySprites:memorySprites_inst|read_enable5       ; memorySprites:memorySprites_inst|read_enable5 ; yes                    ;
 ; memorySprites:memorySprites_inst|read_enable4       ; memorySprites:memorySprites_inst|read_enable4 ; yes                    ;
 ; memorySprites:memorySprites_inst|read_enable3       ; memorySprites:memorySprites_inst|read_enable3 ; yes                    ;
-; elementMemory[0]                                    ; VGA_R[1]~reg0                                 ; yes                    ;
-; elementMemory[1]                                    ; VGA_R[1]~reg0                                 ; yes                    ;
-; elementMemory[2]                                    ; VGA_R[1]~reg0                                 ; yes                    ;
+; elementMemory[0]                                    ; VGA_B[0]~reg0                                 ; yes                    ;
+; elementMemory[1]                                    ; VGA_B[0]~reg0                                 ; yes                    ;
+; elementMemory[2]                                    ; VGA_B[0]~reg0                                 ; yes                    ;
 ; memorySprites:memorySprites_inst|address4[0]        ; memorySprites:memorySprites_inst|Decoder0     ; yes                    ;
 ; memorySprites:memorySprites_inst|address4[1]        ; memorySprites:memorySprites_inst|Decoder0     ; yes                    ;
 ; memorySprites:memorySprites_inst|address4[2]        ; memorySprites:memorySprites_inst|Decoder0     ; yes                    ;
@@ -417,16 +440,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; memorySprites:memorySprites_inst|address1[7]        ; memorySprites:memorySprites_inst|Decoder0     ; yes                    ;
 ; memorySprites:memorySprites_inst|address1[8]        ; memorySprites:memorySprites_inst|Decoder0     ; yes                    ;
 ; memorySprites:memorySprites_inst|address1[9]        ; memorySprites:memorySprites_inst|Decoder0     ; yes                    ;
-; addressMemory[0]                                    ; VGA_R[1]~reg0                                 ; yes                    ;
-; addressMemory[1]                                    ; VGA_R[1]~reg0                                 ; yes                    ;
-; addressMemory[2]                                    ; VGA_R[1]~reg0                                 ; yes                    ;
-; addressMemory[3]                                    ; VGA_R[1]~reg0                                 ; yes                    ;
-; addressMemory[4]                                    ; VGA_R[1]~reg0                                 ; yes                    ;
-; addressMemory[5]                                    ; VGA_R[1]~reg0                                 ; yes                    ;
-; addressMemory[6]                                    ; VGA_R[1]~reg0                                 ; yes                    ;
-; addressMemory[7]                                    ; VGA_R[1]~reg0                                 ; yes                    ;
-; addressMemory[8]                                    ; VGA_R[1]~reg0                                 ; yes                    ;
-; addressMemory[9]                                    ; VGA_R[1]~reg0                                 ; yes                    ;
+; addressMemory[0]                                    ; VGA_B[0]~reg0                                 ; yes                    ;
+; addressMemory[1]                                    ; VGA_B[0]~reg0                                 ; yes                    ;
+; addressMemory[2]                                    ; VGA_B[0]~reg0                                 ; yes                    ;
+; addressMemory[3]                                    ; VGA_B[0]~reg0                                 ; yes                    ;
+; addressMemory[4]                                    ; VGA_B[0]~reg0                                 ; yes                    ;
+; addressMemory[5]                                    ; VGA_B[0]~reg0                                 ; yes                    ;
+; addressMemory[6]                                    ; VGA_B[0]~reg0                                 ; yes                    ;
+; addressMemory[7]                                    ; VGA_B[0]~reg0                                 ; yes                    ;
+; addressMemory[8]                                    ; VGA_B[0]~reg0                                 ; yes                    ;
+; addressMemory[9]                                    ; VGA_B[0]~reg0                                 ; yes                    ;
 ; Number of user-specified and inferred latches = 56  ;                                               ;                        ;
 +-----------------------------------------------------+-----------------------------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
@@ -442,9 +465,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; printRGB:printRGB_inst|printSprite:spriteHeart3|current_x[8]                                                                 ; Stuck at GND due to stuck port clock   ;
 ; printRGB:printRGB_inst|printSprite:spriteHeart3|current_x[5..7]                                                              ; Stuck at VCC due to stuck port clock   ;
 ; printRGB:printRGB_inst|printSprite:spriteHeart3|current_x[4]                                                                 ; Stuck at GND due to stuck port clock   ;
-; printRGB:printRGB_inst|printSprite:spriteHeart3|current_x[2,3]                                                               ; Stuck at VCC due to stuck port clock   ;
-; printRGB:printRGB_inst|printSprite:spriteHeart3|current_x[1]                                                                 ; Stuck at GND due to stuck port clock   ;
-; printRGB:printRGB_inst|printSprite:spriteHeart3|current_x[0]                                                                 ; Stuck at VCC due to stuck port clock   ;
+; printRGB:printRGB_inst|printSprite:spriteHeart3|current_x[0..3]                                                              ; Stuck at VCC due to stuck port clock   ;
 ; printRGB:printRGB_inst|printSprite:spriteHeart3|current_y[5..9]                                                              ; Stuck at GND due to stuck port clock   ;
 ; printRGB:printRGB_inst|printSprite:spriteHeart3|current_y[1..4]                                                              ; Stuck at VCC due to stuck port clock   ;
 ; printRGB:printRGB_inst|printSprite:spriteHeart3|current_y[0]                                                                 ; Stuck at GND due to stuck port clock   ;
@@ -456,9 +477,8 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; printRGB:printRGB_inst|printSprite:spriteHeart2|current_x[8]                                                                 ; Stuck at GND due to stuck port clock   ;
 ; printRGB:printRGB_inst|printSprite:spriteHeart2|current_x[6,7]                                                               ; Stuck at VCC due to stuck port clock   ;
 ; printRGB:printRGB_inst|printSprite:spriteHeart2|current_x[5]                                                                 ; Stuck at GND due to stuck port clock   ;
-; printRGB:printRGB_inst|printSprite:spriteHeart2|current_x[2..4]                                                              ; Stuck at VCC due to stuck port clock   ;
-; printRGB:printRGB_inst|printSprite:spriteHeart2|current_x[1]                                                                 ; Stuck at GND due to stuck port clock   ;
-; printRGB:printRGB_inst|printSprite:spriteHeart2|current_x[0]                                                                 ; Stuck at VCC due to stuck port clock   ;
+; printRGB:printRGB_inst|printSprite:spriteHeart2|current_x[1..4]                                                              ; Stuck at VCC due to stuck port clock   ;
+; printRGB:printRGB_inst|printSprite:spriteHeart2|current_x[0]                                                                 ; Stuck at GND due to stuck port clock   ;
 ; printRGB:printRGB_inst|printSprite:spriteHeart2|current_y[5..9]                                                              ; Stuck at GND due to stuck port clock   ;
 ; printRGB:printRGB_inst|printSprite:spriteHeart2|current_y[1..4]                                                              ; Stuck at VCC due to stuck port clock   ;
 ; printRGB:printRGB_inst|printSprite:spriteHeart2|current_y[0]                                                                 ; Stuck at GND due to stuck port clock   ;
@@ -491,8 +511,10 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; printRGB:printRGB_inst|printSprite:spriteFruit|current_y[0..3]                                                               ; Stuck at GND due to stuck port clock   ;
 ; printRGB:printRGB_inst|printSprite:spriteFruit|element[1,2]                                                                  ; Stuck at GND due to stuck port clock   ;
 ; printRGB:printRGB_inst|printSprite:spriteFruit|element[0]                                                                    ; Stuck at VCC due to stuck port clock   ;
+; gameFSM:gameFSM_inst|state~4                                                                                                 ; Lost fanout                            ;
+; gameFSM:gameFSM_inst|state~5                                                                                                 ; Lost fanout                            ;
 ; memorySprites:memorySprites_inst|sram:element4|altsyncram:memory_array_rtl_0|altsyncram_rqi1:auto_generated|address_reg_b[0] ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 97                                                                                       ;                                        ;
+; Total Number of Removed Registers = 99                                                                                       ;                                        ;
 +------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+
 
 
@@ -501,12 +523,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 106   ;
+; Total registers                              ; 114   ;
 ; Number of registers using Synchronous Clear  ; 4     ;
 ; Number of registers using Synchronous Load   ; 4     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 65    ;
+; Number of registers using Clock Enable       ; 52    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -529,15 +551,14 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                               ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------+
 ; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |top|SVGA_sync:SVGA|pixel_y[9]                                           ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |top|printRGB:printRGB_inst|element[2]                                   ;
 ; 8:1                ; 4 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; Yes        ; |top|VGA_B[2]~reg0                                                       ;
-; 8:1                ; 5 bits    ; 25 LEs        ; 15 LEs               ; 10 LEs                 ; Yes        ; |top|VGA_R[1]~reg0                                                       ;
-; 14:1               ; 2 bits    ; 18 LEs        ; 8 LEs                ; 10 LEs                 ; Yes        ; |top|printRGB:printRGB_inst|address[9]                                   ;
-; 23:1               ; 8 bits    ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |top|printRGB:printRGB_inst|address[1]                                   ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |top|SVGA_sync:SVGA|pixel_y[0]                                           ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |top|printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierLeft[0]  ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |top|printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierRight[4] ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |top|printRGB:printRGB_inst|printSprite:spriteHeart3|enable              ;
+; 8:1                ; 5 bits    ; 25 LEs        ; 15 LEs               ; 10 LEs                 ; Yes        ; |top|VGA_B[0]~reg0                                                       ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 10 LEs               ; 6 LEs                  ; Yes        ; |top|printRGB:printRGB_inst|address[9]                                   ;
+; 24:1               ; 8 bits    ; 128 LEs       ; 48 LEs               ; 80 LEs                 ; Yes        ; |top|printRGB:printRGB_inst|address[7]                                   ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |top|SVGA_sync:SVGA|pixel_y[4]                                           ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |top|printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierLeft[4]  ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |top|printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierRight[0] ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |top|printRGB:printRGB_inst|printSprite:spriteHeart1|enable              ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------+
 
 
@@ -722,7 +743,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------------+-------+----------------------------------------------------------------+
 ; Parameter Name      ; Value ; Type                                                           ;
 +---------------------+-------+----------------------------------------------------------------+
-; initialPosition_x   ; 733   ; Signed Integer                                                 ;
+; initialPosition_x   ; 734   ; Signed Integer                                                 ;
 ; initialPosition_y   ; 30    ; Signed Integer                                                 ;
 ; amountMemoryElement ; 4     ; Signed Integer                                                 ;
 ; memoryElement       ; 2     ; Signed Integer                                                 ;
@@ -740,7 +761,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------------+-------+----------------------------------------------------------------+
 ; Parameter Name      ; Value ; Type                                                           ;
 +---------------------+-------+----------------------------------------------------------------+
-; initialPosition_x   ; 749   ; Signed Integer                                                 ;
+; initialPosition_x   ; 751   ; Signed Integer                                                 ;
 ; initialPosition_y   ; 30    ; Signed Integer                                                 ;
 ; amountMemoryElement ; 4     ; Signed Integer                                                 ;
 ; memoryElement       ; 2     ; Signed Integer                                                 ;
@@ -750,6 +771,20 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; sizeSprite_x        ; 16    ; Signed Integer                                                 ;
 ; sizeSprite_y        ; 16    ; Signed Integer                                                 ;
 +---------------------+-------+----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: gameFSM:gameFSM_inst ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; START          ; 000   ; Unsigned Binary                          ;
+; PLAYING        ; 001   ; Unsigned Binary                          ;
+; PAUSE          ; 010   ; Unsigned Binary                          ;
+; RESET          ; 011   ; Unsigned Binary                          ;
+; GAMEOVER       ; 100   ; Unsigned Binary                          ;
++----------------+-------+------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -1289,6 +1324,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------------------------------+---------------------------------------------------------------+
 
 
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "gameFSM:gameFSM_inst"                                                                                                                                                                     ;
++--------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port         ; Type  ; Severity ; Details                                                                                                                                                                            ;
++--------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; resetFSM     ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; resetFSM[-1] ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
++--------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "printRGB:printRGB_inst|printSprite:spriteHeart3"                                                                                                                                                     ;
 +-----------------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1467,25 +1512,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 13                          ;
-; cycloneiii_ff         ; 106                         ;
-;     ENA               ; 65                          ;
+; boundary_port         ; 20                          ;
+; cycloneiii_ff         ; 114                         ;
+;     ENA               ; 52                          ;
 ;     SCLR SLD          ; 4                           ;
-;     plain             ; 37                          ;
-; cycloneiii_lcell_comb ; 522                         ;
+;     plain             ; 58                          ;
+; cycloneiii_lcell_comb ; 544                         ;
 ;     arith             ; 117                         ;
 ;         2 data inputs ; 75                          ;
 ;         3 data inputs ; 42                          ;
-;     normal            ; 405                         ;
+;     normal            ; 427                         ;
 ;         0 data inputs ; 5                           ;
 ;         1 data inputs ; 22                          ;
-;         2 data inputs ; 33                          ;
-;         3 data inputs ; 112                         ;
-;         4 data inputs ; 233                         ;
+;         2 data inputs ; 37                          ;
+;         3 data inputs ; 121                         ;
+;         4 data inputs ; 242                         ;
 ; cycloneiii_ram_block  ; 24                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 8.00                        ;
-; Average LUT depth     ; 4.45                        ;
+; Max LUT depth         ; 9.00                        ;
+; Average LUT depth     ; 4.51                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1504,10 +1549,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sun Jun 23 22:03:53 2019
+    Info: Processing started: Tue Jun 25 00:41:05 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off consoleFPGA -c consoleFPGA
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file Modulos/gameFSM/gameFSM.v
+    Info (12023): Found entity 1: gameFSM File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/gameFSM/gameFSM.v Line: 11
+Info (12021): Found 1 design units, including 1 entities, in source file Modulos/module of phrases/ram.v
+    Info (12023): Found entity 1: RAM File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/module of phrases/ram.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file Modulos/module of phrases/rom.v
+    Info (12023): Found entity 1: ROM File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/module of phrases/rom.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file Modulos/module_of_print_sprite/printSprite.v
     Info (12023): Found entity 1: printSprite File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/module_of_print_sprite/printSprite.v Line: 16
 Info (12021): Found 1 design units, including 1 entities, in source file Modulos/barrier.v
@@ -1530,29 +1581,35 @@ Info (12021): Found 1 design units, including 1 entities, in source file Modulos
     Info (12023): Found entity 1: movementModule File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/movementModule/movementModule.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file Modulos/movementModule/spriteMoveFSM.v
     Info (12023): Found entity 1: spriteMoveFSM File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/movementModule/spriteMoveFSM.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file Modulos/module of phrases/phrases.v
+    Info (12023): Found entity 1: phrases File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/module of phrases/phrases.v Line: 1
 Info (12127): Elaborating entity "top" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at top.v(71): truncated value with size 4 to match size of target (3) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 71
-Warning (10240): Verilog HDL Always Construct warning at top.v(66): inferring latch(es) for variable "elementMemory", which holds its previous value in one or more paths through the always construct File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 66
-Warning (10240): Verilog HDL Always Construct warning at top.v(66): inferring latch(es) for variable "addressMemory", which holds its previous value in one or more paths through the always construct File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 66
-Warning (10240): Verilog HDL Always Construct warning at top.v(66): inferring latch(es) for variable "enableMemory", which holds its previous value in one or more paths through the always construct File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 66
-Info (10041): Inferred latch for "enableMemory" at top.v(77) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 77
-Info (10041): Inferred latch for "addressMemory[0]" at top.v(77) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 77
-Info (10041): Inferred latch for "addressMemory[1]" at top.v(77) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 77
-Info (10041): Inferred latch for "addressMemory[2]" at top.v(77) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 77
-Info (10041): Inferred latch for "addressMemory[3]" at top.v(77) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 77
-Info (10041): Inferred latch for "addressMemory[4]" at top.v(77) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 77
-Info (10041): Inferred latch for "addressMemory[5]" at top.v(77) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 77
-Info (10041): Inferred latch for "addressMemory[6]" at top.v(77) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 77
-Info (10041): Inferred latch for "addressMemory[7]" at top.v(77) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 77
-Info (10041): Inferred latch for "addressMemory[8]" at top.v(77) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 77
-Info (10041): Inferred latch for "addressMemory[9]" at top.v(77) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 77
-Info (10041): Inferred latch for "elementMemory[0]" at top.v(77) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 77
-Info (10041): Inferred latch for "elementMemory[1]" at top.v(77) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 77
-Info (10041): Inferred latch for "elementMemory[2]" at top.v(77) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 77
-Info (12128): Elaborating entity "SVGA_sync" for hierarchy "SVGA_sync:SVGA" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 40
+Warning (10036): Verilog HDL or VHDL warning at top.v(40): object "phraseSTART" assigned a value but never read File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 40
+Warning (10036): Verilog HDL or VHDL warning at top.v(41): object "phraseGAMEOVER" assigned a value but never read File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 41
+Warning (10036): Verilog HDL or VHDL warning at top.v(42): object "phrasePAUSE" assigned a value but never read File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 42
+Warning (10036): Verilog HDL or VHDL warning at top.v(43): object "phraseRESET" assigned a value but never read File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 43
+Warning (10230): Verilog HDL assignment warning at top.v(108): truncated value with size 4 to match size of target (3) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 108
+Warning (10240): Verilog HDL Always Construct warning at top.v(103): inferring latch(es) for variable "elementMemory", which holds its previous value in one or more paths through the always construct File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 103
+Warning (10240): Verilog HDL Always Construct warning at top.v(103): inferring latch(es) for variable "addressMemory", which holds its previous value in one or more paths through the always construct File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 103
+Warning (10240): Verilog HDL Always Construct warning at top.v(103): inferring latch(es) for variable "enableMemory", which holds its previous value in one or more paths through the always construct File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 103
+Info (10041): Inferred latch for "enableMemory" at top.v(114) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 114
+Info (10041): Inferred latch for "addressMemory[0]" at top.v(114) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 114
+Info (10041): Inferred latch for "addressMemory[1]" at top.v(114) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 114
+Info (10041): Inferred latch for "addressMemory[2]" at top.v(114) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 114
+Info (10041): Inferred latch for "addressMemory[3]" at top.v(114) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 114
+Info (10041): Inferred latch for "addressMemory[4]" at top.v(114) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 114
+Info (10041): Inferred latch for "addressMemory[5]" at top.v(114) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 114
+Info (10041): Inferred latch for "addressMemory[6]" at top.v(114) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 114
+Info (10041): Inferred latch for "addressMemory[7]" at top.v(114) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 114
+Info (10041): Inferred latch for "addressMemory[8]" at top.v(114) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 114
+Info (10041): Inferred latch for "addressMemory[9]" at top.v(114) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 114
+Info (10041): Inferred latch for "elementMemory[0]" at top.v(114) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 114
+Info (10041): Inferred latch for "elementMemory[1]" at top.v(114) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 114
+Info (10041): Inferred latch for "elementMemory[2]" at top.v(114) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 114
+Info (12128): Elaborating entity "SVGA_sync" for hierarchy "SVGA_sync:SVGA" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 62
 Warning (10230): Verilog HDL assignment warning at SVGA_sync.v(59): truncated value with size 32 to match size of target (11) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/SVGAGrafico/SVGA_sync.v Line: 59
 Warning (10230): Verilog HDL assignment warning at SVGA_sync.v(80): truncated value with size 32 to match size of target (10) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/SVGAGrafico/SVGA_sync.v Line: 80
-Info (12128): Elaborating entity "memorySprites" for hierarchy "memorySprites:memorySprites_inst" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 50
+Info (12128): Elaborating entity "memorySprites" for hierarchy "memorySprites:memorySprites_inst" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 72
 Warning (10858): Verilog HDL warning at memorySprites.v(12): object element3_palette used but never assigned File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 12
 Warning (10235): Verilog HDL Always Construct warning at memorySprites.v(88): variable "clk" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 88
 Warning (10235): Verilog HDL Always Construct warning at memorySprites.v(89): variable "read_enable1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 89
@@ -1657,12 +1714,12 @@ Info (12128): Elaborating entity "sram" for hierarchy "memorySprites:memorySprit
 Info (10648): Verilog HDL Display System Task info at sram.v(25): /home/gabriel/Documentos/ConsoleFPGA/sprites{—¬«‘’Ÿè‚”—û’§>DPR∂6@3˛¬ File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/moduloSram/sram.v Line: 25
 Info (12128): Elaborating entity "sram" for hierarchy "memorySprites:memorySprites_inst|sram:element5" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 207
 Info (10648): Verilog HDL Display System Task info at sram.v(25): /home/gabriel/Documentos/ConsoleFPGçû‘‘€◊€Ö‡îœ€‚¨?JR§33˛¬ File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/moduloSram/sram.v Line: 25
-Info (12128): Elaborating entity "printRGB" for hierarchy "printRGB:printRGB_inst" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 63
-Warning (10230): Verilog HDL assignment warning at printRGB.v(159): truncated value with size 5 to match size of target (3) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/printRGB.v Line: 159
+Info (12128): Elaborating entity "printRGB" for hierarchy "printRGB:printRGB_inst" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 86
 Warning (10230): Verilog HDL assignment warning at printRGB.v(164): truncated value with size 5 to match size of target (3) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/printRGB.v Line: 164
 Warning (10230): Verilog HDL assignment warning at printRGB.v(169): truncated value with size 5 to match size of target (3) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/printRGB.v Line: 169
 Warning (10230): Verilog HDL assignment warning at printRGB.v(174): truncated value with size 5 to match size of target (3) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/printRGB.v Line: 174
-Info (12128): Elaborating entity "barrier" for hierarchy "printRGB:printRGB_inst|barrier:barrier_inst" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/printRGB.v Line: 41
+Warning (10230): Verilog HDL assignment warning at printRGB.v(179): truncated value with size 5 to match size of target (3) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/printRGB.v Line: 179
+Info (12128): Elaborating entity "barrier" for hierarchy "printRGB:printRGB_inst|barrier:barrier_inst" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/printRGB.v Line: 46
 Warning (10230): Verilog HDL assignment warning at barrier.v(33): truncated value with size 32 to match size of target (5) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 33
 Warning (10230): Verilog HDL assignment warning at barrier.v(34): truncated value with size 6 to match size of target (5) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 34
 Warning (10230): Verilog HDL assignment warning at barrier.v(36): truncated value with size 32 to match size of target (10) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 36
@@ -1679,7 +1736,7 @@ Warning (10230): Verilog HDL assignment warning at barrier.v(68): truncated valu
 Warning (10230): Verilog HDL assignment warning at barrier.v(73): truncated value with size 32 to match size of target (6) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 73
 Warning (10230): Verilog HDL assignment warning at barrier.v(80): truncated value with size 32 to match size of target (6) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 80
 Warning (10230): Verilog HDL assignment warning at barrier.v(89): truncated value with size 32 to match size of target (6) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/barrier.v Line: 89
-Info (12128): Elaborating entity "printSprite" for hierarchy "printRGB:printRGB_inst|printSprite:spriteFruit" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/printRGB.v Line: 68
+Info (12128): Elaborating entity "printSprite" for hierarchy "printRGB:printRGB_inst|printSprite:spriteFruit" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/printRGB.v Line: 73
 Warning (10230): Verilog HDL assignment warning at printSprite.v(53): truncated value with size 32 to match size of target (11) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/module_of_print_sprite/printSprite.v Line: 53
 Warning (10230): Verilog HDL assignment warning at printSprite.v(54): truncated value with size 32 to match size of target (10) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/module_of_print_sprite/printSprite.v Line: 54
 Warning (10230): Verilog HDL assignment warning at printSprite.v(55): truncated value with size 32 to match size of target (4) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/module_of_print_sprite/printSprite.v Line: 55
@@ -1689,7 +1746,7 @@ Warning (10230): Verilog HDL assignment warning at printSprite.v(86): truncated 
 Warning (10230): Verilog HDL assignment warning at printSprite.v(87): truncated value with size 32 to match size of target (4) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/module_of_print_sprite/printSprite.v Line: 87
 Warning (10230): Verilog HDL assignment warning at printSprite.v(94): truncated value with size 10 to match size of target (6) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/module_of_print_sprite/printSprite.v Line: 94
 Warning (10230): Verilog HDL assignment warning at printSprite.v(95): truncated value with size 11 to match size of target (6) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/module_of_print_sprite/printSprite.v Line: 95
-Info (12128): Elaborating entity "printSprite" for hierarchy "printRGB:printRGB_inst|printSprite:spriteHeart1" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/printRGB.v Line: 95
+Info (12128): Elaborating entity "printSprite" for hierarchy "printRGB:printRGB_inst|printSprite:spriteHeart1" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/printRGB.v Line: 100
 Warning (10230): Verilog HDL assignment warning at printSprite.v(53): truncated value with size 32 to match size of target (11) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/module_of_print_sprite/printSprite.v Line: 53
 Warning (10230): Verilog HDL assignment warning at printSprite.v(54): truncated value with size 32 to match size of target (10) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/module_of_print_sprite/printSprite.v Line: 54
 Warning (10230): Verilog HDL assignment warning at printSprite.v(55): truncated value with size 32 to match size of target (4) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/module_of_print_sprite/printSprite.v Line: 55
@@ -1699,7 +1756,7 @@ Warning (10230): Verilog HDL assignment warning at printSprite.v(86): truncated 
 Warning (10230): Verilog HDL assignment warning at printSprite.v(87): truncated value with size 32 to match size of target (4) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/module_of_print_sprite/printSprite.v Line: 87
 Warning (10230): Verilog HDL assignment warning at printSprite.v(94): truncated value with size 10 to match size of target (4) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/module_of_print_sprite/printSprite.v Line: 94
 Warning (10230): Verilog HDL assignment warning at printSprite.v(95): truncated value with size 11 to match size of target (4) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/module_of_print_sprite/printSprite.v Line: 95
-Info (12128): Elaborating entity "printSprite" for hierarchy "printRGB:printRGB_inst|printSprite:spriteHeart2" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/printRGB.v Line: 122
+Info (12128): Elaborating entity "printSprite" for hierarchy "printRGB:printRGB_inst|printSprite:spriteHeart2" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/printRGB.v Line: 127
 Warning (10230): Verilog HDL assignment warning at printSprite.v(53): truncated value with size 32 to match size of target (11) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/module_of_print_sprite/printSprite.v Line: 53
 Warning (10230): Verilog HDL assignment warning at printSprite.v(54): truncated value with size 32 to match size of target (10) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/module_of_print_sprite/printSprite.v Line: 54
 Warning (10230): Verilog HDL assignment warning at printSprite.v(55): truncated value with size 32 to match size of target (4) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/module_of_print_sprite/printSprite.v Line: 55
@@ -1709,7 +1766,7 @@ Warning (10230): Verilog HDL assignment warning at printSprite.v(86): truncated 
 Warning (10230): Verilog HDL assignment warning at printSprite.v(87): truncated value with size 32 to match size of target (4) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/module_of_print_sprite/printSprite.v Line: 87
 Warning (10230): Verilog HDL assignment warning at printSprite.v(94): truncated value with size 10 to match size of target (4) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/module_of_print_sprite/printSprite.v Line: 94
 Warning (10230): Verilog HDL assignment warning at printSprite.v(95): truncated value with size 11 to match size of target (4) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/module_of_print_sprite/printSprite.v Line: 95
-Info (12128): Elaborating entity "printSprite" for hierarchy "printRGB:printRGB_inst|printSprite:spriteHeart3" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/printRGB.v Line: 149
+Info (12128): Elaborating entity "printSprite" for hierarchy "printRGB:printRGB_inst|printSprite:spriteHeart3" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/printRGB.v Line: 154
 Warning (10230): Verilog HDL assignment warning at printSprite.v(53): truncated value with size 32 to match size of target (11) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/module_of_print_sprite/printSprite.v Line: 53
 Warning (10230): Verilog HDL assignment warning at printSprite.v(54): truncated value with size 32 to match size of target (10) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/module_of_print_sprite/printSprite.v Line: 54
 Warning (10230): Verilog HDL assignment warning at printSprite.v(55): truncated value with size 32 to match size of target (4) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/module_of_print_sprite/printSprite.v Line: 55
@@ -1719,6 +1776,7 @@ Warning (10230): Verilog HDL assignment warning at printSprite.v(86): truncated 
 Warning (10230): Verilog HDL assignment warning at printSprite.v(87): truncated value with size 32 to match size of target (4) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/module_of_print_sprite/printSprite.v Line: 87
 Warning (10230): Verilog HDL assignment warning at printSprite.v(94): truncated value with size 10 to match size of target (4) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/module_of_print_sprite/printSprite.v Line: 94
 Warning (10230): Verilog HDL assignment warning at printSprite.v(95): truncated value with size 11 to match size of target (4) File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/module_of_print_sprite/printSprite.v Line: 95
+Info (12128): Elaborating entity "gameFSM" for hierarchy "gameFSM:gameFSM_inst" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 98
 Warning (276027): Inferred dual-clock RAM node "memorySprites:memorySprites_inst|sram:element5|memory_array_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
 Warning (276027): Inferred dual-clock RAM node "memorySprites:memorySprites_inst|sram:element4|memory_array_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
 Warning (276027): Inferred dual-clock RAM node "memorySprites:memorySprites_inst|sram:element2|memory_array_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
@@ -1939,34 +1997,35 @@ Warning (14284): Synthesized away the following node(s):
         Warning (14320): Synthesized away node "memorySprites:memorySprites_inst|sram:element4|altsyncram:memory_array_rtl_0|altsyncram_rqi1:auto_generated|ram_block1a15" File: /home/gabriel/Documentos/ConsoleFPGA/db/altsyncram_rqi1.tdf Line: 527
         Warning (14320): Synthesized away node "memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_rii1:auto_generated|ram_block1a6" File: /home/gabriel/Documentos/ConsoleFPGA/db/altsyncram_rii1.tdf Line: 231
         Warning (14320): Synthesized away node "memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_rii1:auto_generated|ram_block1a7" File: /home/gabriel/Documentos/ConsoleFPGA/db/altsyncram_rii1.tdf Line: 263
-Warning (12241): 11 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12241): 12 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13012): Latch memorySprites:memorySprites_inst|read_enable1 has unsafe behavior File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 17
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal elementMemory[0] File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 77
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal elementMemory[0] File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 114
 Warning (13012): Latch memorySprites:memorySprites_inst|read_enable2 has unsafe behavior File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 18
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal elementMemory[0] File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 77
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal elementMemory[0] File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 114
 Warning (13012): Latch memorySprites:memorySprites_inst|read_enable5 has unsafe behavior File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 21
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal elementMemory[0] File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 77
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal elementMemory[0] File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 114
 Warning (13012): Latch memorySprites:memorySprites_inst|read_enable4 has unsafe behavior File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 20
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal elementMemory[0] File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 77
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal elementMemory[0] File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 114
 Warning (13012): Latch memorySprites:memorySprites_inst|read_enable3 has unsafe behavior File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/memorySprites.v Line: 19
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal elementMemory[0] File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 77
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal elementMemory[0] File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 114
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 2 registers lost all their fanouts during netlist optimizations.
 Info (17036): Removed 3 MSB VCC or GND address nodes from RAM block "memorySprites:memorySprites_inst|sram:element4|altsyncram:memory_array_rtl_0|altsyncram_rqi1:auto_generated|ALTSYNCRAM" File: /home/gabriel/Documentos/ConsoleFPGA/db/altsyncram_rqi1.tdf Line: 47
 Info (144001): Generated suppressed messages file /home/gabriel/Documentos/ConsoleFPGA/output_files/consoleFPGA.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "reset" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 4
-Info (21057): Implemented 587 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 2 input pins
-    Info (21059): Implemented 11 output pins
-    Info (21061): Implemented 550 logic cells
+    Warning (15610): No output dependent on input pin "resetFSM" File: /home/gabriel/Documentos/ConsoleFPGA/Modulos/top.v Line: 5
+Info (21057): Implemented 609 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 6 input pins
+    Info (21059): Implemented 14 output pins
+    Info (21061): Implemented 565 logic cells
     Info (21064): Implemented 24 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 138 warnings
-    Info: Peak virtual memory: 1021 megabytes
-    Info: Processing ended: Sun Jun 23 22:04:17 2019
-    Info: Elapsed time: 00:00:24
-    Info: Total CPU time (on all processors): 00:00:54
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 142 warnings
+    Info: Peak virtual memory: 1013 megabytes
+    Info: Processing ended: Tue Jun 25 00:41:30 2019
+    Info: Elapsed time: 00:00:25
+    Info: Total CPU time (on all processors): 00:00:55
 
 
 +------------------------------------------+

@@ -48,7 +48,35 @@
 					"strict" : false
 				},
 				{
+					"name" : "leds[0]",
+					"strict" : false
+				},
+				{
+					"name" : "leds[1]",
+					"strict" : false
+				},
+				{
+					"name" : "leds[2]",
+					"strict" : false
+				},
+				{
 					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "startGame",
+					"strict" : false
+				},
+				{
+					"name" : "pauseGame",
+					"strict" : false
+				},
+				{
+					"name" : "dead",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
 					"strict" : false
 				}
 			]

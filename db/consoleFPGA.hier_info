@@ -1,17 +1,24 @@
 |top
-clk => clk.IN3
-reset => ~NO_FANOUT~
-VGA_R[0] << VGA_R[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-VGA_R[1] << VGA_R[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-VGA_R[2] << VGA_R[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-VGA_G[0] << VGA_G[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-VGA_G[1] << VGA_G[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-VGA_G[2] << VGA_G[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-VGA_B[0] << VGA_B[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-VGA_B[1] << VGA_B[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-VGA_B[2] << VGA_B[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-hsync << SVGA_sync:SVGA.hsync
-vsync << SVGA_sync:SVGA.vsync
+clk => clk.IN4
+reset => _.IN1
+resetFSM => ~NO_FANOUT~
+dead => _.IN1
+startGame => startGame.IN1
+pauseGame => pauseGame.IN1
+VGA_R[0] <= VGA_R[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+VGA_R[1] <= VGA_R[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+VGA_R[2] <= VGA_R[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+VGA_G[0] <= VGA_G[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+VGA_G[1] <= VGA_G[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+VGA_G[2] <= VGA_G[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+VGA_B[0] <= VGA_B[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+VGA_B[1] <= VGA_B[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+VGA_B[2] <= VGA_B[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+hsync <= SVGA_sync:SVGA.hsync
+vsync <= SVGA_sync:SVGA.vsync
+leds[0] <= stateGame[0].DB_MAX_OUTPUT_PORT_TYPE
+leds[1] <= stateGame[1].DB_MAX_OUTPUT_PORT_TYPE
+leds[2] <= stateGame[2].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |top|SVGA_sync:SVGA
@@ -703,6 +710,9 @@ pixel_y[6] => pixel_y[6].IN5
 pixel_y[7] => pixel_y[7].IN5
 pixel_y[8] => pixel_y[8].IN5
 pixel_y[9] => pixel_y[9].IN5
+stateGame[0] => Equal0.IN0
+stateGame[1] => Equal0.IN2
+stateGame[2] => Equal0.IN1
 ready <= ready~reg0.DB_MAX_OUTPUT_PORT_TYPE
 element[0] <= element[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 element[1] <= element[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
@@ -1622,5 +1632,39 @@ element[1] <= element[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 element[2] <= element[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 element[3] <= element[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 enable <= enable.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top|gameFSM:gameFSM_inst
+clk => state~1.DATAIN
+clk => dataout[0].CLK
+clk => dataout[1].CLK
+clk => dataout[2].CLK
+reset => next.OUTPUTSELECT
+reset => next.OUTPUTSELECT
+reset => next.DATAA
+reset => next.DATAA
+reset => next.DATAA
+resetFSM => state~3.DATAIN
+startGame => next.OUTPUTSELECT
+startGame => next.OUTPUTSELECT
+startGame => Selector1.IN4
+startGame => next.DATAA
+startGame => Selector0.IN3
+startGame => Selector3.IN4
+startGame => Selector0.IN1
+startGame => Selector3.IN1
+startGame => Selector4.IN1
+pauseGame => next.OUTPUTSELECT
+pauseGame => next.OUTPUTSELECT
+pauseGame => next.OUTPUTSELECT
+pauseGame => next.OUTPUTSELECT
+pauseGame => next.OUTPUTSELECT
+pauseGame => next.OUTPUTSELECT
+pauseGame => Selector2.IN3
+dead => next.DATAA
+dead => next.DATAA
+stateGame[0] <= dataout[0].DB_MAX_OUTPUT_PORT_TYPE
+stateGame[1] <= dataout[1].DB_MAX_OUTPUT_PORT_TYPE
+stateGame[2] <= dataout[2].DB_MAX_OUTPUT_PORT_TYPE
 
 

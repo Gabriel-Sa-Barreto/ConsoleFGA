@@ -2,11 +2,16 @@
 module top(
 	  input wire     clk,        //clock da FPGA (50MHz)
 	  input wire     reset,      //signal for restart the system
+	  input wire     resetFSM,   //signal for restart the game FSM
+	  input wire     dead,
+	  input wire     startGame,  //Pino: GPIO_19  (PIN_K16) Blue_button
+     input wire     pauseGame,  //Pino: GPIO_111 (PIN_L15) Red_button
 	  output reg  [2:0] VGA_R,   //intensidade de vermelho
 	  output reg  [2:0] VGA_G,   //intensidade de verde
 	  output reg  [2:0] VGA_B,   //intensidade do azul
 	  output wire hsync,         //sinal de sincronizaçao horizontal
-	  output wire vsync          //sinal de sincronizaçao vertical
+	  output wire vsync,          //sinal de sincronizaçao vertical
+	  output [2:0]leds
 );
 
 localparam QTD_ELEMENTS = 3;
@@ -19,30 +24,32 @@ wire        ready;
 wire [QTD_ELEMENTS:0]  element;
 wire [9:0]  address;
 
+wire [2:0] stateGame;
+
 reg [2:0] elementMemory;
 reg  enableMemory;
 
 reg [9:0] addressMemory;
 reg [8:0] colour;
-integer i;
+
 //////////////PHRASES///////////////////////////////
 //PRESS START TO BEGIN
 //GAME OVER
 //GAME PAUSED
 //GAME RESET
 reg [7:0] phraseSTART [16:0];
-reg [7:0] phrasesGAMEOVER [7:0];
-reg [7:0] phrasesPAUSE [9:0];
-reg [7:0] phrasesRESET [8:0];
+reg [7:0] phraseGAMEOVER [7:0];
+reg [7:0] phrasePAUSE [9:0];
+reg [7:0] phraseRESET [8:0];
 ////////////////////////////////////////////////////
 initial begin
 	enableMemory = 0;
 		  colour  = 0;
 	/////////////////////////////////////////////////
-	$readmemb("/home/gabriel/Documentos/ConsoleFPGA/modulos/phraseSTART.txt",    phraseSTART);
-	$readmemb("/home/gabriel/Documentos/ConsoleFPGA/modulos/phraseGAMEOVER.txt", phraseGAMEOVER);
-	$readmemb("/home/gabriel/Documentos/ConsoleFPGA/modulos/phrasePAUSE.txt",    phrasePAUSE);
-	$readmemb("/home/gabriel/Documentos/ConsoleFPGA/modulos/phraseRESET.txt",    phraseRESET);		  
+	$readmemh("/home/gabriel/Documentos/ConsoleFPGA/Modulos/phraseSTART.txt",    phraseSTART);
+	$readmemh("/home/gabriel/Documentos/ConsoleFPGA/Modulos/phraseGAMEOVER.txt", phraseGAMEOVER);
+	$readmemh("/home/gabriel/Documentos/ConsoleFPGA/Modulos/phrasePAUSE.txt",    phrasePAUSE);
+	$readmemh("/home/gabriel/Documentos/ConsoleFPGA/Modulos/phraseRESET.txt",    phraseRESET);		  
 end
 
 SVGA_sync	SVGA(.clock(clk),
@@ -72,10 +79,25 @@ printRGB_inst
 	.active(video_enable),
 	.pixel_x(pixel_x) ,	  // input [10:0] pixel_x_sig
 	.pixel_y(pixel_y) ,	  // input [9:0] pixel_y_sig
+	.stateGame(stateGame), // input [2:0] gameState_sig
 	.ready(ready) ,	     // output  ready_sig
 	.element(element) ,	  // output [ELEMENT-1:0] element_sig
 	.address(address) 	  // output [9:0] address_sig
 );
+
+
+gameFSM gameFSM_inst
+(
+	.clk(clk) ,					// input  clk_sig
+	.reset(~reset) ,			// input  reset_sig
+	.resetFSM(0) ,				// input  resetFSM_sig
+	.startGame(startGame) ,	// input  startGame_sig
+	.pauseGame(pauseGame) ,	// input  pauseGame_sig
+	.dead(~dead) ,				// input  dead_sig
+	.stateGame(stateGame) 		// output [2:0] stateGame_sig
+);
+
+assign leds = stateGame;
 
 always @ (*) begin
 	if(video_enable) begin

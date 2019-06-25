@@ -1,0 +1,8 @@
+
+State Machine - |top|gameFSM:gameFSM_inst|state
+Name state.START state.PAUSE state.PLAYING state.RESET state.GAMEOVER 
+state.RESET 0 0 0 0 0 
+state.PLAYING 0 0 1 1 0 
+state.PAUSE 0 1 0 1 0 
+state.START 1 0 0 1 0 
+state.GAMEOVER 0 0 0 1 1 

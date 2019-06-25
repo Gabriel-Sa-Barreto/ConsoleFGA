@@ -15,7 +15,7 @@ module gameFSM(
 	input startGame,
 	input pauseGame,
 	input dead,
-	output reg [2:0] dataout
+	output wire [2:0] stateGame
 );
 
 /*
@@ -33,13 +33,12 @@ parameter [4:0]      START    = 0,
 					 GAMEOVER = 4;
 		
 reg [4:0] state,next;
+reg [2:0] dataout;
 
 always @ (posedge clk or posedge resetFSM) begin
 	if(resetFSM) begin
 		state        <= 5'b0;
 		state[RESET] <= 1'b1;
-		next[RESET]  <= 1'b1;
-
 	end
 	else state <= next;
 end
@@ -75,18 +74,21 @@ begin
 			if(startGame) next[RESET]  = 1'b1;
 			else next[GAMEOVER]  = 1'b1;
 		end
-
+	
+		default: next[START] = 1'b1;		
 	endcase
 end
 
 always @ (negedge clk) begin
-		case(1'b1)
-			next[START]:    dataout <= 3'b000;
-			next[PLAYING]:  dataout <= 3'b001;
-			next[PAUSE]:    dataout <= 3'b010;
-			next[RESET]:    dataout <= 3'b011;
-			next[GAMEOVER]: dataout <= 3'b100;
-		endcase
+	case(1'b1)
+		next[START]:    dataout <= 3'b000;
+		next[PLAYING]:  dataout <= 3'b001;
+		next[PAUSE]:    dataout <= 3'b010;
+		next[RESET]:    dataout <= 3'b011;
+		next[GAMEOVER]: dataout <= 3'b100;
+	endcase
 end
+
+assign stateGame = dataout;
 
 endmodule
