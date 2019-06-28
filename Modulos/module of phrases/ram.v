@@ -19,7 +19,7 @@ begin
 		mem[n] = 8'h0;
 end
   
-always @(posedge clock)
+always @(negedge clock)
 begin
 	if (enable_ram)
 	begin

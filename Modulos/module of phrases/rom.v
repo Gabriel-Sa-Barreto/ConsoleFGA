@@ -11,10 +11,10 @@ reg		[7:0]	data_out;
 
 initial
 begin
-	$readmemb("bitmaps.txt", mem);
+	$readmemb("/home/gabriel/Documentos/ConsoleFPGA/Modulos/module of phrases/bitmaps.txt", mem);
 end
 
-always @(posedge clock)
+always @(negedge clock)
 begin
 	if (enable_rom)
 	begin
