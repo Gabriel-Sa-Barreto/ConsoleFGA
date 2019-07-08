@@ -21,12 +21,11 @@ always begin
 end
 
 initial begin
-	$readmemb("/home/gabriel/Documentos/ConsoleFPGA/testbenchs/module spriteMoveFSM/inputMoveFSM.txt", file_input);
+	$readmemb("/home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/testbenchs/module_spriteMoveFSM/inputMoveFSM.txt", file_input);
 
 	for(i = 0; i < 40; i = i+1) begin
 		{reset,left,right,up,down} = file_input[i];
-		@ (posedge clk);
-		
+		@ (negedge clk);
 		if(dataout == 3'b000)      $display("State: DEFAULT");
 		else if(dataout == 3'b001) $display("State: RIGHT");
 		else if(dataout == 3'b010) $display("State: DOWN");

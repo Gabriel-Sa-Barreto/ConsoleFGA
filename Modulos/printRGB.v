@@ -2,6 +2,10 @@ module printRGB #(parameter ELEMENT = 5)(
 		input  wire         clk,
 		input  wire         reset,
 		input  wire         active,
+		input  wire         left,
+		input  wire         right,
+		input  wire         up,
+		input  wire         down,
 		input  wire [10:0]  pixel_x, //current pixel from VGA h_sync 
 		input  wire [9:0]   pixel_y, //curent pixel from VGA  v_sync
 		input  wire [2:0]   stateGame,
@@ -33,6 +37,10 @@ wire       enableHeart3;
 
 wire [9:0] addressBarrier;
 wire       enableBarrier;
+
+wire [9:0] addressMove;
+wire       elementMove;
+wire       enableMove;
 
 barrier barrier_inst //The barrier consist in the fifth element on sprites memory
 (
@@ -153,6 +161,22 @@ spriteHeart3
 	.enable(enableHeart3) 	   // output  enable_sig
 );
 
+movementModule movementModule_inst
+(
+	.clk(clk) ,	// input  clk_sig
+	.reset(reset) ,	// input  reset_sig
+	.left(left) ,	// input  left_sig
+	.right(right) ,	// input  right_sig
+	.up(up) ,	// input  up_sig
+	.down(down) ,	// input  down_sig
+	.pixel_x(pixel_x) ,	// input  pixel_x_sig
+	.pixel_y(pixel_y) ,	// input  pixel_y_sig
+	.videoEnable(active) ,	// input  videoEnable_sig
+	.enable(enableMove) ,	// output  enable_sig
+	.address(addressMove) ,	// output [ADDRESS_MEMORY:0] address_sig
+	.element(elementMove) 	// output [QTD_MEMORY_ELEMENT-1:0] element_sig
+);
+
 always @ (*)
 begin
 	if(enableBarrier) begin 
@@ -178,6 +202,11 @@ begin
 	else if(enableHeart3 && stateGame == 3'b001) begin
 		reg_element = elementHeart3;
 		reg_address = addressHeart3;
+		reg_ready   = 1;
+	end
+	else if(enableMove && stateGame == 3'b001) begin
+		reg_element = elementMove;
+		reg_address = addressMove;
 		reg_ready   = 1;
 	end
 	else begin

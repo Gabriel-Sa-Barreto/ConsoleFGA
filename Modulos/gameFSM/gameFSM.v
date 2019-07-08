@@ -26,7 +26,7 @@ STATES:
  - RESET: this state is responsable for restart all system and its components.
  - GAMEOVER: the game is over
 */
-parameter [2:0] START    = 3'b000,
+parameter [2:0]  START    = 3'b000,
 					  PLAYING  = 3'b001,
 					  PAUSE    = 3'b010,
 					  RESET    = 3'b011,

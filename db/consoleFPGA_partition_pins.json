@@ -56,10 +56,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "leds[2]",
-					"strict" : false
-				},
-				{
 					"name" : "clk",
 					"strict" : false
 				},
@@ -69,14 +65,6 @@
 				},
 				{
 					"name" : "pauseGame",
-					"strict" : false
-				},
-				{
-					"name" : "dead",
-					"strict" : false
-				},
-				{
-					"name" : "reset",
 					"strict" : false
 				}
 			]

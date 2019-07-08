@@ -1,9 +1,9 @@
 `timescale 1ns / 1ps
 module top(
 	  input wire     clk,        //clock da FPGA (50MHz)
-	  input wire     reset,      //signal for restart the system
-	  input wire     resetFSM,   //signal for restart the game FSM
-	  input wire     dead,
+	  input wire     down,      //signal for restart the system
+	  input wire     up,   //signal for restart the game FSM
+	  input wire     resetFSM,
 	  input wire     startGame,  //Pino: Red_button
      input wire     pauseGame,  //Pino: Blue_button
 	  output reg  [2:0] VGA_R,   //intensidade de vermelho
@@ -31,33 +31,34 @@ reg  enableMemory;
 
 reg [9:0] addressMemory;
 reg [8:0] colour;
-reg phraseActived;
+//reg phraseActived;
 
 //////////////PHRASES///////////////////////////////
 //PRESS START TO BEGIN
 //GAME OVER
 //GAME PAUSED
 //GAME RESET
-reg [7:0] phraseSTART [16:0];
-reg [7:0] phraseGAMEOVER [7:0];
-reg [7:0] phrasePAUSE [9:0];
-reg [7:0] phraseRESET [8:0];
+//reg [7:0] phraseSTART [16:0];
+//reg [7:0] phraseGAMEOVER [7:0];
+//reg [7:0] phrasePAUSE [9:0];
+//reg [7:0] phraseRESET [8:0];
 ////////////////////////////////////////////////////
 initial begin
 	enableMemory  = 0;
 		  colour   = 0;
-	counterPause  = 0;
+	/*counterPause  = 0;
 	addressLetter = 3540;
 	readyWritten  = 0;
 	phraseActived = 0;
 	/////////////////////////////////////////////////
-	$readmemh("/home/gabriel/Documentos/ConsoleFPGA/Modulos/phraseSTART.txt",    phraseSTART);
+	//$readmemh("/home/gabriel/Documentos/ConsoleFPGA/Modulos/phraseSTART.txt",    phraseSTART);
 	$readmemh("/home/gabriel/Documentos/ConsoleFPGA/Modulos/phraseGAMEOVER.txt", phraseGAMEOVER);
 	$readmemh("/home/gabriel/Documentos/ConsoleFPGA/Modulos/phrasePAUSE.txt",    phrasePAUSE);
 	$readmemh("/home/gabriel/Documentos/ConsoleFPGA/Modulos/phraseRESET.txt",    phraseRESET);		  
+	*/
 end
 
-
+/*
 wire enableLetter;
 wire [7:0]  colors;
 wire [12:0] addLetter;
@@ -68,7 +69,7 @@ reg readyWritten;
 reg [3:0]   counterPause;
 reg [7:0]   letters;
 reg [12:0]  addressLetter;
-
+*/
 SVGA_sync	SVGA(.clock(clk),
 				 .reset(),
 				 .hsync(hsync),
@@ -94,6 +95,10 @@ printRGB_inst
 	.clk(clk) ,	        	  // input  clk_sig
 	.reset(0) ,	     		  // input  reset_sig
 	.active(video_enable),
+	.left(0),
+	.right(0),
+	.up(~up),
+	.down(~down),
 	.pixel_x(pixel_x) ,	  // input [10:0] pixel_x_sig
 	.pixel_y(pixel_y) ,	  // input [9:0] pixel_y_sig
 	.stateGame(stateGame), // input [2:0] gameState_sig
@@ -106,14 +111,15 @@ printRGB_inst
 gameFSM gameFSM_inst
 (
 	.clk(clk) ,					// input  clk_sig
-	.reset(~reset) ,			// input  reset_sig
+	.reset(0) ,			// input  reset_sig
 	.resetFSM(0) ,				// input  resetFSM_sig
 	.startGame(startGame) ,	// input  startGame_sig
 	.pauseGame(pauseGame) ,	// input  pauseGame_sig
-	.dead(~dead) ,				// input  dead_sig
+	.dead(0) ,				// input  dead_sig
 	.stateGame(stateGame) 		// output [2:0] stateGame_sig
 );
 
+/*
 phrases phrases_inst
 (
 	.clk(clk) ,	//OK				   // input  clk_sig
@@ -145,7 +151,6 @@ always @ (*) begin
 	else readyWritten = 0;
 end 
 
-
 always @ (posedge clk) begin
 	if(stateGame == 3'b010) begin
 		phraseActived <= 1; //active the written of one letter on screen
@@ -160,7 +165,7 @@ always @ (posedge clk) begin
 	end 
 	else phraseActived <= 0; 
 end
-
+*/
 always @ (*) begin
 	if(video_enable) begin
 		if(ready) begin
@@ -171,20 +176,16 @@ always @ (*) begin
 	end
 end
 
-
 always @ (*) begin
 	if(video_enable) begin
-		if(enableLetter && phraseActived == 1) begin //It's necessary print a letter
-			colour = colors; //letter color that was defined by user.
-		end
-		else if(ready) begin
+		if(ready) begin
 			colour[8:6] = dataout[11:9];
 			colour[5:3] = dataout[7:5]; 
 			colour[2:0] = dataout[3:1];
 		end
-		else colour = 8'hff;
+		else colour = 8'hff; //background on screen
 	end
-	else colour = 0; //background on screen
+	else colour = 0; 
 end
 
 always @ (negedge clk) begin

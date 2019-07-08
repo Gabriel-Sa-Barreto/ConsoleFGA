@@ -6,3 +6,11 @@ state.PLAYING 0 0 1 1 0
 state.PAUSE 0 1 0 1 0 
 state.START 1 0 0 1 0 
 state.GAMEOVER 0 0 0 1 1 
+
+State Machine - |top|printRGB:printRGB_inst|movementModule:movementModule_inst|spriteMoveFSM:spriteMoveFSM_inst|state
+Name state.UP_STATE state.RIGHT_STATE state.LEFT_STATE state.DEF_STATE state.DOWN_STATE 
+state.DEF_STATE 0 0 0 0 0 
+state.LEFT_STATE 0 0 1 1 0 
+state.RIGHT_STATE 0 1 0 1 0 
+state.UP_STATE 1 0 0 1 0 
+state.DOWN_STATE 0 0 0 1 1 

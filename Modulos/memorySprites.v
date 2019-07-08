@@ -45,10 +45,10 @@ begin
    read_enable3 = 0;
    read_enable4 = 0;
    read_enable5 = 0;
-	$readmemh("/home/gabriel/Documentos/ConsoleFPGA/sprites/sprites25x25/apple_palette.mem",    element1_palette);
-	$readmemh("/home/gabriel/Documentos/ConsoleFPGA/sprites/heart/heart_palette.mem",           element2_palette); 
-	$readmemh("/home/gabriel/Documentos/ConsoleFPGA/sprites/background/background_palette.mem", element4_palette);
-	$readmemh("/home/gabriel/Documentos/ConsoleFPGA/sprites/block/block2_palette.mem",           element5_palette); 
+	$readmemh("/home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/sprites/sprites25x25/apple_palette.mem",    element1_palette);
+	$readmemh("/home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/sprites/heart/heart_palette.mem",           element2_palette); 
+	$readmemh("/home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/sprites/background/background_palette.mem", element4_palette);
+	$readmemh("/home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/sprites/block/block2_palette.mem",           element5_palette); 
 end							 
 							 
 							 
@@ -137,7 +137,7 @@ sram #(
 		.ADDR_WIDTH(element1_VRAM_A_WIDTH), 
       .DATA_WIDTH(VRAM_D_WIDTH), 
       .DEPTH(element1_VRAM_DEPTH), 
-      .MEMFILE("/home/gabriel/Documentos/ConsoleFPGA/sprites/sprites25x25/apple.mem"))
+      .MEMFILE("/home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/sprites/sprites25x25/apple.mem"))
    element1(
 		.i_clk(clk) ,	         // input  clk_sig
 		.i_addr(address1) ,	   // input [ADDR_WIDTH-1:0] i_addr_sig
@@ -152,7 +152,7 @@ sram #(
 		.ADDR_WIDTH(element2_VRAM_A_WIDTH), 
       .DATA_WIDTH(VRAM_D_WIDTH), 
       .DEPTH(element2_VRAM_DEPTH), 
-      .MEMFILE("/home/gabriel/Documentos/ConsoleFPGA/sprites/heart/heart.mem"))
+      .MEMFILE("/home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/sprites/heart/heart.mem"))
    element2(
 		.i_clk(clk) ,	         
 		.i_addr(address2) ,	   
@@ -182,7 +182,7 @@ sram #(
 		.ADDR_WIDTH(element4_VRAM_A_WIDTH), 
       .DATA_WIDTH(VRAM_D_WIDTH), 
       .DEPTH(element4_VRAM_DEPTH), 
-      .MEMFILE("/home/gabriel/Documentos/ConsoleFPGA/sprites/background/background.mem"))
+      .MEMFILE("/home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/sprites/background/background.mem"))
    element4(
 		.i_clk(clk) ,	        
 		.i_addr(address4) ,	   
@@ -196,7 +196,7 @@ sram #(
 		.ADDR_WIDTH(element5_VRAM_A_WIDTH), 
       .DATA_WIDTH(VRAM_D_WIDTH), 
       .DEPTH(element5_VRAM_DEPTH), 
-      .MEMFILE("/home/gabriel/Documentos/ConsoleFPGA/sprites/block/block2.mem"))
+      .MEMFILE("/home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/sprites/block/block2.mem"))
    element5 (
 		.i_clk(clk) ,	        
 		.i_addr(address5) ,	   

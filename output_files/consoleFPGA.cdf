@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP4CE22F17) Path("/home/gabriel/Documentos/ConsoleFPGA/output_files/") File("consoleFPGA.sof") MfrSpec(OpMask(1));
+		Device PartName(EP4CE22F17) Path("/home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/output_files/") File("consoleFPGA.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 
