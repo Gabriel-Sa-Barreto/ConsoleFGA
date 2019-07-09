@@ -66,6 +66,18 @@
 				{
 					"name" : "pauseGame",
 					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "up",
+					"strict" : false
+				},
+				{
+					"name" : "down",
+					"strict" : false
 				}
 			]
 		}

@@ -3,7 +3,7 @@ module top(
 	  input wire     clk,        //clock da FPGA (50MHz)
 	  input wire     down,      //signal for restart the system
 	  input wire     up,   //signal for restart the game FSM
-	  input wire     resetFSM,
+	  input wire     reset,
 	  input wire     startGame,  //Pino: Red_button
      input wire     pauseGame,  //Pino: Blue_button
 	  output reg  [2:0] VGA_R,   //intensidade de vermelho
@@ -93,7 +93,7 @@ printRGB #(.ELEMENT(3))
 printRGB_inst
 (
 	.clk(clk) ,	        	  // input  clk_sig
-	.reset(0) ,	     		  // input  reset_sig
+	.reset(reset) ,	     		  // input  reset_sig
 	.active(video_enable),
 	.left(0),
 	.right(0),

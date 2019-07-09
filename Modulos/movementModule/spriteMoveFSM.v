@@ -64,10 +64,10 @@ end
 always @ (negedge clk) begin
 	case(state)
 			DEF_STATE:  fsm_out <= 3'b000;
-			RIGHT_STATE:fsm_out <= 3'b001;
-			DOWN_STATE: fsm_out <= 3'b010;
+			RIGHT_STATE:fsm_out <= 3'b010;
+			DOWN_STATE: fsm_out <= 3'b100;
 			UP_STATE:   fsm_out <= 3'b011;
-			LEFT_STATE: fsm_out <= 3'b100;
+			LEFT_STATE: fsm_out <= 3'b001;
 	endcase
 end
 

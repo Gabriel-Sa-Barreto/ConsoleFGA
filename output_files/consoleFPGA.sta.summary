@@ -3,111 +3,111 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -6.761
-TNS   : -483.943
+Slack : -6.496
+TNS   : -580.463
 
 Type  : Slow 1200mV 85C Model Setup 'elementMemory[0]'
-Slack : -5.695
-TNS   : -82.965
+Slack : -5.898
+TNS   : -121.746
 
 Type  : Slow 1200mV 85C Model Setup 'SVGA_sync:SVGA|pixel_x[10]'
-Slack : -0.838
-TNS   : -5.772
+Slack : -0.802
+TNS   : -3.609
 
 Type  : Slow 1200mV 85C Model Hold 'SVGA_sync:SVGA|pixel_x[10]'
-Slack : -0.133
-TNS   : -0.251
+Slack : -0.241
+TNS   : -1.296
 
 Type  : Slow 1200mV 85C Model Hold 'clk'
 Slack : 0.357
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'elementMemory[0]'
-Slack : 0.580
+Slack : 1.560
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -149.784
+TNS   : -186.784
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'elementMemory[0]'
-Slack : 0.350
+Slack : 0.355
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'SVGA_sync:SVGA|pixel_x[10]'
-Slack : 0.391
+Slack : 0.425
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -6.061
-TNS   : -426.810
+Slack : -5.794
+TNS   : -510.922
 
 Type  : Slow 1200mV 0C Model Setup 'elementMemory[0]'
-Slack : -4.977
-TNS   : -70.948
+Slack : -5.177
+TNS   : -106.742
 
 Type  : Slow 1200mV 0C Model Setup 'SVGA_sync:SVGA|pixel_x[10]'
-Slack : -0.716
-TNS   : -4.967
+Slack : -0.676
+TNS   : -2.945
 
 Type  : Slow 1200mV 0C Model Hold 'SVGA_sync:SVGA|pixel_x[10]'
-Slack : -0.001
-TNS   : -0.001
+Slack : -0.076
+TNS   : -0.237
 
 Type  : Slow 1200mV 0C Model Hold 'clk'
 Slack : 0.311
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'elementMemory[0]'
-Slack : 0.515
+Slack : 1.430
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -149.784
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'SVGA_sync:SVGA|pixel_x[10]'
-Slack : 0.339
-TNS   : 0.000
+TNS   : -186.784
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'elementMemory[0]'
-Slack : 0.414
+Slack : 0.413
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'SVGA_sync:SVGA|pixel_x[10]'
+Slack : 0.438
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -3.102
-TNS   : -232.700
+Slack : -3.298
+TNS   : -276.412
 
 Type  : Fast 1200mV 0C Model Setup 'elementMemory[0]'
-Slack : -3.095
-TNS   : -34.545
+Slack : -3.174
+TNS   : -57.477
 
 Type  : Fast 1200mV 0C Model Setup 'SVGA_sync:SVGA|pixel_x[10]'
-Slack : -0.500
-TNS   : -3.543
+Slack : -0.515
+TNS   : -2.986
 
 Type  : Fast 1200mV 0C Model Hold 'clk'
-Slack : 0.159
+Slack : 0.185
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'SVGA_sync:SVGA|pixel_x[10]'
-Slack : 0.281
+Slack : 0.226
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'elementMemory[0]'
-Slack : 0.285
+Slack : 0.885
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -139.630
+TNS   : -178.703
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'elementMemory[0]'
-Slack : 0.304
+Slack : 0.316
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'SVGA_sync:SVGA|pixel_x[10]'
-Slack : 0.411
+Slack : 0.335
 TNS   : 0.000
 
 ------------------------------------------------------------

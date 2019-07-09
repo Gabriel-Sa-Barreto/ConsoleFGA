@@ -39,7 +39,7 @@ wire [9:0] addressBarrier;
 wire       enableBarrier;
 
 wire [9:0] addressMove;
-wire       elementMove;
+wire [4:0] elementMove;
 wire       enableMove;
 
 barrier barrier_inst //The barrier consist in the fifth element on sprites memory
@@ -161,7 +161,8 @@ spriteHeart3
 	.enable(enableHeart3) 	   // output  enable_sig
 );
 
-movementModule movementModule_inst
+movementModule #(.ELEMENT(1), .QTD_MEMORY_ELEMENT(4), .ADDRESS_MEMORY(10))
+movementModule_inst
 (
 	.clk(clk) ,	// input  clk_sig
 	.reset(reset) ,	// input  reset_sig

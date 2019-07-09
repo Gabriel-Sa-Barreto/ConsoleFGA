@@ -76,15 +76,15 @@ always @ (*) begin
     offsetSprite_y = offset_y;
 end
 
-always @ (posedge reset, posedge moveSprite) begin
-	if(moveSprite) begin
-		 current_x = new_position_x;
-	    current_y = new_position_y;
-	end
-	else if(reset) begin
+always @ (posedge clk) begin
+	if(reset) begin
 		 current_x <= initialPosition_x;
 	    current_y <= initialPosition_y;
 	      element <= memoryElement;
+	end
+	else if(moveSprite) begin
+		 current_x <= new_position_x;
+	    current_y <= new_position_y;
 	end
 end
 
