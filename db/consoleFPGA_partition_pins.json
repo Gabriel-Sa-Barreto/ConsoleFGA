@@ -60,15 +60,15 @@
 					"strict" : false
 				},
 				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
 					"name" : "startGame",
 					"strict" : false
 				},
 				{
 					"name" : "pauseGame",
-					"strict" : false
-				},
-				{
-					"name" : "reset",
 					"strict" : false
 				},
 				{

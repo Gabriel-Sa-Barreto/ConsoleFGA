@@ -1,5 +1,5 @@
 Fitter report for consoleFPGA
-Tue Jul  9 14:35:31 2019
+Wed Jul 10 16:14:28 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -71,17 +71,17 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Tue Jul  9 14:35:31 2019       ;
+; Fitter Status                      ; Successful - Wed Jul 10 16:14:28 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; consoleFPGA                                 ;
 ; Top-level Entity Name              ; top                                         ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE22F17C6                                ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 670 / 22,320 ( 3 % )                        ;
-;     Total combinational functions  ; 667 / 22,320 ( 3 % )                        ;
-;     Dedicated logic registers      ; 149 / 22,320 ( < 1 % )                      ;
-; Total registers                    ; 149                                         ;
+; Total logic elements               ; 801 / 22,320 ( 4 % )                        ;
+;     Total combinational functions  ; 789 / 22,320 ( 4 % )                        ;
+;     Dedicated logic registers      ; 245 / 22,320 ( 1 % )                        ;
+; Total registers                    ; 245                                         ;
 ; Total pins                         ; 20 / 154 ( 13 % )                           ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 15,180 / 608,256 ( 2 % )                    ;
@@ -163,23 +163,23 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   2.8%      ;
+;     Processor 2            ;   2.9%      ;
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------+
-; Incremental Compilation Preservation Summary                                                     ;
-+---------------------+--------------------+----------------------------+--------------------------+
-; Type                ; Total [A + B]      ; From Design Partitions [A] ; From Rapid Recompile [B] ;
-+---------------------+--------------------+----------------------------+--------------------------+
-; Placement (by node) ;                    ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 896 ) ; 0.00 % ( 0 / 896 )         ; 0.00 % ( 0 / 896 )       ;
-;     -- Achieved     ; 0.00 % ( 0 / 896 ) ; 0.00 % ( 0 / 896 )         ; 0.00 % ( 0 / 896 )       ;
-;                     ;                    ;                            ;                          ;
-; Routing (by net)    ;                    ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 0 )   ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
-;     -- Achieved     ; 0.00 % ( 0 / 0 )   ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
-+---------------------+--------------------+----------------------------+--------------------------+
++---------------------------------------------------------------------------------------------------+
+; Incremental Compilation Preservation Summary                                                      ;
++---------------------+---------------------+----------------------------+--------------------------+
+; Type                ; Total [A + B]       ; From Design Partitions [A] ; From Rapid Recompile [B] ;
++---------------------+---------------------+----------------------------+--------------------------+
+; Placement (by node) ;                     ;                            ;                          ;
+;     -- Requested    ; 0.00 % ( 0 / 1114 ) ; 0.00 % ( 0 / 1114 )        ; 0.00 % ( 0 / 1114 )      ;
+;     -- Achieved     ; 0.00 % ( 0 / 1114 ) ; 0.00 % ( 0 / 1114 )        ; 0.00 % ( 0 / 1114 )      ;
+;                     ;                     ;                            ;                          ;
+; Routing (by net)    ;                     ;                            ;                          ;
+;     -- Requested    ; 0.00 % ( 0 / 0 )    ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
+;     -- Achieved     ; 0.00 % ( 0 / 0 )    ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
++---------------------+---------------------+----------------------------+--------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -197,7 +197,7 @@ refer to the applicable agreement for further details.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 886 )    ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 1104 )   ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 10 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -213,26 +213,26 @@ The pin-out file can be found in /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFP
 +---------------------------------------------+--------------------------+
 ; Resource                                    ; Usage                    ;
 +---------------------------------------------+--------------------------+
-; Total logic elements                        ; 670 / 22,320 ( 3 % )     ;
-;     -- Combinational with no register       ; 521                      ;
-;     -- Register only                        ; 3                        ;
-;     -- Combinational with a register        ; 146                      ;
+; Total logic elements                        ; 801 / 22,320 ( 4 % )     ;
+;     -- Combinational with no register       ; 556                      ;
+;     -- Register only                        ; 12                       ;
+;     -- Combinational with a register        ; 233                      ;
 ;                                             ;                          ;
 ; Logic element usage by number of LUT inputs ;                          ;
-;     -- 4 input functions                    ; 263                      ;
-;     -- 3 input functions                    ; 222                      ;
-;     -- <=2 input functions                  ; 182                      ;
-;     -- Register only                        ; 3                        ;
+;     -- 4 input functions                    ; 293                      ;
+;     -- 3 input functions                    ; 221                      ;
+;     -- <=2 input functions                  ; 275                      ;
+;     -- Register only                        ; 12                       ;
 ;                                             ;                          ;
 ; Logic elements by mode                      ;                          ;
-;     -- normal mode                          ; 482                      ;
-;     -- arithmetic mode                      ; 185                      ;
+;     -- normal mode                          ; 524                      ;
+;     -- arithmetic mode                      ; 265                      ;
 ;                                             ;                          ;
-; Total registers*                            ; 149 / 23,018 ( < 1 % )   ;
-;     -- Dedicated logic registers            ; 149 / 22,320 ( < 1 % )   ;
+; Total registers*                            ; 245 / 23,018 ( 1 % )     ;
+;     -- Dedicated logic registers            ; 245 / 22,320 ( 1 % )     ;
 ;     -- I/O registers                        ; 0 / 698 ( 0 % )          ;
 ;                                             ;                          ;
-; Total LABs:  partially or completely used   ; 57 / 1,395 ( 4 % )       ;
+; Total LABs:  partially or completely used   ; 65 / 1,395 ( 5 % )       ;
 ; Virtual pins                                ; 0                        ;
 ; I/O pins                                    ; 20 / 154 ( 13 % )        ;
 ;     -- Clock pins                           ; 3 / 7 ( 43 % )           ;
@@ -250,86 +250,86 @@ The pin-out file can be found in /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFP
 ; ASMI blocks                                 ; 0 / 1 ( 0 % )            ;
 ; Oscillator blocks                           ; 0 / 1 ( 0 % )            ;
 ; Impedance control blocks                    ; 0 / 4 ( 0 % )            ;
-; Average interconnect usage (total/H/V)      ; 1.4% / 1.3% / 1.5%       ;
-; Peak interconnect usage (total/H/V)         ; 7.1% / 6.5% / 8.1%       ;
-; Maximum fan-out                             ; 144                      ;
+; Average interconnect usage (total/H/V)      ; 1.4% / 1.2% / 1.5%       ;
+; Peak interconnect usage (total/H/V)         ; 11.4% / 10.2% / 13.2%    ;
+; Maximum fan-out                             ; 240                      ;
 ; Highest non-global fan-out                  ; 24                       ;
-; Total fan-out                               ; 2380                     ;
-; Average fan-out                             ; 2.71                     ;
+; Total fan-out                               ; 2960                     ;
+; Average fan-out                             ; 2.68                     ;
 +---------------------------------------------+--------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
 
 
-+------------------------------------------------------------------------------------------------------+
-; Fitter Partition Statistics                                                                          ;
-+---------------------------------------------+-----------------------+--------------------------------+
-; Statistic                                   ; Top                   ; hard_block:auto_generated_inst ;
-+---------------------------------------------+-----------------------+--------------------------------+
-; Difficulty Clustering Region                ; Low                   ; Low                            ;
-;                                             ;                       ;                                ;
-; Total logic elements                        ; 670 / 22320 ( 3 % )   ; 0 / 22320 ( 0 % )              ;
-;     -- Combinational with no register       ; 521                   ; 0                              ;
-;     -- Register only                        ; 3                     ; 0                              ;
-;     -- Combinational with a register        ; 146                   ; 0                              ;
-;                                             ;                       ;                                ;
-; Logic element usage by number of LUT inputs ;                       ;                                ;
-;     -- 4 input functions                    ; 263                   ; 0                              ;
-;     -- 3 input functions                    ; 222                   ; 0                              ;
-;     -- <=2 input functions                  ; 182                   ; 0                              ;
-;     -- Register only                        ; 3                     ; 0                              ;
-;                                             ;                       ;                                ;
-; Logic elements by mode                      ;                       ;                                ;
-;     -- normal mode                          ; 482                   ; 0                              ;
-;     -- arithmetic mode                      ; 185                   ; 0                              ;
-;                                             ;                       ;                                ;
-; Total registers                             ; 149                   ; 0                              ;
-;     -- Dedicated logic registers            ; 149 / 22320 ( < 1 % ) ; 0 / 22320 ( 0 % )              ;
-;     -- I/O registers                        ; 0                     ; 0                              ;
-;                                             ;                       ;                                ;
-; Total LABs:  partially or completely used   ; 57 / 1395 ( 4 % )     ; 0 / 1395 ( 0 % )               ;
-;                                             ;                       ;                                ;
-; Virtual pins                                ; 0                     ; 0                              ;
-; I/O pins                                    ; 20                    ; 0                              ;
-; Embedded Multiplier 9-bit elements          ; 0 / 132 ( 0 % )       ; 0 / 132 ( 0 % )                ;
-; Total memory bits                           ; 15180                 ; 0                              ;
-; Total RAM block bits                        ; 36864                 ; 0                              ;
-; M9K                                         ; 4 / 66 ( 6 % )        ; 0 / 66 ( 0 % )                 ;
-; Clock control block                         ; 7 / 24 ( 29 % )       ; 0 / 24 ( 0 % )                 ;
-;                                             ;                       ;                                ;
-; Connections                                 ;                       ;                                ;
-;     -- Input Connections                    ; 0                     ; 0                              ;
-;     -- Registered Input Connections         ; 0                     ; 0                              ;
-;     -- Output Connections                   ; 0                     ; 0                              ;
-;     -- Registered Output Connections        ; 0                     ; 0                              ;
-;                                             ;                       ;                                ;
-; Internal Connections                        ;                       ;                                ;
-;     -- Total Connections                    ; 2613                  ; 5                              ;
-;     -- Registered Connections               ; 671                   ; 0                              ;
-;                                             ;                       ;                                ;
-; External Connections                        ;                       ;                                ;
-;     -- Top                                  ; 0                     ; 0                              ;
-;     -- hard_block:auto_generated_inst       ; 0                     ; 0                              ;
-;                                             ;                       ;                                ;
-; Partition Interface                         ;                       ;                                ;
-;     -- Input Ports                          ; 6                     ; 0                              ;
-;     -- Output Ports                         ; 14                    ; 0                              ;
-;     -- Bidir Ports                          ; 0                     ; 0                              ;
-;                                             ;                       ;                                ;
-; Registered Ports                            ;                       ;                                ;
-;     -- Registered Input Ports               ; 0                     ; 0                              ;
-;     -- Registered Output Ports              ; 0                     ; 0                              ;
-;                                             ;                       ;                                ;
-; Port Connectivity                           ;                       ;                                ;
-;     -- Input Ports driven by GND            ; 0                     ; 0                              ;
-;     -- Output Ports driven by GND           ; 0                     ; 0                              ;
-;     -- Input Ports driven by VCC            ; 0                     ; 0                              ;
-;     -- Output Ports driven by VCC           ; 0                     ; 0                              ;
-;     -- Input Ports with no Source           ; 0                     ; 0                              ;
-;     -- Output Ports with no Source          ; 0                     ; 0                              ;
-;     -- Input Ports with no Fanout           ; 0                     ; 0                              ;
-;     -- Output Ports with no Fanout          ; 0                     ; 0                              ;
-+---------------------------------------------+-----------------------+--------------------------------+
++----------------------------------------------------------------------------------------------------+
+; Fitter Partition Statistics                                                                        ;
++---------------------------------------------+---------------------+--------------------------------+
+; Statistic                                   ; Top                 ; hard_block:auto_generated_inst ;
++---------------------------------------------+---------------------+--------------------------------+
+; Difficulty Clustering Region                ; Low                 ; Low                            ;
+;                                             ;                     ;                                ;
+; Total logic elements                        ; 801 / 22320 ( 4 % ) ; 0 / 22320 ( 0 % )              ;
+;     -- Combinational with no register       ; 556                 ; 0                              ;
+;     -- Register only                        ; 12                  ; 0                              ;
+;     -- Combinational with a register        ; 233                 ; 0                              ;
+;                                             ;                     ;                                ;
+; Logic element usage by number of LUT inputs ;                     ;                                ;
+;     -- 4 input functions                    ; 293                 ; 0                              ;
+;     -- 3 input functions                    ; 221                 ; 0                              ;
+;     -- <=2 input functions                  ; 275                 ; 0                              ;
+;     -- Register only                        ; 12                  ; 0                              ;
+;                                             ;                     ;                                ;
+; Logic elements by mode                      ;                     ;                                ;
+;     -- normal mode                          ; 524                 ; 0                              ;
+;     -- arithmetic mode                      ; 265                 ; 0                              ;
+;                                             ;                     ;                                ;
+; Total registers                             ; 245                 ; 0                              ;
+;     -- Dedicated logic registers            ; 245 / 22320 ( 1 % ) ; 0 / 22320 ( 0 % )              ;
+;     -- I/O registers                        ; 0                   ; 0                              ;
+;                                             ;                     ;                                ;
+; Total LABs:  partially or completely used   ; 65 / 1395 ( 5 % )   ; 0 / 1395 ( 0 % )               ;
+;                                             ;                     ;                                ;
+; Virtual pins                                ; 0                   ; 0                              ;
+; I/O pins                                    ; 20                  ; 0                              ;
+; Embedded Multiplier 9-bit elements          ; 0 / 132 ( 0 % )     ; 0 / 132 ( 0 % )                ;
+; Total memory bits                           ; 15180               ; 0                              ;
+; Total RAM block bits                        ; 36864               ; 0                              ;
+; M9K                                         ; 4 / 66 ( 6 % )      ; 0 / 66 ( 0 % )                 ;
+; Clock control block                         ; 7 / 24 ( 29 % )     ; 0 / 24 ( 0 % )                 ;
+;                                             ;                     ;                                ;
+; Connections                                 ;                     ;                                ;
+;     -- Input Connections                    ; 0                   ; 0                              ;
+;     -- Registered Input Connections         ; 0                   ; 0                              ;
+;     -- Output Connections                   ; 0                   ; 0                              ;
+;     -- Registered Output Connections        ; 0                   ; 0                              ;
+;                                             ;                     ;                                ;
+; Internal Connections                        ;                     ;                                ;
+;     -- Total Connections                    ; 3193                ; 5                              ;
+;     -- Registered Connections               ; 873                 ; 0                              ;
+;                                             ;                     ;                                ;
+; External Connections                        ;                     ;                                ;
+;     -- Top                                  ; 0                   ; 0                              ;
+;     -- hard_block:auto_generated_inst       ; 0                   ; 0                              ;
+;                                             ;                     ;                                ;
+; Partition Interface                         ;                     ;                                ;
+;     -- Input Ports                          ; 6                   ; 0                              ;
+;     -- Output Ports                         ; 14                  ; 0                              ;
+;     -- Bidir Ports                          ; 0                   ; 0                              ;
+;                                             ;                     ;                                ;
+; Registered Ports                            ;                     ;                                ;
+;     -- Registered Input Ports               ; 0                   ; 0                              ;
+;     -- Registered Output Ports              ; 0                   ; 0                              ;
+;                                             ;                     ;                                ;
+; Port Connectivity                           ;                     ;                                ;
+;     -- Input Ports driven by GND            ; 0                   ; 0                              ;
+;     -- Output Ports driven by GND           ; 0                   ; 0                              ;
+;     -- Input Ports driven by VCC            ; 0                   ; 0                              ;
+;     -- Output Ports driven by VCC           ; 0                   ; 0                              ;
+;     -- Input Ports with no Source           ; 0                   ; 0                              ;
+;     -- Output Ports with no Source          ; 0                   ; 0                              ;
+;     -- Input Ports with no Fanout           ; 0                   ; 0                              ;
+;     -- Output Ports with no Fanout          ; 0                   ; 0                              ;
++---------------------------------------------+---------------------+--------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -337,12 +337,12 @@ The pin-out file can be found in /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFP
 +-----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
 ; Name      ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination Control Block ; Location assigned by ; Slew Rate ;
 +-----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
-; clk       ; R8    ; 3        ; 27           ; 0            ; 21           ; 162                   ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
-; down      ; J15   ; 5        ; 53           ; 14           ; 0            ; 2                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
-; pauseGame ; L15   ; 5        ; 53           ; 11           ; 0            ; 3                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; clk       ; R8    ; 3        ; 27           ; 0            ; 21           ; 258                   ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; down      ; J15   ; 5        ; 53           ; 14           ; 0            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; pauseGame ; L15   ; 5        ; 53           ; 11           ; 0            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; reset     ; M1    ; 2        ; 0            ; 16           ; 21           ; 13                    ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
-; startGame ; K16   ; 5        ; 53           ; 12           ; 0            ; 4                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
-; up        ; E1    ; 1        ; 0            ; 16           ; 7            ; 3                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; startGame ; K16   ; 5        ; 53           ; 12           ; 0            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; up        ; E1    ; 1        ; 0            ; 16           ; 7            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 +-----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
 
 
@@ -700,9 +700,9 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ; leds[1]   ; Incomplete set of assignments ;
 ; leds[2]   ; Incomplete set of assignments ;
 ; clk       ; Incomplete set of assignments ;
+; reset     ; Incomplete set of assignments ;
 ; startGame ; Incomplete set of assignments ;
 ; pauseGame ; Incomplete set of assignments ;
-; reset     ; Incomplete set of assignments ;
 ; up        ; Incomplete set of assignments ;
 ; down      ; Incomplete set of assignments ;
 +-----------+-------------------------------+
@@ -713,10 +713,14 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +------------------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                           ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                                                                                                                                        ; Entity Name     ; Library Name ;
 +------------------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |top                                                 ; 670 (61)    ; 149 (9)                   ; 0 (0)         ; 15180       ; 4    ; 0            ; 0       ; 0         ; 20   ; 0            ; 521 (52)     ; 3 (0)             ; 146 (10)         ; |top                                                                                                                                                                                       ; top             ; work         ;
-;    |SVGA_sync:SVGA|                                  ; 58 (58)     ; 23 (23)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 33 (33)      ; 0 (0)             ; 25 (25)          ; |top|SVGA_sync:SVGA                                                                                                                                                                        ; SVGA_sync       ; work         ;
+; |top                                                 ; 801 (61)    ; 245 (9)                   ; 0 (0)         ; 15180       ; 4    ; 0            ; 0       ; 0         ; 20   ; 0            ; 556 (52)     ; 12 (0)            ; 233 (10)         ; |top                                                                                                                                                                                       ; top             ; work         ;
+;    |SVGA_sync:SVGA|                                  ; 58 (58)     ; 23 (23)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 34 (34)      ; 0 (0)             ; 24 (24)          ; |top|SVGA_sync:SVGA                                                                                                                                                                        ; SVGA_sync       ; work         ;
+;    |button_Debounce:button_Debounce_down|            ; 31 (31)     ; 24 (24)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 24 (24)          ; |top|button_Debounce:button_Debounce_down                                                                                                                                                  ; button_Debounce ; work         ;
+;    |button_Debounce:button_Debounce_pause|           ; 31 (31)     ; 24 (24)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 1 (1)             ; 23 (23)          ; |top|button_Debounce:button_Debounce_pause                                                                                                                                                 ; button_Debounce ; work         ;
+;    |button_Debounce:button_Debounce_start|           ; 31 (31)     ; 24 (24)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 1 (1)             ; 23 (23)          ; |top|button_Debounce:button_Debounce_start                                                                                                                                                 ; button_Debounce ; work         ;
+;    |button_Debounce:button_Debounce_up|              ; 31 (31)     ; 24 (24)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 24 (24)          ; |top|button_Debounce:button_Debounce_up                                                                                                                                                    ; button_Debounce ; work         ;
 ;    |gameFSM:gameFSM_inst|                            ; 7 (7)       ; 6 (6)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 6 (6)            ; |top|gameFSM:gameFSM_inst                                                                                                                                                                  ; gameFSM         ; work         ;
-;    |memorySprites:memorySprites_inst|                ; 130 (130)   ; 0 (0)                     ; 0 (0)         ; 15180       ; 4    ; 0            ; 0       ; 0         ; 0    ; 0            ; 130 (130)    ; 0 (0)             ; 0 (0)            ; |top|memorySprites:memorySprites_inst                                                                                                                                                      ; memorySprites   ; work         ;
+;    |memorySprites:memorySprites_inst|                ; 129 (129)   ; 0 (0)                     ; 0 (0)         ; 15180       ; 4    ; 0            ; 0       ; 0         ; 0    ; 0            ; 129 (129)    ; 0 (0)             ; 0 (0)            ; |top|memorySprites:memorySprites_inst                                                                                                                                                      ; memorySprites   ; work         ;
 ;       |sram:element1|                                ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 3750        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |top|memorySprites:memorySprites_inst|sram:element1                                                                                                                                        ; sram            ; work         ;
 ;          |altsyncram:memory_array_rtl_0|             ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 3750        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |top|memorySprites:memorySprites_inst|sram:element1|altsyncram:memory_array_rtl_0                                                                                                          ; altsyncram      ; work         ;
 ;             |altsyncram_hji1:auto_generated|         ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 3750        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |top|memorySprites:memorySprites_inst|sram:element1|altsyncram:memory_array_rtl_0|altsyncram_hji1:auto_generated                                                                           ; altsyncram_hji1 ; work         ;
@@ -729,8 +733,8 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ;       |sram:element5|                                ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 3750        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |top|memorySprites:memorySprites_inst|sram:element5                                                                                                                                        ; sram            ; work         ;
 ;          |altsyncram:memory_array_rtl_0|             ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 3750        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |top|memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0                                                                                                          ; altsyncram      ; work         ;
 ;             |altsyncram_0ji1:auto_generated|         ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 3750        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |top|memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_0ji1:auto_generated                                                                           ; altsyncram_0ji1 ; work         ;
-;    |printRGB:printRGB_inst|                          ; 417 (70)    ; 111 (14)                  ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 305 (55)     ; 3 (0)             ; 109 (21)         ; |top|printRGB:printRGB_inst                                                                                                                                                                ; printRGB        ; work         ;
-;       |barrier:barrier_inst|                         ; 165 (117)   ; 24 (24)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 140 (93)     ; 1 (1)             ; 24 (23)          ; |top|printRGB:printRGB_inst|barrier:barrier_inst                                                                                                                                           ; barrier         ; work         ;
+;    |printRGB:printRGB_inst|                          ; 424 (71)    ; 111 (14)                  ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 312 (57)     ; 10 (0)            ; 102 (20)         ; |top|printRGB:printRGB_inst                                                                                                                                                                ; printRGB        ; work         ;
+;       |barrier:barrier_inst|                         ; 166 (119)   ; 24 (24)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 141 (95)     ; 3 (3)             ; 22 (20)          ; |top|printRGB:printRGB_inst|barrier:barrier_inst                                                                                                                                           ; barrier         ; work         ;
 ;          |lpm_mult:Mult0|                            ; 12 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 12 (0)       ; 0 (0)             ; 0 (0)            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult0                                                                                                                            ; lpm_mult        ; work         ;
 ;             |multcore:mult_core|                     ; 12 (6)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 12 (6)       ; 0 (0)             ; 0 (0)            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult0|multcore:mult_core                                                                                                         ; multcore        ; work         ;
 ;                |mpar_add:padder|                     ; 6 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 6 (0)        ; 0 (0)             ; 0 (0)            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder                                                                                         ; mpar_add        ; work         ;
@@ -741,8 +745,8 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ;                |mpar_add:padder|                     ; 6 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 6 (0)        ; 0 (0)             ; 0 (0)            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder                                                                                         ; mpar_add        ; work         ;
 ;                   |lpm_add_sub:adder[0]|             ; 6 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 6 (0)        ; 0 (0)             ; 0 (0)            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                                                                    ; lpm_add_sub     ; work         ;
 ;                      |add_sub_bfh:auto_generated|    ; 6 (6)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 0 (0)            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_bfh:auto_generated                                         ; add_sub_bfh     ; work         ;
-;          |lpm_mult:Mult2|                            ; 12 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 12 (0)       ; 0 (0)             ; 0 (0)            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult2                                                                                                                            ; lpm_mult        ; work         ;
-;             |multcore:mult_core|                     ; 12 (6)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 12 (6)       ; 0 (0)             ; 0 (0)            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult2|multcore:mult_core                                                                                                         ; multcore        ; work         ;
+;          |lpm_mult:Mult2|                            ; 12 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 11 (0)       ; 0 (0)             ; 1 (0)            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult2                                                                                                                            ; lpm_mult        ; work         ;
+;             |multcore:mult_core|                     ; 12 (6)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 11 (5)       ; 0 (0)             ; 1 (1)            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult2|multcore:mult_core                                                                                                         ; multcore        ; work         ;
 ;                |mpar_add:padder|                     ; 6 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 6 (0)        ; 0 (0)             ; 0 (0)            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult2|multcore:mult_core|mpar_add:padder                                                                                         ; mpar_add        ; work         ;
 ;                   |lpm_add_sub:adder[0]|             ; 6 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 6 (0)        ; 0 (0)             ; 0 (0)            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult2|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                                                                    ; lpm_add_sub     ; work         ;
 ;                      |add_sub_bfh:auto_generated|    ; 6 (6)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 0 (0)            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult2|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_bfh:auto_generated                                         ; add_sub_bfh     ; work         ;
@@ -751,23 +755,23 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ;                |mpar_add:padder|                     ; 6 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 6 (0)        ; 0 (0)             ; 0 (0)            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult3|multcore:mult_core|mpar_add:padder                                                                                         ; mpar_add        ; work         ;
 ;                   |lpm_add_sub:adder[0]|             ; 6 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 6 (0)        ; 0 (0)             ; 0 (0)            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult3|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                                                                    ; lpm_add_sub     ; work         ;
 ;                      |add_sub_bfh:auto_generated|    ; 6 (6)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 0 (0)            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult3|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_bfh:auto_generated                                         ; add_sub_bfh     ; work         ;
-;       |movementModule:movementModule_inst|           ; 109 (28)    ; 37 (11)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 72 (17)      ; 1 (0)             ; 36 (12)          ; |top|printRGB:printRGB_inst|movementModule:movementModule_inst                                                                                                                             ; movementModule  ; work         ;
-;          |printSprite:spriteGeneric|                 ; 77 (64)     ; 22 (22)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 55 (42)      ; 0 (0)             ; 22 (22)          ; |top|printRGB:printRGB_inst|movementModule:movementModule_inst|printSprite:spriteGeneric                                                                                                   ; printSprite     ; work         ;
-;             |lpm_mult:Mult0|                         ; 13 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 13 (0)       ; 0 (0)             ; 0 (0)            ; |top|printRGB:printRGB_inst|movementModule:movementModule_inst|printSprite:spriteGeneric|lpm_mult:Mult0                                                                                    ; lpm_mult        ; work         ;
-;                |multcore:mult_core|                  ; 13 (7)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 13 (7)       ; 0 (0)             ; 0 (0)            ; |top|printRGB:printRGB_inst|movementModule:movementModule_inst|printSprite:spriteGeneric|lpm_mult:Mult0|multcore:mult_core                                                                 ; multcore        ; work         ;
-;                   |mpar_add:padder|                  ; 6 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 6 (0)        ; 0 (0)             ; 0 (0)            ; |top|printRGB:printRGB_inst|movementModule:movementModule_inst|printSprite:spriteGeneric|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder                                                 ; mpar_add        ; work         ;
-;                      |lpm_add_sub:adder[0]|          ; 6 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 6 (0)        ; 0 (0)             ; 0 (0)            ; |top|printRGB:printRGB_inst|movementModule:movementModule_inst|printSprite:spriteGeneric|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                            ; lpm_add_sub     ; work         ;
-;                         |add_sub_bfh:auto_generated| ; 6 (6)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 0 (0)            ; |top|printRGB:printRGB_inst|movementModule:movementModule_inst|printSprite:spriteGeneric|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_bfh:auto_generated ; add_sub_bfh     ; work         ;
+;       |movementModule:movementModule_inst|           ; 110 (29)    ; 37 (11)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 73 (18)      ; 2 (0)             ; 35 (11)          ; |top|printRGB:printRGB_inst|movementModule:movementModule_inst                                                                                                                             ; movementModule  ; work         ;
+;          |printSprite:spriteGeneric|                 ; 78 (66)     ; 22 (22)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 55 (43)      ; 1 (1)             ; 22 (21)          ; |top|printRGB:printRGB_inst|movementModule:movementModule_inst|printSprite:spriteGeneric                                                                                                   ; printSprite     ; work         ;
+;             |lpm_mult:Mult0|                         ; 13 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 12 (0)       ; 0 (0)             ; 1 (0)            ; |top|printRGB:printRGB_inst|movementModule:movementModule_inst|printSprite:spriteGeneric|lpm_mult:Mult0                                                                                    ; lpm_mult        ; work         ;
+;                |multcore:mult_core|                  ; 13 (7)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 12 (7)       ; 0 (0)             ; 1 (0)            ; |top|printRGB:printRGB_inst|movementModule:movementModule_inst|printSprite:spriteGeneric|lpm_mult:Mult0|multcore:mult_core                                                                 ; multcore        ; work         ;
+;                   |mpar_add:padder|                  ; 6 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 5 (0)        ; 0 (0)             ; 1 (0)            ; |top|printRGB:printRGB_inst|movementModule:movementModule_inst|printSprite:spriteGeneric|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder                                                 ; mpar_add        ; work         ;
+;                      |lpm_add_sub:adder[0]|          ; 6 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 5 (0)        ; 0 (0)             ; 1 (0)            ; |top|printRGB:printRGB_inst|movementModule:movementModule_inst|printSprite:spriteGeneric|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                            ; lpm_add_sub     ; work         ;
+;                         |add_sub_bfh:auto_generated| ; 6 (6)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 1 (1)            ; |top|printRGB:printRGB_inst|movementModule:movementModule_inst|printSprite:spriteGeneric|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_bfh:auto_generated ; add_sub_bfh     ; work         ;
 ;          |spriteMoveFSM:spriteMoveFSM_inst|          ; 4 (4)       ; 4 (4)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 3 (3)            ; |top|printRGB:printRGB_inst|movementModule:movementModule_inst|spriteMoveFSM:spriteMoveFSM_inst                                                                                            ; spriteMoveFSM   ; work         ;
-;       |printSprite:spriteFruit|                      ; 35 (22)     ; 12 (12)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 23 (12)      ; 1 (1)             ; 11 (9)           ; |top|printRGB:printRGB_inst|printSprite:spriteFruit                                                                                                                                        ; printSprite     ; work         ;
+;       |printSprite:spriteFruit|                      ; 37 (24)     ; 12 (12)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 25 (14)      ; 3 (3)             ; 9 (7)            ; |top|printRGB:printRGB_inst|printSprite:spriteFruit                                                                                                                                        ; printSprite     ; work         ;
 ;          |lpm_mult:Mult0|                            ; 13 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 11 (0)       ; 0 (0)             ; 2 (0)            ; |top|printRGB:printRGB_inst|printSprite:spriteFruit|lpm_mult:Mult0                                                                                                                         ; lpm_mult        ; work         ;
-;             |multcore:mult_core|                     ; 13 (7)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 11 (7)       ; 0 (0)             ; 2 (0)            ; |top|printRGB:printRGB_inst|printSprite:spriteFruit|lpm_mult:Mult0|multcore:mult_core                                                                                                      ; multcore        ; work         ;
-;                |mpar_add:padder|                     ; 6 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (0)        ; 0 (0)             ; 2 (0)            ; |top|printRGB:printRGB_inst|printSprite:spriteFruit|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder                                                                                      ; mpar_add        ; work         ;
-;                   |lpm_add_sub:adder[0]|             ; 6 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (0)        ; 0 (0)             ; 2 (0)            ; |top|printRGB:printRGB_inst|printSprite:spriteFruit|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                                                                 ; lpm_add_sub     ; work         ;
-;                      |add_sub_bfh:auto_generated|    ; 6 (6)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 2 (2)            ; |top|printRGB:printRGB_inst|printSprite:spriteFruit|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_bfh:auto_generated                                      ; add_sub_bfh     ; work         ;
-;       |printSprite:spriteHeart1|                     ; 13 (13)     ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 10 (10)          ; |top|printRGB:printRGB_inst|printSprite:spriteHeart1                                                                                                                                       ; printSprite     ; work         ;
+;             |multcore:mult_core|                     ; 13 (7)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 11 (6)       ; 0 (0)             ; 2 (1)            ; |top|printRGB:printRGB_inst|printSprite:spriteFruit|lpm_mult:Mult0|multcore:mult_core                                                                                                      ; multcore        ; work         ;
+;                |mpar_add:padder|                     ; 6 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 5 (0)        ; 0 (0)             ; 1 (0)            ; |top|printRGB:printRGB_inst|printSprite:spriteFruit|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder                                                                                      ; mpar_add        ; work         ;
+;                   |lpm_add_sub:adder[0]|             ; 6 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 5 (0)        ; 0 (0)             ; 1 (0)            ; |top|printRGB:printRGB_inst|printSprite:spriteFruit|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                                                                 ; lpm_add_sub     ; work         ;
+;                      |add_sub_bfh:auto_generated|    ; 6 (6)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 1 (1)            ; |top|printRGB:printRGB_inst|printSprite:spriteFruit|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_bfh:auto_generated                                      ; add_sub_bfh     ; work         ;
+;       |printSprite:spriteHeart1|                     ; 13 (13)     ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 9 (9)            ; |top|printRGB:printRGB_inst|printSprite:spriteHeart1                                                                                                                                       ; printSprite     ; work         ;
 ;       |printSprite:spriteHeart2|                     ; 12 (12)     ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 8 (8)            ; |top|printRGB:printRGB_inst|printSprite:spriteHeart2                                                                                                                                       ; printSprite     ; work         ;
-;       |printSprite:spriteHeart3|                     ; 17 (17)     ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 9 (9)            ; |top|printRGB:printRGB_inst|printSprite:spriteHeart3                                                                                                                                       ; printSprite     ; work         ;
+;       |printSprite:spriteHeart3|                     ; 17 (17)     ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 8 (8)        ; 2 (2)             ; 7 (7)            ; |top|printRGB:printRGB_inst|printSprite:spriteHeart3                                                                                                                                       ; printSprite     ; work         ;
 +------------------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -792,35 +796,29 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; leds[1]   ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; leds[2]   ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; clk       ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
-; startGame ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
-; pauseGame ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; reset     ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
+; startGame ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; pauseGame ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; up        ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
 ; down      ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 +-----------+----------+---------------+---------------+-----------------------+-----+------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------+
-; Pad To Core Delay Chain Fanout                                                                                                              ;
-+---------------------------------------------------------------------------------------------------------------+-------------------+---------+
-; Source Pin / Fanout                                                                                           ; Pad To Core Index ; Setting ;
-+---------------------------------------------------------------------------------------------------------------+-------------------+---------+
-; clk                                                                                                           ;                   ;         ;
-; startGame                                                                                                     ;                   ;         ;
-;      - gameFSM:gameFSM_inst|state.RESET                                                                       ; 0                 ; 6       ;
-;      - gameFSM:gameFSM_inst|state.START                                                                       ; 0                 ; 6       ;
-;      - gameFSM:gameFSM_inst|Selector1~0                                                                       ; 0                 ; 6       ;
-;      - gameFSM:gameFSM_inst|Selector2~0                                                                       ; 0                 ; 6       ;
-; pauseGame                                                                                                     ;                   ;         ;
-;      - gameFSM:gameFSM_inst|Selector1~0                                                                       ; 0                 ; 6       ;
-;      - gameFSM:gameFSM_inst|Selector1~1                                                                       ; 0                 ; 6       ;
-;      - gameFSM:gameFSM_inst|Selector2~0                                                                       ; 0                 ; 6       ;
-; reset                                                                                                         ;                   ;         ;
-; up                                                                                                            ;                   ;         ;
-; down                                                                                                          ;                   ;         ;
-;      - printRGB:printRGB_inst|movementModule:movementModule_inst|spriteMoveFSM:spriteMoveFSM_inst|Selector2~0 ; 0                 ; 6       ;
-;      - printRGB:printRGB_inst|movementModule:movementModule_inst|spriteMoveFSM:spriteMoveFSM_inst|Selector3~0 ; 0                 ; 6       ;
-+---------------------------------------------------------------------------------------------------------------+-------------------+---------+
++-----------------------------------------------------------------------------------------------+
+; Pad To Core Delay Chain Fanout                                                                ;
++-----------------------------------------------------------------+-------------------+---------+
+; Source Pin / Fanout                                             ; Pad To Core Index ; Setting ;
++-----------------------------------------------------------------+-------------------+---------+
+; clk                                                             ;                   ;         ;
+; reset                                                           ;                   ;         ;
+; startGame                                                       ;                   ;         ;
+;      - button_Debounce:button_Debounce_start|current_bit~feeder ; 0                 ; 6       ;
+; pauseGame                                                       ;                   ;         ;
+;      - button_Debounce:button_Debounce_pause|current_bit~feeder ; 1                 ; 6       ;
+; up                                                              ;                   ;         ;
+; down                                                            ;                   ;         ;
+;      - button_Debounce:button_Debounce_down|current_bit~0       ; 0                 ; 6       ;
++-----------------------------------------------------------------+-------------------+---------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -828,39 +826,43 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------------------------------------------------------+--------------------+---------+----------------------------------------+--------+----------------------+------------------+---------------------------+
 ; Name                                                                                               ; Location           ; Fan-Out ; Usage                                  ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +----------------------------------------------------------------------------------------------------+--------------------+---------+----------------------------------------+--------+----------------------+------------------+---------------------------+
-; VGA_R[0]~6                                                                                         ; LCCOMB_X25_Y15_N16 ; 4       ; Latch enable                           ; no     ; --                   ; --               ; --                        ;
-; VGA_R[0]~6                                                                                         ; LCCOMB_X25_Y15_N16 ; 11      ; Latch enable                           ; yes    ; Global Clock         ; GCLK16           ; --                        ;
-; clk                                                                                                ; PIN_R8             ; 140     ; Clock                                  ; yes    ; Global Clock         ; GCLK18           ; --                        ;
+; VGA_G[2]~5                                                                                         ; LCCOMB_X25_Y15_N10 ; 11      ; Latch enable                           ; yes    ; Global Clock         ; GCLK11           ; --                        ;
+; VGA_G[2]~5                                                                                         ; LCCOMB_X25_Y15_N10 ; 4       ; Latch enable                           ; no     ; --                   ; --               ; --                        ;
+; button_Debounce:button_Debounce_down|always0~0                                                     ; LCCOMB_X16_Y14_N24 ; 22      ; Sync. clear                            ; no     ; --                   ; --               ; --                        ;
+; button_Debounce:button_Debounce_pause|always0~0                                                    ; LCCOMB_X50_Y12_N0  ; 22      ; Sync. clear                            ; no     ; --                   ; --               ; --                        ;
+; button_Debounce:button_Debounce_start|always0~0                                                    ; LCCOMB_X48_Y12_N2  ; 22      ; Sync. clear                            ; no     ; --                   ; --               ; --                        ;
+; button_Debounce:button_Debounce_start|out_state                                                    ; FF_X48_Y12_N25     ; 7       ; Clock enable                           ; no     ; --                   ; --               ; --                        ;
+; button_Debounce:button_Debounce_up|always0~0                                                       ; LCCOMB_X8_Y15_N30  ; 21      ; Sync. clear                            ; no     ; --                   ; --               ; --                        ;
+; clk                                                                                                ; PIN_R8             ; 236     ; Clock                                  ; yes    ; Global Clock         ; GCLK18           ; --                        ;
 ; clk                                                                                                ; PIN_R8             ; 19      ; Clock                                  ; no     ; --                   ; --               ; --                        ;
-; colour[8]~24                                                                                       ; LCCOMB_X24_Y15_N24 ; 4       ; Sync. clear                            ; no     ; --                   ; --               ; --                        ;
-; memorySprites:memorySprites_inst|Decoder0~0                                                        ; LCCOMB_X25_Y15_N6  ; 10      ; Latch enable                           ; yes    ; Global Clock         ; GCLK12           ; --                        ;
-; memorySprites:memorySprites_inst|Decoder0~1                                                        ; LCCOMB_X25_Y15_N4  ; 10      ; Latch enable                           ; yes    ; Global Clock         ; GCLK15           ; --                        ;
-; memorySprites:memorySprites_inst|Decoder0~2                                                        ; LCCOMB_X25_Y15_N2  ; 8       ; Latch enable                           ; yes    ; Global Clock         ; GCLK19           ; --                        ;
-; memorySprites:memorySprites_inst|Decoder0~4                                                        ; LCCOMB_X25_Y15_N30 ; 10      ; Latch enable                           ; yes    ; Global Clock         ; GCLK17           ; --                        ;
-; memorySprites:memorySprites_inst|read_enable1                                                      ; LCCOMB_X24_Y15_N8  ; 13      ; Clock enable, Sync. load, Write enable ; no     ; --                   ; --               ; --                        ;
-; memorySprites:memorySprites_inst|read_enable1~0                                                    ; LCCOMB_X24_Y15_N18 ; 1       ; Latch enable                           ; no     ; --                   ; --               ; --                        ;
-; memorySprites:memorySprites_inst|read_enable2                                                      ; LCCOMB_X25_Y15_N24 ; 13      ; Clock enable, Write enable             ; no     ; --                   ; --               ; --                        ;
-; memorySprites:memorySprites_inst|read_enable2~0                                                    ; LCCOMB_X25_Y15_N20 ; 1       ; Latch enable                           ; no     ; --                   ; --               ; --                        ;
-; memorySprites:memorySprites_inst|read_enable3~0                                                    ; LCCOMB_X24_Y15_N10 ; 1       ; Latch enable                           ; no     ; --                   ; --               ; --                        ;
-; memorySprites:memorySprites_inst|read_enable4                                                      ; LCCOMB_X25_Y15_N28 ; 9       ; Clock enable, Write enable             ; no     ; --                   ; --               ; --                        ;
-; memorySprites:memorySprites_inst|read_enable4~1                                                    ; LCCOMB_X24_Y15_N0  ; 1       ; Latch enable                           ; no     ; --                   ; --               ; --                        ;
-; memorySprites:memorySprites_inst|read_enable5                                                      ; LCCOMB_X25_Y15_N12 ; 6       ; Clock enable, Write enable             ; no     ; --                   ; --               ; --                        ;
-; memorySprites:memorySprites_inst|read_enable5~1                                                    ; LCCOMB_X24_Y15_N6  ; 1       ; Latch enable                           ; no     ; --                   ; --               ; --                        ;
-; printRGB:printRGB_inst|address[0]~14                                                               ; LCCOMB_X15_Y13_N30 ; 16      ; Clock enable                           ; no     ; --                   ; --               ; --                        ;
-; printRGB:printRGB_inst|address[0]~26                                                               ; LCCOMB_X19_Y13_N0  ; 8       ; Sync. clear                            ; no     ; --                   ; --               ; --                        ;
-; printRGB:printRGB_inst|barrier:barrier_inst|LessThan1~1                                            ; LCCOMB_X17_Y12_N10 ; 12      ; Clock enable                           ; no     ; --                   ; --               ; --                        ;
-; printRGB:printRGB_inst|barrier:barrier_inst|always0~1                                              ; LCCOMB_X19_Y11_N24 ; 13      ; Clock enable                           ; no     ; --                   ; --               ; --                        ;
-; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierLeft[4]~0                               ; LCCOMB_X17_Y10_N26 ; 5       ; Clock enable                           ; no     ; --                   ; --               ; --                        ;
-; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierRight[4]~2                              ; LCCOMB_X18_Y14_N6  ; 5       ; Clock enable                           ; no     ; --                   ; --               ; --                        ;
-; printRGB:printRGB_inst|barrier:barrier_inst|enable~1                                               ; LCCOMB_X19_Y13_N18 ; 13      ; Sync. load                             ; no     ; --                   ; --               ; --                        ;
-; printRGB:printRGB_inst|movementModule:movementModule_inst|new_position_y[9]~0                      ; LCCOMB_X11_Y14_N26 ; 11      ; Clock enable                           ; no     ; --                   ; --               ; --                        ;
-; printRGB:printRGB_inst|movementModule:movementModule_inst|printSprite:spriteGeneric|current_y[4]~1 ; LCCOMB_X12_Y13_N0  ; 10      ; Clock enable                           ; no     ; --                   ; --               ; --                        ;
-; printRGB:printRGB_inst|printSprite:spriteFruit|enable~4                                            ; LCCOMB_X19_Y11_N20 ; 16      ; Clock enable                           ; no     ; --                   ; --               ; --                        ;
-; printRGB:printRGB_inst|printSprite:spriteHeart1|column[0]~0                                        ; LCCOMB_X19_Y12_N10 ; 8       ; Clock enable                           ; no     ; --                   ; --               ; --                        ;
-; printRGB:printRGB_inst|printSprite:spriteHeart2|column[0]~0                                        ; LCCOMB_X18_Y12_N16 ; 8       ; Clock enable                           ; no     ; --                   ; --               ; --                        ;
-; printRGB:printRGB_inst|printSprite:spriteHeart3|column[0]~2                                        ; LCCOMB_X19_Y12_N16 ; 8       ; Clock enable                           ; no     ; --                   ; --               ; --                        ;
+; colour[8]~21                                                                                       ; LCCOMB_X26_Y15_N16 ; 4       ; Sync. clear                            ; no     ; --                   ; --               ; --                        ;
+; memorySprites:memorySprites_inst|Decoder0~0                                                        ; LCCOMB_X26_Y15_N6  ; 10      ; Latch enable                           ; yes    ; Global Clock         ; GCLK15           ; --                        ;
+; memorySprites:memorySprites_inst|Decoder0~1                                                        ; LCCOMB_X26_Y15_N24 ; 10      ; Latch enable                           ; yes    ; Global Clock         ; GCLK17           ; --                        ;
+; memorySprites:memorySprites_inst|Decoder0~2                                                        ; LCCOMB_X26_Y15_N26 ; 8       ; Latch enable                           ; yes    ; Global Clock         ; GCLK19           ; --                        ;
+; memorySprites:memorySprites_inst|Decoder0~3                                                        ; LCCOMB_X25_Y15_N8  ; 10      ; Latch enable                           ; yes    ; Global Clock         ; GCLK10           ; --                        ;
+; memorySprites:memorySprites_inst|read_enable1                                                      ; LCCOMB_X26_Y15_N20 ; 13      ; Clock enable, Sync. load, Write enable ; no     ; --                   ; --               ; --                        ;
+; memorySprites:memorySprites_inst|read_enable1~0                                                    ; LCCOMB_X26_Y15_N10 ; 1       ; Latch enable                           ; no     ; --                   ; --               ; --                        ;
+; memorySprites:memorySprites_inst|read_enable2                                                      ; LCCOMB_X26_Y15_N22 ; 13      ; Clock enable, Write enable             ; no     ; --                   ; --               ; --                        ;
+; memorySprites:memorySprites_inst|read_enable2~0                                                    ; LCCOMB_X26_Y15_N14 ; 1       ; Latch enable                           ; no     ; --                   ; --               ; --                        ;
+; memorySprites:memorySprites_inst|read_enable3~0                                                    ; LCCOMB_X25_Y15_N12 ; 1       ; Latch enable                           ; no     ; --                   ; --               ; --                        ;
+; memorySprites:memorySprites_inst|read_enable4                                                      ; LCCOMB_X26_Y15_N18 ; 8       ; Clock enable, Write enable             ; no     ; --                   ; --               ; --                        ;
+; memorySprites:memorySprites_inst|read_enable4~1                                                    ; LCCOMB_X26_Y15_N28 ; 1       ; Latch enable                           ; no     ; --                   ; --               ; --                        ;
+; memorySprites:memorySprites_inst|read_enable5                                                      ; LCCOMB_X25_Y15_N28 ; 5       ; Clock enable, Write enable             ; no     ; --                   ; --               ; --                        ;
+; memorySprites:memorySprites_inst|read_enable5~1                                                    ; LCCOMB_X25_Y15_N14 ; 1       ; Latch enable                           ; no     ; --                   ; --               ; --                        ;
+; printRGB:printRGB_inst|address[3]~14                                                               ; LCCOMB_X24_Y11_N20 ; 16      ; Clock enable                           ; no     ; --                   ; --               ; --                        ;
+; printRGB:printRGB_inst|address[3]~27                                                               ; LCCOMB_X24_Y11_N30 ; 8       ; Sync. clear                            ; no     ; --                   ; --               ; --                        ;
+; printRGB:printRGB_inst|barrier:barrier_inst|LessThan1~1                                            ; LCCOMB_X24_Y12_N18 ; 11      ; Clock enable                           ; no     ; --                   ; --               ; --                        ;
+; printRGB:printRGB_inst|barrier:barrier_inst|always0~1                                              ; LCCOMB_X25_Y10_N26 ; 12      ; Clock enable                           ; no     ; --                   ; --               ; --                        ;
+; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierLeft[4]~0                               ; LCCOMB_X20_Y15_N0  ; 5       ; Clock enable                           ; no     ; --                   ; --               ; --                        ;
+; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierRight[4]~2                              ; LCCOMB_X27_Y14_N2  ; 5       ; Clock enable                           ; no     ; --                   ; --               ; --                        ;
+; printRGB:printRGB_inst|barrier:barrier_inst|enable~1                                               ; LCCOMB_X25_Y14_N26 ; 13      ; Sync. load                             ; no     ; --                   ; --               ; --                        ;
+; printRGB:printRGB_inst|movementModule:movementModule_inst|new_position_y[9]~0                      ; LCCOMB_X19_Y10_N26 ; 11      ; Clock enable                           ; no     ; --                   ; --               ; --                        ;
+; printRGB:printRGB_inst|movementModule:movementModule_inst|printSprite:spriteGeneric|current_y[1]~1 ; LCCOMB_X19_Y10_N0  ; 10      ; Clock enable                           ; no     ; --                   ; --               ; --                        ;
+; printRGB:printRGB_inst|printSprite:spriteFruit|enable~4                                            ; LCCOMB_X23_Y12_N8  ; 16      ; Clock enable                           ; no     ; --                   ; --               ; --                        ;
+; printRGB:printRGB_inst|printSprite:spriteHeart1|column[0]~0                                        ; LCCOMB_X24_Y10_N14 ; 8       ; Clock enable                           ; no     ; --                   ; --               ; --                        ;
+; printRGB:printRGB_inst|printSprite:spriteHeart2|column[0]~0                                        ; LCCOMB_X24_Y14_N6  ; 8       ; Clock enable                           ; no     ; --                   ; --               ; --                        ;
+; printRGB:printRGB_inst|printSprite:spriteHeart3|column[0]~2                                        ; LCCOMB_X24_Y10_N16 ; 8       ; Clock enable                           ; no     ; --                   ; --               ; --                        ;
 ; reset                                                                                              ; PIN_M1             ; 2       ; Async. clear                           ; yes    ; Global Clock         ; GCLK3            ; --                        ;
-; startGame                                                                                          ; PIN_K16            ; 4       ; Clock enable                           ; no     ; --                   ; --               ; --                        ;
 +----------------------------------------------------------------------------------------------------+--------------------+---------+----------------------------------------+--------+----------------------+------------------+---------------------------+
 
 
@@ -869,12 +871,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------+--------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 ; Name                                        ; Location           ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +---------------------------------------------+--------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; VGA_R[0]~6                                  ; LCCOMB_X25_Y15_N16 ; 11      ; 0                                    ; Global Clock         ; GCLK16           ; --                        ;
-; clk                                         ; PIN_R8             ; 140     ; 0                                    ; Global Clock         ; GCLK18           ; --                        ;
-; memorySprites:memorySprites_inst|Decoder0~0 ; LCCOMB_X25_Y15_N6  ; 10      ; 0                                    ; Global Clock         ; GCLK12           ; --                        ;
-; memorySprites:memorySprites_inst|Decoder0~1 ; LCCOMB_X25_Y15_N4  ; 10      ; 0                                    ; Global Clock         ; GCLK15           ; --                        ;
-; memorySprites:memorySprites_inst|Decoder0~2 ; LCCOMB_X25_Y15_N2  ; 8       ; 0                                    ; Global Clock         ; GCLK19           ; --                        ;
-; memorySprites:memorySprites_inst|Decoder0~4 ; LCCOMB_X25_Y15_N30 ; 10      ; 0                                    ; Global Clock         ; GCLK17           ; --                        ;
+; VGA_G[2]~5                                  ; LCCOMB_X25_Y15_N10 ; 11      ; 0                                    ; Global Clock         ; GCLK11           ; --                        ;
+; clk                                         ; PIN_R8             ; 236     ; 15                                   ; Global Clock         ; GCLK18           ; --                        ;
+; memorySprites:memorySprites_inst|Decoder0~0 ; LCCOMB_X26_Y15_N6  ; 10      ; 0                                    ; Global Clock         ; GCLK15           ; --                        ;
+; memorySprites:memorySprites_inst|Decoder0~1 ; LCCOMB_X26_Y15_N24 ; 10      ; 0                                    ; Global Clock         ; GCLK17           ; --                        ;
+; memorySprites:memorySprites_inst|Decoder0~2 ; LCCOMB_X26_Y15_N26 ; 8       ; 0                                    ; Global Clock         ; GCLK19           ; --                        ;
+; memorySprites:memorySprites_inst|Decoder0~3 ; LCCOMB_X25_Y15_N8  ; 10      ; 0                                    ; Global Clock         ; GCLK10           ; --                        ;
 ; reset                                       ; PIN_M1             ; 2       ; 0                                    ; Global Clock         ; GCLK3            ; --                        ;
 +---------------------------------------------+--------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
@@ -884,9 +886,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+-------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+-------------------------------------------+----------------+----------------------+------------------------+------------------------+----------+------------------------+---------------+
 ; Name                                                                                                                   ; Type ; Mode             ; Clock Mode   ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Port A Input Registers ; Port A Output Registers ; Port B Input Registers ; Port B Output Registers ; Size  ; Implementation Port A Depth ; Implementation Port A Width ; Implementation Port B Depth ; Implementation Port B Width ; Implementation Bits ; M9Ks ; MIF                                       ; Location       ; Mixed Width RDW Mode ; Port A RDW Mode        ; Port B RDW Mode        ; ECC Mode ; ECC Pipeline Registers ; Fits in MLABs ;
 +------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+-------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+-------------------------------------------+----------------+----------------------+------------------------+------------------------+----------+------------------------+---------------+
-; memorySprites:memorySprites_inst|sram:element1|altsyncram:memory_array_rtl_0|altsyncram_hji1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; Single Clock ; 625          ; 8            ; 625          ; 8            ; yes                    ; no                      ; yes                    ; no                      ; 5000  ; 625                         ; 6                           ; 625                         ; 6                           ; 3750                ; 1    ; db/consoleFPGA.ram0_sram_5b0dd007.hdl.mif ; M9K_X22_Y15_N0 ; Don't care           ; New data with NBE Read ; New data with NBE Read ; Off      ; No                     ; No - Unknown  ;
+; memorySprites:memorySprites_inst|sram:element1|altsyncram:memory_array_rtl_0|altsyncram_hji1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; Single Clock ; 625          ; 8            ; 625          ; 8            ; yes                    ; no                      ; yes                    ; no                      ; 5000  ; 625                         ; 6                           ; 625                         ; 6                           ; 3750                ; 1    ; db/consoleFPGA.ram0_sram_5b0dd007.hdl.mif ; M9K_X22_Y17_N0 ; Don't care           ; New data with NBE Read ; New data with NBE Read ; Off      ; No                     ; No - Unknown  ;
 ; memorySprites:memorySprites_inst|sram:element2|altsyncram:memory_array_rtl_0|altsyncram_vli1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; Single Clock ; 256          ; 8            ; 256          ; 8            ; yes                    ; no                      ; yes                    ; no                      ; 2048  ; 256                         ; 6                           ; 256                         ; 6                           ; 1536                ; 1    ; db/consoleFPGA.ram0_sram_a9fbafe8.hdl.mif ; M9K_X22_Y16_N0 ; Don't care           ; New data with NBE Read ; New data with NBE Read ; Off      ; No                     ; No - Unknown  ;
-; memorySprites:memorySprites_inst|sram:element4|altsyncram:memory_array_rtl_0|altsyncram_gsi1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; Single Clock ; 10000        ; 8            ; 10000        ; 8            ; yes                    ; no                      ; yes                    ; no                      ; 80000 ; 1024                        ; 6                           ; 1024                        ; 6                           ; 6144                ; 1    ; db/consoleFPGA.ram0_sram_ef7f0a8d.hdl.mif ; M9K_X22_Y13_N0 ; Don't care           ; New data with NBE Read ; New data with NBE Read ; Off      ; No                     ; No - Unknown  ;
+; memorySprites:memorySprites_inst|sram:element4|altsyncram:memory_array_rtl_0|altsyncram_gsi1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; Single Clock ; 10000        ; 8            ; 10000        ; 8            ; yes                    ; no                      ; yes                    ; no                      ; 80000 ; 1024                        ; 6                           ; 1024                        ; 6                           ; 6144                ; 1    ; db/consoleFPGA.ram0_sram_ef7f0a8d.hdl.mif ; M9K_X22_Y15_N0 ; Don't care           ; New data with NBE Read ; New data with NBE Read ; Off      ; No                     ; No - Unknown  ;
 ; memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_0ji1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; Single Clock ; 625          ; 8            ; 625          ; 8            ; yes                    ; no                      ; yes                    ; no                      ; 5000  ; 625                         ; 6                           ; 625                         ; 6                           ; 3750                ; 1    ; db/consoleFPGA.ram0_sram_e8a88779.hdl.mif ; M9K_X22_Y14_N0 ; Don't care           ; New data with NBE Read ; New data with NBE Read ; Off      ; No                     ; No - Unknown  ;
 +------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+-------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+-------------------------------------------+----------------+----------------------+------------------------+------------------------+----------+------------------------+---------------+
 Note: Fitter may spread logical memories into multiple blocks to improve timing. The actual required RAM blocks can be found in the Fitter Resource Usage section.
@@ -2369,50 +2371,50 @@ RAM content values are presented in the following format: (Binary) (Octal) (Deci
 +-----------------------+------------------------+
 ; Routing Resource Type ; Usage                  ;
 +-----------------------+------------------------+
-; Block interconnects   ; 1,075 / 71,559 ( 2 % ) ;
-; C16 interconnects     ; 32 / 2,597 ( 1 % )     ;
-; C4 interconnects      ; 654 / 46,848 ( 1 % )   ;
-; Direct links          ; 163 / 71,559 ( < 1 % ) ;
+; Block interconnects   ; 1,124 / 71,559 ( 2 % ) ;
+; C16 interconnects     ; 28 / 2,597 ( 1 % )     ;
+; C4 interconnects      ; 673 / 46,848 ( 1 % )   ;
+; Direct links          ; 201 / 71,559 ( < 1 % ) ;
 ; Global clocks         ; 7 / 20 ( 35 % )        ;
-; Local interconnects   ; 348 / 24,624 ( 1 % )   ;
-; R24 interconnects     ; 31 / 2,496 ( 1 % )     ;
-; R4 interconnects      ; 749 / 62,424 ( 1 % )   ;
+; Local interconnects   ; 440 / 24,624 ( 2 % )   ;
+; R24 interconnects     ; 23 / 2,496 ( < 1 % )   ;
+; R4 interconnects      ; 723 / 62,424 ( 1 % )   ;
 +-----------------------+------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Logic Elements                                                         ;
 +---------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 11.75) ; Number of LABs  (Total = 57) ;
+; Number of Logic Elements  (Average = 12.32) ; Number of LABs  (Total = 65) ;
 +---------------------------------------------+------------------------------+
-; 1                                           ; 2                            ;
-; 2                                           ; 2                            ;
-; 3                                           ; 3                            ;
-; 4                                           ; 1                            ;
-; 5                                           ; 3                            ;
-; 6                                           ; 2                            ;
+; 1                                           ; 1                            ;
+; 2                                           ; 3                            ;
+; 3                                           ; 2                            ;
+; 4                                           ; 2                            ;
+; 5                                           ; 2                            ;
+; 6                                           ; 1                            ;
 ; 7                                           ; 2                            ;
-; 8                                           ; 2                            ;
-; 9                                           ; 0                            ;
+; 8                                           ; 1                            ;
+; 9                                           ; 2                            ;
 ; 10                                          ; 1                            ;
-; 11                                          ; 3                            ;
+; 11                                          ; 5                            ;
 ; 12                                          ; 0                            ;
 ; 13                                          ; 4                            ;
-; 14                                          ; 4                            ;
-; 15                                          ; 5                            ;
-; 16                                          ; 23                           ;
+; 14                                          ; 3                            ;
+; 15                                          ; 11                           ;
+; 16                                          ; 25                           ;
 +---------------------------------------------+------------------------------+
 
 
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 1.05) ; Number of LABs  (Total = 57) ;
+; LAB-wide Signals  (Average = 1.29) ; Number of LABs  (Total = 65) ;
 +------------------------------------+------------------------------+
 ; 1 Async. clear                     ; 1                            ;
-; 1 Clock                            ; 35                           ;
-; 1 Clock enable                     ; 9                            ;
-; 1 Sync. clear                      ; 6                            ;
+; 1 Clock                            ; 49                           ;
+; 1 Clock enable                     ; 12                           ;
+; 1 Sync. clear                      ; 13                           ;
 ; 1 Sync. load                       ; 5                            ;
 ; 2 Clock enables                    ; 1                            ;
 ; 2 Clocks                           ; 3                            ;
@@ -2422,107 +2424,105 @@ RAM content values are presented in the following format: (Binary) (Octal) (Deci
 +-----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 13.88) ; Number of LABs  (Total = 57) ;
+; Number of Signals Sourced  (Average = 15.63) ; Number of LABs  (Total = 65) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
-; 1                                            ; 3                            ;
+; 1                                            ; 1                            ;
 ; 2                                            ; 1                            ;
-; 3                                            ; 3                            ;
-; 4                                            ; 1                            ;
-; 5                                            ; 1                            ;
-; 6                                            ; 2                            ;
+; 3                                            ; 1                            ;
+; 4                                            ; 4                            ;
+; 5                                            ; 2                            ;
+; 6                                            ; 0                            ;
 ; 7                                            ; 2                            ;
-; 8                                            ; 2                            ;
-; 9                                            ; 1                            ;
+; 8                                            ; 4                            ;
+; 9                                            ; 2                            ;
 ; 10                                           ; 2                            ;
 ; 11                                           ; 2                            ;
-; 12                                           ; 2                            ;
+; 12                                           ; 0                            ;
 ; 13                                           ; 0                            ;
-; 14                                           ; 2                            ;
-; 15                                           ; 3                            ;
+; 14                                           ; 0                            ;
+; 15                                           ; 0                            ;
 ; 16                                           ; 9                            ;
-; 17                                           ; 5                            ;
+; 17                                           ; 8                            ;
 ; 18                                           ; 4                            ;
-; 19                                           ; 0                            ;
-; 20                                           ; 0                            ;
+; 19                                           ; 3                            ;
+; 20                                           ; 3                            ;
 ; 21                                           ; 4                            ;
 ; 22                                           ; 2                            ;
-; 23                                           ; 2                            ;
+; 23                                           ; 3                            ;
 ; 24                                           ; 0                            ;
-; 25                                           ; 2                            ;
-; 26                                           ; 1                            ;
-; 27                                           ; 1                            ;
+; 25                                           ; 1                            ;
+; 26                                           ; 3                            ;
+; 27                                           ; 3                            ;
+; 28                                           ; 1                            ;
 +----------------------------------------------+------------------------------+
 
 
 +--------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                        ;
 +-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 7.26) ; Number of LABs  (Total = 57) ;
+; Number of Signals Sourced Out  (Average = 6.94) ; Number of LABs  (Total = 65) ;
 +-------------------------------------------------+------------------------------+
 ; 0                                               ; 0                            ;
-; 1                                               ; 6                            ;
-; 2                                               ; 5                            ;
+; 1                                               ; 7                            ;
+; 2                                               ; 10                           ;
 ; 3                                               ; 6                            ;
-; 4                                               ; 1                            ;
-; 5                                               ; 3                            ;
-; 6                                               ; 6                            ;
-; 7                                               ; 3                            ;
-; 8                                               ; 5                            ;
-; 9                                               ; 2                            ;
-; 10                                              ; 5                            ;
-; 11                                              ; 3                            ;
-; 12                                              ; 5                            ;
+; 4                                               ; 3                            ;
+; 5                                               ; 4                            ;
+; 6                                               ; 2                            ;
+; 7                                               ; 7                            ;
+; 8                                               ; 1                            ;
+; 9                                               ; 1                            ;
+; 10                                              ; 6                            ;
+; 11                                              ; 5                            ;
+; 12                                              ; 4                            ;
 ; 13                                              ; 1                            ;
-; 14                                              ; 2                            ;
-; 15                                              ; 2                            ;
+; 14                                              ; 4                            ;
+; 15                                              ; 1                            ;
 ; 16                                              ; 2                            ;
+; 17                                              ; 1                            ;
 +-------------------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 15.02) ; Number of LABs  (Total = 57) ;
+; Number of Distinct Inputs  (Average = 13.74) ; Number of LABs  (Total = 65) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
 ; 1                                            ; 0                            ;
-; 2                                            ; 3                            ;
-; 3                                            ; 0                            ;
+; 2                                            ; 4                            ;
+; 3                                            ; 3                            ;
 ; 4                                            ; 7                            ;
-; 5                                            ; 2                            ;
-; 6                                            ; 3                            ;
-; 7                                            ; 2                            ;
-; 8                                            ; 0                            ;
-; 9                                            ; 2                            ;
-; 10                                           ; 1                            ;
-; 11                                           ; 1                            ;
+; 5                                            ; 4                            ;
+; 6                                            ; 4                            ;
+; 7                                            ; 3                            ;
+; 8                                            ; 1                            ;
+; 9                                            ; 0                            ;
+; 10                                           ; 3                            ;
+; 11                                           ; 2                            ;
 ; 12                                           ; 0                            ;
-; 13                                           ; 4                            ;
-; 14                                           ; 1                            ;
-; 15                                           ; 6                            ;
+; 13                                           ; 2                            ;
+; 14                                           ; 2                            ;
+; 15                                           ; 4                            ;
 ; 16                                           ; 2                            ;
-; 17                                           ; 1                            ;
-; 18                                           ; 2                            ;
-; 19                                           ; 2                            ;
-; 20                                           ; 2                            ;
-; 21                                           ; 1                            ;
+; 17                                           ; 0                            ;
+; 18                                           ; 3                            ;
+; 19                                           ; 0                            ;
+; 20                                           ; 4                            ;
+; 21                                           ; 0                            ;
 ; 22                                           ; 2                            ;
-; 23                                           ; 2                            ;
-; 24                                           ; 3                            ;
-; 25                                           ; 0                            ;
+; 23                                           ; 1                            ;
+; 24                                           ; 4                            ;
+; 25                                           ; 2                            ;
 ; 26                                           ; 0                            ;
-; 27                                           ; 2                            ;
-; 28                                           ; 1                            ;
-; 29                                           ; 2                            ;
+; 27                                           ; 1                            ;
+; 28                                           ; 5                            ;
+; 29                                           ; 0                            ;
 ; 30                                           ; 1                            ;
 ; 31                                           ; 0                            ;
-; 32                                           ; 1                            ;
-; 33                                           ; 0                            ;
-; 34                                           ; 0                            ;
-; 35                                           ; 0                            ;
-; 36                                           ; 0                            ;
-; 37                                           ; 1                            ;
+; 32                                           ; 0                            ;
+; 33                                           ; 1                            ;
 +----------------------------------------------+------------------------------+
 
 
@@ -2602,9 +2602,9 @@ RAM content values are presented in the following format: (Binary) (Octal) (Deci
 ; leds[1]            ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
 ; leds[2]            ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
 ; clk                ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
+; reset              ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
 ; startGame          ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
 ; pauseGame          ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
-; reset              ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
 ; up                 ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
 ; down               ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Pass      ; Inapplicable ; Inapplicable ;
 +--------------------+--------------+-----------+-----------+--------------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+-----------+-----------+--------------+--------------+
@@ -2651,121 +2651,121 @@ RAM content values are presented in the following format: (Binary) (Octal) (Deci
 +----------------------------+----------------------------+-------------------+
 ; Source Clock(s)            ; Destination Clock(s)       ; Delay Added in ns ;
 +----------------------------+----------------------------+-------------------+
-; clk                        ; clk                        ; 148.8             ;
-; clk,elementMemory[0]       ; clk                        ; 57.4              ;
-; clk                        ; SVGA_sync:SVGA|pixel_x[10] ; 17.5              ;
-; SVGA_sync:SVGA|pixel_x[10] ; clk,elementMemory[0]       ; 15.3              ;
+; clk                        ; clk                        ; 155.2             ;
+; clk,elementMemory[0]       ; clk                        ; 48.4              ;
+; SVGA_sync:SVGA|pixel_x[10] ; clk,elementMemory[0]       ; 14.6              ;
+; clk                        ; SVGA_sync:SVGA|pixel_x[10] ; 12.6              ;
 +----------------------------+----------------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using the Timing Analyzer.
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Estimated Delay Added for Hold Timing Details                                                                                                                                                                                          ;
-+---------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+-------------------+
-; Source Register                                                                                                                             ; Destination Register                                                 ; Delay Added in ns ;
-+---------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+-------------------+
-; elementMemory[0]                                                                                                                            ; memorySprites:memorySprites_inst|read_enable4                        ; 3.822             ;
-; elementMemory[2]                                                                                                                            ; memorySprites:memorySprites_inst|read_enable4                        ; 3.822             ;
-; elementMemory[1]                                                                                                                            ; memorySprites:memorySprites_inst|read_enable4                        ; 3.822             ;
-; SVGA_sync:SVGA|pixel_y[7]                                                                                                                   ; printRGB:printRGB_inst|ready                                         ; 2.807             ;
-; SVGA_sync:SVGA|pixel_y[8]                                                                                                                   ; printRGB:printRGB_inst|ready                                         ; 2.807             ;
-; SVGA_sync:SVGA|pixel_y[6]                                                                                                                   ; printRGB:printRGB_inst|ready                                         ; 2.807             ;
-; SVGA_sync:SVGA|pixel_y[5]                                                                                                                   ; printRGB:printRGB_inst|ready                                         ; 2.807             ;
-; SVGA_sync:SVGA|pixel_y[4]                                                                                                                   ; printRGB:printRGB_inst|ready                                         ; 2.807             ;
-; SVGA_sync:SVGA|pixel_y[3]                                                                                                                   ; printRGB:printRGB_inst|ready                                         ; 2.807             ;
-; SVGA_sync:SVGA|pixel_x[10]                                                                                                                  ; printRGB:printRGB_inst|ready                                         ; 2.807             ;
-; SVGA_sync:SVGA|pixel_x[9]                                                                                                                   ; printRGB:printRGB_inst|ready                                         ; 2.807             ;
-; SVGA_sync:SVGA|pixel_x[7]                                                                                                                   ; printRGB:printRGB_inst|ready                                         ; 2.807             ;
-; SVGA_sync:SVGA|pixel_x[6]                                                                                                                   ; printRGB:printRGB_inst|ready                                         ; 2.807             ;
-; SVGA_sync:SVGA|pixel_x[5]                                                                                                                   ; printRGB:printRGB_inst|ready                                         ; 2.807             ;
-; SVGA_sync:SVGA|pixel_x[8]                                                                                                                   ; printRGB:printRGB_inst|ready                                         ; 2.807             ;
-; SVGA_sync:SVGA|pixel_y[9]                                                                                                                   ; printRGB:printRGB_inst|ready                                         ; 2.807             ;
-; SVGA_sync:SVGA|pixel_x[4]                                                                                                                   ; printRGB:printRGB_inst|element[0]                                    ; 2.345             ;
-; SVGA_sync:SVGA|pixel_x[3]                                                                                                                   ; printRGB:printRGB_inst|element[0]                                    ; 2.345             ;
-; SVGA_sync:SVGA|pixel_x[2]                                                                                                                   ; printRGB:printRGB_inst|element[0]                                    ; 2.345             ;
-; SVGA_sync:SVGA|pixel_x[1]                                                                                                                   ; printRGB:printRGB_inst|element[0]                                    ; 2.345             ;
-; SVGA_sync:SVGA|pixel_x[0]                                                                                                                   ; printRGB:printRGB_inst|element[0]                                    ; 2.345             ;
-; memorySprites:memorySprites_inst|read_enable3                                                                                               ; VGA_G[1]~reg0                                                        ; 2.262             ;
-; memorySprites:memorySprites_inst|read_enable1                                                                                               ; VGA_G[1]~reg0                                                        ; 2.238             ;
-; memorySprites:memorySprites_inst|read_enable2                                                                                               ; VGA_G[1]~reg0                                                        ; 2.047             ;
-; printRGB:printRGB_inst|address[8]                                                                                                           ; addressMemory[8]                                                     ; 1.820             ;
-; printRGB:printRGB_inst|address[0]                                                                                                           ; addressMemory[0]                                                     ; 1.819             ;
-; printRGB:printRGB_inst|address[1]                                                                                                           ; addressMemory[1]                                                     ; 1.819             ;
-; printRGB:printRGB_inst|address[4]                                                                                                           ; addressMemory[4]                                                     ; 1.819             ;
-; printRGB:printRGB_inst|address[5]                                                                                                           ; addressMemory[5]                                                     ; 1.819             ;
-; printRGB:printRGB_inst|address[7]                                                                                                           ; addressMemory[7]                                                     ; 1.819             ;
-; SVGA_sync:SVGA|pixel_y[2]                                                                                                                   ; printRGB:printRGB_inst|element[0]                                    ; 1.772             ;
-; SVGA_sync:SVGA|pixel_y[0]                                                                                                                   ; printRGB:printRGB_inst|element[0]                                    ; 1.772             ;
-; SVGA_sync:SVGA|pixel_y[1]                                                                                                                   ; printRGB:printRGB_inst|element[0]                                    ; 1.772             ;
-; memorySprites:memorySprites_inst|read_enable5                                                                                               ; VGA_B[0]~reg0                                                        ; 1.648             ;
-; memorySprites:memorySprites_inst|read_enable4                                                                                               ; VGA_R[1]~reg0                                                        ; 1.629             ;
-; printRGB:printRGB_inst|address[9]                                                                                                           ; addressMemory[9]                                                     ; 1.552             ;
-; printRGB:printRGB_inst|address[3]                                                                                                           ; addressMemory[3]                                                     ; 1.462             ;
-; printRGB:printRGB_inst|address[6]                                                                                                           ; addressMemory[6]                                                     ; 1.348             ;
-; printRGB:printRGB_inst|ready                                                                                                                ; VGA_G[1]~reg0                                                        ; 1.334             ;
-; printRGB:printRGB_inst|movementModule:movementModule_inst|printSprite:spriteGeneric|current_y[9]                                            ; printRGB:printRGB_inst|ready                                         ; 1.200             ;
-; printRGB:printRGB_inst|movementModule:movementModule_inst|printSprite:spriteGeneric|current_y[8]                                            ; printRGB:printRGB_inst|ready                                         ; 1.200             ;
-; printRGB:printRGB_inst|movementModule:movementModule_inst|printSprite:spriteGeneric|current_y[7]                                            ; printRGB:printRGB_inst|ready                                         ; 1.200             ;
-; printRGB:printRGB_inst|movementModule:movementModule_inst|printSprite:spriteGeneric|current_y[6]                                            ; printRGB:printRGB_inst|ready                                         ; 1.200             ;
-; printRGB:printRGB_inst|movementModule:movementModule_inst|printSprite:spriteGeneric|current_y[5]                                            ; printRGB:printRGB_inst|ready                                         ; 1.200             ;
-; printRGB:printRGB_inst|movementModule:movementModule_inst|printSprite:spriteGeneric|current_y[4]                                            ; printRGB:printRGB_inst|ready                                         ; 1.200             ;
-; printRGB:printRGB_inst|movementModule:movementModule_inst|printSprite:spriteGeneric|current_y[3]                                            ; printRGB:printRGB_inst|ready                                         ; 1.200             ;
-; printRGB:printRGB_inst|movementModule:movementModule_inst|printSprite:spriteGeneric|current_y[2]                                            ; printRGB:printRGB_inst|ready                                         ; 1.200             ;
-; printRGB:printRGB_inst|movementModule:movementModule_inst|printSprite:spriteGeneric|current_y[1]                                            ; printRGB:printRGB_inst|ready                                         ; 1.200             ;
-; printRGB:printRGB_inst|movementModule:movementModule_inst|printSprite:spriteGeneric|current_y[0]                                            ; printRGB:printRGB_inst|ready                                         ; 1.200             ;
-; gameFSM:gameFSM_inst|dataout[0]                                                                                                             ; printRGB:printRGB_inst|address[6]                                    ; 1.166             ;
-; gameFSM:gameFSM_inst|dataout[1]                                                                                                             ; printRGB:printRGB_inst|address[6]                                    ; 1.166             ;
-; printRGB:printRGB_inst|address[2]                                                                                                           ; addressMemory[2]                                                     ; 1.142             ;
-; printRGB:printRGB_inst|element[0]                                                                                                           ; elementMemory[0]                                                     ; 1.096             ;
-; memorySprites:memorySprites_inst|sram:element1|altsyncram:memory_array_rtl_0|altsyncram_hji1:auto_generated|ram_block1a0~portb_address_reg0 ; VGA_B[2]~reg0                                                        ; 1.071             ;
-; memorySprites:memorySprites_inst|sram:element1|altsyncram:memory_array_rtl_0|altsyncram_hji1:auto_generated|ram_block1a4~portb_address_reg0 ; VGA_B[2]~reg0                                                        ; 1.071             ;
-; memorySprites:memorySprites_inst|sram:element1|altsyncram:memory_array_rtl_0|altsyncram_hji1:auto_generated|ram_block1a1~portb_address_reg0 ; VGA_B[2]~reg0                                                        ; 1.071             ;
-; memorySprites:memorySprites_inst|sram:element1|altsyncram:memory_array_rtl_0|altsyncram_hji1:auto_generated|ram_block1a2~portb_address_reg0 ; VGA_B[2]~reg0                                                        ; 1.071             ;
-; memorySprites:memorySprites_inst|sram:element1|altsyncram:memory_array_rtl_0|altsyncram_hji1:auto_generated|ram_block1a3~portb_address_reg0 ; VGA_B[2]~reg0                                                        ; 1.071             ;
-; memorySprites:memorySprites_inst|sram:element1|altsyncram:memory_array_rtl_0|altsyncram_hji1:auto_generated|ram_block1a5~portb_address_reg0 ; VGA_B[2]~reg0                                                        ; 1.071             ;
-; memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_0ji1:auto_generated|ram_block1a0~portb_address_reg0 ; VGA_R[1]~reg0                                                        ; 0.847             ;
-; memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_0ji1:auto_generated|ram_block1a1~portb_address_reg0 ; VGA_R[1]~reg0                                                        ; 0.847             ;
-; memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_0ji1:auto_generated|ram_block1a2~portb_address_reg0 ; VGA_R[1]~reg0                                                        ; 0.847             ;
-; memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_0ji1:auto_generated|ram_block1a3~portb_address_reg0 ; VGA_R[1]~reg0                                                        ; 0.847             ;
-; memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_0ji1:auto_generated|ram_block1a4~portb_address_reg0 ; VGA_R[1]~reg0                                                        ; 0.847             ;
-; memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_0ji1:auto_generated|ram_block1a5~portb_address_reg0 ; VGA_R[1]~reg0                                                        ; 0.847             ;
-; memorySprites:memorySprites_inst|sram:element2|altsyncram:memory_array_rtl_0|altsyncram_vli1:auto_generated|ram_block1a5~portb_address_reg0 ; VGA_R[1]~reg0                                                        ; 0.847             ;
-; memorySprites:memorySprites_inst|sram:element2|altsyncram:memory_array_rtl_0|altsyncram_vli1:auto_generated|ram_block1a3~portb_address_reg0 ; VGA_R[1]~reg0                                                        ; 0.847             ;
-; memorySprites:memorySprites_inst|sram:element2|altsyncram:memory_array_rtl_0|altsyncram_vli1:auto_generated|ram_block1a0~portb_address_reg0 ; VGA_R[1]~reg0                                                        ; 0.847             ;
-; memorySprites:memorySprites_inst|sram:element2|altsyncram:memory_array_rtl_0|altsyncram_vli1:auto_generated|ram_block1a1~portb_address_reg0 ; VGA_R[1]~reg0                                                        ; 0.847             ;
-; memorySprites:memorySprites_inst|sram:element2|altsyncram:memory_array_rtl_0|altsyncram_vli1:auto_generated|ram_block1a2~portb_address_reg0 ; VGA_R[1]~reg0                                                        ; 0.847             ;
-; memorySprites:memorySprites_inst|sram:element2|altsyncram:memory_array_rtl_0|altsyncram_vli1:auto_generated|ram_block1a4~portb_address_reg0 ; VGA_R[1]~reg0                                                        ; 0.847             ;
-; memorySprites:memorySprites_inst|sram:element4|altsyncram:memory_array_rtl_0|altsyncram_gsi1:auto_generated|ram_block1a5~portb_address_reg0 ; VGA_G[0]~reg0                                                        ; 0.760             ;
-; memorySprites:memorySprites_inst|sram:element4|altsyncram:memory_array_rtl_0|altsyncram_gsi1:auto_generated|ram_block1a4~portb_address_reg0 ; VGA_G[0]~reg0                                                        ; 0.760             ;
-; memorySprites:memorySprites_inst|sram:element4|altsyncram:memory_array_rtl_0|altsyncram_gsi1:auto_generated|ram_block1a3~portb_address_reg0 ; VGA_G[0]~reg0                                                        ; 0.760             ;
-; memorySprites:memorySprites_inst|sram:element4|altsyncram:memory_array_rtl_0|altsyncram_gsi1:auto_generated|ram_block1a2~portb_address_reg0 ; VGA_G[0]~reg0                                                        ; 0.760             ;
-; memorySprites:memorySprites_inst|sram:element4|altsyncram:memory_array_rtl_0|altsyncram_gsi1:auto_generated|ram_block1a1~portb_address_reg0 ; VGA_G[0]~reg0                                                        ; 0.760             ;
-; memorySprites:memorySprites_inst|sram:element4|altsyncram:memory_array_rtl_0|altsyncram_gsi1:auto_generated|ram_block1a0~portb_address_reg0 ; VGA_B[0]~reg0                                                        ; 0.746             ;
-; SVGA_sync:SVGA|vsync                                                                                                                        ; SVGA_sync:SVGA|vsync                                                 ; 0.697             ;
-; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierUp[4]                                                                            ; printRGB:printRGB_inst|address[6]                                    ; 0.601             ;
-; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierUp[3]                                                                            ; printRGB:printRGB_inst|address[6]                                    ; 0.601             ;
-; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierUp[2]                                                                            ; printRGB:printRGB_inst|address[6]                                    ; 0.601             ;
-; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierUp[1]                                                                            ; printRGB:printRGB_inst|address[6]                                    ; 0.601             ;
-; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierUp[0]                                                                            ; printRGB:printRGB_inst|address[6]                                    ; 0.601             ;
-; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierLeft[4]                                                                          ; printRGB:printRGB_inst|address[6]                                    ; 0.601             ;
-; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierLeft[3]                                                                          ; printRGB:printRGB_inst|address[6]                                    ; 0.601             ;
-; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierLeft[2]                                                                          ; printRGB:printRGB_inst|address[6]                                    ; 0.601             ;
-; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierLeft[1]                                                                          ; printRGB:printRGB_inst|address[6]                                    ; 0.601             ;
-; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierLeft[0]                                                                          ; printRGB:printRGB_inst|address[6]                                    ; 0.601             ;
-; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierRight[3]                                                                         ; printRGB:printRGB_inst|address[3]                                    ; 0.566             ;
-; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierRight[2]                                                                         ; printRGB:printRGB_inst|address[3]                                    ; 0.566             ;
-; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierRight[1]                                                                         ; printRGB:printRGB_inst|address[3]                                    ; 0.566             ;
-; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierRight[0]                                                                         ; printRGB:printRGB_inst|address[3]                                    ; 0.566             ;
-; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierRight[4]                                                                         ; printRGB:printRGB_inst|address[8]                                    ; 0.499             ;
-; printRGB:printRGB_inst|movementModule:movementModule_inst|new_position_y[9]                                                                 ; printRGB:printRGB_inst|movementModule:movementModule_inst|moveSprite ; 0.442             ;
-; printRGB:printRGB_inst|movementModule:movementModule_inst|new_position_y[8]                                                                 ; printRGB:printRGB_inst|movementModule:movementModule_inst|moveSprite ; 0.442             ;
-; printRGB:printRGB_inst|movementModule:movementModule_inst|new_position_y[7]                                                                 ; printRGB:printRGB_inst|movementModule:movementModule_inst|moveSprite ; 0.442             ;
-; printRGB:printRGB_inst|movementModule:movementModule_inst|new_position_y[6]                                                                 ; printRGB:printRGB_inst|movementModule:movementModule_inst|moveSprite ; 0.442             ;
-; printRGB:printRGB_inst|movementModule:movementModule_inst|new_position_y[5]                                                                 ; printRGB:printRGB_inst|movementModule:movementModule_inst|moveSprite ; 0.442             ;
-; printRGB:printRGB_inst|movementModule:movementModule_inst|new_position_y[4]                                                                 ; printRGB:printRGB_inst|movementModule:movementModule_inst|moveSprite ; 0.442             ;
-; printRGB:printRGB_inst|movementModule:movementModule_inst|new_position_y[3]                                                                 ; printRGB:printRGB_inst|movementModule:movementModule_inst|moveSprite ; 0.442             ;
-+---------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+-------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Details                                                                                                                                                                                                                                                           ;
++---------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+-------------------+
+; Source Register                                                                                                                             ; Destination Register                                                                                                                  ; Delay Added in ns ;
++---------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+-------------------+
+; elementMemory[0]                                                                                                                            ; memorySprites:memorySprites_inst|read_enable4                                                                                         ; 3.372             ;
+; elementMemory[2]                                                                                                                            ; memorySprites:memorySprites_inst|read_enable4                                                                                         ; 3.372             ;
+; elementMemory[1]                                                                                                                            ; memorySprites:memorySprites_inst|read_enable4                                                                                         ; 3.372             ;
+; SVGA_sync:SVGA|pixel_y[7]                                                                                                                   ; printRGB:printRGB_inst|ready                                                                                                          ; 3.024             ;
+; SVGA_sync:SVGA|pixel_y[8]                                                                                                                   ; printRGB:printRGB_inst|ready                                                                                                          ; 3.024             ;
+; SVGA_sync:SVGA|pixel_y[6]                                                                                                                   ; printRGB:printRGB_inst|ready                                                                                                          ; 3.024             ;
+; SVGA_sync:SVGA|pixel_y[5]                                                                                                                   ; printRGB:printRGB_inst|ready                                                                                                          ; 3.024             ;
+; SVGA_sync:SVGA|pixel_y[4]                                                                                                                   ; printRGB:printRGB_inst|ready                                                                                                          ; 3.024             ;
+; SVGA_sync:SVGA|pixel_y[3]                                                                                                                   ; printRGB:printRGB_inst|ready                                                                                                          ; 3.024             ;
+; SVGA_sync:SVGA|pixel_x[10]                                                                                                                  ; printRGB:printRGB_inst|ready                                                                                                          ; 3.024             ;
+; SVGA_sync:SVGA|pixel_x[9]                                                                                                                   ; printRGB:printRGB_inst|ready                                                                                                          ; 3.024             ;
+; SVGA_sync:SVGA|pixel_x[7]                                                                                                                   ; printRGB:printRGB_inst|ready                                                                                                          ; 3.024             ;
+; SVGA_sync:SVGA|pixel_x[6]                                                                                                                   ; printRGB:printRGB_inst|ready                                                                                                          ; 3.024             ;
+; SVGA_sync:SVGA|pixel_x[5]                                                                                                                   ; printRGB:printRGB_inst|ready                                                                                                          ; 3.024             ;
+; SVGA_sync:SVGA|pixel_x[8]                                                                                                                   ; printRGB:printRGB_inst|ready                                                                                                          ; 3.024             ;
+; SVGA_sync:SVGA|pixel_y[9]                                                                                                                   ; printRGB:printRGB_inst|ready                                                                                                          ; 3.024             ;
+; SVGA_sync:SVGA|pixel_x[4]                                                                                                                   ; printRGB:printRGB_inst|element[0]                                                                                                     ; 2.557             ;
+; SVGA_sync:SVGA|pixel_x[3]                                                                                                                   ; printRGB:printRGB_inst|element[0]                                                                                                     ; 2.557             ;
+; SVGA_sync:SVGA|pixel_x[2]                                                                                                                   ; printRGB:printRGB_inst|element[0]                                                                                                     ; 2.557             ;
+; SVGA_sync:SVGA|pixel_x[1]                                                                                                                   ; printRGB:printRGB_inst|element[0]                                                                                                     ; 2.557             ;
+; SVGA_sync:SVGA|pixel_x[0]                                                                                                                   ; printRGB:printRGB_inst|element[0]                                                                                                     ; 2.557             ;
+; SVGA_sync:SVGA|pixel_y[2]                                                                                                                   ; printRGB:printRGB_inst|element[0]                                                                                                     ; 2.293             ;
+; SVGA_sync:SVGA|pixel_y[0]                                                                                                                   ; printRGB:printRGB_inst|element[0]                                                                                                     ; 2.293             ;
+; SVGA_sync:SVGA|pixel_y[1]                                                                                                                   ; printRGB:printRGB_inst|element[0]                                                                                                     ; 2.293             ;
+; memorySprites:memorySprites_inst|read_enable3                                                                                               ; VGA_R[1]~reg0                                                                                                                         ; 2.249             ;
+; memorySprites:memorySprites_inst|read_enable5                                                                                               ; VGA_R[1]~reg0                                                                                                                         ; 2.028             ;
+; memorySprites:memorySprites_inst|read_enable1                                                                                               ; VGA_R[1]~reg0                                                                                                                         ; 1.830             ;
+; printRGB:printRGB_inst|ready                                                                                                                ; VGA_B[1]~reg0                                                                                                                         ; 1.619             ;
+; memorySprites:memorySprites_inst|read_enable4                                                                                               ; memorySprites:memorySprites_inst|sram:element4|altsyncram:memory_array_rtl_0|altsyncram_gsi1:auto_generated|ram_block1a0~porta_we_reg ; 1.611             ;
+; gameFSM:gameFSM_inst|dataout[0]                                                                                                             ; printRGB:printRGB_inst|address[7]                                                                                                     ; 1.608             ;
+; gameFSM:gameFSM_inst|dataout[1]                                                                                                             ; printRGB:printRGB_inst|address[7]                                                                                                     ; 1.608             ;
+; memorySprites:memorySprites_inst|read_enable2                                                                                               ; VGA_B[1]~reg0                                                                                                                         ; 1.607             ;
+; printRGB:printRGB_inst|movementModule:movementModule_inst|printSprite:spriteGeneric|current_y[9]                                            ; printRGB:printRGB_inst|ready                                                                                                          ; 1.433             ;
+; printRGB:printRGB_inst|movementModule:movementModule_inst|printSprite:spriteGeneric|current_y[8]                                            ; printRGB:printRGB_inst|ready                                                                                                          ; 1.433             ;
+; printRGB:printRGB_inst|movementModule:movementModule_inst|printSprite:spriteGeneric|current_y[7]                                            ; printRGB:printRGB_inst|ready                                                                                                          ; 1.433             ;
+; printRGB:printRGB_inst|movementModule:movementModule_inst|printSprite:spriteGeneric|current_y[6]                                            ; printRGB:printRGB_inst|ready                                                                                                          ; 1.433             ;
+; printRGB:printRGB_inst|movementModule:movementModule_inst|printSprite:spriteGeneric|current_y[5]                                            ; printRGB:printRGB_inst|ready                                                                                                          ; 1.433             ;
+; printRGB:printRGB_inst|movementModule:movementModule_inst|printSprite:spriteGeneric|current_y[4]                                            ; printRGB:printRGB_inst|ready                                                                                                          ; 1.433             ;
+; printRGB:printRGB_inst|movementModule:movementModule_inst|printSprite:spriteGeneric|current_y[3]                                            ; printRGB:printRGB_inst|ready                                                                                                          ; 1.433             ;
+; printRGB:printRGB_inst|movementModule:movementModule_inst|printSprite:spriteGeneric|current_y[2]                                            ; printRGB:printRGB_inst|ready                                                                                                          ; 1.433             ;
+; printRGB:printRGB_inst|movementModule:movementModule_inst|printSprite:spriteGeneric|current_y[1]                                            ; printRGB:printRGB_inst|ready                                                                                                          ; 1.433             ;
+; printRGB:printRGB_inst|movementModule:movementModule_inst|printSprite:spriteGeneric|current_y[0]                                            ; printRGB:printRGB_inst|ready                                                                                                          ; 1.433             ;
+; printRGB:printRGB_inst|address[0]                                                                                                           ; addressMemory[0]                                                                                                                      ; 1.224             ;
+; printRGB:printRGB_inst|address[2]                                                                                                           ; addressMemory[2]                                                                                                                      ; 1.224             ;
+; printRGB:printRGB_inst|address[4]                                                                                                           ; addressMemory[4]                                                                                                                      ; 1.224             ;
+; printRGB:printRGB_inst|element[0]                                                                                                           ; elementMemory[0]                                                                                                                      ; 1.224             ;
+; printRGB:printRGB_inst|address[1]                                                                                                           ; addressMemory[1]                                                                                                                      ; 1.160             ;
+; printRGB:printRGB_inst|address[3]                                                                                                           ; addressMemory[3]                                                                                                                      ; 1.160             ;
+; printRGB:printRGB_inst|address[5]                                                                                                           ; addressMemory[5]                                                                                                                      ; 1.160             ;
+; printRGB:printRGB_inst|address[7]                                                                                                           ; addressMemory[7]                                                                                                                      ; 1.160             ;
+; printRGB:printRGB_inst|address[8]                                                                                                           ; addressMemory[8]                                                                                                                      ; 1.159             ;
+; printRGB:printRGB_inst|address[9]                                                                                                           ; addressMemory[9]                                                                                                                      ; 1.159             ;
+; memorySprites:memorySprites_inst|sram:element1|altsyncram:memory_array_rtl_0|altsyncram_hji1:auto_generated|ram_block1a0~portb_address_reg0 ; VGA_B[2]~reg0                                                                                                                         ; 1.121             ;
+; memorySprites:memorySprites_inst|sram:element1|altsyncram:memory_array_rtl_0|altsyncram_hji1:auto_generated|ram_block1a4~portb_address_reg0 ; VGA_B[2]~reg0                                                                                                                         ; 1.121             ;
+; memorySprites:memorySprites_inst|sram:element1|altsyncram:memory_array_rtl_0|altsyncram_hji1:auto_generated|ram_block1a1~portb_address_reg0 ; VGA_B[2]~reg0                                                                                                                         ; 1.121             ;
+; memorySprites:memorySprites_inst|sram:element1|altsyncram:memory_array_rtl_0|altsyncram_hji1:auto_generated|ram_block1a2~portb_address_reg0 ; VGA_B[2]~reg0                                                                                                                         ; 1.121             ;
+; memorySprites:memorySprites_inst|sram:element1|altsyncram:memory_array_rtl_0|altsyncram_hji1:auto_generated|ram_block1a3~portb_address_reg0 ; VGA_B[2]~reg0                                                                                                                         ; 1.121             ;
+; memorySprites:memorySprites_inst|sram:element1|altsyncram:memory_array_rtl_0|altsyncram_hji1:auto_generated|ram_block1a5~portb_address_reg0 ; VGA_B[2]~reg0                                                                                                                         ; 1.121             ;
+; memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_0ji1:auto_generated|ram_block1a0~portb_address_reg0 ; VGA_G[2]~reg0                                                                                                                         ; 0.877             ;
+; memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_0ji1:auto_generated|ram_block1a1~portb_address_reg0 ; VGA_G[2]~reg0                                                                                                                         ; 0.877             ;
+; memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_0ji1:auto_generated|ram_block1a2~portb_address_reg0 ; VGA_G[2]~reg0                                                                                                                         ; 0.877             ;
+; memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_0ji1:auto_generated|ram_block1a3~portb_address_reg0 ; VGA_G[2]~reg0                                                                                                                         ; 0.877             ;
+; memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_0ji1:auto_generated|ram_block1a4~portb_address_reg0 ; VGA_G[2]~reg0                                                                                                                         ; 0.877             ;
+; memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_0ji1:auto_generated|ram_block1a5~portb_address_reg0 ; VGA_G[2]~reg0                                                                                                                         ; 0.877             ;
+; memorySprites:memorySprites_inst|sram:element2|altsyncram:memory_array_rtl_0|altsyncram_vli1:auto_generated|ram_block1a5~portb_address_reg0 ; VGA_G[2]~reg0                                                                                                                         ; 0.877             ;
+; memorySprites:memorySprites_inst|sram:element2|altsyncram:memory_array_rtl_0|altsyncram_vli1:auto_generated|ram_block1a3~portb_address_reg0 ; VGA_G[2]~reg0                                                                                                                         ; 0.877             ;
+; memorySprites:memorySprites_inst|sram:element2|altsyncram:memory_array_rtl_0|altsyncram_vli1:auto_generated|ram_block1a4~portb_address_reg0 ; VGA_G[2]~reg0                                                                                                                         ; 0.877             ;
+; printRGB:printRGB_inst|printSprite:spriteHeart1|row[3]                                                                                      ; printRGB:printRGB_inst|address[7]                                                                                                     ; 0.826             ;
+; printRGB:printRGB_inst|printSprite:spriteHeart2|row[3]                                                                                      ; printRGB:printRGB_inst|address[7]                                                                                                     ; 0.826             ;
+; memorySprites:memorySprites_inst|sram:element2|altsyncram:memory_array_rtl_0|altsyncram_vli1:auto_generated|ram_block1a2~portb_address_reg0 ; VGA_B[1]~reg0                                                                                                                         ; 0.816             ;
+; printRGB:printRGB_inst|address[6]                                                                                                           ; addressMemory[6]                                                                                                                      ; 0.770             ;
+; printRGB:printRGB_inst|printSprite:spriteHeart1|column[1]                                                                                   ; printRGB:printRGB_inst|address[1]                                                                                                     ; 0.758             ;
+; printRGB:printRGB_inst|printSprite:spriteHeart2|column[1]                                                                                   ; printRGB:printRGB_inst|address[1]                                                                                                     ; 0.758             ;
+; printRGB:printRGB_inst|printSprite:spriteHeart1|row[1]                                                                                      ; printRGB:printRGB_inst|address[5]                                                                                                     ; 0.745             ;
+; printRGB:printRGB_inst|printSprite:spriteHeart2|row[1]                                                                                      ; printRGB:printRGB_inst|address[5]                                                                                                     ; 0.745             ;
+; memorySprites:memorySprites_inst|sram:element2|altsyncram:memory_array_rtl_0|altsyncram_vli1:auto_generated|ram_block1a0~portb_address_reg0 ; VGA_R[0]~reg0                                                                                                                         ; 0.725             ;
+; memorySprites:memorySprites_inst|sram:element2|altsyncram:memory_array_rtl_0|altsyncram_vli1:auto_generated|ram_block1a1~portb_address_reg0 ; VGA_R[0]~reg0                                                                                                                         ; 0.725             ;
+; memorySprites:memorySprites_inst|sram:element4|altsyncram:memory_array_rtl_0|altsyncram_gsi1:auto_generated|ram_block1a5~portb_address_reg0 ; VGA_B[0]~reg0                                                                                                                         ; 0.721             ;
+; memorySprites:memorySprites_inst|sram:element4|altsyncram:memory_array_rtl_0|altsyncram_gsi1:auto_generated|ram_block1a4~portb_address_reg0 ; VGA_B[0]~reg0                                                                                                                         ; 0.721             ;
+; memorySprites:memorySprites_inst|sram:element4|altsyncram:memory_array_rtl_0|altsyncram_gsi1:auto_generated|ram_block1a3~portb_address_reg0 ; VGA_B[0]~reg0                                                                                                                         ; 0.721             ;
+; memorySprites:memorySprites_inst|sram:element4|altsyncram:memory_array_rtl_0|altsyncram_gsi1:auto_generated|ram_block1a2~portb_address_reg0 ; VGA_B[0]~reg0                                                                                                                         ; 0.721             ;
+; memorySprites:memorySprites_inst|sram:element4|altsyncram:memory_array_rtl_0|altsyncram_gsi1:auto_generated|ram_block1a1~portb_address_reg0 ; VGA_B[0]~reg0                                                                                                                         ; 0.721             ;
+; memorySprites:memorySprites_inst|sram:element4|altsyncram:memory_array_rtl_0|altsyncram_gsi1:auto_generated|ram_block1a0~portb_address_reg0 ; VGA_B[0]~reg0                                                                                                                         ; 0.721             ;
+; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierLeft[4]                                                                          ; printRGB:printRGB_inst|address[8]                                                                                                     ; 0.721             ;
+; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierLeft[3]                                                                          ; printRGB:printRGB_inst|address[8]                                                                                                     ; 0.721             ;
+; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierLeft[2]                                                                          ; printRGB:printRGB_inst|address[8]                                                                                                     ; 0.721             ;
+; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierLeft[1]                                                                          ; printRGB:printRGB_inst|address[8]                                                                                                     ; 0.721             ;
+; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierLeft[0]                                                                          ; printRGB:printRGB_inst|address[8]                                                                                                     ; 0.721             ;
+; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierRight[4]                                                                         ; printRGB:printRGB_inst|address[8]                                                                                                     ; 0.721             ;
+; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierRight[3]                                                                         ; printRGB:printRGB_inst|address[8]                                                                                                     ; 0.721             ;
+; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierRight[2]                                                                         ; printRGB:printRGB_inst|address[8]                                                                                                     ; 0.721             ;
+; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierRight[1]                                                                         ; printRGB:printRGB_inst|address[8]                                                                                                     ; 0.721             ;
+; printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierRight[0]                                                                         ; printRGB:printRGB_inst|address[8]                                                                                                     ; 0.721             ;
+; printRGB:printRGB_inst|printSprite:spriteHeart2|column[2]                                                                                   ; printRGB:printRGB_inst|address[2]                                                                                                     ; 0.682             ;
+; printRGB:printRGB_inst|movementModule:movementModule_inst|printSprite:spriteGeneric|row[2]                                                  ; printRGB:printRGB_inst|address[2]                                                                                                     ; 0.682             ;
+; printRGB:printRGB_inst|movementModule:movementModule_inst|printSprite:spriteGeneric|column[2]                                               ; printRGB:printRGB_inst|address[2]                                                                                                     ; 0.682             ;
+; printRGB:printRGB_inst|movementModule:movementModule_inst|printSprite:spriteGeneric|row[1]                                                  ; printRGB:printRGB_inst|address[2]                                                                                                     ; 0.682             ;
+; printRGB:printRGB_inst|movementModule:movementModule_inst|printSprite:spriteGeneric|column[1]                                               ; printRGB:printRGB_inst|address[2]                                                                                                     ; 0.682             ;
+; printRGB:printRGB_inst|movementModule:movementModule_inst|printSprite:spriteGeneric|row[0]                                                  ; printRGB:printRGB_inst|address[2]                                                                                                     ; 0.682             ;
+; printRGB:printRGB_inst|movementModule:movementModule_inst|printSprite:spriteGeneric|column[0]                                               ; printRGB:printRGB_inst|address[2]                                                                                                     ; 0.682             ;
++---------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+-------------------+
 Note: This table only shows the top 100 path(s) that have the largest delay added for hold.
 
 
@@ -2811,12 +2811,12 @@ Info (176353): Automatically promoted node clk~input (placed in PIN R8 (CLK15, D
         Info (176357): Destination node SVGA_sync:SVGA|pixel_x[6] File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/SVGAGrafico/SVGA_sync.v Line: 53
         Info (176357): Destination node SVGA_sync:SVGA|pixel_x[7] File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/SVGAGrafico/SVGA_sync.v Line: 53
         Info (176358): Non-global destination nodes limited to 10 nodes
-Info (176353): Automatically promoted node VGA_R[0]~6  File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 191
+Info (176353): Automatically promoted node VGA_G[2]~5  File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 178
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node colour[8]~24 File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 33
-        Info (176357): Destination node elementMemory[2] File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 170
-        Info (176357): Destination node elementMemory[1] File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 170
+        Info (176357): Destination node colour[8]~21 File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 42
+        Info (176357): Destination node elementMemory[2] File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 157
+        Info (176357): Destination node elementMemory[1] File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 157
 Info (176353): Automatically promoted node memorySprites:memorySprites_inst|Decoder0~0  File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/memorySprites.v Line: 96
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
@@ -2827,7 +2827,7 @@ Info (176353): Automatically promoted node memorySprites:memorySprites_inst|Deco
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
         Info (176357): Destination node memorySprites:memorySprites_inst|read_enable4~1 File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/memorySprites.v Line: 20
         Info (176357): Destination node memorySprites:memorySprites_inst|read_enable4 File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/memorySprites.v Line: 20
-Info (176353): Automatically promoted node memorySprites:memorySprites_inst|Decoder0~4  File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/memorySprites.v Line: 96
+Info (176353): Automatically promoted node memorySprites:memorySprites_inst|Decoder0~3  File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/memorySprites.v Line: 96
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
         Info (176357): Destination node memorySprites:memorySprites_inst|read_enable5~1 File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/memorySprites.v Line: 21
@@ -2841,7 +2841,7 @@ Info (176353): Automatically promoted node reset~input (placed in PIN M1 (CLK3, 
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G3
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
         Info (176357): Destination node printRGB:printRGB_inst|movementModule:movementModule_inst|printSprite:spriteGeneric|current_y~0 File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/module_of_print_sprite/printSprite.v Line: 43
-        Info (176357): Destination node printRGB:printRGB_inst|movementModule:movementModule_inst|printSprite:spriteGeneric|current_y[4]~1 File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/module_of_print_sprite/printSprite.v Line: 79
+        Info (176357): Destination node printRGB:printRGB_inst|movementModule:movementModule_inst|printSprite:spriteGeneric|current_y[1]~1 File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/module_of_print_sprite/printSprite.v Line: 79
         Info (176357): Destination node printRGB:printRGB_inst|movementModule:movementModule_inst|printSprite:spriteGeneric|current_y~2 File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/module_of_print_sprite/printSprite.v Line: 43
         Info (176357): Destination node printRGB:printRGB_inst|movementModule:movementModule_inst|printSprite:spriteGeneric|current_y~3 File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/module_of_print_sprite/printSprite.v Line: 43
         Info (176357): Destination node printRGB:printRGB_inst|movementModule:movementModule_inst|printSprite:spriteGeneric|current_y~4 File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/module_of_print_sprite/printSprite.v Line: 43
@@ -2863,20 +2863,20 @@ Info (170137): Fitter placement was successful
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:02
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 1% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 5% of the available device resources in the region that extends from location X10_Y11 to location X20_Y22
+    Info (170196): Router estimated peak interconnect usage is 9% of the available device resources in the region that extends from location X21_Y11 to location X31_Y22
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:03
-Info (11888): Total time spent on timing analysis during the Fitter is 0.66 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.79 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Info: Quartus Prime Fitter was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 1296 megabytes
-    Info: Processing ended: Tue Jul  9 14:35:31 2019
-    Info: Elapsed time: 00:00:09
+    Info: Peak virtual memory: 1289 megabytes
+    Info: Processing ended: Wed Jul 10 16:14:29 2019
+    Info: Elapsed time: 00:00:11
     Info: Total CPU time (on all processors): 00:00:12
 
 

@@ -1,24 +1,140 @@
 |top
-clk => clk.IN4
+clk => clk.IN8
 down => _.IN1
 up => _.IN1
 reset => reset.IN1
 startGame => startGame.IN1
 pauseGame => pauseGame.IN1
-VGA_R[0] << VGA_R[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-VGA_R[1] << VGA_R[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-VGA_R[2] << VGA_R[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-VGA_G[0] << VGA_G[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-VGA_G[1] << VGA_G[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-VGA_G[2] << VGA_G[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-VGA_B[0] << VGA_B[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-VGA_B[1] << VGA_B[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-VGA_B[2] << VGA_B[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-hsync << SVGA_sync:SVGA.hsync
-vsync << SVGA_sync:SVGA.vsync
-leds[0] << stateGame[0].DB_MAX_OUTPUT_PORT_TYPE
-leds[1] << stateGame[1].DB_MAX_OUTPUT_PORT_TYPE
-leds[2] << stateGame[2].DB_MAX_OUTPUT_PORT_TYPE
+VGA_R[0] <= VGA_R[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+VGA_R[1] <= VGA_R[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+VGA_R[2] <= VGA_R[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+VGA_G[0] <= VGA_G[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+VGA_G[1] <= VGA_G[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+VGA_G[2] <= VGA_G[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+VGA_B[0] <= VGA_B[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+VGA_B[1] <= VGA_B[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+VGA_B[2] <= VGA_B[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+hsync <= SVGA_sync:SVGA.hsync
+vsync <= SVGA_sync:SVGA.vsync
+leds[0] <= stateGame[0].DB_MAX_OUTPUT_PORT_TYPE
+leds[1] <= stateGame[1].DB_MAX_OUTPUT_PORT_TYPE
+leds[2] <= stateGame[2].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top|button_Debounce:button_Debounce_up
+clk => out_state~reg0.CLK
+clk => count_bit_diff[0].CLK
+clk => count_bit_diff[1].CLK
+clk => count_bit_diff[2].CLK
+clk => count_bit_diff[3].CLK
+clk => count_bit_diff[4].CLK
+clk => count_bit_diff[5].CLK
+clk => count_bit_diff[6].CLK
+clk => count_bit_diff[7].CLK
+clk => count_bit_diff[8].CLK
+clk => count_bit_diff[9].CLK
+clk => count_bit_diff[10].CLK
+clk => count_bit_diff[11].CLK
+clk => count_bit_diff[12].CLK
+clk => count_bit_diff[13].CLK
+clk => count_bit_diff[14].CLK
+clk => count_bit_diff[15].CLK
+clk => count_bit_diff[16].CLK
+clk => count_bit_diff[17].CLK
+clk => count_bit_diff[18].CLK
+clk => count_bit_diff[19].CLK
+clk => count_bit_diff[20].CLK
+clk => prev_bit.CLK
+clk => current_bit.CLK
+data => current_bit.DATAIN
+out_state <= out_state~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top|button_Debounce:button_Debounce_down
+clk => out_state~reg0.CLK
+clk => count_bit_diff[0].CLK
+clk => count_bit_diff[1].CLK
+clk => count_bit_diff[2].CLK
+clk => count_bit_diff[3].CLK
+clk => count_bit_diff[4].CLK
+clk => count_bit_diff[5].CLK
+clk => count_bit_diff[6].CLK
+clk => count_bit_diff[7].CLK
+clk => count_bit_diff[8].CLK
+clk => count_bit_diff[9].CLK
+clk => count_bit_diff[10].CLK
+clk => count_bit_diff[11].CLK
+clk => count_bit_diff[12].CLK
+clk => count_bit_diff[13].CLK
+clk => count_bit_diff[14].CLK
+clk => count_bit_diff[15].CLK
+clk => count_bit_diff[16].CLK
+clk => count_bit_diff[17].CLK
+clk => count_bit_diff[18].CLK
+clk => count_bit_diff[19].CLK
+clk => count_bit_diff[20].CLK
+clk => prev_bit.CLK
+clk => current_bit.CLK
+data => current_bit.DATAIN
+out_state <= out_state~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top|button_Debounce:button_Debounce_pause
+clk => out_state~reg0.CLK
+clk => count_bit_diff[0].CLK
+clk => count_bit_diff[1].CLK
+clk => count_bit_diff[2].CLK
+clk => count_bit_diff[3].CLK
+clk => count_bit_diff[4].CLK
+clk => count_bit_diff[5].CLK
+clk => count_bit_diff[6].CLK
+clk => count_bit_diff[7].CLK
+clk => count_bit_diff[8].CLK
+clk => count_bit_diff[9].CLK
+clk => count_bit_diff[10].CLK
+clk => count_bit_diff[11].CLK
+clk => count_bit_diff[12].CLK
+clk => count_bit_diff[13].CLK
+clk => count_bit_diff[14].CLK
+clk => count_bit_diff[15].CLK
+clk => count_bit_diff[16].CLK
+clk => count_bit_diff[17].CLK
+clk => count_bit_diff[18].CLK
+clk => count_bit_diff[19].CLK
+clk => count_bit_diff[20].CLK
+clk => prev_bit.CLK
+clk => current_bit.CLK
+data => current_bit.DATAIN
+out_state <= out_state~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top|button_Debounce:button_Debounce_start
+clk => out_state~reg0.CLK
+clk => count_bit_diff[0].CLK
+clk => count_bit_diff[1].CLK
+clk => count_bit_diff[2].CLK
+clk => count_bit_diff[3].CLK
+clk => count_bit_diff[4].CLK
+clk => count_bit_diff[5].CLK
+clk => count_bit_diff[6].CLK
+clk => count_bit_diff[7].CLK
+clk => count_bit_diff[8].CLK
+clk => count_bit_diff[9].CLK
+clk => count_bit_diff[10].CLK
+clk => count_bit_diff[11].CLK
+clk => count_bit_diff[12].CLK
+clk => count_bit_diff[13].CLK
+clk => count_bit_diff[14].CLK
+clk => count_bit_diff[15].CLK
+clk => count_bit_diff[16].CLK
+clk => count_bit_diff[17].CLK
+clk => count_bit_diff[18].CLK
+clk => count_bit_diff[19].CLK
+clk => count_bit_diff[20].CLK
+clk => prev_bit.CLK
+clk => current_bit.CLK
+data => current_bit.DATAIN
+out_state <= out_state~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |top|SVGA_sync:SVGA

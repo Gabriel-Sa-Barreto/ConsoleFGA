@@ -1,5 +1,5 @@
 Analysis & Synthesis report for consoleFPGA
-Tue Jul  9 14:35:21 2019
+Wed Jul 10 16:14:18 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -99,15 +99,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Jul  9 14:35:21 2019       ;
+; Analysis & Synthesis Status        ; Successful - Wed Jul 10 16:14:18 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; consoleFPGA                                 ;
 ; Top-level Entity Name              ; top                                         ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 685                                         ;
-;     Total combinational functions  ; 666                                         ;
-;     Dedicated logic registers      ; 149                                         ;
-; Total registers                    ; 149                                         ;
+; Total logic elements               ; 813                                         ;
+;     Total combinational functions  ; 788                                         ;
+;     Dedicated logic registers      ; 245                                         ;
+; Total registers                    ; 245                                         ;
 ; Total pins                         ; 20                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 15,180                                      ;
@@ -224,16 +224,17 @@ refer to the applicable agreement for further details.
 +----------------------------------------------+-----------------+-------------------------------------------------------+------------------------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path             ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                                   ; Library ;
 +----------------------------------------------+-----------------+-------------------------------------------------------+------------------------------------------------------------------------------------------------+---------+
+; Modulos/top.v                                ; yes             ; User Verilog HDL File                                 ; /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v                                ;         ;
 ; Modulos/gameFSM/gameFSM.v                    ; yes             ; User Verilog HDL File                                 ; /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/gameFSM/gameFSM.v                    ;         ;
 ; Modulos/module_of_print_sprite/printSprite.v ; yes             ; User Verilog HDL File                                 ; /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/module_of_print_sprite/printSprite.v ;         ;
 ; Modulos/barrier.v                            ; yes             ; User Verilog HDL File                                 ; /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/barrier.v                            ;         ;
 ; Modulos/memorySprites.v                      ; yes             ; User Verilog HDL File                                 ; /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/memorySprites.v                      ;         ;
 ; Modulos/moduloSram/sram.v                    ; yes             ; User Verilog HDL File                                 ; /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/moduloSram/sram.v                    ;         ;
 ; Modulos/SVGAGrafico/SVGA_sync.v              ; yes             ; User Verilog HDL File                                 ; /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/SVGAGrafico/SVGA_sync.v              ;         ;
-; Modulos/top.v                                ; yes             ; User Verilog HDL File                                 ; /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v                                ;         ;
 ; Modulos/printRGB.v                           ; yes             ; User Verilog HDL File                                 ; /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/printRGB.v                           ;         ;
 ; Modulos/movementModule/movementModule.v      ; yes             ; User Verilog HDL File                                 ; /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/movementModule/movementModule.v      ;         ;
 ; Modulos/movementModule/spriteMoveFSM.v       ; yes             ; User Verilog HDL File                                 ; /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/movementModule/spriteMoveFSM.v       ;         ;
+; Modulos/debounce/buttonDebounce.v            ; yes             ; User Verilog HDL File                                 ; /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/debounce/buttonDebounce.v            ;         ;
 ; sprites/sprites25x25/apple_palette.mem       ; yes             ; Auto-Found Unspecified File                           ; /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/sprites/sprites25x25/apple_palette.mem       ;         ;
 ; sprites/background/background_palette.mem    ; yes             ; Auto-Found Unspecified File                           ; /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/sprites/background/background_palette.mem    ;         ;
 ; sprites/heart/heart_palette.mem              ; yes             ; Auto-Found Unspecified File                           ; /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/sprites/heart/heart_palette.mem              ;         ;
@@ -286,20 +287,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 685       ;
+; Estimated Total logic elements              ; 813       ;
 ;                                             ;           ;
-; Total combinational functions               ; 666       ;
+; Total combinational functions               ; 788       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 263       ;
-;     -- 3 input functions                    ; 222       ;
-;     -- <=2 input functions                  ; 181       ;
+;     -- 4 input functions                    ; 293       ;
+;     -- 3 input functions                    ; 221       ;
+;     -- <=2 input functions                  ; 274       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 481       ;
-;     -- arithmetic mode                      ; 185       ;
+;     -- normal mode                          ; 523       ;
+;     -- arithmetic mode                      ; 265       ;
 ;                                             ;           ;
-; Total registers                             ; 149       ;
-;     -- Dedicated logic registers            ; 149       ;
+; Total registers                             ; 245       ;
+;     -- Dedicated logic registers            ; 245       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 20        ;
@@ -308,9 +309,9 @@ refer to the applicable agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 178       ;
-; Total fan-out                               ; 2783      ;
-; Average fan-out                             ; 3.17      ;
+; Maximum fan-out                             ; 274       ;
+; Total fan-out                               ; 3356      ;
+; Average fan-out                             ; 3.06      ;
 +---------------------------------------------+-----------+
 
 
@@ -319,10 +320,14 @@ refer to the applicable agreement for further details.
 +------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                           ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                        ; Entity Name     ; Library Name ;
 +------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |top                                                 ; 666 (62)            ; 149 (9)                   ; 15180       ; 0            ; 0       ; 0         ; 20   ; 0            ; |top                                                                                                                                                                                       ; top             ; work         ;
+; |top                                                 ; 788 (62)            ; 245 (9)                   ; 15180       ; 0            ; 0       ; 0         ; 20   ; 0            ; |top                                                                                                                                                                                       ; top             ; work         ;
 ;    |SVGA_sync:SVGA|                                  ; 57 (57)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|SVGA_sync:SVGA                                                                                                                                                                        ; SVGA_sync       ; work         ;
+;    |button_Debounce:button_Debounce_down|            ; 31 (31)             ; 24 (24)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|button_Debounce:button_Debounce_down                                                                                                                                                  ; button_Debounce ; work         ;
+;    |button_Debounce:button_Debounce_pause|           ; 30 (30)             ; 24 (24)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|button_Debounce:button_Debounce_pause                                                                                                                                                 ; button_Debounce ; work         ;
+;    |button_Debounce:button_Debounce_start|           ; 30 (30)             ; 24 (24)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|button_Debounce:button_Debounce_start                                                                                                                                                 ; button_Debounce ; work         ;
+;    |button_Debounce:button_Debounce_up|              ; 31 (31)             ; 24 (24)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|button_Debounce:button_Debounce_up                                                                                                                                                    ; button_Debounce ; work         ;
 ;    |gameFSM:gameFSM_inst|                            ; 6 (6)               ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|gameFSM:gameFSM_inst                                                                                                                                                                  ; gameFSM         ; work         ;
-;    |memorySprites:memorySprites_inst|                ; 130 (130)           ; 0 (0)                     ; 15180       ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|memorySprites:memorySprites_inst                                                                                                                                                      ; memorySprites   ; work         ;
+;    |memorySprites:memorySprites_inst|                ; 129 (129)           ; 0 (0)                     ; 15180       ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|memorySprites:memorySprites_inst                                                                                                                                                      ; memorySprites   ; work         ;
 ;       |sram:element1|                                ; 0 (0)               ; 0 (0)                     ; 3750        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|memorySprites:memorySprites_inst|sram:element1                                                                                                                                        ; sram            ; work         ;
 ;          |altsyncram:memory_array_rtl_0|             ; 0 (0)               ; 0 (0)                     ; 3750        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|memorySprites:memorySprites_inst|sram:element1|altsyncram:memory_array_rtl_0                                                                                                          ; altsyncram      ; work         ;
 ;             |altsyncram_hji1:auto_generated|         ; 0 (0)               ; 0 (0)                     ; 3750        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|memorySprites:memorySprites_inst|sram:element1|altsyncram:memory_array_rtl_0|altsyncram_hji1:auto_generated                                                                           ; altsyncram_hji1 ; work         ;
@@ -335,7 +340,7 @@ refer to the applicable agreement for further details.
 ;       |sram:element5|                                ; 0 (0)               ; 0 (0)                     ; 3750        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|memorySprites:memorySprites_inst|sram:element5                                                                                                                                        ; sram            ; work         ;
 ;          |altsyncram:memory_array_rtl_0|             ; 0 (0)               ; 0 (0)                     ; 3750        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0                                                                                                          ; altsyncram      ; work         ;
 ;             |altsyncram_0ji1:auto_generated|         ; 0 (0)               ; 0 (0)                     ; 3750        ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_0ji1:auto_generated                                                                           ; altsyncram_0ji1 ; work         ;
-;    |printRGB:printRGB_inst|                          ; 411 (75)            ; 111 (14)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst                                                                                                                                                                ; printRGB        ; work         ;
+;    |printRGB:printRGB_inst|                          ; 412 (76)            ; 111 (14)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst                                                                                                                                                                ; printRGB        ; work         ;
 ;       |barrier:barrier_inst|                         ; 163 (115)           ; 24 (24)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst                                                                                                                                           ; barrier         ; work         ;
 ;          |lpm_mult:Mult0|                            ; 12 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult0                                                                                                                            ; lpm_mult        ; work         ;
 ;             |multcore:mult_core|                     ; 12 (6)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|printRGB:printRGB_inst|barrier:barrier_inst|lpm_mult:Mult0|multcore:mult_core                                                                                                         ; multcore        ; work         ;
@@ -428,9 +433,9 @@ Encoding Type:  One-Hot
 ; memorySprites:memorySprites_inst|read_enable2       ; memorySprites:memorySprites_inst|read_enable2 ; yes                    ;
 ; memorySprites:memorySprites_inst|read_enable4       ; memorySprites:memorySprites_inst|read_enable4 ; yes                    ;
 ; memorySprites:memorySprites_inst|read_enable5       ; memorySprites:memorySprites_inst|read_enable5 ; yes                    ;
-; elementMemory[0]                                    ; VGA_R[0]~reg0                                 ; yes                    ;
-; elementMemory[1]                                    ; VGA_R[0]~reg0                                 ; yes                    ;
-; elementMemory[2]                                    ; VGA_R[0]~reg0                                 ; yes                    ;
+; elementMemory[0]                                    ; VGA_G[2]~reg0                                 ; yes                    ;
+; elementMemory[1]                                    ; VGA_G[2]~reg0                                 ; yes                    ;
+; elementMemory[2]                                    ; VGA_G[2]~reg0                                 ; yes                    ;
 ; memorySprites:memorySprites_inst|address4[0]        ; memorySprites:memorySprites_inst|Decoder0     ; yes                    ;
 ; memorySprites:memorySprites_inst|address4[1]        ; memorySprites:memorySprites_inst|Decoder0     ; yes                    ;
 ; memorySprites:memorySprites_inst|address4[2]        ; memorySprites:memorySprites_inst|Decoder0     ; yes                    ;
@@ -469,16 +474,16 @@ Encoding Type:  One-Hot
 ; memorySprites:memorySprites_inst|address1[7]        ; memorySprites:memorySprites_inst|Decoder0     ; yes                    ;
 ; memorySprites:memorySprites_inst|address1[8]        ; memorySprites:memorySprites_inst|Decoder0     ; yes                    ;
 ; memorySprites:memorySprites_inst|address1[9]        ; memorySprites:memorySprites_inst|Decoder0     ; yes                    ;
-; addressMemory[0]                                    ; VGA_R[0]~reg0                                 ; yes                    ;
-; addressMemory[1]                                    ; VGA_R[0]~reg0                                 ; yes                    ;
-; addressMemory[2]                                    ; VGA_R[0]~reg0                                 ; yes                    ;
-; addressMemory[3]                                    ; VGA_R[0]~reg0                                 ; yes                    ;
-; addressMemory[4]                                    ; VGA_R[0]~reg0                                 ; yes                    ;
-; addressMemory[5]                                    ; VGA_R[0]~reg0                                 ; yes                    ;
-; addressMemory[6]                                    ; VGA_R[0]~reg0                                 ; yes                    ;
-; addressMemory[7]                                    ; VGA_R[0]~reg0                                 ; yes                    ;
-; addressMemory[8]                                    ; VGA_R[0]~reg0                                 ; yes                    ;
-; addressMemory[9]                                    ; VGA_R[0]~reg0                                 ; yes                    ;
+; addressMemory[0]                                    ; VGA_G[2]~reg0                                 ; yes                    ;
+; addressMemory[1]                                    ; VGA_G[2]~reg0                                 ; yes                    ;
+; addressMemory[2]                                    ; VGA_G[2]~reg0                                 ; yes                    ;
+; addressMemory[3]                                    ; VGA_G[2]~reg0                                 ; yes                    ;
+; addressMemory[4]                                    ; VGA_G[2]~reg0                                 ; yes                    ;
+; addressMemory[5]                                    ; VGA_G[2]~reg0                                 ; yes                    ;
+; addressMemory[6]                                    ; VGA_G[2]~reg0                                 ; yes                    ;
+; addressMemory[7]                                    ; VGA_G[2]~reg0                                 ; yes                    ;
+; addressMemory[8]                                    ; VGA_G[2]~reg0                                 ; yes                    ;
+; addressMemory[9]                                    ; VGA_G[2]~reg0                                 ; yes                    ;
 ; Number of user-specified and inferred latches = 56  ;                                               ;                        ;
 +-----------------------------------------------------+-----------------------------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
@@ -584,8 +589,8 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 149   ;
-; Number of registers using Synchronous Clear  ; 9     ;
+; Total registers                              ; 245   ;
+; Number of registers using Synchronous Clear  ; 93    ;
 ; Number of registers using Synchronous Load   ; 9     ;
 ; Number of registers using Asynchronous Clear ; 2     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
@@ -628,16 +633,16 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                            ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------+
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |top|SVGA_sync:SVGA|pixel_y[8]                                                                        ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |top|printRGB:printRGB_inst|movementModule:movementModule_inst|printSprite:spriteGeneric|current_y[4] ;
-; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; Yes        ; |top|VGA_R[2]~reg0                                                                                    ;
-; 8:1                ; 5 bits    ; 25 LEs        ; 25 LEs               ; 0 LEs                  ; Yes        ; |top|VGA_R[0]~reg0                                                                                    ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; Yes        ; |top|printRGB:printRGB_inst|ready                                                                     ;
-; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |top|printRGB:printRGB_inst|address[9]                                                                ;
-; 28:1               ; 8 bits    ; 144 LEs       ; 48 LEs               ; 96 LEs                 ; Yes        ; |top|printRGB:printRGB_inst|address[0]                                                                ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |top|SVGA_sync:SVGA|pixel_y[0]                                                                        ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |top|SVGA_sync:SVGA|pixel_y[9]                                                                        ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |top|printRGB:printRGB_inst|movementModule:movementModule_inst|printSprite:spriteGeneric|current_y[1] ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; Yes        ; |top|VGA_B[1]~reg0                                                                                    ;
+; 8:1                ; 5 bits    ; 25 LEs        ; 25 LEs               ; 0 LEs                  ; Yes        ; |top|VGA_G[2]~reg0                                                                                    ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; Yes        ; |top|printRGB:printRGB_inst|element[0]                                                                ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |top|printRGB:printRGB_inst|address[8]                                                                ;
+; 28:1               ; 8 bits    ; 144 LEs       ; 48 LEs               ; 96 LEs                 ; Yes        ; |top|printRGB:printRGB_inst|address[3]                                                                ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |top|SVGA_sync:SVGA|pixel_y[1]                                                                        ;
 ; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |top|printRGB:printRGB_inst|movementModule:movementModule_inst|printSprite:spriteGeneric|current_y[2] ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |top|printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierLeft[4]                               ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |top|printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierLeft[3]                               ;
 ; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |top|printRGB:printRGB_inst|barrier:barrier_inst|counter_BarrierRight[4]                              ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |top|printRGB:printRGB_inst|printSprite:spriteHeart1|enable                                           ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------+
@@ -1712,25 +1717,26 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 20                          ;
-; cycloneiii_ff         ; 149                         ;
+; cycloneiii_ff         ; 245                         ;
 ;     CLR               ; 2                           ;
 ;     ENA               ; 85                          ;
+;     SCLR              ; 84                          ;
 ;     SCLR SLD          ; 9                           ;
-;     plain             ; 53                          ;
-; cycloneiii_lcell_comb ; 666                         ;
-;     arith             ; 185                         ;
-;         2 data inputs ; 92                          ;
+;     plain             ; 65                          ;
+; cycloneiii_lcell_comb ; 788                         ;
+;     arith             ; 265                         ;
+;         2 data inputs ; 172                         ;
 ;         3 data inputs ; 93                          ;
-;     normal            ; 481                         ;
+;     normal            ; 523                         ;
 ;         0 data inputs ; 6                           ;
-;         1 data inputs ; 29                          ;
-;         2 data inputs ; 54                          ;
-;         3 data inputs ; 129                         ;
-;         4 data inputs ; 263                         ;
+;         1 data inputs ; 35                          ;
+;         2 data inputs ; 61                          ;
+;         3 data inputs ; 128                         ;
+;         4 data inputs ; 293                         ;
 ; cycloneiii_ram_block  ; 24                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 8.00                        ;
-; Average LUT depth     ; 4.39                        ;
+; Average LUT depth     ; 3.99                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1749,12 +1755,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue Jul  9 14:35:07 2019
+    Info: Processing started: Wed Jul 10 16:14:03 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off consoleFPGA -c consoleFPGA
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file Modulos/debounce/flip_flopD.v
-    Info (12023): Found entity 1: flip_flopD File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/debounce/flip_flopD.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file Modulos/top.v
+    Info (12023): Found entity 1: top File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file Modulos/gameFSM/gameFSM.v
     Info (12023): Found entity 1: gameFSM File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/gameFSM/gameFSM.v Line: 11
 Info (12021): Found 1 design units, including 1 entities, in source file Modulos/module of phrases/ram.v
@@ -1771,8 +1777,6 @@ Info (12021): Found 1 design units, including 1 entities, in source file Modulos
     Info (12023): Found entity 1: sram File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/moduloSram/sram.v Line: 11
 Info (12021): Found 1 design units, including 1 entities, in source file Modulos/SVGAGrafico/SVGA_sync.v
     Info (12023): Found entity 1: SVGA_sync File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/SVGAGrafico/SVGA_sync.v Line: 18
-Info (12021): Found 1 design units, including 1 entities, in source file Modulos/top.v
-    Info (12023): Found entity 1: top File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file Modulos/printRGB.v
     Info (12023): Found entity 1: printRGB File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/printRGB.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file Modulos/fruits.v
@@ -1785,33 +1789,32 @@ Info (12021): Found 1 design units, including 1 entities, in source file Modulos
     Info (12023): Found entity 1: spriteMoveFSM File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/movementModule/spriteMoveFSM.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file Modulos/module of phrases/phrases.v
     Info (12023): Found entity 1: phrases File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/module of phrases/phrases.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file Modulos/debounce/debounce.v
-    Info (12023): Found entity 1: debounce File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/debounce/debounce.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file Modulos/debounce/clock_div.v
-    Info (12023): Found entity 1: clock_div File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/debounce/clock_div.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file Modulos/debounce/buttonDebounce.v
+    Info (12023): Found entity 1: button_Debounce File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/debounce/buttonDebounce.v Line: 4
 Info (12127): Elaborating entity "top" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at top.v(172): truncated value with size 4 to match size of target (3) File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 172
-Warning (10240): Verilog HDL Always Construct warning at top.v(170): inferring latch(es) for variable "elementMemory", which holds its previous value in one or more paths through the always construct File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 170
-Warning (10240): Verilog HDL Always Construct warning at top.v(170): inferring latch(es) for variable "addressMemory", which holds its previous value in one or more paths through the always construct File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 170
-Warning (10240): Verilog HDL Always Construct warning at top.v(170): inferring latch(es) for variable "enableMemory", which holds its previous value in one or more paths through the always construct File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 170
-Info (10041): Inferred latch for "enableMemory" at top.v(170) File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 170
-Info (10041): Inferred latch for "addressMemory[0]" at top.v(170) File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 170
-Info (10041): Inferred latch for "addressMemory[1]" at top.v(170) File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 170
-Info (10041): Inferred latch for "addressMemory[2]" at top.v(170) File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 170
-Info (10041): Inferred latch for "addressMemory[3]" at top.v(170) File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 170
-Info (10041): Inferred latch for "addressMemory[4]" at top.v(170) File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 170
-Info (10041): Inferred latch for "addressMemory[5]" at top.v(170) File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 170
-Info (10041): Inferred latch for "addressMemory[6]" at top.v(170) File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 170
-Info (10041): Inferred latch for "addressMemory[7]" at top.v(170) File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 170
-Info (10041): Inferred latch for "addressMemory[8]" at top.v(170) File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 170
-Info (10041): Inferred latch for "addressMemory[9]" at top.v(170) File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 170
-Info (10041): Inferred latch for "elementMemory[0]" at top.v(170) File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 170
-Info (10041): Inferred latch for "elementMemory[1]" at top.v(170) File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 170
-Info (10041): Inferred latch for "elementMemory[2]" at top.v(170) File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 170
-Info (12128): Elaborating entity "SVGA_sync" for hierarchy "SVGA_sync:SVGA" File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 80
+Warning (10230): Verilog HDL assignment warning at top.v(159): truncated value with size 4 to match size of target (3) File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 159
+Warning (10240): Verilog HDL Always Construct warning at top.v(157): inferring latch(es) for variable "elementMemory", which holds its previous value in one or more paths through the always construct File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 157
+Warning (10240): Verilog HDL Always Construct warning at top.v(157): inferring latch(es) for variable "addressMemory", which holds its previous value in one or more paths through the always construct File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 157
+Warning (10240): Verilog HDL Always Construct warning at top.v(157): inferring latch(es) for variable "enableMemory", which holds its previous value in one or more paths through the always construct File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 157
+Info (10041): Inferred latch for "enableMemory" at top.v(157) File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 157
+Info (10041): Inferred latch for "addressMemory[0]" at top.v(157) File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 157
+Info (10041): Inferred latch for "addressMemory[1]" at top.v(157) File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 157
+Info (10041): Inferred latch for "addressMemory[2]" at top.v(157) File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 157
+Info (10041): Inferred latch for "addressMemory[3]" at top.v(157) File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 157
+Info (10041): Inferred latch for "addressMemory[4]" at top.v(157) File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 157
+Info (10041): Inferred latch for "addressMemory[5]" at top.v(157) File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 157
+Info (10041): Inferred latch for "addressMemory[6]" at top.v(157) File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 157
+Info (10041): Inferred latch for "addressMemory[7]" at top.v(157) File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 157
+Info (10041): Inferred latch for "addressMemory[8]" at top.v(157) File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 157
+Info (10041): Inferred latch for "addressMemory[9]" at top.v(157) File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 157
+Info (10041): Inferred latch for "elementMemory[0]" at top.v(157) File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 157
+Info (10041): Inferred latch for "elementMemory[1]" at top.v(157) File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 157
+Info (10041): Inferred latch for "elementMemory[2]" at top.v(157) File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 157
+Info (12128): Elaborating entity "button_Debounce" for hierarchy "button_Debounce:button_Debounce_up" File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 84
+Info (12128): Elaborating entity "SVGA_sync" for hierarchy "SVGA_sync:SVGA" File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 114
 Warning (10230): Verilog HDL assignment warning at SVGA_sync.v(59): truncated value with size 32 to match size of target (11) File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/SVGAGrafico/SVGA_sync.v Line: 59
 Warning (10230): Verilog HDL assignment warning at SVGA_sync.v(80): truncated value with size 32 to match size of target (10) File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/SVGAGrafico/SVGA_sync.v Line: 80
-Info (12128): Elaborating entity "memorySprites" for hierarchy "memorySprites:memorySprites_inst" File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 90
+Info (12128): Elaborating entity "memorySprites" for hierarchy "memorySprites:memorySprites_inst" File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 124
 Warning (10858): Verilog HDL warning at memorySprites.v(12): object element3_palette used but never assigned File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/memorySprites.v Line: 12
 Warning (10235): Verilog HDL Always Construct warning at memorySprites.v(88): variable "clk" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/memorySprites.v Line: 88
 Warning (10235): Verilog HDL Always Construct warning at memorySprites.v(89): variable "read_enable1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/memorySprites.v Line: 89
@@ -1916,7 +1919,7 @@ Info (12128): Elaborating entity "sram" for hierarchy "memorySprites:memorySprit
 Info (10648): Verilog HDL Display System Task info at sram.v(25): /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/sprites{—¬«‘’Ÿè‚”—û’§>DPR∂6@3˛¬ File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/moduloSram/sram.v Line: 25
 Info (12128): Elaborating entity "sram" for hierarchy "memorySprites:memorySprites_inst|sram:element5" File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/memorySprites.v Line: 207
 Info (10648): Verilog HDL Display System Task info at sram.v(25): /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGçû‘‘€◊€Ö‡îœ€‚¨?JR§33˛¬ File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/moduloSram/sram.v Line: 25
-Info (12128): Elaborating entity "printRGB" for hierarchy "printRGB:printRGB_inst" File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 108
+Info (12128): Elaborating entity "printRGB" for hierarchy "printRGB:printRGB_inst" File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 142
 Warning (10230): Verilog HDL assignment warning at printRGB.v(189): truncated value with size 5 to match size of target (3) File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/printRGB.v Line: 189
 Warning (10230): Verilog HDL assignment warning at printRGB.v(194): truncated value with size 5 to match size of target (3) File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/printRGB.v Line: 194
 Warning (10230): Verilog HDL assignment warning at printRGB.v(199): truncated value with size 5 to match size of target (3) File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/printRGB.v Line: 199
@@ -1993,7 +1996,7 @@ Warning (10230): Verilog HDL assignment warning at printSprite.v(82): truncated 
 Warning (10230): Verilog HDL assignment warning at printSprite.v(83): truncated value with size 32 to match size of target (4) File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/module_of_print_sprite/printSprite.v Line: 83
 Warning (10230): Verilog HDL assignment warning at printSprite.v(94): truncated value with size 10 to match size of target (6) File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/module_of_print_sprite/printSprite.v Line: 94
 Warning (10230): Verilog HDL assignment warning at printSprite.v(95): truncated value with size 11 to match size of target (6) File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/module_of_print_sprite/printSprite.v Line: 95
-Info (12128): Elaborating entity "gameFSM" for hierarchy "gameFSM:gameFSM_inst" File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 120
+Info (12128): Elaborating entity "gameFSM" for hierarchy "gameFSM:gameFSM_inst" File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 154
 Warning (276027): Inferred dual-clock RAM node "memorySprites:memorySprites_inst|sram:element5|memory_array_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
 Warning (276027): Inferred dual-clock RAM node "memorySprites:memorySprites_inst|sram:element4|memory_array_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
 Warning (276027): Inferred dual-clock RAM node "memorySprites:memorySprites_inst|sram:element2|memory_array_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
@@ -2217,15 +2220,15 @@ Warning (14284): Synthesized away the following node(s):
         Warning (14320): Synthesized away node "memorySprites:memorySprites_inst|sram:element5|altsyncram:memory_array_rtl_0|altsyncram_0ji1:auto_generated|ram_block1a7" File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/db/altsyncram_0ji1.tdf Line: 263
 Warning (12241): 14 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13012): Latch memorySprites:memorySprites_inst|read_enable3 has unsafe behavior File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/memorySprites.v Line: 19
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal elementMemory[0] File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 170
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal elementMemory[0] File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 157
 Warning (13012): Latch memorySprites:memorySprites_inst|read_enable1 has unsafe behavior File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/memorySprites.v Line: 17
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal elementMemory[0] File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 170
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal elementMemory[0] File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 157
 Warning (13012): Latch memorySprites:memorySprites_inst|read_enable2 has unsafe behavior File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/memorySprites.v Line: 18
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal elementMemory[0] File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 170
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal elementMemory[0] File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 157
 Warning (13012): Latch memorySprites:memorySprites_inst|read_enable4 has unsafe behavior File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/memorySprites.v Line: 20
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal elementMemory[0] File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 170
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal elementMemory[0] File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 157
 Warning (13012): Latch memorySprites:memorySprites_inst|read_enable5 has unsafe behavior File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/memorySprites.v Line: 21
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal elementMemory[0] File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 170
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal elementMemory[0] File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 157
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "leds[2]" is stuck at GND File: /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/Modulos/top.v Line: 15
 Info (286030): Timing-Driven Synthesis is running
@@ -2234,16 +2237,16 @@ Info (17036): Removed 3 MSB VCC or GND address nodes from RAM block "memorySprit
 Info (144001): Generated suppressed messages file /home/lablenda2/Documentos/Gabriel_Sa/ConsoleFPGA/output_files/consoleFPGA.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 734 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 862 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
     Info (21059): Implemented 14 output pins
-    Info (21061): Implemented 690 logic cells
+    Info (21061): Implemented 818 logic cells
     Info (21064): Implemented 24 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 150 warnings
-    Info: Peak virtual memory: 1005 megabytes
-    Info: Processing ended: Tue Jul  9 14:35:21 2019
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:29
+    Info: Peak virtual memory: 1006 megabytes
+    Info: Processing ended: Wed Jul 10 16:14:18 2019
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:30
 
 
 +------------------------------------------+

@@ -24,6 +24,15 @@ wire        ready;
 wire [QTD_ELEMENTS:0]  element;
 wire [9:0]  address;
 
+/*---PUSH BUTTONS--*/
+wire out_left;
+wire out_right;
+wire out_up;
+wire out_down;
+wire out_start;
+wire out_pause;
+/*-------------*/
+
 wire [2:0] stateGame;
 
 reg [2:0] elementMemory;
@@ -31,7 +40,6 @@ reg  enableMemory;
 
 reg [9:0] addressMemory;
 reg [8:0] colour;
-//reg phraseActived;
 
 //////////////PHRASES///////////////////////////////
 //PRESS START TO BEGIN
@@ -46,30 +54,56 @@ reg [8:0] colour;
 initial begin
 	enableMemory  = 0;
 		  colour   = 0;
-	/*counterPause  = 0;
-	addressLetter = 3540;
-	readyWritten  = 0;
-	phraseActived = 0;
 	/////////////////////////////////////////////////
 	//$readmemh("/home/gabriel/Documentos/ConsoleFPGA/Modulos/phraseSTART.txt",    phraseSTART);
-	$readmemh("/home/gabriel/Documentos/ConsoleFPGA/Modulos/phraseGAMEOVER.txt", phraseGAMEOVER);
-	$readmemh("/home/gabriel/Documentos/ConsoleFPGA/Modulos/phrasePAUSE.txt",    phrasePAUSE);
-	$readmemh("/home/gabriel/Documentos/ConsoleFPGA/Modulos/phraseRESET.txt",    phraseRESET);		  
-	*/
+	//$readmemh("/home/gabriel/Documentos/ConsoleFPGA/Modulos/phraseGAMEOVER.txt", phraseGAMEOVER);
+	//$readmemh("/home/gabriel/Documentos/ConsoleFPGA/Modulos/phrasePAUSE.txt",    phrasePAUSE);
+	//$readmemh("/home/gabriel/Documentos/ConsoleFPGA/Modulos/phraseRESET.txt",    phraseRESET);		  
 end
 
-/*
-wire enableLetter;
-wire [7:0]  colors;
-wire [12:0] addLetter;
-wire activeWritten;
-wire [7:0] ascii;
+/*------------DEBOUNCES-------------*/
+/*debounce debounce_left
+(
+	.clk(clk) ,	// input  clk_sig
+	.data(left) ,	// input  data_sig
+	.out(out_left) 	   // output  out_sig
+);
 
-reg readyWritten;
-reg [3:0]   counterPause;
-reg [7:0]   letters;
-reg [12:0]  addressLetter;
+debounce debounce_right
+(
+	.clk(clk) ,	// input  clk_sig
+	.data(right) ,	// input  data_sig
+	.out(out_right) 	// output  out_sig
+);
 */
+button_Debounce button_Debounce_up
+(
+	.clk(clk) ,	// input  iclk_sig
+	.data(~up) ,	// input  in_bit_sig
+	.out_state(out_up) 	// output  out_state_sig
+);
+
+button_Debounce button_Debounce_down
+(
+	.clk(clk) ,	// input  iclk_sig
+	.data(~down) ,	// input  in_bit_sig
+	.out_state(out_down) 	// output  out_state_sig
+);
+
+button_Debounce button_Debounce_pause
+(
+	.clk(clk) ,	// input  iclk_sig
+	.data(pauseGame) ,	// input  in_bit_sig
+	.out_state(out_pause) 	// output  out_state_sig
+);
+
+button_Debounce button_Debounce_start
+(
+	.clk(clk) ,	// input  iclk_sig
+	.data(startGame) ,	// input  in_bit_sig
+	.out_state(out_start) 	// output  out_state_sig
+);
+/*-----------------------------------*/
 SVGA_sync	SVGA(.clock(clk),
 				 .reset(),
 				 .hsync(hsync),
@@ -97,8 +131,8 @@ printRGB_inst
 	.active(video_enable),
 	.left(0),
 	.right(0),
-	.up(~up),
-	.down(~down),
+	.up(out_up),
+	.down(out_down),
 	.pixel_x(pixel_x) ,	  // input [10:0] pixel_x_sig
 	.pixel_y(pixel_y) ,	  // input [9:0] pixel_y_sig
 	.stateGame(stateGame), // input [2:0] gameState_sig
@@ -113,59 +147,12 @@ gameFSM gameFSM_inst
 	.clk(clk) ,					// input  clk_sig
 	.reset(0) ,			// input  reset_sig
 	.resetFSM(0) ,				// input  resetFSM_sig
-	.startGame(startGame) ,	// input  startGame_sig
-	.pauseGame(pauseGame) ,	// input  pauseGame_sig
+	.startGame(out_start) ,	// input  startGame_sig
+	.pauseGame(out_pause) ,	// input  pauseGame_sig
 	.dead(0) ,				// input  dead_sig
 	.stateGame(stateGame) 		// output [2:0] stateGame_sig
 );
 
-/*
-phrases phrases_inst
-(
-	.clk(clk) ,	//OK				   // input  clk_sig
-	.reset(reset) , //OK			   // input  reset_sig
-	.ready(activeWritten) ,					// input  ready_sig
-	.videoEnable(video_enable) , //OK	// input  videoEnable_sig
-	.letterColor(0) ,	         // input [8:0] letterColor_sig
-	.pixel_x(pixel_x) ,	//OK		// input [10:0] pixel_x_sig
-	.pixel_y(pixel_y) ,	//OK		// input [9:0] pixel_y_sig
-	.letters(ascii) ,				// input [7:0] letters_sig
-	.address(addLetter) ,				// input [12:0] address_sig
-	.colors(colors) ,					// output [8:0] colors_sig
-	.dataReady(enableLetter) 	   // output  dataReady_sig
-);
-
-
-assign addLetter     = addressLetter;
-assign activeWritten = readyWritten;
-assign ascii         = letters;
-
-always @ (*) begin
-	if(stateGame == 3'b010 && phraseActived == 1) begin
-		if(counterPause == 10) readyWritten = 0;
-		else begin			
-			readyWritten = 1;
-			letters = phrasePAUSE[counterPause];
-		end
-	end
-	else readyWritten = 0;
-end 
-
-always @ (posedge clk) begin
-	if(stateGame == 3'b010) begin
-		phraseActived <= 1; //active the written of one letter on screen
-		if(counterPause == 10) begin
-			counterPause  <= 0;
-			addressLetter <= 3540;
-		end
-		else begin
-		   addressLetter <= addressLetter + 1;
-			counterPause <= counterPause + 1; 
-		end
-	end 
-	else phraseActived <= 0; 
-end
-*/
 always @ (*) begin
 	if(video_enable) begin
 		if(ready) begin
