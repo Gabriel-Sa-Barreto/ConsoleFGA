@@ -42,6 +42,9 @@ module printSprite #(parameter initialPosition_x = 0,
 reg [10:0] current_x; // the value of current x of position sprite on screen
 reg  [9:0] current_y; // the value of current y of position sprite on screen
 
+reg [10:0] new_current_x; // the value of current x of position sprite on screen
+reg  [9:0] new_current_y; // the value of current y of position sprite on screen
+
 reg [width_x-1:0] row;
 reg [width_y-1:0] column;
 reg [width_x-1:0] offsetSprite_x;
@@ -52,6 +55,8 @@ initial begin
    offsetSprite_y = 0;
 	current_x = initialPosition_x;
 	current_y = initialPosition_y;
+	new_current_x = initialPosition_x;
+	new_current_y = initialPosition_y;
 	  element = memoryElement;
 	      row = 0;
 	   column = 0;
@@ -62,8 +67,8 @@ always @ (*) begin
 	  enable   = 0;
 	  address  = 0;
 	  if(active) begin
-		  if( (p_y >= current_y && p_y < current_y + sizeSprite_y) ) begin
-				if(p_x >= current_x && p_x <= current_x + sizeSprite_x) begin			 
+		  if( (p_y >= new_current_y && p_y < new_current_y + sizeSprite_y) ) begin
+				if(p_x >= new_current_x && p_x <= new_current_x + sizeSprite_x) begin			 
 					 address = ( (row + offsetSprite_y) * sizeSprite_y) + (column + offsetSprite_x);
 					 enable  = 1;
 				end
@@ -77,22 +82,27 @@ always @ (*) begin
 end
 
 always @ (posedge clk) begin
+	new_current_x <= current_x;
+	new_current_y <= current_y;	
+end
+
+always @ (posedge clk) begin
 	if(reset) begin
 		 current_x <= initialPosition_x;
 	    current_y <= initialPosition_y;
 	      element <= memoryElement;
 	end
 	else if(moveSprite) begin
-		 current_x <= new_position_x;
-	    current_y <= new_position_y;
+		current_x <= new_position_x;
+		current_y <= new_position_y;
 	end
 end
 
 always @ (posedge clk) begin
-	if( p_y >= current_y && p_y < current_y + sizeSprite_y ) begin
-		if(p_x >= current_x && p_x <= current_x + sizeSprite_x) begin
-			row <= p_y - current_y;
-			column <= p_x - current_x;
+	if( p_y >= new_current_y && p_y < new_current_y + sizeSprite_y ) begin
+		if(p_x >= new_current_x && p_x <= new_current_x + sizeSprite_x) begin
+			row <= p_y - new_current_y;
+			column <= p_x - new_current_x;
 		end
 	end
 end

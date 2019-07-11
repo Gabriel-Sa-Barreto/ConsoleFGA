@@ -1,7 +1,8 @@
 // iclk = clock input
 // in_bit = input from toggle switch
 // out_state = output that flows into program
-module button_Debounce(
+module button_Debounce #(parameter INTERVAL = 0, COUNTER_LIMITE = 0)
+(
 	input wire clk, 
 	input wire data, 
 	output reg out_state
@@ -9,7 +10,7 @@ module button_Debounce(
 
 reg current_bit;
 reg prev_bit;
-reg [20:0] count_bit_diff;
+reg [INTERVAL-1:0] count_bit_diff;
     
 always @(posedge clk) begin
   // store current and previous input bit from switch 
@@ -22,7 +23,7 @@ always @(posedge clk) begin
 		count_bit_diff <= count_bit_diff + 1'b1;        
       // When count has reached 2^16 - 1, 
       // toggle the current state 
-      if(count_bit_diff == 24'hfffff)          
+      if(count_bit_diff == COUNTER_LIMITE)          
 			out_state <= ~out_state;  
   end
   else begin

@@ -1,8 +1,8 @@
 `timescale 1ns / 1ps
 module top(
 	  input wire     clk,        //clock da FPGA (50MHz)
-	  input wire     down,      //signal for restart the system
-	  input wire     up,   //signal for restart the game FSM
+	  input wire     down,      //pushButton 0
+	  input wire     up,        //pushButton 1
 	  input wire     reset,
 	  input wire     startGame,  //Pino: Red_button
      input wire     pauseGame,  //Pino: Blue_button
@@ -31,6 +31,7 @@ wire out_up;
 wire out_down;
 wire out_start;
 wire out_pause;
+wire out_reset;
 /*-------------*/
 
 wire [2:0] stateGame;
@@ -68,36 +69,41 @@ end
 	.data(left) ,	// input  data_sig
 	.out(out_left) 	   // output  out_sig
 );
-
-debounce debounce_right
+*/
+button_Debounce #(.INTERVAL(20),.COUNTER_LIMITE(20'hfffff))
+button_Debounce_reset
 (
 	.clk(clk) ,	// input  clk_sig
-	.data(right) ,	// input  data_sig
-	.out(out_right) 	// output  out_sig
+	.data(reset) ,	// input  data_sig
+	.out_state(out_reset) 	// output  out_sig
 );
-*/
-button_Debounce button_Debounce_up
+
+button_Debounce #(.INTERVAL(20),.COUNTER_LIMITE(20'hfffff))
+button_Debounce_up
 (
 	.clk(clk) ,	// input  iclk_sig
 	.data(~up) ,	// input  in_bit_sig
 	.out_state(out_up) 	// output  out_state_sig
 );
 
-button_Debounce button_Debounce_down
+button_Debounce #(.INTERVAL(20),.COUNTER_LIMITE(20'hfffff))
+button_Debounce_down
 (
 	.clk(clk) ,	// input  iclk_sig
-	.data(~down) ,	// input  in_bit_sig
+	.data(down) ,	// input  in_bit_sig
 	.out_state(out_down) 	// output  out_state_sig
 );
 
-button_Debounce button_Debounce_pause
+button_Debounce #(.INTERVAL(20),.COUNTER_LIMITE(20'hfffff))
+button_Debounce_pause
 (
 	.clk(clk) ,	// input  iclk_sig
-	.data(pauseGame) ,	// input  in_bit_sig
+	.data(~pauseGame) ,	// input  in_bit_sig
 	.out_state(out_pause) 	// output  out_state_sig
 );
 
-button_Debounce button_Debounce_start
+button_Debounce #(.INTERVAL(20),.COUNTER_LIMITE(20'hfffff))
+button_Debounce_start
 (
 	.clk(clk) ,	// input  iclk_sig
 	.data(startGame) ,	// input  in_bit_sig
@@ -145,12 +151,12 @@ printRGB_inst
 gameFSM gameFSM_inst
 (
 	.clk(clk) ,					// input  clk_sig
-	.reset(0) ,			// input  reset_sig
-	.resetFSM(0) ,				// input  resetFSM_sig
+	.reset(0) ,					// input  reset_sig
+	.resetFSM(out_reset) ,	// input  resetFSM_sig
 	.startGame(out_start) ,	// input  startGame_sig
 	.pauseGame(out_pause) ,	// input  pauseGame_sig
-	.dead(0) ,				// input  dead_sig
-	.stateGame(stateGame) 		// output [2:0] stateGame_sig
+	.dead(0) ,					// input  dead_sig
+	.stateGame(stateGame) 	// output [2:0] stateGame_sig
 );
 
 always @ (*) begin

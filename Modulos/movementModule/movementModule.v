@@ -24,39 +24,42 @@ reg moveSprite;
 reg [10:0] new_position_x;
 reg  [9:0] new_position_y;
 
+reg [10:0] position_x;
+reg  [9:0] position_y;
+
+localparam sizeSprite = 25;
+
 initial begin
 	new_position_x = 50;
 	new_position_y = 300;
+	position_x = 50;
+	position_y = 300;
 	moveSprite     = 0;
 end
-/*
+
 always @ (*) begin
-	if(pixel_x >= new_position_x && pixel_y < new_position_y) begin
-		moveSprite = 0;
-	end
-	else begin
-		if( (up == 1 && stateSprite == 3'b011) || (down == 1 && stateSprite == 3'b100)) begin
-			moveSprite = 1;
+	if(pixel_x < new_position_x || pixel_x > (new_position_x + sizeSprite) ) begin
+		if(pixel_y < new_position_y || pixel_y > (new_position_y + sizeSprite)) begin
+			if(up) begin
+			  
+			end
+			else if(down) begin
+				
+			end
 		end
 	end
 end
-*/
 
 always @ (posedge clk) begin
-	if(pixel_x >= new_position_x && pixel_y < new_position_y) begin
-		if(up == 1 && stateSprite == 3'b011) begin
-			new_position_y <= new_position_y + 1; 
-			new_position_x <= 50; 
-			 moveSprite <= 1;
-		end
-		else if(down == 1 && stateSprite == 3'b010) begin
-			new_position_y <= new_position_y - 1;
-			new_position_x <= 50; 
-			moveSprite <= 1;
-		end
-		else moveSprite = 0;
+	if(moveSprite) begin
+		if(up)        new_position_y <= new_position_y + 1;
+		else if(down) new_position_y <= new_position_y - 1;
 	end
-	else moveSprite = 0;
+end
+
+always @ (posedge moveSprite) begin
+	position_x <= new_position_x;
+	position_y <= new_position_y;
 end
 
 spriteMoveFSM spriteMoveFSM_inst
@@ -89,12 +92,12 @@ spriteGeneric
 	.active(videoEnable) ,						// input  active_sig
 	.offset_x(0) ,									// input [width_x-1:0] offset_x_sig
 	.offset_y(0) ,									// input [width_y-1:0] offset_y_sig
-	.new_position_x(new_position_x) ,		// input [10:0] new_position_x_sig
-	.new_position_y(new_position_y) ,		// input [9:0] new_position_y_sig
+	.new_position_x(position_x) ,		// input [10:0] new_position_x_sig
+	.new_position_y(position_y) ,		// input [9:0] new_position_y_sig
 	.moveSprite(moveSprite) ,					// input  moveSprite_sig
-	.address(address) ,						// output [addr_width-1:0] address_sig
-	.element(element) ,						// output [amountMemoryElement-1:0] element_sig
-	.enable(enable) 							// output  enable_sig
+	.address(address) ,						   // output [addr_width-1:0] address_sig
+	.element(element) ,						   // output [amountMemoryElement-1:0] element_sig
+	.enable(enable) 							   // output  enable_sig
 );
 
 endmodule
