@@ -5,7 +5,8 @@ module spriteMoveFSM(
 	 input wire right,
 	 input wire up,
 	 input wire down,
-	 output wire [2:0] dataout
+	 output wire [2:0] dataout,
+	 output reg       moveSprite
 );
 
 parameter [2:0]  DEF_STATE   = 3'b000, //default state
@@ -72,4 +73,45 @@ always @ (negedge clk) begin
 end
 
 assign dataout = fsm_out; 
+
+reg [19:0] counter = 0;
+reg move = 0;
+/*------------------------------------------*/
+always @ (posedge clk) begin
+	if(counter == 20'hfffff) begin
+		counter <= 0;
+		move <= 1;
+	end
+	else begin 
+		move <= 0;
+		case({left,right,up,down})
+			4'b0010: begin	//up
+				if(state == UP_STATE) counter <= counter + 1;
+				else counter <= 0;
+			end
+			4'b0001: begin //down
+				if(state == DOWN_STATE) counter <= counter + 1;
+				else counter <= 0;
+			end
+			4'b1000: begin //left
+				if(state == DOWN_STATE) counter <= counter + 1;
+				else counter <= 0;
+			end
+			4'b0100: begin //right
+				if(state == DOWN_STATE) counter <= counter + 1;
+				else counter <= 0;
+			end
+		endcase
+	end
+end
+
+always @ (posedge clk) begin
+	moveSprite <= move;
+end	
+/*-------------------------------------------*/
+
+
+
+
+
 endmodule

@@ -2,172 +2,136 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'elementMemory[0]'
-Slack : -6.530
-TNS   : -103.419
-
 Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -6.234
-TNS   : -664.032
+Slack : -6.522
+TNS   : -718.835
+
+Type  : Slow 1200mV 85C Model Setup 'elementMemory[0]'
+Slack : -5.192
+TNS   : -98.332
 
 Type  : Slow 1200mV 85C Model Setup 'SVGA_sync:SVGA|pixel_x[10]'
-Slack : -4.179
-TNS   : -57.170
-
-Type  : Slow 1200mV 85C Model Setup 'printRGB:printRGB_inst|movementModule:movementModule_inst|moveSprite'
-Slack : 0.055
-TNS   : 0.000
+Slack : -0.901
+TNS   : -4.803
 
 Type  : Slow 1200mV 85C Model Hold 'SVGA_sync:SVGA|pixel_x[10]'
-Slack : 0.180
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'printRGB:printRGB_inst|movementModule:movementModule_inst|moveSprite'
-Slack : 0.267
-TNS   : 0.000
+Slack : -0.461
+TNS   : -0.805
 
 Type  : Slow 1200mV 85C Model Hold 'clk'
 Slack : 0.357
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'elementMemory[0]'
-Slack : 1.139
+Slack : 0.850
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Recovery 'clk'
-Slack : -0.297
-TNS   : -1.188
+Slack : -0.244
+TNS   : -0.488
 
 Type  : Slow 1200mV 85C Model Removal 'clk'
-Slack : 0.885
+Slack : 0.502
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -306.784
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'printRGB:printRGB_inst|movementModule:movementModule_inst|moveSprite'
-Slack : -1.000
-TNS   : -10.000
+TNS   : -343.784
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'elementMemory[0]'
-Slack : 0.358
+Slack : 0.339
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'SVGA_sync:SVGA|pixel_x[10]'
-Slack : 0.418
+Slack : 0.443
 TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Setup 'elementMemory[0]'
-Slack : -5.757
-TNS   : -90.595
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -5.478
-TNS   : -570.942
+Slack : -5.856
+TNS   : -618.052
+
+Type  : Slow 1200mV 0C Model Setup 'elementMemory[0]'
+Slack : -4.603
+TNS   : -86.523
 
 Type  : Slow 1200mV 0C Model Setup 'SVGA_sync:SVGA|pixel_x[10]'
-Slack : -3.637
-TNS   : -48.004
-
-Type  : Slow 1200mV 0C Model Setup 'printRGB:printRGB_inst|movementModule:movementModule_inst|moveSprite'
-Slack : 0.168
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'printRGB:printRGB_inst|movementModule:movementModule_inst|moveSprite'
-Slack : 0.255
-TNS   : 0.000
+Slack : -0.767
+TNS   : -3.853
 
 Type  : Slow 1200mV 0C Model Hold 'SVGA_sync:SVGA|pixel_x[10]'
-Slack : 0.280
-TNS   : 0.000
+Slack : -0.328
+TNS   : -0.511
 
 Type  : Slow 1200mV 0C Model Hold 'clk'
 Slack : 0.311
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'elementMemory[0]'
-Slack : 1.062
+Slack : 0.794
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Recovery 'clk'
-Slack : -0.165
-TNS   : -0.660
+Slack : -0.119
+TNS   : -0.238
 
 Type  : Slow 1200mV 0C Model Removal 'clk'
-Slack : 0.790
+Slack : 0.447
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -306.784
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'printRGB:printRGB_inst|movementModule:movementModule_inst|moveSprite'
-Slack : -1.000
-TNS   : -10.000
+TNS   : -343.784
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'elementMemory[0]'
-Slack : 0.387
+Slack : 0.392
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'SVGA_sync:SVGA|pixel_x[10]'
-Slack : 0.420
+Slack : 0.429
 TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Setup 'elementMemory[0]'
-Slack : -3.648
-TNS   : -49.453
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -3.170
-TNS   : -274.197
+Slack : -2.971
+TNS   : -300.715
+
+Type  : Fast 1200mV 0C Model Setup 'elementMemory[0]'
+Slack : -2.900
+TNS   : -43.889
 
 Type  : Fast 1200mV 0C Model Setup 'SVGA_sync:SVGA|pixel_x[10]'
-Slack : -1.894
-TNS   : -22.931
+Slack : -0.580
+TNS   : -3.131
 
-Type  : Fast 1200mV 0C Model Setup 'printRGB:printRGB_inst|movementModule:movementModule_inst|moveSprite'
-Slack : 0.497
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'printRGB:printRGB_inst|movementModule:movementModule_inst|moveSprite'
-Slack : 0.060
+Type  : Fast 1200mV 0C Model Hold 'SVGA_sync:SVGA|pixel_x[10]'
+Slack : 0.092
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'clk'
-Slack : 0.138
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'SVGA_sync:SVGA|pixel_x[10]'
-Slack : 0.410
+Slack : 0.131
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'elementMemory[0]'
-Slack : 0.703
+Slack : 0.456
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Recovery 'clk'
-Slack : 0.264
+Slack : 0.296
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Removal 'clk'
-Slack : 0.493
+Slack : 0.286
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -305.121
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'printRGB:printRGB_inst|movementModule:movementModule_inst|moveSprite'
-Slack : -1.000
-TNS   : -10.000
+TNS   : -345.232
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'elementMemory[0]'
-Slack : 0.305
+Slack : 0.326
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'SVGA_sync:SVGA|pixel_x[10]'
-Slack : 0.328
+Slack : 0.403
 TNS   : 0.000
 
 ------------------------------------------------------------

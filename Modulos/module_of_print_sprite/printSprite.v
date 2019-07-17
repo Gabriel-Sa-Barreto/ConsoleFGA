@@ -67,11 +67,13 @@ always @ (*) begin
 	  enable   = 0;
 	  address  = 0;
 	  if(active) begin
+			if(!moveSprite) begin
 		  if( (p_y >= new_current_y && p_y < new_current_y + sizeSprite_y) ) begin
 				if(p_x >= new_current_x && p_x <= new_current_x + sizeSprite_x) begin			 
 					 address = ( (row + offsetSprite_y) * sizeSprite_y) + (column + offsetSprite_x);
 					 enable  = 1;
 				end
+		  end
 		  end
 	  end
 end
@@ -82,29 +84,33 @@ always @ (*) begin
 end
 
 always @ (posedge clk) begin
-	new_current_x <= current_x;
-	new_current_y <= current_y;	
+	if(reset) begin
+		 new_current_x <= initialPosition_x;
+	    new_current_y <= initialPosition_y;
+	      element <= memoryElement;
+	end
+	else begin 
+		new_current_x <= current_x;
+		new_current_y <= current_y;
+	end	
 end
 
 always @ (posedge clk) begin
-	if(reset) begin
-		 current_x <= initialPosition_x;
-	    current_y <= initialPosition_y;
-	      element <= memoryElement;
-	end
-	else if(moveSprite) begin
+	if(moveSprite) begin
 		current_x <= new_position_x;
 		current_y <= new_position_y;
 	end
 end
 
 always @ (posedge clk) begin
+if(!moveSprite) begin
 	if( p_y >= new_current_y && p_y < new_current_y + sizeSprite_y ) begin
 		if(p_x >= new_current_x && p_x <= new_current_x + sizeSprite_x) begin
 			row <= p_y - new_current_y;
 			column <= p_x - new_current_x;
 		end
 	end
+end
 end
 
 endmodule
