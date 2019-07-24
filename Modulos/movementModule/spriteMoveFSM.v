@@ -1,11 +1,13 @@
 module spriteMoveFSM(
-	 input wire clk,
-	 input wire reset,
-	 input wire left,
-	 input wire right,
-	 input wire up,
-	 input wire down,
-	 output wire [2:0] dataout,
+	 input wire       clk,
+	 input wire       setSpeed,
+	 input wire [2:0] spriteSpeed,
+	 input wire       reset,
+	 input wire 		left,
+	 input wire 		right,
+	 input wire 		up,
+	 input wire 		down,
+	 output wire [2:0]dataout,
 	 output reg       moveSprite
 );
 
@@ -74,11 +76,13 @@ end
 
 assign dataout = fsm_out; 
 
+localparam velox = 20'hfffff;
 reg [19:0] counter = 0;
 reg move = 0;
+reg [19:0] speed = 20'hfffff;
 /*------------------------------------------*/
 always @ (posedge clk) begin
-	if(counter == 20'hfffff) begin
+	if(counter == speed) begin
 		counter <= 0;
 		move <= 1;
 	end
@@ -94,11 +98,11 @@ always @ (posedge clk) begin
 				else counter <= 0;
 			end
 			4'b1000: begin //left
-				if(state == DOWN_STATE) counter <= counter + 1;
+				if(state == LEFT_STATE) counter <= counter + 1;
 				else counter <= 0;
 			end
 			4'b0100: begin //right
-				if(state == DOWN_STATE) counter <= counter + 1;
+				if(state == RIGHT_STATE) counter <= counter + 1;
 				else counter <= 0;
 			end
 		endcase
@@ -110,8 +114,21 @@ always @ (posedge clk) begin
 end	
 /*-------------------------------------------*/
 
-
-
-
-
+/*---------------Velocity control-------------------*/
+always @ (posedge clk) begin
+	if(setSpeed) begin
+		case(spriteSpeed)
+			0: speed <= velox;
+			1: speed <= velox;
+			2: speed <= velox / 2;
+			3: speed <= velox / 3;
+			4: speed <= velox / 4;
+			5: speed <= velox / 5;
+			6: speed <= velox / 6;
+			7: speed <= velox / 7;
+			default: speed <= speed;
+		endcase
+	end
+end
+/*-------------------------------------------*/
 endmodule

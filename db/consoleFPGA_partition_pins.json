@@ -72,11 +72,23 @@
 					"strict" : false
 				},
 				{
-					"name" : "up",
+					"name" : "left",
 					"strict" : false
 				},
 				{
 					"name" : "down",
+					"strict" : false
+				},
+				{
+					"name" : "right",
+					"strict" : false
+				},
+				{
+					"name" : "up",
+					"strict" : false
+				},
+				{
+					"name" : "setSpeed",
 					"strict" : false
 				}
 			]

@@ -3,6 +3,7 @@ module movementModule
 (
 	input wire clk,
 	input wire reset,
+	input wire setSpeed,
 	input wire left,
 	input wire right,
 	input wire up,
@@ -20,6 +21,7 @@ wire       moveSprite;
 wire enable_out;
 wire [ADDRESS_MEMORY-1:0]      address_out;
 wire [QTD_MEMORY_ELEMENT-1:0]element_out;
+wire [2:0] speed_sp;
 
 reg [10:0] new_position_x;
 reg  [9:0] new_position_y;
@@ -27,10 +29,12 @@ reg move;
 
 reg [10:0] position_x;
 reg  [9:0] position_y;
+reg  [2:0] speed;
 
 localparam sizeSprite = 25;
 
 initial begin
+	speed = 6;
 	new_position_x = 50;
 	new_position_y = 300;
 	position_x = 50;
@@ -39,15 +43,19 @@ end
 
 spriteMoveFSM spriteMoveFSM_inst
 (
-	.clk(clk) ,	        		// input  clk_sig
-	.reset(reset) ,	  		// input  reset_sig
-	.left(left) ,	     		// input  left_sig
-	.right(right) ,	  		// input  right_sig
-	.up(up) ,	        		// input  up_sig
-	.down(down) ,	     		// input  down_sig
-	.dataout(stateSprite),   // output [2:0] dataout_sig
-	.moveSprite(moveSprite)  //output moveSprite_sig    
+	.clk(clk) ,	        			// input  clk_sig
+	.reset(reset) ,	  			// input  reset_sig
+	.setSpeed(setSpeed), 		// input  setSpeed_sig
+	.spriteSpeed(speed_sp), // input  setSpeed_sig
+	.left(left) ,	     			// input  left_sig
+	.right(right) ,	  			// input  right_sig
+	.up(up) ,	        			// input  up_sig
+	.down(down) ,	     			// input  down_sig
+	.dataout(stateSprite),   	// output [2:0] dataout_sig
+	.moveSprite(moveSprite)  	//output moveSprite_sig    
 );
+
+assign speed_sp = speed;
 
 always @ (negedge clk) begin
 	if(reset) begin
@@ -55,12 +63,20 @@ always @ (negedge clk) begin
 		new_position_x <= 50;
 		new_position_y <= 300;
 	end
-	else if(moveSprite && stateSprite == 3'b011) begin
+	else if(moveSprite && stateSprite == 3'b011) begin //up
+		new_position_y <= new_position_y - 1;
+		move <= 1;
+	end
+	else if(moveSprite && stateSprite == 3'b100) begin //down
 		new_position_y <= new_position_y + 1;
 		move <= 1;
 	end
-	else if(moveSprite && stateSprite == 3'b100) begin
-		new_position_y <= new_position_y - 1;
+	else if(moveSprite && stateSprite == 3'b001) begin //left
+		new_position_x <= new_position_x  - 1;
+		move <= 1;
+	end
+	else if(moveSprite && stateSprite == 3'b010) begin //right
+		new_position_x <= new_position_x + 1;
 		move <= 1;
 	end
 	else move <= 0;

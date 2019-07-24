@@ -1,11 +1,14 @@
 `timescale 1ns / 1ps
 module top(
 	  input wire     clk,        //clock da FPGA (50MHz)
-	  input wire     down,      //pushButton 0
-	  input wire     up,        //pushButton 1
-	  input wire     reset,
-	  input wire     startGame,  //Pino: Red_button
-     input wire     pauseGame,  //Pino: Blue_button
+	  input wire     up,         //yellow button (GPIO 117 PIN_K16)
+	  input wire     down,       //black button   (GPIO 119 PIN_L15) 
+	  input wire     right,      //red button    (GPIO 121 PIN_P16)
+	  input wire     left,       //blue button  (GPIO 123 PIN_N16)
+	  input wire     setSpeed,   //pushButton 0
+	  input wire     reset,      //switch 00
+	  input wire     startGame,  //switch 01
+     input wire     pauseGame,  //switch 02
 	  output reg  [2:0] VGA_R,   //intensidade de vermelho
 	  output reg  [2:0] VGA_G,   //intensidade de verde
 	  output reg  [2:0] VGA_B,   //intensidade do azul
@@ -24,7 +27,7 @@ wire        ready;
 wire [QTD_ELEMENTS:0]  element;
 wire [9:0]  address;
 
-/*---PUSH BUTTONS--*/
+/*---PUSH BUTTONS and SWITCHES--*/
 wire out_left;
 wire out_right;
 wire out_up;
@@ -32,6 +35,7 @@ wire out_down;
 wire out_start;
 wire out_pause;
 wire out_reset;
+wire out_speed;
 /*-------------*/
 
 wire [2:0] stateGame;
@@ -42,34 +46,36 @@ reg  enableMemory;
 reg [9:0] addressMemory;
 reg [8:0] colour;
 
-//////////////PHRASES///////////////////////////////
-//PRESS START TO BEGIN
-//GAME OVER
-//GAME PAUSED
-//GAME RESET
-//reg [7:0] phraseSTART [16:0];
-//reg [7:0] phraseGAMEOVER [7:0];
-//reg [7:0] phrasePAUSE [9:0];
-//reg [7:0] phraseRESET [8:0];
-////////////////////////////////////////////////////
 initial begin
 	enableMemory  = 0;
 		  colour   = 0;
-	/////////////////////////////////////////////////
-	//$readmemh("/home/gabriel/Documentos/ConsoleFPGA/Modulos/phraseSTART.txt",    phraseSTART);
-	//$readmemh("/home/gabriel/Documentos/ConsoleFPGA/Modulos/phraseGAMEOVER.txt", phraseGAMEOVER);
-	//$readmemh("/home/gabriel/Documentos/ConsoleFPGA/Modulos/phrasePAUSE.txt",    phrasePAUSE);
-	//$readmemh("/home/gabriel/Documentos/ConsoleFPGA/Modulos/phraseRESET.txt",    phraseRESET);		  
 end
 
 /*------------DEBOUNCES-------------*/
-/*debounce debounce_left
+button_Debounce #(.INTERVAL(20),.COUNTER_LIMITE(20'hfffff))
+button_Debounce_setSpeed
+(
+	.clk(clk) ,	// input  clk_sig
+	.data(~setSpeed) ,	// input  data_sig
+	.out_state(out_speed) 	// output  out_sig
+);
+
+button_Debounce #(.INTERVAL(20),.COUNTER_LIMITE(20'hfffff))
+button_Debounce_left
 (
 	.clk(clk) ,	// input  clk_sig
 	.data(left) ,	// input  data_sig
-	.out(out_left) 	   // output  out_sig
+	.out_state(out_left) 	// output  out_sig
 );
-*/
+
+button_Debounce #(.INTERVAL(20),.COUNTER_LIMITE(20'hfffff))
+button_Debounce_right
+(
+	.clk(clk) ,	// input  clk_sig
+	.data(right) ,	// input  data_sig
+	.out_state(out_right) 	// output  out_sig
+);
+
 button_Debounce #(.INTERVAL(20),.COUNTER_LIMITE(20'hfffff))
 button_Debounce_reset
 (
@@ -82,7 +88,7 @@ button_Debounce #(.INTERVAL(20),.COUNTER_LIMITE(20'hfffff))
 button_Debounce_up
 (
 	.clk(clk) ,	// input  iclk_sig
-	.data(~up) ,	// input  in_bit_sig
+	.data(up) ,	// input  in_bit_sig
 	.out_state(out_up) 	// output  out_state_sig
 );
 
@@ -98,7 +104,7 @@ button_Debounce #(.INTERVAL(20),.COUNTER_LIMITE(20'hfffff))
 button_Debounce_pause
 (
 	.clk(clk) ,	// input  iclk_sig
-	.data(~pauseGame) ,	// input  in_bit_sig
+	.data(pauseGame) ,	// input  in_bit_sig
 	.out_state(out_pause) 	// output  out_state_sig
 );
 
@@ -135,8 +141,9 @@ printRGB_inst
 	.clk(clk) ,	        	  // input  clk_sig
 	.reset(reset) ,	     		  // input  reset_sig
 	.active(video_enable),
-	.left(0),
-	.right(0),
+	.setSpeed(out_speed),
+	.left(out_left),
+	.right(out_right),
 	.up(out_up),
 	.down(out_down),
 	.pixel_x(pixel_x) ,	  // input [10:0] pixel_x_sig

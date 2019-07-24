@@ -2,6 +2,7 @@ module printRGB #(parameter ELEMENT = 5)(
 		input  wire         clk,
 		input  wire         reset,
 		input  wire         active,
+		input  wire         setSpeed,
 		input  wire         left,
 		input  wire         right,
 		input  wire         up,
@@ -164,12 +165,13 @@ spriteHeart3
 movementModule #(.ELEMENT(1), .QTD_MEMORY_ELEMENT(4), .ADDRESS_MEMORY(10))
 movementModule_inst
 (
-	.clk(clk) ,	// input  clk_sig
-	.reset(reset) ,	// input  reset_sig
-	.left(left) ,	// input  left_sig
-	.right(right) ,	// input  right_sig
-	.up(up) ,	// input  up_sig
-	.down(down) ,	// input  down_sig
+	.clk(clk) ,				// input  clk_sig
+	.reset(reset) ,		// input  reset_sig
+	.setSpeed(setSpeed), //input setSpeed_sig
+	.left(left) ,			// input  left_sig
+	.right(right) ,		// input  right_sig
+	.up(up) ,				// input  up_sig
+	.down(down) ,			// input  down_sig
 	.pixel_x(pixel_x) ,	// input  pixel_x_sig
 	.pixel_y(pixel_y) ,	// input  pixel_y_sig
 	.videoEnable(active) ,	// input  videoEnable_sig
