@@ -57,7 +57,7 @@ spriteMoveFSM spriteMoveFSM_inst
 
 assign speed_sp = speed;
 
-always @ (negedge clk) begin
+always @ (posedge clk) begin
 	if(reset) begin
 		          move <= 1;
 		new_position_x <= 50;

@@ -183,7 +183,7 @@ always @ (*) begin
 			colour[5:3] = dataout[7:5]; 
 			colour[2:0] = dataout[3:1];
 		end
-		else colour = 8'hff; //background on screen
+		else colour = 8'hdd; //background on screen
 	end
 	else colour = 0; 
 end

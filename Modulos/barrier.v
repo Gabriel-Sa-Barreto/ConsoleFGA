@@ -63,32 +63,42 @@ begin
 end
 
 always @ (posedge clk) begin
+	//barrier up
 	if( p_y <= 24 ) begin
 		if(counter_BarrierUp == 25) counter_BarrierUp <= 0;
 		else counter_BarrierUp <= counter_BarrierUp + 1;
 	end
+	else counter_BarrierUp <= counter_BarrierUp;
 	
+	//barrier down
 	if( p_y >= 575 ) begin
 		if(counter_BarrierDown == 25) counter_BarrierDown <= 0;
 		else counter_BarrierDown <= counter_BarrierDown + 1;
 	end
+	else counter_BarrierDown <= counter_BarrierDown;
 	
+	//barrier left
 	if( p_y >= 25 && p_y <= 574 && p_x <= 25) begin
 		if(counter_BarrierLeft == 25) counter_BarrierLeft <= 0;
 		else begin
 			if(p_x == 25) begin
 				counter_BarrierLeft <= counter_BarrierLeft + 1;	
 			end
-		end
+			else counter_BarrierLeft <= counter_BarrierLeft;
+		end 
 	end
+	else counter_BarrierLeft <= counter_BarrierLeft;
 	
+	//barrier right
 	if( p_y >= 25 && p_y <= 574 && p_x >= 775) begin
 		if(counter_BarrierRight == 25) counter_BarrierRight <= 0;
 		else begin
 			if(p_x == 799) begin
 				counter_BarrierRight <= counter_BarrierRight + 1;
 			end
+			else counter_BarrierRight <= counter_BarrierRight;
 		end
 	end
+	else counter_BarrierRight <= counter_BarrierRight;
 end
 endmodule
