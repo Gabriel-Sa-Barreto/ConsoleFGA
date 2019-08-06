@@ -1,5 +1,5 @@
 Flow report for consoleFPGA
-Fri Aug  2 14:42:54 2019
+Tue Aug  6 14:23:25 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -102,7 +102,8 @@ refer to the applicable agreement for further details.
 ; Assembler            ; 00:00:00     ; 1.0                     ; 813 MB              ; 00:00:01                           ;
 ; Timing Analyzer      ; 00:00:02     ; 1.1                     ; 836 MB              ; 00:00:02                           ;
 ; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 1063 MB             ; 00:00:01                           ;
-; Total                ; 00:00:28     ; --                      ; --                  ; 00:00:42                           ;
+; Timing Analyzer      ; 00:00:03     ; 1.1                     ; 817 MB              ; 00:00:02                           ;
+; Total                ; 00:00:31     ; --                      ; --                  ; 00:00:44                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -116,6 +117,7 @@ refer to the applicable agreement for further details.
 ; Assembler            ; lablenda2        ; Ubuntu 18.04.2 ; 18         ; x86_64         ;
 ; Timing Analyzer      ; lablenda2        ; Ubuntu 18.04.2 ; 18         ; x86_64         ;
 ; EDA Netlist Writer   ; lablenda2        ; Ubuntu 18.04.2 ; 18         ; x86_64         ;
+; Timing Analyzer      ; lablenda2        ; Ubuntu 18.04.2 ; 18         ; x86_64         ;
 +----------------------+------------------+----------------+------------+----------------+
 
 
@@ -127,6 +129,7 @@ quartus_fit --read_settings_files=off --write_settings_files=off consoleFPGA -c 
 quartus_asm --read_settings_files=off --write_settings_files=off consoleFPGA -c consoleFPGA
 quartus_sta consoleFPGA -c consoleFPGA
 quartus_eda --read_settings_files=off --write_settings_files=off consoleFPGA -c consoleFPGA
+quartus_sta consoleFPGA -c consoleFPGA
 
 
 

@@ -1,0 +1,10 @@
+module frequency_divisor(
+	input 
+
+
+
+);
+
+
+
+endmodule
