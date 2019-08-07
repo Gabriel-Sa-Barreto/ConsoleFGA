@@ -75,6 +75,10 @@ set_location_assignment PIN_P9 -to leds[2]
 set_location_assignment PIN_L15 -to down
 set_location_assignment PIN_K16 -to up
 set_location_assignment PIN_M1 -to reset
+set_location_assignment PIN_P16 -to left
+set_location_assignment PIN_N16 -to right
+set_location_assignment PIN_J15 -to setSpeed
+set_global_assignment -name VERILOG_FILE Modulos/module_collision/collision.v
 set_global_assignment -name VERILOG_FILE Modulos/top.v
 set_global_assignment -name VERILOG_FILE Modulos/gameFSM/gameFSM.v
 set_global_assignment -name VERILOG_FILE "Modulos/module of phrases/ram.v"
@@ -91,9 +95,6 @@ set_global_assignment -name VERILOG_FILE Modulos/movementModule/movementModule.v
 set_global_assignment -name VERILOG_FILE Modulos/movementModule/spriteMoveFSM.v
 set_global_assignment -name VERILOG_FILE "Modulos/module of phrases/phrases.v"
 set_global_assignment -name VERILOG_FILE Modulos/debounce/buttonDebounce.v
-set_location_assignment PIN_P16 -to left
-set_location_assignment PIN_N16 -to right
-set_location_assignment PIN_J15 -to setSpeed
 set_global_assignment -name VERILOG_FILE Modulos/frequency_divisor/frequency_divisor.v
 set_global_assignment -name VERILOG_FILE Modulos/multiplexador/multiplexador.v
 set_global_assignment -name VERILOG_FILE Modulos/counter/counter.v

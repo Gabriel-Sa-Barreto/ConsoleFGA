@@ -1,266 +1,837 @@
 # Loading project testCounter
-vsim work.testCounter -t ns
-# vsim work.testCounter -t ns 
-# Start time: 00:17:10 on Aug 07,2019
-# Loading work.testCounter
-# Loading work.counter
-# ** Warning: (vsim-3015) /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_counter/testCounter.v(27): [PCDPC] - Port size (3) does not match connection size (1) for port 'out_counter'. The port definition is at: /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_counter/counter.v(10).
-#    Time: 0 ns  Iteration: 0  Instance: /testCounter/counter_inst File: /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_counter/counter.v
-add wave -position insertpoint sim:/testCounter/*
-# Compile of counter.v was successful.
-# Compile of testCounter.v was successful.
+# reading /opt/intelFPGA_lite/18.1/modelsim_ase/linuxaloem/../modelsim.ini
+# Loading project testCollision
+# Compile of testCollision.v failed with 4 errors.
+# Compile of collision.v was successful.
+# 2 compiles, 1 failed with 4 errors.
+# Compile of testCollision.v failed with 3 errors.
+# Compile of collision.v was successful.
+# 2 compiles, 1 failed with 3 errors.
+# Compile of testCollision.v failed with 2 errors.
+# Compile of collision.v was successful.
+# 2 compiles, 1 failed with 2 errors.
+# Compile of testCollision.v was successful.
+# Compile of collision.v was successful.
 # 2 compiles, 0 failed with no errors.
-vsim -t ns work.testCounter
-# End time: 00:18:38 on Aug 07,2019, Elapsed time: 0:01:28
+vsim work.testCollision -t ns
+# vsim work.testCollision -t ns 
+# Start time: 12:59:40 on Aug 07,2019
+# Loading work.testCollision
+# Loading work.collision
+# ** Error: (vsim-3033) /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/collision.v(79): Instantiation of 'frequency_divisor' failed. The design unit was not found.
+#    Time: 0 ns  Iteration: 0  Instance: /testCollision/collision_inst File: /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/collision.v
+#         Searched libraries:
+#             /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/work
+# ** Error: (vsim-3033) /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/collision.v(88): Instantiation of 'frequency_divisor' failed. The design unit was not found.
+#    Time: 0 ns  Iteration: 0  Instance: /testCollision/collision_inst File: /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/collision.v
+#         Searched libraries:
+#             /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/work
+# ** Error: (vsim-3033) /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/collision.v(97): Instantiation of 'counter' failed. The design unit was not found.
+#    Time: 0 ns  Iteration: 0  Instance: /testCollision/collision_inst File: /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/collision.v
+#         Searched libraries:
+#             /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/work
+# ** Error: (vsim-3033) /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/collision.v(104): Instantiation of 'multiplex' failed. The design unit was not found.
+#    Time: 0 ns  Iteration: 0  Instance: /testCollision/collision_inst File: /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/collision.v
+#         Searched libraries:
+#             /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/work
+# Error loading design
+# End time: 12:59:41 on Aug 07,2019, Elapsed time: 0:00:01
+# Errors: 4, Warnings: 0
+# Compile of testCollision.v was successful.
+# Compile of collision.v was successful.
+# Compile of counter.v was successful.
+# Compile of multiplexador.v was successful.
+# Compile of frequency_divisor.v was successful.
+# 5 compiles, 0 failed with no errors.
+vsim -t ns work.testCollision
+# vsim -t ns work.testCollision 
+# Start time: 13:01:03 on Aug 07,2019
+# Loading work.testCollision
+# Loading work.collision
+# Loading work.frequency_divisor
+# Loading work.counter
+# Loading work.multiplex
+# ** Error: (vsim-3043) /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/testCollision.v(44): Unresolved reference to 'mains_x'.
+#    Time: 0 ns  Iteration: 0  Instance: /testCollision File: /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/testCollision.v
+# ** Error: (vsim-3043) /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/testCollision.v(45): Unresolved reference to 'mains_y'.
+#    Time: 0 ns  Iteration: 0  Instance: /testCollision File: /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/testCollision.v
+# ** Warning: (vsim-3015) /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/collision.v(97): [PCDPC] - Port size (4) does not match connection size (2) for port 'out_counter'. The port definition is at: /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/counter.v(10).
+#    Time: 0 ns  Iteration: 0  Instance: /testCollision/collision_inst/counter_inst File: /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/counter.v
+# ** Warning: (vsim-3015) /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/collision.v(104): [PCDPC] - Port size (10) does not match connection size (11) for port 'y4'. The port definition is at: /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/multiplexador.v(9).
+#    Time: 0 ns  Iteration: 0  Instance: /testCollision/collision_inst/multiplex_inst File: /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/multiplexador.v
+# Error loading design
+# End time: 13:01:03 on Aug 07,2019, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 2
+# Compile of testCollision.v was successful.
+# Compile of collision.v was successful.
+# Compile of counter.v was successful.
+# Compile of multiplexador.v was successful.
+# Compile of frequency_divisor.v was successful.
+# 5 compiles, 0 failed with no errors.
+vsim -t ns work.testCollision
+# vsim -t ns work.testCollision 
+# Start time: 13:01:40 on Aug 07,2019
+# Loading work.testCollision
+# Loading work.collision
+# Loading work.frequency_divisor
+# Loading work.counter
+# Loading work.multiplex
+# ** Warning: (vsim-3015) /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/collision.v(97): [PCDPC] - Port size (4) does not match connection size (2) for port 'out_counter'. The port definition is at: /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/counter.v(10).
+#    Time: 0 ns  Iteration: 0  Instance: /testCollision/collision_inst/counter_inst File: /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/counter.v
+# ** Warning: (vsim-3015) /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/collision.v(104): [PCDPC] - Port size (10) does not match connection size (11) for port 'y4'. The port definition is at: /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/multiplexador.v(9).
+#    Time: 0 ns  Iteration: 0  Instance: /testCollision/collision_inst/multiplex_inst File: /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/multiplexador.v
+# Compile of testCollision.v was successful.
+# Compile of collision.v was successful.
+# Compile of counter.v was successful.
+# Compile of multiplexador.v was successful.
+# Compile of frequency_divisor.v was successful.
+# 5 compiles, 0 failed with no errors.
+vsim -t ns work.testCollision
+# End time: 13:13:33 on Aug 07,2019, Elapsed time: 0:11:53
+# Errors: 0, Warnings: 2
+# vsim -t ns work.testCollision 
+# Start time: 13:13:33 on Aug 07,2019
+# Loading work.testCollision
+# Loading work.collision
+# Loading work.frequency_divisor
+# Loading work.counter
+# Loading work.multiplex
+# ** Warning: (vsim-3015) /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/collision.v(97): [PCDPC] - Port size (4) does not match connection size (2) for port 'out_counter'. The port definition is at: /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/counter.v(10).
+#    Time: 0 ns  Iteration: 0  Instance: /testCollision/collision_inst/counter_inst File: /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/counter.v
+# ** Warning: (vsim-3015) /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/collision.v(104): [PCDPC] - Port size (10) does not match connection size (11) for port 'y4'. The port definition is at: /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/multiplexador.v(9).
+#    Time: 0 ns  Iteration: 0  Instance: /testCollision/collision_inst/multiplex_inst File: /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/multiplexador.v
+# Error opening /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/(vsim-3015) /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/collision.v
+# Path name '/home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/(vsim-3015) /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/collision.v' doesn't exist.
+# Error opening /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/(vsim-3015) /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/collision.v
+# Path name '/home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/(vsim-3015) /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/collision.v' doesn't exist.
+# Compile of testCollision.v was successful.
+# Compile of counter.v was successful.
+# Compile of multiplexador.v was successful.
+# Compile of frequency_divisor.v was successful.
+# Compile of collision.v was successful.
+# 5 compiles, 0 failed with no errors.
+vsim -t ns work.testCollision
+# End time: 13:18:36 on Aug 07,2019, Elapsed time: 0:05:03
+# Errors: 2, Warnings: 2
+# vsim -t ns work.testCollision 
+# Start time: 13:18:36 on Aug 07,2019
+# Loading work.testCollision
+# Loading work.collision
+# Loading work.frequency_divisor
+# Loading work.counter
+# Loading work.multiplex
+# ** Warning: (vsim-3015) /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/collision.v(106): [PCDPC] - Port size (10) does not match connection size (11) for port 'y4'. The port definition is at: /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/multiplexador.v(9).
+#    Time: 0 ns  Iteration: 0  Instance: /testCollision/collision_inst/multiplex_inst File: /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/multiplexador.v
+# Compile of testCollision.v was successful.
+# Compile of counter.v was successful.
+# Compile of multiplexador.v was successful.
+# Compile of frequency_divisor.v was successful.
+# Compile of collision.v was successful.
+# 5 compiles, 0 failed with no errors.
+vsim -t ns work.testCollision
+# End time: 13:19:56 on Aug 07,2019, Elapsed time: 0:01:20
 # Errors: 0, Warnings: 1
-# vsim -t ns work.testCounter 
-# Start time: 00:18:38 on Aug 07,2019
-# Loading work.testCounter
+# vsim -t ns work.testCollision 
+# Start time: 13:19:56 on Aug 07,2019
+# Loading work.testCollision
+# Loading work.collision
+# Loading work.frequency_divisor
 # Loading work.counter
-add wave -position insertpoint sim:/testCounter/*
-force -freeze sim:/testCounter/clk 0 0, 1 {10 ns} -r 20
-run -all
-# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
-# out_counter: x, CLK: 0
-# out_counter: 0, CLK: 0
-# out_counter: 0, CLK: 1
-# out_counter: 0, CLK: 0
-# out_counter: 1, CLK: 1
-# out_counter: 1, CLK: 0
-# out_counter: 2, CLK: 1
-# out_counter: 2, CLK: 0
-# out_counter: 3, CLK: 1
-# out_counter: 3, CLK: 0
-# out_counter: 4, CLK: 1
-# out_counter: 4, CLK: 0
-# out_counter: 5, CLK: 1
-# out_counter: 5, CLK: 0
-# out_counter: 6, CLK: 1
-# out_counter: 6, CLK: 0
-# out_counter: 0, CLK: 1
-# out_counter: 0, CLK: 0
-# ** Note: $finish    : /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_counter/testCounter.v(18)
-#    Time: 170 ns  Iteration: 0  Instance: /testCounter
-# 1
-# Break in Module testCounter at /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_counter/testCounter.v line 18
+# Loading work.multiplex
+add wave -position insertpoint sim:/testCollision/*
+force -freeze sim:/testCollision/clk 0 0, 1 {10 ns} -r 20
+force -freeze sim:/testCollision/clk 0 0, 1 {10 ns} -r 20
+# Compile of testCollision.v was successful.
 # Compile of counter.v was successful.
-# Compile of testCounter.v was successful.
-# 2 compiles, 0 failed with no errors.
-vsim -t ns work.testCounter
-# End time: 00:25:14 on Aug 07,2019, Elapsed time: 0:06:36
-# Errors: 0, Warnings: 1
-# vsim -t ns work.testCounter 
-# Start time: 00:25:14 on Aug 07,2019
-# Loading work.testCounter
-# Loading work.counter
-add wave -position insertpoint sim:/testCounter/*
-noforce sim:/testCounter/clk
-force -freeze sim:/testCounter/clk 0 0, 1 {10 ns} -r 20
-run -all
-# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
-# out_counter: x, CLK: 0
-# out_counter: 0, CLK: 0
-# out_counter: 0, CLK: 1
-# out_counter: 0, CLK: 0
-# out_counter: 1, CLK: 1
-# out_counter: 1, CLK: 0
-# out_counter: 2, CLK: 1
-# out_counter: 2, CLK: 0
-# out_counter: 3, CLK: 1
-# out_counter: 3, CLK: 0
-# out_counter: 4, CLK: 1
-# out_counter: 4, CLK: 0
-# out_counter: 5, CLK: 1
-# out_counter: 5, CLK: 0
-# out_counter: 6, CLK: 1
-# out_counter: 6, CLK: 0
-# out_counter: 7, CLK: 1
-# out_counter: 7, CLK: 0
-# ** Note: $finish    : /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_counter/testCounter.v(18)
-#    Time: 170 ns  Iteration: 0  Instance: /testCounter
-# 1
-# Break in Module testCounter at /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_counter/testCounter.v line 18
-# Compile of counter.v was successful.
-# Compile of testCounter.v was successful.
-# 2 compiles, 0 failed with no errors.
+# Compile of multiplexador.v was successful.
+# Compile of frequency_divisor.v was successful.
+# Compile of collision.v was successful.
+# 5 compiles, 0 failed with no errors.
 restart
-# Loading work.testCounter
+# Loading work.testCollision
+# Loading work.collision
+# Loading work.frequency_divisor
 # Loading work.counter
-force -freeze sim:/testCounter/clk 0 0, 1 {10 ns} -r 20
+# Loading work.multiplex
+force -freeze sim:/testCollision/clk 0 0, 1 {10 ns} -r 20
 run -all
 # ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
-# out_counter:  x, CLK: 0
-# out_counter:  0, CLK: 0
-# out_counter:  0, CLK: 1
-# out_counter:  0, CLK: 0
-# out_counter:  1, CLK: 1
-# out_counter:  1, CLK: 0
-# out_counter:  2, CLK: 1
-# out_counter:  2, CLK: 0
-# out_counter:  3, CLK: 1
-# out_counter:  3, CLK: 0
-# out_counter:  4, CLK: 1
-# out_counter:  4, CLK: 0
-# out_counter:  5, CLK: 1
-# out_counter:  5, CLK: 0
-# out_counter:  6, CLK: 1
-# out_counter:  6, CLK: 0
-# out_counter:  7, CLK: 1
-# out_counter:  7, CLK: 0
-# out_counter:  8, CLK: 1
-# out_counter:  8, CLK: 0
-# out_counter:  9, CLK: 1
-# out_counter:  9, CLK: 0
-# out_counter: 10, CLK: 1
-# out_counter: 10, CLK: 0
-# out_counter: 11, CLK: 1
-# out_counter: 11, CLK: 0
-# out_counter: 12, CLK: 1
-# out_counter: 12, CLK: 0
-# out_counter: 13, CLK: 1
-# out_counter: 13, CLK: 0
-# out_counter: 14, CLK: 1
-# out_counter: 14, CLK: 0
-# out_counter: 15, CLK: 1
-# out_counter: 15, CLK: 0
-# out_counter:  0, CLK: 1
-# out_counter:  0, CLK: 0
-# out_counter:  1, CLK: 1
-# out_counter:  1, CLK: 0
-# out_counter:  2, CLK: 1
-# out_counter:  2, CLK: 0
-# out_counter:  3, CLK: 1
-# out_counter:  3, CLK: 0
-# out_counter:  4, CLK: 1
-# out_counter:  4, CLK: 0
-# out_counter:  5, CLK: 1
-# out_counter:  5, CLK: 0
-# out_counter:  6, CLK: 1
-# out_counter:  6, CLK: 0
-# out_counter:  7, CLK: 1
-# out_counter:  7, CLK: 0
-# out_counter:  8, CLK: 1
-# out_counter:  8, CLK: 0
-# ** Note: $finish    : /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_counter/testCounter.v(18)
-#    Time: 510 ns  Iteration: 0  Instance: /testCounter
+# COLLISION:0, ---SPRITE: x
+# COLLISION:0, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:0, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:0, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:0, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:0, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:0, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:0, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:0, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:0, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:0, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:0, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:0, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:0, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:0, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:0, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:0, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:0, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:0, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:0, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:0, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:0, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# ** Note: $finish    : /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/testCollision.v(42)
+#    Time: 10010 ns  Iteration: 0  Instance: /testCollision
 # 1
-# Break in Module testCounter at /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_counter/testCounter.v line 18
+# Break in Module testCollision at /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/testCollision.v line 42
+# Compile of testCollision.v was successful.
 # Compile of counter.v was successful.
-# Compile of testCounter.v was successful.
-# 2 compiles, 0 failed with no errors.
+# Compile of multiplexador.v was successful.
+# Compile of frequency_divisor.v was successful.
+# Compile of collision.v was successful.
+# 5 compiles, 0 failed with no errors.
 restart
-# Loading work.testCounter
+# Loading work.testCollision
+# Loading work.collision
+# Loading work.frequency_divisor
 # Loading work.counter
-force -freeze sim:/testCounter/clk 0 0, 1 {10 ns} -r 20
+# Loading work.multiplex
+force -freeze sim:/testCollision/clk 0 0, 1 {10 ns} -r 20
 run -all
 # ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
-# out_counter:  x, CLK: 0
-# out_counter:  0, CLK: 0
-# out_counter:  0, CLK: 1
-# out_counter:  0, CLK: 0
-# out_counter:  1, CLK: 1
-# out_counter:  1, CLK: 0
-# out_counter:  2, CLK: 1
-# out_counter:  2, CLK: 0
-# out_counter:  3, CLK: 1
-# out_counter:  3, CLK: 0
-# out_counter:  4, CLK: 1
-# out_counter:  4, CLK: 0
-# out_counter:  5, CLK: 1
-# out_counter:  5, CLK: 0
-# out_counter:  6, CLK: 1
-# out_counter:  6, CLK: 0
-# out_counter:  7, CLK: 1
-# out_counter:  7, CLK: 0
-# out_counter:  8, CLK: 1
-# out_counter:  8, CLK: 0
-# out_counter:  9, CLK: 1
-# out_counter:  9, CLK: 0
-# out_counter: 10, CLK: 1
-# out_counter: 10, CLK: 0
-# out_counter: 11, CLK: 1
-# out_counter: 11, CLK: 0
-# out_counter: 12, CLK: 1
-# out_counter: 12, CLK: 0
-# out_counter: 13, CLK: 1
-# out_counter: 13, CLK: 0
-# out_counter: 14, CLK: 1
-# out_counter: 14, CLK: 0
-# out_counter: 15, CLK: 1
-# out_counter: 15, CLK: 0
-# out_counter:  0, CLK: 1
-# out_counter:  0, CLK: 0
-# out_counter:  1, CLK: 1
-# out_counter:  1, CLK: 0
-# out_counter:  2, CLK: 1
-# out_counter:  2, CLK: 0
-# out_counter:  3, CLK: 1
-# out_counter:  3, CLK: 0
-# out_counter:  4, CLK: 1
-# out_counter:  4, CLK: 0
-# out_counter:  5, CLK: 1
-# out_counter:  5, CLK: 0
-# out_counter:  6, CLK: 1
-# out_counter:  6, CLK: 0
-# out_counter:  7, CLK: 1
-# out_counter:  7, CLK: 0
-# out_counter:  8, CLK: 1
-# out_counter:  8, CLK: 0
-# out_counter:  9, CLK: 1
-# out_counter:  9, CLK: 0
-# out_counter: 10, CLK: 1
-# out_counter: 10, CLK: 0
-# out_counter: 11, CLK: 1
-# out_counter: 11, CLK: 0
-# out_counter: 12, CLK: 1
-# out_counter: 12, CLK: 0
-# out_counter: 13, CLK: 1
-# out_counter: 13, CLK: 0
-# out_counter: 14, CLK: 1
-# out_counter: 14, CLK: 0
-# out_counter: 15, CLK: 1
-# out_counter: 15, CLK: 0
-# out_counter:  0, CLK: 1
-# out_counter:  0, CLK: 0
-# out_counter:  1, CLK: 1
-# out_counter:  1, CLK: 0
-# out_counter:  2, CLK: 1
-# out_counter:  2, CLK: 0
-# out_counter:  3, CLK: 1
-# out_counter:  3, CLK: 0
-# out_counter:  4, CLK: 1
-# out_counter:  4, CLK: 0
-# out_counter:  5, CLK: 1
-# out_counter:  5, CLK: 0
-# out_counter:  6, CLK: 1
-# out_counter:  6, CLK: 0
-# out_counter:  7, CLK: 1
-# out_counter:  7, CLK: 0
-# out_counter:  8, CLK: 1
-# out_counter:  0, CLK: 1
-# out_counter:  0, CLK: 0
-# out_counter:  1, CLK: 1
-# out_counter:  1, CLK: 0
-# out_counter:  2, CLK: 1
-# out_counter:  2, CLK: 0
-# out_counter:  3, CLK: 1
-# out_counter:  3, CLK: 0
-# out_counter:  4, CLK: 1
-# out_counter:  4, CLK: 0
-# out_counter:  5, CLK: 1
-# out_counter:  5, CLK: 0
-# out_counter:  6, CLK: 1
-# out_counter:  6, CLK: 0
-# out_counter:  7, CLK: 1
-# out_counter:  7, CLK: 0
-# out_counter:  8, CLK: 1
-# out_counter:  8, CLK: 0
-# out_counter:  9, CLK: 1
-# out_counter:  9, CLK: 0
-# out_counter: 10, CLK: 1
-# ** Note: $finish    : /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_counter/testCounter.v(21)
-#    Time: 1020 ns  Iteration: 0  Instance: /testCounter
+# COLLISION:0, ---SPRITE: x
+# COLLISION:0, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:0, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:0, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:0, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:0, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:0, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:0, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:0, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:0, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:0, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:0, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:0, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:0, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:0, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:0, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:0, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:0, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:0, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:0, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 3
+# COLLISION:0, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:0, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# ** Note: $finish    : /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/testCollision.v(45)
+#    Time: 10010 ns  Iteration: 0  Instance: /testCollision
 # 1
-# Break in Module testCounter at /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_counter/testCounter.v line 21
-# End time: 00:33:07 on Aug 07,2019, Elapsed time: 0:07:53
-# Errors: 0, Warnings: 3
+# Break in Module testCollision at /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/testCollision.v line 45
+# Compile of testCollision.v was successful.
+# Compile of counter.v was successful.
+# Compile of multiplexador.v was successful.
+# Compile of frequency_divisor.v was successful.
+# Compile of collision.v was successful.
+# 5 compiles, 0 failed with no errors.
+# Load canceled
+# Compile of testCollision.v was successful.
+# Compile of counter.v was successful.
+# Compile of multiplexador.v was successful.
+# Compile of frequency_divisor.v was successful.
+# Compile of collision.v was successful.
+# 5 compiles, 0 failed with no errors.
+restart
+# Loading work.testCollision
+# Loading work.collision
+# Loading work.frequency_divisor
+# Loading work.counter
+# Loading work.multiplex
+run -all
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# COLLISION:0, ---SPRITE: x
+# COLLISION:0, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# ** Note: $finish    : /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/testCollision.v(45)
+#    Time: 10010 ns  Iteration: 0  Instance: /testCollision
+# 1
+# Break in Module testCollision at /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/testCollision.v line 45
+vsim -t ns work.testCollision
+# End time: 13:26:32 on Aug 07,2019, Elapsed time: 0:06:36
+# Errors: 1, Warnings: 3
+# vsim -t ns work.testCollision 
+# Start time: 13:26:32 on Aug 07,2019
+# Loading work.testCollision
+# Loading work.collision
+# Loading work.frequency_divisor
+# Loading work.counter
+# Loading work.multiplex
+add wave -position insertpoint sim:/testCollision/*
+force -freeze sim:/testCollision/clk 0 0, 1 {10 ns} -r 20
+run -all
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# COLLISION:0, ---SPRITE: x
+# COLLISION:0, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:0, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# ** Note: $finish    : /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/testCollision.v(45)
+#    Time: 10010 ns  Iteration: 0  Instance: /testCollision
+# 1
+# Break in Module testCollision at /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/testCollision.v line 45
+# Compile of testCollision.v was successful.
+# Compile of counter.v was successful.
+# Compile of multiplexador.v was successful.
+# Compile of frequency_divisor.v was successful.
+# Compile of collision.v was successful.
+# 5 compiles, 0 failed with no errors.
+restart
+# Loading work.testCollision
+# Loading work.collision
+# Loading work.frequency_divisor
+# Loading work.counter
+# Loading work.multiplex
+force -freeze sim:/testCollision/clk 0 0, 1 {10 ns} -r 20
+run -all
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# COLLISION:0, ---SPRITE: x
+# COLLISION:0, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:1, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:1, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:1, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:1, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:1, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:1, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:1, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:1, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:1, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:1, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:1, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:1, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:1, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:1, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:1, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:1, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:1, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:1, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:1, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:1, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:1, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# ** Note: $finish    : /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/testCollision.v(45)
+#    Time: 10010 ns  Iteration: 0  Instance: /testCollision
+# 1
+# Break in Module testCollision at /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/testCollision.v line 45
+# Compile of testCollision.v was successful.
+# Compile of counter.v was successful.
+# Compile of multiplexador.v was successful.
+# Compile of frequency_divisor.v was successful.
+# Compile of collision.v was successful.
+# 5 compiles, 0 failed with no errors.
+restart
+# Loading work.testCollision
+# Loading work.collision
+# Loading work.frequency_divisor
+# Loading work.counter
+# Loading work.multiplex
+run -all
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# COLLISION:0, ---SPRITE: x
+# COLLISION:0, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:1, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:1, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:1, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:1, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:1, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# ** Note: $finish    : /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/testCollision.v(45)
+#    Time: 5010 ns  Iteration: 0  Instance: /testCollision
+# 1
+# Break in Module testCollision at /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/testCollision.v line 45
+# Compile of testCollision.v was successful.
+# Compile of counter.v was successful.
+# Compile of multiplexador.v was successful.
+# Compile of frequency_divisor.v was successful.
+# Compile of collision.v was successful.
+# 5 compiles, 0 failed with no errors.
+restart
+# Loading work.testCollision
+# Loading work.collision
+# Loading work.frequency_divisor
+# Loading work.counter
+# Loading work.multiplex
+force -freeze sim:/testCollision/clk 0 0, 1 {10 ns} -r 20
+run -all
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# COLLISION:0, ---SPRITE: x
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:1, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:1, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:1, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:1, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:1, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:1, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:1, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:1, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:1, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:1, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:1, ---SPRITE: 2
+# ** Note: $finish    : /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/testCollision.v(46)
+#    Time: 5110 ns  Iteration: 0  Instance: /testCollision
+# 1
+# Break in Module testCollision at /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/testCollision.v line 46
+# Compile of testCollision.v was successful.
+# Compile of counter.v was successful.
+# Compile of multiplexador.v was successful.
+# Compile of frequency_divisor.v was successful.
+# Compile of collision.v was successful.
+# 5 compiles, 0 failed with no errors.
+restart
+# Loading work.testCollision
+# Loading work.collision
+# Loading work.frequency_divisor
+# Loading work.counter
+# Loading work.multiplex
+force -freeze sim:/testCollision/clk 0 0, 1 {10 ns} -r 20
+run -all
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# COLLISION:0, ---SPRITE: x
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:1, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:1, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:1, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:1, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:1, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:1, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:1, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:1, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:1, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:1, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:1, ---SPRITE: 2
+# ** Note: $finish    : /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/testCollision.v(44)
+#    Time: 5110 ns  Iteration: 0  Instance: /testCollision
+# 1
+# Break in Module testCollision at /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/testCollision.v line 44
+# Compile of testCollision.v was successful.
+# Compile of counter.v was successful.
+# Compile of multiplexador.v was successful.
+# Compile of frequency_divisor.v was successful.
+# Compile of collision.v was successful.
+# 5 compiles, 0 failed with no errors.
+restart
+# Loading work.testCollision
+# Loading work.collision
+# Loading work.frequency_divisor
+# Loading work.counter
+# Loading work.multiplex
+force -freeze sim:/testCollision/clk 0 0, 1 {10 ns} -r 20
+run -all
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# COLLISION:0, ---SPRITE: x
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:1, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# COLLISION:1, ---SPRITE: 2
+# COLLISION:0, ---SPRITE: 3
+# COLLISION:1, ---SPRITE: 0
+# COLLISION:0, ---SPRITE: 1
+# ** Note: $finish    : /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/testCollision.v(44)
+#    Time: 1110 ns  Iteration: 0  Instance: /testCollision
+# 1
+# Break in Module testCollision at /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/testCollision.v line 44
+# Compile of testCollision.v was successful.
+# Compile of counter.v was successful.
+# Compile of multiplexador.v was successful.
+# Compile of frequency_divisor.v was successful.
+# Compile of collision.v was successful.
+# 5 compiles, 0 failed with no errors.
+restart
+# Loading work.testCollision
+# Loading work.collision
+# Loading work.frequency_divisor
+# Loading work.counter
+# Loading work.multiplex
+force -freeze sim:/testCollision/clk 0 0, 1 {10 ns} -r 20
+# End time: 13:46:34 on Aug 07,2019, Elapsed time: 0:20:02
+# Errors: 0, Warnings: 6

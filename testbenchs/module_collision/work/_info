@@ -1,0 +1,116 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+d/home/gabriel/Documents/ConsoleFPGA/testbenchs/module_counter
+vcollision
+Z0 !s110 1565195990
+!i10b 1
+!s100 I;[1@mzUAS[MSR_i0heF`1
+IU7QZ`H<C56l@A<n^@NDXE1
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 d/home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision
+w1565194745
+8/home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/collision.v
+F/home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/collision.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1565195990.000000
+!s107 /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/collision.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/collision.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+vcounter
+R0
+!i10b 1
+!s100 fN=o]LTkJaKNm0IH?g<eH1
+IU<oh0=MeR]imNAY6ciV6z2
+R1
+R2
+w1565148772
+8/home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/counter.v
+F/home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/counter.v
+L0 7
+R3
+r1
+!s85 0
+31
+R4
+!s107 /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/counter.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/counter.v|
+!i113 1
+R5
+R6
+vfrequency_divisor
+R0
+!i10b 1
+!s100 F6dFahc;M^3m0emUZ>;`;0
+INPTUXW<D3YO97SJcX^LMZ2
+R1
+R2
+w1565140097
+8/home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/frequency_divisor.v
+F/home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/frequency_divisor.v
+L0 14
+R3
+r1
+!s85 0
+31
+R4
+!s107 /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/frequency_divisor.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/frequency_divisor.v|
+!i113 1
+R5
+R6
+vmultiplex
+R0
+!i10b 1
+!s100 m2clD^GE4DVJ6Sca^efig3
+I7FC]1<=iQA1:>@YdYZ;QB1
+R1
+R2
+w1565143776
+8/home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/multiplexador.v
+F/home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/multiplexador.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/multiplexador.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/multiplexador.v|
+!i113 1
+R5
+R6
+vtestCollision
+!s110 1565195989
+!i10b 1
+!s100 T@IcGS9NES;?fHCOWzOZd0
+I`z0>E;k1nXdof0HZ]I^`60
+R1
+R2
+w1565195985
+8/home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/testCollision.v
+F/home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/testCollision.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1565195989.000000
+!s107 /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/testCollision.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/gabriel/Documents/ConsoleFPGA/testbenchs/module_collision/testCollision.v|
+!i113 1
+R5
+R6
+ntest@collision
