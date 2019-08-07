@@ -1,0 +1,266 @@
+# Loading project testCounter
+vsim work.testCounter -t ns
+# vsim work.testCounter -t ns 
+# Start time: 00:17:10 on Aug 07,2019
+# Loading work.testCounter
+# Loading work.counter
+# ** Warning: (vsim-3015) /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_counter/testCounter.v(27): [PCDPC] - Port size (3) does not match connection size (1) for port 'out_counter'. The port definition is at: /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_counter/counter.v(10).
+#    Time: 0 ns  Iteration: 0  Instance: /testCounter/counter_inst File: /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_counter/counter.v
+add wave -position insertpoint sim:/testCounter/*
+# Compile of counter.v was successful.
+# Compile of testCounter.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -t ns work.testCounter
+# End time: 00:18:38 on Aug 07,2019, Elapsed time: 0:01:28
+# Errors: 0, Warnings: 1
+# vsim -t ns work.testCounter 
+# Start time: 00:18:38 on Aug 07,2019
+# Loading work.testCounter
+# Loading work.counter
+add wave -position insertpoint sim:/testCounter/*
+force -freeze sim:/testCounter/clk 0 0, 1 {10 ns} -r 20
+run -all
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# out_counter: x, CLK: 0
+# out_counter: 0, CLK: 0
+# out_counter: 0, CLK: 1
+# out_counter: 0, CLK: 0
+# out_counter: 1, CLK: 1
+# out_counter: 1, CLK: 0
+# out_counter: 2, CLK: 1
+# out_counter: 2, CLK: 0
+# out_counter: 3, CLK: 1
+# out_counter: 3, CLK: 0
+# out_counter: 4, CLK: 1
+# out_counter: 4, CLK: 0
+# out_counter: 5, CLK: 1
+# out_counter: 5, CLK: 0
+# out_counter: 6, CLK: 1
+# out_counter: 6, CLK: 0
+# out_counter: 0, CLK: 1
+# out_counter: 0, CLK: 0
+# ** Note: $finish    : /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_counter/testCounter.v(18)
+#    Time: 170 ns  Iteration: 0  Instance: /testCounter
+# 1
+# Break in Module testCounter at /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_counter/testCounter.v line 18
+# Compile of counter.v was successful.
+# Compile of testCounter.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -t ns work.testCounter
+# End time: 00:25:14 on Aug 07,2019, Elapsed time: 0:06:36
+# Errors: 0, Warnings: 1
+# vsim -t ns work.testCounter 
+# Start time: 00:25:14 on Aug 07,2019
+# Loading work.testCounter
+# Loading work.counter
+add wave -position insertpoint sim:/testCounter/*
+noforce sim:/testCounter/clk
+force -freeze sim:/testCounter/clk 0 0, 1 {10 ns} -r 20
+run -all
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# out_counter: x, CLK: 0
+# out_counter: 0, CLK: 0
+# out_counter: 0, CLK: 1
+# out_counter: 0, CLK: 0
+# out_counter: 1, CLK: 1
+# out_counter: 1, CLK: 0
+# out_counter: 2, CLK: 1
+# out_counter: 2, CLK: 0
+# out_counter: 3, CLK: 1
+# out_counter: 3, CLK: 0
+# out_counter: 4, CLK: 1
+# out_counter: 4, CLK: 0
+# out_counter: 5, CLK: 1
+# out_counter: 5, CLK: 0
+# out_counter: 6, CLK: 1
+# out_counter: 6, CLK: 0
+# out_counter: 7, CLK: 1
+# out_counter: 7, CLK: 0
+# ** Note: $finish    : /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_counter/testCounter.v(18)
+#    Time: 170 ns  Iteration: 0  Instance: /testCounter
+# 1
+# Break in Module testCounter at /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_counter/testCounter.v line 18
+# Compile of counter.v was successful.
+# Compile of testCounter.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# Loading work.testCounter
+# Loading work.counter
+force -freeze sim:/testCounter/clk 0 0, 1 {10 ns} -r 20
+run -all
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# out_counter:  x, CLK: 0
+# out_counter:  0, CLK: 0
+# out_counter:  0, CLK: 1
+# out_counter:  0, CLK: 0
+# out_counter:  1, CLK: 1
+# out_counter:  1, CLK: 0
+# out_counter:  2, CLK: 1
+# out_counter:  2, CLK: 0
+# out_counter:  3, CLK: 1
+# out_counter:  3, CLK: 0
+# out_counter:  4, CLK: 1
+# out_counter:  4, CLK: 0
+# out_counter:  5, CLK: 1
+# out_counter:  5, CLK: 0
+# out_counter:  6, CLK: 1
+# out_counter:  6, CLK: 0
+# out_counter:  7, CLK: 1
+# out_counter:  7, CLK: 0
+# out_counter:  8, CLK: 1
+# out_counter:  8, CLK: 0
+# out_counter:  9, CLK: 1
+# out_counter:  9, CLK: 0
+# out_counter: 10, CLK: 1
+# out_counter: 10, CLK: 0
+# out_counter: 11, CLK: 1
+# out_counter: 11, CLK: 0
+# out_counter: 12, CLK: 1
+# out_counter: 12, CLK: 0
+# out_counter: 13, CLK: 1
+# out_counter: 13, CLK: 0
+# out_counter: 14, CLK: 1
+# out_counter: 14, CLK: 0
+# out_counter: 15, CLK: 1
+# out_counter: 15, CLK: 0
+# out_counter:  0, CLK: 1
+# out_counter:  0, CLK: 0
+# out_counter:  1, CLK: 1
+# out_counter:  1, CLK: 0
+# out_counter:  2, CLK: 1
+# out_counter:  2, CLK: 0
+# out_counter:  3, CLK: 1
+# out_counter:  3, CLK: 0
+# out_counter:  4, CLK: 1
+# out_counter:  4, CLK: 0
+# out_counter:  5, CLK: 1
+# out_counter:  5, CLK: 0
+# out_counter:  6, CLK: 1
+# out_counter:  6, CLK: 0
+# out_counter:  7, CLK: 1
+# out_counter:  7, CLK: 0
+# out_counter:  8, CLK: 1
+# out_counter:  8, CLK: 0
+# ** Note: $finish    : /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_counter/testCounter.v(18)
+#    Time: 510 ns  Iteration: 0  Instance: /testCounter
+# 1
+# Break in Module testCounter at /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_counter/testCounter.v line 18
+# Compile of counter.v was successful.
+# Compile of testCounter.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# Loading work.testCounter
+# Loading work.counter
+force -freeze sim:/testCounter/clk 0 0, 1 {10 ns} -r 20
+run -all
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# out_counter:  x, CLK: 0
+# out_counter:  0, CLK: 0
+# out_counter:  0, CLK: 1
+# out_counter:  0, CLK: 0
+# out_counter:  1, CLK: 1
+# out_counter:  1, CLK: 0
+# out_counter:  2, CLK: 1
+# out_counter:  2, CLK: 0
+# out_counter:  3, CLK: 1
+# out_counter:  3, CLK: 0
+# out_counter:  4, CLK: 1
+# out_counter:  4, CLK: 0
+# out_counter:  5, CLK: 1
+# out_counter:  5, CLK: 0
+# out_counter:  6, CLK: 1
+# out_counter:  6, CLK: 0
+# out_counter:  7, CLK: 1
+# out_counter:  7, CLK: 0
+# out_counter:  8, CLK: 1
+# out_counter:  8, CLK: 0
+# out_counter:  9, CLK: 1
+# out_counter:  9, CLK: 0
+# out_counter: 10, CLK: 1
+# out_counter: 10, CLK: 0
+# out_counter: 11, CLK: 1
+# out_counter: 11, CLK: 0
+# out_counter: 12, CLK: 1
+# out_counter: 12, CLK: 0
+# out_counter: 13, CLK: 1
+# out_counter: 13, CLK: 0
+# out_counter: 14, CLK: 1
+# out_counter: 14, CLK: 0
+# out_counter: 15, CLK: 1
+# out_counter: 15, CLK: 0
+# out_counter:  0, CLK: 1
+# out_counter:  0, CLK: 0
+# out_counter:  1, CLK: 1
+# out_counter:  1, CLK: 0
+# out_counter:  2, CLK: 1
+# out_counter:  2, CLK: 0
+# out_counter:  3, CLK: 1
+# out_counter:  3, CLK: 0
+# out_counter:  4, CLK: 1
+# out_counter:  4, CLK: 0
+# out_counter:  5, CLK: 1
+# out_counter:  5, CLK: 0
+# out_counter:  6, CLK: 1
+# out_counter:  6, CLK: 0
+# out_counter:  7, CLK: 1
+# out_counter:  7, CLK: 0
+# out_counter:  8, CLK: 1
+# out_counter:  8, CLK: 0
+# out_counter:  9, CLK: 1
+# out_counter:  9, CLK: 0
+# out_counter: 10, CLK: 1
+# out_counter: 10, CLK: 0
+# out_counter: 11, CLK: 1
+# out_counter: 11, CLK: 0
+# out_counter: 12, CLK: 1
+# out_counter: 12, CLK: 0
+# out_counter: 13, CLK: 1
+# out_counter: 13, CLK: 0
+# out_counter: 14, CLK: 1
+# out_counter: 14, CLK: 0
+# out_counter: 15, CLK: 1
+# out_counter: 15, CLK: 0
+# out_counter:  0, CLK: 1
+# out_counter:  0, CLK: 0
+# out_counter:  1, CLK: 1
+# out_counter:  1, CLK: 0
+# out_counter:  2, CLK: 1
+# out_counter:  2, CLK: 0
+# out_counter:  3, CLK: 1
+# out_counter:  3, CLK: 0
+# out_counter:  4, CLK: 1
+# out_counter:  4, CLK: 0
+# out_counter:  5, CLK: 1
+# out_counter:  5, CLK: 0
+# out_counter:  6, CLK: 1
+# out_counter:  6, CLK: 0
+# out_counter:  7, CLK: 1
+# out_counter:  7, CLK: 0
+# out_counter:  8, CLK: 1
+# out_counter:  0, CLK: 1
+# out_counter:  0, CLK: 0
+# out_counter:  1, CLK: 1
+# out_counter:  1, CLK: 0
+# out_counter:  2, CLK: 1
+# out_counter:  2, CLK: 0
+# out_counter:  3, CLK: 1
+# out_counter:  3, CLK: 0
+# out_counter:  4, CLK: 1
+# out_counter:  4, CLK: 0
+# out_counter:  5, CLK: 1
+# out_counter:  5, CLK: 0
+# out_counter:  6, CLK: 1
+# out_counter:  6, CLK: 0
+# out_counter:  7, CLK: 1
+# out_counter:  7, CLK: 0
+# out_counter:  8, CLK: 1
+# out_counter:  8, CLK: 0
+# out_counter:  9, CLK: 1
+# out_counter:  9, CLK: 0
+# out_counter: 10, CLK: 1
+# ** Note: $finish    : /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_counter/testCounter.v(21)
+#    Time: 1020 ns  Iteration: 0  Instance: /testCounter
+# 1
+# Break in Module testCounter at /home/gabriel/Documents/ConsoleFPGA/testbenchs/module_counter/testCounter.v line 21
+# End time: 00:33:07 on Aug 07,2019, Elapsed time: 0:07:53
+# Errors: 0, Warnings: 3
