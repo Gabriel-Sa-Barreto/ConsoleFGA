@@ -1,0 +1,95 @@
+|testeVGA
+clk => clk.IN1
+RGB[0] <= RGB[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+RGB[1] <= RGB[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+RGB[2] <= RGB[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+RGB[3] <= RGB[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+RGB[4] <= RGB[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+RGB[5] <= RGB[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+RGB[6] <= RGB[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+RGB[7] <= RGB[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+RGB[8] <= RGB[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+hsync <= VGA_sync:VGA_sync_inst.hsync
+vsync <= VGA_sync:VGA_sync_inst.vsync
+
+
+|testeVGA|frequency_divisor:frequency_divisor_inst
+clk => new_clock.CLK
+clk => counter[0].CLK
+clk => counter[1].CLK
+reset => new_clock.ACLR
+reset => counter[0].ACLR
+reset => counter[1].ACLR
+out_clk <= new_clock.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|testeVGA|VGA_sync:VGA_sync_inst
+clock => vsync~reg0.CLK
+clock => hsync~reg0.CLK
+clock => pixel_y[0]~reg0.CLK
+clock => pixel_y[1]~reg0.CLK
+clock => pixel_y[2]~reg0.CLK
+clock => pixel_y[3]~reg0.CLK
+clock => pixel_y[4]~reg0.CLK
+clock => pixel_y[5]~reg0.CLK
+clock => pixel_y[6]~reg0.CLK
+clock => pixel_y[7]~reg0.CLK
+clock => pixel_y[8]~reg0.CLK
+clock => pixel_y[9]~reg0.CLK
+clock => pixel_x[0]~reg0.CLK
+clock => pixel_x[1]~reg0.CLK
+clock => pixel_x[2]~reg0.CLK
+clock => pixel_x[3]~reg0.CLK
+clock => pixel_x[4]~reg0.CLK
+clock => pixel_x[5]~reg0.CLK
+clock => pixel_x[6]~reg0.CLK
+clock => pixel_x[7]~reg0.CLK
+clock => pixel_x[8]~reg0.CLK
+clock => pixel_x[9]~reg0.CLK
+reset => vsync~reg0.ACLR
+reset => hsync~reg0.ACLR
+reset => pixel_y[0]~reg0.ACLR
+reset => pixel_y[1]~reg0.ACLR
+reset => pixel_y[2]~reg0.ACLR
+reset => pixel_y[3]~reg0.ACLR
+reset => pixel_y[4]~reg0.ACLR
+reset => pixel_y[5]~reg0.ACLR
+reset => pixel_y[6]~reg0.ACLR
+reset => pixel_y[7]~reg0.ACLR
+reset => pixel_y[8]~reg0.ACLR
+reset => pixel_y[9]~reg0.ACLR
+reset => pixel_x[0]~reg0.ACLR
+reset => pixel_x[1]~reg0.ACLR
+reset => pixel_x[2]~reg0.ACLR
+reset => pixel_x[3]~reg0.ACLR
+reset => pixel_x[4]~reg0.ACLR
+reset => pixel_x[5]~reg0.ACLR
+reset => pixel_x[6]~reg0.ACLR
+reset => pixel_x[7]~reg0.ACLR
+reset => pixel_x[8]~reg0.ACLR
+reset => pixel_x[9]~reg0.ACLR
+hsync <= hsync~reg0.DB_MAX_OUTPUT_PORT_TYPE
+vsync <= vsync~reg0.DB_MAX_OUTPUT_PORT_TYPE
+video_enable <= video_enable.DB_MAX_OUTPUT_PORT_TYPE
+pixel_x[0] <= pixel_x[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_x[1] <= pixel_x[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_x[2] <= pixel_x[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_x[3] <= pixel_x[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_x[4] <= pixel_x[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_x[5] <= pixel_x[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_x[6] <= pixel_x[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_x[7] <= pixel_x[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_x[8] <= pixel_x[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_x[9] <= pixel_x[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_y[0] <= pixel_y[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_y[1] <= pixel_y[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_y[2] <= pixel_y[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_y[3] <= pixel_y[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_y[4] <= pixel_y[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_y[5] <= pixel_y[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_y[6] <= pixel_y[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_y[7] <= pixel_y[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_y[8] <= pixel_y[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pixel_y[9] <= pixel_y[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,41 @@
+coisas prontas: (com as modificações)
+	* decodificador de instrução
+    * máquina de estados
+	* multiplexador de entrada do banco de registradores
+    * banco de registradores
+    * código para preparação dos bitmaps dos sprites
+    * bitmap de sprites de teste
+	* teste VGA (480x320) e (640x480)
+
+coisas a fazer/testar:
+	* modelar o módulo de impressão
+	* preparar a memória de sprites
+
+
+ideias:
+	* monitor não aceita 480x320
+	
+
+
+
+W    - Screen Width
+H    - Screen Height
+HFP  - Horizontal Front Porch
+HSYN - Horizontal Sync Pulse
+HBP  - Horizontal Back Porch
+VFP  - Vertical Front Porch
+VSYN - Vertical Sync Pulse
+VBP  - Vertical Back Porch
+
+          W    H    HFP HSYN  HBP  VFP VSYN  VBP
+480x320   480  320  16  40    56   3   10    3
+
+//////////////////////////////////////////////////////////////////
+
+Colocar um bit em cada pixel dos sprites para informar se o pixel será
+transparente ou não.
+
+///////////////////////////////////////////////////////////////////
+
+Cada valor de coordenada dos pixeis da imagem corresponde a uma entrada na paleta de cores. Com isso, para diminuir a quantidade de pulsos de clock de acesso à memória, posso criar um código em Java para
+ler os arquivos da paleta de cada pixel e inserir seus valores da respectiva cor em um novo arquivo. Com isso, cada coordenada dos sprites teriam como valor a sua respectiva cor.

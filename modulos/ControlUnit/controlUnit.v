@@ -31,9 +31,9 @@ module controlUnit(
 );
 
 
-parameter [1:0] PRONTO              = 2'b00,
-					 ESCREVER_NO_BANCO   = 2'b01,
-					 HABILITAR_IMPRESSAO = 2'b10;
+parameter [1:0]     PRONTO              = 2'b00,
+					ESCREVER_NO_BANCO   = 2'b01,
+					HABILITAR_IMPRESSAO = 2'b10;
 
 reg [1:0] state, next;
 
@@ -109,7 +109,7 @@ always @(posedge clk or negedge reset) begin
 				selectField       <= 4'bxxxx; //nao existem campos a serem alterados no registradores do banco
 				register_wr       <= 1'bx;    //nao existe leitura ou escrita para serem realizadas
 				muxOut            <= 1'b0;    //aciona multiplexador para verificar status do modulo de impressao
-			   mux_file_register <= 1'bx;   //nao existe entradas a serem selecionadas para o banco de registradores
+			    mux_file_register <= 1'bx;   //nao existe entradas a serem selecionadas para o banco de registradores
 			end
 			
 			ESCREVER_NO_BANCO: begin
@@ -129,7 +129,7 @@ always @(posedge clk or negedge reset) begin
 				register_wr       <= 1'b0;     //aciona leitura no banco de registradores
 				
 				if(opCode == 4'b0011)          //instruçao de verificar status de modulo de impressao
-					  muxOut       <= 1'b0;     //aciona a verificaçao de status do modulo de impressao
+					 muxOut       <= 1'b0;     //aciona a verificaçao de status do modulo de impressao
 				else muxOut       <= 1'b1;     //aciona a verificaçao de alguma possivel operaçao feita no banco de registradores 
 				
 				mux_file_register <= 1'b0;     //seleciona entrada vinda do modulo de impressao para o banco de registradores
@@ -142,7 +142,7 @@ always @(posedge clk or negedge reset) begin
 				selectField       <= 4'bxxxx; 
 				register_wr       <= 1'bx;    
 				muxOut            <= 1'bx;   
-			   mux_file_register <= 1'bx;
+			    mux_file_register <= 1'bx;
 				/////////////////////////////////////
 			end
 		endcase

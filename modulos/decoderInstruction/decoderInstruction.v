@@ -24,48 +24,42 @@ module decorderInstruction(
 
 	output wire [1:0]  opcode,
 	output wire [4:0]  register,
-	output wire [27:0] data
+	output wire [31:0] data
 );
 
-reg [1:0]  outOpcode;
-reg [4:0]  outRegister;
-reg [27:0] outData;
-
-always @(posedge clk_en) begin
-	if(new_instruction == 1'b0) begin     //Uma nova instruçao pode ser decodificada.
-		outOpcode <= dataA[1:0];
-		case (dataA[1:0])
-			4'b00: begin                    //instruçao de alterar posiçao de um sprite
-				outRegister <= dataA[8:4];   //output Register
-				outData     <= dataB[27:0];  //output data (valores de x e y)
-			end
-			4'b01: begin                    //instruçao de alterar o background da tela.
-				outRegister <= dataA[8:4];   //output Register
-				outData     <= dataB[27:0];  //output data (valor de nova cor)
-			end
-			4'b10: begin                    //instruçao de alterar offset de memoria associado a um sprite.
-				outRegister <= dataA[8:4];   //output Register
-				outData     <= dataB[27:0];  //output data (valor de offset)
-			end
-			4'b11: begin
-			end
-			default: begin
-			   outOpcode   <= 2'bx;
-				outRegister <= 5'bx;
-				outData     <= 28'bx;
-			end
-		endcase
+always @(clk_en) begin
+	if(clk_en == 1'b1) begin
+		if(new_instruction == 1'b0) begin    //Uma nova instruçao pode ser decodificada.
+			opcode = dataA[1:0];
+			case (dataA[1:0])
+				4'b00: begin                 //instruçao de alterar posiçao de um sprite.
+					register = dataA[8:4];   //output Register.
+					    data = dataB[31:0];  //output data (valores de x e y).
+				end
+				4'b01: begin                 //instruçao de alterar o background da tela.
+					register = dataA[8:4];   //output Register.
+					    data = dataB[31:0];  //output data (valor de nova cor).
+				end
+				4'b10: begin                 //instruçao de alterar offset de memoria associado a um sprite.
+					register = dataA[8:4];   //output Register.
+					    data = dataB[31:0];  //output data (valor de offset).
+				end
+				4'b11: begin
+				end
+				default: begin
+				    opcode   = 2'dx;
+					register = 5'dx;
+					data     = 32'dx;
+				end
+			endcase
+		end
+		else begin                         //A instruçao anterior ainda esta em execuçao.
+		    opcode   = 2'dx;
+			register = 5'dx;
+			data     = 32'dx;
+		end
 	end
-	else begin                         //A instruçao anterior ainda esta em execuçao.
-	   outOpcode   <= outOpcode;
-		outRegister <= outRegister;
-		outData     <= outData;
-	end
+	else
 end
-
-//Atribuicao continua dos valores de saida.
-assign   opcode = outOpcode;
-assign register = outRegister;
-assign     data = outData;
 
 endmodule
