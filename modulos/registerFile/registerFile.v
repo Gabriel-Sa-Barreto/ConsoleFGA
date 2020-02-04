@@ -32,10 +32,10 @@ parameter       offset_inicio = 0;
 parameter [4:0] offset_final  = 8;
 
 parameter [4:0] y_inicio = 9;
-parameter [5:0] y_final  = 17;
+parameter [5:0] y_final  = 18;
 
-parameter [5:0] x_inicio = 18;
-parameter [5:0] x_final  = 26;
+parameter [5:0] x_inicio = 19;
+parameter [5:0] x_final  = 27;
 
 parameter       back_inicio = 0;
 parameter [4:0] back_final  = 8; 
@@ -43,7 +43,6 @@ parameter [4:0] back_final  = 8;
 /*----------------------------------------------------------------------------------------------------------*/
 
 /*-------------------Registradores----------------------*/	
-reg [31:0] reg0; //esse registrador armazena a cor atual de background da tela.
 reg [31:0] reg1;
 reg [31:0] reg2;
 reg [31:0] reg3;
@@ -78,19 +77,11 @@ reg [31:0] reg31;
 ////////////////////////////////////////////////////////	
 
 /*Bloco always responsavel por realizar as operaçoes de escrita e leitura
-no banco de registradores
+no banco de registradores na descida do pulso de clock.
 */
-always @(posedge clk) begin
+always @(negedge clk) begin
 	if(written) begin //realiza uma atualizaçao no banco
 		case(n_reg) 
-			5'd0: 
-				begin		
-					if(selectFiled == 2'b11) begin      //modifica o background da tela
-						reg0 <= data[back_final:back_inicio];
-						success <= 1;
-					end
-					else reg0 <= reg0; 
-				end
 			5'd1:
 				begin
 					if(selectField == 2'b00) begin       //modifica offset
@@ -600,70 +591,70 @@ end
 /*RETORNA o valor de offset armazenado em um registrador.*/
 always @(*) begin
     if(!written) begin //comparaçao ativada.
-    	if(check == reg1[26:9]) 
+    	if(check == reg1[x_final:y_inicio]); 
     		readData = reg1[8:0];
-    	else if(check == reg2[26:9])
+    	else if(check == reg2[x_final:y_inicio]);
     		readData = reg2[8:0];
-    	else if(check == reg3[26:9])
+    	else if(check == reg3[x_final:y_inicio]);
     		readData = reg3[8:0];
-    	else if(check == reg4[26:9])
+    	else if(check == reg4[x_final:y_inicio]);
     		readData = reg4[8:0];
-    	else if(check == reg5[26:9])
+    	else if(check == reg[x_final:y_inicio]);
     		readData = reg5[8:0];
-    	else if(check == reg6[26:9])
+    	else if(check == reg6[x_final:y_inicio]);
     		readData = reg6[8:0];
-    	else if(check == reg7[26:9])
+    	else if(check == reg[x_final:y_inicio]);
     		readData = reg7[8:0];
-    	else if(check == reg8[26:9])
+    	else if(check == reg8[x_final:y_inicio]);
     		readData = reg8[8:0];
-    	else if(check == reg9[26:9])
+    	else if(check == reg9[x_final:y_inicio]);
     		readData = reg9[8:0];
-    	else if(check == reg10[26:9])
+    	else if(check == reg10[x_final:y_inicio]);
     		readData = reg10[8:0];
-    	else if(check == reg11[26:9])
+    	else if(check == reg11[x_final:y_inicio]);
     		readData = reg11[8:0];
-    	else if(check == reg12[26:9])
+    	else if(check == reg12[x_final:y_inicio]);
     		readData = reg12[8:0];
-    	else if(check == reg13[26:9])
+    	else if(check == reg13[x_final:y_inicio]);
     		readData = reg13[8:0];
-    	else if(check == reg14[26:9])
+    	else if(check == reg14[x_final:y_inicio]);
     		readData = reg14[8:0];
-    	else if(check == reg15[26:9])
+    	else if(check == reg15[x_final:y_inicio]);
     		readData = reg15[8:0];
-    	else if(check == reg16[26:9])
+    	else if(check == reg16[x_final:y_inicio]);
     		readData = reg16[8:0];
-    	else if(check == reg17[26:9])
+    	else if(check == reg17[x_final:y_inicio]);
     		readData = reg17[8:0];
-    	else if(check == reg18[26:9])
+    	else if(check == reg18[x_final:y_inicio]);
     		readData = reg18[8:0];
-    	else if(check == reg19[26:9])
+    	else if(check == reg19[x_final:y_inicio]);
     		readData = reg19[8:0];
-    	else if(check == reg20[26:9])
+    	else if(check == reg20[x_final:y_inicio]);
     		readData = reg20[8:0];
-    	else if(check == reg21[26:9])
+    	else if(check == reg21[x_final:y_inicio]);
     		readData = reg21[8:0];
-    	else if(check == reg22[26:9])
+    	else if(check == reg22[x_final:y_inicio]);
     		readData = reg22[8:0];
-    	else if(check == reg23[26:9])
+    	else if(check == reg23[x_final:y_inicio]);
     		readData = reg23[8:0];
-    	else if(check == reg24[26:9])
+    	else if(check == reg24[x_final:y_inicio]);
     		readData = reg24[8:0];
-    	else if(check == reg25[26:9])
+    	else if(check == reg25[x_final:y_inicio]);
     		readData = reg25[8:0];
-    	else if(check == reg26[26:9])
+    	else if(check == reg26[x_final:y_inicio]);
     		readData = reg26[8:0];
-    	else if(check == reg27[26:9])
+    	else if(check == reg27[x_final:y_inicio]);
     		readData = reg27[8:0];
-    	else if(check == reg28[26:9])
+    	else if(check == reg28[x_final:y_inicio]);
     		readData = reg28[8:0];
-    	else if(check == reg29[26:9])
+    	else if(check == reg29[x_final:y_inicio]);
     		readData = reg29[8:0];
-    	else if(check == reg30[26:9])
+    	else if(check == reg30[x_final:y_inicio]);
     		readData = reg30[8:0];
-    	else if(check == reg31[26:9])
+    	else if(check == reg31[x_final:y_inicio]);
     		readData = reg31[8:0];
-    	else readData = 8'hxx;
+    	else readData = 10'b0000000001; //valor que define que nenhum pixel foi encontrado com os valores informados.
     end
-    else readData = 8'hxx;
+    else readData = 10'b0000000001;
 end
 endmodule

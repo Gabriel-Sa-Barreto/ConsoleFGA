@@ -1,22 +1,30 @@
 coisas prontas: (com as modificações)
-	* decodificador de instrução
-    * máquina de estados
-	* multiplexador de entrada do banco de registradores
-    * banco de registradores
-    * código para preparação dos bitmaps dos sprites
-    * bitmap de sprites de teste
-	* teste VGA (480x320) e (640x480)
+	* decodificador de instrução.
+    * máquina de estados.
+	* demultiplexador.
+    * banco de registradores.
+    * código para preparação dos bitmaps dos sprites.
+    * bitmap de sprites de teste.
+	* teste VGA (480x320) e (640x480) (problemas de visualização com 480x320).
+	* implementar a lógica que possibilita a unidade de controle saber se uma instrução foi finalizada ou não.
 
 coisas a fazer/testar:
-	* modelar o módulo de impressão
-	* preparar a memória de sprites
-
+	* modelar o módulo de impressão.
+	* preparar a memória de sprites.
+	* testar VGA (480x320) no monitor antigo do labHard.
 
 ideias:
-	* monitor não aceita 480x320
+	* Gerar as saídas da unidade de controle na primeira parte do pulso de clock e as escritas no banco ou na memória na segunda parte do pulso de clock.
 	
+	* Gerar o sinal do printtingScreen na borda de subida do pulso de clock.
+	* Como as escritas são feitas na descida do pulso de clock, as instruções de escrita no banco e na memória duram somente 1 pulso de clock.
 
+	* O mux_out pode servir para verificar o status do módulo de impressão (ocioso/imprimindo) ou verificar se uma
+	instrução foi executada com sucesso.
 
+	* Colocar para o módulo de impressão informar à unidade de controle que irá começar a impressão de sprites 1 pulsos de clock antes da área ativa. 
+
+	* Toda vez que for executar uma instrução, o programador precisar verificar o status do módulo de impressão.
 
 W    - Screen Width
 H    - Screen Height
