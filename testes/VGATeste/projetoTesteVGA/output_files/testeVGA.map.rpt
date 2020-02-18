@@ -1,5 +1,5 @@
 Analysis & Synthesis report for testeVGA
-Sun Jan 26 01:03:00 2020
+Mon Feb 17 10:56:04 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -48,13 +48,13 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Jan 26 01:03:00 2020       ;
+; Analysis & Synthesis Status        ; Successful - Mon Feb 17 10:56:04 2020       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; testeVGA                                    ;
 ; Top-level Entity Name              ; testeVGA                                    ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 55                                          ;
-;     Total combinational functions  ; 51                                          ;
+; Total logic elements               ; 57                                          ;
+;     Total combinational functions  ; 53                                          ;
 ;     Dedicated logic registers      ; 30                                          ;
 ; Total registers                    ; 30                                          ;
 ; Total pins                         ; 12                                          ;
@@ -168,15 +168,15 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                           ;
-+----------------------------------+-----------------+------------------------+------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                             ; Library ;
-+----------------------------------+-----------------+------------------------+------------------------------------------------------------------------------------------+---------+
-; ../VGA_sync.v                    ; yes             ; User Verilog HDL File  ; /home/gabriel/Documents/Projeto Collenda/ConsoleFPGA/testes/VGATeste/VGA_sync.v          ;         ;
-; ../frequency_divisor.v           ; yes             ; User Verilog HDL File  ; /home/gabriel/Documents/Projeto Collenda/ConsoleFPGA/testes/VGATeste/frequency_divisor.v ;         ;
-; ../testeVGA.v                    ; yes             ; User Verilog HDL File  ; /home/gabriel/Documents/Projeto Collenda/ConsoleFPGA/testes/VGATeste/testeVGA.v          ;         ;
-+----------------------------------+-----------------+------------------------+------------------------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                          ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                            ; Library ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------+---------+
+; ../VGA_sync.v                    ; yes             ; User Verilog HDL File  ; /home/gabriel/Documents/ConsoleFPGA/testes/VGATeste/VGA_sync.v          ;         ;
+; ../frequency_divisor.v           ; yes             ; User Verilog HDL File  ; /home/gabriel/Documents/ConsoleFPGA/testes/VGATeste/frequency_divisor.v ;         ;
+; ../testeVGA.v                    ; yes             ; User Verilog HDL File  ; /home/gabriel/Documents/ConsoleFPGA/testes/VGATeste/testeVGA.v          ;         ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------------------------------------------------+
@@ -184,16 +184,16 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------------------------------------------+
 ; Resource                                    ; Usage                                              ;
 +---------------------------------------------+----------------------------------------------------+
-; Estimated Total logic elements              ; 55                                                 ;
+; Estimated Total logic elements              ; 57                                                 ;
 ;                                             ;                                                    ;
-; Total combinational functions               ; 51                                                 ;
+; Total combinational functions               ; 53                                                 ;
 ; Logic element usage by number of LUT inputs ;                                                    ;
-;     -- 4 input functions                    ; 21                                                 ;
+;     -- 4 input functions                    ; 23                                                 ;
 ;     -- 3 input functions                    ; 4                                                  ;
 ;     -- <=2 input functions                  ; 26                                                 ;
 ;                                             ;                                                    ;
 ; Logic elements by mode                      ;                                                    ;
-;     -- normal mode                          ; 33                                                 ;
+;     -- normal mode                          ; 35                                                 ;
 ;     -- arithmetic mode                      ; 18                                                 ;
 ;                                             ;                                                    ;
 ; Total registers                             ; 30                                                 ;
@@ -206,8 +206,8 @@ refer to the applicable agreement for further details.
 ;                                             ;                                                    ;
 ; Maximum fan-out node                        ; frequency_divisor:frequency_divisor_inst|new_clock ;
 ; Maximum fan-out                             ; 28                                                 ;
-; Total fan-out                               ; 225                                                ;
-; Average fan-out                             ; 2.14                                               ;
+; Total fan-out                               ; 233                                                ;
+; Average fan-out                             ; 2.18                                               ;
 +---------------------------------------------+----------------------------------------------------+
 
 
@@ -216,8 +216,8 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+-------------------+--------------+
 ; Compilation Hierarchy Node                    ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                ; Entity Name       ; Library Name ;
 +-----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+-------------------+--------------+
-; |testeVGA                                     ; 51 (0)              ; 30 (5)                    ; 0           ; 0            ; 0       ; 0         ; 12   ; 0            ; |testeVGA                                          ; testeVGA          ; work         ;
-;    |VGA_sync:VGA_sync_inst|                   ; 48 (48)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testeVGA|VGA_sync:VGA_sync_inst                   ; VGA_sync          ; work         ;
+; |testeVGA                                     ; 53 (0)              ; 30 (5)                    ; 0           ; 0            ; 0       ; 0         ; 12   ; 0            ; |testeVGA                                          ; testeVGA          ; work         ;
+;    |VGA_sync:VGA_sync_inst|                   ; 50 (50)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testeVGA|VGA_sync:VGA_sync_inst                   ; VGA_sync          ; work         ;
 ;    |frequency_divisor:frequency_divisor_inst| ; 3 (3)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testeVGA|frequency_divisor:frequency_divisor_inst ; frequency_divisor ; work         ;
 +-----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+-------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -256,7 +256,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |testeVGA|VGA_sync:VGA_sync_inst|pixel_y[0] ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |testeVGA|VGA_sync:VGA_sync_inst|pixel_y[9] ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
 
 
@@ -266,7 +266,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Parameter Name ; Value ; Type                                                         ;
 +----------------+-------+--------------------------------------------------------------+
 ; WIDTH          ; 2     ; Signed Integer                                               ;
-; N              ; 1     ; Signed Integer                                               ;
+; N              ; 3     ; Signed Integer                                               ;
 +----------------+-------+--------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -276,16 +276,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+--------------------------------------------+
 ; Parameter Name ; Value ; Type                                       ;
 +----------------+-------+--------------------------------------------+
-; HD             ; 640   ; Signed Integer                             ;
+; HD             ; 480   ; Signed Integer                             ;
 ; HF             ; 16    ; Signed Integer                             ;
-; HB             ; 48    ; Signed Integer                             ;
-; HR             ; 96    ; Signed Integer                             ;
-; HT             ; 800   ; Signed Integer                             ;
-; VD             ; 480   ; Signed Integer                             ;
-; VF             ; 11    ; Signed Integer                             ;
-; VB             ; 31    ; Signed Integer                             ;
-; VR             ; 2     ; Signed Integer                             ;
-; VT             ; 524   ; Signed Integer                             ;
+; HB             ; 56    ; Signed Integer                             ;
+; HR             ; 40    ; Signed Integer                             ;
+; HT             ; 592   ; Signed Integer                             ;
+; VD             ; 320   ; Signed Integer                             ;
+; VF             ; 3     ; Signed Integer                             ;
+; VB             ; 3     ; Signed Integer                             ;
+; VR             ; 10    ; Signed Integer                             ;
+; VT             ; 336   ; Signed Integer                             ;
 +----------------+-------+--------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -318,18 +318,18 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; boundary_port         ; 12                          ;
 ; cycloneiii_ff         ; 30                          ;
 ;     plain             ; 30                          ;
-; cycloneiii_lcell_comb ; 52                          ;
+; cycloneiii_lcell_comb ; 54                          ;
 ;     arith             ; 18                          ;
 ;         2 data inputs ; 18                          ;
-;     normal            ; 34                          ;
+;     normal            ; 36                          ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 2                           ;
 ;         2 data inputs ; 6                           ;
 ;         3 data inputs ; 4                           ;
-;         4 data inputs ; 21                          ;
+;         4 data inputs ; 23                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 4.00                        ;
-; Average LUT depth     ; 2.55                        ;
+; Max LUT depth         ; 3.00                        ;
+; Average LUT depth     ; 2.41                        ;
 +-----------------------+-----------------------------+
 
 
@@ -338,7 +338,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:03     ;
 +----------------+--------------+
 
 
@@ -348,38 +348,38 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sun Jan 26 01:02:39 2020
+    Info: Processing started: Mon Feb 17 10:55:11 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off testeVGA -c testeVGA
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file /home/gabriel/Documents/Projeto Collenda/ConsoleFPGA/testes/VGATeste/VGA_sync.v
-    Info (12023): Found entity 1: VGA_sync File: /home/gabriel/Documents/Projeto Collenda/ConsoleFPGA/testes/VGATeste/VGA_sync.v Line: 18
-Info (12021): Found 1 design units, including 1 entities, in source file /home/gabriel/Documents/Projeto Collenda/ConsoleFPGA/testes/VGATeste/frequency_divisor.v
-    Info (12023): Found entity 1: frequency_divisor File: /home/gabriel/Documents/Projeto Collenda/ConsoleFPGA/testes/VGATeste/frequency_divisor.v Line: 14
-Info (12021): Found 1 design units, including 1 entities, in source file /home/gabriel/Documents/Projeto Collenda/ConsoleFPGA/testes/VGATeste/testeVGA.v
-    Info (12023): Found entity 1: testeVGA File: /home/gabriel/Documents/Projeto Collenda/ConsoleFPGA/testes/VGATeste/testeVGA.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/gabriel/Documents/ConsoleFPGA/testes/VGATeste/VGA_sync.v
+    Info (12023): Found entity 1: VGA_sync File: /home/gabriel/Documents/ConsoleFPGA/testes/VGATeste/VGA_sync.v Line: 18
+Info (12021): Found 1 design units, including 1 entities, in source file /home/gabriel/Documents/ConsoleFPGA/testes/VGATeste/frequency_divisor.v
+    Info (12023): Found entity 1: frequency_divisor File: /home/gabriel/Documents/ConsoleFPGA/testes/VGATeste/frequency_divisor.v Line: 14
+Info (12021): Found 1 design units, including 1 entities, in source file /home/gabriel/Documents/ConsoleFPGA/testes/VGATeste/testeVGA.v
+    Info (12023): Found entity 1: testeVGA File: /home/gabriel/Documents/ConsoleFPGA/testes/VGATeste/testeVGA.v Line: 1
 Info (12127): Elaborating entity "testeVGA" for the top level hierarchy
-Info (12128): Elaborating entity "frequency_divisor" for hierarchy "frequency_divisor:frequency_divisor_inst" File: /home/gabriel/Documents/Projeto Collenda/ConsoleFPGA/testes/VGATeste/testeVGA.v Line: 26
-Warning (10230): Verilog HDL assignment warning at frequency_divisor.v(36): truncated value with size 32 to match size of target (2) File: /home/gabriel/Documents/Projeto Collenda/ConsoleFPGA/testes/VGATeste/frequency_divisor.v Line: 36
-Info (12128): Elaborating entity "VGA_sync" for hierarchy "VGA_sync:VGA_sync_inst" File: /home/gabriel/Documents/Projeto Collenda/ConsoleFPGA/testes/VGATeste/testeVGA.v Line: 38
-Warning (10230): Verilog HDL assignment warning at VGA_sync.v(59): truncated value with size 32 to match size of target (10) File: /home/gabriel/Documents/Projeto Collenda/ConsoleFPGA/testes/VGATeste/VGA_sync.v Line: 59
-Warning (10230): Verilog HDL assignment warning at VGA_sync.v(80): truncated value with size 32 to match size of target (10) File: /home/gabriel/Documents/Projeto Collenda/ConsoleFPGA/testes/VGATeste/VGA_sync.v Line: 80
+Info (12128): Elaborating entity "frequency_divisor" for hierarchy "frequency_divisor:frequency_divisor_inst" File: /home/gabriel/Documents/ConsoleFPGA/testes/VGATeste/testeVGA.v Line: 26
+Warning (10230): Verilog HDL assignment warning at frequency_divisor.v(36): truncated value with size 32 to match size of target (2) File: /home/gabriel/Documents/ConsoleFPGA/testes/VGATeste/frequency_divisor.v Line: 36
+Info (12128): Elaborating entity "VGA_sync" for hierarchy "VGA_sync:VGA_sync_inst" File: /home/gabriel/Documents/ConsoleFPGA/testes/VGATeste/testeVGA.v Line: 38
+Warning (10230): Verilog HDL assignment warning at VGA_sync.v(58): truncated value with size 32 to match size of target (10) File: /home/gabriel/Documents/ConsoleFPGA/testes/VGATeste/VGA_sync.v Line: 58
+Warning (10230): Verilog HDL assignment warning at VGA_sync.v(79): truncated value with size 32 to match size of target (10) File: /home/gabriel/Documents/ConsoleFPGA/testes/VGATeste/VGA_sync.v Line: 79
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "RGB[1]" is stuck at GND File: /home/gabriel/Documents/Projeto Collenda/ConsoleFPGA/testes/VGATeste/testeVGA.v Line: 13
-    Warning (13410): Pin "RGB[3]" is stuck at GND File: /home/gabriel/Documents/Projeto Collenda/ConsoleFPGA/testes/VGATeste/testeVGA.v Line: 13
-    Warning (13410): Pin "RGB[5]" is stuck at GND File: /home/gabriel/Documents/Projeto Collenda/ConsoleFPGA/testes/VGATeste/testeVGA.v Line: 13
-    Warning (13410): Pin "RGB[8]" is stuck at GND File: /home/gabriel/Documents/Projeto Collenda/ConsoleFPGA/testes/VGATeste/testeVGA.v Line: 13
+    Warning (13410): Pin "RGB[1]" is stuck at GND File: /home/gabriel/Documents/ConsoleFPGA/testes/VGATeste/testeVGA.v Line: 13
+    Warning (13410): Pin "RGB[3]" is stuck at GND File: /home/gabriel/Documents/ConsoleFPGA/testes/VGATeste/testeVGA.v Line: 13
+    Warning (13410): Pin "RGB[5]" is stuck at GND File: /home/gabriel/Documents/ConsoleFPGA/testes/VGATeste/testeVGA.v Line: 13
+    Warning (13410): Pin "RGB[8]" is stuck at GND File: /home/gabriel/Documents/ConsoleFPGA/testes/VGATeste/testeVGA.v Line: 13
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 68 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 70 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
     Info (21059): Implemented 11 output pins
-    Info (21061): Implemented 56 logic cells
+    Info (21061): Implemented 58 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 944 megabytes
-    Info: Processing ended: Sun Jan 26 01:03:00 2020
-    Info: Elapsed time: 00:00:21
-    Info: Total CPU time (on all processors): 00:00:49
+    Info: Peak virtual memory: 953 megabytes
+    Info: Processing ended: Mon Feb 17 10:56:04 2020
+    Info: Elapsed time: 00:00:53
+    Info: Total CPU time (on all processors): 00:02:07
 
 

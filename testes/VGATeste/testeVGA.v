@@ -17,7 +17,7 @@ always @(posedge out_clk) begin
 	else RGB <= 9'd0;
 end
 
-frequency_divisor #(.WIDTH(2),.N(1))
+frequency_divisor #(.WIDTH(2),.N(3))
 frequency_divisor_inst
 (
 	.clk(clk) ,	         // input  clk_sig

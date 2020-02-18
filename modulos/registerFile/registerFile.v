@@ -32,10 +32,10 @@ parameter       offset_inicio = 0;
 parameter [4:0] offset_final  = 8;
 
 parameter [4:0] y_inicio = 9;
-parameter [5:0] y_final  = 18;
+parameter [5:0] y_final  = 17;
 
-parameter [5:0] x_inicio = 19;
-parameter [5:0] x_final  = 27;
+parameter [5:0] x_inicio = 18;
+parameter [5:0] x_final  = 26;
 
 parameter       back_inicio = 0;
 parameter [4:0] back_final  = 8; 
@@ -653,8 +653,8 @@ always @(*) begin
     		readData = reg30[8:0];
     	else if(check == reg31[x_final:y_inicio]);
     		readData = reg31[8:0];
-    	else readData = 10'b0000000001; //valor que define que nenhum pixel foi encontrado com os valores informados.
+    	else readData = 8'b00000001; //valor que define que nenhum pixel foi encontrado com os valores informados.
     end
-    else readData = 10'b0000000001;
+    else readData = 8'b00000001;
 end
 endmodule
