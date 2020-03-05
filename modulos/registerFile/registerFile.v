@@ -23,7 +23,7 @@ module registerFile(
 	input  wire        written,
 	input  wire [1:0]  selectField,
 	
-	output wire [8:0] readData,
+	output  reg [31:0] out_readData,
     output wire        success
 );
 
@@ -39,8 +39,10 @@ parameter [5:0] x_final  = 26;
 
 parameter       back_inicio = 0;
 parameter [4:0] back_final  = 8; 
+parameter spriteLine = 20;
 
 /*----------------------------------------------------------------------------------------------------------*/
+wire [31:0] readData;
 
 /*-------------------Registradores----------------------*/	
 reg [31:0] reg1;
@@ -591,70 +593,75 @@ end
 /*RETORNA o valor de offset armazenado em um registrador.*/
 always @(*) begin
     if(!written) begin //comparaçao ativada.
-    	if(check == reg1[x_final:y_inicio]); 
-    		readData = reg1[8:0];
-    	else if(check == reg2[x_final:y_inicio]);
-    		readData = reg2[8:0];
-    	else if(check == reg3[x_final:y_inicio]);
-    		readData = reg3[8:0];
-    	else if(check == reg4[x_final:y_inicio]);
-    		readData = reg4[8:0];
-    	else if(check == reg[x_final:y_inicio]);
-    		readData = reg5[8:0];
-    	else if(check == reg6[x_final:y_inicio]);
-    		readData = reg6[8:0];
-    	else if(check == reg[x_final:y_inicio]);
-    		readData = reg7[8:0];
-    	else if(check == reg8[x_final:y_inicio]);
-    		readData = reg8[8:0];
-    	else if(check == reg9[x_final:y_inicio]);
-    		readData = reg9[8:0];
-    	else if(check == reg10[x_final:y_inicio]);
-    		readData = reg10[8:0];
-    	else if(check == reg11[x_final:y_inicio]);
-    		readData = reg11[8:0];
-    	else if(check == reg12[x_final:y_inicio]);
-    		readData = reg12[8:0];
-    	else if(check == reg13[x_final:y_inicio]);
-    		readData = reg13[8:0];
-    	else if(check == reg14[x_final:y_inicio]);
-    		readData = reg14[8:0];
-    	else if(check == reg15[x_final:y_inicio]);
-    		readData = reg15[8:0];
-    	else if(check == reg16[x_final:y_inicio]);
-    		readData = reg16[8:0];
-    	else if(check == reg17[x_final:y_inicio]);
-    		readData = reg17[8:0];
-    	else if(check == reg18[x_final:y_inicio]);
-    		readData = reg18[8:0];
-    	else if(check == reg19[x_final:y_inicio]);
-    		readData = reg19[8:0];
-    	else if(check == reg20[x_final:y_inicio]);
-    		readData = reg20[8:0];
-    	else if(check == reg21[x_final:y_inicio]);
-    		readData = reg21[8:0];
-    	else if(check == reg22[x_final:y_inicio]);
-    		readData = reg22[8:0];
-    	else if(check == reg23[x_final:y_inicio]);
-    		readData = reg23[8:0];
-    	else if(check == reg24[x_final:y_inicio]);
-    		readData = reg24[8:0];
-    	else if(check == reg25[x_final:y_inicio]);
-    		readData = reg25[8:0];
-    	else if(check == reg26[x_final:y_inicio]);
-    		readData = reg26[8:0];
-    	else if(check == reg27[x_final:y_inicio]);
-    		readData = reg27[8:0];
-    	else if(check == reg28[x_final:y_inicio]);
-    		readData = reg28[8:0];
-    	else if(check == reg29[x_final:y_inicio]);
-    		readData = reg29[8:0];
-    	else if(check == reg30[x_final:y_inicio]);
-    		readData = reg30[8:0];
-    	else if(check == reg31[x_final:y_inicio]);
-    		readData = reg31[8:0];
-    	else readData = 8'b00000001; //valor que define que nenhum pixel foi encontrado com os valores informados.
+    	if( (check[17:9] == reg1[x_inicio:x_final]) && (check[8:0] >= reg1[y_inicio:y_final] && check[8:0] <= reg1[y_inicio:y_final] + (spriteLine - 1))); 
+    		readData = reg1;
+    	else if( (check[17:9] == reg2[x_inicio:x_final]) && (check[8:0] >= reg2[y_inicio:y_final] && check[8:0] <= reg2[y_inicio:y_final] + (spriteLine - 1))); 
+    		readData = reg2;
+    	else if( (check[17:9] == reg3[x_inicio:x_final]) && (check[8:0] >= reg3[y_inicio:y_final] && check[8:0] <= reg3[y_inicio:y_final] + (spriteLine - 1))); 
+    		readData = reg3;
+    	else if( (check[17:9] == reg4[x_inicio:x_final]) && (check[8:0] >= reg4[y_inicio:y_final] && check[8:0] <= reg4[y_inicio:y_final] + (spriteLine - 1))); 
+    		readData = reg4;
+    	else if( (check[17:9] == reg5[x_inicio:x_final]) && (check[8:0] >= reg5[y_inicio:y_final] && check[8:0] <= reg5[y_inicio:y_final] + (spriteLine - 1))); 
+    		readData = reg5;
+    	else if( (check[17:9] == reg6[x_inicio:x_final]) && (check[8:0] >= reg6[y_inicio:y_final] && check[8:0] <= reg6[y_inicio:y_final] + (spriteLine - 1))); 
+    		readData = reg6;
+    	else if( (check[17:9] == reg7[x_inicio:x_final]) && (check[8:0] >= reg7[y_inicio:y_final] && check[8:0] <= reg7[y_inicio:y_final] + (spriteLine - 1))); 
+    		readData = reg7;
+    	else if( (check[17:9] == reg8[x_inicio:x_final]) && (check[8:0] >= reg8[y_inicio:y_final] && check[8:0] <= reg8[y_inicio:y_final] + (spriteLine - 1))); 
+    		readData = reg8;
+    	else if( (check[17:9] == reg9[x_inicio:x_final]) && (check[8:0] >= reg9[y_inicio:y_final] && check[8:0] <= reg9[y_inicio:y_final] + (spriteLine - 1))); 
+    		readData = reg9;
+    	else if( (check[17:9] == reg10[x_inicio:x_final]) && (check[8:0] >= reg10[y_inicio:y_final] && check[8:0] <= reg10[y_inicio:y_final] + (spriteLine - 1))); 
+    		readData = reg10;
+    	else if( (check[17:9] == reg11[x_inicio:x_final]) && (check[8:0] >= reg11[y_inicio:y_final] && check[8:0] <= reg11[y_inicio:y_final] + (spriteLine - 1))); 
+    		readData = reg11;
+    	else if( (check[17:9] == reg12[x_inicio:x_final]) && (check[8:0] >= reg12[y_inicio:y_final] && check[8:0] <= reg12[y_inicio:y_final] + (spriteLine - 1))); 
+    		readData = reg12;
+    	else if( (check[17:9] == reg13[x_inicio:x_final]) && (check[8:0] >= reg13[y_inicio:y_final] && check[8:0] <= reg13[y_inicio:y_final] + (spriteLine - 1))); 
+    		readData = reg13;
+    	else if( (check[17:9] == reg14[x_inicio:x_final]) && (check[8:0] >= reg14[y_inicio:y_final] && check[8:0] <= reg14[y_inicio:y_final] + (spriteLine - 1))); 
+    		readData = reg14;
+    	else if( (check[17:9] == reg15[x_inicio:x_final]) && (check[8:0] >= reg15[y_inicio:y_final] && check[8:0] <= reg15[y_inicio:y_final] + (spriteLine - 1))); 
+    		readData = reg15;
+    	else if( (check[17:9] == reg16[x_inicio:x_final]) && (check[8:0] >= reg16[y_inicio:y_final] && check[8:0] <= reg16[y_inicio:y_final] + (spriteLine - 1))); 
+    		readData = reg16;
+    	else if( (check[17:9] == reg17[x_inicio:x_final]) && (check[8:0] >= reg17[y_inicio:y_final] && check[8:0] <= reg17[y_inicio:y_final] + (spriteLine - 1))); 
+    		readData = reg17;
+    	else if( (check[17:9] == reg18[x_inicio:x_final]) && (check[8:0] >= reg18[y_inicio:y_final] && check[8:0] <= reg18[y_inicio:y_final] + (spriteLine - 1))); 
+    		readData = reg18;
+    	else if( (check[17:9] == reg19[x_inicio:x_final]) && (check[8:0] >= reg19[y_inicio:y_final] && check[8:0] <= reg19[y_inicio:y_final] + (spriteLine - 1))); 
+    		readData = reg19;
+    	else if( (check[17:9] == reg20[x_inicio:x_final]) && (check[8:0] >= reg20[y_inicio:y_final] && check[8:0] <= reg20[y_inicio:y_final] + (spriteLine - 1))); 
+    		readData = reg20;
+    	else if( (check[17:9] == reg21[x_inicio:x_final]) && (check[8:0] >= reg21[y_inicio:y_final] && check[8:0] <= reg21[y_inicio:y_final] + (spriteLine - 1))); 
+    		readData = reg21;
+    	else if( (check[17:9] == reg22[x_inicio:x_final]) && (check[8:0] >= reg22[y_inicio:y_final] && check[8:0] <= reg22[y_inicio:y_final] + (spriteLine - 1))); 
+    		readData = reg22;
+    	else if( (check[17:9] == reg23[x_inicio:x_final]) && (check[8:0] >= reg23[y_inicio:y_final] && check[8:0] <= reg23[y_inicio:y_final] + (spriteLine - 1))); 
+    		readData = reg23;
+    	else if( (check[17:9] == reg24[x_inicio:x_final]) && (check[8:0] >= reg24[y_inicio:y_final] && check[8:0] <= reg24[y_inicio:y_final] + (spriteLine - 1))); 
+    		readData = reg24;
+    	else if( (check[17:9] == reg25[x_inicio:x_final]) && (check[8:0] >= reg25[y_inicio:y_final] && check[8:0] <= reg25[y_inicio:y_final] + (spriteLine - 1))); 
+    		readData = reg25;
+    	else if( (check[17:9] == reg26[x_inicio:x_final]) && (check[8:0] >= reg26[y_inicio:y_final] && check[8:0] <= reg26[y_inicio:y_final] + (spriteLine - 1))); 
+    		readData = reg26;
+    	else if( (check[17:9] == reg27[x_inicio:x_final]) && (check[8:0] >= reg27[y_inicio:y_final] && check[8:0] <= reg27[y_inicio:y_final] + (spriteLine - 1))); 
+    		readData = reg27;
+    	else if( (check[17:9] == reg28[x_inicio:x_final]) && (check[8:0] >= reg28[y_inicio:y_final] && check[8:0] <= reg28[y_inicio:y_final] + (spriteLine - 1))); 
+    		readData = reg28;
+    	else if( (check[17:9] == reg29[x_inicio:x_final]) && (check[8:0] >= reg29[y_inicio:y_final] && check[8:0] <= reg29[y_inicio:y_final] + (spriteLine - 1))); 
+    		readData = reg29;
+    	else if( (check[17:9] == reg30[x_inicio:x_final]) && (check[8:0] >= reg30[y_inicio:y_final] && check[8:0] <= reg30[y_inicio:y_final] + (spriteLine - 1))); 
+    		readData = reg30;
+    	else if( (check[17:9] == reg31[x_inicio:x_final]) && (check[8:0] >= reg31[y_inicio:y_final] && check[8:0] <= reg31[y_inicio:y_final] + (spriteLine - 1))); 
+    		readData = reg31;
+    	else readData = 32'h00000001; //valor que define que nenhum pixel foi encontrado com os valores informados.
     end
-    else readData = 8'b00000001;
+    else readData = 32'h00000001;
 end
 endmodule
+
+//Escreve no registro de saída o valor lido de algum registrador.
+always @(negedge clk) begin
+	out_readData <= readData;
+end
