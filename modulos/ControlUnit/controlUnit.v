@@ -60,16 +60,12 @@ always @(state or opCode or printtingScreen or done) begin
 	next = 2'bx;
 	case(state)
 		PRONTO: begin
-			if(done == 1'b1) //a instrução que estava em execução foi finalizada
-				next = PRONTO; 
-			else if( (opCode == 4'b0000 || opCode == 4'b0010) && !printtingScreen)	
+			if( (opCode == 4'b0000 || opCode == 4'b0010) && !printtingScreen)	
 				next = ESCREVER_NO_BANCO;
 			else if( (opCode == 4'b0001 && !printtingScreen) )
 				next = ESCRITA_NA_MEMORIA;
-			else if( (opCode == 4'b0000 || opCode == 4'b0001 || opCode == 4'b0010 || opCode == 4'b0011) && (printtingScreeen) )
+			else if( (opCode == 4'b0000 || opCode == 4'b0001 || opCode == 4'b0010) && (printtingScreeen) )
 				next = HABILITAR_IMPRESSAO;
-			else if( opCode == 4'b0011 & !printtingScreen)
-				next = PRONTO;
 			else if(!printtingScreen) 
 				next = PRONTO;
 			else next = HABILITAR_IMPRESSAO;
@@ -80,31 +76,15 @@ always @(state or opCode or printtingScreen or done) begin
 				next = HABILITAR_IMPRESSAO;
 			else if(done == 1'b1) //a instrução que estava em execução foi finalizada
 				next = PRONTO; 
-			else if( (opCode == 4'b0000 || opCode == 4'b0010) && !printtingScreen)	
+			else 
 				next = ESCREVER_NO_BANCO;
-			else if( (opCode == 4'b0001 && !printtingScreen) )
-				next = ESCRITA_NA_MEMORIA;
-			else if( (opCode == 4'b0000 || opCode == 4'b0001 || opCode == 4'b0010 || opCode == 4'b0011) && (printtingScreeen) )
-				next = HABILITAR_IMPRESSAO;
-			else if( opCode == 4'b0011 & !printtingScreen)
-				next = PRONTO;
-			else if(!printtingScreen) 
-				next = PRONTO;
-			else next = HABILITAR_IMPRESSAO;
 		end
 		
 		HABILITAR_IMPRESSAO: begin
-			if( (opCode == 4'b0000 || opCode == 4'b0010) && !printtingScreen)	
-				next = ESCREVER_NO_BANCO;
-			else if( (opCode == 4'b0001 && !printtingScreen) )
-				next = ESCRITA_NA_MEMORIA;
-			else if( (opCode == 4'b0000 || opCode == 4'b0001 || opCode == 4'b0010 || opCode == 4'b0011) && (printtingScreeen) )
-				next = HABILITAR_IMPRESSAO;
-			else if( opCode == 4'b0011 & !printtingScreen)
+			if(!printtingScreen) //o módulo de impressão não está mais imprimindo.
 				next = PRONTO;
-			else if(!printtingScreen) 
-				next = PRONTO;
-			else next = HABILITAR_IMPRESSAO;	
+			else 
+				next = HABILITAR_IMPRESSÂO;	
 		end
 
 		ESCRITA_NA_MEMORIA: begin
@@ -112,17 +92,8 @@ always @(state or opCode or printtingScreen or done) begin
 				next = HABILITAR_IMPRESSAO;
 			else if(done == 1'b1) //a instrução que estava em execução foi finalizada
 				next = PRONTO; 
-			else if( (opCode == 4'b0000 || opCode == 4'b0010) && !printtingScreen)	
-				next = ESCREVER_NO_BANCO;
-			else if( (opCode == 4'b0001 && !printtingScreen) )
+			else 
 				next = ESCRITA_NA_MEMORIA;
-			else if( (opCode == 4'b0000 || opCode == 4'b0001 || opCode == 4'b0010 || opCode == 4'b0011) && (printtingScreeen) )
-				next = HABILITAR_IMPRESSAO;
-			else if( opCode == 4'b0011 & !printtingScreen)
-				next = PRONTO;
-			else if(!printtingScreen) 
-				next = PRONTO;
-			else next = HABILITAR_IMPRESSAO;
 		end
 		default: next = PRONTO;
 	endcase

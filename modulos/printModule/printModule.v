@@ -21,7 +21,7 @@ module printModule(
 	input wire        clk,
 	input wire        clk_pixel,
 	input wire        reset,
-	input wire [31:0]  data_reg,
+	input wire [31:0] data_reg,
 	input wire        active_area,
 	input wire        new_pixel,
 	input wire  [8:0] pixel_x,
