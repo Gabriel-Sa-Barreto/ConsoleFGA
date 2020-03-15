@@ -25,7 +25,6 @@ deve ser guardada pelo banco de registradores.
 **/
 module controlUnit(
 	 input wire clk,
-	 input wire reset,
 	 input wire [3:0] opCode,
 	 input wire       printtingScreen,
 	 input wire       done,
@@ -41,7 +40,7 @@ module controlUnit(
 
 parameter [1:0]     PRONTO              = 2'b00,
 					ESCREVER_NO_BANCO   = 2'b01,
-					HABILITAR_IMPRESSAO = 2'b10,
+					HABILITAR_IMPRESSAO = 2'b10;
 					ESCRITA_NA_MEMORIA  = 2'b11;
 
 reg [1:0] state, next;
@@ -65,7 +64,7 @@ always @(state or opCode or printtingScreen or done) begin
 				next = ESCREVER_NO_BANCO;
 			else if( (opCode == 4'b0001 && !printtingScreen) )
 				next = ESCRITA_NA_MEMORIA;
-			else if( (opCode == 4'b0000 || opCode == 4'b0001 || opCode == 4'b0010) && printtingScreen )
+			else if( (opCode == 4'b0000 || opCode == 4'b0001 || opCode == 4'b0010) && (printtingScreeen) )
 				next = HABILITAR_IMPRESSAO;
 			else if(!printtingScreen) 
 				next = PRONTO;
@@ -85,7 +84,7 @@ always @(state or opCode or printtingScreen or done) begin
 			if(!printtingScreen) //o módulo de impressão não está mais imprimindo.
 				next = PRONTO;
 			else 
-				next = HABILITAR_IMPRESSAO;	
+				next = HABILITAR_IMPRESSÂO;	
 		end
 
 		ESCRITA_NA_MEMORIA: begin
@@ -104,11 +103,12 @@ end
 Block always responsavel por gerar de acordo ao proximo estado as
 saidas correspondentes.
 */
-always @(negedge clk or negedge reset) begin
+always @(posedge clk or negedge reset) begin
 	if(!reset) begin
-		memory_wr   = 1'bx ;
-		selectField = 4'bxxxx;
-		register_wr = 1'bx;
+		memory_wr;
+		selectField;
+		register_wr;
+		muxOut;
 	end
 	else begin
 		case(next)
@@ -133,7 +133,7 @@ always @(negedge clk or negedge reset) begin
 			end
 			
 			
-			HABILITAR_IMPRESSAO: begin
+			HABILITAR_IMPRSSSAO: begin
 				new_instruction   <= 1'b1;     //nao permite executar novas instruçoes
 				memory_wr         <= 1'b0;     //aciona leitura da memoria
 				selectField       <= 4'bxxxx;  //nao existem campos a serem alterados no registradores do banco

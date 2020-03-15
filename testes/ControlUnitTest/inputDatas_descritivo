@@ -1,3 +1,4 @@
+//ordem: opcode, done, printtingScreen
 //escrita na memória
 0001    //entrou na escrita
 xxxx11  //vai para habilitar impressão
