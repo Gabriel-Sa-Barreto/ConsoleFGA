@@ -1,0 +1,12 @@
+//entradas necessárias: data_reg, active_area, pixel_y, pixel_x (nessa ordem)
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx|0|000000000|000000000| //permanece no estado de RECEBE
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx|1|101110000|000101000| //vai pro estado de PROCESSA
+00000000000000000000000000000001|1|101110000|000101000| //recebe os dados de data_reg que será recebido do banco de registradores (background)
+00000000000000000000000000000001|1|101110000|000101000| //permanece no estado  de aguardo
+00000000000000000000000000000001|1|101110000|000101000| //permanece no estado  de aguardo e no final do pulso volta ao estado de RECEBE
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx|1|101110000|000000100| //vai pro estado de PROCESSA
+000000100101110000000000100xxxxx|1|101110000|000000100| //no estado de PROCESSA recebe o valor da comparação do banco de registradores(sprite) e durante 20 pulsos de clock estará sendo impresso um sprite. Depois volta ao estado de recebe.
+
+
+
+

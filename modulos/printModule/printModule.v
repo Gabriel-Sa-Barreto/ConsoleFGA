@@ -8,64 +8,75 @@ ENTRADAS:
 	clk_pixel:   clock utilizado na interface VGA. 
 	data_reg:    valor recebido do banco de registradores.
 	active_area: sinal que informa se o monitor esta na area ativa ou nao.
-	new_pixel:   sinal que informa se um novo pixel foi gerado.
 	pixel_x:     coordenada x atual do monitor.
 	pixel_y:     coordenada y atual do monitor.
-SAIDAS:		 
-	address_memory:   endereço a ser acessado na memoria.
+SAIDAS:
+	sprite-datas:     dados do sprite a ser impresso.		 
+	memory_address:   endereço a ser acessado na memoria.
 	check_value:      valor de coordenada a ser comparado com valores armazenados no banco de registradores. 
-   printtingScreeen:  sinal de status do modulo de impressao. (1-imprimindo, 0-nao imprimindo).     
+    printtingScreeen: sinal de status do modulo de impressao. (1-imprimindo, 0-nao imprimindo).     
 //////////////////////////////////////////////////////////////////////////
 **/
-module printModule(
-	input wire        clk,
-	input wire        clk_pixel,
-	input wire        reset,
-	input wire [31:0] data_reg,
-	input wire        active_area,
-	input wire        new_pixel,
-	input wire  [8:0] pixel_x,
-	input wire  [8:0] pixel_y,
-   output wire [16:0] address_memory,
-   output wire        printtingScreen, 
-   output wire [17:0] check_value,	
+module printModule #( parameter size_x = 10, size_y = 9, size_address = 17 )
+(
+	input wire               clk,
+	input wire               clk_pixel,
+	input wire               reset,
+	input wire  [31:0]       data_reg,
+	input wire               active_area,
+	input wire  [size_x-1:0] pixel_x,
+	input wire  [size_y-1:0] pixel_y,
+	input wire               count_finished,
+
+   output wire [31:0]             sprite_datas,
+   output wire [size_address-1:0] memory_address,
+   output wire                    printtingScreen, 
+   output wire [17:0] 			  check_value,
+   output wire                    sprite_on
 );
 
-parameter [1:0] RECEBE   = 2'b00,
-				PROCESSA = 2'b01,
-				SPRITE   = 2'b10,  
-				AGUARDO  = 2'b11;
 
-parameter [17:0] address_BG = 115200;
+/*------------------Parâmetros da máquina de estados-------------------------*/
+parameter [4:0] spriteLine = 20;
+parameter [2:0] RECEBE     = 3'b000,
+				PROCESSA   = 3'b001,
+				SPRITE     = 3'b010,  
+				AGUARDO    = 3'b011,
+				AGUARDO_2  = 3'b100;
+parameter [16:0] address_BG = 115200;
 parameter [4:0]  lineSprite = 20; //sprites com tamanho 20x20
-parameter [9:0]  screen_x = 480;
-parameter [9:0]  screen_y = 320;
+parameter [size_x-1:0]  screen_x = 480;
+parameter [size_y-1:0]  screen_y = 320;
+/*---------------------------------------------------------------------------*/
 
-reg [1:0]  next, state;
-reg [1:0]  counter;
-reg [4:0]  counterLine;
-reg [17:0] adrs_sprite;
- 
-reg [16:0] out_address_memory;
-reg        out_printtingScreen; 
-reg [17:0] out_check_value;
+reg [2:0]  next, state; 
 
-always(posedge clk or negedge reset) begin
+/*-------------Registradores auxiliares de saída da máquina de estados------*/
+reg [size_address-1:0] out_memory_address;
+reg        			   out_printtingScreen; 
+reg [17:0] 			   out_check_value;
+reg        			   out_sprite_on;
+reg [31:0]             out_sprite_datas;
+/*----------------------------------------------------------------------------*/
+
+/*----------------Bloco always para atualização do estado atual----------------------*/
+always @(posedge clk or negedge reset) begin
 	if(!reset) 
 		state <= RECEBE;
 	else 
 		state <= next;
 end
+/*-----------------------------------------------------------------------------------*/
 
-/*Bloco combinacional responsável pela mudança de estados*/
-always @(state, pixel_x, pixel_y, data_reg) begin
-	next = 2'bxx;
+/*--------------------Bloco combinacional responsável pela mudança de estados----------------------------*/
+always @(state or pixel_x or pixel_y or data_reg or count_finished) begin
+	next = 3'bxxx;
 	case(state)
 		//só volta/entra no estado de RECEBE se somente se foi finalizado uma impressão da linha de um sprite
 		//ou o tempo de aguardo depois de impresso a cor de background.
 		RECEBE:
 			begin
-				if(active_area) 
+				if(active_area)
 					next = PROCESSA;
 				else 
 					next = RECEBE;						
@@ -83,42 +94,35 @@ always @(state, pixel_x, pixel_y, data_reg) begin
 
 		SPRITE:
 			begin
-				if(counterLine == 5'd19) begin    //último pixel da linha do sprite.
+				if(count_finished == 1'b1) begin
 					next = RECEBE;
 				end
 				else begin
 					next = SPRITE;
-					//verificação de condição para calculo de endereço.
-					if( (data_reg[26:18] >= pixel_x) && (data_reg[26:18] < (pixel_x + spriteLine-1)) ) begin
-						//calcula o endereço de memória para a cor do pixel do sprite.
-						if(data_reg[26:18] == pixel_x) begin
-							adrs_sprite = data_reg[8:0]; //primeira posição do sprite
-						end	
-						else adrs_sprite = adrs_sprite + 1;
-					end
 				end
 			end
 
 		AGUARDO:
 			begin
-				if(counter == 2'd1) begin
-					next = RECEBE;  //o tempo de aguardo foi finalizado.
-				end
-				else begin 
-					next = AGUARDO;
-				end
+				next = AGUARDO_2;
+			end
+
+		AGUARDO_2:
+			begin
+				next = RECEBE;
 			end
 		default: next = RECEBE;
 	endcase
 end
+/*-------------------------------------------------------------------------------------------------*/
 
-/*Bloco always responsável por gerenciar as saídas do módulo*/
+/*-------------------Bloco always responsável por gerenciar as saídas do módulo-------------------*/
 always @(negedge clk or negedge reset) begin
 	if(!reset) begin
-		adrs_sprite         = 17'hxxxxx;
-		out_address_memory  = 17'hxxxxx;
-		out_printtingScreen = 1'bx; 
-		out_check_value     = 32'hxxxxxxxx;
+		out_memory_address  	<= 17'hxxxxx;
+		out_check_value     	<= 32'hxxxxxxxx;
+		out_sprite_on       	<= 1'b0;
+		out_sprite_datas        <= 32'hxxxxxxxx;
 	end
 	else begin
 		case(state) 
@@ -128,51 +132,59 @@ always @(negedge clk or negedge reset) begin
 						//envio de coordenadas para comparação.
 						out_check_value[8:0]  <= pixel_y; 
 						out_check_value[17:9] <= pixel_x;
+						out_memory_address    <= 17'hxxxxx;
+						out_sprite_on         <= 1'b0;
+					end
+					else begin
+						out_check_value[8:0]  <= 9'bxxxxxxxxx; 
+						out_check_value[17:9] <= 9'bxxxxxxxxx;
+						out_memory_address    <= 17'hxxxxx;
+						out_sprite_on         <= 1'b0; 
 					end
 				end
 			PROCESSA:
 				begin
 					if(data_reg == 32'h00000001) begin //pixel atual pertence ao background do monitor.
-						out_address_memory <= address_BG;  //endereço de memória onde está localizado a cor de background.
-					end
-					else out_address_memory <= 18'hxxxxx;
-				end
-
-			AGUARDO:
-				begin
-					if(counter == 2'd1) begin
-						counter <= 0;  //o tempo de aguardo foi finalizado.
+						out_memory_address    <= address_BG;  //endereço de memória onde está localizado a cor de background.
+						out_check_value[17:0] <= 18'hxxxxx;
 					end
 					else begin 
-						counter <= counter + 1;
+						out_memory_address    <= 17'hxxxxx;
+						out_check_value[17:0] <= 18'hxxxxx;
+						out_sprite_on         <= 1'b1; //habilita o contador das linhas a ser impresso em cada sprite.
+						out_sprite_datas      <= data_reg;
 					end
 				end
 
 			SPRITE:
 				begin
-					if(counterLine == 5'd19) begin    //último pixel da linha do sprite.
-						counterLine <= 0;
+					if(count_finished == 1'b1) begin
+						out_sprite_on       <= 1'b0;  //desabilita o contador responsável pela contagem das linhas de cada sprite a ser impresso.
+						out_sprite_datas    <= 32'hxxxxxxxx;
 					end
 					else begin
-						counterLine <= counterLine + 1;
+						out_sprite_on <= out_sprite_on; 
 					end
-					address_memory <= adrs_sprite;
 				end
 		endcase
 	end
 end
+/*--------------------------------------------------------------------------------------------------------------*/
 
-/*Bloco always que define se o módulo está em impressão de tela ou não*/
+/*---------------Bloco always que define se o módulo está em impressão de tela ou não----------------*/
 always @(posedge clk_pixel) begin
 	if( active_area && (pixel_x >= 0 && pixel_x < screen_x) && (pixel_y >= 0 && pixel_y < screen_y) ) 
-		out_printtingScreen = 1;
+		out_printtingScreen <= 1;
 	else 
-		out_printtingScreen = 0;
+		out_printtingScreen <= 0;
 end
+/*----------------------------------------------------------------------------------------------------*/
 
-/*Atribuição contínua da saída*/
-assign out_address_memory  = address_memory;
-assign out_printtingScreen = printtingScreen; 
-assign out_check_value     = check_value;
-
+/*-----------------Atribuição contínua das saídas---------------------------*/
+assign memory_address  = out_memory_address;
+assign printtingScreen = out_printtingScreen; 
+assign check_value     = out_check_value;
+assign sprite_on       = out_sprite_on;
+assign sprite_datas    = out_sprite_datas;
+/*---------------------------------------------------------------------------*/
 endmodule

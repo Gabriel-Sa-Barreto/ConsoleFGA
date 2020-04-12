@@ -22,9 +22,9 @@ module decorderInstruction(
 	input wire        clk_en,
 	input wire        new_instruction,
 
-	output wire [1:0]  reg out_opcode,
-	output wire [4:0]  reg out_register,
-	output wire [31:0] reg out_data
+	output reg [1:0]  out_opcode,
+	output reg [4:0]  out_register,
+	output reg [31:0] out_data
 );
 
 //parâmetro que informa a posição fixa em que deve ficar armazenado o valor da cor de background da tela.

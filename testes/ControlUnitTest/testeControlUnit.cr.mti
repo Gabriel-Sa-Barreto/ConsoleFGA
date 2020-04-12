@@ -5,11 +5,4 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	controlUnit
 
-} {} {}} /home/gabriel/Documents/ConsoleFPGA/testes/ControlUnitTest/controlUnitTeste.v {1 {vlog -work work -stats=none /home/gabriel/Documents/ConsoleFPGA/testes/ControlUnitTest/controlUnitTeste.v
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module controleUnitTeste
-
-Top level modules:
-	controleUnitTeste
-
 } {} {}}

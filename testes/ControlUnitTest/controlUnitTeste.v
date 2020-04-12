@@ -1,6 +1,6 @@
 module controleUnitTeste;
 
-integer dataLine;  //número total de linhas a serem lidas do arquivo de entrada e saída de dados.
+integer dataLine;  //número total de linhas a serem lidas do arquivo de entrada.
 
 reg [5:0]  inputDatas [0:31];
 
@@ -24,21 +24,21 @@ wire selectorAddress;
 
 always begin
 	clk = 1'b1;
-	#20;
+	#10;
 	clk = 1'b0;
-	#20;
+	#10;
 end
 
 initial 
 	begin
-		//Inicializando as os registros de entrada.
+		//Inicializando os registros de entrada.
 		opCode = 4'bxxxx;
 		done   = 1'bx;
 		printtingScreen = 1'bx;
 		dataLine = 0;
 		///////////////////////////////////////////
 
-		//leitura dos dados de entrada e saída
+		//leitura dos dados de entrada
 		$readmemb("/home/gabriel/Documents/ConsoleFPGA/testes/ControlUnitTest/inputDatas.mem", inputDatas);
 
 		#20; //delay de 20 milisegundos

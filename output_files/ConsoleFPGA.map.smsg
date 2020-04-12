@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at printModule.v(114): always construct contains both blocking and non-blocking assignments File: /home/gabriel/Documents/ConsoleFPGA/modulos/printModule/printModule.v Line: 114

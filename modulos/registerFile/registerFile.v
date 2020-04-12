@@ -37,8 +37,6 @@ parameter [5:0] y_final  = 17;
 parameter [5:0] x_inicio = 18;
 parameter [5:0] x_final  = 26;
 
-parameter       back_inicio = 0;
-parameter [4:0] back_final  = 8; 
 parameter spriteLine = 20;
 
 /*----------------------------------------------------------------------------------------------------------*/

@@ -1,0 +1,8 @@
+
+State Machine - |printModule|state
+Name state.AGUARDO state.SPRITE state.PROCESSA state.RECEBE state.AGUARDO_2 
+state.RECEBE 0 0 0 0 0 
+state.PROCESSA 0 0 1 1 0 
+state.SPRITE 0 1 0 1 0 
+state.AGUARDO 1 0 0 1 0 
+state.AGUARDO_2 0 0 0 1 1 
