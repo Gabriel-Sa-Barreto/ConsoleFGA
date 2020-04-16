@@ -1,13 +1,11 @@
 module sprite_line_counter_test;
-
-integer dataLine;  //número total de linhas a serem lidas do arquivo de entrada.
-
-reg [50:0] inputDatas [0:6];  //sete entradas de 51 bits.
-
+integer contagem;
+integer sprite_size = 20;
 /*----------Registros de entrada----------------*/
 reg        clk_pixel;
 reg [9:0]  pixel_x;
 reg [8:0]  pixel_y;
+reg [8:0]  offset;
 reg [31:0] sprite_datas;
 reg        sprite_on;
 reg        reset;
@@ -28,17 +26,40 @@ end
 
 
 initial begin
-		reset = 1'b0;  //reseta o módulo
-		@(posedge clk);
+		reset = 1'b0;  										//reseta o módulo
+		#40;           										//espera 40 nanosegundos, que corresponde a 1 pulso de clock.
 		reset        = 1'b1;
-		sprite_on    = 1'b0;            					//não ativa a contagem
+		sprite_on    = 1'b0;            					//desativa a contagem
 		pixel_x      = 10'b0000100000;  					//32
 		pixel_y      = 9'b000100000;    					//32
-		sprite_datas = 32'b0000100000|000100000|00001000|;  //pixel_x|pixel_y|offset;
-		
+		offset       = 9'b000001000;                        //8
+		sprite_datas = {pixel_x,pixel_y,offset};
+		#40;                                                //delay de 40 nanosegundos
 		sprite_on    = 1'b1;            					//ativa a contagem
-		$monitor("Memory_address: %b, | Count_Finished: %b ",memory_address, count_finished);
-		$1200; //espera 1200 nanosegundos.
+
+		for(contagem = 1; contagem < sprite_size; contagem = contagem + 1) begin
+			#40;
+			pixel_x = pixel_x + 1;
+		end
+		#40;                                                //delay de espera para que a última saída de endereço seja gerada.
+		sprite_on    = 1'b0;            					//desativa a contagem
+		#80;
+
+		pixel_y      =  9'b000110000;                       //48
+		pixel_x      = 10'b0000100000;  					//32
+		sprite_datas = {pixel_x,pixel_y,offset};
+		sprite_on    = 1'b1;            					//ativa a contagem
+
+		for(contagem = 1; contagem < sprite_size; contagem = contagem + 1) begin
+			#40;
+			pixel_x = pixel_x + 1;
+		end
+		#40;
+		sprite_on    = 1'b0;            					//desativa a contagem
+
+
+		$monitor("Memory_address: %b | Count_Finished: %b ",memory_address, count_finished);
+		#1200; //espera 1200 nanosegundos.
 		$stop; //encerra a simulação.
 end
 

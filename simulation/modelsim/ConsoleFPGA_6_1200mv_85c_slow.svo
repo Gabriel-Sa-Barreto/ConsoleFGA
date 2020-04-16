@@ -16,7 +16,7 @@
 // PROGRAM "Quartus Prime"
 // VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
 
-// DATE "04/12/2020 14:44:00"
+// DATE "04/15/2020 21:23:09"
 
 // 
 // Device: Altera EP4CE22F17C6 Package FBGA256
@@ -42,19 +42,19 @@ module printModule (
 	printtingScreen,
 	check_value,
 	sprite_on);
-input 	reg clk ;
-input 	reg clk_pixel ;
-input 	reg reset ;
-input 	reg [31:0] data_reg ;
-input 	reg active_area ;
-input 	reg [9:0] pixel_x ;
-input 	reg [8:0] pixel_y ;
-input 	reg count_finished ;
-output 	reg [31:0] sprite_datas ;
-output 	reg [16:0] memory_address ;
-output 	reg printtingScreen ;
-output 	reg [17:0] check_value ;
-output 	reg sprite_on ;
+input 	clk;
+input 	clk_pixel;
+input 	reset;
+input 	[31:0] data_reg;
+input 	active_area;
+input 	[9:0] pixel_x;
+input 	[8:0] pixel_y;
+input 	count_finished;
+output 	[31:0] sprite_datas;
+output 	[16:0] memory_address;
+output 	printtingScreen;
+output 	[17:0] check_value;
+output 	sprite_on;
 
 // Design Ports Information
 // sprite_datas[0]	=>  Location: PIN_F13,	 I/O Standard: 2.5 V,	 Current Strength: Default

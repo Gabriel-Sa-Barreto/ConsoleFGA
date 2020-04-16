@@ -30,8 +30,8 @@ module sprite_line_counter #( parameter size_x = 10, size_y = 9, size_address = 
 
 /*------------------Parâmetros da máquina de estados-------------------------*/
 parameter [4:0] ZERO     =  5'b00000,
-				TWO          =  5'b00001,
-				ONE          =  5'b00010,
+				ONE          =  5'b00001,
+				TWO          =  5'b00010,
 				THREE        =  5'b00011,
 				FOUR         =  5'b00100,
 				FIVE         =  5'b00101,
@@ -43,12 +43,12 @@ parameter [4:0] ZERO     =  5'b00000,
 				ELEVEN       =  5'b01011,
 				TWELVE       =  5'b01100,
 				THIRTEEN     =  5'b01101,
-				FOURTEEN     =  5'b01111,
-				FIFTEEN      =  5'b10000,
-				SIXTEEN      =  5'b10001,
-				SEVENTEEN    =  5'b10010,
-				EIGHTEEN     =  5'b10011,
-				NINETEEN     =  5'b10100;			
+				FOURTEEN     =  5'b01110,
+				FIFTEEN      =  5'b01111,
+				SIXTEEN      =  5'b10000,
+				SEVENTEEN    =  5'b10001,
+				EIGHTEEN     =  5'b10010,
+				NINETEEN     =  5'b10011;			
 /*---------------------------------------------------------------------------*/
 
 
@@ -143,14 +143,17 @@ end
 /*--------------------------------------------------------------------------------------------------------*/
 
 /*--------Bloco always combinacional responsável por gerar o endereço de memória a ser acessado-----*/
-always @(pixel_x or pixel_y) begin
+always @(pixel_x or pixel_y or sprite_on) begin
 	if(sprite_on == 1'b1) begin  //se o sprite_on está habilitado então uma linha de um sprite deve ser impressa.
 		if( (pixel_x == sprite_datas[26:18]) ) begin  //primeiro pixel da linha
 			aux_memory_address = sprite_datas[8:0];   //o endereço é o próprio offset.
 		end
-		else if( (pixel_x > sprite_datas[26:18]) && ( pixel_x < ( sprite_datas[26:18] + (size_line-1) ) ) ) begin
+		else if( (pixel_x > sprite_datas[26:18]) && ( pixel_x < ( sprite_datas[26:18] + (size_line) ) ) ) begin
 			//ainda está dentro do limite da linha do sprite.
-			aux_memory_address = sprite_datas[8:0] + next; //offset + contagem de linha
+			if( pixel_x == (sprite_datas[26:18] + (size_line)) ) begin //último pixel a ser impresso.
+				aux_memory_address = sprite_datas[8:0] + state;
+			end
+			else aux_memory_address = sprite_datas[8:0] + next; //offset + contagem de linha; 
 		end
 	end
 	else begin
@@ -171,6 +174,7 @@ always @(negedge clk_pixel) begin
 			out_count_finished <= 1'b0;
 		end 
 	end
+	else  out_count_finished <= 1'b1; 
 end
 /*--------------------------------------------------------------------------------------------------*/
 

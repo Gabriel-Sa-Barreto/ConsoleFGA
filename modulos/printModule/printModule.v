@@ -31,7 +31,7 @@ module printModule #( parameter size_x = 10, size_y = 9, size_address = 17 )
    output wire [31:0]             sprite_datas,
    output wire [size_address-1:0] memory_address,
    output wire                    printtingScreen, 
-   output wire [17:0] 			  check_value,
+   output wire [18:0] 			  check_value,
    output wire                    sprite_on
 );
 
@@ -54,7 +54,7 @@ reg [2:0]  next, state;
 /*-------------Registradores auxiliares de saída da máquina de estados------*/
 reg [size_address-1:0] out_memory_address;
 reg        			   out_printtingScreen; 
-reg [17:0] 			   out_check_value;
+reg [18:0] 			   out_check_value;
 reg        			   out_sprite_on;
 reg [31:0]             out_sprite_datas;
 /*----------------------------------------------------------------------------*/
@@ -120,7 +120,7 @@ end
 always @(negedge clk or negedge reset) begin
 	if(!reset) begin
 		out_memory_address  	<= 17'hxxxxx;
-		out_check_value     	<= 32'hxxxxxxxx;
+		out_check_value     	<= 19'hxxxxx;
 		out_sprite_on       	<= 1'b0;
 		out_sprite_datas        <= 32'hxxxxxxxx;
 	end
