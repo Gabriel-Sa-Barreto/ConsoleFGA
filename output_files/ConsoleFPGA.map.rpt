@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ConsoleFPGA
-Wed Apr 15 21:21:54 2020
+Sat Apr 18 10:25:48 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -45,7 +45,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Apr 15 21:21:54 2020       ;
+; Analysis & Synthesis Status        ; Successful - Sat Apr 18 10:25:48 2020       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; ConsoleFPGA                                 ;
 ; Top-level Entity Name              ; printModule                                 ;
@@ -54,7 +54,7 @@ refer to the applicable agreement for further details.
 ;     Total combinational functions  ; 24                                          ;
 ;     Dedicated logic registers      ; 57                                          ;
 ; Total registers                    ; 57                                          ;
-; Total pins                         ; 125                                         ;
+; Total pins                         ; 126                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -195,14 +195,14 @@ refer to the applicable agreement for further details.
 ;     -- Dedicated logic registers            ; 57        ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
-; I/O pins                                    ; 125       ;
+; I/O pins                                    ; 126       ;
 ;                                             ;           ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
 ; Maximum fan-out                             ; 56        ;
-; Total fan-out                               ; 432       ;
-; Average fan-out                             ; 1.31      ;
+; Total fan-out                               ; 433       ;
+; Average fan-out                             ; 1.30      ;
 +---------------------------------------------+-----------+
 
 
@@ -211,7 +211,7 @@ refer to the applicable agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |printModule               ; 24 (24)             ; 57 (57)                   ; 0           ; 0            ; 0       ; 0         ; 125  ; 0            ; |printModule        ; printModule ; work         ;
+; |printModule               ; 24 (24)             ; 57 (57)                   ; 0           ; 0            ; 0       ; 0         ; 126  ; 0            ; |printModule        ; printModule ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -268,6 +268,7 @@ Encoding Type:  One-Hot
 ; size_x         ; 10    ; Signed Integer                                     ;
 ; size_y         ; 9     ; Signed Integer                                     ;
 ; size_address   ; 17    ; Signed Integer                                     ;
+; bits_x_y       ; 19    ; Signed Integer                                     ;
 +----------------+-------+----------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -277,7 +278,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 125                         ;
+; boundary_port         ; 126                         ;
 ; cycloneiii_ff         ; 57                          ;
 ;     CLR               ; 6                           ;
 ;     ENA               ; 50                          ;
@@ -299,7 +300,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:04     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -309,7 +310,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Wed Apr 15 21:20:55 2020
+    Info: Processing started: Sat Apr 18 10:25:22 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ConsoleFPGA -c ConsoleFPGA
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -319,16 +320,14 @@ Info (12021): Found 1 design units, including 1 entities, in source file modulos
     Info (12023): Found entity 1: printModule File: /home/gabriel/Documents/ConsoleFPGA/modulos/printModule/printModule.v Line: 20
 Warning (10222): Verilog HDL Parameter Declaration warning at sprite_line_counter.v(32): Parameter Declaration in module "sprite_line_counter" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: /home/gabriel/Documents/ConsoleFPGA/modulos/sprite_line_counter/sprite_line_counter.v Line: 32
 Warning (10222): Verilog HDL Parameter Declaration warning at printModule.v(40): Parameter Declaration in module "printModule" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: /home/gabriel/Documents/ConsoleFPGA/modulos/printModule/printModule.v Line: 40
-Warning (10222): Verilog HDL Parameter Declaration warning at printModule.v(41): Parameter Declaration in module "printModule" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: /home/gabriel/Documents/ConsoleFPGA/modulos/printModule/printModule.v Line: 41
+Warning (10222): Verilog HDL Parameter Declaration warning at printModule.v(45): Parameter Declaration in module "printModule" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: /home/gabriel/Documents/ConsoleFPGA/modulos/printModule/printModule.v Line: 45
 Warning (10222): Verilog HDL Parameter Declaration warning at printModule.v(46): Parameter Declaration in module "printModule" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: /home/gabriel/Documents/ConsoleFPGA/modulos/printModule/printModule.v Line: 46
 Warning (10222): Verilog HDL Parameter Declaration warning at printModule.v(47): Parameter Declaration in module "printModule" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: /home/gabriel/Documents/ConsoleFPGA/modulos/printModule/printModule.v Line: 47
-Warning (10222): Verilog HDL Parameter Declaration warning at printModule.v(48): Parameter Declaration in module "printModule" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: /home/gabriel/Documents/ConsoleFPGA/modulos/printModule/printModule.v Line: 48
-Warning (10222): Verilog HDL Parameter Declaration warning at printModule.v(49): Parameter Declaration in module "printModule" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: /home/gabriel/Documents/ConsoleFPGA/modulos/printModule/printModule.v Line: 49
 Info (12127): Elaborating entity "printModule" for the top level hierarchy
-Warning (10235): Verilog HDL Always Construct warning at printModule.v(79): variable "active_area" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/gabriel/Documents/ConsoleFPGA/modulos/printModule/printModule.v Line: 79
-Warning (10230): Verilog HDL assignment warning at printModule.v(123): truncated value with size 32 to match size of target (18) File: /home/gabriel/Documents/ConsoleFPGA/modulos/printModule/printModule.v Line: 123
-Warning (10230): Verilog HDL assignment warning at printModule.v(134): truncated value with size 10 to match size of target (9) File: /home/gabriel/Documents/ConsoleFPGA/modulos/printModule/printModule.v Line: 134
-Info (10264): Verilog HDL Case Statement information at printModule.v(128): all case item expressions in this case statement are onehot File: /home/gabriel/Documents/ConsoleFPGA/modulos/printModule/printModule.v Line: 128
+Warning (10235): Verilog HDL Always Construct warning at printModule.v(77): variable "active_area" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/gabriel/Documents/ConsoleFPGA/modulos/printModule/printModule.v Line: 77
+Warning (10230): Verilog HDL assignment warning at printModule.v(132): truncated value with size 10 to match size of target (9) File: /home/gabriel/Documents/ConsoleFPGA/modulos/printModule/printModule.v Line: 132
+Info (10264): Verilog HDL Case Statement information at printModule.v(126): all case item expressions in this case statement are onehot File: /home/gabriel/Documents/ConsoleFPGA/modulos/printModule/printModule.v Line: 126
+Warning (10030): Net "out_check_value[18]" at printModule.v(55) has no driver or initial value, using a default initial value '0' File: /home/gabriel/Documents/ConsoleFPGA/modulos/printModule/printModule.v Line: 55
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "memory_address[0]" is stuck at GND File: /home/gabriel/Documents/ConsoleFPGA/modulos/printModule/printModule.v Line: 32
     Warning (13410): Pin "memory_address[1]" is stuck at GND File: /home/gabriel/Documents/ConsoleFPGA/modulos/printModule/printModule.v Line: 32
@@ -347,18 +346,19 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "memory_address[14]" is stuck at VCC File: /home/gabriel/Documents/ConsoleFPGA/modulos/printModule/printModule.v Line: 32
     Warning (13410): Pin "memory_address[15]" is stuck at VCC File: /home/gabriel/Documents/ConsoleFPGA/modulos/printModule/printModule.v Line: 32
     Warning (13410): Pin "memory_address[16]" is stuck at VCC File: /home/gabriel/Documents/ConsoleFPGA/modulos/printModule/printModule.v Line: 32
+    Warning (13410): Pin "check_value[18]" is stuck at GND File: /home/gabriel/Documents/ConsoleFPGA/modulos/printModule/printModule.v Line: 34
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 2 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 200 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 201 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 56 input pins
-    Info (21059): Implemented 69 output pins
+    Info (21059): Implemented 70 output pins
     Info (21061): Implemented 75 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 29 warnings
-    Info: Peak virtual memory: 957 megabytes
-    Info: Processing ended: Wed Apr 15 21:21:54 2020
-    Info: Elapsed time: 00:00:59
-    Info: Total CPU time (on all processors): 00:02:14
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 28 warnings
+    Info: Peak virtual memory: 948 megabytes
+    Info: Processing ended: Sat Apr 18 10:25:48 2020
+    Info: Elapsed time: 00:00:26
+    Info: Total CPU time (on all processors): 00:00:55
 
 

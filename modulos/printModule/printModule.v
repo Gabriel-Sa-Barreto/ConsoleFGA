@@ -17,7 +17,7 @@ SAIDAS:
     printtingScreeen: sinal de status do modulo de impressao. (1-imprimindo, 0-nao imprimindo).     
 //////////////////////////////////////////////////////////////////////////
 **/
-module printModule #( parameter size_x = 10, size_y = 9, size_address = 17 )
+module printModule #( parameter size_x = 10, size_y = 9, size_address = 17, bits_x_y = 19 )
 (
 	input wire               clk,
 	input wire               clk_pixel,
@@ -31,32 +31,30 @@ module printModule #( parameter size_x = 10, size_y = 9, size_address = 17 )
    output wire [31:0]             sprite_datas,
    output wire [size_address-1:0] memory_address,
    output wire                    printtingScreen, 
-   output wire [18:0] 			  check_value,
+   output wire [bits_x_y-1:0] 	  check_value,
    output wire                    sprite_on
 );
 
 
 /*------------------Parâmetros da máquina de estados-------------------------*/
-parameter [4:0] spriteLine = 20;
-parameter [2:0] RECEBE     = 3'b000,
-				PROCESSA   = 3'b001,
-				SPRITE     = 3'b010,  
-				AGUARDO    = 3'b011,
-				AGUARDO_2  = 3'b100;
+parameter [2:0] RECEBE      = 3'b000,
+				PROCESSA    = 3'b001,
+				SPRITE      = 3'b010,  
+				AGUARDO     = 3'b011,
+				AGUARDO_2   = 3'b100;
 parameter [16:0] address_BG = 115200;
-parameter [4:0]  lineSprite = 20; //sprites com tamanho 20x20
-parameter [size_x-1:0]  screen_x = 480;
-parameter [size_y-1:0]  screen_y = 320;
+parameter [size_x-1:0]  screen_x = 640;   //número de colunas do monitor de acordo à resolução utilizada.
+parameter [size_y-1:0]  screen_y = 480;   //número de linhas do monitor de acordo à resolução utilizada.
 /*---------------------------------------------------------------------------*/
 
 reg [2:0]  next, state; 
 
 /*-------------Registradores auxiliares de saída da máquina de estados------*/
-reg [size_address-1:0] out_memory_address;
-reg        			   out_printtingScreen; 
-reg [18:0] 			   out_check_value;
-reg        			   out_sprite_on;
-reg [31:0]             out_sprite_datas;
+reg [size_address-1:0] 	out_memory_address;
+reg        			    out_printtingScreen; 
+reg [bits_x_y-1:0] 		out_check_value;
+reg        			   	out_sprite_on;
+reg [31:0]             	out_sprite_datas;
 /*----------------------------------------------------------------------------*/
 
 /*----------------Bloco always para atualização do estado atual----------------------*/
@@ -172,7 +170,7 @@ end
 /*--------------------------------------------------------------------------------------------------------------*/
 
 /*---------------Bloco always que define se o módulo está em impressão de tela ou não----------------*/
-always @(posedge clk_pixel) begin
+always @(negedge clk) begin
 	if( active_area && (pixel_x >= 0 && pixel_x < screen_x) && (pixel_y >= 0 && pixel_y < screen_y) ) 
 		out_printtingScreen <= 1;
 	else 

@@ -2,7 +2,7 @@ module printModuleTest;
 
 integer dataLine;  //número total de linhas a serem lidas do arquivo de entrada.
 
-reg [50:0]  inputDatas [0:6];  //sete entradas de 51 bits.
+reg [52:0]  inputDatas [0:7];  //oito entradas de 53 bits.
 
 //--------------entradas-----------------
 reg clk;
@@ -10,14 +10,17 @@ reg clk_pixel;
 reg reset;
 reg [31:0] data_reg;
 reg active_area;
-reg [8:0] pixel_x;
+reg [9:0] pixel_x;
 reg [8:0] pixel_y;
+reg count_finished;
 /////////////////////////////////////////
 
 //--------------saídas-------------------
-wire [16:0] address_memory;
 wire        printtingScreen;
-wire [17:0] check_value;
+wire [18:0] check_value;
+wire [31:0] sprite_datas;
+wire [16:0] memory_address;
+wire        sprite_on;
 /////////////////////////////////////////
 
 always begin //frequência de funcionamento do módulo de impressão (100 MHz)
@@ -35,50 +38,70 @@ always begin //frequência de geração dos pixeis (25 MHz)
 end
 
 initial begin
-		//Inicializando os registros de entrada.
-		data_reg     = 32'hxxxxxxxx;
-        active_area  = 1'bx;
-        pixel_x      = 9'bxxxxxxxxx;
-        pixel_y      = 9'bxxxxxxxxx;
-        dataLine = 0;
-        ////////////////////////////////////////////
-		reset = 0; //reseta a máquina de estados da unidade de controle.
-		#40; //delay de 20 milisegundos
-		reset = 1;
 
 		//leitura dos dados de entrada
 		$readmemb("/home/gabriel/Documents/ConsoleFPGA/testes/printModuleTest/inputDatas.mem", inputDatas);
 
+        dataLine = 0;
+        ////////////////////////////////////////////
+		reset = 0;              //reseta a máquina de estados da unidade de controle.
+		#40;                    //delay de 40 milisegundos
+		reset = 1;
 
-		for(dataLine = 0; dataLine < 7; dataLine = dataLine + 1) begin
-			{data_reg,active_area,pixel_y,pixel_x} <= inputDatas[dataLine];
+		for(dataLine = 0; dataLine <= 6; dataLine = dataLine + 1) begin
+			{count_finished,data_reg,active_area,pixel_y,pixel_x} <= inputDatas[dataLine];
 			@(negedge clk); //espera a borda de descida do pulso de clock onde as saídas são geradas.
-			///////////////////////////////////////////////////////////////
-			$display("entradas %d: %b | %b | %b | %b" , dataLine, data_reg,active_area,pixel_y,pixel_x);
-			$monitor("saidas: %b | %b | pixel_y: %b | pixel_x: %b ", address_memory,printtingScreen, check_value[17:9], check_value[8:0]);
+			$monitor("saidas: address_memory: %d | printtingScreen: %d | pixel_y: %d | pixel_x: %d | sprite_on: %d | sprite_datas: %b",
+										memory_address,
+										printtingScreen,  
+										check_value[8:0],
+										check_value[17:9], 
+										sprite_on, 
+										sprite_datas);
 			@(posedge clk); //espera a borda de subida do clock para a geração de novas entradas.
-			$display("//////////////////////////////////");
+		end
+		#10;                            //espera de 10 milisegundos para alinha a contagem junto com o clk_pixel.
+		for(dataLine = 0; dataLine < 20; dataLine = dataLine + 1) begin  //contagem da linha do sprite sendo impressa.
+			$monitor("saidas: address_memory: %d | printtingScreen: %d | pixel_y: %d | pixel_x: %d | sprite_on: %d | sprite_datas: %b",
+										memory_address,
+										printtingScreen,  
+										check_value[8:0],
+										check_value[17:9], 
+										sprite_on, 
+										sprite_datas);
+			@(posedge clk_pixel); //espera a borda de subida do clk_pixel para a geração de novas entradas.
 		end
 
-
-
-		#10000; //delay de 10000 milisegundos
+		{count_finished,data_reg,active_area,pixel_y,pixel_x} <= inputDatas[7];               //última entrada.
+		@(negedge clk);	 //espera a borda de descida do pulso de clock onde as saídas são geradas.
+		$monitor("saidas: address_memory: %d | printtingScreen: %d | pixel_y: %d | pixel_x: %d | sprite_on: %d | sprite_datas: %b",
+										memory_address,
+										printtingScreen,  
+										check_value[8:0],
+										check_value[17:9], 
+										sprite_on, 
+										sprite_datas);
+		#35;
 		$stop; //encerra a simulação
 end
 
 
-printModule printModule_inst
+printModule #(.size_x(10),.size_y(9),.size_address(17),.bits_x_y(19))
+printModule_inst
 (
-	.clk(clk) ,							// input  clk
-	.clk_pixel(clk_pixel) ,				// input  clk_pixel
-	.reset(reset) ,						// input  reset
-	.data_reg(data_reg) ,				// input [31:0] data_reg
-	.active_area(active_area) ,			// input  active_area
-	.pixel_x(pixel_x) ,					// input [8:0] pixel_x
-	.pixel_y(pixel_y) ,					// input [8:0] pixel_y
-	.address_memory(address_memory) ,	// output [16:0] address_memory
-	.printtingScreen(printtingScreen) ,	// output  printtingScreen
-	.check_value(check_value) 			// output [17:0] check_value
+	.clk(clk) ,							// input  			  		 clk_sig
+	.clk_pixel(clk_pixel) ,				// input  			  		 clk_pixel_sig
+	.reset(reset) ,						// input  			  		 reset_sig
+	.data_reg(data_reg) ,				// input [31:0] 	  		 data_reg_sig
+	.active_area(active_area) ,			// input  			  		 active_area_sig
+	.pixel_x(pixel_x) ,					// input [size_x-1:0] 	     pixel_x_sig
+	.pixel_y(pixel_y) ,					// input [size_y-1:0] 		 pixel_y_sig
+	.count_finished(count_finished) ,	// input  			  		 count_finished_sig
+	.sprite_datas(sprite_datas) ,		// output [31:0] 	  		 sprite_datas_sig
+	.memory_address(memory_address) ,	// output [size_address-1:0] memory_address_sig
+	.printtingScreen(printtingScreen) ,	// output  					 printtingScreen_sig
+	.check_value(check_value) ,			// output [18:0] 			 check_value_sig
+	.sprite_on(sprite_on) 				// output  					 sprite_on_sig
 );
 
 endmodule
