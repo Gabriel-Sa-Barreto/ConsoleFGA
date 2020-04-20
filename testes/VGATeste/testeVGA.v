@@ -16,14 +16,21 @@ always @(posedge out_clk) begin
 	end
 	else RGB <= 9'd0;
 end
-
-frequency_divisor #(.WIDTH(2),.N(1))
+/*
+frequency_divisor #(.WIDTH(2),.N(3))
 frequency_divisor_inst
 (
 	.clk(clk) ,	         // input  clk_sig
 	.reset() ,	   // input  reset_sig
 	.out_clk(out_clk)    // output  out_clk_sig
 );
+*/
+PLL PLL_inst 
+(
+	.inclk0 (clk),
+	.c0 (out_clk)
+);
+
 
 
 VGA_sync VGA_sync_inst

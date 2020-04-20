@@ -8,82 +8,93 @@ ENTRADAS:
 	clk:               sinal de clock (50Mhz)
 	opCode:            campo que denota a instrucao que deve ser executada.
 	printtingScreen:   campo que informa se o monitor esta em processo de impressao. (0)Nao (1)Sim
+	done:              informa se a instrução que estava em execução foi finalizada. (0)Não (1)Sim
 SAIDAS:		 
 	new_instruction:   informa se uma nova instruçao pode ser executada. (0)Sim (1)Nao
 	memory_wr:         sinal de escrita/leitura da memoria de sprites.
 	selectField:       sinal que informa qual intervalo de bits da parte de dados da instruçao
 deve ser guardada pelo banco de registradores.
 	register_wr:       sinal de escrita/leitura do banco de registradores.
-	muxOut:            sinal de seleçao da saida do processador de video.
-	mux_file_register: sinal de seleçao da entrada do banco de registradores.
+	
+	selectorDemuxRegister: sinal de seleção para o demultiplexador que seleciona entre a entrada Register do banco de registradores e a entrada de endereço da memória.
+
+	selectorDemuxData:     sinal de seleção para o demultiplexador ao qual seleciona entre a entrada de dados do banco de registradores e a entrada de dados da memória.  
+
+	selectorAddress:       sinal de seleção para o multiplexador ao qual escolhe entre os endereços de memória vindos do decodificador de instrução ou do módulo de impressão.
 //////////////////////////////////////////////////////////////////////////
 **/
 module controlUnit(
 	 input wire clk,
+	 input wire reset,
 	 input wire [3:0] opCode,
 	 input wire       printtingScreen,
+	 input wire       done,
 	 output reg       new_instruction,
 	 output reg       memory_wr,
 	 output reg [3:0] selectField,
 	 output reg       register_wr,
-	 output reg       muxOut,
-	 output reg       mux_file_register
+	 output reg       selectorDemuxRegister, 
+	 output reg       selectorDemuxData,
+	 output reg       selectorAddress
 );
 
 
 parameter [1:0]     PRONTO              = 2'b00,
 					ESCREVER_NO_BANCO   = 2'b01,
-					HABILITAR_IMPRESSAO = 2'b10;
+					HABILITAR_IMPRESSAO = 2'b10,
+					ESCRITA_NA_MEMORIA  = 2'b11;
 
 reg [1:0] state, next;
 
 always @(posedge clk or negedge reset) begin
-	if(!reset) begin
-		 state <= PRONTO;
-	end else state <= next;
+	if(!reset)
+		state <= PRONTO;
+	else 
+		state <= next;
 end
 
 /*
 Bloco always (combinacional) responsavel por analisar as entradas
 da maquina de estados e realizar a mudança para o proximo estado.
 */
-always @(state or opCode or printtingScreen) begin
+always @(state or opCode or printtingScreen or done) begin
 	next = 2'bx;
 	case(state)
 		PRONTO: begin
-			if( (opCode == 4'b0000 || opCode == 4'b0001 || opCode == 4'b0010) && !printttingScreen)	
+			if( (opCode == 4'b0000 || opCode == 4'b0010) && !printtingScreen)	
 				next = ESCREVER_NO_BANCO;
-			else if( (opCode == 4'b0000 || opCode == 4'b0001 || opCode == 4'b0010 || opCode == 4'b0011) && (printtingScreeen) )
+			else if( (opCode == 4'b0001 && !printtingScreen) )
+				next = ESCRITA_NA_MEMORIA;
+			else if( (opCode == 4'b0000 || opCode == 4'b0001 || opCode == 4'b0010) && printtingScreen )
 				next = HABILITAR_IMPRESSAO;
-			else if( opCode == 4'b0011 & !printtingScreen)
-				next = PRONTO;
 			else if(!printtingScreen) 
 				next = PRONTO;
 			else next = HABILITAR_IMPRESSAO;
 		end
 		
 		ESCREVER_NO_BANCO: begin
-			if( (opCode == 4'b0000 || opCode == 4'b0001 || opCode == 4'b0010) && !printttingScreen)	
-				next = ESCREVER_NO_BANCO;
-			else if( (opCode == 4'b0000 || opCode == 4'b0001 || opCode == 4'b0010 || opCode == 4'b0011) && (printtingScreeen) )
+			if(done == 1'b1 && printtingScreen) 
 				next = HABILITAR_IMPRESSAO;
-			else if( opCode == 4'b0011 & !printtingScreen)
-				next = PRONTO;
-			else if(!printtingScreen) 
-				next = PRONTO;
-			else next = HABILITAR_IMPRESSAO;
+			else if(done == 1'b1) //a instrução que estava em execução foi finalizada
+				next = PRONTO; 
+			else 
+				next = ESCREVER_NO_BANCO;
 		end
 		
 		HABILITAR_IMPRESSAO: begin
-			if( (opCode == 4'b0000 || opCode == 4'b0001 || opCode == 4'b0010) && !printttingScreen)	
-				next = ESCREVER_NO_BANCO;
-			else if( (opCode == 4'b0000 || opCode == 4'b0001 || opCode == 4'b0010 || opCode == 4'b0011) && (printtingScreeen) )
+			if(!printtingScreen) //o módulo de impressão não está mais imprimindo.
+				next = PRONTO;
+			else 
+				next = HABILITAR_IMPRESSAO;	
+		end
+
+		ESCRITA_NA_MEMORIA: begin
+			if(done == 1'b1 && printtingScreen) 
 				next = HABILITAR_IMPRESSAO;
-			else if( opCode == 4'b0011 & !printtingScreen)
-				next = PRONTO;
-			else if(!printtingScreen) 
-				next = PRONTO;
-			else next = HABILITAR_IMPRESSAO;	
+			else if(done == 1'b1) //a instrução que estava em execução foi finalizada
+				next = PRONTO; 
+			else 
+				next = ESCRITA_NA_MEMORIA;
 		end
 		default: next = PRONTO;
 	endcase
@@ -93,13 +104,11 @@ end
 Block always responsavel por gerar de acordo ao proximo estado as
 saidas correspondentes.
 */
-always @(posedge clk or negedge reset) begin
+always @(negedge clk or negedge reset) begin
 	if(!reset) begin
-		memory_wr;
-		selectField;
-		register_wr;
-		muxOut;
-		mux_file_register;
+		memory_wr   = 1'bx ;
+		selectField = 4'bxxxx;
+		register_wr = 1'bx;
 	end
 	else begin
 		case(next)
@@ -108,8 +117,9 @@ always @(posedge clk or negedge reset) begin
 				memory_wr         <= 1'bx;    //nao tem leitura na memoria
 				selectField       <= 4'bxxxx; //nao existem campos a serem alterados no registradores do banco
 				register_wr       <= 1'bx;    //nao existe leitura ou escrita para serem realizadas
-				muxOut            <= 1'b0;    //aciona multiplexador para verificar status do modulo de impressao
-			    mux_file_register <= 1'bx;   //nao existe entradas a serem selecionadas para o banco de registradores
+				selectorDemuxRegister <= 1'bx; 
+	       		selectorDemuxData     <= 1'bx;
+	 			selectorAddress       <= 1'bx;
 			end
 			
 			ESCREVER_NO_BANCO: begin
@@ -117,23 +127,34 @@ always @(posedge clk or negedge reset) begin
 				memory_wr         <= 1'bx;   //nao tem leitura na memoria
 				selectField       <= opCode; //existem campos a serem alterados no registradores do banco
 				register_wr       <= 1'b1;   //aciona escrita no banco de registradores
-				muxOut            <= 1'b1;   //aciona o mux da saida do procesador de video para verificar se a alteraçao no banco foi realizada com sucesso
-				mux_file_register <= 1'b1;   //seleciona entrada para o banco de registradores vindo do decodificador de intruçao
+				selectorDemuxRegister <= 1'b1; //redireciona a entrada para o banco de registradores.
+	       		selectorDemuxData     <= 1'b1; //redireciona os dados para o banco de registradores.
+	 			selectorAddress       <= 1'bx; //não possue nem leitura nem escrita na memória.
 			end
 			
 			
-			HABILITAR_IMPRSSSAO: begin
+			HABILITAR_IMPRESSAO: begin
 				new_instruction   <= 1'b1;     //nao permite executar novas instruçoes
 				memory_wr         <= 1'b0;     //aciona leitura da memoria
 				selectField       <= 4'bxxxx;  //nao existem campos a serem alterados no registradores do banco
 				register_wr       <= 1'b0;     //aciona leitura no banco de registradores
-				
-				if(opCode == 4'b0011)          //instruçao de verificar status de modulo de impressao
-					 muxOut       <= 1'b0;     //aciona a verificaçao de status do modulo de impressao
-				else muxOut       <= 1'b1;     //aciona a verificaçao de alguma possivel operaçao feita no banco de registradores 
-				
-				mux_file_register <= 1'b0;     //seleciona entrada vinda do modulo de impressao para o banco de registradores
+								
+				selectorDemuxRegister <= 1'bx; //não possue nem acesso de escrita no banco de registradores, nem na memória. 
+	       		selectorDemuxData     <= 1'bx; //não possue nem escrita no banco de registradores, nem escrita na memória. 
+	 			selectorAddress       <= 1'b1; //seleciona os endereços de leitura da memória vindos do módulo de impressão.
 			end
+
+			ESCRITA_NA_MEMORIA: begin
+				new_instruction   <= 1'b1;     //nao permite executar novas instruçoes
+				memory_wr         <= 1'b1;     //aciona escrita da memoria
+				selectField       <= 4'bxxxx;  //nao existem campos a serem alterados no registradores do banco
+				register_wr       <= 1'bx;     //aciona leitura no banco de registradores
+									
+				selectorDemuxRegister <= 1'b0;  //redireciona o endereo recebido para a memória de sprite.
+	       		selectorDemuxData     <= 1'b0;  //redireciona os dados a serem escritos para a memória de sprite.
+	 			selectorAddress       <= 1'b0;  //seleciona o endereço vindo do decodificador de instrução.
+			end
+
 			default: begin
 				/////////////////////////////////////
 				//Todas as saidas estao desativadas
@@ -141,8 +162,9 @@ always @(posedge clk or negedge reset) begin
 				memory_wr         <= 1'bx;    
 				selectField       <= 4'bxxxx; 
 				register_wr       <= 1'bx;    
-				muxOut            <= 1'bx;   
-			    mux_file_register <= 1'bx;
+				selectorDemuxRegister <= 1'bx;  
+	       		selectorDemuxData     <= 1'bx; 
+	 			selectorAddress       <= 1'bx;
 				/////////////////////////////////////
 			end
 		endcase

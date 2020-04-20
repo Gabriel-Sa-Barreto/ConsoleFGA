@@ -2,76 +2,52 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'frequency_divisor:frequency_divisor_inst|new_clock'
-Slack : -1.673
-TNS   : -29.495
-
-Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -0.845
-TNS   : -0.845
-
-Type  : Slow 1200mV 85C Model Hold 'frequency_divisor:frequency_divisor_inst|new_clock'
-Slack : 0.342
+Type  : Slow 1200mV 85C Model Setup 'PLL_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 68.551
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'clk'
-Slack : 0.357
+Type  : Slow 1200mV 85C Model Hold 'PLL_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.358
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
-Slack : -3.000
-TNS   : -6.000
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'frequency_divisor:frequency_divisor_inst|new_clock'
-Slack : -1.000
-TNS   : -27.000
-
-Type  : Slow 1200mV 0C Model Setup 'frequency_divisor:frequency_divisor_inst|new_clock'
-Slack : -1.410
-TNS   : -23.580
-
-Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -0.641
-TNS   : -0.641
-
-Type  : Slow 1200mV 0C Model Hold 'frequency_divisor:frequency_divisor_inst|new_clock'
-Slack : 0.298
+Slack : 9.835
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Hold 'clk'
-Slack : 0.311
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'PLL_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 35.977
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'PLL_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 68.963
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'PLL_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.312
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
-Slack : -3.000
-TNS   : -6.000
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'frequency_divisor:frequency_divisor_inst|new_clock'
-Slack : -1.000
-TNS   : -27.000
-
-Type  : Fast 1200mV 0C Model Setup 'frequency_divisor:frequency_divisor_inst|new_clock'
-Slack : -0.505
-TNS   : -5.732
-
-Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -0.363
-TNS   : -0.363
-
-Type  : Fast 1200mV 0C Model Hold 'frequency_divisor:frequency_divisor_inst|new_clock'
-Slack : 0.178
+Slack : 9.818
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'clk'
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'PLL_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 35.974
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'PLL_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 70.160
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'PLL_inst|altpll_component|auto_generated|pll1|clk[0]'
 Slack : 0.186
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
-Slack : -3.000
-TNS   : -6.162
+Slack : 9.587
+TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'frequency_divisor:frequency_divisor_inst|new_clock'
-Slack : -1.000
-TNS   : -27.000
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'PLL_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 36.013
+TNS   : 0.000
 
 ------------------------------------------------------------

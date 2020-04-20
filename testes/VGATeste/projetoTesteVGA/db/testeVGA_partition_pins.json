@@ -30,10 +30,6 @@
 				{
 					"name" : "vsync",
 					"strict" : false
-				},
-				{
-					"name" : "clk",
-					"strict" : false
 				}
 			]
 		}

@@ -25,19 +25,18 @@ output reg [9:0]	pixel_y;
 
 output wire			video_enable;
 
-/*	Parâmetros Horizontais */
-parameter	HD = 640;
-parameter	HF = 16;
-parameter	HB = 48;
-parameter	HR = 96;
-parameter	HT = 800;
-
+parameter	HD = 480;   //total pixel horizontal
+parameter	HF = 16;    //total front porch
+parameter	HB = 56;    //total back porch
+parameter	HR = 40;    //total sync
+parameter	HT = 592;   //soma dos parametros horizontais
+  
 /*	Parâmetros Verticais */
-parameter	VD = 480;
-parameter	VF = 11;
-parameter	VB = 31;
-parameter	VR = 2;
-parameter	VT = 524;
+parameter	VD = 320;   //total pixel horizontal
+parameter	VF = 3;    //total front porch
+parameter	VB = 3;    //total back porch
+parameter	VR = 10;     //total sync
+parameter	VT = 336;   //soma dos parametros horizontais
 
 assign video_enable = ((pixel_x < HD) && (pixel_y < VD));
 

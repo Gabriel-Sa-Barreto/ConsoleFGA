@@ -1,0 +1,601 @@
+# Loading project printModule_full_test
+vsim work.printModule work.printModule_full_test work.sprite_line_counter -t ns
+# vsim work.printModule work.printModule_full_test work.sprite_line_counter -t ns 
+# Start time: 11:36:02 on Apr 20,2020
+# Loading work.printModule
+# Loading work.printModule_full_test
+# Loading work.sprite_line_counter
+add wave -position insertpoint sim:/printModule_full_test/printModule_inst/*
+add wave -position insertpoint sim:/printModule_full_test/sprite_line_counter_inst/*
+force -freeze sim:/printModule_full_test/printModule_inst/clk 1 0, 0 {5 ns} -r 10
+force -freeze sim:/printModule_full_test/printModule_inst/clk_pixel 1 0, 0 {20 ns} -r 40
+restart
+run -all
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 0
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 0
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address: 115200 | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address: 115200 | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address: 115200 | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address:      8 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:      9 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     10 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     11 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     12 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     13 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     14 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     15 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     16 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     17 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     18 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     19 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     20 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     21 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     22 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     23 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     24 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     25 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     26 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     27 | Count_finished: 1 | PrinttingScreen: 1
+# area 1: 
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 1
+# ** Note: $stop    : /home/gabriel/Documents/ConsoleFPGA/testes/printModule_full_test/printModule_full_test.v(100)
+#    Time: 980 ns  Iteration: 0  Instance: /printModule_full_test
+# Break in Module printModule_full_test at /home/gabriel/Documents/ConsoleFPGA/testes/printModule_full_test/printModule_full_test.v line 100
+# Compile of printModule_full_test.v was successful.
+# Compile of printModule.v was successful.
+# Compile of sprite_line_counter.v was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# Loading work.printModule
+# Loading work.printModule_full_test
+# Loading work.sprite_line_counter
+run -all
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 0
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 0
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address: 115200 | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address: 115200 | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address: 115200 | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address:      8 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:      9 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     10 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     11 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     12 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     13 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     14 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     15 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     16 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     17 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     18 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     19 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     20 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     21 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     22 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     23 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     24 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     25 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     26 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     27 | Count_finished: 1 | PrinttingScreen: 1
+# area 0: 
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 1
+# ** Note: $stop    : /home/gabriel/Documents/ConsoleFPGA/testes/printModule_full_test/printModule_full_test.v(100)
+#    Time: 980 ns  Iteration: 0  Instance: /printModule_full_test
+# Break in Module printModule_full_test at /home/gabriel/Documents/ConsoleFPGA/testes/printModule_full_test/printModule_full_test.v line 100
+# Compile of printModule_full_test.v was successful.
+# Compile of printModule.v was successful.
+# Compile of sprite_line_counter.v was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# Loading work.printModule
+# Loading work.printModule_full_test
+# Loading work.sprite_line_counter
+run -all
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 0
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 0
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address: 115200 | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address: 115200 | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address: 115200 | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address:      8 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:      9 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     10 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     11 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     12 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     13 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     14 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     15 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     16 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     17 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     18 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     19 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     20 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     21 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     22 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     23 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     24 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     25 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     26 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     27 | Count_finished: 1 | PrinttingScreen: 1
+# area 0: 
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 1
+# ** Note: $stop    : /home/gabriel/Documents/ConsoleFPGA/testes/printModule_full_test/printModule_full_test.v(101)
+#    Time: 1 us  Iteration: 0  Instance: /printModule_full_test
+# Break in Module printModule_full_test at /home/gabriel/Documents/ConsoleFPGA/testes/printModule_full_test/printModule_full_test.v line 101
+# Compile of printModule_full_test.v was successful.
+# Compile of printModule.v was successful.
+# Compile of sprite_line_counter.v was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# Loading work.printModule
+# Loading work.printModule_full_test
+# Loading work.sprite_line_counter
+run -all
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 0
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 0
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address: 115200 | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address: 115200 | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address: 115200 | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address:      8 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:      9 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     10 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     11 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     12 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     13 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     14 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     15 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     16 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     17 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     18 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     19 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     20 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     21 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     22 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     23 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     24 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     25 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     26 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     27 | Count_finished: 1 | PrinttingScreen: 1
+# ** Note: $stop    : /home/gabriel/Documents/ConsoleFPGA/testes/printModule_full_test/printModule_full_test.v(92)
+#    Time: 975 ns  Iteration: 0  Instance: /printModule_full_test
+# Break in Module printModule_full_test at /home/gabriel/Documents/ConsoleFPGA/testes/printModule_full_test/printModule_full_test.v line 92
+add wave -position insertpoint  \
+sim:/printModule_full_test/printModule_inst/state
+add wave -position insertpoint  \
+sim:/printModule_full_test/printModule_inst/next
+# Compile of printModule_full_test.v was successful.
+# Compile of printModule.v was successful.
+# Compile of sprite_line_counter.v was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# Loading work.printModule
+# Loading work.printModule_full_test
+# Loading work.sprite_line_counter
+run -all
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 0
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 0
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address: 115200 | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address: 115200 | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address: 115200 | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address:      8 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:      9 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     10 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     11 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     12 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     13 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     14 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     15 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     16 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     17 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     18 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     19 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     20 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     21 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     22 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     23 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     24 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     25 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     26 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     27 | Count_finished: 1 | PrinttingScreen: 1
+# ** Note: $stop    : /home/gabriel/Documents/ConsoleFPGA/testes/printModule_full_test/printModule_full_test.v(92)
+#    Time: 985 ns  Iteration: 0  Instance: /printModule_full_test
+# Break in Module printModule_full_test at /home/gabriel/Documents/ConsoleFPGA/testes/printModule_full_test/printModule_full_test.v line 92
+# Compile of printModule_full_test.v was successful.
+# Compile of printModule.v was successful.
+# Compile of sprite_line_counter.v was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# Loading work.printModule
+# Loading work.printModule_full_test
+# Loading work.sprite_line_counter
+run -all
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 0
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 0
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address: 115200 | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address: 115200 | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address: 115200 | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address:      8 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:      9 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     10 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     11 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     12 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     13 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     14 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     15 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     16 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     17 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     18 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     19 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     20 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     21 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     22 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     23 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     24 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     25 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     26 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     27 | Count_finished: 1 | PrinttingScreen: 1
+# ** Note: $stop    : /home/gabriel/Documents/ConsoleFPGA/testes/printModule_full_test/printModule_full_test.v(92)
+#    Time: 985 ns  Iteration: 0  Instance: /printModule_full_test
+# Break in Module printModule_full_test at /home/gabriel/Documents/ConsoleFPGA/testes/printModule_full_test/printModule_full_test.v line 92
+# Compile of printModule_full_test.v failed with 1 errors.
+# Compile of printModule.v was successful.
+# Compile of sprite_line_counter.v was successful.
+# 3 compiles, 1 failed with 1 error.
+# Compile of printModule_full_test.v was successful.
+# Compile of printModule.v was successful.
+# Compile of sprite_line_counter.v was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# Loading work.printModule
+# Loading work.printModule_full_test
+# Loading work.sprite_line_counter
+run -all
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 0
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 0
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address: 115200 | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address: 115200 | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address: 115200 | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address:      8 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:      9 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     10 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     11 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     12 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     13 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     14 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     15 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     16 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     17 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     18 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     19 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     20 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     21 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     22 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     23 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     24 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     25 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     26 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     27 | Count_finished: 1 | PrinttingScreen: 1
+# ** Note: $stop    : /home/gabriel/Documents/ConsoleFPGA/testes/printModule_full_test/printModule_full_test.v(98)
+#    Time: 985 ns  Iteration: 0  Instance: /printModule_full_test
+# Break in Module printModule_full_test at /home/gabriel/Documents/ConsoleFPGA/testes/printModule_full_test/printModule_full_test.v line 98
+# Compile of printModule_full_test.v was successful.
+# Compile of printModule.v was successful.
+# Compile of sprite_line_counter.v was successful.
+# 3 compiles, 0 failed with no errors.
+run
+restart
+# Loading work.printModule
+# Loading work.printModule_full_test
+# Loading work.sprite_line_counter
+run -all
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 0
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 0
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address: 115200 | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address: 115200 | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address: 115200 | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address:      8 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:      9 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     10 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     11 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     12 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     13 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     14 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     15 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     16 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     17 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     18 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     19 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     20 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     21 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     22 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     23 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     24 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     25 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     26 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     27 | Count_finished: 1 | PrinttingScreen: 0
+# ** Note: $stop    : /home/gabriel/Documents/ConsoleFPGA/testes/printModule_full_test/printModule_full_test.v(101)
+#    Time: 975 ns  Iteration: 0  Instance: /printModule_full_test
+# Break in Module printModule_full_test at /home/gabriel/Documents/ConsoleFPGA/testes/printModule_full_test/printModule_full_test.v line 101
+# Compile of printModule_full_test.v was successful.
+# Compile of printModule.v was successful.
+# Compile of sprite_line_counter.v was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# Loading work.printModule
+# Loading work.printModule_full_test
+# Loading work.sprite_line_counter
+run -all
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 0
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 0
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address: 115200 | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address: 115200 | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address: 115200 | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address:      8 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:      9 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     10 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     11 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     12 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     13 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     14 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     15 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     16 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     17 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     18 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     19 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     20 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     21 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     22 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     23 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     24 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     25 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     26 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     27 | Count_finished: 1 | PrinttingScreen: 0
+# ** Note: $stop    : /home/gabriel/Documents/ConsoleFPGA/testes/printModule_full_test/printModule_full_test.v(104)
+#    Time: 975 ns  Iteration: 0  Instance: /printModule_full_test
+# Break in Module printModule_full_test at /home/gabriel/Documents/ConsoleFPGA/testes/printModule_full_test/printModule_full_test.v line 104
+# Compile of printModule_full_test.v was successful.
+# Compile of printModule.v was successful.
+# Compile of sprite_line_counter.v was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# Loading work.printModule
+# Loading work.printModule_full_test
+# Loading work.sprite_line_counter
+run -all
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 0
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 0
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address: 115200 | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address: 115200 | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address: 115200 | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address:      8 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:      9 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     10 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     11 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     12 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     13 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     14 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     15 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     16 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     17 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     18 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     19 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     20 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     21 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     22 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     23 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     24 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     25 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     26 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     27 | Count_finished: 1 | PrinttingScreen: 0
+# ** Note: $stop    : /home/gabriel/Documents/ConsoleFPGA/testes/printModule_full_test/printModule_full_test.v(100)
+#    Time: 975 ns  Iteration: 0  Instance: /printModule_full_test
+# Break in Module printModule_full_test at /home/gabriel/Documents/ConsoleFPGA/testes/printModule_full_test/printModule_full_test.v line 100
+# Compile of printModule_full_test.v was successful.
+# Compile of printModule.v was successful.
+# Compile of sprite_line_counter.v was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# Loading work.printModule
+# Loading work.printModule_full_test
+# Loading work.sprite_line_counter
+run -all
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 0
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 0
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address: 115200 | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address: 115200 | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address: 115200 | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address:      8 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:      9 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     10 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     11 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     12 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     13 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     14 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     15 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     16 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     17 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     18 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     19 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     20 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     21 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     22 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     23 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     24 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     25 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     26 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     27 | Count_finished: 1 | PrinttingScreen: 0
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 0
+# ** Note: $stop    : /home/gabriel/Documents/ConsoleFPGA/testes/printModule_full_test/printModule_full_test.v(100)
+#    Time: 980 ns  Iteration: 0  Instance: /printModule_full_test
+# Break in Module printModule_full_test at /home/gabriel/Documents/ConsoleFPGA/testes/printModule_full_test/printModule_full_test.v line 100
+# Compile of printModule_full_test.v was successful.
+# Compile of printModule.v was successful.
+# Compile of sprite_line_counter.v was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# Loading work.printModule
+# Loading work.printModule_full_test
+# Loading work.sprite_line_counter
+run -all
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 0
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 0
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address: 115200 | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address: 115200 | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address: 115200 | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address:      8 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:      9 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     10 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     11 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     12 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     13 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     14 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     15 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     16 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     17 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     18 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     19 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     20 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     21 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     22 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     23 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     24 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     25 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     26 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     27 | Count_finished: 1 | PrinttingScreen: 0
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 0
+# ** Note: $stop    : /home/gabriel/Documents/ConsoleFPGA/testes/printModule_full_test/printModule_full_test.v(100)
+#    Time: 980 ns  Iteration: 0  Instance: /printModule_full_test
+# Break in Module printModule_full_test at /home/gabriel/Documents/ConsoleFPGA/testes/printModule_full_test/printModule_full_test.v line 100
+# Compile of printModule_full_test.v was successful.
+# Compile of printModule.v was successful.
+# Compile of sprite_line_counter.v was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# Loading work.printModule
+# Loading work.printModule_full_test
+# Loading work.sprite_line_counter
+run -all
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# ** Warning: (vsim-PLI-3409) Illegal binary digit '|' in data on line 8 of file "/home/gabriel/Documents/ConsoleFPGA/testes/printModule_full_test/inputDatas.mem".    : /home/gabriel/Documents/ConsoleFPGA/testes/printModule_full_test/printModule_full_test.v(47)
+#    Time: 0 ns  Iteration: 0  Instance: /printModule_full_test
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 0
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 0
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address: 115200 | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address: 115200 | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address: 115200 | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address:      8 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:      9 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     10 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     11 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     12 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     13 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     14 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     15 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     16 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     17 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     18 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     19 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     20 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     21 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     22 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     23 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     24 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     25 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     26 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     27 | Count_finished: 1 | PrinttingScreen: 0
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 0
+# ** Note: $stop    : /home/gabriel/Documents/ConsoleFPGA/testes/printModule_full_test/printModule_full_test.v(100)
+#    Time: 980 ns  Iteration: 0  Instance: /printModule_full_test
+# Break in Module printModule_full_test at /home/gabriel/Documents/ConsoleFPGA/testes/printModule_full_test/printModule_full_test.v line 100
+# Compile of printModule_full_test.v was successful.
+# Compile of printModule.v was successful.
+# Compile of sprite_line_counter.v was successful.
+# 3 compiles, 0 failed with no errors.
+restart
+# Loading work.printModule
+# Loading work.printModule_full_test
+# Loading work.sprite_line_counter
+run -all
+# ** Warning: (vsim-3116) Problem reading symbols from linux-gate.so.1 : can not open ELF file.
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 0
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 0
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address: 115200 | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address: 115200 | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address: 115200 | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 1
+# Memory_address:      8 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:      9 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     10 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     11 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     12 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     13 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     14 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     15 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     16 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     17 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     18 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     19 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     20 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     21 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     22 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     23 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     24 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     25 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     26 | Count_finished: 0 | PrinttingScreen: 1
+# Memory_address:     27 | Count_finished: 1 | PrinttingScreen: 0
+# Memory_address:      x | Count_finished: 1 | PrinttingScreen: 0
+# ** Note: $stop    : /home/gabriel/Documents/ConsoleFPGA/testes/printModule_full_test/printModule_full_test.v(100)
+#    Time: 980 ns  Iteration: 0  Instance: /printModule_full_test
+# Break in Module printModule_full_test at /home/gabriel/Documents/ConsoleFPGA/testes/printModule_full_test/printModule_full_test.v line 100
+# End time: 12:23:36 on Apr 20,2020, Elapsed time: 0:47:34
+# Errors: 0, Warnings: 15

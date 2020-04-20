@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP4CE22F17) Path("/home/gabriel/Documents/Projeto Collenda/ConsoleFPGA/testes/VGATeste/projetoTesteVGA/output_files/") File("testeVGA.sof") MfrSpec(OpMask(1));
+		Device PartName(EP4CE22F17) Path("/home/gabriel/Documents/ConsoleFPGA/testes/VGATeste/projetoTesteVGA/output_files/") File("testeVGA.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 
