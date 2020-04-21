@@ -24,9 +24,9 @@ wire selectorAddress;
 
 always begin
 	clk = 1'b1;
-	#10;
+	#5;
 	clk = 1'b0;
-	#10;
+	#5;
 end
 
 initial 
@@ -41,9 +41,9 @@ initial
 		//leitura dos dados de entrada
 		$readmemb("/home/gabriel/Documents/ConsoleFPGA/testes/ControlUnitTest/inputDatas.mem", inputDatas);
 
-		#20; //delay de 20 milisegundos
+		#10; //delay de 20 milisegundos
 		reset = 0; //reseta a máquina de estados da unidade de controle.
-		#20; //delay de 20 milisegundos
+		#10; //delay de 20 milisegundos
 		reset = 1;
 
 		for(dataLine = 0; dataLine < 32; dataLine = dataLine + 1) begin

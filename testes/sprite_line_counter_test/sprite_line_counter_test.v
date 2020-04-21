@@ -63,7 +63,7 @@ initial begin
 		$stop; //encerra a simulação.
 end
 
-sprite_line_counter # (.size_x(10), .size_y(9), .size_address(17), .size_line(20) )
+sprite_line_counter #(.size_x(10), .size_y(9), .size_address(17), .size_line(20) )
 sprite_line_counter_inst
 (
 	.clk_pixel(clk_pixel) ,				// input  clk_pixel_sig

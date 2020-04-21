@@ -21,7 +21,7 @@ input				clock, reset;
 
 output reg			hsync, vsync;
 output reg [9:0]	pixel_x;
-output reg [9:0]	pixel_y;
+output reg [8:0]	pixel_y;
 output wire			video_enable;
 
 /*	Parâmetros Horizontais */
