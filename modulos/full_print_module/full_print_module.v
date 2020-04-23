@@ -1,4 +1,4 @@
-module full_print_module #(parameter size_x1 = 10, size_y1 = 9, size_address1 = 17, bits_x_y_1 = 19, size_line1 = 20) 
+module full_print_module #(parameter size_x1 = 10, size_y1 = 9, size_address1 = 14, bits_x_y_1 = 19, size_line1 = 20) 
 (
 	input wire                clk,
 	input wire                clk_pixel,

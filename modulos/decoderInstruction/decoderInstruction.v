@@ -24,21 +24,21 @@ module decorderInstruction(
 	input wire        new_instruction,
 	input wire        reset,
 	output reg [3:0]   out_opcode,
-	output reg [16:0]  out_register,
+	output reg [13:0]  out_register,
 	output reg [31:0]  out_data
 );
 
 //parâmetro que informa a posição fixa em que deve ficar armazenado o valor da cor de background da tela.
  
 reg [1:0]  opcode;
-reg [16:0] register;
+reg [13:0] register;
 reg [31:0] data;
 
 //Registra o resultado da decodificação na saída do módulo
 always @(posedge clk or negedge reset) begin
 	if(!reset) begin
 		opcode   <= 2'bxx;
-		register <= 16'bxxxxxxxxxxxxxxxx;
+		register <= 14'bxxxxxxxxxxxxxx;
 		data     <= 32'hxxxxxxxx;
 	end
 	else begin
@@ -55,32 +55,32 @@ always @(*) begin
 			case (dataA[3:0])
 				4'b0000: begin                 		//instruçao de alterar posiçao de um sprite.
 					register[4:0]  = dataA[8:4];    //output Register.
-					register[16:5] = 13'd0; 
+					register[13:5] = 9'd0; 
 					    data = dataB[31:0];  		//output data (valores de x e y).
 				end
 				4'b0001: begin                 		//instruçao de escrita na memória de sprites.
-					register = dataA[16:0];  		//endereço onde os dados serão escritos.
+					register = dataA[13:0];  		//endereço onde os dados serão escritos.
 					    data = dataB[31:0];  		//output data (valor de nova cor).
 				end
 				4'b0010: begin                 		//instruçao de alterar offset de memoria associado a um sprite.
 					register[4:0] = dataA[8:4];   	//output Register.
-					register[16:5] = 13'd0;
+					register[13:5] = 9'd0;
 					data = dataB[31:0];  			//output data (valor de offset).
 				end
 				4'b0011: begin
-					register = 16'bxxxxxxxxxxxxxxxx;
+					register = 14'bxxxxxxxxxxxxxx;
 					data     = 32'dx;
 				end
 				default: begin
 				    opcode   = 2'bxx;
-					register = 16'bxxxxxxxxxxxxxxxx;
+					register = 14'bxxxxxxxxxxxxxx;
 					data     = 32'hxxxxxxxx;
 				end
 			endcase
 		end
 		else begin
 			opcode   = 2'bxx;
-			register = 16'bxxxxxxxxxxxxxxxx;
+			register = 14'bxxxxxxxxxxxxxx;
 			data     = 32'hxxxxxxxx;
 		end
 	end

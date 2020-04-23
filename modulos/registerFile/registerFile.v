@@ -18,7 +18,7 @@ SAIDAS:
 module registerFile(
 	input  wire        clk,
 	input  wire [4:0]  n_reg,
-	input  wire [17:0] check, 
+	input  wire [18:0] check, 
 	input  wire [31:0] data,
 	input  wire        written,
 	input  wire [3:0]  selectField,
@@ -608,69 +608,69 @@ end
 /*RETORNA o valor de offset armazenado em um registrador.*/
 always @(*) begin
     if(!written) begin //comparaçao ativada.
-		if( (check[17:9] == reg0[x_inicio:x_final]) && (check[8:0] >= reg0[y_inicio:y_final]) && (check[8:0] < reg0[y_inicio:y_final] + spriteLine)) 
+		if( (check[18:9] == reg0[x_final:x_inicio]) && (check[8:0] >= reg0[y_final:y_inicio]) && (check[8:0] < reg0[y_final:y_inicio] + spriteLine)) 
     		readData = reg0;
-    	else if( (check[17:9] == reg1[x_inicio:x_final]) && (check[8:0] >= reg1[y_inicio:y_final]) && (check[8:0] < reg1[y_inicio:y_final] + spriteLine)) 
+    	else if( (check[18:9] == reg1[x_final:x_inicio]) && (check[8:0] >= reg1[y_final:y_inicio]) && (check[8:0] < reg1[y_final:y_inicio] + spriteLine)) 
     		readData = reg1;
-    	else if( (check[17:9] == reg2[x_inicio:x_final]) && (check[8:0] >= reg2[y_inicio:y_final]) && (check[8:0] < reg2[y_inicio:y_final] + spriteLine)) 
+    	else if( (check[18:9] == reg2[x_final:x_inicio]) && (check[8:0] >= reg2[y_final:y_inicio]) && (check[8:0] < reg2[y_final:y_inicio] + spriteLine)) 
     		readData = reg2;
-    	else if( (check[17:9] == reg3[x_inicio:x_final]) && (check[8:0] >= reg3[y_inicio:y_final]) && (check[8:0] < reg3[y_inicio:y_final] + spriteLine)) 
+    	else if( (check[18:9] == reg3[x_final:x_inicio]) && (check[8:0] >= reg3[y_final:y_inicio]) && (check[8:0] < reg3[y_final:y_inicio] + spriteLine)) 
     		readData = reg3;
-    	else if( (check[17:9] == reg4[x_inicio:x_final]) && (check[8:0] >= reg4[y_inicio:y_final]) && (check[8:0] < reg4[y_inicio:y_final] + spriteLine)) 
+    	else if( (check[18:9] == reg4[x_final:x_inicio]) && (check[8:0] >= reg4[y_final:y_inicio]) && (check[8:0] < reg4[y_final:y_inicio] + spriteLine)) 
     		readData = reg4;
-    	else if( (check[17:9] == reg5[x_inicio:x_final]) && (check[8:0] >= reg5[y_inicio:y_final]) && (check[8:0] < reg5[y_inicio:y_final] + spriteLine)) 
+    	else if( (check[18:9] == reg5[x_final:x_inicio]) && (check[8:0] >= reg5[y_final:y_inicio]) && (check[8:0] < reg5[y_final:y_inicio] + spriteLine)) 
     		readData = reg5;
-    	else if( (check[17:9] == reg6[x_inicio:x_final]) && (check[8:0] >= reg6[y_inicio:y_final]) && (check[8:0] < reg6[y_inicio:y_final] + spriteLine)) 
+    	else if( (check[18:9] == reg6[x_final:x_inicio]) && (check[8:0] >= reg6[y_final:y_inicio]) && (check[8:0] < reg6[y_final:y_inicio] + spriteLine)) 
     		readData = reg6;
-    	else if( (check[17:9] == reg7[x_inicio:x_final]) && (check[8:0] >= reg7[y_inicio:y_final]) && (check[8:0] < reg7[y_inicio:y_final] + spriteLine)) 
+    	else if( (check[18:9] == reg7[x_final:x_inicio]) && (check[8:0] >= reg7[y_final:y_inicio]) && (check[8:0] < reg7[y_final:y_inicio] + spriteLine)) 
     		readData = reg7;
-    	else if( (check[17:9] == reg8[x_inicio:x_final]) && (check[8:0] >= reg8[y_inicio:y_final]) && (check[8:0] < reg8[y_inicio:y_final] + spriteLine)) 
+    	else if( (check[18:9] == reg8[x_final:x_inicio]) && (check[8:0] >= reg8[y_final:y_inicio]) && (check[8:0] < reg8[y_final:y_inicio] + spriteLine)) 
     		readData = reg8;
-    	else if( (check[17:9] == reg9[x_inicio:x_final]) && (check[8:0] >= reg9[y_inicio:y_final]) && (check[8:0] <reg9[y_inicio:y_final] + spriteLine)) 
+    	else if( (check[18:9] == reg9[x_final:x_inicio]) && (check[8:0] >= reg9[y_final:y_inicio]) && (check[8:0] <reg9[y_final:y_inicio] + spriteLine)) 
     		readData = reg9;
-    	else if( (check[17:9] == reg10[x_inicio:x_final]) && (check[8:0] >= reg10[y_inicio:y_final]) && (check[8:0] < reg10[y_inicio:y_final] + spriteLine)) 
+    	else if( (check[18:9] == reg10[x_final:x_inicio]) && (check[8:0] >= reg10[y_final:y_inicio]) && (check[8:0] < reg10[y_final:y_inicio] + spriteLine)) 
     		readData = reg10;
-    	else if( (check[17:9] == reg11[x_inicio:x_final]) && (check[8:0] >= reg11[y_inicio:y_final]) && (check[8:0] < reg11[y_inicio:y_final] + spriteLine)) 
+    	else if( (check[18:9] == reg11[x_final:x_inicio]) && (check[8:0] >= reg11[y_final:y_inicio]) && (check[8:0] < reg11[y_final:y_inicio] + spriteLine)) 
     		readData = reg11;
-    	else if( (check[17:9] == reg12[x_inicio:x_final]) && (check[8:0] >= reg12[y_inicio:y_final]) && (check[8:0] < reg12[y_inicio:y_final] + spriteLine)) 
+    	else if( (check[18:9] == reg12[x_final:x_inicio]) && (check[8:0] >= reg12[y_final:y_inicio]) && (check[8:0] < reg12[y_final:y_inicio] + spriteLine)) 
     		readData = reg12;
-    	else if( (check[17:9] == reg13[x_inicio:x_final]) && (check[8:0] >= reg13[y_inicio:y_final]) && (check[8:0] < reg13[y_inicio:y_final] + spriteLine)) 
+    	else if( (check[18:9] == reg13[x_final:x_inicio]) && (check[8:0] >= reg13[y_final:y_inicio]) && (check[8:0] < reg13[y_final:y_inicio] + spriteLine)) 
     		readData = reg13;
-    	else if( (check[17:9] == reg14[x_inicio:x_final]) && (check[8:0] >= reg14[y_inicio:y_final]) && (check[8:0] < reg14[y_inicio:y_final] + spriteLine)) 
+    	else if( (check[18:9] == reg14[x_final:x_inicio]) && (check[8:0] >= reg14[y_final:y_inicio]) && (check[8:0] < reg14[y_final:y_inicio] + spriteLine)) 
     		readData = reg14;
-    	else if( (check[17:9] == reg15[x_inicio:x_final]) && (check[8:0] >= reg15[y_inicio:y_final]) && (check[8:0] < reg15[y_inicio:y_final] + spriteLine)) 
+    	else if( (check[18:9] == reg15[x_final:x_inicio]) && (check[8:0] >= reg15[y_final:y_inicio]) && (check[8:0] < reg15[y_final:y_inicio] + spriteLine)) 
     		readData = reg15;
-    	else if( (check[17:9] == reg16[x_inicio:x_final]) && (check[8:0] >= reg16[y_inicio:y_final]) && (check[8:0] < reg16[y_inicio:y_final] + spriteLine)) 
+    	else if( (check[18:9] == reg16[x_final:x_inicio]) && (check[8:0] >= reg16[y_final:y_inicio]) && (check[8:0] < reg16[y_final:y_inicio] + spriteLine)) 
     		readData = reg16;
-    	else if( (check[17:9] == reg17[x_inicio:x_final]) && (check[8:0] >= reg17[y_inicio:y_final]) && (check[8:0] < reg17[y_inicio:y_final] + spriteLine)) 
+    	else if( (check[18:9] == reg17[x_final:x_inicio]) && (check[8:0] >= reg17[y_final:y_inicio]) && (check[8:0] < reg17[y_final:y_inicio] + spriteLine)) 
     		readData = reg17;
-    	else if( (check[17:9] == reg18[x_inicio:x_final]) && (check[8:0] >= reg18[y_inicio:y_final]) && (check[8:0] < reg18[y_inicio:y_final] + spriteLine)) 
+    	else if( (check[18:9] == reg18[x_final:x_inicio]) && (check[8:0] >= reg18[y_final:y_inicio]) && (check[8:0] < reg18[y_final:y_inicio] + spriteLine)) 
     		readData = reg18;
-    	else if( (check[17:9] == reg19[x_inicio:x_final]) && (check[8:0] >= reg19[y_inicio:y_final]) && (check[8:0] < reg19[y_inicio:y_final] + spriteLine)) 
+    	else if( (check[18:9] == reg19[x_final:x_inicio]) && (check[8:0] >= reg19[y_final:y_inicio]) && (check[8:0] < reg19[y_final:y_inicio] + spriteLine)) 
     		readData = reg19;
-    	else if( (check[17:9] == reg20[x_inicio:x_final]) && (check[8:0] >= reg20[y_inicio:y_final]) && (check[8:0] < reg20[y_inicio:y_final] + spriteLine))
+    	else if( (check[18:9] == reg20[x_final:x_inicio]) && (check[8:0] >= reg20[y_final:y_inicio]) && (check[8:0] < reg20[y_final:y_inicio] + spriteLine))
     		readData = reg20;
-    	else if( (check[17:9] == reg21[x_inicio:x_final]) && (check[8:0] >= reg21[y_inicio:y_final]) && (check[8:0] < reg21[y_inicio:y_final] + spriteLine))
+    	else if( (check[18:9] == reg21[x_final:x_inicio]) && (check[8:0] >= reg21[y_final:y_inicio]) && (check[8:0] < reg21[y_final:y_inicio] + spriteLine))
     		readData = reg21;
-    	else if( (check[17:9] == reg22[x_inicio:x_final]) && (check[8:0] >= reg22[y_inicio:y_final]) && (check[8:0] < reg22[y_inicio:y_final] + spriteLine))
+    	else if( (check[18:9] == reg22[x_final:x_inicio]) && (check[8:0] >= reg22[y_final:y_inicio]) && (check[8:0] < reg22[y_final:y_inicio] + spriteLine))
     		readData = reg22;
-    	else if( (check[17:9] == reg23[x_inicio:x_final]) && (check[8:0] >= reg23[y_inicio:y_final]) && (check[8:0] < reg23[y_inicio:y_final] + spriteLine))
+    	else if( (check[18:9] == reg23[x_final:x_inicio]) && (check[8:0] >= reg23[y_final:y_inicio]) && (check[8:0] < reg23[y_final:y_inicio] + spriteLine))
     		readData = reg23;
-    	else if( (check[17:9] == reg24[x_inicio:x_final]) && (check[8:0] >= reg24[y_inicio:y_final]) && (check[8:0] < reg24[y_inicio:y_final] + spriteLine))
+    	else if( (check[18:9] == reg24[x_final:x_inicio]) && (check[8:0] >= reg24[y_final:y_inicio]) && (check[8:0] < reg24[y_final:y_inicio] + spriteLine))
     		readData = reg24;
-    	else if( (check[17:9] == reg25[x_inicio:x_final]) && (check[8:0] >= reg25[y_inicio:y_final]) && (check[8:0] < reg25[y_inicio:y_final] + spriteLine))
+    	else if( (check[18:9] == reg25[x_final:x_inicio]) && (check[8:0] >= reg25[y_final:y_inicio]) && (check[8:0] < reg25[y_final:y_inicio] + spriteLine))
     		readData = reg25;
-    	else if( (check[17:9] == reg26[x_inicio:x_final]) && (check[8:0] >= reg26[y_inicio:y_final]) && (check[8:0] < reg26[y_inicio:y_final] + spriteLine))
+    	else if( (check[18:9] == reg26[x_final:x_inicio]) && (check[8:0] >= reg26[y_final:y_inicio]) && (check[8:0] < reg26[y_final:y_inicio] + spriteLine))
     		readData = reg26;
-    	else if( (check[17:9] == reg27[x_inicio:x_final]) && (check[8:0] >= reg27[y_inicio:y_final]) && (check[8:0] < reg27[y_inicio:y_final] + spriteLine))
+    	else if( (check[18:9] == reg27[x_final:x_inicio]) && (check[8:0] >= reg27[y_final:y_inicio]) && (check[8:0] < reg27[y_final:y_inicio] + spriteLine))
     		readData = reg27;
-    	else if( (check[17:9] == reg28[x_inicio:x_final]) && (check[8:0] >= reg28[y_inicio:y_final]) && (check[8:0] < reg28[y_inicio:y_final] + spriteLine))
+    	else if( (check[18:9] == reg28[x_final:x_inicio]) && (check[8:0] >= reg28[y_final:y_inicio]) && (check[8:0] < reg28[y_final:y_inicio] + spriteLine))
     		readData = reg28;
-    	else if( (check[17:9] == reg29[x_inicio:x_final]) && (check[8:0] >= reg29[y_inicio:y_final]) && (check[8:0] < reg29[y_inicio:y_final] + spriteLine))
+    	else if( (check[18:9] == reg29[x_final:x_inicio]) && (check[8:0] >= reg29[y_final:y_inicio]) && (check[8:0] < reg29[y_final:y_inicio] + spriteLine))
     		readData = reg29;
-    	else if( (check[17:9] == reg30[x_inicio:x_final]) && (check[8:0] >= reg30[y_inicio:y_final]) && (check[8:0] < reg30[y_inicio:y_final] + spriteLine))
+    	else if( (check[18:9] == reg30[x_final:x_inicio]) && (check[8:0] >= reg30[y_final:y_inicio]) && (check[8:0] < reg30[y_final:y_inicio] + spriteLine))
     		readData = reg30;
-    	else if( (check[17:9] == reg31[x_inicio:x_final]) && (check[8:0] >= reg31[y_inicio:y_final]) && (check[8:0] < reg31[y_inicio:y_final] + spriteLine))
+    	else if( (check[18:9] == reg31[x_final:x_inicio]) && (check[8:0] >= reg31[y_final:y_inicio]) && (check[8:0] < reg31[y_final:y_inicio] + spriteLine))
     		readData = reg31;
     	else readData = 32'h00000001; //valor que define que nenhum pixel foi encontrado com os valores informados.
     end

@@ -1,8 +1,15 @@
 
-State Machine - |printModule|state
+State Machine - |video_processor|full_print_module:full_print_module_inst|printModule:printModule_inst|state
 Name state.AGUARDO state.SPRITE state.PROCESSA state.RECEBE state.AGUARDO_2 
 state.RECEBE 0 0 0 0 0 
 state.PROCESSA 0 0 1 1 0 
 state.SPRITE 0 1 0 1 0 
 state.AGUARDO 1 0 0 1 0 
 state.AGUARDO_2 0 0 0 1 1 
+
+State Machine - |video_processor|controlUnit:controlUnit_inst|state
+Name state.ESCRITA_NA_MEMORIA state.HABILITAR_IMPRESSAO state.ESCREVER_NO_BANCO state.PRONTO 
+state.PRONTO 0 0 0 0 
+state.ESCREVER_NO_BANCO 0 0 1 1 
+state.HABILITAR_IMPRESSAO 0 1 0 1 
+state.ESCRITA_NA_MEMORIA 1 0 0 1 

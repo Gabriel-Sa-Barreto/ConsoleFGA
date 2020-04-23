@@ -15,7 +15,7 @@ SAIDAS:
 //////////////////////////////////////////////////////////////////////////
 **/
 
-module sprite_line_counter #( parameter size_x = 10, size_y = 9, size_address = 17, size_line = 20)
+module sprite_line_counter #( parameter size_x = 10, size_y = 9, size_address = 14, size_line = 20)
 (
 	input  wire                     clk_pixel,
 	input  wire  [size_x-1:0]       pixel_x,
@@ -157,7 +157,7 @@ always @(pixel_x or pixel_y or sprite_on) begin
 		end
 	end
 	else begin
-		aux_memory_address = 17'bxxxxxxxxxxxxxxxxx;
+		aux_memory_address = 14'bxxxxxxxxxxxxxx;
 	end
 end
 /*--------------------------------------------------------------------------------------------------*/
