@@ -1,5 +1,5 @@
 Flow report for ConsoleFPGA
-Fri Apr 24 13:00:40 2020
+Fri Apr 24 17:17:55 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,20 +40,20 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Fri Apr 24 13:00:40 2020       ;
+; Flow Status                        ; Successful - Fri Apr 24 17:17:55 2020       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; ConsoleFPGA                                 ;
-; Top-level Entity Name              ; video_processor                             ;
+; Top-level Entity Name              ; consoleCollenda                             ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE22F17C6                                ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 751 / 22,320 ( 3 % )                        ;
-;     Total combinational functions  ; 604 / 22,320 ( 3 % )                        ;
-;     Dedicated logic registers      ; 481 / 22,320 ( 2 % )                        ;
-; Total registers                    ; 481                                         ;
-; Total pins                         ; 79 / 154 ( 51 % )                           ;
+; Total logic elements               ; 2,406 / 22,320 ( 11 % )                     ;
+;     Total combinational functions  ; 2,165 / 22,320 ( 10 % )                     ;
+;     Dedicated logic registers      ; 1,376 / 22,320 ( 6 % )                      ;
+; Total registers                    ; 1376                                        ;
+; Total pins                         ; 13 / 154 ( 8 % )                            ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 147,456 / 608,256 ( 24 % )                  ;
+; Total memory bits                  ; 191,488 / 608,256 ( 31 % )                  ;
 ; Embedded Multiplier 9-bit elements ; 0 / 132 ( 0 % )                             ;
 ; Total PLLs                         ; 1 / 4 ( 25 % )                              ;
 +------------------------------------+---------------------------------------------+
@@ -64,35 +64,42 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/24/2020 12:59:47 ;
+; Start date & time ; 04/24/2020 17:15:45 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; ConsoleFPGA         ;
 +-------------------+---------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                ;
-+-------------------------------------+----------------------------------------+---------------+-----------------+----------------+
-; Assignment Name                     ; Value                                  ; Default Value ; Entity Name     ; Section Id     ;
-+-------------------------------------+----------------------------------------+---------------+-----------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 39627052299777.158774398713793         ; --            ; --              ; --             ;
-; EDA_OUTPUT_DATA_FORMAT              ; Systemverilog Hdl                      ; --            ; --              ; eda_simulation ;
-; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (SystemVerilog)        ; <None>        ; --              ; --             ;
-; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --              ; eda_simulation ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --              ; --             ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --              ; --             ;
-; MISC_FILE                           ; modulos/sprite_memory/memory_bb.v      ; --            ; --              ; --             ;
-; MISC_FILE                           ; modulos/PLL/clock_pll_bb.v             ; --            ; --              ; --             ;
-; MISC_FILE                           ; modulos/PLL/clock_pll.ppf              ; --            ; --              ; --             ;
-; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                   ; --            ; --              ; --             ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; video_processor ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; video_processor ; Top            ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; video_processor ; Top            ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --              ; --             ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --              ; --             ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --              ; --             ;
-; TOP_LEVEL_ENTITY                    ; video_processor                        ; ConsoleFPGA   ; --              ; --             ;
-+-------------------------------------+----------------------------------------+---------------+-----------------+----------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                           ;
++-------------------------------------+-------------------------------------------------------------------+---------------+-----------------+----------------+
+; Assignment Name                     ; Value                                                             ; Default Value ; Entity Name     ; Section Id     ;
++-------------------------------------+-------------------------------------------------------------------+---------------+-----------------+----------------+
+; COMPILER_SIGNATURE_ID               ; 141761626662654.158775934507338                                   ; --            ; --              ; --             ;
+; EDA_OUTPUT_DATA_FORMAT              ; Systemverilog Hdl                                                 ; --            ; --              ; eda_simulation ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (SystemVerilog)                                   ; <None>        ; --              ; --             ;
+; EDA_TIME_SCALE                      ; 1 ps                                                              ; --            ; --              ; eda_simulation ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                                                ; --            ; --              ; --             ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                                                 ; --            ; --              ; --             ;
+; MISC_FILE                           ; arquiteturaQsys/arquiteturaQsys/synthesis/../collenda.cmp         ; --            ; --              ; --             ;
+; MISC_FILE                           ; arquiteturaQsys/arquiteturaQsys/synthesis/../../collenda.qsys     ; --            ; --              ; --             ;
+; MISC_FILE                           ; modulos/sprite_memory/memory_bb.v                                 ; --            ; --              ; --             ;
+; MISC_FILE                           ; modulos/PLL/clock_pll_bb.v                                        ; --            ; --              ; --             ;
+; MISC_FILE                           ; modulos/PLL/clock_pll.ppf                                         ; --            ; --              ; --             ;
+; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                                              ; --            ; --              ; --             ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family)                            ; --            ; consoleCollenda ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family)                            ; --            ; consoleCollenda ; Top            ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family)                            ; --            ; consoleCollenda ; Top            ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                                               ; --            ; --              ; --             ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                             ; --            ; --              ; --             ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                                                      ; --            ; --              ; --             ;
+; SLD_FILE                            ; arquiteturaQsys/arquiteturaQsys/synthesis/collenda.regmap         ; --            ; --              ; --             ;
+; SLD_FILE                            ; arquiteturaQsys/arquiteturaQsys/synthesis/collenda.debuginfo      ; --            ; --              ; --             ;
+; SLD_INFO                            ; QSYS_NAME collenda HAS_SOPCINFO 1 GENERATION_ID 1587759306        ; --            ; collenda        ; --             ;
+; SOPCINFO_FILE                       ; arquiteturaQsys/arquiteturaQsys/synthesis/../../collenda.sopcinfo ; --            ; --              ; --             ;
+; SYNTHESIS_ONLY_QIP                  ; On                                                                ; --            ; --              ; --             ;
+; TOP_LEVEL_ENTITY                    ; consoleCollenda                                                   ; ConsoleFPGA   ; --              ; --             ;
++-------------------------------------+-------------------------------------------------------------------+---------------+-----------------+----------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -100,12 +107,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:25     ; 1.0                     ; 968 MB              ; 00:00:54                           ;
-; Fitter               ; 00:00:15     ; 1.0                     ; 1269 MB             ; 00:00:18                           ;
-; Assembler            ; 00:00:02     ; 1.0                     ; 813 MB              ; 00:00:02                           ;
-; Timing Analyzer      ; 00:00:04     ; 1.1                     ; 831 MB              ; 00:00:04                           ;
-; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 1061 MB             ; 00:00:02                           ;
-; Total                ; 00:00:48     ; --                      ; --                  ; 00:01:20                           ;
+; Analysis & Synthesis ; 00:01:10     ; 1.0                     ; 1103 MB             ; 00:02:04                           ;
+; Fitter               ; 00:00:27     ; 1.0                     ; 1295 MB             ; 00:00:26                           ;
+; Assembler            ; 00:00:04     ; 1.0                     ; 824 MB              ; 00:00:03                           ;
+; Timing Analyzer      ; 00:00:05     ; 1.1                     ; 860 MB              ; 00:00:05                           ;
+; EDA Netlist Writer   ; 00:00:09     ; 1.0                     ; 1087 MB             ; 00:00:08                           ;
+; Total                ; 00:01:55     ; --                      ; --                  ; 00:02:46                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

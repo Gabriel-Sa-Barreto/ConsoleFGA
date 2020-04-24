@@ -4,227 +4,71 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "R[0]",
+					"name" : "hsync_writeresponsevalid_n",
 					"strict" : false
 				},
 				{
-					"name" : "R[1]",
+					"name" : "vsync_writeresponsevalid_n",
 					"strict" : false
 				},
 				{
-					"name" : "R[2]",
+					"name" : "color_b_readdata[2]",
 					"strict" : false
 				},
 				{
-					"name" : "G[0]",
+					"name" : "color_b_readdata[1]",
 					"strict" : false
 				},
 				{
-					"name" : "G[1]",
+					"name" : "color_b_readdata[0]",
 					"strict" : false
 				},
 				{
-					"name" : "G[2]",
+					"name" : "color_g_readdata[2]",
 					"strict" : false
 				},
 				{
-					"name" : "B[0]",
+					"name" : "color_g_readdata[1]",
 					"strict" : false
 				},
 				{
-					"name" : "B[1]",
+					"name" : "color_g_readdata[0]",
 					"strict" : false
 				},
 				{
-					"name" : "B[2]",
+					"name" : "color_r_readdata[2]",
 					"strict" : false
 				},
 				{
-					"name" : "out_printtingScreen",
+					"name" : "color_r_readdata[1]",
 					"strict" : false
 				},
 				{
-					"name" : "out_hsync",
+					"name" : "color_r_readdata[0]",
 					"strict" : false
 				},
 				{
-					"name" : "out_vsync",
+					"name" : "clk_clk",
 					"strict" : false
 				},
 				{
-					"name" : "reset",
+					"name" : "reset_reset_n",
 					"strict" : false
 				},
 				{
-					"name" : "dataA[0]",
+					"name" : "altera_reserved_tms",
 					"strict" : false
 				},
 				{
-					"name" : "clk_en",
+					"name" : "altera_reserved_tck",
 					"strict" : false
 				},
 				{
-					"name" : "dataA[2]",
+					"name" : "altera_reserved_tdi",
 					"strict" : false
 				},
 				{
-					"name" : "dataA[3]",
-					"strict" : false
-				},
-				{
-					"name" : "dataA[1]",
-					"strict" : false
-				},
-				{
-					"name" : "dataA[13]",
-					"strict" : false
-				},
-				{
-					"name" : "dataB[0]",
-					"strict" : false
-				},
-				{
-					"name" : "dataA[4]",
-					"strict" : false
-				},
-				{
-					"name" : "dataA[5]",
-					"strict" : false
-				},
-				{
-					"name" : "dataA[6]",
-					"strict" : false
-				},
-				{
-					"name" : "dataA[7]",
-					"strict" : false
-				},
-				{
-					"name" : "dataA[8]",
-					"strict" : false
-				},
-				{
-					"name" : "dataA[9]",
-					"strict" : false
-				},
-				{
-					"name" : "dataA[10]",
-					"strict" : false
-				},
-				{
-					"name" : "dataA[11]",
-					"strict" : false
-				},
-				{
-					"name" : "dataA[12]",
-					"strict" : false
-				},
-				{
-					"name" : "dataB[1]",
-					"strict" : false
-				},
-				{
-					"name" : "dataB[2]",
-					"strict" : false
-				},
-				{
-					"name" : "dataB[3]",
-					"strict" : false
-				},
-				{
-					"name" : "dataB[4]",
-					"strict" : false
-				},
-				{
-					"name" : "dataB[5]",
-					"strict" : false
-				},
-				{
-					"name" : "dataB[6]",
-					"strict" : false
-				},
-				{
-					"name" : "dataB[7]",
-					"strict" : false
-				},
-				{
-					"name" : "dataB[8]",
-					"strict" : false
-				},
-				{
-					"name" : "dataB[27]",
-					"strict" : false
-				},
-				{
-					"name" : "dataB[17]",
-					"strict" : false
-				},
-				{
-					"name" : "dataB[26]",
-					"strict" : false
-				},
-				{
-					"name" : "dataB[16]",
-					"strict" : false
-				},
-				{
-					"name" : "dataB[25]",
-					"strict" : false
-				},
-				{
-					"name" : "dataB[15]",
-					"strict" : false
-				},
-				{
-					"name" : "dataB[24]",
-					"strict" : false
-				},
-				{
-					"name" : "dataB[14]",
-					"strict" : false
-				},
-				{
-					"name" : "dataB[23]",
-					"strict" : false
-				},
-				{
-					"name" : "dataB[13]",
-					"strict" : false
-				},
-				{
-					"name" : "dataB[22]",
-					"strict" : false
-				},
-				{
-					"name" : "dataB[12]",
-					"strict" : false
-				},
-				{
-					"name" : "dataB[21]",
-					"strict" : false
-				},
-				{
-					"name" : "dataB[11]",
-					"strict" : false
-				},
-				{
-					"name" : "dataB[20]",
-					"strict" : false
-				},
-				{
-					"name" : "dataB[9]",
-					"strict" : false
-				},
-				{
-					"name" : "dataB[18]",
-					"strict" : false
-				},
-				{
-					"name" : "dataB[10]",
-					"strict" : false
-				},
-				{
-					"name" : "dataB[19]",
+					"name" : "altera_reserved_tdo",
 					"strict" : false
 				}
 			]
