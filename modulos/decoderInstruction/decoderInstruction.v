@@ -30,16 +30,16 @@ module decorderInstruction(
 
 //parâmetro que informa a posição fixa em que deve ficar armazenado o valor da cor de background da tela.
  
-reg [1:0]  opcode;
+reg [3:0]  opcode;
 reg [13:0] register;
 reg [31:0] data;
 
 //Registra o resultado da decodificação na saída do módulo
 always @(posedge clk or negedge reset) begin
 	if(!reset) begin
-		opcode   <= 2'bxx;
-		register <= 14'bxxxxxxxxxxxxxx;
-		data     <= 32'hxxxxxxxx;
+		out_opcode   <=  4'bxxxx;
+		out_register <= 14'bxxxxxxxxxxxxxx;
+		out_data     <= 32'hxxxxxxxx;
 	end
 	else begin
 		out_opcode   <= opcode;
@@ -72,22 +72,22 @@ always @(*) begin
 					data     = 32'dx;
 				end
 				default: begin
-				    opcode   = 2'bxx;
-					register = 14'bxxxxxxxxxxxxxx;
-					data     = 32'hxxxxxxxx;
+				   	opcode   = 4'b1111; //valor default de opcode
+					register = 0;       //valor default de register
+					data     = 0;       //valor default de data
 				end
 			endcase
 		end
 		else begin
-			opcode   = 2'bxx;
-			register = 14'bxxxxxxxxxxxxxx;
-			data     = 32'hxxxxxxxx;
+			opcode   = 4'b1111; //valor default de opcode
+			register = 0;       //valor default de register
+			data     = 0;       //valor default de data
 		end
 	end
-	else begin   //As saídas permanecem as mesmas caso ainda não possam ser executadas novas instruções.
-		opcode   = opcode;
-		register = register;
-		data     = data;
+	else begin   			//As saídas permanecem as mesmas caso ainda não possam ser executadas novas instruções.
+		opcode   = 4'b1111; //valor default de opcode
+		register = 0;       //valor default de register
+		data     = 0;       //valor default de data
 	end
 end
 

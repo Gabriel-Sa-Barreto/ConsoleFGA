@@ -19,7 +19,7 @@ reg r_memory;
 
 
 /*--------Sempre que sentir uma mudança na saída da memória é porque uma leitura foi realizada---------*/
-always @(out_data) begin
+always @(out_data or wren) begin
 	if(!wren) begin      //leitura
 		r_memory = 1'b1;
 	end

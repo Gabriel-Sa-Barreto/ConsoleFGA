@@ -1,6 +1,5 @@
 module video_processor(
-	input wire clk,
-	input wire clk_pixel,
+	input wire clk_FPGA,   //(50 Mhz)
 	input wire clk_en,
 	input wire reset,
 	input wire [31:0] dataA,
@@ -17,7 +16,7 @@ module video_processor(
 /*------------------Fios de ligação entre os módulos---------------------*/
 wire        new_instruction;
 wire 		done;
-wire [1:0]  out_opcode;
+wire [3:0]  out_opcode;
 wire [13:0] out_register;
 wire [31:0] out_data;
 wire 		done_register;
@@ -31,14 +30,18 @@ wire [13:0] decoded_address;
 wire 		active_area;
 wire        processor_out_selector;
 wire [13:0] address;
-wire [8:0] memory_data;
-wire [8:0] memory_data_out;
-wire       done_memory;
-wire [8:0] monitor_color_out;
+wire [8:0]  memory_data;
+wire [8:0]  memory_data_out;
+wire        done_memory;
+wire [8:0]  monitor_color_out;
+wire [9:0]  pixel_x;
+wire [8:0]  pixel_y;
+wire 		clk_100;
+wire 		clk_25;
 /*------------------------------------------------------------------------*/
 
 /*-----Sinais da unidade de controle para o gerenciamento dos módulos-----*/
-wire 	   memmory_wr;
+wire 	   memory_wr;
 wire [3:0] selectField;
 wire 	   register_wr;
 wire 	   selectorDemuxRegister;
@@ -48,10 +51,24 @@ wire 	   selectorAddress;
 
 reg reg_done;
 
+
+/*-------Módulo Pll responsável por gerar os sinais de clock necessários para os outros módulos
+	c0 - 100 Mhz
+	c1 -  25 Mhz
+*/
+clock_pll clock_pll_inst
+(
+	.inclk0(clk_FPGA) ,	    // input  inclk0_sig
+	.c0(clk_100) ,			// output  c0_sig
+	.c1(clk_25) 			// output  c1_sig
+);
+
+
+
 decorderInstruction 
 decorderInstruction_inst
 (
-	.clk(clk) ,							// input  clk_sig
+	.clk(clk_100) ,						// input  clk_sig
 	.clk_en(clk_en) ,					// input  clk_en_sig
 	.dataA(dataA) ,						// input [31:0] dataA_sig
 	.dataB(dataB) ,						// input [31:0] dataB_sig
@@ -65,9 +82,9 @@ decorderInstruction_inst
 controlUnit 
 controlUnit_inst
 (
-	.clk(clk) ,								// input  clk_sig
+	.clk(clk_100) ,							// input  clk_sig
 	.reset(reset) ,							// input  reset_sig
-	.opCode(out_opCode) ,					// input [3:0] opCode_sig
+	.opCode(out_opcode) ,					// input [3:0] opCode_sig
 	.printtingScreen(printtingScreen) ,		// input  printtingScreen_sig
 	.done(reg_done) ,					    // input  done_sig
 	.new_instruction(new_instruction) ,		// output  new_instruction_sig
@@ -103,9 +120,9 @@ demultiplexador_inst_data
 
 registerFile registerFile_inst
 (
-	.clk(clk) ,						// input  clk_sig
+	.clk(clk_100) ,					// input  clk_sig
 	.n_reg(n_reg) ,					// input [4:0] n_reg_sig
-	.check() ,					    // input [18:0] check_sig
+	.check(check_value) ,			// input [18:0] check_sig
 	.data(register_data) ,			// input [31:0] data_sig
 	.written(register_wr) ,			// input  written_sig
 	.selectField(selectField) ,		// input [3:0] selectField_sig
@@ -116,8 +133,8 @@ registerFile registerFile_inst
 full_print_module #(.size_x1(10), .size_y1(9), .size_address1(14), .bits_x_y_1(19), .size_line1(20))
 full_print_module_inst
 (
-	.clk(clk) ,									// input  clk_sig
-	.clk_pixel(clk_pixel) ,						// input  clk_pixel_sig
+	.clk(clk_100) ,								// input  clk_sig
+	.clk_pixel(clk_25) ,						// input  clk_pixel_sig
 	.reset(reset) ,								// input  reset_sig
 	.data_reg(data_reg) ,						// input [31:0] data_reg_sig
 	.active_area(active_area) ,					// input  active_area_sig
@@ -125,7 +142,7 @@ full_print_module_inst
 	.pixel_y(pixel_y) ,							// input [size_y1-1:0] pixel_y_sig
 	.memory_address(memory_address) ,	        // output [size_address1-1:0] memory_address_sig
 	.printtingScreen(printtingScreen) ,			// output  printtingScreen_sig
-	.check_value(check_value_sig) 				// output [bits_x_y_1-1:0] check_value_sig
+	.check_value(check_value) 					// output [bits_x_y_1-1:0] check_value_sig
 );
 
 /*-------Multiplexador para selecionar a entrada de endereço para a memória de sprites--------*/
@@ -141,7 +158,7 @@ multiplexador_inst
 sprite_memory sprite_memory_inst
 (
 	.address(address) ,					// input [13:0] address_sig
-	.clock(clk) ,						// input  clock_sig  (100Mhz)
+	.clock(clk_100) ,					// input  clock_sig  (100Mhz)
 	.data(memory_data) ,				// input [8:0] data_sig
 	.wren(memory_wr) ,					// input  wren_sig
 	.out_data(memory_data_out) ,	    // output [8:0] out_data_sig
@@ -152,7 +169,7 @@ sprite_memory sprite_memory_inst
 /*------------Módulo para geração do sinais de sincronização do monitor e seus pixeis-----------*/
 VGA_sync VGA_sync_inst
 (
-	.clock(clk_pixel) ,					// input  clock_sig
+	.clock(clk_25) ,					// input  clock_sig
 	.reset(reset) ,						// input  reset_sig
 	.hsync(out_hsync) ,					// output  hsync_sig
 	.vsync(out_vsync) ,					// output  vsync_sig
@@ -179,7 +196,7 @@ multiplexador_inst_color
 );
 
 
-always @(negedge clk) begin
+always @(negedge clk_100) begin
 	out_printtingScreen  <= printtingScreen;
 end
 

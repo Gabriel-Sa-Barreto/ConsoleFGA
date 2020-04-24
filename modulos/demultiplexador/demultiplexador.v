@@ -21,13 +21,12 @@ module demultiplexador #(parameter data_bits = 32, out1_bits_size = 32, out2_bit
 
 //Bloco combinacional para redirecionamento da entrada.
 always @(*) begin
+	out1 = 0;     //valores default;
+	out2 = 0;
 	if(selector == 1'b0) 
 		out1 = data[bits_to_out1-1:0];
-	else if(selector == 1'b1)
+	else begin            //selector == 1'b1;
 		out2 = data[bits_to_out2-1:0];
-	else begin
-		out1 = 0;
-		out2 = 0;
 	end
 end
 endmodule

@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Thu Apr 23 12:39:42 2020
+Analysis & Synthesis Status : Successful - Fri Apr 24 13:00:12 2020
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : ConsoleFPGA
 Top-level Entity Name : video_processor
 Family : Cyclone IV E
-Total logic elements : 154
-    Total combinational functions : 130
-    Dedicated logic registers : 103
-Total registers : 103
-Total pins : 80
+Total logic elements : 951
+    Total combinational functions : 604
+    Dedicated logic registers : 481
+Total registers : 481
+Total pins : 79
 Total virtual pins : 0
 Total memory bits : 147,456
 Embedded Multiplier 9-bit elements : 0
-Total PLLs : 0
+Total PLLs : 1

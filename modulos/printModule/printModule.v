@@ -37,14 +37,14 @@ module printModule #( parameter size_x = 10, size_y = 9, size_address = 14, bits
 
 
 /*------------------Parâmetros da máquina de estados-------------------------*/
-parameter [2:0] RECEBE      = 3'b000,
+localparam [2:0] RECEBE      = 3'b000,
 				PROCESSA    = 3'b001,
 				SPRITE      = 3'b010,  
 				AGUARDO     = 3'b011,
 				AGUARDO_2   = 3'b100;
-parameter [13:0] address_BG = 16383;
-parameter [size_x-1:0]  screen_x = 640;   //número de colunas do monitor de acordo à resolução utilizada.
-parameter [size_y-1:0]  screen_y = 480;   //número de linhas do monitor de acordo à resolução utilizada.
+localparam [13:0] address_BG = 16383;
+localparam [size_x-1:0]  screen_x = 640;   //número de colunas do monitor de acordo à resolução utilizada.
+localparam [size_y-1:0]  screen_y = 480;   //número de linhas do monitor de acordo à resolução utilizada.
 /*---------------------------------------------------------------------------*/
 
 reg [2:0]  next, state; 
@@ -67,7 +67,7 @@ end
 /*-----------------------------------------------------------------------------------*/
 
 /*--------------------Bloco combinacional responsável pela mudança de estados----------------------------*/
-always @(state or pixel_x or pixel_y or data_reg or count_finished) begin
+always @(state or pixel_x or pixel_y or data_reg or count_finished or active_area) begin
 	next = 3'bxxx;
 	case(state)
 		//só volta/entra no estado de RECEBE se somente se foi finalizado uma impressão da linha de um sprite

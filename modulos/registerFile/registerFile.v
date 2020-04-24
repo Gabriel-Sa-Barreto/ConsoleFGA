@@ -28,8 +28,8 @@ module registerFile(
 );
 
 /*---Parametros que definem as posições de inicio e fim dos atributos de cada sprite em cada registrador---*/
-parameter       offset_inicio = 0; 
-parameter [4:0] offset_final  = 8;
+parameter       n_sprite_inicio = 0; 
+parameter [4:0] n_sprite_final  = 8;
 
 parameter [4:0] y_inicio = 9;
 parameter [5:0] y_final  = 17;
@@ -86,7 +86,7 @@ always @(negedge clk) begin
 			5'd0:
 				begin
 					if(selectField == 4'b0000) begin       //modifica offset
-						reg0 <= data[offset_final:offset_inicio];
+						reg0 <= data[n_sprite_final:n_sprite_inicio];
 						success <= 1;
 					end
 					else if(selectField == 4'b0001)  begin //modifica y
@@ -102,7 +102,7 @@ always @(negedge clk) begin
 			5'd1:
 				begin
 					if(selectField == 4'b0000) begin       //modifica offset
-						reg1 <= data[offset_final:offset_inicio];
+						reg1 <= data[n_sprite_final:n_sprite_inicio];
 						success <= 1;
 					end
 					else if(selectField == 4'b0001)  begin //modifica y
@@ -118,7 +118,7 @@ always @(negedge clk) begin
 			5'd2:
 				begin
 					if(selectField == 4'b0000) begin       //modifica offset
-						reg2 <= data[offset_final:offset_inicio];
+						reg2 <= data[n_sprite_final:n_sprite_inicio];
 						success <= 1;
 					end
 					else if(selectField == 4'b0001)  begin //modifica y
@@ -134,7 +134,7 @@ always @(negedge clk) begin
 			5'd3:
 				begin
 					if(selectField == 4'b0000) begin       //modifica offset
-						reg3 <= data[offset_final:offset_inicio];
+						reg3 <= data[n_sprite_final:n_sprite_inicio];
 						success <= 1;
 					end
 					else if(selectField == 4'b0001)  begin //modifica y
@@ -150,7 +150,7 @@ always @(negedge clk) begin
 			5'd4:
 				begin
 					if(selectField == 4'b0000) begin       //modifica offset
-						reg4 <= data[offset_final:offset_inicio];
+						reg4 <= data[n_sprite_final:n_sprite_inicio];
 						success <= 1;
 					end
 					else if(selectField == 4'b0001)  begin //modifica y
@@ -166,7 +166,7 @@ always @(negedge clk) begin
 			5'd5:
 				begin
 					if(selectField == 4'b0000) begin       //modifica offset
-						reg5 <= data[offset_final:offset_inicio];
+						reg5 <= data[n_sprite_final:n_sprite_inicio];
 						success <= 1;
 					end
 					else if(selectField == 4'b0001)  begin //modifica y
@@ -182,7 +182,7 @@ always @(negedge clk) begin
 			5'd6:
 				begin
 					if(selectField == 4'b0000) begin       //modifica offset
-						reg6 <= data[offset_final:offset_inicio];
+						reg6 <= data[n_sprite_final:n_sprite_inicio];
 						success <= 1;
 					end
 					else if(selectField == 4'b0001)  begin //modifica y
@@ -198,7 +198,7 @@ always @(negedge clk) begin
 			5'd7:
 				begin
 					if(selectField == 4'b0000) begin       //modifica offset
-						reg7 <= data[offset_final:offset_inicio];
+						reg7 <= data[n_sprite_final:n_sprite_inicio];
 						success <= 1;
 					end
 					else if(selectField == 4'b0001)  begin //modifica y
@@ -214,7 +214,7 @@ always @(negedge clk) begin
 			5'd8:
 				begin
 					if(selectField == 4'b0000) begin       //modifica offset
-						reg8 <= data[offset_final:offset_inicio];
+						reg8 <= data[n_sprite_final:n_sprite_inicio];
 						success <= 1;
 					end
 					else if(selectField == 4'b0001)  begin //modifica y
@@ -230,7 +230,7 @@ always @(negedge clk) begin
 			5'd9:
 				begin
 					if(selectField == 4'b0000) begin       //modifica offset
-						reg9 <= data[offset_final:offset_inicio];
+						reg9 <= data[n_sprite_final:n_sprite_inicio];
 						success <= 1;
 					end
 					else if(selectField == 4'b0001)  begin //modifica y
@@ -246,7 +246,7 @@ always @(negedge clk) begin
 			5'd10:
 				begin
 					if(selectField == 4'b0000) begin       //modifica offset
-						reg10 <= data[offset_final:offset_inicio];
+						reg10 <= data[n_sprite_final:n_sprite_inicio];
 						success <= 1;
 					end
 					else if(selectField == 4'b0001)  begin //modifica y
@@ -262,7 +262,7 @@ always @(negedge clk) begin
 			5'd11:
 				begin
 					if(selectField == 4'b0000) begin       //modifica offset
-						reg11 <= data[offset_final:offset_inicio];
+						reg11 <= data[n_sprite_final:n_sprite_inicio];
 						success <= 1;
 					end
 					else if(selectField == 4'b0001)  begin //modifica y
@@ -278,7 +278,7 @@ always @(negedge clk) begin
 			5'd12:
 				begin
 					if(selectField == 4'b0000) begin       //modifica offset
-						reg12 <= data[offset_final:offset_inicio];
+						reg12 <= data[n_sprite_final:n_sprite_inicio];
 						success <= 1;
 					end
 					else if(selectField == 4'b0001)  begin //modifica y
@@ -294,7 +294,7 @@ always @(negedge clk) begin
 			5'd13:
 				begin
 					if(selectField == 4'b0000) begin       //modifica offset
-						reg13 <= data[offset_final:offset_inicio];
+						reg13 <= data[n_sprite_final:n_sprite_inicio];
 						success <= 1;
 					end
 					else if(selectField == 4'b0001)  begin //modifica y
@@ -310,7 +310,7 @@ always @(negedge clk) begin
 			5'd14:
 				begin
 					if(selectField == 4'b0000) begin       //modifica offset
-						reg14 <= data[offset_final:offset_inicio];
+						reg14 <= data[n_sprite_final:n_sprite_inicio];
 						success <= 1;
 					end
 					else if(selectField == 4'b0001)  begin //modifica y
@@ -326,7 +326,7 @@ always @(negedge clk) begin
 			5'd15:
 				begin
 					if(selectField == 4'b0000) begin       //modifica offset
-						reg15 <= data[offset_final:offset_inicio];
+						reg15 <= data[n_sprite_final:n_sprite_inicio];
 						success <= 1;
 					end
 					else if(selectField == 4'b0001)  begin //modifica y
@@ -342,7 +342,7 @@ always @(negedge clk) begin
 			5'd16:
 				begin
 					if(selectField == 4'b0000) begin       //modifica offset
-						reg16 <= data[offset_final:offset_inicio];
+						reg16 <= data[n_sprite_final:n_sprite_inicio];
 						success <= 1;
 					end
 					else if(selectField == 4'b0001)  begin //modifica y
@@ -358,7 +358,7 @@ always @(negedge clk) begin
 			5'd17:
 				begin
 					if(selectField == 4'b0000) begin       //modifica offset
-						reg17 <= data[offset_final:offset_inicio];
+						reg17 <= data[n_sprite_final:n_sprite_inicio];
 						success <= 1;
 					end
 					else if(selectField == 4'b0001)  begin //modifica y
@@ -374,7 +374,7 @@ always @(negedge clk) begin
 			5'd18:
 				begin
 					if(selectField == 4'b0000) begin       //modifica offset
-						reg18 <= data[offset_final:offset_inicio];
+						reg18 <= data[n_sprite_final:n_sprite_inicio];
 						success <= 1;
 					end
 					else if(selectField == 4'b0001)  begin //modifica y
@@ -390,7 +390,7 @@ always @(negedge clk) begin
 			5'd19:
 				begin
 					if(selectField == 4'b0000) begin       //modifica offset
-						reg19 <= data[offset_final:offset_inicio];
+						reg19 <= data[n_sprite_final:n_sprite_inicio];
 						success <= 1;
 					end
 					else if(selectField == 4'b0001)  begin //modifica y
@@ -406,7 +406,7 @@ always @(negedge clk) begin
 			5'd20:
 				begin
 					if(selectField == 4'b0000) begin       //modifica offset
-						reg20 <= data[offset_final:offset_inicio];
+						reg20 <= data[n_sprite_final:n_sprite_inicio];
 						success <= 1;
 					end
 					else if(selectField == 4'b0001)  begin //modifica y
@@ -423,7 +423,7 @@ always @(negedge clk) begin
 			5'd21:
 				begin
 					if(selectField == 4'b0000) begin       //modifica offset
-						reg21 <= data[offset_final:offset_inicio];
+						reg21 <= data[n_sprite_final:n_sprite_inicio];
 						success <= 1;
 					end
 					else if(selectField == 4'b0001)  begin //modifica y
@@ -440,7 +440,7 @@ always @(negedge clk) begin
 			5'd22:
 				begin
 					if(selectField == 4'b0000) begin       //modifica offset
-						reg22 <= data[offset_final:offset_inicio];
+						reg22 <= data[n_sprite_final:n_sprite_inicio];
 						success <= 1;
 					end
 					else if(selectField == 4'b0001)  begin //modifica y
@@ -456,7 +456,7 @@ always @(negedge clk) begin
 			5'd23:
 				begin
 					if(selectField == 4'b0000) begin       //modifica offset
-						reg23 <= data[offset_final:offset_inicio];
+						reg23 <= data[n_sprite_final:n_sprite_inicio];
 						success <= 1;
 					end
 					else if(selectField == 4'b0001)  begin //modifica y
@@ -472,7 +472,7 @@ always @(negedge clk) begin
 			5'd24:
 				begin
 					if(selectField == 4'b0000) begin       //modifica offset
-						reg24 <= data[offset_final:offset_inicio];
+						reg24 <= data[n_sprite_final:n_sprite_inicio];
 						success <= 1;
 					end
 					else if(selectField == 4'b0001)  begin //modifica y
@@ -488,7 +488,7 @@ always @(negedge clk) begin
 			5'd25:
 				begin
 					if(selectField == 4'b0000) begin       //modifica offset
-						reg25 <= data[offset_final:offset_inicio];
+						reg25 <= data[n_sprite_final:n_sprite_inicio];
 						success <= 1;
 					end
 					else if(selectField == 4'b0001)  begin //modifica y
@@ -504,7 +504,7 @@ always @(negedge clk) begin
 			5'd26:
 				begin
 					if(selectField == 4'b0000) begin       //modifica offset
-						reg26 <= data[offset_final:offset_inicio];
+						reg26 <= data[n_sprite_final:n_sprite_inicio];
 						success <= 1;
 					end
 					else if(selectField == 4'b0001)  begin //modifica y
@@ -520,7 +520,7 @@ always @(negedge clk) begin
 			5'd27:
 				begin
 					if(selectField == 4'b0000) begin       //modifica offset
-						reg27 <= data[offset_final:offset_inicio];
+						reg27 <= data[n_sprite_final:n_sprite_inicio];
 						success <= 1;
 					end
 					else if(selectField == 4'b0001)  begin //modifica y
@@ -536,7 +536,7 @@ always @(negedge clk) begin
 			5'd28:
 				begin
 					if(selectField == 4'b0000) begin       //modifica offset
-						reg28 <= data[offset_final:offset_inicio];
+						reg28 <= data[n_sprite_final:n_sprite_inicio];
 						success <= 1;
 					end
 					else if(selectField == 4'b0001)  begin //modifica y
@@ -552,7 +552,7 @@ always @(negedge clk) begin
 			5'd29:
 				begin
 					if(selectField == 4'b0000) begin       //modifica offset
-						reg29 <= data[offset_final:offset_inicio];
+						reg29 <= data[n_sprite_final:n_sprite_inicio];
 						success <= 1;
 					end
 					else if(selectField == 4'b0001)  begin //modifica y
@@ -568,7 +568,7 @@ always @(negedge clk) begin
 			5'd30:
 				begin
 					if(selectField == 4'b0000) begin       //modifica offset
-						reg30 <= data[offset_final:offset_inicio];
+						reg30 <= data[n_sprite_final:n_sprite_inicio];
 						success <= 1;
 					end
 					else if(selectField == 4'b0001)  begin //modifica y
@@ -584,7 +584,7 @@ always @(negedge clk) begin
 			5'd31:
 				begin
 					if(selectField == 4'b0000) begin       //modifica offset
-						reg31 <= data[offset_final:offset_inicio];
+						reg31 <= data[n_sprite_final:n_sprite_inicio];
 						success <= 1;
 					end
 					else if(selectField == 4'b0001)  begin //modifica y

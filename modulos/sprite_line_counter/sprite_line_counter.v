@@ -27,9 +27,9 @@ module sprite_line_counter #( parameter size_x = 10, size_y = 9, size_address = 
 	output wire        			    count_finished
 );
 
-
+localparam [8:0] offset = 400;
 /*------------------Parâmetros da máquina de estados-------------------------*/
-parameter [4:0] ZERO     =  5'b00000,
+localparam [4:0] ZERO     =  5'b00000,
 				ONE          =  5'b00001,
 				TWO          =  5'b00010,
 				THREE        =  5'b00011,
@@ -143,18 +143,17 @@ end
 /*--------------------------------------------------------------------------------------------------------*/
 
 /*--------Bloco always combinacional responsável por gerar o endereço de memória a ser acessado-----*/
-always @(pixel_x or pixel_y or sprite_on) begin
+always @(pixel_x or pixel_y or sprite_on or sprite_datas or state or next) begin
 	if(sprite_on == 1'b1) begin  //se o sprite_on está habilitado então uma linha de um sprite deve ser impressa.
 		if( (pixel_x == sprite_datas[26:18]) ) begin  //primeiro pixel da linha
-			aux_memory_address = sprite_datas[8:0];   //o endereço é o próprio offset.
+			//aux_memory_address = número do sprite(registrador) * offset  
+			  aux_memory_address = sprite_datas[8:0] * offset;  
 		end
-		else if( (pixel_x > sprite_datas[26:18]) && ( pixel_x < ( sprite_datas[26:18] + (size_line) ) ) ) begin
+		else if( (pixel_x > sprite_datas[26:18]) && ( pixel_x <= ( sprite_datas[26:18] + (size_line-1) ) ) ) begin
 			//ainda está dentro do limite da linha do sprite.
-			if( pixel_x == (sprite_datas[26:18] + (size_line)) ) begin //último pixel a ser impresso.
-				aux_memory_address = sprite_datas[8:0] + state;
-			end
-			else aux_memory_address = sprite_datas[8:0] + next; //offset + contagem de linha; 
+			aux_memory_address = (sprite_datas[8:0] * offset) + state; 
 		end
+		else aux_memory_address = 14'bxxxxxxxxxxxxxx; 
 	end
 	else begin
 		aux_memory_address = 14'bxxxxxxxxxxxxxx;

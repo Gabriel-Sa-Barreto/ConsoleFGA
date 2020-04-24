@@ -1,16 +1,16 @@
-Fitter Status : Successful - Thu Apr 23 12:40:05 2020
+Fitter Status : Successful - Fri Apr 24 13:00:28 2020
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : ConsoleFPGA
 Top-level Entity Name : video_processor
 Family : Cyclone IV E
 Device : EP4CE22F17C6
 Timing Models : Final
-Total logic elements : 157 / 22,320 ( < 1 % )
-    Total combinational functions : 130 / 22,320 ( < 1 % )
-    Dedicated logic registers : 103 / 22,320 ( < 1 % )
-Total registers : 103
-Total pins : 80 / 154 ( 52 % )
+Total logic elements : 751 / 22,320 ( 3 % )
+    Total combinational functions : 604 / 22,320 ( 3 % )
+    Dedicated logic registers : 481 / 22,320 ( 2 % )
+Total registers : 481
+Total pins : 79 / 154 ( 51 % )
 Total virtual pins : 0
 Total memory bits : 147,456 / 608,256 ( 24 % )
 Embedded Multiplier 9-bit elements : 0 / 132 ( 0 % )
-Total PLLs : 0 / 4 ( 0 % )
+Total PLLs : 1 / 4 ( 25 % )
