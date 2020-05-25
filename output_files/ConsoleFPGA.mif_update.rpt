@@ -1,5 +1,5 @@
 MIF/HEX Update report for ConsoleFPGA
-Thu Apr 23 10:49:09 2020
+Mon Apr 27 13:06:59 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -35,9 +35,9 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------+
 ; MIF/HEX Update Summary                                    ;
 +-----------------------+-----------------------------------+
-; MIF/HEX Update Status ; Failed - Thu Apr 23 10:49:09 2020 ;
+; MIF/HEX Update Status ; Failed - Mon Apr 27 13:06:59 2020 ;
 ; Revision Name         ; ConsoleFPGA                       ;
-; Top-level Entity Name ; printModule                       ;
+; Top-level Entity Name ; consoleCollenda                   ;
 ; Family                ; Cyclone IV E                      ;
 ; Device                ; EP4CE22F17C6                      ;
 +-----------------------+-----------------------------------+
@@ -56,14 +56,15 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime MIF/HEX Update
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Thu Apr 23 10:49:07 2020
+    Info: Processing started: Mon Apr 27 13:06:58 2020
 Info: Command: quartus_cdb ConsoleFPGA -c ConsoleFPGA --update_mif
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Warning (39023): Can't find Memory Initialization File onchip_mem.hex -- skipped updates for this file
 Error (39022): Found no valid Memory Initialization File to process
-Error: Quartus Prime MIF/HEX Update was unsuccessful. 1 error, 1 warning
-    Error: Peak virtual memory: 1156 megabytes
-    Error: Processing ended: Thu Apr 23 10:49:09 2020
-    Error: Elapsed time: 00:00:02
+Error: Quartus Prime MIF/HEX Update was unsuccessful. 1 error, 2 warnings
+    Error: Peak virtual memory: 1168 megabytes
+    Error: Processing ended: Mon Apr 27 13:06:59 2020
+    Error: Elapsed time: 00:00:01
     Error: Total CPU time (on all processors): 00:00:01
 
 

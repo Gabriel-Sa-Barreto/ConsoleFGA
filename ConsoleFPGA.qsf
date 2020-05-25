@@ -70,4 +70,17 @@ set_global_assignment -name BDF_FILE arquiteturaQsys/arquiteturaQsys/synthesis/c
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_location_assignment PIN_R8 -to clk_clk
+set_location_assignment PIN_A4 -to hsync_writeresponsevalid_n
+set_location_assignment PIN_B5 -to vsync_writeresponsevalid_n
+set_location_assignment PIN_D5 -to color_b_readdata[2]
+set_location_assignment PIN_A6 -to color_b_readdata[1]
+set_location_assignment PIN_D6 -to color_b_readdata[0]
+set_location_assignment PIN_E6 -to color_g_readdata[1]
+set_location_assignment PIN_C6 -to color_g_readdata[2]
+set_location_assignment PIN_D8 -to color_g_readdata[0]
+set_location_assignment PIN_F8 -to color_r_readdata[2]
+set_location_assignment PIN_E9 -to color_r_readdata[1]
+set_location_assignment PIN_F9 -to color_r_readdata[0]
+set_location_assignment PIN_J15 -to reset_reset_n
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

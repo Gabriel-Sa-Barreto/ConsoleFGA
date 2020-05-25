@@ -28,29 +28,26 @@ module decorderInstruction(
 	output reg [31:0]  out_data
 );
 
-//parâmetro que informa a posição fixa em que deve ficar armazenado o valor da cor de background da tela.
- 
 reg [3:0]  opcode;
 reg [13:0] register;
 reg [31:0] data;
 
-//Registra o resultado da decodificação na saída do módulo
-always @(posedge clk or negedge reset) begin
-	if(!reset) begin
-		out_opcode   <=  4'bxxxx;
-		out_register <= 14'bxxxxxxxxxxxxxx;
-		out_data     <= 32'hxxxxxxxx;
+always @(posedge clk_en) begin
+	if(!new_instruction) begin
+		out_opcode   <= opcode;
+    	out_register <= register;
+    	out_data     <= data;
 	end
 	else begin
-		out_opcode   <= opcode;
-		out_register <= register;
-		out_data     <= data;
+		out_opcode   <= 4'b1111;      //valor default de opcode
+		out_register <= 0;       	 //valor default de register
+		out_data     <= 32'd0;       //valor default de data
 	end
 end
 
-always @(*) begin
-	if(new_instruction == 1'b0) begin 				//novas instruções podem ser decodificadas 
-		if(clk_en == 1'b1) begin
+always @(new_instruction or dataA or dataB) begin
+	case(new_instruction)
+		2'b0: begin
 			opcode = dataA[3:0];
 			case (dataA[3:0])
 				4'b0000: begin                 		//instruçao de alterar posiçao de um sprite.
@@ -59,7 +56,7 @@ always @(*) begin
 					    data = dataB[31:0];  		//output data (valores de x e y).
 				end
 				4'b0001: begin                 		//instruçao de escrita na memória de sprites.
-					register = dataA[13:0];  		//endereço onde os dados serão escritos.
+					register = dataA[17:4];  		//endereço onde os dados serão escritos.
 					    data = dataB[31:0];  		//output data (valor de nova cor).
 				end
 				4'b0010: begin                 		//instruçao de alterar offset de memoria associado a um sprite.
@@ -74,21 +71,23 @@ always @(*) begin
 				default: begin
 				   	opcode   = 4'b1111; //valor default de opcode
 					register = 0;       //valor default de register
-					data     = 0;       //valor default de data
+					data     = 32'd00;       //valor default de data
 				end
 			endcase
 		end
-		else begin
-			opcode   = 4'b1111; //valor default de opcode
-			register = 0;       //valor default de register
-			data     = 0;       //valor default de data
+
+		2'b1: begin
+			opcode   = 4'b1111;      //valor default de opcode
+			register = 0;       	 //valor default de register
+			data     = 32'd0;       //valor default de data
 		end
-	end
-	else begin   			//As saídas permanecem as mesmas caso ainda não possam ser executadas novas instruções.
-		opcode   = 4'b1111; //valor default de opcode
-		register = 0;       //valor default de register
-		data     = 0;       //valor default de data
-	end
+
+		default: begin
+			opcode   = 4'b1111;      //valor default de opcode
+			register = 0;       	 //valor default de register
+			data     = 32'd0;       //valor default de data
+		end
+	endcase
 end
 
 endmodule

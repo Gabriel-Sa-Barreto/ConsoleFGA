@@ -1,14 +1,14 @@
-Fitter Status : Successful - Fri Apr 24 17:17:29 2020
+Fitter Status : Successful - Mon May 25 18:26:20 2020
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : ConsoleFPGA
 Top-level Entity Name : consoleCollenda
 Family : Cyclone IV E
 Device : EP4CE22F17C6
 Timing Models : Final
-Total logic elements : 2,406 / 22,320 ( 11 % )
-    Total combinational functions : 2,165 / 22,320 ( 10 % )
-    Dedicated logic registers : 1,376 / 22,320 ( 6 % )
-Total registers : 1376
+Total logic elements : 2,449 / 22,320 ( 11 % )
+    Total combinational functions : 2,203 / 22,320 ( 10 % )
+    Dedicated logic registers : 1,402 / 22,320 ( 6 % )
+Total registers : 1402
 Total pins : 13 / 154 ( 8 % )
 Total virtual pins : 0
 Total memory bits : 191,488 / 608,256 ( 31 % )

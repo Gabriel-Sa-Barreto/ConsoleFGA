@@ -4,18 +4,19 @@
 
 `timescale 1 ps / 1 ps
 module collenda (
-		input  wire       check_printting_export,         // check_printting.export
-		input  wire       clk_clk,                        //             clk.clk
-		output wire [2:0] color_b_readdata,               //         color_b.readdata
-		output wire [2:0] color_g_readdata,               //         color_g.readdata
-		output wire [2:0] color_r_readdata,               //         color_r.readdata
-		output wire       hsync_writeresponsevalid_n,     //           hsync.writeresponsevalid_n
-		output wire       printting_writeresponsevalid_n, //       printting.writeresponsevalid_n
-		input  wire       reset_reset_n,                  //           reset.reset_n
-		output wire       vsync_writeresponsevalid_n      //           vsync.writeresponsevalid_n
+		input  wire       check_printting_export,         //  check_printting.export
+		input  wire       clk_clk,                        //              clk.clk
+		output wire [2:0] color_b_readdata,               //          color_b.readdata
+		output wire [2:0] color_g_readdata,               //          color_g.readdata
+		output wire [2:0] color_r_readdata,               //          color_r.readdata
+		output wire       hsync_writeresponsevalid_n,     //            hsync.writeresponsevalid_n
+		output wire       printting_writeresponsevalid_n, //        printting.writeresponsevalid_n
+		input  wire       pushbutton_reset_export,        // pushbutton_reset.export
+		input  wire       reset_reset_n,                  //            reset.reset_n
+		output wire       vsync_writeresponsevalid_n      //            vsync.writeresponsevalid_n
 	);
 
-	wire         nios2_gen2_0_debug_reset_request_reset;                                          // nios2_gen2_0:debug_reset_request -> [check_print:reset_n, mm_interconnect_0:check_print_reset_reset_bridge_in_reset_reset]
+	wire         nios2_gen2_0_debug_reset_request_reset;                                          // nios2_gen2_0:debug_reset_request -> [check_print:reset_n, mm_interconnect_0:check_print_reset_reset_bridge_in_reset_reset, rst_controller_001:reset_in1]
 	wire         nios2_gen2_0_custom_instruction_master_readra;                                   // nios2_gen2_0:D_ci_readra -> nios2_gen2_0_custom_instruction_master_translator:ci_slave_readra
 	wire   [4:0] nios2_gen2_0_custom_instruction_master_a;                                        // nios2_gen2_0:D_ci_a -> nios2_gen2_0_custom_instruction_master_translator:ci_slave_a
 	wire   [4:0] nios2_gen2_0_custom_instruction_master_b;                                        // nios2_gen2_0:D_ci_b -> nios2_gen2_0_custom_instruction_master_translator:ci_slave_b
@@ -73,6 +74,7 @@ module collenda (
 	wire  [31:0] nios2_gen2_0_custom_instruction_master_multi_slave_translator0_ci_master_datab;  // nios2_gen2_0_custom_instruction_master_multi_slave_translator0:ci_master_datab -> video_processor_0:dataB
 	wire  [31:0] nios2_gen2_0_custom_instruction_master_multi_slave_translator0_ci_master_dataa;  // nios2_gen2_0_custom_instruction_master_multi_slave_translator0:ci_master_dataa -> video_processor_0:dataA
 	wire         nios2_gen2_0_custom_instruction_master_multi_slave_translator0_ci_master_reset;  // nios2_gen2_0_custom_instruction_master_multi_slave_translator0:ci_master_reset -> video_processor_0:reset
+	wire         nios2_gen2_0_custom_instruction_master_multi_slave_translator0_ci_master_done;   // video_processor_0:done_instruction -> nios2_gen2_0_custom_instruction_master_multi_slave_translator0:ci_master_done
 	wire  [31:0] nios2_gen2_0_data_master_readdata;                                               // mm_interconnect_0:nios2_gen2_0_data_master_readdata -> nios2_gen2_0:d_readdata
 	wire         nios2_gen2_0_data_master_waitrequest;                                            // mm_interconnect_0:nios2_gen2_0_data_master_waitrequest -> nios2_gen2_0:d_waitrequest
 	wire         nios2_gen2_0_data_master_debugaccess;                                            // nios2_gen2_0:debug_mem_slave_debugaccess_to_roms -> mm_interconnect_0:nios2_gen2_0_data_master_debugaccess
@@ -109,10 +111,13 @@ module collenda (
 	wire         mm_interconnect_0_onchip_memory2_0_s1_clken;                                     // mm_interconnect_0:onchip_memory2_0_s1_clken -> onchip_memory2_0:clken
 	wire  [31:0] mm_interconnect_0_check_print_s1_readdata;                                       // check_print:readdata -> mm_interconnect_0:check_print_s1_readdata
 	wire   [1:0] mm_interconnect_0_check_print_s1_address;                                        // mm_interconnect_0:check_print_s1_address -> check_print:address
+	wire  [31:0] mm_interconnect_0_pushbutton_reset_s1_readdata;                                  // pushbutton_reset:readdata -> mm_interconnect_0:pushbutton_reset_s1_readdata
+	wire   [1:0] mm_interconnect_0_pushbutton_reset_s1_address;                                   // mm_interconnect_0:pushbutton_reset_s1_address -> pushbutton_reset:address
 	wire         irq_mapper_receiver0_irq;                                                        // jtag_uart_0:av_irq -> irq_mapper:receiver0_irq
 	wire  [31:0] nios2_gen2_0_irq_irq;                                                            // irq_mapper:sender_irq -> nios2_gen2_0:irq
 	wire         rst_controller_reset_out_reset;                                                  // rst_controller:reset_out -> [irq_mapper:reset, jtag_uart_0:rst_n, mm_interconnect_0:nios2_gen2_0_reset_reset_bridge_in_reset_reset, nios2_gen2_0:reset_n, onchip_memory2_0:reset, rst_translator:in_reset]
 	wire         rst_controller_reset_out_reset_req;                                              // rst_controller:reset_req -> [nios2_gen2_0:reset_req, onchip_memory2_0:reset_req, rst_translator:reset_req_in]
+	wire         rst_controller_001_reset_out_reset;                                              // rst_controller_001:reset_out -> [mm_interconnect_0:pushbutton_reset_reset_reset_bridge_in_reset_reset, pushbutton_reset:reset_n]
 
 	collenda_check_print check_print (
 		.clk      (clk_clk),                                   //                 clk.clk
@@ -195,12 +200,21 @@ module collenda (
 		.freeze     (1'b0)                                              // (terminated)
 	);
 
+	collenda_check_print pushbutton_reset (
+		.clk      (clk_clk),                                        //                 clk.clk
+		.reset_n  (~rst_controller_001_reset_out_reset),            //               reset.reset_n
+		.address  (mm_interconnect_0_pushbutton_reset_s1_address),  //                  s1.address
+		.readdata (mm_interconnect_0_pushbutton_reset_s1_readdata), //                    .readdata
+		.in_port  (pushbutton_reset_export)                         // external_connection.export
+	);
+
 	video_processor video_processor_0 (
 		.clk_en              (nios2_gen2_0_custom_instruction_master_multi_slave_translator0_ci_master_clk_en), // nios_custom_instruction_slave.clk_en
 		.clk_FPGA            (nios2_gen2_0_custom_instruction_master_multi_slave_translator0_ci_master_clk),    //                              .clk
 		.reset               (nios2_gen2_0_custom_instruction_master_multi_slave_translator0_ci_master_reset),  //                              .reset
 		.dataB               (nios2_gen2_0_custom_instruction_master_multi_slave_translator0_ci_master_datab),  //                              .datab
 		.dataA               (nios2_gen2_0_custom_instruction_master_multi_slave_translator0_ci_master_dataa),  //                              .dataa
+		.done_instruction    (nios2_gen2_0_custom_instruction_master_multi_slave_translator0_ci_master_done),   //                              .done
 		.G                   (color_g_readdata),                                                                //                 conduit_end_G.readdata
 		.B                   (color_b_readdata),                                                                //                 conduit_end_B.readdata
 		.R                   (color_r_readdata),                                                                //                 conduit_end_R.readdata
@@ -311,7 +325,7 @@ module collenda (
 
 	altera_customins_slave_translator #(
 		.N_WIDTH          (8),
-		.USE_DONE         (0),
+		.USE_DONE         (1),
 		.NUM_FIXED_CYCLES (0)
 	) nios2_gen2_0_custom_instruction_master_multi_slave_translator0 (
 		.ci_slave_dataa      (nios2_gen2_0_custom_instruction_master_multi_xconnect_ci_master0_dataa),          //  ci_slave.dataa
@@ -338,6 +352,7 @@ module collenda (
 		.ci_master_clk       (nios2_gen2_0_custom_instruction_master_multi_slave_translator0_ci_master_clk),    //          .clk
 		.ci_master_clken     (nios2_gen2_0_custom_instruction_master_multi_slave_translator0_ci_master_clk_en), //          .clk_en
 		.ci_master_reset     (nios2_gen2_0_custom_instruction_master_multi_slave_translator0_ci_master_reset),  //          .reset
+		.ci_master_done      (nios2_gen2_0_custom_instruction_master_multi_slave_translator0_ci_master_done),   //          .done
 		.ci_master_n         (),                                                                                // (terminated)
 		.ci_master_readra    (),                                                                                // (terminated)
 		.ci_master_readrb    (),                                                                                // (terminated)
@@ -348,50 +363,52 @@ module collenda (
 		.ci_master_ipending  (),                                                                                // (terminated)
 		.ci_master_estatus   (),                                                                                // (terminated)
 		.ci_master_reset_req (),                                                                                // (terminated)
-		.ci_master_start     (),                                                                                // (terminated)
-		.ci_master_done      (1'b0)                                                                             // (terminated)
+		.ci_master_start     ()                                                                                 // (terminated)
 	);
 
 	collenda_mm_interconnect_0 mm_interconnect_0 (
-		.clk_0_clk_clk                                  (clk_clk),                                                     //                                clk_0_clk.clk
-		.check_print_reset_reset_bridge_in_reset_reset  (nios2_gen2_0_debug_reset_request_reset),                      //  check_print_reset_reset_bridge_in_reset.reset
-		.nios2_gen2_0_reset_reset_bridge_in_reset_reset (rst_controller_reset_out_reset),                              // nios2_gen2_0_reset_reset_bridge_in_reset.reset
-		.nios2_gen2_0_data_master_address               (nios2_gen2_0_data_master_address),                            //                 nios2_gen2_0_data_master.address
-		.nios2_gen2_0_data_master_waitrequest           (nios2_gen2_0_data_master_waitrequest),                        //                                         .waitrequest
-		.nios2_gen2_0_data_master_byteenable            (nios2_gen2_0_data_master_byteenable),                         //                                         .byteenable
-		.nios2_gen2_0_data_master_read                  (nios2_gen2_0_data_master_read),                               //                                         .read
-		.nios2_gen2_0_data_master_readdata              (nios2_gen2_0_data_master_readdata),                           //                                         .readdata
-		.nios2_gen2_0_data_master_write                 (nios2_gen2_0_data_master_write),                              //                                         .write
-		.nios2_gen2_0_data_master_writedata             (nios2_gen2_0_data_master_writedata),                          //                                         .writedata
-		.nios2_gen2_0_data_master_debugaccess           (nios2_gen2_0_data_master_debugaccess),                        //                                         .debugaccess
-		.nios2_gen2_0_instruction_master_address        (nios2_gen2_0_instruction_master_address),                     //          nios2_gen2_0_instruction_master.address
-		.nios2_gen2_0_instruction_master_waitrequest    (nios2_gen2_0_instruction_master_waitrequest),                 //                                         .waitrequest
-		.nios2_gen2_0_instruction_master_read           (nios2_gen2_0_instruction_master_read),                        //                                         .read
-		.nios2_gen2_0_instruction_master_readdata       (nios2_gen2_0_instruction_master_readdata),                    //                                         .readdata
-		.check_print_s1_address                         (mm_interconnect_0_check_print_s1_address),                    //                           check_print_s1.address
-		.check_print_s1_readdata                        (mm_interconnect_0_check_print_s1_readdata),                   //                                         .readdata
-		.jtag_uart_0_avalon_jtag_slave_address          (mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_address),     //            jtag_uart_0_avalon_jtag_slave.address
-		.jtag_uart_0_avalon_jtag_slave_write            (mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_write),       //                                         .write
-		.jtag_uart_0_avalon_jtag_slave_read             (mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_read),        //                                         .read
-		.jtag_uart_0_avalon_jtag_slave_readdata         (mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_readdata),    //                                         .readdata
-		.jtag_uart_0_avalon_jtag_slave_writedata        (mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_writedata),   //                                         .writedata
-		.jtag_uart_0_avalon_jtag_slave_waitrequest      (mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_waitrequest), //                                         .waitrequest
-		.jtag_uart_0_avalon_jtag_slave_chipselect       (mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_chipselect),  //                                         .chipselect
-		.nios2_gen2_0_debug_mem_slave_address           (mm_interconnect_0_nios2_gen2_0_debug_mem_slave_address),      //             nios2_gen2_0_debug_mem_slave.address
-		.nios2_gen2_0_debug_mem_slave_write             (mm_interconnect_0_nios2_gen2_0_debug_mem_slave_write),        //                                         .write
-		.nios2_gen2_0_debug_mem_slave_read              (mm_interconnect_0_nios2_gen2_0_debug_mem_slave_read),         //                                         .read
-		.nios2_gen2_0_debug_mem_slave_readdata          (mm_interconnect_0_nios2_gen2_0_debug_mem_slave_readdata),     //                                         .readdata
-		.nios2_gen2_0_debug_mem_slave_writedata         (mm_interconnect_0_nios2_gen2_0_debug_mem_slave_writedata),    //                                         .writedata
-		.nios2_gen2_0_debug_mem_slave_byteenable        (mm_interconnect_0_nios2_gen2_0_debug_mem_slave_byteenable),   //                                         .byteenable
-		.nios2_gen2_0_debug_mem_slave_waitrequest       (mm_interconnect_0_nios2_gen2_0_debug_mem_slave_waitrequest),  //                                         .waitrequest
-		.nios2_gen2_0_debug_mem_slave_debugaccess       (mm_interconnect_0_nios2_gen2_0_debug_mem_slave_debugaccess),  //                                         .debugaccess
-		.onchip_memory2_0_s1_address                    (mm_interconnect_0_onchip_memory2_0_s1_address),               //                      onchip_memory2_0_s1.address
-		.onchip_memory2_0_s1_write                      (mm_interconnect_0_onchip_memory2_0_s1_write),                 //                                         .write
-		.onchip_memory2_0_s1_readdata                   (mm_interconnect_0_onchip_memory2_0_s1_readdata),              //                                         .readdata
-		.onchip_memory2_0_s1_writedata                  (mm_interconnect_0_onchip_memory2_0_s1_writedata),             //                                         .writedata
-		.onchip_memory2_0_s1_byteenable                 (mm_interconnect_0_onchip_memory2_0_s1_byteenable),            //                                         .byteenable
-		.onchip_memory2_0_s1_chipselect                 (mm_interconnect_0_onchip_memory2_0_s1_chipselect),            //                                         .chipselect
-		.onchip_memory2_0_s1_clken                      (mm_interconnect_0_onchip_memory2_0_s1_clken)                  //                                         .clken
+		.clk_0_clk_clk                                      (clk_clk),                                                     //                                    clk_0_clk.clk
+		.check_print_reset_reset_bridge_in_reset_reset      (nios2_gen2_0_debug_reset_request_reset),                      //      check_print_reset_reset_bridge_in_reset.reset
+		.nios2_gen2_0_reset_reset_bridge_in_reset_reset     (rst_controller_reset_out_reset),                              //     nios2_gen2_0_reset_reset_bridge_in_reset.reset
+		.pushbutton_reset_reset_reset_bridge_in_reset_reset (rst_controller_001_reset_out_reset),                          // pushbutton_reset_reset_reset_bridge_in_reset.reset
+		.nios2_gen2_0_data_master_address                   (nios2_gen2_0_data_master_address),                            //                     nios2_gen2_0_data_master.address
+		.nios2_gen2_0_data_master_waitrequest               (nios2_gen2_0_data_master_waitrequest),                        //                                             .waitrequest
+		.nios2_gen2_0_data_master_byteenable                (nios2_gen2_0_data_master_byteenable),                         //                                             .byteenable
+		.nios2_gen2_0_data_master_read                      (nios2_gen2_0_data_master_read),                               //                                             .read
+		.nios2_gen2_0_data_master_readdata                  (nios2_gen2_0_data_master_readdata),                           //                                             .readdata
+		.nios2_gen2_0_data_master_write                     (nios2_gen2_0_data_master_write),                              //                                             .write
+		.nios2_gen2_0_data_master_writedata                 (nios2_gen2_0_data_master_writedata),                          //                                             .writedata
+		.nios2_gen2_0_data_master_debugaccess               (nios2_gen2_0_data_master_debugaccess),                        //                                             .debugaccess
+		.nios2_gen2_0_instruction_master_address            (nios2_gen2_0_instruction_master_address),                     //              nios2_gen2_0_instruction_master.address
+		.nios2_gen2_0_instruction_master_waitrequest        (nios2_gen2_0_instruction_master_waitrequest),                 //                                             .waitrequest
+		.nios2_gen2_0_instruction_master_read               (nios2_gen2_0_instruction_master_read),                        //                                             .read
+		.nios2_gen2_0_instruction_master_readdata           (nios2_gen2_0_instruction_master_readdata),                    //                                             .readdata
+		.check_print_s1_address                             (mm_interconnect_0_check_print_s1_address),                    //                               check_print_s1.address
+		.check_print_s1_readdata                            (mm_interconnect_0_check_print_s1_readdata),                   //                                             .readdata
+		.jtag_uart_0_avalon_jtag_slave_address              (mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_address),     //                jtag_uart_0_avalon_jtag_slave.address
+		.jtag_uart_0_avalon_jtag_slave_write                (mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_write),       //                                             .write
+		.jtag_uart_0_avalon_jtag_slave_read                 (mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_read),        //                                             .read
+		.jtag_uart_0_avalon_jtag_slave_readdata             (mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_readdata),    //                                             .readdata
+		.jtag_uart_0_avalon_jtag_slave_writedata            (mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_writedata),   //                                             .writedata
+		.jtag_uart_0_avalon_jtag_slave_waitrequest          (mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_waitrequest), //                                             .waitrequest
+		.jtag_uart_0_avalon_jtag_slave_chipselect           (mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_chipselect),  //                                             .chipselect
+		.nios2_gen2_0_debug_mem_slave_address               (mm_interconnect_0_nios2_gen2_0_debug_mem_slave_address),      //                 nios2_gen2_0_debug_mem_slave.address
+		.nios2_gen2_0_debug_mem_slave_write                 (mm_interconnect_0_nios2_gen2_0_debug_mem_slave_write),        //                                             .write
+		.nios2_gen2_0_debug_mem_slave_read                  (mm_interconnect_0_nios2_gen2_0_debug_mem_slave_read),         //                                             .read
+		.nios2_gen2_0_debug_mem_slave_readdata              (mm_interconnect_0_nios2_gen2_0_debug_mem_slave_readdata),     //                                             .readdata
+		.nios2_gen2_0_debug_mem_slave_writedata             (mm_interconnect_0_nios2_gen2_0_debug_mem_slave_writedata),    //                                             .writedata
+		.nios2_gen2_0_debug_mem_slave_byteenable            (mm_interconnect_0_nios2_gen2_0_debug_mem_slave_byteenable),   //                                             .byteenable
+		.nios2_gen2_0_debug_mem_slave_waitrequest           (mm_interconnect_0_nios2_gen2_0_debug_mem_slave_waitrequest),  //                                             .waitrequest
+		.nios2_gen2_0_debug_mem_slave_debugaccess           (mm_interconnect_0_nios2_gen2_0_debug_mem_slave_debugaccess),  //                                             .debugaccess
+		.onchip_memory2_0_s1_address                        (mm_interconnect_0_onchip_memory2_0_s1_address),               //                          onchip_memory2_0_s1.address
+		.onchip_memory2_0_s1_write                          (mm_interconnect_0_onchip_memory2_0_s1_write),                 //                                             .write
+		.onchip_memory2_0_s1_readdata                       (mm_interconnect_0_onchip_memory2_0_s1_readdata),              //                                             .readdata
+		.onchip_memory2_0_s1_writedata                      (mm_interconnect_0_onchip_memory2_0_s1_writedata),             //                                             .writedata
+		.onchip_memory2_0_s1_byteenable                     (mm_interconnect_0_onchip_memory2_0_s1_byteenable),            //                                             .byteenable
+		.onchip_memory2_0_s1_chipselect                     (mm_interconnect_0_onchip_memory2_0_s1_chipselect),            //                                             .chipselect
+		.onchip_memory2_0_s1_clken                          (mm_interconnect_0_onchip_memory2_0_s1_clken),                 //                                             .clken
+		.pushbutton_reset_s1_address                        (mm_interconnect_0_pushbutton_reset_s1_address),               //                          pushbutton_reset_s1.address
+		.pushbutton_reset_s1_readdata                       (mm_interconnect_0_pushbutton_reset_s1_readdata)               //                                             .readdata
 	);
 
 	collenda_irq_mapper irq_mapper (
@@ -462,6 +479,69 @@ module collenda (
 		.reset_req_in14 (1'b0),                               // (terminated)
 		.reset_in15     (1'b0),                               // (terminated)
 		.reset_req_in15 (1'b0)                                // (terminated)
+	);
+
+	altera_reset_controller #(
+		.NUM_RESET_INPUTS          (2),
+		.OUTPUT_RESET_SYNC_EDGES   ("deassert"),
+		.SYNC_DEPTH                (2),
+		.RESET_REQUEST_PRESENT     (0),
+		.RESET_REQ_WAIT_TIME       (1),
+		.MIN_RST_ASSERTION_TIME    (3),
+		.RESET_REQ_EARLY_DSRT_TIME (1),
+		.USE_RESET_REQUEST_IN0     (0),
+		.USE_RESET_REQUEST_IN1     (0),
+		.USE_RESET_REQUEST_IN2     (0),
+		.USE_RESET_REQUEST_IN3     (0),
+		.USE_RESET_REQUEST_IN4     (0),
+		.USE_RESET_REQUEST_IN5     (0),
+		.USE_RESET_REQUEST_IN6     (0),
+		.USE_RESET_REQUEST_IN7     (0),
+		.USE_RESET_REQUEST_IN8     (0),
+		.USE_RESET_REQUEST_IN9     (0),
+		.USE_RESET_REQUEST_IN10    (0),
+		.USE_RESET_REQUEST_IN11    (0),
+		.USE_RESET_REQUEST_IN12    (0),
+		.USE_RESET_REQUEST_IN13    (0),
+		.USE_RESET_REQUEST_IN14    (0),
+		.USE_RESET_REQUEST_IN15    (0),
+		.ADAPT_RESET_REQUEST       (0)
+	) rst_controller_001 (
+		.reset_in0      (~reset_reset_n),                         // reset_in0.reset
+		.reset_in1      (nios2_gen2_0_debug_reset_request_reset), // reset_in1.reset
+		.clk            (clk_clk),                                //       clk.clk
+		.reset_out      (rst_controller_001_reset_out_reset),     // reset_out.reset
+		.reset_req      (),                                       // (terminated)
+		.reset_req_in0  (1'b0),                                   // (terminated)
+		.reset_req_in1  (1'b0),                                   // (terminated)
+		.reset_in2      (1'b0),                                   // (terminated)
+		.reset_req_in2  (1'b0),                                   // (terminated)
+		.reset_in3      (1'b0),                                   // (terminated)
+		.reset_req_in3  (1'b0),                                   // (terminated)
+		.reset_in4      (1'b0),                                   // (terminated)
+		.reset_req_in4  (1'b0),                                   // (terminated)
+		.reset_in5      (1'b0),                                   // (terminated)
+		.reset_req_in5  (1'b0),                                   // (terminated)
+		.reset_in6      (1'b0),                                   // (terminated)
+		.reset_req_in6  (1'b0),                                   // (terminated)
+		.reset_in7      (1'b0),                                   // (terminated)
+		.reset_req_in7  (1'b0),                                   // (terminated)
+		.reset_in8      (1'b0),                                   // (terminated)
+		.reset_req_in8  (1'b0),                                   // (terminated)
+		.reset_in9      (1'b0),                                   // (terminated)
+		.reset_req_in9  (1'b0),                                   // (terminated)
+		.reset_in10     (1'b0),                                   // (terminated)
+		.reset_req_in10 (1'b0),                                   // (terminated)
+		.reset_in11     (1'b0),                                   // (terminated)
+		.reset_req_in11 (1'b0),                                   // (terminated)
+		.reset_in12     (1'b0),                                   // (terminated)
+		.reset_req_in12 (1'b0),                                   // (terminated)
+		.reset_in13     (1'b0),                                   // (terminated)
+		.reset_req_in13 (1'b0),                                   // (terminated)
+		.reset_in14     (1'b0),                                   // (terminated)
+		.reset_req_in14 (1'b0),                                   // (terminated)
+		.reset_in15     (1'b0),                                   // (terminated)
+		.reset_req_in15 (1'b0)                                    // (terminated)
 	);
 
 endmodule

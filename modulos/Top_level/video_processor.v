@@ -5,6 +5,7 @@ module video_processor(
 	input wire [31:0] dataA,
 	input wire [31:0] dataB,
 
+	output wire       done_instruction,
 	output wire [2:0] R,
 	output wire [2:0] G,
 	output wire [2:0] B,
@@ -28,7 +29,6 @@ wire [31:0] data_reg;
 wire [13:0] memory_address;
 wire [13:0] decoded_address;
 wire 		active_area;
-wire        processor_out_selector;
 wire [13:0] address;
 wire [8:0]  memory_data;
 wire [8:0]  memory_data_out;
@@ -38,6 +38,7 @@ wire [9:0]  pixel_x;
 wire [8:0]  pixel_y;
 wire 		clk_100;
 wire 		clk_25;
+wire        reset_done;
 /*------------------------------------------------------------------------*/
 
 /*-----Sinais da unidade de controle para o gerenciamento dos módulos-----*/
@@ -93,7 +94,8 @@ controlUnit_inst
 	.register_wr(register_wr) ,						// output  register_wr_sig
 	.selectorDemuxRegister(selectorDemuxRegister) ,	// output  selectorDemuxRegister_sig
 	.selectorDemuxData(selectorDemuxData) ,			// output  selectorDemuxData_sig
-	.selectorAddress(selectorAddress) 				// output  selectorAddress_sig
+	.selectorAddress(selectorAddress), 				// output  selectorAddress_sig
+	.reset_done(reset_done)
 );
 
 
@@ -159,6 +161,7 @@ sprite_memory sprite_memory_inst
 (
 	.address(address) ,					// input [13:0] address_sig
 	.clock(clk_100) ,					// input  clock_sig  (100Mhz)
+	.reset_done(reset_done),
 	.data(memory_data) ,				// input [8:0] data_sig
 	.wren(memory_wr) ,					// input  wren_sig
 	.out_data(memory_data_out) ,	    // output [8:0] out_data_sig
@@ -189,10 +192,10 @@ end
 multiplexador #(.data_bits1(9), .data_bits2(9), .out_bits_size(9))
 multiplexador_inst_color
 (
-	.selector(processor_out_selector) , // input  selector_sig
-	.data(9'b000000000) ,		    	// input [data_bits1-1:0] data_sig  (vem do decodificador)
-	.data2(memory_data_out) ,		    // input [data_bits2-1:0] data2_sig (dados lidos da memória
-	.out(monitor_color_out) 			// output [out_bits_size-1:0] out_sig
+	.selector(active_area) ,    // input  selector_sig
+	.data(9'b000000000) ,		
+	.data2(memory_data_out),    // input [data_bits2-1:0] data2_sig (dados lidos da memória
+	.out(monitor_color_out) 	// output [out_bits_size-1:0] out_sig
 );
 
 
@@ -200,7 +203,7 @@ always @(negedge clk_100) begin
 	out_printtingScreen  <= printtingScreen;
 end
 
-assign processor_out_selector = active_area && done_memory;
+assign done_instruction = reg_done;
 assign R = monitor_color_out[2:0];
 assign G = monitor_color_out[5:3];
 assign B = monitor_color_out[8:6];
