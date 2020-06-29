@@ -15,19 +15,14 @@ SAIDAS:
 //////////////////////////////////////////////////////////////////////////
 **/
 
-module sprite_line_counter #( parameter size_x = 10, size_y = 9, size_address = 14, size_line = 20)
-(
+module sprite_line_counter(
 	input  wire                     clk_pixel,
-	input  wire  [size_x-1:0]       pixel_x,
-	input  wire  [size_y-1:0]       pixel_y,
-	input  wire  [31:0]             sprite_datas,
 	input  wire                     sprite_on,
 	input  wire                     reset,
-	output wire [size_address-1:0]  memory_address,
-	output wire        			    count_finished
+	output wire        			    count_finished,
+	output wire [4:0]               current_state
 );
 
-localparam [8:0] offset = 400;
 /*------------------Parâmetros da máquina de estados-------------------------*/
 localparam [4:0] ZERO     =  5'b00000,
 				ONE          =  5'b00001,
@@ -51,14 +46,11 @@ localparam [4:0] ZERO     =  5'b00000,
 				NINETEEN     =  5'b10011;			
 /*---------------------------------------------------------------------------*/
 
-
-/*----------------------Registradores auxiliares de saída---------------------------*/
-reg [size_address-1:0] out_memory_address;
+/*----------------------Registrador auxiliar de saída---------------------------*/
 reg                    out_count_finished;
 /*-----------------------------------------------------------------------------------*/
 
-reg [size_address-1:0] aux_memory_address;
-reg  [4:0]              next, state;
+reg  [4:0]              next, state, state_value;
 
 /*----------------Bloco always para atualização do estado atual----------------------*/
 always @(posedge clk_pixel or negedge reset) begin
@@ -142,44 +134,94 @@ always @(state or sprite_on) begin
 end
 /*--------------------------------------------------------------------------------------------------------*/
 
-/*--------Bloco always combinacional responsável por gerar o endereço de memória a ser acessado-----*/
-always @(pixel_x or pixel_y or sprite_on or sprite_datas or state or next) begin
-	if(sprite_on == 1'b1) begin  //se o sprite_on está habilitado então uma linha de um sprite deve ser impressa.
-		if( (pixel_x == sprite_datas[26:18]) ) begin  //primeiro pixel da linha
-			//aux_memory_address = número do sprite(registrador) * offset  
-			  aux_memory_address = sprite_datas[8:0] * offset;  
-		end
-		else if( (pixel_x > sprite_datas[26:18]) && ( pixel_x <= ( sprite_datas[26:18] + (size_line-1) ) ) ) begin
-			//ainda está dentro do limite da linha do sprite.
-			aux_memory_address = (sprite_datas[8:0] * offset) + state; 
-		end
-		else aux_memory_address = 14'bxxxxxxxxxxxxxx; 
-	end
-	else begin
-		aux_memory_address = 14'bxxxxxxxxxxxxxx;
-	end
-end
-/*--------------------------------------------------------------------------------------------------*/
-
 
 /*-------------------Bloco always responsável por gerenciar as saídas do módulo---------------------*/
-always @(negedge clk_pixel) begin
-	out_memory_address <= aux_memory_address; //atualiza o valor do registrador de saída que armazena endereços de memória.
-	if(sprite_on == 1'b1) begin
-		if(next == ZERO) begin                    //contagem  será desabilitada.
-			out_count_finished <= 1'b1;
-		end
-		else begin
-			out_count_finished <= 1'b0;
-		end 
+always @(negedge clk_pixel or negedge reset) begin
+	if(!reset) begin
+		out_count_finished <= 1'b1;
+		state_value <= ZERO;
 	end
-	else  out_count_finished <= 1'b1; 
+	else begin
+		if(sprite_on == 1'b1) begin
+			if(next == ZERO) begin                    //contagem  será desabilitada.
+				out_count_finished <= 1'b1;
+			end
+			else begin
+				out_count_finished <= 1'b0;
+			end 
+			end
+		else  out_count_finished <= 1'b1; 
+
+		case(state)
+			ZERO: begin
+				state_value <= ZERO;
+			end
+			ONE: begin
+				state_value <= ONE;
+			end
+			TWO: begin
+				state_value <= TWO;
+			end
+			THREE: begin
+				state_value <= THREE;
+			end
+			FOUR: begin
+				state_value <= FOUR;
+			end
+			FIVE: begin
+				state_value <= FIVE;
+			end
+			SIX: begin
+				state_value <= SIX;
+			end
+			SEVEN: begin
+				state_value <= SEVEN;
+			end
+			EIGHT: begin
+				state_value <= EIGHT;
+			end
+			NINE: begin
+				state_value <= NINE;
+			end
+			TEN: begin
+				state_value <= TEN;
+			end
+			ELEVEN: begin
+				state_value <= ELEVEN;
+			end
+			TWELVE: begin
+				state_value <= TWELVE;
+			end
+			THIRTEEN: begin
+				state_value <= THIRTEEN;
+			end
+			FOURTEEN: begin
+				state_value <= FOURTEEN;
+			end
+			FIFTEEN: begin
+				state_value <= FIFTEEN;
+			end
+	 		SIXTEEN: begin
+	 			state_value <= SIXTEEN;
+	 		end
+			SEVENTEEN: begin
+				state_value <= SEVENTEEN;
+			end
+			EIGHTEEN: begin
+				state_value <= EIGHTEEN;
+			end
+			NINETEEN: begin
+				state_value <= NINETEEN;
+			end
+			default: state_value = ZERO;
+		endcase
+	end
 end
 /*--------------------------------------------------------------------------------------------------*/
 
 /*-----------------Atribuição contínua das saídas---------------------------*/
 assign count_finished = out_count_finished;
-assign memory_address = out_memory_address;
+assign current_state  = state_value;
 /*---------------------------------------------------------------------------*/
 
 endmodule

@@ -44,4 +44,5 @@ memory memory_inst
 	.q(colors) 		    // output [8:0] q_sig
 );
 
+
 endmodule

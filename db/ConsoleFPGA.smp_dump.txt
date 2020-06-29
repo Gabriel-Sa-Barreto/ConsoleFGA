@@ -1,5 +1,5 @@
 
-State Machine - |consoleCollenda|collenda:inst|video_processor:video_processor_0|full_print_module:full_print_module_inst|printModule:printModule_inst|state
+State Machine - |ConsoleFPGA|video_processor:inst1|full_print_module:full_print_module_inst|printModule:printModule_inst|state
 Name state.AGUARDO state.SPRITE state.PROCESSA state.RECEBE state.AGUARDO_2 
 state.RECEBE 0 0 0 0 0 
 state.PROCESSA 0 0 1 1 0 
@@ -7,18 +7,9 @@ state.SPRITE 0 1 0 1 0
 state.AGUARDO 1 0 0 1 0 
 state.AGUARDO_2 0 0 0 1 1 
 
-State Machine - |consoleCollenda|collenda:inst|video_processor:video_processor_0|controlUnit:controlUnit_inst|state
+State Machine - |ConsoleFPGA|video_processor:inst1|controlUnit:controlUnit_inst|state
 Name state.ESCRITA_NA_MEMORIA state.HABILITAR_IMPRESSAO state.ESCREVER_NO_BANCO state.PRONTO 
 state.PRONTO 0 0 0 0 
 state.ESCREVER_NO_BANCO 0 0 1 1 
 state.HABILITAR_IMPRESSAO 0 1 0 1 
 state.ESCRITA_NA_MEMORIA 1 0 0 1 
-
-State Machine - |consoleCollenda|collenda:inst|collenda_nios2_gen2_0:nios2_gen2_0|collenda_nios2_gen2_0_cpu:cpu|collenda_nios2_gen2_0_cpu_nios2_oci:the_collenda_nios2_gen2_0_cpu_nios2_oci|collenda_nios2_gen2_0_cpu_debug_slave_wrapper:the_collenda_nios2_gen2_0_cpu_debug_slave_wrapper|collenda_nios2_gen2_0_cpu_debug_slave_tck:the_collenda_nios2_gen2_0_cpu_debug_slave_tck|DRsize
-Name DRsize.101 DRsize.100 DRsize.011 DRsize.010 DRsize.001 DRsize.000 
-DRsize.000 0 0 0 0 0 0 
-DRsize.001 0 0 0 0 1 1 
-DRsize.010 0 0 0 1 0 1 
-DRsize.011 0 0 1 0 0 1 
-DRsize.100 0 1 0 0 0 1 
-DRsize.101 1 0 0 0 0 1 

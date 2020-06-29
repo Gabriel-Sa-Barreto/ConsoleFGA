@@ -17,7 +17,7 @@ SAIDAS:
     printtingScreeen: sinal de status do modulo de impressao. (1-imprimindo, 0-nao imprimindo).     
 //////////////////////////////////////////////////////////////////////////
 **/
-module printModule #( parameter size_x = 10, size_y = 9, size_address = 14, bits_x_y = 19 )
+module printModule #( parameter size_x = 10, size_y = 10, size_address = 14, bits_x_y = 20 )
 (
 	input wire               clk,
 	input wire               clk_pixel,
@@ -42,9 +42,10 @@ localparam [2:0] RECEBE      = 3'b000,
 				SPRITE      = 3'b010,  
 				AGUARDO     = 3'b011,
 				AGUARDO_2   = 3'b100;
-localparam [13:0] address_BG = 16383;
-localparam [size_x-1:0]  screen_x = 640;   //número de colunas do monitor de acordo à resolução utilizada.
-localparam [size_y-1:0]  screen_y = 480;   //número de linhas do monitor de acordo à resolução utilizada.
+
+localparam address_BG = 14'd16383;
+localparam screen_x = 10'd640;   //número de colunas do monitor de acordo à resolução utilizada.
+localparam screen_y = 10'd480;   //número de linhas do monitor de acordo à resolução utilizada.
 /*---------------------------------------------------------------------------*/
 
 reg [2:0]  next, state; 
@@ -118,7 +119,7 @@ end
 always @(negedge clk or negedge reset) begin
 	if(!reset) begin
 		out_memory_address  	<= 14'bxxxxxxxxxxxxxx;
-		out_check_value     	<= 19'bxxxxxxxxxxxxxxxxxxx;
+		out_check_value     	<= 20'bxxxxxxxxxxxxxxxxxxxx;
 		out_sprite_on       	<= 1'b0;
 		out_sprite_datas        <= 32'hxxxxxxxx;
 	end
@@ -126,16 +127,17 @@ always @(negedge clk or negedge reset) begin
 		case(state) 
 			RECEBE:
 				begin
+					out_sprite_datas    <= 32'hxxxxxxxx;
 					if(active_area) begin
 						//envio de coordenadas para comparação.
-						out_check_value[8:0]  <= pixel_y; 
-						out_check_value[18:9] <= pixel_x;
+						out_check_value[9:0]  <= pixel_y; 
+						out_check_value[19:10] <= pixel_x;
 						out_memory_address    <= 14'bxxxxxxxxxxxxxx;
 						out_sprite_on         <= 1'b0;
 					end
 					else begin
-						out_check_value[8:0]  <= 9'bxxxxxxxxx; 
-						out_check_value[18:9] <= 10'bxxxxxxxxxx;
+						out_check_value[9:0]  <= 10'bxxxxxxxxxx; 
+						out_check_value[19:10] <= 10'bxxxxxxxxxx;
 						out_memory_address    <= 14'bxxxxxxxxxxxxxx;
 						out_sprite_on         <= 1'b0; 
 					end
@@ -144,11 +146,12 @@ always @(negedge clk or negedge reset) begin
 				begin
 					if(data_reg == 32'h00000001) begin //pixel atual pertence ao background do monitor.
 						out_memory_address    <= address_BG;  //endereço de memória onde está localizado a cor de background.
-						out_check_value[18:0] <= 19'bxxxxxxxxxxxxxxxxxxx;
+						out_check_value[19:0] <= 20'bxxxxxxxxxxxxxxxxxxxx;
+						out_sprite_datas    <= 32'hxxxxxxxx;
 					end
 					else begin 
 						out_memory_address    <= 14'bxxxxxxxxxxxxxx;
-						out_check_value[18:0] <= 19'bxxxxxxxxxxxxxxxxxxx;
+						out_check_value[19:0] <= 20'bxxxxxxxxxxxxxxxxxxxx;
 						out_sprite_on         <= 1'b1; //habilita o contador das linhas a ser impresso em cada sprite.
 						out_sprite_datas      <= data_reg;
 					end
@@ -156,13 +159,10 @@ always @(negedge clk or negedge reset) begin
 
 			SPRITE:
 				begin
-					if(count_finished == 1'b1) begin
-						out_sprite_on       <= 1'b0;  //desabilita o contador responsável pela contagem das linhas de cada sprite a ser impresso.
-						out_sprite_datas    <= 32'hxxxxxxxx;
-					end
-					else begin
-						out_sprite_on <= out_sprite_on; 
-					end
+					out_sprite_on     <= 1'b1;
+					//out_sprite_datas  <= data_reg;
+					out_memory_address    <= 14'bxxxxxxxxxxxxxx;
+					out_check_value[19:0] <= 20'bxxxxxxxxxxxxxxxxxxxx;
 				end
 		endcase
 	end

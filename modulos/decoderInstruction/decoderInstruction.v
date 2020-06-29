@@ -71,7 +71,7 @@ always @(new_instruction or dataA or dataB) begin
 				default: begin
 				   	opcode   = 4'b1111; //valor default de opcode
 					register = 0;       //valor default de register
-					data     = 32'd00;       //valor default de data
+					data     = 32'd0;       //valor default de data
 				end
 			endcase
 		end

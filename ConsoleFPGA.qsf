@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE22F17C6
-set_global_assignment -name TOP_LEVEL_ENTITY consoleCollenda
+set_global_assignment -name TOP_LEVEL_ENTITY ConsoleFPGA
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 18.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "08:33:32  OCTOBER 30, 2019"
 set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Lite Edition"
@@ -52,7 +52,27 @@ set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "SYSTEMVERILOG HDL" -section_id eda_simulation
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_global_assignment -name QIP_FILE arquiteturaQsys/arquiteturaQsys/synthesis/collenda.qip
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_location_assignment PIN_R8 -to clk_FPGA
+set_location_assignment PIN_J15 -to clk_en
+set_location_assignment PIN_D5 -to B[2]
+set_location_assignment PIN_A6 -to B[1]
+set_location_assignment PIN_D6 -to B[0]
+set_location_assignment PIN_C6 -to G[2]
+set_location_assignment PIN_E6 -to G[1]
+set_location_assignment PIN_D8 -to G[0]
+set_location_assignment PIN_F8 -to R[2]
+set_location_assignment PIN_E9 -to R[1]
+set_location_assignment PIN_F9 -to R[0]
+set_location_assignment PIN_A4 -to out_hsync
+set_location_assignment PIN_B5 -to out_vsync
+set_location_assignment PIN_E1 -to reset
+set_global_assignment -name VERILOG_FILE modulos/sprite_line_counter/calculoAddress.v
+set_global_assignment -name VERILOG_FILE modulos/registerFile/full_register_file.v
+set_global_assignment -name VERILOG_FILE modulos/mod_comparator/comparator.v
+set_global_assignment -name VERILOG_FILE modulos/mod_comparator/mod_comparator.v
 set_global_assignment -name VERILOG_FILE modulos/Top_level/video_processor.v
 set_global_assignment -name VERILOG_FILE modulos/sprite_memory/sprite_memory.v
 set_global_assignment -name VERILOG_FILE modulos/interfaceVGA/VGA_sync.v
@@ -66,21 +86,5 @@ set_global_assignment -name VERILOG_FILE modulos/ControlUnit/controlUnit.v
 set_global_assignment -name VERILOG_FILE modulos/decoderInstruction/decoderInstruction.v
 set_global_assignment -name QIP_FILE modulos/sprite_memory/memory.qip
 set_global_assignment -name QIP_FILE modulos/PLL/clock_pll.qip
-set_global_assignment -name BDF_FILE arquiteturaQsys/arquiteturaQsys/synthesis/consoleCollenda.bdf
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_location_assignment PIN_R8 -to clk_clk
-set_location_assignment PIN_A4 -to hsync_writeresponsevalid_n
-set_location_assignment PIN_B5 -to vsync_writeresponsevalid_n
-set_location_assignment PIN_D5 -to color_b_readdata[2]
-set_location_assignment PIN_A6 -to color_b_readdata[1]
-set_location_assignment PIN_D6 -to color_b_readdata[0]
-set_location_assignment PIN_E6 -to color_g_readdata[1]
-set_location_assignment PIN_C6 -to color_g_readdata[2]
-set_location_assignment PIN_D8 -to color_g_readdata[0]
-set_location_assignment PIN_F8 -to color_r_readdata[2]
-set_location_assignment PIN_E9 -to color_r_readdata[1]
-set_location_assignment PIN_F9 -to color_r_readdata[0]
-set_location_assignment PIN_J15 -to reset_reset_n
+set_global_assignment -name BDF_FILE ConsoleFPGA.bdf
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

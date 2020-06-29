@@ -21,7 +21,7 @@ input				clock, reset;
 
 output reg			hsync, vsync;
 output reg [9:0]	pixel_x;
-output reg [8:0]	pixel_y;
+output reg [9:0]	pixel_y;
 output wire			video_enable;
 
 /*	Parâmetros Horizontais */
@@ -40,9 +40,9 @@ parameter	VT = 524;
 
 assign video_enable = ((pixel_x < HD) && (pixel_y < VD));
 
-always @ (posedge clock or posedge reset)	// Processamento de pixel_x.
+always @ (posedge clock or negedge reset)	// Processamento de pixel_x.
 begin
-	if (reset)
+	if (!reset)
 	begin
 		pixel_x <= 0;
 	end
@@ -59,9 +59,9 @@ begin
 	end
 end
 
-always @ (posedge clock or posedge reset)	// Processamento de pixel_y.
+always @ (posedge clock or negedge reset)	// Processamento de pixel_y.
 begin
-	if (reset)
+	if (!reset)
 	begin
 		pixel_y <= 0;
 	end
@@ -81,9 +81,9 @@ begin
 	end
 end
 
-always @ (posedge clock or posedge reset)	// Processamento de hsync.
+always @ (posedge clock or negedge reset)	// Processamento de hsync.
 begin
-	if (reset)
+	if (!reset)
 	begin
 		hsync <= 1'b0;
 	end
@@ -103,9 +103,9 @@ begin
 	end
 end
 
-always @ (posedge clock or posedge reset)	// Processamento de vsync.
+always @ (posedge clock or negedge reset)	// Processamento de vsync.
 begin
-	if (reset)
+	if (!reset)
 	begin
 		vsync = 1'b0;
 	end
