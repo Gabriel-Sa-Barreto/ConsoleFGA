@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Sat Apr 18 10:25:48 2020
+Analysis & Synthesis Status : Successful - Mon Jun 29 15:46:32 2020
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : ConsoleFPGA
-Top-level Entity Name : printModule
+Top-level Entity Name : ConsoleFPGA
 Family : Cyclone IV E
-Total logic elements : 75
-    Total combinational functions : 24
-    Dedicated logic registers : 57
-Total registers : 57
-Total pins : 126
+Total logic elements : 195
+    Total combinational functions : 169
+    Dedicated logic registers : 103
+Total registers : 103
+Total pins : 15
 Total virtual pins : 0
-Total memory bits : 0
+Total memory bits : 147,456
 Embedded Multiplier 9-bit elements : 0
-Total PLLs : 0
+Total PLLs : 1

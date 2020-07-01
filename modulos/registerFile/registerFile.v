@@ -17,32 +17,64 @@ SAIDAS:
 **/
 module registerFile(
 	input  wire        clk,
-	input  wire [4:0]  n_reg,
-	input  wire [17:0] check, 
+	input  wire        reset,
+	input  wire [4:0]  n_reg, 
 	input  wire [31:0] data,
 	input  wire        written,
-	input  wire [1:0]  selectField,
 	
-	output  reg [31:0] out_readData,
-    output wire        success
+
+	output wire [31:0] r0,
+	output wire [31:0] r1,
+	output wire [31:0] r2,
+	output wire [31:0] r3,
+	output wire [31:0] r4,
+	output wire [31:0] r5,
+	output wire [31:0] r6,
+	output wire [31:0] r7,
+	output wire [31:0] r8,
+	output wire [31:0] r9,
+	output wire [31:0] r10,
+	output wire [31:0] r11,
+	output wire [31:0] r12,
+	output wire [31:0] r13,
+	output wire [31:0] r14,
+	output wire [31:0] r15,
+	output wire [31:0] r16,
+	output wire [31:0] r17,
+	output wire [31:0] r18,
+	output wire [31:0] r19,
+	output wire [31:0] r20,
+	output wire [31:0] r21,
+	output wire [31:0] r22,
+	output wire [31:0] r23,
+	output wire [31:0] r24,
+	output wire [31:0] r25,
+	output wire [31:0] r26,
+	output wire [31:0] r27,
+	output wire [31:0] r28,
+	output wire [31:0] r29,
+	output wire [31:0] r30,
+	output wire [31:0] r31,
+    output  wire       out_success
 );
 
 /*---Parametros que definem as posições de inicio e fim dos atributos de cada sprite em cada registrador---*/
-parameter       offset_inicio = 0; 
-parameter [4:0] offset_final  = 8;
+//localparam  n_sprite_inicio = 0; 
+//localparam 	n_sprite_final  = 8;
 
-parameter [4:0] y_inicio = 9;
-parameter [5:0] y_final  = 17;
+//localparam  y_inicio = 9;
+//localparam  y_final  = 18;
 
-parameter [5:0] x_inicio = 18;
-parameter [5:0] x_final  = 27;
-
-parameter spriteLine = 20;
+//localparam  x_inicio = 19;
+//localparam  x_final  = 28;
+//localparam  used     = 29;
+//localparam spriteLine = 20;
 
 /*----------------------------------------------------------------------------------------------------------*/
-wire [31:0] readData;
 
 /*-------------------Registradores----------------------*/	
+reg        success;
+reg [31:0] reg0;
 reg [31:0] reg1;
 reg [31:0] reg2;
 reg [31:0] reg3;
@@ -74,511 +106,247 @@ reg [31:0] reg28;
 reg [31:0] reg29;
 reg [31:0] reg30;
 reg [31:0] reg31;
-////////////////////////////////////////////////////////	
+////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////
+
+assign r0 = reg0;
+assign r1 = reg1;
+assign r2 = reg2;
+assign r3 = reg3;
+assign r4 = reg4;
+assign r5 = reg5;
+assign r6 = reg6;
+assign r7 = reg7;
+assign r8 = reg8;
+assign r9 = reg9;
+assign r10 = reg10;
+assign r11 = reg11;
+assign r12 = reg12;
+assign r13 = reg13;
+assign r14 = reg14;
+assign r15 = reg15;
+assign r16 = reg16;
+assign r17 = reg17;
+assign r18 = reg18;
+assign r19 = reg19;
+assign r20 = reg20;
+assign r21 = reg21;
+assign r22 = reg22;
+assign r23 = reg23;
+assign r24 = reg24;
+assign r25 = reg25;
+assign r26 = reg26;
+assign r27 = reg27;
+assign r28 = reg28;
+assign r29 = reg29;
+assign r30 = reg30;
+assign r31 = reg31;
+assign out_success = success;
+
 
 /*Bloco always responsavel por realizar as operaçoes de escrita e leitura
 no banco de registradores na descida do pulso de clock.
 */
-always @(negedge clk) begin
-	if(written) begin //realiza uma atualizaçao no banco
+always @(negedge clk or negedge reset) begin
+	if(!reset) begin
+		//Reset de todos os registradores
+		 reg0 <= 32'b00000000000000000000000000000000;
+		 reg1 <= 32'b00000000000000000000000000000000;
+		 reg2 <= 32'b00000000000000000000000000000000;
+		 reg3 <= 32'b00000000000000000000000000000000;
+		 reg4 <= 32'b00000000000000000000000000000000;
+		 reg5 <= 32'b00000000000000000000000000000000;
+		 reg6 <= 32'b00000000000000000000000000000000;
+		 reg7 <= 32'b00000000000000000000000000000000;
+		 reg8 <= 32'b00000000000000000000000000000000;
+		 reg9 <= 32'b00000000000000000000000000000000;
+		reg10 <= 32'b00000000000000000000000000000000;
+		reg11 <= 32'b00000000000000000000000000000000;
+		reg12 <= 32'b00000000000000000000000000000000;
+		reg13 <= 32'b00000000000000000000000000000000;
+		reg14 <= 32'b00000000000000000000000000000000;
+		reg15 <= 32'b00000000000000000000000000000000;
+		reg16 <= 32'b00000000000000000000000000000000;
+		reg17 <= 32'b00000000000000000000000000000000;
+		reg18 <= 32'b00000000000000000000000000000000;
+		reg19 <= 32'b00000000000000000000000000000000;
+		reg20 <= 32'b00000000000000000000000000000000;
+		reg21 <= 32'b00000000000000000000000000000000;
+		reg22 <= 32'b00000000000000000000000000000000;
+		reg23 <= 32'b00000000000000000000000000000000;
+		reg24 <= 32'b00000000000000000000000000000000;
+		reg25 <= 32'b00000000000000000000000000000000;
+		reg26 <= 32'b00000000000000000000000000000000;
+		reg27 <= 32'b00000000000000000000000000000000;
+		reg28 <= 32'b00000000000000000000000000000000;
+		reg29 <= 32'b00000000000000000000000000000000;
+		reg30 <= 32'b00000000000000000000000000000000;
+		reg31 <= 32'b00000000000000000000000000000000;
+	end
+	else if(written) begin //realiza uma atualizaçao no banco
 		case(n_reg) 
+			5'd0:
+				begin
+					reg0 <= data;
+					success <= 1;
+				end
 			5'd1:
 				begin
-					if(selectField == 2'b00) begin       //modifica offset
-						reg1 <= data[offset_final:offset_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b01)  begin //modifica y
-						reg1 <= data[y_final:y_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b10) begin  //modifica x
-						reg1 <= data[x_final:x_inicio];
-						success <= 1;
-					end
-					else reg1 <= reg1;
+					reg1 <= data;
+					success <= 1;
 				end
 			5'd2:
 				begin
-					if(selectField == 2'b00) begin       //modifica offset
-						reg2 <= data[offset_final:offset_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b01)  begin //modifica y
-						reg2 <= data[y_final:y_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b10) begin  //modifica x
-						reg2 <= data[x_final:x_inicio];
-						success <= 1;
-					end
-					else reg2 <= reg;
+					reg2 <= data;
+					success <= 1;
 				end
 			5'd3:
 				begin
-					if(selectField == 2'b00) begin       //modifica offset
-						reg3 <= data[offset_final:offset_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b01)  begin //modifica y
-						reg3 <= data[y_final:y_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b10) begin  //modifica x
-						reg3 <= data[x_final:x_inicio];
-						success <= 1;
-					end
-					else reg3 <= reg3;
+					reg3 <= data;
+					success <= 1;
 				end
 			5'd4:
 				begin
-					if(selectField == 2'b00) begin       //modifica offset
-						reg4 <= data[offset_final:offset_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b01)  begin //modifica y
-						reg4 <= data[y_final:y_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b10) begin  //modifica x
-						reg4 <= data[x_final:x_inicio];
-						success <= 1;
-					end
-					else reg4 <= reg4;
+					reg4 <= data;
+					success <= 1;
 				end
 			5'd5:
 				begin
-					if(selectField == 2'b00) begin       //modifica offset
-						reg5 <= data[offset_final:offset_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b01)  begin //modifica y
-						reg5 <= data[y_final:y_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b10) begin  //modifica x
-						reg5 <= data[x_final:x_inicio];
-						success <= 1;
-					end
-					else reg5 <= reg5;
+					reg5 <= data;
+					success <= 1;
 				end
 			5'd6:
 				begin
-					if(selectField == 2'b00) begin       //modifica offset
-						reg6 <= data[offset_final:offset_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b01)  begin //modifica y
-						reg6 <= data[y_final:y_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b10) begin  //modifica x
-						reg6 <= data[x_final:x_inicio];
-						success <= 1;
-					end
-					else reg6 <= reg6;
+					reg6 <= data;
+					success <= 1;
 				end
 			5'd7:
 				begin
-					if(selectField == 2'b00) begin       //modifica offset
-						reg7 <= data[offset_final:offset_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b01)  begin //modifica y
-						reg7 <= data[y_final:y_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b10) begin  //modifica x
-						reg7 <= data[x_final:x_inicio];
-						success <= 1;
-					end
-					else reg7 <= reg7;
+					reg7 <= data;
+					success <= 1;
 				end
 			5'd8:
 				begin
-					if(selectField == 2'b00) begin       //modifica offset
-						reg8 <= data[offset_final:offset_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b01)  begin //modifica y
-						reg8 <= data[y_final:y_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b10) begin  //modifica x
-						reg8 <= data[x_final:x_inicio];
-						success <= 1;
-					end
-					else reg8 <= reg8;
+					reg8 <= data;
+					success <= 1;
 				end
 			5'd9:
 				begin
-					if(selectField == 2'b00) begin       //modifica offset
-						reg9 <= data[offset_final:offset_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b01)  begin //modifica y
-						reg9 <= data[y_final:y_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b10) begin  //modifica x
-						reg9 <= data[x_final:x_inicio];
-						success <= 1;
-					end
-					else reg9 <= reg9;
+					reg9 <= data;
+					success <= 1;
 				end
 			5'd10:
 				begin
-					if(selectField == 2'b00) begin       //modifica offset
-						reg10 <= data[offset_final:offset_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b01)  begin //modifica y
-						reg10 <= data[y_final:y_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b10) begin  //modifica x
-						reg10 <= data[x_final:x_inicio];
-						success <= 1;
-					end
-					else reg10 <= reg10;
+					reg10 <= data;
+					success <= 1;
 				end
 			5'd11:
 				begin
-					if(selectField == 2'b00) begin       //modifica offset
-						reg11 <= data[offset_final:offset_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b01)  begin //modifica y
-						reg11 <= data[y_final:y_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b10) begin  //modifica x
-						reg11 <= data[x_final:x_inicio];
-						success <= 1;
-					end
-					else reg11 <= reg11;
+					reg11 <= data;
+					success <= 1;
 				end
 			5'd12:
 				begin
-					if(selectField == 2'b00) begin       //modifica offset
-						reg12 <= data[offset_final:offset_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b01)  begin //modifica y
-						reg12 <= data[y_final:y_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b10) begin  //modifica x
-						reg12 <= data[x_final:x_inicio];
-						success <= 1;
-					end
-					else reg12 <= reg12;
+					reg12 <= data;
+					success <= 1;
 				end
 			5'd13:
 				begin
-					if(selectField == 2'b00) begin       //modifica offset
-						reg13 <= data[offset_final:offset_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b01)  begin //modifica y
-						reg13 <= data[y_final:y_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b10) begin  //modifica x
-						reg13 <= data[x_final:x_inicio];
-						success <= 1;
-					end
-					else reg13 <= reg13;
+					reg13 <= data;
+					success <= 1;
 				end
 			5'd14:
 				begin
-					if(selectField == 2'b00) begin       //modifica offset
-						reg14 <= data[offset_final:offset_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b01)  begin //modifica y
-						reg14 <= data[y_final:y_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b10) begin  //modifica x
-						reg14 <= data[x_final:x_inicio];
-						success <= 1;
-					end
-					else reg14 <= reg14;
+					reg14 <= data;
+					success <= 1;
 				end
 			5'd15:
 				begin
-					if(selectField == 2'b00) begin       //modifica offset
-						reg15 <= data[offset_final:offset_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b01)  begin //modifica y
-						reg15 <= data[y_final:y_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b10) begin  //modifica x
-						reg15 <= data[x_final:x_inicio];
-						success <= 1;
-					end
-					else reg15 <= reg15;
+					reg15 <= data;
+					success <= 1;
 				end
 			5'd16:
 				begin
-					if(selectField == 2'b00) begin       //modifica offset
-						reg16 <= data[offset_final:offset_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b01)  begin //modifica y
-						reg16 <= data[y_final:y_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b10) begin  //modifica x
-						reg16 <= data[x_final:x_inicio];
-						success <= 1;
-					end
-					else reg16 <= reg16;
+					reg16 <= data;
+					success <= 1;
 				end
 			5'd17:
 				begin
-					if(selectField == 2'b00) begin       //modifica offset
-						reg17 <= data[offset_final:offset_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b01)  begin //modifica y
-						reg17 <= data[y_final:y_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b10) begin  //modifica x
-						reg17 <= data[x_final:x_inicio];
-						success <= 1;
-					end
-					else reg17 <= reg17;
+					reg17 <= data;
+					success <= 1;
 				end
 			5'd18:
 				begin
-					if(selectField == 2'b00) begin       //modifica offset
-						reg18 <= data[offset_final:offset_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b01)  begin //modifica y
-						reg18 <= data[y_final:y_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b10) begin  //modifica x
-						reg18 <= data[x_final:x_inicio];
-						success <= 1;
-					end
-					else reg18 <= reg18;
+					reg18 <= data;
+					success <= 1;
 				end
 			5'd19:
 				begin
-					if(selectField == 2'b00) begin       //modifica offset
-						reg19 <= data[offset_final:offset_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b01)  begin //modifica y
-						reg19 <= data[y_final:y_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b10) begin  //modifica x
-						reg19 <= data[x_final:x_inicio];
-						success <= 1;
-					end
-					else reg19 <= reg19;
+					reg19 <= data;
+					success <= 1;
 				end
 			5'd20:
 				begin
-					if(selectField == 2'b00) begin       //modifica offset
-						reg20 <= data[offset_final:offset_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b01)  begin //modifica y
-						reg20 <= data[y_final:y_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b10) begin  //modifica x
-						reg20 <= data[x_final:x_inicio];
-						success <= 1;
-					end
-					else reg20 <= reg20;
+					reg20 <= data;
+					success <= 1;
 				end
 
 			5'd21:
 				begin
-					if(selectField == 2'b00) begin       //modifica offset
-						reg21 <= data[offset_final:offset_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b01)  begin //modifica y
-						reg21 <= data[y_final:y_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b10) begin  //modifica x
-						reg21 <= data[x_final:x_inicio];
-						success <= 1;
-					end
-					else reg21 <= reg21;
+					reg21 <= data;
+					success <= 1;
 				end
 
 			5'd22:
 				begin
-					if(selectField == 2'b00) begin       //modifica offset
-						reg22 <= data[offset_final:offset_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b01)  begin //modifica y
-						reg22 <= data[y_final:y_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b10) begin  //modifica x
-						reg22 <= data[x_final:x_inicio];
-						success <= 1;
-					end
-					else reg22 <= reg22;
+					reg22 <= data;
+					success <= 1;
 				end
 			5'd23:
 				begin
-					if(selectField == 2'b00) begin       //modifica offset
-						reg23 <= data[offset_final:offset_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b01)  begin //modifica y
-						reg23 <= data[y_final:y_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b10) begin  //modifica x
-						reg23 <= data[x_final:x_inicio];
-						success <= 1;
-					end
-					else reg23 <= reg23;
+					reg23 <= data;
+					success <= 1;
 				end
 			5'd24:
 				begin
-					if(selectField == 2'b00) begin       //modifica offset
-						reg24 <= data[offset_final:offset_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b01)  begin //modifica y
-						reg24 <= data[y_final:y_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b10) begin  //modifica x
-						reg24 <= data[x_final:x_inicio];
-						success <= 1;
-					end
-					else reg24 <= reg24;
+					reg24 <= data;
+					success <= 1;
 				end
 			5'd25:
 				begin
-					if(selectField == 2'b00) begin       //modifica offset
-						reg25 <= data[offset_final:offset_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b01)  begin //modifica y
-						reg25 <= data[y_final:y_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b10) begin  //modifica x
-						reg25 <= data[x_final:x_inicio];
-						success <= 1;
-					end
-					else reg25 <= reg25;
+					reg25 <= data;
+					success <= 1;
 				end
 			5'd26:
 				begin
-					if(selectField == 2'b00) begin       //modifica offset
-						reg26 <= data[offset_final:offset_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b01)  begin //modifica y
-						reg26 <= data[y_final:y_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b10) begin  //modifica x
-						reg26 <= data[x_final:x_inicio];
-						success <= 1;
-					end
-					else reg26 <= reg26;
+					reg26 <= data;
+					success <= 1;
 				end
 			5'd27:
 				begin
-					if(selectField == 2'b00) begin       //modifica offset
-						reg27 <= data[offset_final:offset_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b01)  begin //modifica y
-						reg27 <= data[y_final:y_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b10) begin  //modifica x
-						reg27 <= data[x_final:x_inicio];
-						success <= 1;
-					end
-					else reg27 <= reg27;
+					reg27 <= data;
+					success <= 1;
 				end
 			5'd28:
 				begin
-					if(selectField == 2'b00) begin       //modifica offset
-						reg28 <= data[offset_final:offset_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b01)  begin //modifica y
-						reg28 <= data[y_final:y_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b10) begin  //modifica x
-						reg28 <= data[x_final:x_inicio];
-						success <= 1;
-					end
-					else reg28 <= reg28;
+					reg28 <= data;
+					success <= 1;
 				end
 			5'd29:
 				begin
-					if(selectField == 2'b00) begin       //modifica offset
-						reg29 <= data[offset_final:offset_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b01)  begin //modifica y
-						reg29 <= data[y_final:y_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b10) begin  //modifica x
-						reg29 <= data[x_final:x_inicio];
-						success <= 1;
-					end
-					else reg29 <= reg29;
+					reg29 <= data;
+					success <= 1;
 				end
 			5'd30:
 				begin
-					if(selectField == 2'b00) begin       //modifica offset
-						reg30 <= data[offset_final:offset_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b01)  begin //modifica y
-						reg30 <= data[y_final:y_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b10) begin  //modifica x
-						reg30 <= data[x_final:x_inicio];
-						success <= 1;
-					end
-					else reg30 <= reg30;
+					reg30 <= data;
+					success <= 1;
 				end
 			5'd31:
 				begin
-					if(selectField == 2'b00) begin       //modifica offset
-						reg31 <= data[offset_final:offset_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b01)  begin //modifica y
-						reg31 <= data[y_final:y_inicio];
-						success <= 1;
-					end
-					else if(selectField == 2'b10) begin  //modifica x
-						reg31 <= data[x_final:x_inicio];
-						success <= 1;
-					end
-					else reg31 <= reg31;
+					reg31 <= data;
+					success <= 1;
 				end
 			default:	
 				success <= 0;
@@ -587,79 +355,4 @@ always @(negedge clk) begin
 	else success <= 0;
 end
 
-/*Bloco combinacional para realizacao de comparaçoes entre valores de entrada e valores armazenados nos registradores*/
-/*RETORNA o valor de offset armazenado em um registrador.*/
-always @(*) begin
-    if(!written) begin //comparaçao ativada.
-    	if( (check[17:9] == reg1[x_inicio:x_final]) && (check[8:0] >= reg1[y_inicio:y_final] && check[8:0] <= reg1[y_inicio:y_final] + (spriteLine - 1))); 
-    		readData = reg1;
-    	else if( (check[17:9] == reg2[x_inicio:x_final]) && (check[8:0] >= reg2[y_inicio:y_final] && check[8:0] <= reg2[y_inicio:y_final] + (spriteLine - 1))); 
-    		readData = reg2;
-    	else if( (check[17:9] == reg3[x_inicio:x_final]) && (check[8:0] >= reg3[y_inicio:y_final] && check[8:0] <= reg3[y_inicio:y_final] + (spriteLine - 1))); 
-    		readData = reg3;
-    	else if( (check[17:9] == reg4[x_inicio:x_final]) && (check[8:0] >= reg4[y_inicio:y_final] && check[8:0] <= reg4[y_inicio:y_final] + (spriteLine - 1))); 
-    		readData = reg4;
-    	else if( (check[17:9] == reg5[x_inicio:x_final]) && (check[8:0] >= reg5[y_inicio:y_final] && check[8:0] <= reg5[y_inicio:y_final] + (spriteLine - 1))); 
-    		readData = reg5;
-    	else if( (check[17:9] == reg6[x_inicio:x_final]) && (check[8:0] >= reg6[y_inicio:y_final] && check[8:0] <= reg6[y_inicio:y_final] + (spriteLine - 1))); 
-    		readData = reg6;
-    	else if( (check[17:9] == reg7[x_inicio:x_final]) && (check[8:0] >= reg7[y_inicio:y_final] && check[8:0] <= reg7[y_inicio:y_final] + (spriteLine - 1))); 
-    		readData = reg7;
-    	else if( (check[17:9] == reg8[x_inicio:x_final]) && (check[8:0] >= reg8[y_inicio:y_final] && check[8:0] <= reg8[y_inicio:y_final] + (spriteLine - 1))); 
-    		readData = reg8;
-    	else if( (check[17:9] == reg9[x_inicio:x_final]) && (check[8:0] >= reg9[y_inicio:y_final] && check[8:0] <= reg9[y_inicio:y_final] + (spriteLine - 1))); 
-    		readData = reg9;
-    	else if( (check[17:9] == reg10[x_inicio:x_final]) && (check[8:0] >= reg10[y_inicio:y_final] && check[8:0] <= reg10[y_inicio:y_final] + (spriteLine - 1))); 
-    		readData = reg10;
-    	else if( (check[17:9] == reg11[x_inicio:x_final]) && (check[8:0] >= reg11[y_inicio:y_final] && check[8:0] <= reg11[y_inicio:y_final] + (spriteLine - 1))); 
-    		readData = reg11;
-    	else if( (check[17:9] == reg12[x_inicio:x_final]) && (check[8:0] >= reg12[y_inicio:y_final] && check[8:0] <= reg12[y_inicio:y_final] + (spriteLine - 1))); 
-    		readData = reg12;
-    	else if( (check[17:9] == reg13[x_inicio:x_final]) && (check[8:0] >= reg13[y_inicio:y_final] && check[8:0] <= reg13[y_inicio:y_final] + (spriteLine - 1))); 
-    		readData = reg13;
-    	else if( (check[17:9] == reg14[x_inicio:x_final]) && (check[8:0] >= reg14[y_inicio:y_final] && check[8:0] <= reg14[y_inicio:y_final] + (spriteLine - 1))); 
-    		readData = reg14;
-    	else if( (check[17:9] == reg15[x_inicio:x_final]) && (check[8:0] >= reg15[y_inicio:y_final] && check[8:0] <= reg15[y_inicio:y_final] + (spriteLine - 1))); 
-    		readData = reg15;
-    	else if( (check[17:9] == reg16[x_inicio:x_final]) && (check[8:0] >= reg16[y_inicio:y_final] && check[8:0] <= reg16[y_inicio:y_final] + (spriteLine - 1))); 
-    		readData = reg16;
-    	else if( (check[17:9] == reg17[x_inicio:x_final]) && (check[8:0] >= reg17[y_inicio:y_final] && check[8:0] <= reg17[y_inicio:y_final] + (spriteLine - 1))); 
-    		readData = reg17;
-    	else if( (check[17:9] == reg18[x_inicio:x_final]) && (check[8:0] >= reg18[y_inicio:y_final] && check[8:0] <= reg18[y_inicio:y_final] + (spriteLine - 1))); 
-    		readData = reg18;
-    	else if( (check[17:9] == reg19[x_inicio:x_final]) && (check[8:0] >= reg19[y_inicio:y_final] && check[8:0] <= reg19[y_inicio:y_final] + (spriteLine - 1))); 
-    		readData = reg19;
-    	else if( (check[17:9] == reg20[x_inicio:x_final]) && (check[8:0] >= reg20[y_inicio:y_final] && check[8:0] <= reg20[y_inicio:y_final] + (spriteLine - 1))); 
-    		readData = reg20;
-    	else if( (check[17:9] == reg21[x_inicio:x_final]) && (check[8:0] >= reg21[y_inicio:y_final] && check[8:0] <= reg21[y_inicio:y_final] + (spriteLine - 1))); 
-    		readData = reg21;
-    	else if( (check[17:9] == reg22[x_inicio:x_final]) && (check[8:0] >= reg22[y_inicio:y_final] && check[8:0] <= reg22[y_inicio:y_final] + (spriteLine - 1))); 
-    		readData = reg22;
-    	else if( (check[17:9] == reg23[x_inicio:x_final]) && (check[8:0] >= reg23[y_inicio:y_final] && check[8:0] <= reg23[y_inicio:y_final] + (spriteLine - 1))); 
-    		readData = reg23;
-    	else if( (check[17:9] == reg24[x_inicio:x_final]) && (check[8:0] >= reg24[y_inicio:y_final] && check[8:0] <= reg24[y_inicio:y_final] + (spriteLine - 1))); 
-    		readData = reg24;
-    	else if( (check[17:9] == reg25[x_inicio:x_final]) && (check[8:0] >= reg25[y_inicio:y_final] && check[8:0] <= reg25[y_inicio:y_final] + (spriteLine - 1))); 
-    		readData = reg25;
-    	else if( (check[17:9] == reg26[x_inicio:x_final]) && (check[8:0] >= reg26[y_inicio:y_final] && check[8:0] <= reg26[y_inicio:y_final] + (spriteLine - 1))); 
-    		readData = reg26;
-    	else if( (check[17:9] == reg27[x_inicio:x_final]) && (check[8:0] >= reg27[y_inicio:y_final] && check[8:0] <= reg27[y_inicio:y_final] + (spriteLine - 1))); 
-    		readData = reg27;
-    	else if( (check[17:9] == reg28[x_inicio:x_final]) && (check[8:0] >= reg28[y_inicio:y_final] && check[8:0] <= reg28[y_inicio:y_final] + (spriteLine - 1))); 
-    		readData = reg28;
-    	else if( (check[17:9] == reg29[x_inicio:x_final]) && (check[8:0] >= reg29[y_inicio:y_final] && check[8:0] <= reg29[y_inicio:y_final] + (spriteLine - 1))); 
-    		readData = reg29;
-    	else if( (check[17:9] == reg30[x_inicio:x_final]) && (check[8:0] >= reg30[y_inicio:y_final] && check[8:0] <= reg30[y_inicio:y_final] + (spriteLine - 1))); 
-    		readData = reg30;
-    	else if( (check[17:9] == reg31[x_inicio:x_final]) && (check[8:0] >= reg31[y_inicio:y_final] && check[8:0] <= reg31[y_inicio:y_final] + (spriteLine - 1))); 
-    		readData = reg31;
-    	else readData = 32'h00000001; //valor que define que nenhum pixel foi encontrado com os valores informados.
-    end
-    else readData = 32'h00000001;
-end
 endmodule
-
-//Escreve no registro de saída o valor lido de algum registrador.
-always @(negedge clk) begin
-	out_readData <= readData;
-end

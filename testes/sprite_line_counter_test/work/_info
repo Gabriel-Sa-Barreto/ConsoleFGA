@@ -9,44 +9,44 @@ z2
 cModel Technology
 d/home/gabriel
 vsprite_line_counter
-Z0 !s110 1587002221
+!s110 1587741239
 !i10b 1
-!s100 AGcHY^lRUPkVYLiPS8T1[3
-IU2L@`L^4D[i;6gW2]2LNb0
-Z1 VDg1SIo80bB@j0V0VzS_@n1
-Z2 d/home/gabriel/Documents/ConsoleFPGA/testes/sprite_line_counter_test
-w1587002199
+!s100 ]ac;:fA1M1D4XbV]OLWec0
+InPSTYb>hUK?la:8ShGFi61
+Z0 VDg1SIo80bB@j0V0VzS_@n1
+Z1 d/home/gabriel/Documents/ConsoleFPGA/testes/sprite_line_counter_test
+w1587741228
 8/home/gabriel/Documents/ConsoleFPGA/modulos/sprite_line_counter/sprite_line_counter.v
 F/home/gabriel/Documents/ConsoleFPGA/modulos/sprite_line_counter/sprite_line_counter.v
 L0 18
-Z3 OV;L;10.5b;63
+Z2 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1587002221.000000
+!s108 1587741239.000000
 !s107 /home/gabriel/Documents/ConsoleFPGA/modulos/sprite_line_counter/sprite_line_counter.v|
-!s90 -reportprogress|300|-work|work|-stats=none|/home/gabriel/Documents/ConsoleFPGA/modulos/sprite_line_counter/sprite_line_counter.v|
+!s90 -reportprogress|300|-work|work|/home/gabriel/Documents/ConsoleFPGA/modulos/sprite_line_counter/sprite_line_counter.v|
 !i113 1
-Z5 o-work work
-Z6 tCvgOpt 0
+Z3 o-work work
+Z4 tCvgOpt 0
 vsprite_line_counter_test
-R0
+!s110 1587741236
 !i10b 1
-!s100 5eYIaRiGZCAee=5UBoGzS3
-Io3<<]:YGNhBI0lHD1g2z81
+!s100 dIDI`5Ez:fhKX?K?OPcc^2
+ILM6hD>8FWJeKXe74IGmA73
+R0
 R1
-R2
-w1587002068
+w1587740609
 8/home/gabriel/Documents/ConsoleFPGA/testes/sprite_line_counter_test/sprite_line_counter_test.v
 F/home/gabriel/Documents/ConsoleFPGA/testes/sprite_line_counter_test/sprite_line_counter_test.v
 L0 1
-R3
+R2
 r1
 !s85 0
 31
-R4
+!s108 1587741236.000000
 !s107 /home/gabriel/Documents/ConsoleFPGA/testes/sprite_line_counter_test/sprite_line_counter_test.v|
-!s90 -reportprogress|300|-work|work|-stats=none|/home/gabriel/Documents/ConsoleFPGA/testes/sprite_line_counter_test/sprite_line_counter_test.v|
+!s90 -reportprogress|300|-work|work|/home/gabriel/Documents/ConsoleFPGA/testes/sprite_line_counter_test/sprite_line_counter_test.v|
 !i113 1
-R5
-R6
+R3
+R4

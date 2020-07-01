@@ -5,7 +5,7 @@ integer sprite_size = 20;
 reg        clk_pixel;
 reg [9:0]  pixel_x;
 reg [8:0]  pixel_y;
-reg [8:0]  offset;
+reg [8:0]  n_sprite;
 reg [31:0] sprite_datas;
 reg        sprite_on;
 reg        reset;
@@ -32,8 +32,8 @@ initial begin
 		sprite_on    = 1'b0;            					//desativa a contagem
 		pixel_x      = 10'b0000100000;  					//32
 		pixel_y      = 9'b000100000;    					//32
-		offset       = 9'b000001000;                        //8
-		sprite_datas = {pixel_x,pixel_y,offset};
+		n_sprite     = 9'b000001000;                        //8
+		sprite_datas = {pixel_x,pixel_y,n_sprite};
 		#40;                                                //delay de 40 nanosegundos
 		sprite_on    = 1'b1;            					//ativa a contagem
 
@@ -47,7 +47,7 @@ initial begin
 
 		pixel_y      =  9'b000110000;                       //48
 		pixel_x      = 10'b0000100000;  					//32
-		sprite_datas = {pixel_x,pixel_y,offset};
+		sprite_datas = {pixel_x,pixel_y,n_sprite};
 		sprite_on    = 1'b1;            					//ativa a contagem
 
 		for(contagem = 1; contagem < sprite_size; contagem = contagem + 1) begin
@@ -63,7 +63,7 @@ initial begin
 		$stop; //encerra a simulação.
 end
 
-sprite_line_counter # (.size_x(10), .size_y(9), .size_address(17), .size_line(20) )
+sprite_line_counter #(.size_x(10), .size_y(9), .size_address(17), .size_line(20) )
 sprite_line_counter_inst
 (
 	.clk_pixel(clk_pixel) ,				// input  clk_pixel_sig

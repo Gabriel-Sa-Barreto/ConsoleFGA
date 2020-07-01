@@ -35,7 +35,8 @@ module controlUnit(
 	 output reg       register_wr,
 	 output reg       selectorDemuxRegister, 
 	 output reg       selectorDemuxData,
-	 output reg       selectorAddress
+	 output reg       selectorAddress,
+	 output reg       reset_done
 );
 
 
@@ -106,9 +107,15 @@ saidas correspondentes.
 */
 always @(negedge clk or negedge reset) begin
 	if(!reset) begin
-		memory_wr   = 1'bx ;
-		selectField = 4'bxxxx;
-		register_wr = 1'bx;
+		//Todas as saidas estao desativadas
+		new_instruction   <= 1'bx;   
+		memory_wr         <= 1'bx;    
+		selectField       <= 4'bxxxx; 
+		register_wr       <= 1'bx;    
+		selectorDemuxRegister <= 1'bx;  
+	    selectorDemuxData     <= 1'bx; 
+	 	selectorAddress       <= 1'bx;
+	 	reset_done            <= 1'b0;
 	end
 	else begin
 		case(next)
@@ -116,10 +123,11 @@ always @(negedge clk or negedge reset) begin
 				new_instruction   <= 1'b0;    //permite executar novas instruçoes
 				memory_wr         <= 1'bx;    //nao tem leitura na memoria
 				selectField       <= 4'bxxxx; //nao existem campos a serem alterados no registradores do banco
-				register_wr       <= 1'bx;    //nao existe leitura ou escrita para serem realizadas
+				register_wr       <= 1'b0;    
 				selectorDemuxRegister <= 1'bx; 
 	       		selectorDemuxData     <= 1'bx;
 	 			selectorAddress       <= 1'bx;
+	 			reset_done            <= 1'b1;
 			end
 			
 			ESCREVER_NO_BANCO: begin
@@ -130,6 +138,7 @@ always @(negedge clk or negedge reset) begin
 				selectorDemuxRegister <= 1'b1; //redireciona a entrada para o banco de registradores.
 	       		selectorDemuxData     <= 1'b1; //redireciona os dados para o banco de registradores.
 	 			selectorAddress       <= 1'bx; //não possue nem leitura nem escrita na memória.
+	 			reset_done            <= 1'b0;
 			end
 			
 			
@@ -142,17 +151,19 @@ always @(negedge clk or negedge reset) begin
 				selectorDemuxRegister <= 1'bx; //não possue nem acesso de escrita no banco de registradores, nem na memória. 
 	       		selectorDemuxData     <= 1'bx; //não possue nem escrita no banco de registradores, nem escrita na memória. 
 	 			selectorAddress       <= 1'b1; //seleciona os endereços de leitura da memória vindos do módulo de impressão.
+	 			reset_done            <= 1'b0;
 			end
 
 			ESCRITA_NA_MEMORIA: begin
 				new_instruction   <= 1'b1;     //nao permite executar novas instruçoes
 				memory_wr         <= 1'b1;     //aciona escrita da memoria
 				selectField       <= 4'bxxxx;  //nao existem campos a serem alterados no registradores do banco
-				register_wr       <= 1'bx;     //aciona leitura no banco de registradores
+				register_wr       <= 1'bx;     
 									
 				selectorDemuxRegister <= 1'b0;  //redireciona o endereo recebido para a memória de sprite.
 	       		selectorDemuxData     <= 1'b0;  //redireciona os dados a serem escritos para a memória de sprite.
 	 			selectorAddress       <= 1'b0;  //seleciona o endereço vindo do decodificador de instrução.
+	 			reset_done            <= 1'b0;
 			end
 
 			default: begin
@@ -165,6 +176,7 @@ always @(negedge clk or negedge reset) begin
 				selectorDemuxRegister <= 1'bx;  
 	       		selectorDemuxData     <= 1'bx; 
 	 			selectorAddress       <= 1'bx;
+	 			reset_done            <= 1'b0;
 				/////////////////////////////////////
 			end
 		endcase
