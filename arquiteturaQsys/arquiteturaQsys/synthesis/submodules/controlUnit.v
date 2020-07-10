@@ -107,9 +107,15 @@ saidas correspondentes.
 */
 always @(negedge clk or negedge reset) begin
 	if(!reset) begin
-		memory_wr   = 1'bx ;
-		selectField = 4'bxxxx;
-		register_wr = 1'bx;
+		//Todas as saidas estao desativadas
+		new_instruction   <= 1'bx;   
+		memory_wr         <= 1'bx;    
+		selectField       <= 4'bxxxx; 
+		register_wr       <= 1'bx;    
+		selectorDemuxRegister <= 1'bx;  
+	    selectorDemuxData     <= 1'bx; 
+	 	selectorAddress       <= 1'bx;
+	 	reset_done            <= 1'b0;
 	end
 	else begin
 		case(next)

@@ -86,7 +86,7 @@ module memory (
 	defparam
 		altsyncram_component.clock_enable_input_a = "BYPASS",
 		altsyncram_component.clock_enable_output_a = "BYPASS",
-		altsyncram_component.init_file = "./modulos/sprite_memory/sprites.mif",
+		altsyncram_component.init_file = "./modulos/sprite_memory/sprite_bit_rom.mif",
 		altsyncram_component.intended_device_family = "Cyclone IV E",
 		altsyncram_component.lpm_hint = "ENABLE_RUNTIME_MOD=NO",
 		altsyncram_component.lpm_type = "altsyncram",
@@ -96,7 +96,7 @@ module memory (
 		altsyncram_component.outdata_reg_a = "CLOCK0",
 		altsyncram_component.power_up_uninitialized = "FALSE",
 		altsyncram_component.ram_block_type = "M9K",
-		altsyncram_component.read_during_write_mode_port_a = "DONT_CARE",
+		altsyncram_component.read_during_write_mode_port_a = "NEW_DATA_NO_NBE_READ",
 		altsyncram_component.widthad_a = 14,
 		altsyncram_component.width_a = 9,
 		altsyncram_component.width_byteena_a = 1;
@@ -126,10 +126,10 @@ endmodule
 // Retrieval info: PRIVATE: JTAG_ENABLED NUMERIC "0"
 // Retrieval info: PRIVATE: JTAG_ID STRING "NONE"
 // Retrieval info: PRIVATE: MAXIMUM_DEPTH NUMERIC "0"
-// Retrieval info: PRIVATE: MIFfilename STRING "./modulos/sprite_memory/sprites.mif"
+// Retrieval info: PRIVATE: MIFfilename STRING "./modulos/sprite_memory/sprite_bit_rom.mif"
 // Retrieval info: PRIVATE: NUMWORDS_A NUMERIC "16384"
 // Retrieval info: PRIVATE: RAM_BLOCK_TYPE NUMERIC "2"
-// Retrieval info: PRIVATE: READ_DURING_WRITE_MODE_PORT_A NUMERIC "2"
+// Retrieval info: PRIVATE: READ_DURING_WRITE_MODE_PORT_A NUMERIC "3"
 // Retrieval info: PRIVATE: RegAddr NUMERIC "1"
 // Retrieval info: PRIVATE: RegData NUMERIC "1"
 // Retrieval info: PRIVATE: RegOutput NUMERIC "1"
@@ -143,7 +143,7 @@ endmodule
 // Retrieval info: LIBRARY: altera_mf altera_mf.altera_mf_components.all
 // Retrieval info: CONSTANT: CLOCK_ENABLE_INPUT_A STRING "BYPASS"
 // Retrieval info: CONSTANT: CLOCK_ENABLE_OUTPUT_A STRING "BYPASS"
-// Retrieval info: CONSTANT: INIT_FILE STRING "./modulos/sprite_memory/sprites.mif"
+// Retrieval info: CONSTANT: INIT_FILE STRING "./modulos/sprite_memory/sprite_bit_rom.mif"
 // Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "Cyclone IV E"
 // Retrieval info: CONSTANT: LPM_HINT STRING "ENABLE_RUNTIME_MOD=NO"
 // Retrieval info: CONSTANT: LPM_TYPE STRING "altsyncram"
@@ -153,7 +153,7 @@ endmodule
 // Retrieval info: CONSTANT: OUTDATA_REG_A STRING "CLOCK0"
 // Retrieval info: CONSTANT: POWER_UP_UNINITIALIZED STRING "FALSE"
 // Retrieval info: CONSTANT: RAM_BLOCK_TYPE STRING "M9K"
-// Retrieval info: CONSTANT: READ_DURING_WRITE_MODE_PORT_A STRING "DONT_CARE"
+// Retrieval info: CONSTANT: READ_DURING_WRITE_MODE_PORT_A STRING "NEW_DATA_NO_NBE_READ"
 // Retrieval info: CONSTANT: WIDTHAD_A NUMERIC "14"
 // Retrieval info: CONSTANT: WIDTH_A NUMERIC "9"
 // Retrieval info: CONSTANT: WIDTH_BYTEENA_A NUMERIC "1"
@@ -170,7 +170,7 @@ endmodule
 // Retrieval info: GEN_FILE: TYPE_NORMAL memory.v TRUE
 // Retrieval info: GEN_FILE: TYPE_NORMAL memory.inc FALSE
 // Retrieval info: GEN_FILE: TYPE_NORMAL memory.cmp FALSE
-// Retrieval info: GEN_FILE: TYPE_NORMAL memory.bsf FALSE
-// Retrieval info: GEN_FILE: TYPE_NORMAL memory_inst.v FALSE
+// Retrieval info: GEN_FILE: TYPE_NORMAL memory.bsf TRUE
+// Retrieval info: GEN_FILE: TYPE_NORMAL memory_inst.v TRUE
 // Retrieval info: GEN_FILE: TYPE_NORMAL memory_bb.v TRUE
 // Retrieval info: LIB_FILE: altera_mf

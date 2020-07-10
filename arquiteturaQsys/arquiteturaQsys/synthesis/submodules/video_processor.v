@@ -9,9 +9,9 @@ module video_processor(
 	output wire [2:0] R,
 	output wire [2:0] G,
 	output wire [2:0] B,
-	output reg      out_printtingScreen,
 	output wire     out_hsync,
-	output wire     out_vsync
+	output wire     out_vsync,
+	output reg      out_printtingScreen
 );
 
 /*------------------Fios de ligação entre os módulos---------------------*/
@@ -35,7 +35,7 @@ wire [8:0]  memory_data_out;
 wire        done_memory;
 wire [8:0]  monitor_color_out;
 wire [9:0]  pixel_x;
-wire [8:0]  pixel_y;
+wire [9:0]  pixel_y;
 wire 		clk_100;
 wire 		clk_25;
 wire        reset_done;
@@ -43,20 +43,23 @@ wire        reset_done;
 
 /*-----Sinais da unidade de controle para o gerenciamento dos módulos-----*/
 wire 	   memory_wr;
-wire [3:0] selectField;
+//wire [3:0] selectField;
 wire 	   register_wr;
 wire 	   selectorDemuxRegister;
 wire 	   selectorDemuxData;
 wire 	   selectorAddress;
+wire 	   instruction_finished;
 /*------------------------------------------------------------------------*/
 
 reg reg_done;
-
+//reg clk_100;
+//reg clk_25;
 
 /*-------Módulo Pll responsável por gerar os sinais de clock necessários para os outros módulos
 	c0 - 100 Mhz
 	c1 -  25 Mhz
 */
+
 clock_pll clock_pll_inst
 (
 	.inclk0(clk_FPGA) ,	    // input  inclk0_sig
@@ -65,16 +68,21 @@ clock_pll clock_pll_inst
 );
 
 
+//background
+//32'h3fff1
+//32'd12
 
+//sprite
+//32'h50
+//32'd694310912
 decorderInstruction 
 decorderInstruction_inst
 (
 	.clk(clk_100) ,						// input  clk_sig
 	.clk_en(clk_en) ,					// input  clk_en_sig
-	.dataA(dataA) ,						// input [31:0] dataA_sig
-	.dataB(dataB) ,						// input [31:0] dataB_sig
+	.dataA(dataA) ,				    // input [31:0] dataA_sig               001010000
+	.dataB(dataB) ,				// input [31:0] dataB_sig  101001011000100101100000000000
 	.new_instruction(new_instruction) ,	// input  new_instruction_sig
-	.reset(reset) ,						// input  reset_sig
 	.out_opcode(out_opcode) ,			// output [1:0]  out_opcode_sig
 	.out_register(out_register) ,		// output [13:0] out_register_sig
 	.out_data(out_data) 				// output [31:0] out_data_sig
@@ -87,10 +95,10 @@ controlUnit_inst
 	.reset(reset) ,							// input  reset_sig
 	.opCode(out_opcode) ,					// input [3:0] opCode_sig
 	.printtingScreen(printtingScreen) ,		// input  printtingScreen_sig
-	.done(reg_done) ,					    // input  done_sig
+	.done(instruction_finished) ,			// input  done_sig
 	.new_instruction(new_instruction) ,		// output  new_instruction_sig
 	.memory_wr(memory_wr) ,					// output  memory_wr_sig
-	.selectField(selectField) ,						// output [3:0] selectField_sig
+	.selectField() ,						// output [3:0] selectField_sig
 	.register_wr(register_wr) ,						// output  register_wr_sig
 	.selectorDemuxRegister(selectorDemuxRegister) ,	// output  selectorDemuxRegister_sig
 	.selectorDemuxData(selectorDemuxData) ,			// output  selectorDemuxData_sig
@@ -120,19 +128,22 @@ demultiplexador_inst_data
 	.out2(register_data) 			    // output [out2_bits_size-1:0] out2_sig (para o banco de registradores)
 );
 
-registerFile registerFile_inst
+
+full_register_file full_register_file_inst
 (
-	.clk(clk_100) ,					// input  clk_sig
-	.n_reg(n_reg) ,					// input [4:0] n_reg_sig
-	.check(check_value) ,			// input [18:0] check_sig
-	.data(register_data) ,			// input [31:0] data_sig
-	.written(register_wr) ,			// input  written_sig
-	.selectField(selectField) ,		// input [3:0] selectField_sig
-	.out_readData(data_reg) ,		// output [31:0] out_readData_sig
-	.success(done_register) 		// output  success_sig
+	.clk(clk_100) ,				// input  clk_sig
+	.reset(reset) ,				// input  reset_sig
+	.n_reg(n_reg) ,				// input  n_reg_sig
+	.check(check_value) ,		// input [19:0] check_sig
+	.written(register_wr) ,		// input  written_sig
+	.data(register_data) ,		// input [31:0] data_sig
+	.readData(data_reg) ,		// output [31:0] readData_sig
+	.success(done_register) 	// output  success_sig
 );
 
-full_print_module #(.size_x1(10), .size_y1(9), .size_address1(14), .bits_x_y_1(19), .size_line1(20))
+
+
+full_print_module #(.size_x1(10), .size_y1(10), .size_address1(14), .bits_x_y_1(20), .size_line1(20))
 full_print_module_inst
 (
 	.clk(clk_100) ,								// input  clk_sig
@@ -177,8 +188,8 @@ VGA_sync VGA_sync_inst
 	.hsync(out_hsync) ,					// output  hsync_sig
 	.vsync(out_vsync) ,					// output  vsync_sig
 	.video_enable(active_area) ,	    // output  video_enable_sig
-	.pixel_x(pixel_x) ,					// output [9:0] pixel_x_sig
-	.pixel_y(pixel_y) 					// output [8:0] pixel_y_sig
+	.pixel_x(pixel_x) ,					// output [9:0] _sig
+	.pixel_y(pixel_y) 					// output [8:0] _sig
 );
 
 /*
@@ -204,6 +215,7 @@ always @(negedge clk_100) begin
 end
 
 assign done_instruction = reg_done;
+assign instruction_finished = reg_done;
 assign R = monitor_color_out[2:0];
 assign G = monitor_color_out[5:3];
 assign B = monitor_color_out[8:6];

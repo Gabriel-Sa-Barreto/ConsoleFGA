@@ -2,124 +2,64 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'inst1|clock_pll_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : -4.399
-TNS   : -21.083
-
-Type  : Slow 1200mV 85C Model Setup 'clk_en'
-Slack : -1.919
-TNS   : -3.348
-
-Type  : Slow 1200mV 85C Model Setup 'inst1|clock_pll_inst|altpll_component|auto_generated|pll1|clk[1]'
-Slack : 0.361
+Type  : Slow 1200mV 85C Model Setup 'altera_reserved_tck'
+Slack : 46.299
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'inst1|clock_pll_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 0.356
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'inst1|clock_pll_inst|altpll_component|auto_generated|pll1|clk[1]'
+Type  : Slow 1200mV 85C Model Hold 'altera_reserved_tck'
 Slack : 0.358
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'clk_en'
-Slack : 1.249
+Type  : Slow 1200mV 85C Model Recovery 'altera_reserved_tck'
+Slack : 48.243
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk_en'
-Slack : -3.000
-TNS   : -5.000
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'inst1|clock_pll_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 4.740
+Type  : Slow 1200mV 85C Model Removal 'altera_reserved_tck'
+Slack : 1.210
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk_FPGA'
-Slack : 9.835
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'altera_reserved_tck'
+Slack : 49.628
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'inst1|clock_pll_inst|altpll_component|auto_generated|pll1|clk[1]'
-Slack : 19.747
+Type  : Slow 1200mV 0C Model Setup 'altera_reserved_tck'
+Slack : 46.757
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Setup 'inst1|clock_pll_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : -3.870
-TNS   : -18.479
-
-Type  : Slow 1200mV 0C Model Setup 'clk_en'
-Slack : -1.693
-TNS   : -3.052
-
-Type  : Slow 1200mV 0C Model Setup 'inst1|clock_pll_inst|altpll_component|auto_generated|pll1|clk[1]'
-Slack : 0.875
+Type  : Slow 1200mV 0C Model Hold 'altera_reserved_tck'
+Slack : 0.311
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Hold 'inst1|clock_pll_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 0.312
+Type  : Slow 1200mV 0C Model Recovery 'altera_reserved_tck'
+Slack : 48.458
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Hold 'inst1|clock_pll_inst|altpll_component|auto_generated|pll1|clk[1]'
-Slack : 0.312
+Type  : Slow 1200mV 0C Model Removal 'altera_reserved_tck'
+Slack : 1.102
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Hold 'clk_en'
-Slack : 1.227
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'altera_reserved_tck'
+Slack : 49.606
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk_en'
-Slack : -3.000
-TNS   : -5.000
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'inst1|clock_pll_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 4.742
+Type  : Fast 1200mV 0C Model Setup 'altera_reserved_tck'
+Slack : 48.093
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk_FPGA'
-Slack : 9.818
+Type  : Fast 1200mV 0C Model Hold 'altera_reserved_tck'
+Slack : 0.187
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'inst1|clock_pll_inst|altpll_component|auto_generated|pll1|clk[1]'
-Slack : 19.743
+Type  : Fast 1200mV 0C Model Recovery 'altera_reserved_tck'
+Slack : 49.172
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Setup 'inst1|clock_pll_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : -2.636
-TNS   : -12.689
-
-Type  : Fast 1200mV 0C Model Setup 'clk_en'
-Slack : -0.886
-TNS   : -1.338
-
-Type  : Fast 1200mV 0C Model Setup 'inst1|clock_pll_inst|altpll_component|auto_generated|pll1|clk[1]'
-Slack : 2.382
+Type  : Fast 1200mV 0C Model Removal 'altera_reserved_tck'
+Slack : 0.666
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'inst1|clock_pll_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 0.185
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'inst1|clock_pll_inst|altpll_component|auto_generated|pll1|clk[1]'
-Slack : 0.185
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'clk_en'
-Slack : 0.635
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk_en'
-Slack : -3.000
-TNS   : -5.288
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'inst1|clock_pll_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 4.746
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk_FPGA'
-Slack : 9.587
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'inst1|clock_pll_inst|altpll_component|auto_generated|pll1|clk[1]'
-Slack : 19.756
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'altera_reserved_tck'
+Slack : 49.484
 TNS   : 0.000
 
 ------------------------------------------------------------

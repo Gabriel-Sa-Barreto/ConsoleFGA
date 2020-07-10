@@ -2,8 +2,8 @@ module video_processor(
 	input wire clk_FPGA,   //(50 Mhz)
 	input wire clk_en,
 	input wire reset,
-	//input wire [31:0] dataA,
-	//input wire [31:0] dataB,
+	input wire [31:0] dataA,
+	input wire [31:0] dataB,
 
 	output wire       done_instruction,
 	output wire [2:0] R,
@@ -52,12 +52,14 @@ wire 	   instruction_finished;
 /*------------------------------------------------------------------------*/
 
 reg reg_done;
-
+//reg clk_100;
+//reg clk_25;
 
 /*-------Módulo Pll responsável por gerar os sinais de clock necessários para os outros módulos
 	c0 - 100 Mhz
 	c1 -  25 Mhz
 */
+
 clock_pll clock_pll_inst
 (
 	.inclk0(clk_FPGA) ,	    // input  inclk0_sig
@@ -72,14 +74,14 @@ clock_pll clock_pll_inst
 
 //sprite
 //32'h50
-//32'd694310917
+//32'd694310912
 decorderInstruction 
 decorderInstruction_inst
 (
 	.clk(clk_100) ,						// input  clk_sig
 	.clk_en(clk_en) ,					// input  clk_en_sig
-	.dataA(32'h50) ,				    // input [31:0] dataA_sig               001010000
-	.dataB(32'd694310912) ,				// input [31:0] dataB_sig  101001011000100101100000000000
+	.dataA(dataA) ,				    // input [31:0] dataA_sig               001010000
+	.dataB(dataB) ,				// input [31:0] dataB_sig  101001011000100101100000000000
 	.new_instruction(new_instruction) ,	// input  new_instruction_sig
 	.out_opcode(out_opcode) ,			// output [1:0]  out_opcode_sig
 	.out_register(out_register) ,		// output [13:0] out_register_sig

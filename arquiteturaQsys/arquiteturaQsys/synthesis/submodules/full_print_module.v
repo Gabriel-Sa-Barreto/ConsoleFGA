@@ -1,4 +1,4 @@
-module full_print_module #(parameter size_x1 = 10, size_y1 = 9, size_address1 = 14, bits_x_y_1 = 19, size_line1 = 20) 
+module full_print_module #(parameter size_x1 = 10, size_y1 = 10, size_address1 = 14, bits_x_y_1 = 19, size_line1 = 20) 
 (
 	input wire                clk,
 	input wire                clk_pixel,
@@ -13,13 +13,14 @@ module full_print_module #(parameter size_x1 = 10, size_y1 = 9, size_address1 = 
 	output wire [bits_x_y_1-1:0]     check_value
 );
 
-wire        sprite_on;
-wire        count_finished;
-wire [31:0] sprite_datas;
+wire [4:0]               current_state;
+wire                     sprite_on;
+wire                     count_finished;
+wire [31:0]              sprite_datas;
 wire [size_address1-1:0] memory_address1;
 wire [size_address1-1:0] memory_address2;
-wire [size_address1-1:0] 	 out_module;
-wire out_printtingScreen;
+wire [size_address1-1:0] out_module;
+wire                     out_printtingScreen;
 
 
 printModule #(.size_x(size_x1),.size_y(size_y1),.size_address(size_address1),.bits_x_y(bits_x_y_1))
@@ -40,19 +41,29 @@ printModule_inst
 	.sprite_on(sprite_on) 						// output  				     sprite_on_sig
 );
 
-
-sprite_line_counter #(.size_x(size_x1), .size_y(size_y1), .size_address(size_address1), .size_line(size_line1))
-sprite_line_counter_inst
+/*
+sprite_line_counter sprite_line_counter_inst
 (
-	.clk_pixel(clk_pixel) ,						// input  clk_pixel_sig
-	.pixel_x(pixel_x) ,							// input [size_x-1:0] pixel_x_sig
-	.pixel_y(pixel_y) ,							// input [size_y-1:0] pixel_y_sig
-	.sprite_datas(sprite_datas) ,			    // input [31:0] sprite_datas_sig
-	.sprite_on(sprite_on) ,						// input  sprite_on_sig
-	.reset(reset) ,								// input  reset_sig
-	.memory_address(memory_address2) ,			// output [size_address-1:0] memory_address_sig
-	.count_finished(count_finished) 			// output  count_finished_sig
+	.clk_pixel(clk_pixel) ,	               // input  clk_pixel_sig
+	.sprite_on(sprite_on) ,	               // input  sprite_on_sig
+	.reset(reset) ,	                       // input  reset_sig
+	.count_finished(count_finished) ,	   // output  count_finished_sig
+	.current_state(current_state) 	       // output  [4:0] current_state_sig
 );
+*/
+
+calculoAddress #(.size_x(10), .size_y(10), .size_address(14) )
+calculoAddress_inst
+(
+	.clk_pixel(clk_pixel) ,	               // input  clk_pixel_sig
+	.pixel_x(pixel_x) , 	               // input [size_x-1:0] pixel_x_sig
+	.pixel_y(pixel_y) ,	                   // input [size_y-1:0] pixel_y_sig
+	.sprite_datas(sprite_datas) ,	       // input [31:0] sprite_datas_sig
+	.sprite_on(sprite_on) ,	               // input  sprite_on_sig
+	.counter_finished(count_finished),      // input counter_finished_sig
+	.memory_address(memory_address2) 	   // output [size_address-1:0] memory_address_sig
+);
+
 
 
 multiplexador #(.data_bits1(size_address1), .data_bits2(size_address1), .out_bits_size(size_address1))
