@@ -5,7 +5,7 @@ module video_processor(
 	input wire [31:0] dataA,
 	input wire [31:0] dataB,
 
-	output wire       done_instruction,
+	//output wire       done_instruction,
 	output wire [2:0] R,
 	output wire [2:0] G,
 	output wire [2:0] B,
@@ -92,7 +92,7 @@ controlUnit
 controlUnit_inst
 (
 	.clk(clk_100) ,							// input  clk_sig
-	.reset(reset) ,							// input  reset_sig
+	.reset(!reset) ,							// input  reset_sig
 	.opCode(out_opcode) ,					// input [3:0] opCode_sig
 	.printtingScreen(printtingScreen) ,		// input  printtingScreen_sig
 	.done(instruction_finished) ,			// input  done_sig
@@ -132,7 +132,7 @@ demultiplexador_inst_data
 full_register_file full_register_file_inst
 (
 	.clk(clk_100) ,				// input  clk_sig
-	.reset(reset) ,				// input  reset_sig
+	.reset(!reset) ,				// input  reset_sig
 	.n_reg(n_reg) ,				// input  n_reg_sig
 	.check(check_value) ,		// input [19:0] check_sig
 	.written(register_wr) ,		// input  written_sig
@@ -148,7 +148,7 @@ full_print_module_inst
 (
 	.clk(clk_100) ,								// input  clk_sig
 	.clk_pixel(clk_25) ,						// input  clk_pixel_sig
-	.reset(reset) ,								// input  reset_sig
+	.reset(!reset) ,								// input  reset_sig
 	.data_reg(data_reg) ,						// input [31:0] data_reg_sig
 	.active_area(active_area) ,					// input  active_area_sig
 	.pixel_x(pixel_x) ,							// input [size_x1-1:0] pixel_x_sig
@@ -184,7 +184,7 @@ sprite_memory sprite_memory_inst
 VGA_sync VGA_sync_inst
 (
 	.clock(clk_25) ,					// input  clock_sig
-	.reset(reset) ,						// input  reset_sig
+	.reset(!reset) ,						// input  reset_sig
 	.hsync(out_hsync) ,					// output  hsync_sig
 	.vsync(out_vsync) ,					// output  vsync_sig
 	.video_enable(active_area) ,	    // output  video_enable_sig
@@ -214,7 +214,7 @@ always @(negedge clk_100) begin
 	out_printtingScreen  <= printtingScreen;
 end
 
-assign done_instruction = reg_done;
+//assign done_instruction = reg_done;
 assign instruction_finished = reg_done;
 assign R = monitor_color_out[2:0];
 assign G = monitor_color_out[5:3];

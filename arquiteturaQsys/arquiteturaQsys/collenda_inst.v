@@ -7,7 +7,7 @@
 		.hsync_writeresponsevalid_n           (<connected-to-hsync_writeresponsevalid_n>),           //            hsync.writeresponsevalid_n
 		.printtingscreen_writeresponsevalid_n (<connected-to-printtingscreen_writeresponsevalid_n>), //  printtingscreen.writeresponsevalid_n
 		.pushbutton_reset_export              (<connected-to-pushbutton_reset_export>),              // pushbutton_reset.export
-		.reset_reset_n                        (<connected-to-reset_reset_n>),                        //            reset.reset_n
-		.vsync_writeresponsevalid_n           (<connected-to-vsync_writeresponsevalid_n>)            //            vsync.writeresponsevalid_n
+		.vsync_writeresponsevalid_n           (<connected-to-vsync_writeresponsevalid_n>),           //            vsync.writeresponsevalid_n
+		.reset_reset_n                        (<connected-to-reset_reset_n>)                         //            reset.reset_n
 	);
 

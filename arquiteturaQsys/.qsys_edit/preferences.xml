@@ -7,7 +7,7 @@
    <irq preferredWidth="34" />
   </columns>
  </systemtable>
- <library expandedCategories="Library,Project" />
+ <library expandedCategories="Project,Library" />
  <window width="1540" height="873" x="60" y="27" />
  <generation path="arquiteturaQsys/" />
 </preferences>

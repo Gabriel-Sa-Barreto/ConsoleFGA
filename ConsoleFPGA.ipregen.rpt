@@ -1,5 +1,5 @@
 IP Upgrade report for ConsoleFPGA
-Thu Jul  9 14:28:06 2020
+Thu Jul 16 10:09:28 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -34,7 +34,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------+
 ; IP Upgrade Summary                                                         ;
 +------------------------------+---------------------------------------------+
-; IP Components Upgrade Status ; Failed - Thu Jul  9 14:28:06 2020           ;
+; IP Components Upgrade Status ; Failed - Thu Jul 16 10:09:28 2020           ;
 ; Quartus Prime Version        ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                ; ConsoleFPGA                                 ;
 ; Top-level Entity Name        ; ConsoleFPGA                                 ;
@@ -48,8 +48,8 @@ refer to the applicable agreement for further details.
 Info (23030): Evaluation of Tcl script /opt/intelFPGA_lite/18.1/quartus/common/tcl/internal/ip_regen/ip_regen.tcl was successful
 Info: Quartus Prime Shell was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 1041 megabytes
-    Info: Processing ended: Thu Jul  9 14:28:07 2020
-    Info: Elapsed time: 00:00:23
-    Info: Total CPU time (on all processors): 00:00:53
+    Info: Processing ended: Thu Jul 16 10:09:28 2020
+    Info: Elapsed time: 00:00:27
+    Info: Total CPU time (on all processors): 00:01:01
 
 

@@ -73,18 +73,17 @@ module collenda (
 	wire  [31:0] nios2_gen2_0_custom_instruction_master_multi_slave_translator0_ci_master_datab;  // nios2_gen2_0_custom_instruction_master_multi_slave_translator0:ci_master_datab -> video_processor_0:dataB
 	wire  [31:0] nios2_gen2_0_custom_instruction_master_multi_slave_translator0_ci_master_dataa;  // nios2_gen2_0_custom_instruction_master_multi_slave_translator0:ci_master_dataa -> video_processor_0:dataA
 	wire         nios2_gen2_0_custom_instruction_master_multi_slave_translator0_ci_master_reset;  // nios2_gen2_0_custom_instruction_master_multi_slave_translator0:ci_master_reset -> video_processor_0:reset
-	wire         nios2_gen2_0_custom_instruction_master_multi_slave_translator0_ci_master_done;   // video_processor_0:done_instruction -> nios2_gen2_0_custom_instruction_master_multi_slave_translator0:ci_master_done
 	wire  [31:0] nios2_gen2_0_data_master_readdata;                                               // mm_interconnect_0:nios2_gen2_0_data_master_readdata -> nios2_gen2_0:d_readdata
 	wire         nios2_gen2_0_data_master_waitrequest;                                            // mm_interconnect_0:nios2_gen2_0_data_master_waitrequest -> nios2_gen2_0:d_waitrequest
 	wire         nios2_gen2_0_data_master_debugaccess;                                            // nios2_gen2_0:debug_mem_slave_debugaccess_to_roms -> mm_interconnect_0:nios2_gen2_0_data_master_debugaccess
-	wire  [15:0] nios2_gen2_0_data_master_address;                                                // nios2_gen2_0:d_address -> mm_interconnect_0:nios2_gen2_0_data_master_address
+	wire  [16:0] nios2_gen2_0_data_master_address;                                                // nios2_gen2_0:d_address -> mm_interconnect_0:nios2_gen2_0_data_master_address
 	wire   [3:0] nios2_gen2_0_data_master_byteenable;                                             // nios2_gen2_0:d_byteenable -> mm_interconnect_0:nios2_gen2_0_data_master_byteenable
 	wire         nios2_gen2_0_data_master_read;                                                   // nios2_gen2_0:d_read -> mm_interconnect_0:nios2_gen2_0_data_master_read
 	wire         nios2_gen2_0_data_master_write;                                                  // nios2_gen2_0:d_write -> mm_interconnect_0:nios2_gen2_0_data_master_write
 	wire  [31:0] nios2_gen2_0_data_master_writedata;                                              // nios2_gen2_0:d_writedata -> mm_interconnect_0:nios2_gen2_0_data_master_writedata
 	wire  [31:0] nios2_gen2_0_instruction_master_readdata;                                        // mm_interconnect_0:nios2_gen2_0_instruction_master_readdata -> nios2_gen2_0:i_readdata
 	wire         nios2_gen2_0_instruction_master_waitrequest;                                     // mm_interconnect_0:nios2_gen2_0_instruction_master_waitrequest -> nios2_gen2_0:i_waitrequest
-	wire  [15:0] nios2_gen2_0_instruction_master_address;                                         // nios2_gen2_0:i_address -> mm_interconnect_0:nios2_gen2_0_instruction_master_address
+	wire  [16:0] nios2_gen2_0_instruction_master_address;                                         // nios2_gen2_0:i_address -> mm_interconnect_0:nios2_gen2_0_instruction_master_address
 	wire         nios2_gen2_0_instruction_master_read;                                            // nios2_gen2_0:i_read -> mm_interconnect_0:nios2_gen2_0_instruction_master_read
 	wire         mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_chipselect;                      // mm_interconnect_0:jtag_uart_0_avalon_jtag_slave_chipselect -> jtag_uart_0:av_chipselect
 	wire  [31:0] mm_interconnect_0_jtag_uart_0_avalon_jtag_slave_readdata;                        // jtag_uart_0:av_readdata -> mm_interconnect_0:jtag_uart_0_avalon_jtag_slave_readdata
@@ -222,7 +221,6 @@ module collenda (
 		.reset               (nios2_gen2_0_custom_instruction_master_multi_slave_translator0_ci_master_reset),  //                              .reset
 		.dataB               (nios2_gen2_0_custom_instruction_master_multi_slave_translator0_ci_master_datab),  //                              .datab
 		.dataA               (nios2_gen2_0_custom_instruction_master_multi_slave_translator0_ci_master_dataa),  //                              .dataa
-		.done_instruction    (nios2_gen2_0_custom_instruction_master_multi_slave_translator0_ci_master_done),   //                              .done
 		.G                   (color_g_readdata),                                                                //                       color_G.readdata
 		.B                   (color_b_readdata),                                                                //                       color_B.readdata
 		.R                   (color_r_readdata),                                                                //                       color_R.readdata
@@ -333,7 +331,7 @@ module collenda (
 
 	altera_customins_slave_translator #(
 		.N_WIDTH          (8),
-		.USE_DONE         (1),
+		.USE_DONE         (0),
 		.NUM_FIXED_CYCLES (0)
 	) nios2_gen2_0_custom_instruction_master_multi_slave_translator0 (
 		.ci_slave_dataa      (nios2_gen2_0_custom_instruction_master_multi_xconnect_ci_master0_dataa),          //  ci_slave.dataa
@@ -360,7 +358,6 @@ module collenda (
 		.ci_master_clk       (nios2_gen2_0_custom_instruction_master_multi_slave_translator0_ci_master_clk),    //          .clk
 		.ci_master_clken     (nios2_gen2_0_custom_instruction_master_multi_slave_translator0_ci_master_clk_en), //          .clk_en
 		.ci_master_reset     (nios2_gen2_0_custom_instruction_master_multi_slave_translator0_ci_master_reset),  //          .reset
-		.ci_master_done      (nios2_gen2_0_custom_instruction_master_multi_slave_translator0_ci_master_done),   //          .done
 		.ci_master_n         (),                                                                                // (terminated)
 		.ci_master_readra    (),                                                                                // (terminated)
 		.ci_master_readrb    (),                                                                                // (terminated)
@@ -371,7 +368,8 @@ module collenda (
 		.ci_master_ipending  (),                                                                                // (terminated)
 		.ci_master_estatus   (),                                                                                // (terminated)
 		.ci_master_reset_req (),                                                                                // (terminated)
-		.ci_master_start     ()                                                                                 // (terminated)
+		.ci_master_start     (),                                                                                // (terminated)
+		.ci_master_done      (1'b0)                                                                             // (terminated)
 	);
 
 	collenda_mm_interconnect_0 mm_interconnect_0 (

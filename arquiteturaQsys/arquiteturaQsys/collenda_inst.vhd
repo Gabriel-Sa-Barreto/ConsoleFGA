@@ -8,8 +8,8 @@
 			hsync_writeresponsevalid_n           : out std_logic;                           -- writeresponsevalid_n
 			printtingscreen_writeresponsevalid_n : out std_logic;                           -- writeresponsevalid_n
 			pushbutton_reset_export              : in  std_logic                    := 'X'; -- export
-			reset_reset_n                        : in  std_logic                    := 'X'; -- reset_n
-			vsync_writeresponsevalid_n           : out std_logic                            -- writeresponsevalid_n
+			vsync_writeresponsevalid_n           : out std_logic;                           -- writeresponsevalid_n
+			reset_reset_n                        : in  std_logic                    := 'X'  -- reset_n
 		);
 	end component collenda;
 
@@ -23,7 +23,7 @@
 			hsync_writeresponsevalid_n           => CONNECTED_TO_hsync_writeresponsevalid_n,           --            hsync.writeresponsevalid_n
 			printtingscreen_writeresponsevalid_n => CONNECTED_TO_printtingscreen_writeresponsevalid_n, --  printtingscreen.writeresponsevalid_n
 			pushbutton_reset_export              => CONNECTED_TO_pushbutton_reset_export,              -- pushbutton_reset.export
-			reset_reset_n                        => CONNECTED_TO_reset_reset_n,                        --            reset.reset_n
-			vsync_writeresponsevalid_n           => CONNECTED_TO_vsync_writeresponsevalid_n            --            vsync.writeresponsevalid_n
+			vsync_writeresponsevalid_n           => CONNECTED_TO_vsync_writeresponsevalid_n,           --            vsync.writeresponsevalid_n
+			reset_reset_n                        => CONNECTED_TO_reset_reset_n                         --            reset.reset_n
 		);
 

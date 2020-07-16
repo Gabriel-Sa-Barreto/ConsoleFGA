@@ -49,7 +49,7 @@ module collenda_sysid_qsys_0 (
 
   wire    [ 31: 0] readdata;
   //control_slave, which is an e_avalon_slave
-  assign readdata = address ? 1594319723 : 50;
+  assign readdata = address ? 1594907919 : 50;
 
 endmodule
 

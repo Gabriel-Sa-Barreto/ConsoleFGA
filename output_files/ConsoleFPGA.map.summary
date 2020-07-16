@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Thu Jul  9 15:38:15 2020
+Analysis & Synthesis Status : Successful - Thu Jul 16 11:05:44 2020
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : ConsoleFPGA
 Top-level Entity Name : ConsoleFPGA
 Family : Cyclone IV E
-Total logic elements : 5,051
-    Total combinational functions : 3,851
-    Dedicated logic registers : 2,138
-Total registers : 2138
+Total logic elements : 5,058
+    Total combinational functions : 3,858
+    Dedicated logic registers : 2,142
+Total registers : 2142
 Total pins : 13
 Total virtual pins : 0
 Total memory bits : 328,960
