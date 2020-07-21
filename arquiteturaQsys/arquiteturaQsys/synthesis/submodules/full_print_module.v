@@ -41,17 +41,6 @@ printModule_inst
 	.sprite_on(sprite_on) 						// output  				     sprite_on_sig
 );
 
-/*
-sprite_line_counter sprite_line_counter_inst
-(
-	.clk_pixel(clk_pixel) ,	               // input  clk_pixel_sig
-	.sprite_on(sprite_on) ,	               // input  sprite_on_sig
-	.reset(reset) ,	                       // input  reset_sig
-	.count_finished(count_finished) ,	   // output  count_finished_sig
-	.current_state(current_state) 	       // output  [4:0] current_state_sig
-);
-*/
-
 calculoAddress #(.size_x(10), .size_y(10), .size_address(14) )
 calculoAddress_inst
 (

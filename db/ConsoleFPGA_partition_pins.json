@@ -56,6 +56,22 @@
 					"strict" : false
 				},
 				{
+					"name" : "switchcor[0]",
+					"strict" : false
+				},
+				{
+					"name" : "switchcor[1]",
+					"strict" : false
+				},
+				{
+					"name" : "switchcor[2]",
+					"strict" : false
+				},
+				{
+					"name" : "switchcor[3]",
+					"strict" : false
+				},
+				{
 					"name" : "altera_reserved_tms",
 					"strict" : false
 				},

@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_gen2_0' in SOPC Builder design 'collenda'
  * SOPC Builder design path: ../../collenda.sopcinfo
  *
- * Generated: Thu Jul 16 11:07:39 BRT 2020
+ * Generated: Tue Jul 21 18:14:52 BRT 2020
  */
 
 /*
@@ -151,6 +151,33 @@
 
 
 /*
+ * SwitchCor configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_SwitchCor altera_avalon_pio
+#define SWITCHCOR_BASE 0x11030
+#define SWITCHCOR_BIT_CLEARING_EDGE_REGISTER 0
+#define SWITCHCOR_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define SWITCHCOR_CAPTURE 0
+#define SWITCHCOR_DATA_WIDTH 4
+#define SWITCHCOR_DO_TEST_BENCH_WIRING 0
+#define SWITCHCOR_DRIVEN_SIM_VALUE 0
+#define SWITCHCOR_EDGE_TYPE "NONE"
+#define SWITCHCOR_FREQ 50000000
+#define SWITCHCOR_HAS_IN 1
+#define SWITCHCOR_HAS_OUT 0
+#define SWITCHCOR_HAS_TRI 0
+#define SWITCHCOR_IRQ -1
+#define SWITCHCOR_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define SWITCHCOR_IRQ_TYPE "NONE"
+#define SWITCHCOR_NAME "/dev/SwitchCor"
+#define SWITCHCOR_RESET_VALUE 0
+#define SWITCHCOR_SPAN 16
+#define SWITCHCOR_TYPE "altera_avalon_pio"
+
+
+/*
  * System configuration
  *
  */
@@ -166,19 +193,19 @@
 #define ALT_NUM_INTERNAL_INTERRUPT_CONTROLLERS 1
 #define ALT_NUM_INTERRUPT_CONTROLLERS 1
 #define ALT_STDERR "/dev/jtag_uart_0"
-#define ALT_STDERR_BASE 0x11058
+#define ALT_STDERR_BASE 0x11078
 #define ALT_STDERR_DEV jtag_uart_0
 #define ALT_STDERR_IS_JTAG_UART
 #define ALT_STDERR_PRESENT
 #define ALT_STDERR_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDIN "/dev/jtag_uart_0"
-#define ALT_STDIN_BASE 0x11058
+#define ALT_STDIN_BASE 0x11078
 #define ALT_STDIN_DEV jtag_uart_0
 #define ALT_STDIN_IS_JTAG_UART
 #define ALT_STDIN_PRESENT
 #define ALT_STDIN_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDOUT "/dev/jtag_uart_0"
-#define ALT_STDOUT_BASE 0x11058
+#define ALT_STDOUT_BASE 0x11078
 #define ALT_STDOUT_DEV jtag_uart_0
 #define ALT_STDOUT_IS_JTAG_UART
 #define ALT_STDOUT_PRESENT
@@ -192,7 +219,7 @@
  */
 
 #define ALT_MODULE_CLASS_check_print altera_avalon_pio
-#define CHECK_PRINT_BASE 0x11030
+#define CHECK_PRINT_BASE 0x11050
 #define CHECK_PRINT_BIT_CLEARING_EDGE_REGISTER 0
 #define CHECK_PRINT_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define CHECK_PRINT_CAPTURE 0
@@ -230,7 +257,7 @@
  */
 
 #define ALT_MODULE_CLASS_jtag_uart_0 altera_avalon_jtag_uart
-#define JTAG_UART_0_BASE 0x11058
+#define JTAG_UART_0_BASE 0x11078
 #define JTAG_UART_0_IRQ 0
 #define JTAG_UART_0_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define JTAG_UART_0_NAME "/dev/jtag_uart_0"
@@ -277,7 +304,7 @@
  */
 
 #define ALT_MODULE_CLASS_pushbutton_reset altera_avalon_pio
-#define PUSHBUTTON_RESET_BASE 0x11020
+#define PUSHBUTTON_RESET_BASE 0x11040
 #define PUSHBUTTON_RESET_BIT_CLEARING_EDGE_REGISTER 0
 #define PUSHBUTTON_RESET_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define PUSHBUTTON_RESET_CAPTURE 0
@@ -304,13 +331,13 @@
  */
 
 #define ALT_MODULE_CLASS_sysid_qsys_0 altera_avalon_sysid_qsys
-#define SYSID_QSYS_0_BASE 0x11050
+#define SYSID_QSYS_0_BASE 0x11070
 #define SYSID_QSYS_0_ID 50
 #define SYSID_QSYS_0_IRQ -1
 #define SYSID_QSYS_0_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_QSYS_0_NAME "/dev/sysid_qsys_0"
 #define SYSID_QSYS_0_SPAN 8
-#define SYSID_QSYS_0_TIMESTAMP 1594907919
+#define SYSID_QSYS_0_TIMESTAMP 1595365577
 #define SYSID_QSYS_0_TYPE "altera_avalon_sysid_qsys"
 
 #endif /* __SYSTEM_H_ */

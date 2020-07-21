@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Jul 16, 2020 11:07:38 AM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1594908458240</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Jul 21, 2020 6:14:51 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1595366091602</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>/home/gabriel/Documents/ConsoleFPGA/arquiteturaQsys/software/CollendaCode_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>../../collenda.sopcinfo</SopcDesignFile>
@@ -905,26 +905,32 @@
                 <attributes>memory</attributes>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>pushbutton_reset</slaveDescriptor>
-                <addressRange>0x00011020 - 0x0001102F</addressRange>
-                <addressSpan>16</addressSpan>
-                <attributes/>
-        </MemoryMap>
-        <MemoryMap>
-                <slaveDescriptor>check_print</slaveDescriptor>
+                <slaveDescriptor>SwitchCor</slaveDescriptor>
                 <addressRange>0x00011030 - 0x0001103F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
+                <slaveDescriptor>pushbutton_reset</slaveDescriptor>
+                <addressRange>0x00011040 - 0x0001104F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>check_print</slaveDescriptor>
+                <addressRange>0x00011050 - 0x0001105F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
                 <slaveDescriptor>sysid_qsys_0</slaveDescriptor>
-                <addressRange>0x00011050 - 0x00011057</addressRange>
+                <addressRange>0x00011070 - 0x00011077</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>jtag_uart_0</slaveDescriptor>
-                <addressRange>0x00011058 - 0x0001105F</addressRange>
+                <addressRange>0x00011078 - 0x0001107F</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes>printable</attributes>
         </MemoryMap>

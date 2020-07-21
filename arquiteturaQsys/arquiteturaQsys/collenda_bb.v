@@ -8,8 +8,9 @@ module collenda (
 	hsync_writeresponsevalid_n,
 	printtingscreen_writeresponsevalid_n,
 	pushbutton_reset_export,
-	vsync_writeresponsevalid_n,
-	reset_reset_n);	
+	reset_reset_n,
+	switchcor_export,
+	vsync_writeresponsevalid_n);	
 
 	input		check_printting_export;
 	input		clk_clk;
@@ -19,6 +20,7 @@ module collenda (
 	output		hsync_writeresponsevalid_n;
 	output		printtingscreen_writeresponsevalid_n;
 	input		pushbutton_reset_export;
-	output		vsync_writeresponsevalid_n;
 	input		reset_reset_n;
+	input	[3:0]	switchcor_export;
+	output		vsync_writeresponsevalid_n;
 endmodule

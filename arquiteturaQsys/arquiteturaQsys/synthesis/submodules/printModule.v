@@ -170,8 +170,8 @@ end
 /*--------------------------------------------------------------------------------------------------------------*/
 
 /*---------------Bloco always que define se o módulo está em impressão de tela ou não----------------*/
-always @(negedge clk) begin
-	if( active_area && (pixel_x >= 0 && pixel_x < screen_x) && (pixel_y >= 0 && pixel_y < screen_y) ) 
+always @(posedge clk_pixel) begin
+	if( active_area ) 
 		out_printtingScreen <= 1;
 	else 
 		out_printtingScreen <= 0;

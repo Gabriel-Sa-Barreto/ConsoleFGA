@@ -2,10 +2,10 @@ module video_processor(
 	input wire clk_FPGA,   //(50 Mhz)
 	input wire clk_en,
 	input wire reset,
+	input wire start,
 	input wire [31:0] dataA,
 	input wire [31:0] dataB,
-
-	//output wire       done_instruction,
+ 
 	output wire [2:0] R,
 	output wire [2:0] G,
 	output wire [2:0] B,
@@ -13,6 +13,7 @@ module video_processor(
 	output wire     out_vsync,
 	output reg      out_printtingScreen
 );
+
 
 /*------------------Fios de ligação entre os módulos---------------------*/
 wire        new_instruction;
@@ -196,7 +197,7 @@ VGA_sync VGA_sync_inst
 	Bloco combinacional para verificar se um registro no banco de registradores ou uma leitura na memória foi realiza com sucesso.
 */
 always @(done_register or done_memory) begin 
-	reg_done = done_register | done_memory;
+	reg_done = done_register | done_memory;    
 end
 
 /*---------------------Multiplexador que seleciona a saída de cores para o monitor-----------------*/
@@ -209,12 +210,10 @@ multiplexador_inst_color
 	.out(monitor_color_out) 	// output [out_bits_size-1:0] out_sig
 );
 
-
-always @(negedge clk_100) begin
+always @(posedge clk_25) begin
 	out_printtingScreen  <= printtingScreen;
 end
 
-//assign done_instruction = reg_done;
 assign instruction_finished = reg_done;
 assign R = monitor_color_out[2:0];
 assign G = monitor_color_out[5:3];

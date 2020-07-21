@@ -1,15 +1,16 @@
 	component collenda is
 		port (
-			check_printting_export               : in  std_logic                    := 'X'; -- export
-			clk_clk                              : in  std_logic                    := 'X'; -- clk
-			color_b_readdata                     : out std_logic_vector(2 downto 0);        -- readdata
-			color_g_readdata                     : out std_logic_vector(2 downto 0);        -- readdata
-			color_r_readdata                     : out std_logic_vector(2 downto 0);        -- readdata
-			hsync_writeresponsevalid_n           : out std_logic;                           -- writeresponsevalid_n
-			printtingscreen_writeresponsevalid_n : out std_logic;                           -- writeresponsevalid_n
-			pushbutton_reset_export              : in  std_logic                    := 'X'; -- export
-			vsync_writeresponsevalid_n           : out std_logic;                           -- writeresponsevalid_n
-			reset_reset_n                        : in  std_logic                    := 'X'  -- reset_n
+			check_printting_export               : in  std_logic                    := 'X';             -- export
+			clk_clk                              : in  std_logic                    := 'X';             -- clk
+			color_b_readdata                     : out std_logic_vector(2 downto 0);                    -- readdata
+			color_g_readdata                     : out std_logic_vector(2 downto 0);                    -- readdata
+			color_r_readdata                     : out std_logic_vector(2 downto 0);                    -- readdata
+			hsync_writeresponsevalid_n           : out std_logic;                                       -- writeresponsevalid_n
+			printtingscreen_writeresponsevalid_n : out std_logic;                                       -- writeresponsevalid_n
+			pushbutton_reset_export              : in  std_logic                    := 'X';             -- export
+			reset_reset_n                        : in  std_logic                    := 'X';             -- reset_n
+			switchcor_export                     : in  std_logic_vector(3 downto 0) := (others => 'X'); -- export
+			vsync_writeresponsevalid_n           : out std_logic                                        -- writeresponsevalid_n
 		);
 	end component collenda;
 
@@ -23,7 +24,8 @@
 			hsync_writeresponsevalid_n           => CONNECTED_TO_hsync_writeresponsevalid_n,           --            hsync.writeresponsevalid_n
 			printtingscreen_writeresponsevalid_n => CONNECTED_TO_printtingscreen_writeresponsevalid_n, --  printtingscreen.writeresponsevalid_n
 			pushbutton_reset_export              => CONNECTED_TO_pushbutton_reset_export,              -- pushbutton_reset.export
-			vsync_writeresponsevalid_n           => CONNECTED_TO_vsync_writeresponsevalid_n,           --            vsync.writeresponsevalid_n
-			reset_reset_n                        => CONNECTED_TO_reset_reset_n                         --            reset.reset_n
+			reset_reset_n                        => CONNECTED_TO_reset_reset_n,                        --            reset.reset_n
+			switchcor_export                     => CONNECTED_TO_switchcor_export,                     --        switchcor.export
+			vsync_writeresponsevalid_n           => CONNECTED_TO_vsync_writeresponsevalid_n            --            vsync.writeresponsevalid_n
 		);
 

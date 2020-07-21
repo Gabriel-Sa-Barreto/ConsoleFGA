@@ -12,9 +12,8 @@ Description: This code performs a test of replace in screen background of the VG
 #include "altera_avalon_pio_regs.h" //Libary to read values of input
 
 #define OPCODE 0x3fff1  //Opcode of the instruction to written in memory.
-#define CHECK_PRINT_BASE 0x11030
-
-void changeBackgroundColor(char dataA, char dataB); //Function to change background color
+#define CHECK_PRINT_BASE 0x11050
+#define SWITCHCOR_BASE 0x11030
 
 int main(){
 	alt_putstr("It's Working!!");
@@ -36,25 +35,38 @@ int main(){
 	//Example:
 		//Parameter A: 111111111111110001 == 3fff1
 		//Parameter B: 000111000  - Green
+	int escolha = 0;
 	while(1){
-		usleep(3000); // Wait for more than 1 second = 3x10⁶ microseconds
-		changeBackgroundColor(0x3fff1,0x30);
-		usleep(3000); // Wait for more than 1 second = 3x10⁶ microseconds
-		changeBackgroundColor(0x3fff1,0x45);
-		usleep(3000); // Wait for more than 1 second = 3x10⁶ microseconds
-		changeBackgroundColor(0x3fff1,0x80);
-	}
-}
-
-void changeBackgroundColor(char dataA, char dataB){
-	int check = 0;
-	while(check == 0){
-		if(IORD(CHECK_PRINT_BASE,0) == 0){ //The screen doesn't been drawn.
-			printf("Printting: %d \n", IORD(CHECK_PRINT_BASE,0) );
-			printf("Ok antes\n");
-			ALT_CI_VIDEO_PROCESSOR_0(dataA, dataB);
-			printf("Ok depois\n");
-			check = 1;
+		escolha = IORD(SWITCHCOR_BASE,0);
+		usleep(10000);
+		if(escolha == 0){
+			if(IORD(CHECK_PRINT_BASE,0) == 0){ //The screen doesn't been drawn.
+				ALT_CI_VIDEO_PROCESSOR_0(0x3fff1, 0x12);
+			}
+		}else if(escolha == 1){
+			if(IORD(CHECK_PRINT_BASE,0) == 0){ //The screen doesn't been drawn.
+				ALT_CI_VIDEO_PROCESSOR_0(0x3fff1, 0x80);
+			}
+		}else if(escolha == 2){
+			if(IORD(CHECK_PRINT_BASE,0) == 0){ //The screen doesn't been drawn.
+				ALT_CI_VIDEO_PROCESSOR_0(0x3fff1, 0x30);
+			}
+		}else if(escolha == 3){
+			if(IORD(CHECK_PRINT_BASE,0) == 0){ //The screen doesn't been drawn.
+				ALT_CI_VIDEO_PROCESSOR_0(0x3fff1, 0x45);
+			}
+		}else if(escolha == 4){
+			if(IORD(CHECK_PRINT_BASE,0) == 0){ //The screen doesn't been drawn.
+				ALT_CI_VIDEO_PROCESSOR_0(0x3fff1, 0x00);
+			}
+		}else if(escolha == 5){
+			if(IORD(CHECK_PRINT_BASE,0) == 0){ //The screen doesn't been drawn.
+				ALT_CI_VIDEO_PROCESSOR_0(0x3fff1, 0x10);
+			}
+		}else if(escolha == 6){
+			if(IORD(CHECK_PRINT_BASE,0) == 0){ //The screen doesn't been drawn.
+				ALT_CI_VIDEO_PROCESSOR_0(0x3fff1, 0x78);
+			}
 		}
 	}
 }

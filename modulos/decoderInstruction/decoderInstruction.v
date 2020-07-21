@@ -23,17 +23,17 @@ module decorderInstruction(
 	input wire [31:0] dataB,
 	input wire        new_instruction,
 	input wire        reset,
-	output reg [3:0]   out_opcode,
-	output reg [13:0]  out_register,
-	output reg [31:0]  out_data
+	output reg [3:0]  out_opcode,
+	output reg [13:0] out_register,
+	output reg [31:0] out_data
 );
 
 reg [3:0]  opcode;
 reg [13:0] register;
 reg [31:0] data;
 
-always @(posedge clk_en) begin
-	if(!new_instruction) begin
+always @(posedge clk) begin
+	if(!new_instruction && clk_en == 1'b1) begin
 		out_opcode   <= opcode;
     	out_register <= register;
     	out_data     <= data;

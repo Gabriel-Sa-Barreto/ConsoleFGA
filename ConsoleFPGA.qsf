@@ -86,4 +86,8 @@ set_global_assignment -name VERILOG_FILE modulos/decoderInstruction/decoderInstr
 set_global_assignment -name QIP_FILE modulos/sprite_memory/memory.qip
 set_global_assignment -name QIP_FILE modulos/PLL/clock_pll.qip
 set_global_assignment -name BDF_FILE arquiteturaQsys/arquiteturaQsys/synthesis/ConsoleFPGA.bdf
+set_location_assignment PIN_M1 -to switchcor[0]
+set_location_assignment PIN_T8 -to switchcor[1]
+set_location_assignment PIN_B9 -to switchcor[2]
+set_location_assignment PIN_M15 -to switchcor[3]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
