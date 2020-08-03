@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_gen2_0' in SOPC Builder design 'collenda'
  * SOPC Builder design path: ../../collenda.sopcinfo
  *
- * Generated: Wed Jul 15 11:59:20 BRT 2020
+ * Generated: Mon Aug 03 10:05:54 BRT 2020
  */
 
 /*

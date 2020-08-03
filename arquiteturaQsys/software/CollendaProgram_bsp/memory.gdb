@@ -3,7 +3,7 @@
 # Machine generated for CPU 'nios2_gen2_0' in SOPC Builder design 'collenda'
 # SOPC Builder design path: ../../collenda.sopcinfo
 #
-# Generated: Wed Jul 15 11:59:20 BRT 2020
+# Generated: Mon Aug 03 10:05:54 BRT 2020
 
 # DO NOT MODIFY THIS FILE
 #
@@ -47,4 +47,4 @@
 # by allowing GDB to cache memory contents on the host.
 
 # onchip_memory2_0
-memory 0x0 0x5320 cache
+memory 0x8000 0xd320 cache

@@ -1,6 +1,6 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="29d084b23f57684f5dde"/>
+    <hash md5_digest_80b="e7a165da3c2f110ab2d0"/>
   </project>
   <file_info>
     <file device="EP4CE22F17C6" path="ConsoleFPGA.sof" usercode="0xFFFFFFFF"/>
@@ -139,7 +139,7 @@
   <sld_infos>
     <sld_info hpath="collenda:inst" name="inst">
       <assignment_values>
-        <assignment_value text="QSYS_NAME collenda HAS_SOPCINFO 1 GENERATION_ID 1595365577"/>
+        <assignment_value text="QSYS_NAME collenda HAS_SOPCINFO 1 GENERATION_ID 1596463612"/>
       </assignment_values>
       <parameters/>
     </sld_info>

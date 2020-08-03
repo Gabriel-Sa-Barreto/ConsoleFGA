@@ -13,7 +13,7 @@ Description: This code performs a test of replace in screen background of the VG
 
 #define OPCODE 0x3fff1  //Opcode of the instruction to written in memory.
 #define CHECK_PRINT_BASE 0x11050
-#define SWITCHCOR_BASE 0x11030
+#define SWITCHCOR_BASE 0x11040
 
 int main(){
 	alt_putstr("It's Working!!");
@@ -36,37 +36,20 @@ int main(){
 		//Parameter A: 111111111111110001 == 3fff1
 		//Parameter B: 000111000  - Green
 	int escolha = 0;
+	char cor = 0x00;
 	while(1){
-		escolha = IORD(SWITCHCOR_BASE,0);
-		usleep(10000);
-		if(escolha == 0){
-			if(IORD(CHECK_PRINT_BASE,0) == 0){ //The screen doesn't been drawn.
-				ALT_CI_VIDEO_PROCESSOR_0(0x3fff1, 0x12);
-			}
-		}else if(escolha == 1){
-			if(IORD(CHECK_PRINT_BASE,0) == 0){ //The screen doesn't been drawn.
-				ALT_CI_VIDEO_PROCESSOR_0(0x3fff1, 0x80);
-			}
-		}else if(escolha == 2){
-			if(IORD(CHECK_PRINT_BASE,0) == 0){ //The screen doesn't been drawn.
-				ALT_CI_VIDEO_PROCESSOR_0(0x3fff1, 0x30);
-			}
-		}else if(escolha == 3){
-			if(IORD(CHECK_PRINT_BASE,0) == 0){ //The screen doesn't been drawn.
-				ALT_CI_VIDEO_PROCESSOR_0(0x3fff1, 0x45);
-			}
-		}else if(escolha == 4){
-			if(IORD(CHECK_PRINT_BASE,0) == 0){ //The screen doesn't been drawn.
-				ALT_CI_VIDEO_PROCESSOR_0(0x3fff1, 0x00);
-			}
-		}else if(escolha == 5){
-			if(IORD(CHECK_PRINT_BASE,0) == 0){ //The screen doesn't been drawn.
-				ALT_CI_VIDEO_PROCESSOR_0(0x3fff1, 0x10);
-			}
-		}else if(escolha == 6){
-			if(IORD(CHECK_PRINT_BASE,0) == 0){ //The screen doesn't been drawn.
-				ALT_CI_VIDEO_PROCESSOR_0(0x3fff1, 0x78);
-			}
+		if(IORD(CHECK_PRINT_BASE,0) == 0){//The screen doen't been drawn
+			ALT_CI_VIDEO_PROCESSOR_0(OPCODE, cor); //instruction to change the background color.
+		}else{
+			escolha = IORD(SWITCHCOR_BASE,0);
+			usleep(1000);
+			if(escolha == 0){ cor = 0x12; }
+			else if(escolha == 1){ cor = 0x70; }
+			else if(escolha == 2){ cor = 0x20; }
+			else if(escolha == 3){ cor = 0x98; }
+			else if(escolha == 4){ cor = 0x90; }
+			else if(escolha == 5){ cor = 0x34; }
+			else if(escolha == 6){ cor = 0x01; }
 		}
 	}
 }

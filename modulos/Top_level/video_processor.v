@@ -2,7 +2,6 @@ module video_processor(
 	input wire clk_FPGA,   //(50 Mhz)
 	input wire clk_en,
 	input wire reset,
-	input wire start,
 	input wire [31:0] dataA,
 	input wire [31:0] dataB,
  
@@ -79,7 +78,6 @@ clock_pll clock_pll_inst
 decorderInstruction 
 decorderInstruction_inst
 (
-	.clk(clk_100) ,						// input  clk_sig
 	.clk_en(clk_en) ,					// input  clk_en_sig
 	.dataA(dataA) ,				    // input [31:0] dataA_sig               001010000
 	.dataB(dataB) ,				// input [31:0] dataB_sig  101001011000100101100000000000

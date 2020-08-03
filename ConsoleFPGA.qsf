@@ -52,22 +52,27 @@ set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "SYSTEMVERILOG HDL" -section_id eda_simulation
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_location_assignment PIN_R8 -to clk_clk
-set_location_assignment PIN_J15 -to pushbutton_reset_export
-set_location_assignment PIN_A4 -to hsync_writeresponsevalid_n
-set_location_assignment PIN_B5 -to vsync_writeresponsevalid_n
-set_location_assignment PIN_D5 -to color_b_readdata[2]
-set_location_assignment PIN_A6 -to color_b_readdata[1]
-set_location_assignment PIN_D6 -to color_b_readdata[0]
-set_location_assignment PIN_C6 -to color_g_readdata[2]
-set_location_assignment PIN_E6 -to color_g_readdata[1]
-set_location_assignment PIN_D8 -to color_g_readdata[0]
-set_location_assignment PIN_F8 -to color_r_readdata[2]
-set_location_assignment PIN_E9 -to color_r_readdata[1]
-set_location_assignment PIN_F9 -to color_r_readdata[0]
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_location_assignment PIN_M1 -to switchcor[0]
+set_location_assignment PIN_T8 -to switchcor[1]
+set_location_assignment PIN_B9 -to switchcor[2]
+set_location_assignment PIN_M15 -to switchcor[3]
+set_location_assignment PIN_R8 -to clk
+set_location_assignment PIN_B5 -to vsync
+set_location_assignment PIN_A4 -to hsync
+set_location_assignment PIN_D5 -to color_b[2]
+set_location_assignment PIN_A6 -to color_b[1]
+set_location_assignment PIN_D6 -to color_b[0]
+set_location_assignment PIN_C6 -to color_g[2]
+set_location_assignment PIN_E6 -to color_g[1]
+set_location_assignment PIN_D8 -to color_g[0]
+set_location_assignment PIN_F8 -to color_r[2]
+set_location_assignment PIN_E9 -to color_r[1]
+set_location_assignment PIN_F9 -to color_r[0]
+set_location_assignment PIN_J15 -to buttonmov[0]
+set_location_assignment PIN_E1 -to buttonmov[1]
 set_global_assignment -name QIP_FILE arquiteturaQsys/arquiteturaQsys/synthesis/collenda.qip
 set_global_assignment -name VERILOG_FILE modulos/sprite_line_counter/calculoAddress.v
 set_global_assignment -name VERILOG_FILE modulos/registerFile/full_register_file.v
@@ -86,8 +91,4 @@ set_global_assignment -name VERILOG_FILE modulos/decoderInstruction/decoderInstr
 set_global_assignment -name QIP_FILE modulos/sprite_memory/memory.qip
 set_global_assignment -name QIP_FILE modulos/PLL/clock_pll.qip
 set_global_assignment -name BDF_FILE arquiteturaQsys/arquiteturaQsys/synthesis/ConsoleFPGA.bdf
-set_location_assignment PIN_M1 -to switchcor[0]
-set_location_assignment PIN_T8 -to switchcor[1]
-set_location_assignment PIN_B9 -to switchcor[2]
-set_location_assignment PIN_M15 -to switchcor[3]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

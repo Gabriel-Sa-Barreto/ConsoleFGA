@@ -1,5 +1,6 @@
 
 module collenda (
+	buttonmov_export,
 	check_printting_export,
 	clk_clk,
 	color_b_readdata,
@@ -7,11 +8,10 @@ module collenda (
 	color_r_readdata,
 	hsync_writeresponsevalid_n,
 	printtingscreen_writeresponsevalid_n,
-	pushbutton_reset_export,
-	reset_reset_n,
 	switchcor_export,
 	vsync_writeresponsevalid_n);	
 
+	input	[1:0]	buttonmov_export;
 	input		check_printting_export;
 	input		clk_clk;
 	output	[2:0]	color_b_readdata;
@@ -19,8 +19,6 @@ module collenda (
 	output	[2:0]	color_r_readdata;
 	output		hsync_writeresponsevalid_n;
 	output		printtingscreen_writeresponsevalid_n;
-	input		pushbutton_reset_export;
-	input		reset_reset_n;
 	input	[3:0]	switchcor_export;
 	output		vsync_writeresponsevalid_n;
 endmodule

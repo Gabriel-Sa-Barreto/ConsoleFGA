@@ -2,10 +2,10 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>15/07/2020 11:59:18</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1594825158735</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Aug 3, 2020 11:11:00 AM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1596463860516</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>/home/gabriel/Documents/ConsoleFPGA/arquiteturaQsys/software/CollendaProgram_bsp</BspGeneratedLocation>
-        <BspSettingsFile>./settings.bsp</BspSettingsFile>
+        <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>../../collenda.sopcinfo</SopcDesignFile>
         <JdiFile>default</JdiFile>
         <Cpu>nios2_gen2_0</Cpu>
@@ -900,31 +900,37 @@
         </Setting>
         <MemoryMap>
                 <slaveDescriptor>onchip_memory2_0</slaveDescriptor>
-                <addressRange>0x00000000 - 0x0000531F</addressRange>
+                <addressRange>0x00008000 - 0x0000D31F</addressRange>
                 <addressSpan>21280</addressSpan>
                 <attributes>memory</attributes>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>pushbutton_reset</slaveDescriptor>
-                <addressRange>0x00009020 - 0x0000902F</addressRange>
+                <slaveDescriptor>buttonMov</slaveDescriptor>
+                <addressRange>0x00011030 - 0x0001103F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>SwitchCor</slaveDescriptor>
+                <addressRange>0x00011040 - 0x0001104F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>check_print</slaveDescriptor>
-                <addressRange>0x00009030 - 0x0000903F</addressRange>
+                <addressRange>0x00011050 - 0x0001105F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>sysid_qsys_0</slaveDescriptor>
-                <addressRange>0x00009050 - 0x00009057</addressRange>
+                <addressRange>0x00011070 - 0x00011077</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>jtag_uart_0</slaveDescriptor>
-                <addressRange>0x00009058 - 0x0000905F</addressRange>
+                <addressRange>0x00011078 - 0x0001107F</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes>printable</attributes>
         </MemoryMap>

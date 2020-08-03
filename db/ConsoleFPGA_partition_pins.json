@@ -4,55 +4,51 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "hsync_writeresponsevalid_n",
+					"name" : "hsync",
 					"strict" : false
 				},
 				{
-					"name" : "vsync_writeresponsevalid_n",
+					"name" : "vsync",
 					"strict" : false
 				},
 				{
-					"name" : "color_b_readdata[2]",
+					"name" : "color_b[2]",
 					"strict" : false
 				},
 				{
-					"name" : "color_b_readdata[1]",
+					"name" : "color_b[1]",
 					"strict" : false
 				},
 				{
-					"name" : "color_b_readdata[0]",
+					"name" : "color_b[0]",
 					"strict" : false
 				},
 				{
-					"name" : "color_g_readdata[2]",
+					"name" : "color_g[2]",
 					"strict" : false
 				},
 				{
-					"name" : "color_g_readdata[1]",
+					"name" : "color_g[1]",
 					"strict" : false
 				},
 				{
-					"name" : "color_g_readdata[0]",
+					"name" : "color_g[0]",
 					"strict" : false
 				},
 				{
-					"name" : "color_r_readdata[2]",
+					"name" : "color_r[2]",
 					"strict" : false
 				},
 				{
-					"name" : "color_r_readdata[1]",
+					"name" : "color_r[1]",
 					"strict" : false
 				},
 				{
-					"name" : "color_r_readdata[0]",
+					"name" : "color_r[0]",
 					"strict" : false
 				},
 				{
-					"name" : "clk_clk",
-					"strict" : false
-				},
-				{
-					"name" : "pushbutton_reset_export",
+					"name" : "clk",
 					"strict" : false
 				},
 				{
@@ -60,7 +56,15 @@
 					"strict" : false
 				},
 				{
+					"name" : "buttonmov[0]",
+					"strict" : false
+				},
+				{
 					"name" : "switchcor[1]",
+					"strict" : false
+				},
+				{
+					"name" : "buttonmov[1]",
 					"strict" : false
 				},
 				{
