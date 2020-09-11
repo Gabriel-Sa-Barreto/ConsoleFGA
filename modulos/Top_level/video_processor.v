@@ -2,7 +2,7 @@ module video_processor(
 	input wire clk_FPGA,   //(50 Mhz)
 	input wire clk_en,
 	input wire reset,
-	input wire [31:0] dataA,
+	//input wire [31:0] dataA,
 	input wire [31:0] dataB,
  
 	output wire [2:0] R,
@@ -24,7 +24,7 @@ wire 		done_register;
 wire [4:0]  n_reg;
 wire [31:0] register_data;
 wire 		printtingScreen;
-wire [18:0] check_value;
+wire [19:0] check_value;
 wire [31:0] data_reg;
 wire [13:0] memory_address;
 wire [13:0] decoded_address;
@@ -79,8 +79,8 @@ decorderInstruction
 decorderInstruction_inst
 (
 	.clk_en(clk_en) ,					// input  clk_en_sig
-	.dataA(dataA) ,				    // input [31:0] dataA_sig               001010000
-	.dataB(dataB) ,				// input [31:0] dataB_sig  101001011000100101100000000000
+	.dataA(32'h50) ,				    // input [31:0] dataA_sig
+	.dataB(dataB) ,				// input [31:0] dataB_sig
 	.new_instruction(new_instruction) ,	// input  new_instruction_sig
 	.out_opcode(out_opcode) ,			// output [1:0]  out_opcode_sig
 	.out_register(out_register) ,		// output [13:0] out_register_sig
@@ -132,7 +132,7 @@ full_register_file full_register_file_inst
 (
 	.clk(clk_100) ,				// input  clk_sig
 	.reset(!reset) ,				// input  reset_sig
-	.n_reg(n_reg) ,				// input  n_reg_sig
+	.n_reg(n_reg) ,				// input  [4:0] n_reg_sig
 	.check(check_value) ,		// input [19:0] check_sig
 	.written(register_wr) ,		// input  written_sig
 	.data(register_data) ,		// input [31:0] data_sig

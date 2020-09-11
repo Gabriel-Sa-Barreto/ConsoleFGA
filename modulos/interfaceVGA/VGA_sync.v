@@ -54,7 +54,7 @@ begin
 		end
 		else
 		begin
-			pixel_x <= pixel_x + 1;		
+			pixel_x <= pixel_x + 10'd1;		
 		end
 	end
 end
@@ -75,7 +75,7 @@ begin
 		begin
 			if ((pixel_x == (HT - 1)))		// Ultimo pixel horizontal.
 			begin
-				pixel_y <= pixel_y + 1;
+				pixel_y <= pixel_y + 10'd1;
 			end
 		end
 	end

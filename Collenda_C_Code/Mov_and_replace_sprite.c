@@ -2,22 +2,21 @@
 ///////////////////////////////////////////////////////////////////////////////////
 Author: Gabriel Sá Barreto Alves
 Date: 16/07/2020
-Description: This code performs a test of replace in screen background of the VGA monitor.
+Description:
 ///////////////////////////////////////////////////////////////////////////////////
 */
-#include "sys/alt_stdio.h"
-#include "system.h"
-#include <unistd.h>
-#include "stdio.h"
-#include "altera_avalon_pio_regs.h" //Libary to read values of input
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include<math.h>
+#include <unistd.h>
+#include <math.h>
+#include "io.h"
+#include "sys/alt_stdio.h"
+#include "altera_avalon_pio_regs.h"
+#include "system.h"
 
-#define OPCODE 0x50  //Opcode of the instruction to change sprite coordenates
 #define CHECK_PRINT_BASE 0x11050
-#define BUTTONMOV_BASE 0x11030
-#define SWITCHCOR_BASE 0x11040
+
 
 
 /*
@@ -27,126 +26,194 @@ Description: This code performs a test of replace in screen background of the VG
 590 = 1001001110
 320 = 0101000000
 240 = 0011110000
+100 = 0001100100
 
 */
+//Teste com NIOS:
+//coodenadas: x = 50, y = 50;     valor = 0x21906400        - ok
+//coodenadas: x = 50, y = 430;    valor = 0x21935c00        - ok 
+//coodenadas: x = 590, y = 50;    valor = 0x32706400        - ok
+//coodenadas: x = 590, y = 430;   valor = 0x32735c00        - ok  
+//coodenadas: x = 320, y = 240;   valor = 0x2a01e000 centro - ok  
 
-//coodenadas: x = 50, y = 50;     valor = 0x21906400 error
-//coodenadas: x = 50, y = 430;    valor = 0x21935c00 error
-//coodenadas: x = 590, y = 50;    valor = 0x32706400 error
-//coodenadas: x = 590, y = 430;   valor = 0x32735c00
-//coodenadas: x = 320, y = 240;   valor = 0x2a01e000 centro
+//Teste Sem NIOS:
+//coodenadas: x = 50, y = 50;     valor = 0x21906400        -  OK
+//coodenadas: x = 50, y = 430;    valor = 0x21935c00        -  OK
+//coodenadas: x = 590, y = 50;    valor = 0x32706400        -  OK  
+//coodenadas: x = 590, y = 430;   valor = 0x32735c00        -  OK
+//coodenadas: x = 320, y = 240;   valor = 0x2a01e000 centro -  OK
+//coodenadas: x = 100, y = 100;   valor = 0x2320c800        -  OK
 
 
 
-unsigned long coordenatesFunction(int x, int y, char *offset);
-char * DecimalToBinary(int number);
-unsigned long BinaryToDec(char *valueBin);
-//char * BinaryToHexa(char *valueBin);
+
+
+int activeSprite[3] = {0,0,1};
+//unsigned long coordenatesFunction(int x, int y, char *offset);
+
+//Procedimento que transforma um valor decimal em binário
+void DecimalToBinary(int, int[]);
+
+//Procedimento que concatena dois vetores de inteiros
+void joinVetor(int[], int[], int[], int, int);
+
+//Função que converte um vetor binario em um valor decimnal
+unsigned long BinaryToDec( int[], int);
+
 
 int main(){
-	alt_putstr("It's Working!!");
-	//instruction that receive the binary or hexadeciamal code of the action that
-	//need realize.
-	//Refresh coordenate of a sprite:
-	//Function Format:
-		//Parameter A:
-			//A[3:0]   = Opcode == 0000
-			//A[8:4]   = register
-		//Parameter B: = value to written (new coordenate)
+	int offset[9] = {0,0,0,0,0,0,0,0,0};
 
-	//Example:
-		//Parameter A:  ==
-		//Parameter B:
-	//int coordenate_x = 0;
-	//int coordenate_y = 0;
-	int pushbutton   = 0;
-	unsigned long result = 0;
-	char *value = malloc(32*sizeof(char));
-	value = "000000000";
+	//vetor com o binário da instrução a ser executada no processador de video.
+	int instruction[32];
+
+	//inicializar o vetor de instrução
+	for (int i = 0; i < 32; i++)
+	{
+		instruction[i] = 0;
+	}
+
+	//vetor com opcode da instrução e numero do registrador em que o sprite se encontra.
+	//int opcode_and_register[9] = {0,0,1,0,1,0,0,0,0};
+
+	//variável para valor da coordenada x do sprite
+	int x_coordenate = 320;
+
+	//variável para valor da coordenada y do sprite
+	int y_coordenate = 240;
+
+	//vetor com o valor em binario da coordenada x
+	int vetor_x[10] = {0,0,0,0,0,0,0,0,0,0};
+
+	//vetor com o valor em binario da coordenada y
+	int vetor_y[10] = {0,0,0,0,0,0,0,0,0,0};
+
+	//Transformar as coordenadas x e y decimais em binário
+	DecimalToBinary(x_coordenate, vetor_x);
+	DecimalToBinary(y_coordenate, vetor_y);
+	//----------------------------------------------------
+	printf("Active/Disable:");
+	for (int i = 0; i < 3; i++)
+	{
+		printf("%d", activeSprite[i]);
+	}
+	printf("\n");
+
+	printf("Offset:");
+	for (int i = 0; i < 9; i++)
+	{
+		printf("%d", offset[i]);
+	}
+	printf("\n");
+
+	printf("Y:");
+	for (int i = 0; i < 10; i++)
+	{
+		printf("%d", vetor_y[i]);
+	}
+	printf("\n");
+
+	printf("X:");
+	for (int i = 0; i < 10; i++)
+	{
+		printf("%d", vetor_x[i]);
+	}
+	printf("\n");
+
+	int aux_concatenate[19];
+	//Concatenação dos vetores de offset e coordenada y
+	joinVetor(vetor_y, offset, aux_concatenate, 10, 9);
+
+	int aux_concatenate_2[29];
+	//Concatenação do vetor de offset e coordenada y com o vetor de coordenada x
+	joinVetor(vetor_x, aux_concatenate, aux_concatenate_2, 10, 19);
+
+	//concatenação final para informar se o sprite está ativo ou não.
+	joinVetor(activeSprite, aux_concatenate_2, instruction, 3, 29);
+
+	printf("Concatenacao:");
+	for (int i = 0; i < 32; i++)
+	{
+		printf("%d", instruction[i]);
+	}
+	printf("\n");
+
+	unsigned long result = BinaryToDec(instruction, 32);
+	printf("Result: %lu\n", result);
+
 	while(1){
-		if(IORD(CHECK_PRINT_BASE,0) == 0 && result != 0){ //The screen doesn't been drawn.
-			ALT_CI_VIDEO_PROCESSOR_0(OPCODE, result);
-		}else{
-			pushbutton = IORD(BUTTONMOV_BASE,0);
-			usleep(1000);
-			result = coordenatesFunction(300,300,value);
-			printf("Result: %d", result);
+		if(IORD(CHECK_PRINT_BASE,0) == 0){
+			ALT_CI_VIDEO_PROCESSOR_0(0x50, result );
 		}
+		usleep(200);
+	}
+
+}
+
+/*
+Procedimento que concatena dois vetores de inteiros.
+PARAMETROS:
+	* vetor_1 e vetor_2: vetores a serem concatenados.
+	* vetor_3: vetor no qual a concatenação será realizada.
+	* size_1:  valor máximo de posições do vetor 1
+	* size_2:  valor máximo de posições do vetor 2
+*/
+void joinVetor(int vetor_1[], int vetor_2[], int vetor_3[], int size_1, int size_2)
+{
+	//Variável de posição do vetor que armazena o valor da concatenação.
+	int i = 0;
+	//Loop para copiar o primeiro vetor.
+	for (i = 0; i < size_1; i++)
+	{
+		vetor_3[i] = vetor_1[i];
+	}
+
+	//Loop para copiar o segundo vetor.
+	for (int index = 0; index < size_2; index++)
+	{
+		vetor_3[i] = vetor_2[index];
+		i++;
 	}
 }
 
-unsigned long coordenatesFunction(int x, int y, char *offset){
-	char *x_coordenate = DecimalToBinary(x);
-	char *y_coordenate = DecimalToBinary(y);
-	char *value = malloc(32*sizeof(char));
-
-	//Joins the binary values.
-	strcat(value, "0001"); //Bit to active sprite
-	strcat(value, x_coordenate);
-	strcat(value, y_coordenate);
-	strcat(value, offset); //Offset's sprite
-
-	//BinaryToHexa(value);
-	return BinaryToDec(value);
-}
 
 
-char * DecimalToBinary(int number){
-	char *result;
-	result = malloc(10*sizeof(char));
 
-	int index = 10; //Last Position
-	while(number > 0){
-		result[index] = number % 2;
-		number = number / 2;
-		if(index == 0){
+/*
+Procedimento que transforma um valor decimal em binário.
+PARAMETROS:
+	* number: valor a ser convertido
+	* values: vetor no qual os valores de 0 e 1 serão inseridos
+*/
+void DecimalToBinary(int number, int values[])
+{
+	int index = 9;
+	while(number > 0)
+	{
+		values[index] = number % 2;
+		number = number/2;
+		if(number == 0 || number == 1)
+		{
+			values[index - 1] = number;
 			break;
 		}
 		index--;
 	}
-	return result;
 }
 
-unsigned long BinaryToDec(char *valueBin){
-	char bin[32];
+unsigned long BinaryToDec(int valueBin[], int sizeBin){
     unsigned long dec = 0;
     int i = 0;
     int s;
-    s = strlen( valueBin );
+    s = sizeBin;
     while( s-- ) {
-        if( bin[s] == '0' || bin[s] == '1' ) {
-            dec = dec + pow(2, i++) * (bin[s] - '0');
+        if( valueBin[s] == 0 || valueBin[s] == 1 ) {
+            dec = dec + pow(2, i++) * (valueBin[s] - 0);
+        }
+        if(s == 0){
+        	break;
         }
     };
+
+    return dec;
 }
-/*char * BinaryToHexa(char *valueBin){
-	char *result = malloc(8*sizeof(char));
-	char *hexa   = malloc(4*sizeof(char));
-	result = "0x";
-	int aux_add = 4;
-	int counter = 0;
-	for (int i = 0; i < 32; i = i + aux_add){
-		for (int j = i; j < (i+aux_add) ; j++){
-			hexa[counter] = valueBin[j];
-		}
-		counter = 0;
-		if( strcpy(hexa,"0000") == 0)       strcat(result,"0")//0
-		else if( strcmp(hexa,"0001") == 0); strcat(result,"1")//1
-		else if( strcmp(hexa,"0010") == 0); strcat(result,"2")//2
-		else if( strcmp(hexa,"0011") == 0); strcat(result,"3")//3
-		else if( strcmp(hexa,"0100") == 0); strcat(result,"4")//4
-		else if( strcmp(hexa,"0101") == 0); strcat(result,"5")//5
-		else if( strcmp(hexa,"0110") == 0); strcat(result,"6")//6
-		else if( strcmp(hexa,"0111") == 0); strcat(result,"7")//7
-		else if( strcmp(hexa,"1000") == 0); strcat(result,"8")//8
-		else if( strcmp(hexa,"1001") == 0); strcat(result,"9")//9
-		else if( strcmp(hexa,"1010") == 0); strcat(result,"a")//A
-		else if( strcmp(hexa,"1011") == 0); strcat(result,"b")//B
-		else if( strcmp(hexa,"1100") == 0); strcat(result,"c")//C
-		else if( strcmp(hexa,"1101") == 0); strcat(result,"d")//D
-		else if( strcmp(hexa,"1110") == 0); strcat(result,"e")//E
-		else if( strcmp(hexa,"1111") == 0); strcat(result,"f")//F
-	}
-	return result;
-}
-*/

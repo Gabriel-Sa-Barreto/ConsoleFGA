@@ -35,7 +35,7 @@ reg [size_address-1:0] limite;
 
 
 /*--------Bloco always combinacional responsável por gerar o endereço de memória a ser acessado-----*/
-always @(pixel_x or pixel_y or sprite_datas) begin
+always @(pixel_x or pixel_y or sprite_datas or sprite_on) begin
 	linha    	  	   = 14'd0;
 	aux_add_address    = 14'd0;
 	coluna             = 14'd0;
@@ -56,10 +56,12 @@ always @(pixel_x or pixel_y or sprite_datas) begin
 	linha  = screen_y - aux_y_sprite; 
 	coluna = screen_x - aux_x_sprite;
 	aux_add_address = size_line * linha; 
-	
 
 	if( ( (screen_x >= aux_x_sprite) && (screen_x < limite) ) ) begin
 		aux_memory_address = (sprite_offset * offset) + coluna + aux_add_address; 
+	end
+	else begin
+		aux_memory_address = address_BG;
 	end
 end
 /*--------------------------------------------------------------------------------------------------*/

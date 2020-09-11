@@ -37,15 +37,13 @@ module printModule #( parameter size_x = 10, size_y = 10, size_address = 14, bit
 
 
 /*------------------Parâmetros da máquina de estados-------------------------*/
-localparam [2:0] RECEBE      = 3'b000,
+localparam [2:0] RECEBE     = 3'b000,
 				PROCESSA    = 3'b001,
 				SPRITE      = 3'b010,  
 				AGUARDO     = 3'b011,
 				AGUARDO_2   = 3'b100;
 
 localparam address_BG = 14'd16383;
-localparam screen_x = 10'd640;   //número de colunas do monitor de acordo à resolução utilizada.
-localparam screen_y = 10'd480;   //número de linhas do monitor de acordo à resolução utilizada.
 /*---------------------------------------------------------------------------*/
 
 reg [2:0]  next, state; 
@@ -68,7 +66,7 @@ end
 /*-----------------------------------------------------------------------------------*/
 
 /*--------------------Bloco combinacional responsável pela mudança de estados----------------------------*/
-always @(state or pixel_x or pixel_y or data_reg or count_finished or active_area) begin
+always @(state or data_reg or count_finished or active_area) begin
 	next = 3'bxxx;
 	case(state)
 		//só volta/entra no estado de RECEBE se somente se foi finalizado uma impressão da linha de um sprite
@@ -127,19 +125,20 @@ always @(negedge clk or negedge reset) begin
 		case(state) 
 			RECEBE:
 				begin
-					out_sprite_datas    <= 32'hxxxxxxxx;
 					if(active_area) begin
 						//envio de coordenadas para comparação.
-						out_check_value[9:0]  <= pixel_y; 
+						out_check_value[9:0]   <= pixel_y; 
 						out_check_value[19:10] <= pixel_x;
-						out_memory_address    <= 14'bxxxxxxxxxxxxxx;
-						out_sprite_on         <= 1'b0;
+						out_memory_address     <= 14'bxxxxxxxxxxxxxx;
+						out_sprite_on          <= 1'b0;
+						out_sprite_datas       <= 32'hxxxxxxxx;
 					end
 					else begin
-						out_check_value[9:0]  <= 10'bxxxxxxxxxx; 
+						out_check_value[9:0]   <= 10'bxxxxxxxxxx; 
 						out_check_value[19:10] <= 10'bxxxxxxxxxx;
-						out_memory_address    <= 14'bxxxxxxxxxxxxxx;
-						out_sprite_on         <= 1'b0; 
+						out_memory_address     <= 14'bxxxxxxxxxxxxxx;
+						out_sprite_on          <= 1'b0; 
+						out_sprite_datas       <= 32'hxxxxxxxx;
 					end
 				end
 			PROCESSA:
@@ -147,7 +146,8 @@ always @(negedge clk or negedge reset) begin
 					if(data_reg == 32'h00000001) begin //pixel atual pertence ao background do monitor.
 						out_memory_address    <= address_BG;  //endereço de memória onde está localizado a cor de background.
 						out_check_value[19:0] <= 20'bxxxxxxxxxxxxxxxxxxxx;
-						out_sprite_datas    <= 32'hxxxxxxxx;
+						out_sprite_datas      <= 32'hxxxxxxxx;
+						out_sprite_on         <= 1'b0;
 					end
 					else begin 
 						out_memory_address    <= 14'bxxxxxxxxxxxxxx;
@@ -159,8 +159,7 @@ always @(negedge clk or negedge reset) begin
 
 			SPRITE:
 				begin
-					out_sprite_on     <= 1'b1;
-					//out_sprite_datas  <= data_reg;
+					out_sprite_on         <= 1'b1;
 					out_memory_address    <= 14'bxxxxxxxxxxxxxx;
 					out_check_value[19:0] <= 20'bxxxxxxxxxxxxxxxxxxxx;
 				end

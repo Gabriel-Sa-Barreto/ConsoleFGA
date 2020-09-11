@@ -4,91 +4,71 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "hsync",
+					"name" : "out_hsync",
 					"strict" : false
 				},
 				{
-					"name" : "vsync",
+					"name" : "out_vsync",
 					"strict" : false
 				},
 				{
-					"name" : "color_b[2]",
+					"name" : "B[2]",
 					"strict" : false
 				},
 				{
-					"name" : "color_b[1]",
+					"name" : "B[1]",
 					"strict" : false
 				},
 				{
-					"name" : "color_b[0]",
+					"name" : "B[0]",
 					"strict" : false
 				},
 				{
-					"name" : "color_g[2]",
+					"name" : "G[2]",
 					"strict" : false
 				},
 				{
-					"name" : "color_g[1]",
+					"name" : "G[1]",
 					"strict" : false
 				},
 				{
-					"name" : "color_g[0]",
+					"name" : "G[0]",
 					"strict" : false
 				},
 				{
-					"name" : "color_r[2]",
+					"name" : "R[2]",
 					"strict" : false
 				},
 				{
-					"name" : "color_r[1]",
+					"name" : "R[1]",
 					"strict" : false
 				},
 				{
-					"name" : "color_r[0]",
+					"name" : "R[0]",
 					"strict" : false
 				},
 				{
-					"name" : "clk",
+					"name" : "reset",
 					"strict" : false
 				},
 				{
-					"name" : "switchcor[0]",
+					"name" : "clk_FPGA",
 					"strict" : false
 				},
 				{
-					"name" : "buttonmov[0]",
+					"name" : "switch[0]",
 					"strict" : false
 				},
 				{
-					"name" : "switchcor[1]",
+					"name" : "switch[1]",
 					"strict" : false
 				},
 				{
-					"name" : "buttonmov[1]",
+					"name" : "switch[2]",
 					"strict" : false
 				},
 				{
-					"name" : "switchcor[2]",
-					"strict" : false
-				},
-				{
-					"name" : "switchcor[3]",
-					"strict" : false
-				},
-				{
-					"name" : "altera_reserved_tms",
-					"strict" : false
-				},
-				{
-					"name" : "altera_reserved_tck",
-					"strict" : false
-				},
-				{
-					"name" : "altera_reserved_tdi",
-					"strict" : false
-				},
-				{
-					"name" : "altera_reserved_tdo",
+					"name" : "switch[3]",
 					"strict" : false
 				}
 			]

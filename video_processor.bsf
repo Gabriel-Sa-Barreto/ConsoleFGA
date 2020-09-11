@@ -47,23 +47,9 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 80)
 		(input)
-		(text "start" (rect 0 0 17 12)(font "Arial" ))
-		(text "start" (rect 21 75 38 87)(font "Arial" ))
-		(line (pt 0 80)(pt 16 80)(line_width 1))
-	)
-	(port
-		(pt 0 96)
-		(input)
-		(text "dataA[31..0]" (rect 0 0 48 12)(font "Arial" ))
-		(text "dataA[31..0]" (rect 21 91 69 103)(font "Arial" ))
-		(line (pt 0 96)(pt 16 96)(line_width 3))
-	)
-	(port
-		(pt 0 112)
-		(input)
 		(text "dataB[31..0]" (rect 0 0 46 12)(font "Arial" ))
-		(text "dataB[31..0]" (rect 21 107 67 119)(font "Arial" ))
-		(line (pt 0 112)(pt 16 112)(line_width 3))
+		(text "dataB[31..0]" (rect 21 75 67 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
 	)
 	(port
 		(pt 224 32)

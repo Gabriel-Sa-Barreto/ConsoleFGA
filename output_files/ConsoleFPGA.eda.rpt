@@ -1,5 +1,5 @@
 EDA Netlist Writer report for ConsoleFPGA
-Mon Aug  3 11:10:23 2020
+Fri Sep 11 10:37:24 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -36,34 +36,34 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Mon Aug  3 11:10:23 2020 ;
+; EDA Netlist Writer Status ; Successful - Fri Sep 11 10:37:24 2020 ;
 ; Revision Name             ; ConsoleFPGA                           ;
-; Top-level Entity Name     ; ConsoleFPGA                           ;
+; Top-level Entity Name     ; Collenda                              ;
 ; Family                    ; Cyclone IV E                          ;
 ; Simulation Files Creation ; Successful                            ;
 +---------------------------+---------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------+
-; Simulation Settings                                                                                                                 ;
-+---------------------------------------------------------------------------------------------------+---------------------------------+
-; Option                                                                                            ; Setting                         ;
-+---------------------------------------------------------------------------------------------------+---------------------------------+
-; Tool Name                                                                                         ; ModelSim-Altera (SystemVerilog) ;
-; Generate functional simulation netlist                                                            ; Off                             ;
-; Time scale                                                                                        ; 1 ps                            ;
-; Truncate long hierarchy paths                                                                     ; Off                             ;
-; Map illegal HDL characters                                                                        ; Off                             ;
-; Flatten buses into individual nodes                                                               ; Off                             ;
-; Maintain hierarchy                                                                                ; Off                             ;
-; Bring out device-wide set/reset signals as ports                                                  ; Off                             ;
-; Enable glitch filtering                                                                           ; Off                             ;
-; Do not write top level VHDL entity                                                                ; Off                             ;
-; Disable detection of setup and hold time violations in the input registers of bi-directional pins ; Off                             ;
-; Architecture name in VHDL output netlist                                                          ; structure                       ;
-; Generate third-party EDA tool command script for RTL functional simulation                        ; Off                             ;
-; Generate third-party EDA tool command script for gate-level simulation                            ; Off                             ;
-+---------------------------------------------------------------------------------------------------+---------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Simulation Settings                                                                                                           ;
++---------------------------------------------------------------------------------------------------+---------------------------+
+; Option                                                                                            ; Setting                   ;
++---------------------------------------------------------------------------------------------------+---------------------------+
+; Tool Name                                                                                         ; ModelSim-Altera (Verilog) ;
+; Generate functional simulation netlist                                                            ; Off                       ;
+; Time scale                                                                                        ; 1 ps                      ;
+; Truncate long hierarchy paths                                                                     ; Off                       ;
+; Map illegal HDL characters                                                                        ; Off                       ;
+; Flatten buses into individual nodes                                                               ; Off                       ;
+; Maintain hierarchy                                                                                ; Off                       ;
+; Bring out device-wide set/reset signals as ports                                                  ; Off                       ;
+; Enable glitch filtering                                                                           ; Off                       ;
+; Do not write top level VHDL entity                                                                ; Off                       ;
+; Disable detection of setup and hold time violations in the input registers of bi-directional pins ; Off                       ;
+; Architecture name in VHDL output netlist                                                          ; structure                 ;
+; Generate third-party EDA tool command script for RTL functional simulation                        ; Off                       ;
+; Generate third-party EDA tool command script for gate-level simulation                            ; Off                       ;
++---------------------------------------------------------------------------------------------------+---------------------------+
 
 
 +----------------------------------------------------------------------------------------------+
@@ -71,10 +71,10 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------------------+
 ; Generated Files                                                                              ;
 +----------------------------------------------------------------------------------------------+
-; /home/gabriel/Documents/ConsoleFPGA/simulation/modelsim/ConsoleFPGA_6_1200mv_85c_slow.svo    ;
-; /home/gabriel/Documents/ConsoleFPGA/simulation/modelsim/ConsoleFPGA_6_1200mv_0c_slow.svo     ;
-; /home/gabriel/Documents/ConsoleFPGA/simulation/modelsim/ConsoleFPGA_min_1200mv_0c_fast.svo   ;
-; /home/gabriel/Documents/ConsoleFPGA/simulation/modelsim/ConsoleFPGA.svo                      ;
+; /home/gabriel/Documents/ConsoleFPGA/simulation/modelsim/ConsoleFPGA_6_1200mv_85c_slow.vo     ;
+; /home/gabriel/Documents/ConsoleFPGA/simulation/modelsim/ConsoleFPGA_6_1200mv_0c_slow.vo      ;
+; /home/gabriel/Documents/ConsoleFPGA/simulation/modelsim/ConsoleFPGA_min_1200mv_0c_fast.vo    ;
+; /home/gabriel/Documents/ConsoleFPGA/simulation/modelsim/ConsoleFPGA.vo                       ;
 ; /home/gabriel/Documents/ConsoleFPGA/simulation/modelsim/ConsoleFPGA_6_1200mv_85c_v_slow.sdo  ;
 ; /home/gabriel/Documents/ConsoleFPGA/simulation/modelsim/ConsoleFPGA_6_1200mv_0c_v_slow.sdo   ;
 ; /home/gabriel/Documents/ConsoleFPGA/simulation/modelsim/ConsoleFPGA_min_1200mv_0c_v_fast.sdo ;
@@ -88,21 +88,21 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon Aug  3 11:10:08 2020
+    Info: Processing started: Fri Sep 11 10:37:22 2020
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off ConsoleFPGA -c ConsoleFPGA
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (204019): Generated file ConsoleFPGA_6_1200mv_85c_slow.svo in folder "/home/gabriel/Documents/ConsoleFPGA/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file ConsoleFPGA_6_1200mv_0c_slow.svo in folder "/home/gabriel/Documents/ConsoleFPGA/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file ConsoleFPGA_min_1200mv_0c_fast.svo in folder "/home/gabriel/Documents/ConsoleFPGA/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file ConsoleFPGA.svo in folder "/home/gabriel/Documents/ConsoleFPGA/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file ConsoleFPGA_6_1200mv_85c_slow.vo in folder "/home/gabriel/Documents/ConsoleFPGA/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file ConsoleFPGA_6_1200mv_0c_slow.vo in folder "/home/gabriel/Documents/ConsoleFPGA/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file ConsoleFPGA_min_1200mv_0c_fast.vo in folder "/home/gabriel/Documents/ConsoleFPGA/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file ConsoleFPGA.vo in folder "/home/gabriel/Documents/ConsoleFPGA/simulation/modelsim/" for EDA simulation tool
 Info (204019): Generated file ConsoleFPGA_6_1200mv_85c_v_slow.sdo in folder "/home/gabriel/Documents/ConsoleFPGA/simulation/modelsim/" for EDA simulation tool
 Info (204019): Generated file ConsoleFPGA_6_1200mv_0c_v_slow.sdo in folder "/home/gabriel/Documents/ConsoleFPGA/simulation/modelsim/" for EDA simulation tool
 Info (204019): Generated file ConsoleFPGA_min_1200mv_0c_v_fast.sdo in folder "/home/gabriel/Documents/ConsoleFPGA/simulation/modelsim/" for EDA simulation tool
 Info (204019): Generated file ConsoleFPGA_v.sdo in folder "/home/gabriel/Documents/ConsoleFPGA/simulation/modelsim/" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 1077 megabytes
-    Info: Processing ended: Mon Aug  3 11:10:23 2020
-    Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:14
+    Info: Peak virtual memory: 1022 megabytes
+    Info: Processing ended: Fri Sep 11 10:37:24 2020
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
 
 

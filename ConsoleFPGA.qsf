@@ -18,7 +18,7 @@
 #
 # Quartus Prime
 # Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-# Date created = 08:33:32  October 30, 2019
+# Date created = 11:26:16  September 10, 2020
 #
 # -------------------------------------------------------------------------- #
 #
@@ -38,57 +38,56 @@
 
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE22F17C6
-set_global_assignment -name TOP_LEVEL_ENTITY ConsoleFPGA
+set_global_assignment -name TOP_LEVEL_ENTITY Collenda
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 18.1.0
-set_global_assignment -name PROJECT_CREATION_TIME_DATE "08:33:32  OCTOBER 30, 2019"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "11:26:16  SEPTEMBER 10, 2020"
 set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Lite Edition"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
 set_global_assignment -name NOMINAL_CORE_SUPPLY_VOLTAGE 1.2V
-set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (SystemVerilog)"
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
 set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
-set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "SYSTEMVERILOG HDL" -section_id eda_simulation
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_location_assignment PIN_J15 -to reset
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_location_assignment PIN_M1 -to switchcor[0]
-set_location_assignment PIN_T8 -to switchcor[1]
-set_location_assignment PIN_B9 -to switchcor[2]
-set_location_assignment PIN_M15 -to switchcor[3]
-set_location_assignment PIN_R8 -to clk
-set_location_assignment PIN_B5 -to vsync
-set_location_assignment PIN_A4 -to hsync
-set_location_assignment PIN_D5 -to color_b[2]
-set_location_assignment PIN_A6 -to color_b[1]
-set_location_assignment PIN_D6 -to color_b[0]
-set_location_assignment PIN_C6 -to color_g[2]
-set_location_assignment PIN_E6 -to color_g[1]
-set_location_assignment PIN_D8 -to color_g[0]
-set_location_assignment PIN_F8 -to color_r[2]
-set_location_assignment PIN_E9 -to color_r[1]
-set_location_assignment PIN_F9 -to color_r[0]
-set_location_assignment PIN_J15 -to buttonmov[0]
-set_location_assignment PIN_E1 -to buttonmov[1]
-set_global_assignment -name QIP_FILE arquiteturaQsys/arquiteturaQsys/synthesis/collenda.qip
-set_global_assignment -name VERILOG_FILE modulos/sprite_line_counter/calculoAddress.v
-set_global_assignment -name VERILOG_FILE modulos/registerFile/full_register_file.v
-set_global_assignment -name VERILOG_FILE modulos/mod_comparator/comparator.v
-set_global_assignment -name VERILOG_FILE modulos/mod_comparator/mod_comparator.v
+set_location_assignment PIN_R8 -to clk_FPGA
+set_location_assignment PIN_A4 -to out_hsync
+set_location_assignment PIN_B5 -to out_vsync
+set_location_assignment PIN_D5 -to B[2]
+set_location_assignment PIN_A6 -to B[1]
+set_location_assignment PIN_D6 -to B[0]
+set_location_assignment PIN_C6 -to G[2]
+set_location_assignment PIN_E6 -to G[1]
+set_location_assignment PIN_D8 -to G[0]
+set_location_assignment PIN_F8 -to R[2]
+set_location_assignment PIN_E9 -to R[1]
+set_location_assignment PIN_F9 -to R[0]
+set_global_assignment -name VERILOG_FILE modulos/geradordDataB/geradorDataB.v
 set_global_assignment -name VERILOG_FILE modulos/Top_level/video_processor.v
 set_global_assignment -name VERILOG_FILE modulos/sprite_memory/sprite_memory.v
+set_global_assignment -name VERILOG_FILE modulos/sprite_line_counter/calculoAddress.v
+set_global_assignment -name VERILOG_FILE modulos/registerFile/full_register_file.v
+set_global_assignment -name VERILOG_FILE modulos/registerFile/registerFile.v
+set_global_assignment -name VERILOG_FILE modulos/printModule/printModule.v
+set_global_assignment -name VERILOG_FILE modulos/multiplexador/multiplexador.v
+set_global_assignment -name VERILOG_FILE modulos/mod_comparator/mod_comparator.v
+set_global_assignment -name VERILOG_FILE modulos/mod_comparator/comparator.v
 set_global_assignment -name VERILOG_FILE modulos/interfaceVGA/VGA_sync.v
 set_global_assignment -name VERILOG_FILE modulos/full_print_module/full_print_module.v
-set_global_assignment -name VERILOG_FILE modulos/multiplexador/multiplexador.v
-set_global_assignment -name VERILOG_FILE modulos/printModule/printModule.v
-set_global_assignment -name VERILOG_FILE modulos/registerFile/registerFile.v
 set_global_assignment -name VERILOG_FILE modulos/demultiplexador/demultiplexador.v
-set_global_assignment -name VERILOG_FILE modulos/ControlUnit/controlUnit.v
 set_global_assignment -name VERILOG_FILE modulos/decoderInstruction/decoderInstruction.v
+set_global_assignment -name VERILOG_FILE modulos/ControlUnit/controlUnit.v
 set_global_assignment -name QIP_FILE modulos/sprite_memory/memory.qip
 set_global_assignment -name QIP_FILE modulos/PLL/clock_pll.qip
-set_global_assignment -name BDF_FILE arquiteturaQsys/arquiteturaQsys/synthesis/ConsoleFPGA.bdf
+set_global_assignment -name BDF_FILE modulos/Collenda.bdf
+set_location_assignment PIN_M1 -to switch[0]
+set_location_assignment PIN_T8 -to switch[1]
+set_location_assignment PIN_B9 -to switch[2]
+set_location_assignment PIN_M15 -to switch[3]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

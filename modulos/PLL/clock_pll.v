@@ -322,8 +322,8 @@ endmodule
 // Retrieval info: GEN_FILE: TYPE_NORMAL clock_pll.ppf TRUE
 // Retrieval info: GEN_FILE: TYPE_NORMAL clock_pll.inc FALSE
 // Retrieval info: GEN_FILE: TYPE_NORMAL clock_pll.cmp FALSE
-// Retrieval info: GEN_FILE: TYPE_NORMAL clock_pll.bsf FALSE
-// Retrieval info: GEN_FILE: TYPE_NORMAL clock_pll_inst.v FALSE
+// Retrieval info: GEN_FILE: TYPE_NORMAL clock_pll.bsf TRUE
+// Retrieval info: GEN_FILE: TYPE_NORMAL clock_pll_inst.v TRUE
 // Retrieval info: GEN_FILE: TYPE_NORMAL clock_pll_bb.v TRUE
 // Retrieval info: LIB_FILE: altera_mf
 // Retrieval info: CBX_MODULE_PREFIX: ON
