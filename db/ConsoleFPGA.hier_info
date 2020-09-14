@@ -1,25 +1,27 @@
 |Collenda
-out_hsync <= video_processor:inst5.out_hsync
-clk_FPGA => video_processor:inst5.clk_FPGA
-clk_FPGA => inst2.IN0
-reset => inst4.IN0
-switch[0] => geradorDataB:inst.switch[0]
-switch[1] => geradorDataB:inst.switch[1]
-switch[2] => geradorDataB:inst.switch[2]
-switch[3] => geradorDataB:inst.switch[3]
-out_vsync <= video_processor:inst5.out_vsync
-B[0] <= video_processor:inst5.B[0]
-B[1] <= video_processor:inst5.B[1]
-B[2] <= video_processor:inst5.B[2]
-G[0] <= video_processor:inst5.G[0]
-G[1] <= video_processor:inst5.G[1]
-G[2] <= video_processor:inst5.G[2]
-R[0] <= video_processor:inst5.R[0]
-R[1] <= video_processor:inst5.R[1]
-R[2] <= video_processor:inst5.R[2]
+out_hsync <= video_processor:inst8.out_hsync
+clk_FPGA => video_processor:inst8.clk_FPGA
+clk_FPGA => inst10.IN0
+clk_FPGA => geradorDataB:inst.clk
+reset => video_processor:inst8.reset
+reset => geradorDataB:inst.reset
+buttonLeft => geradorDataB:inst.buttonLeft
+buttonRight => geradorDataB:inst.buttonRight
+up => geradorDataB:inst.up
+down => geradorDataB:inst.down
+out_vsync <= video_processor:inst8.out_vsync
+B[0] <= video_processor:inst8.B[0]
+B[1] <= video_processor:inst8.B[1]
+B[2] <= video_processor:inst8.B[2]
+G[0] <= video_processor:inst8.G[0]
+G[1] <= video_processor:inst8.G[1]
+G[2] <= video_processor:inst8.G[2]
+R[0] <= video_processor:inst8.R[0]
+R[1] <= video_processor:inst8.R[1]
+R[2] <= video_processor:inst8.R[2]
 
 
-|Collenda|video_processor:inst5
+|Collenda|video_processor:inst8
 clk_FPGA => clk_FPGA.IN1
 clk_en => clk_en.IN1
 reset => _.IN1
@@ -72,13 +74,13 @@ out_vsync <= VGA_sync:VGA_sync_inst.vsync
 out_printtingScreen <= out_printtingScreen~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Collenda|video_processor:inst5|clock_pll:clock_pll_inst
+|Collenda|video_processor:inst8|clock_pll:clock_pll_inst
 inclk0 => sub_wire4[0].IN1
 c0 <= altpll:altpll_component.clk
 c1 <= altpll:altpll_component.clk
 
 
-|Collenda|video_processor:inst5|clock_pll:clock_pll_inst|altpll:altpll_component
+|Collenda|video_processor:inst8|clock_pll:clock_pll_inst|altpll:altpll_component
 inclk[0] => clock_pll_altpll:auto_generated.inclk[0]
 inclk[1] => clock_pll_altpll:auto_generated.inclk[1]
 fbin => ~NO_FANOUT~
@@ -138,7 +140,7 @@ fref <= <GND>
 icdrclk <= <GND>
 
 
-|Collenda|video_processor:inst5|clock_pll:clock_pll_inst|altpll:altpll_component|clock_pll_altpll:auto_generated
+|Collenda|video_processor:inst8|clock_pll:clock_pll_inst|altpll:altpll_component|clock_pll_altpll:auto_generated
 clk[0] <= pll1.CLK
 clk[1] <= pll1.CLK1
 clk[2] <= pll1.CLK2
@@ -148,7 +150,7 @@ inclk[0] => pll1.CLK
 inclk[1] => pll1.CLK1
 
 
-|Collenda|video_processor:inst5|decorderInstruction:decorderInstruction_inst
+|Collenda|video_processor:inst8|decorderInstruction:decorderInstruction_inst
 clk_en => out_data[0]~reg0.CLK
 clk_en => out_data[1]~reg0.CLK
 clk_en => out_data[2]~reg0.CLK
@@ -376,7 +378,7 @@ out_data[30] <= out_data[30]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 out_data[31] <= out_data[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Collenda|video_processor:inst5|controlUnit:controlUnit_inst
+|Collenda|video_processor:inst8|controlUnit:controlUnit_inst
 clk => state~1.DATAIN
 clk => reset_done~reg0.CLK
 clk => selectorAddress~reg0.CLK
@@ -431,7 +433,7 @@ selectorAddress <= selectorAddress~reg0.DB_MAX_OUTPUT_PORT_TYPE
 reset_done <= reset_done~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Collenda|video_processor:inst5|demultiplexador:demultiplexador_inst_address
+|Collenda|video_processor:inst8|demultiplexador:demultiplexador_inst_address
 selector => out1.OUTPUTSELECT
 selector => out1.OUTPUTSELECT
 selector => out1.OUTPUTSELECT
@@ -491,7 +493,7 @@ out2[3] <= out2.DB_MAX_OUTPUT_PORT_TYPE
 out2[4] <= out2.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Collenda|video_processor:inst5|demultiplexador:demultiplexador_inst_data
+|Collenda|video_processor:inst8|demultiplexador:demultiplexador_inst_data
 selector => out1.OUTPUTSELECT
 selector => out1.OUTPUTSELECT
 selector => out1.OUTPUTSELECT
@@ -617,7 +619,7 @@ out2[30] <= out2.DB_MAX_OUTPUT_PORT_TYPE
 out2[31] <= out2.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Collenda|video_processor:inst5|full_register_file:full_register_file_inst
+|Collenda|video_processor:inst8|full_register_file:full_register_file_inst
 clk => clk.IN1
 reset => reset.IN1
 n_reg[0] => n_reg[0].IN1
@@ -713,7 +715,7 @@ readData[31] <= mod_comparator:mod_comparator_inst.register_read
 success <= registerFile:registerFile_inst.out_success
 
 
-|Collenda|video_processor:inst5|full_register_file:full_register_file_inst|registerFile:registerFile_inst
+|Collenda|video_processor:inst8|full_register_file:full_register_file_inst|registerFile:registerFile_inst
 clk => success.CLK
 clk => reg31[0].CLK
 clk => reg31[1].CLK
@@ -5845,7 +5847,7 @@ r31[31] <= reg31[31].DB_MAX_OUTPUT_PORT_TYPE
 out_success <= success.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Collenda|video_processor:inst5|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst
+|Collenda|video_processor:inst8|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst
 r0[0] => r0[0].IN1
 r0[1] => r0[1].IN1
 r0[2] => r0[2].IN1
@@ -6925,7 +6927,7 @@ register_read[30] <= register_read.DB_MAX_OUTPUT_PORT_TYPE
 register_read[31] <= register_read.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Collenda|video_processor:inst5|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_0
+|Collenda|video_processor:inst8|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_0
 rg[0] => ~NO_FANOUT~
 rg[1] => ~NO_FANOUT~
 rg[2] => ~NO_FANOUT~
@@ -7002,7 +7004,7 @@ compare => result.OUTPUTSELECT
 result <= result.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Collenda|video_processor:inst5|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_1
+|Collenda|video_processor:inst8|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_1
 rg[0] => ~NO_FANOUT~
 rg[1] => ~NO_FANOUT~
 rg[2] => ~NO_FANOUT~
@@ -7079,7 +7081,7 @@ compare => result.OUTPUTSELECT
 result <= result.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Collenda|video_processor:inst5|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_2
+|Collenda|video_processor:inst8|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_2
 rg[0] => ~NO_FANOUT~
 rg[1] => ~NO_FANOUT~
 rg[2] => ~NO_FANOUT~
@@ -7156,7 +7158,7 @@ compare => result.OUTPUTSELECT
 result <= result.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Collenda|video_processor:inst5|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_3
+|Collenda|video_processor:inst8|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_3
 rg[0] => ~NO_FANOUT~
 rg[1] => ~NO_FANOUT~
 rg[2] => ~NO_FANOUT~
@@ -7233,7 +7235,7 @@ compare => result.OUTPUTSELECT
 result <= result.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Collenda|video_processor:inst5|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_4
+|Collenda|video_processor:inst8|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_4
 rg[0] => ~NO_FANOUT~
 rg[1] => ~NO_FANOUT~
 rg[2] => ~NO_FANOUT~
@@ -7310,7 +7312,7 @@ compare => result.OUTPUTSELECT
 result <= result.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Collenda|video_processor:inst5|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_5
+|Collenda|video_processor:inst8|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_5
 rg[0] => ~NO_FANOUT~
 rg[1] => ~NO_FANOUT~
 rg[2] => ~NO_FANOUT~
@@ -7387,7 +7389,7 @@ compare => result.OUTPUTSELECT
 result <= result.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Collenda|video_processor:inst5|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_6
+|Collenda|video_processor:inst8|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_6
 rg[0] => ~NO_FANOUT~
 rg[1] => ~NO_FANOUT~
 rg[2] => ~NO_FANOUT~
@@ -7464,7 +7466,7 @@ compare => result.OUTPUTSELECT
 result <= result.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Collenda|video_processor:inst5|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_7
+|Collenda|video_processor:inst8|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_7
 rg[0] => ~NO_FANOUT~
 rg[1] => ~NO_FANOUT~
 rg[2] => ~NO_FANOUT~
@@ -7541,7 +7543,7 @@ compare => result.OUTPUTSELECT
 result <= result.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Collenda|video_processor:inst5|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_8
+|Collenda|video_processor:inst8|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_8
 rg[0] => ~NO_FANOUT~
 rg[1] => ~NO_FANOUT~
 rg[2] => ~NO_FANOUT~
@@ -7618,7 +7620,7 @@ compare => result.OUTPUTSELECT
 result <= result.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Collenda|video_processor:inst5|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_9
+|Collenda|video_processor:inst8|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_9
 rg[0] => ~NO_FANOUT~
 rg[1] => ~NO_FANOUT~
 rg[2] => ~NO_FANOUT~
@@ -7695,7 +7697,7 @@ compare => result.OUTPUTSELECT
 result <= result.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Collenda|video_processor:inst5|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_10
+|Collenda|video_processor:inst8|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_10
 rg[0] => ~NO_FANOUT~
 rg[1] => ~NO_FANOUT~
 rg[2] => ~NO_FANOUT~
@@ -7772,7 +7774,7 @@ compare => result.OUTPUTSELECT
 result <= result.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Collenda|video_processor:inst5|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_11
+|Collenda|video_processor:inst8|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_11
 rg[0] => ~NO_FANOUT~
 rg[1] => ~NO_FANOUT~
 rg[2] => ~NO_FANOUT~
@@ -7849,7 +7851,7 @@ compare => result.OUTPUTSELECT
 result <= result.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Collenda|video_processor:inst5|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_12
+|Collenda|video_processor:inst8|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_12
 rg[0] => ~NO_FANOUT~
 rg[1] => ~NO_FANOUT~
 rg[2] => ~NO_FANOUT~
@@ -7926,7 +7928,7 @@ compare => result.OUTPUTSELECT
 result <= result.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Collenda|video_processor:inst5|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_13
+|Collenda|video_processor:inst8|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_13
 rg[0] => ~NO_FANOUT~
 rg[1] => ~NO_FANOUT~
 rg[2] => ~NO_FANOUT~
@@ -8003,7 +8005,7 @@ compare => result.OUTPUTSELECT
 result <= result.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Collenda|video_processor:inst5|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_14
+|Collenda|video_processor:inst8|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_14
 rg[0] => ~NO_FANOUT~
 rg[1] => ~NO_FANOUT~
 rg[2] => ~NO_FANOUT~
@@ -8080,7 +8082,7 @@ compare => result.OUTPUTSELECT
 result <= result.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Collenda|video_processor:inst5|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_15
+|Collenda|video_processor:inst8|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_15
 rg[0] => ~NO_FANOUT~
 rg[1] => ~NO_FANOUT~
 rg[2] => ~NO_FANOUT~
@@ -8157,7 +8159,7 @@ compare => result.OUTPUTSELECT
 result <= result.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Collenda|video_processor:inst5|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_16
+|Collenda|video_processor:inst8|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_16
 rg[0] => ~NO_FANOUT~
 rg[1] => ~NO_FANOUT~
 rg[2] => ~NO_FANOUT~
@@ -8234,7 +8236,7 @@ compare => result.OUTPUTSELECT
 result <= result.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Collenda|video_processor:inst5|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_17
+|Collenda|video_processor:inst8|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_17
 rg[0] => ~NO_FANOUT~
 rg[1] => ~NO_FANOUT~
 rg[2] => ~NO_FANOUT~
@@ -8311,7 +8313,7 @@ compare => result.OUTPUTSELECT
 result <= result.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Collenda|video_processor:inst5|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_18
+|Collenda|video_processor:inst8|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_18
 rg[0] => ~NO_FANOUT~
 rg[1] => ~NO_FANOUT~
 rg[2] => ~NO_FANOUT~
@@ -8388,7 +8390,7 @@ compare => result.OUTPUTSELECT
 result <= result.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Collenda|video_processor:inst5|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_19
+|Collenda|video_processor:inst8|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_19
 rg[0] => ~NO_FANOUT~
 rg[1] => ~NO_FANOUT~
 rg[2] => ~NO_FANOUT~
@@ -8465,7 +8467,7 @@ compare => result.OUTPUTSELECT
 result <= result.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Collenda|video_processor:inst5|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_20
+|Collenda|video_processor:inst8|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_20
 rg[0] => ~NO_FANOUT~
 rg[1] => ~NO_FANOUT~
 rg[2] => ~NO_FANOUT~
@@ -8542,7 +8544,7 @@ compare => result.OUTPUTSELECT
 result <= result.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Collenda|video_processor:inst5|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_21
+|Collenda|video_processor:inst8|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_21
 rg[0] => ~NO_FANOUT~
 rg[1] => ~NO_FANOUT~
 rg[2] => ~NO_FANOUT~
@@ -8619,7 +8621,7 @@ compare => result.OUTPUTSELECT
 result <= result.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Collenda|video_processor:inst5|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_22
+|Collenda|video_processor:inst8|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_22
 rg[0] => ~NO_FANOUT~
 rg[1] => ~NO_FANOUT~
 rg[2] => ~NO_FANOUT~
@@ -8696,7 +8698,7 @@ compare => result.OUTPUTSELECT
 result <= result.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Collenda|video_processor:inst5|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_23
+|Collenda|video_processor:inst8|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_23
 rg[0] => ~NO_FANOUT~
 rg[1] => ~NO_FANOUT~
 rg[2] => ~NO_FANOUT~
@@ -8773,7 +8775,7 @@ compare => result.OUTPUTSELECT
 result <= result.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Collenda|video_processor:inst5|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_24
+|Collenda|video_processor:inst8|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_24
 rg[0] => ~NO_FANOUT~
 rg[1] => ~NO_FANOUT~
 rg[2] => ~NO_FANOUT~
@@ -8850,7 +8852,7 @@ compare => result.OUTPUTSELECT
 result <= result.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Collenda|video_processor:inst5|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_25
+|Collenda|video_processor:inst8|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_25
 rg[0] => ~NO_FANOUT~
 rg[1] => ~NO_FANOUT~
 rg[2] => ~NO_FANOUT~
@@ -8927,7 +8929,7 @@ compare => result.OUTPUTSELECT
 result <= result.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Collenda|video_processor:inst5|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_26
+|Collenda|video_processor:inst8|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_26
 rg[0] => ~NO_FANOUT~
 rg[1] => ~NO_FANOUT~
 rg[2] => ~NO_FANOUT~
@@ -9004,7 +9006,7 @@ compare => result.OUTPUTSELECT
 result <= result.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Collenda|video_processor:inst5|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_27
+|Collenda|video_processor:inst8|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_27
 rg[0] => ~NO_FANOUT~
 rg[1] => ~NO_FANOUT~
 rg[2] => ~NO_FANOUT~
@@ -9081,7 +9083,7 @@ compare => result.OUTPUTSELECT
 result <= result.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Collenda|video_processor:inst5|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_28
+|Collenda|video_processor:inst8|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_28
 rg[0] => ~NO_FANOUT~
 rg[1] => ~NO_FANOUT~
 rg[2] => ~NO_FANOUT~
@@ -9158,7 +9160,7 @@ compare => result.OUTPUTSELECT
 result <= result.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Collenda|video_processor:inst5|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_29
+|Collenda|video_processor:inst8|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_29
 rg[0] => ~NO_FANOUT~
 rg[1] => ~NO_FANOUT~
 rg[2] => ~NO_FANOUT~
@@ -9235,7 +9237,7 @@ compare => result.OUTPUTSELECT
 result <= result.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Collenda|video_processor:inst5|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_30
+|Collenda|video_processor:inst8|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_30
 rg[0] => ~NO_FANOUT~
 rg[1] => ~NO_FANOUT~
 rg[2] => ~NO_FANOUT~
@@ -9312,7 +9314,7 @@ compare => result.OUTPUTSELECT
 result <= result.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Collenda|video_processor:inst5|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_31
+|Collenda|video_processor:inst8|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_31
 rg[0] => ~NO_FANOUT~
 rg[1] => ~NO_FANOUT~
 rg[2] => ~NO_FANOUT~
@@ -9389,7 +9391,7 @@ compare => result.OUTPUTSELECT
 result <= result.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Collenda|video_processor:inst5|full_print_module:full_print_module_inst
+|Collenda|video_processor:inst8|full_print_module:full_print_module_inst
 clk => clk.IN1
 clk_pixel => clk_pixel.IN2
 reset => reset.IN1
@@ -9483,7 +9485,7 @@ check_value[18] <= printModule:printModule_inst.check_value
 check_value[19] <= printModule:printModule_inst.check_value
 
 
-|Collenda|video_processor:inst5|full_print_module:full_print_module_inst|printModule:printModule_inst
+|Collenda|video_processor:inst8|full_print_module:full_print_module_inst|printModule:printModule_inst
 clk => state~1.DATAIN
 clk => out_sprite_datas[0].CLK
 clk => out_sprite_datas[1].CLK
@@ -9714,7 +9716,7 @@ check_value[19] <= out_check_value[19].DB_MAX_OUTPUT_PORT_TYPE
 sprite_on <= out_sprite_on.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Collenda|video_processor:inst5|full_print_module:full_print_module_inst|calculoAddress:calculoAddress_inst
+|Collenda|video_processor:inst8|full_print_module:full_print_module_inst|calculoAddress:calculoAddress_inst
 clk_pixel => out_memory_address[0].CLK
 clk_pixel => out_memory_address[1].CLK
 clk_pixel => out_memory_address[2].CLK
@@ -9864,7 +9866,7 @@ memory_address[12] <= out_memory_address[12].DB_MAX_OUTPUT_PORT_TYPE
 memory_address[13] <= out_memory_address[13].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Collenda|video_processor:inst5|full_print_module:full_print_module_inst|multiplexador:multiplexador_inst
+|Collenda|video_processor:inst8|full_print_module:full_print_module_inst|multiplexador:multiplexador_inst
 selector => out.OUTPUTSELECT
 selector => out.OUTPUTSELECT
 selector => out.OUTPUTSELECT
@@ -9937,7 +9939,7 @@ out[12] <= out.DB_MAX_OUTPUT_PORT_TYPE
 out[13] <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Collenda|video_processor:inst5|multiplexador:multiplexador_inst
+|Collenda|video_processor:inst8|multiplexador:multiplexador_inst
 selector => out.OUTPUTSELECT
 selector => out.OUTPUTSELECT
 selector => out.OUTPUTSELECT
@@ -10010,7 +10012,7 @@ out[12] <= out.DB_MAX_OUTPUT_PORT_TYPE
 out[13] <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Collenda|video_processor:inst5|sprite_memory:sprite_memory_inst
+|Collenda|video_processor:inst8|sprite_memory:sprite_memory_inst
 address[0] => address[0].IN1
 address[1] => address[1].IN1
 address[2] => address[2].IN1
@@ -10049,7 +10051,7 @@ out_data[8] <= out_data[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 read_memory <= r_memory.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Collenda|video_processor:inst5|sprite_memory:sprite_memory_inst|memory:memory_inst
+|Collenda|video_processor:inst8|sprite_memory:sprite_memory_inst|memory:memory_inst
 address[0] => address[0].IN1
 address[1] => address[1].IN1
 address[2] => address[2].IN1
@@ -10086,7 +10088,7 @@ q[7] <= altsyncram:altsyncram_component.q_a
 q[8] <= altsyncram:altsyncram_component.q_a
 
 
-|Collenda|video_processor:inst5|sprite_memory:sprite_memory_inst|memory:memory_inst|altsyncram:altsyncram_component
+|Collenda|video_processor:inst8|sprite_memory:sprite_memory_inst|memory:memory_inst|altsyncram:altsyncram_component
 wren_a => altsyncram_kjl1:auto_generated.wren_a
 rden_a => ~NO_FANOUT~
 wren_b => ~NO_FANOUT~
@@ -10143,7 +10145,7 @@ eccstatus[1] <= <GND>
 eccstatus[2] <= <GND>
 
 
-|Collenda|video_processor:inst5|sprite_memory:sprite_memory_inst|memory:memory_inst|altsyncram:altsyncram_component|altsyncram_kjl1:auto_generated
+|Collenda|video_processor:inst8|sprite_memory:sprite_memory_inst|memory:memory_inst|altsyncram:altsyncram_component|altsyncram_kjl1:auto_generated
 address_a[0] => ram_block1a0.PORTAADDR
 address_a[0] => ram_block1a1.PORTAADDR
 address_a[0] => ram_block1a2.PORTAADDR
@@ -10432,7 +10434,7 @@ wren_a => decode_jsa:decode3.enable
 wren_a => ram_block1a0.IN0
 
 
-|Collenda|video_processor:inst5|sprite_memory:sprite_memory_inst|memory:memory_inst|altsyncram:altsyncram_component|altsyncram_kjl1:auto_generated|decode_jsa:decode3
+|Collenda|video_processor:inst8|sprite_memory:sprite_memory_inst|memory:memory_inst|altsyncram:altsyncram_component|altsyncram_kjl1:auto_generated|decode_jsa:decode3
 data[0] => eq_node[1].IN0
 data[0] => eq_node[0].IN0
 enable => eq_node[1].IN1
@@ -10441,14 +10443,14 @@ eq[0] <= eq_node[0].DB_MAX_OUTPUT_PORT_TYPE
 eq[1] <= eq_node[1].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Collenda|video_processor:inst5|sprite_memory:sprite_memory_inst|memory:memory_inst|altsyncram:altsyncram_component|altsyncram_kjl1:auto_generated|decode_c8a:rden_decode
+|Collenda|video_processor:inst8|sprite_memory:sprite_memory_inst|memory:memory_inst|altsyncram:altsyncram_component|altsyncram_kjl1:auto_generated|decode_c8a:rden_decode
 data[0] => eq_node[1].IN0
 data[0] => eq_node[0].IN0
 eq[0] <= eq_node[0].DB_MAX_OUTPUT_PORT_TYPE
 eq[1] <= eq_node[1].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Collenda|video_processor:inst5|sprite_memory:sprite_memory_inst|memory:memory_inst|altsyncram:altsyncram_component|altsyncram_kjl1:auto_generated|mux_4nb:mux2
+|Collenda|video_processor:inst8|sprite_memory:sprite_memory_inst|memory:memory_inst|altsyncram:altsyncram_component|altsyncram_kjl1:auto_generated|mux_4nb:mux2
 data[0] => result_node[0].IN1
 data[1] => result_node[1].IN1
 data[2] => result_node[2].IN1
@@ -10496,7 +10498,7 @@ sel[0] => result_node[0].IN0
 sel[0] => _.IN0
 
 
-|Collenda|video_processor:inst5|VGA_sync:VGA_sync_inst
+|Collenda|video_processor:inst8|VGA_sync:VGA_sync_inst
 clock => vsync~reg0.CLK
 clock => hsync~reg0.CLK
 clock => pixel_y[0]~reg0.CLK
@@ -10566,7 +10568,7 @@ pixel_y[8] <= pixel_y[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 pixel_y[9] <= pixel_y[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Collenda|video_processor:inst5|multiplexador:multiplexador_inst_color
+|Collenda|video_processor:inst8|multiplexador:multiplexador_inst_color
 selector => out.OUTPUTSELECT
 selector => out.OUTPUTSELECT
 selector => out.OUTPUTSELECT
@@ -10615,47 +10617,206 @@ out[8] <= out.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Collenda|geradorDataB:inst
-switch[0] => Decoder0.IN3
-switch[0] => Decoder2.IN2
-switch[1] => Decoder0.IN2
-switch[1] => Decoder1.IN2
-switch[1] => Decoder2.IN1
-switch[2] => Decoder0.IN1
-switch[2] => Decoder1.IN1
-switch[3] => Decoder0.IN0
-switch[3] => Decoder1.IN0
-switch[3] => Decoder2.IN0
-outData[0] <= <GND>
-outData[1] <= <GND>
-outData[2] <= <GND>
-outData[3] <= <GND>
-outData[4] <= <GND>
-outData[5] <= <GND>
-outData[6] <= <GND>
-outData[7] <= <GND>
-outData[8] <= <GND>
-outData[9] <= Decoder2.DB_MAX_OUTPUT_PORT_TYPE
-outData[10] <= WideOr17.DB_MAX_OUTPUT_PORT_TYPE
-outData[11] <= WideOr16.DB_MAX_OUTPUT_PORT_TYPE
-outData[12] <= WideOr15.DB_MAX_OUTPUT_PORT_TYPE
-outData[13] <= WideOr14.DB_MAX_OUTPUT_PORT_TYPE
-outData[14] <= WideOr13.DB_MAX_OUTPUT_PORT_TYPE
-outData[15] <= WideOr12.DB_MAX_OUTPUT_PORT_TYPE
-outData[16] <= WideOr11.DB_MAX_OUTPUT_PORT_TYPE
-outData[17] <= WideOr10.DB_MAX_OUTPUT_PORT_TYPE
-outData[18] <= <GND>
-outData[19] <= WideOr9.DB_MAX_OUTPUT_PORT_TYPE
-outData[20] <= WideOr8.DB_MAX_OUTPUT_PORT_TYPE
-outData[21] <= WideOr7.DB_MAX_OUTPUT_PORT_TYPE
-outData[22] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
-outData[23] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
-outData[24] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
-outData[25] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-outData[26] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-outData[27] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-outData[28] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-outData[29] <= <VCC>
-outData[30] <= <GND>
-outData[31] <= <GND>
+clk => clk.IN2
+reset => _.IN1
+reset => _.IN1
+buttonLeft => buttonLeft.IN1
+buttonRight => buttonRight.IN1
+up => up.IN1
+down => down.IN1
+out[0] <= out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[7] <= out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[8] <= out[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[9] <= out[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[10] <= out[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[11] <= out[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[12] <= out[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[13] <= out[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[14] <= out[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[15] <= out[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[16] <= out[16]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[17] <= out[17]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[18] <= out[18]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[19] <= out[19]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[20] <= out[20]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[21] <= out[21]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[22] <= out[22]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[23] <= out[23]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[24] <= out[24]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[25] <= out[25]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[26] <= out[26]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[27] <= out[27]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[28] <= out[28]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[29] <= out[29]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[30] <= out[30]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[31] <= out[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Collenda|geradorDataB:inst|contador:contador_inst
+clk => clk.IN1
+button1 => value.OUTPUTSELECT
+button1 => value.OUTPUTSELECT
+button1 => value.OUTPUTSELECT
+button1 => value.OUTPUTSELECT
+button1 => value.OUTPUTSELECT
+button1 => value.OUTPUTSELECT
+button1 => value.OUTPUTSELECT
+button1 => value.OUTPUTSELECT
+button1 => value.OUTPUTSELECT
+button1 => value.OUTPUTSELECT
+button2 => value.OUTPUTSELECT
+button2 => value.OUTPUTSELECT
+button2 => value.OUTPUTSELECT
+button2 => value.OUTPUTSELECT
+button2 => value.OUTPUTSELECT
+button2 => value.OUTPUTSELECT
+button2 => value.OUTPUTSELECT
+button2 => value.OUTPUTSELECT
+button2 => value.OUTPUTSELECT
+button2 => value.OUTPUTSELECT
+reset => reset.IN1
+outputData[0] <= value[0].DB_MAX_OUTPUT_PORT_TYPE
+outputData[1] <= value[1].DB_MAX_OUTPUT_PORT_TYPE
+outputData[2] <= value[2].DB_MAX_OUTPUT_PORT_TYPE
+outputData[3] <= value[3].DB_MAX_OUTPUT_PORT_TYPE
+outputData[4] <= value[4].DB_MAX_OUTPUT_PORT_TYPE
+outputData[5] <= value[5].DB_MAX_OUTPUT_PORT_TYPE
+outputData[6] <= value[6].DB_MAX_OUTPUT_PORT_TYPE
+outputData[7] <= value[7].DB_MAX_OUTPUT_PORT_TYPE
+outputData[8] <= value[8].DB_MAX_OUTPUT_PORT_TYPE
+outputData[9] <= value[9].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Collenda|geradorDataB:inst|contador:contador_inst|frequency_divisor:frequency_divisor_inst
+clk => new_clock.CLK
+clk => counter[0].CLK
+clk => counter[1].CLK
+clk => counter[2].CLK
+clk => counter[3].CLK
+clk => counter[4].CLK
+clk => counter[5].CLK
+clk => counter[6].CLK
+clk => counter[7].CLK
+clk => counter[8].CLK
+clk => counter[9].CLK
+clk => counter[10].CLK
+clk => counter[11].CLK
+clk => counter[12].CLK
+clk => counter[13].CLK
+clk => counter[14].CLK
+clk => counter[15].CLK
+clk => counter[16].CLK
+clk => counter[17].CLK
+clk => counter[18].CLK
+clk => counter[19].CLK
+reset => new_clock.ACLR
+reset => counter[0].ACLR
+reset => counter[1].ACLR
+reset => counter[2].ACLR
+reset => counter[3].ACLR
+reset => counter[4].ACLR
+reset => counter[5].ACLR
+reset => counter[6].ACLR
+reset => counter[7].ACLR
+reset => counter[8].ACLR
+reset => counter[9].ACLR
+reset => counter[10].ACLR
+reset => counter[11].ACLR
+reset => counter[12].ACLR
+reset => counter[13].ACLR
+reset => counter[14].ACLR
+reset => counter[15].ACLR
+reset => counter[16].ACLR
+reset => counter[17].ACLR
+reset => counter[18].ACLR
+reset => counter[19].ACLR
+out_clk <= new_clock.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Collenda|geradorDataB:inst|contador:contador_inst2
+clk => clk.IN1
+button1 => value.OUTPUTSELECT
+button1 => value.OUTPUTSELECT
+button1 => value.OUTPUTSELECT
+button1 => value.OUTPUTSELECT
+button1 => value.OUTPUTSELECT
+button1 => value.OUTPUTSELECT
+button1 => value.OUTPUTSELECT
+button1 => value.OUTPUTSELECT
+button1 => value.OUTPUTSELECT
+button1 => value.OUTPUTSELECT
+button2 => value.OUTPUTSELECT
+button2 => value.OUTPUTSELECT
+button2 => value.OUTPUTSELECT
+button2 => value.OUTPUTSELECT
+button2 => value.OUTPUTSELECT
+button2 => value.OUTPUTSELECT
+button2 => value.OUTPUTSELECT
+button2 => value.OUTPUTSELECT
+button2 => value.OUTPUTSELECT
+button2 => value.OUTPUTSELECT
+reset => reset.IN1
+outputData[0] <= value[0].DB_MAX_OUTPUT_PORT_TYPE
+outputData[1] <= value[1].DB_MAX_OUTPUT_PORT_TYPE
+outputData[2] <= value[2].DB_MAX_OUTPUT_PORT_TYPE
+outputData[3] <= value[3].DB_MAX_OUTPUT_PORT_TYPE
+outputData[4] <= value[4].DB_MAX_OUTPUT_PORT_TYPE
+outputData[5] <= value[5].DB_MAX_OUTPUT_PORT_TYPE
+outputData[6] <= value[6].DB_MAX_OUTPUT_PORT_TYPE
+outputData[7] <= value[7].DB_MAX_OUTPUT_PORT_TYPE
+outputData[8] <= value[8].DB_MAX_OUTPUT_PORT_TYPE
+outputData[9] <= value[9].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Collenda|geradorDataB:inst|contador:contador_inst2|frequency_divisor:frequency_divisor_inst
+clk => new_clock.CLK
+clk => counter[0].CLK
+clk => counter[1].CLK
+clk => counter[2].CLK
+clk => counter[3].CLK
+clk => counter[4].CLK
+clk => counter[5].CLK
+clk => counter[6].CLK
+clk => counter[7].CLK
+clk => counter[8].CLK
+clk => counter[9].CLK
+clk => counter[10].CLK
+clk => counter[11].CLK
+clk => counter[12].CLK
+clk => counter[13].CLK
+clk => counter[14].CLK
+clk => counter[15].CLK
+clk => counter[16].CLK
+clk => counter[17].CLK
+clk => counter[18].CLK
+clk => counter[19].CLK
+reset => new_clock.ACLR
+reset => counter[0].ACLR
+reset => counter[1].ACLR
+reset => counter[2].ACLR
+reset => counter[3].ACLR
+reset => counter[4].ACLR
+reset => counter[5].ACLR
+reset => counter[6].ACLR
+reset => counter[7].ACLR
+reset => counter[8].ACLR
+reset => counter[9].ACLR
+reset => counter[10].ACLR
+reset => counter[11].ACLR
+reset => counter[12].ACLR
+reset => counter[13].ACLR
+reset => counter[14].ACLR
+reset => counter[15].ACLR
+reset => counter[16].ACLR
+reset => counter[17].ACLR
+reset => counter[18].ACLR
+reset => counter[19].ACLR
+out_clk <= new_clock.DB_MAX_OUTPUT_PORT_TYPE
 
 

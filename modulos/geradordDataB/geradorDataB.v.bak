@@ -1,0 +1,42 @@
+module geradorDataB(
+	input  wire clk,
+	input  wire reset,
+	input  wire buttonLeft,
+	input  wire buttonRight,
+	output reg [31:0] out
+	output reg [7:0]  led
+);
+
+localparam [8:0] OFFSET = 9'd0;
+localparam [2:0] ACTIVE_SPRITE = 3'b001;
+
+reg [7:0] LED;
+reg [31:0] outData;
+wire [9:0] outputData;
+
+contador #(.MAX_VALUE(620), .MIN_VALUE(0))
+contador_inst
+(
+	.clk(clk) ,					// input  clk_sig
+	.buttonLeft(buttonLeft) ,	// input  buttonLeft_sig
+	.buttonRight(buttonRight) ,	// input  buttonRight_sig
+	.reset(reset) ,				// input  reset_sig
+	.outputData(outputData) 	// output [9:0] outputData_sig
+);
+
+
+always @(outputData) begin
+	outData[8:0]   = OFFSET;
+	outData[18:9]  = outputData; //valor da coordenada x
+	outData[28:19] = 10'd100;    //valor da coordenada y
+	outData[31:29] = ACTIVE_SPRITE;
+	LED = outputData[7:0];
+end
+
+always @(posedge clk) begin
+	out <= outData;
+	led <= LED;
+end
+
+
+endmodule

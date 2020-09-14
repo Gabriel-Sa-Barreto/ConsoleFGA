@@ -56,19 +56,19 @@
 					"strict" : false
 				},
 				{
-					"name" : "switch[0]",
+					"name" : "up",
 					"strict" : false
 				},
 				{
-					"name" : "switch[1]",
+					"name" : "down",
 					"strict" : false
 				},
 				{
-					"name" : "switch[2]",
+					"name" : "buttonLeft",
 					"strict" : false
 				},
 				{
-					"name" : "switch[3]",
+					"name" : "buttonRight",
 					"strict" : false
 				}
 			]

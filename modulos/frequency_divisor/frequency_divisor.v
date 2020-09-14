@@ -11,7 +11,7 @@
 *borda de subida do pulso de clock.
 *	WITDH: define a quantidade de registros necessarios para realizar a divisao.
 */
-module frequency_divisor #(parameter WITDH, parameter N) (
+module frequency_divisor #(parameter WITDH = 0, parameter N = 0) (
 	input  wire clk,
 	input  wire reset,
 	output wire out_clk 
@@ -21,8 +21,10 @@ reg new_clock;
 reg [WITDH-1:0] counter;
 wire [WITDH-1:0] counter_next;
 
-always @ (posedge clk or posedge reset) begin
-	if(reset) begin
+localparam [WITDH-1:0] add = 1;
+
+always @ (posedge clk or negedge reset) begin
+	if(!reset) begin
 		  counter <= 0;
 		new_clock <= 0;
 	end
@@ -33,7 +35,7 @@ always @ (posedge clk or posedge reset) begin
 	else counter <= counter_next;
 end
 
-assign counter_next = counter + 1;
+assign counter_next = counter + add;
 assign out_clk = new_clock;
 
 endmodule
