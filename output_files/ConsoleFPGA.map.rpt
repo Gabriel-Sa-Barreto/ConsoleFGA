@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ConsoleFPGA
-Mon Sep 14 18:24:04 2020
+Sat Sep 19 17:04:19 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -105,13 +105,13 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Sep 14 18:24:04 2020       ;
+; Analysis & Synthesis Status        ; Successful - Sat Sep 19 17:04:19 2020       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; ConsoleFPGA                                 ;
 ; Top-level Entity Name              ; Collenda                                    ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 485                                         ;
-;     Total combinational functions  ; 395                                         ;
+; Total logic elements               ; 532                                         ;
+;     Total combinational functions  ; 442                                         ;
 ;     Dedicated logic registers      ; 248                                         ;
 ; Total registers                    ; 248                                         ;
 ; Total pins                         ; 17                                          ;
@@ -277,17 +277,17 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                                                                   ;
 +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 485                                                                                                                     ;
+; Estimated Total logic elements              ; 532                                                                                                                     ;
 ;                                             ;                                                                                                                         ;
-; Total combinational functions               ; 395                                                                                                                     ;
+; Total combinational functions               ; 442                                                                                                                     ;
 ; Logic element usage by number of LUT inputs ;                                                                                                                         ;
-;     -- 4 input functions                    ; 86                                                                                                                      ;
-;     -- 3 input functions                    ; 156                                                                                                                     ;
-;     -- <=2 input functions                  ; 153                                                                                                                     ;
+;     -- 4 input functions                    ; 75                                                                                                                      ;
+;     -- 3 input functions                    ; 196                                                                                                                     ;
+;     -- <=2 input functions                  ; 171                                                                                                                     ;
 ;                                             ;                                                                                                                         ;
 ; Logic elements by mode                      ;                                                                                                                         ;
-;     -- normal mode                          ; 196                                                                                                                     ;
-;     -- arithmetic mode                      ; 199                                                                                                                     ;
+;     -- normal mode                          ; 193                                                                                                                     ;
+;     -- arithmetic mode                      ; 249                                                                                                                     ;
 ;                                             ;                                                                                                                         ;
 ; Total registers                             ; 248                                                                                                                     ;
 ;     -- Dedicated logic registers            ; 248                                                                                                                     ;
@@ -303,8 +303,8 @@ refer to the applicable agreement for further details.
 ;                                             ;                                                                                                                         ;
 ; Maximum fan-out node                        ; video_processor:inst8|clock_pll:clock_pll_inst|altpll:altpll_component|clock_pll_altpll:auto_generated|wire_pll1_clk[0] ;
 ; Maximum fan-out                             ; 184                                                                                                                     ;
-; Total fan-out                               ; 2149                                                                                                                    ;
-; Average fan-out                             ; 3.09                                                                                                                    ;
+; Total fan-out                               ; 2257                                                                                                                    ;
+; Average fan-out                             ; 3.04                                                                                                                    ;
 +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -313,27 +313,27 @@ refer to the applicable agreement for further details.
 +------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                           ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                             ; Entity Name         ; Library Name ;
 +------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |Collenda                                            ; 395 (2)             ; 248 (0)                   ; 147456      ; 0            ; 0       ; 0         ; 17   ; 0            ; |Collenda                                                                                                                                                       ; Collenda            ; work         ;
+; |Collenda                                            ; 442 (2)             ; 248 (0)                   ; 147456      ; 0            ; 0       ; 0         ; 17   ; 0            ; |Collenda                                                                                                                                                       ; Collenda            ; work         ;
 ;    |geradorDataB:inst|                               ; 91 (0)              ; 62 (20)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Collenda|geradorDataB:inst                                                                                                                                     ; geradorDataB        ; work         ;
 ;       |contador:contador_inst2|                      ; 50 (15)             ; 31 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Collenda|geradorDataB:inst|contador:contador_inst2                                                                                                             ; contador            ; work         ;
 ;          |frequency_divisor:frequency_divisor_inst|  ; 35 (35)             ; 21 (21)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Collenda|geradorDataB:inst|contador:contador_inst2|frequency_divisor:frequency_divisor_inst                                                                    ; frequency_divisor   ; work         ;
 ;       |contador:contador_inst|                       ; 41 (15)             ; 11 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Collenda|geradorDataB:inst|contador:contador_inst                                                                                                              ; contador            ; work         ;
 ;          |frequency_divisor:frequency_divisor_inst|  ; 26 (26)             ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Collenda|geradorDataB:inst|contador:contador_inst|frequency_divisor:frequency_divisor_inst                                                                     ; frequency_divisor   ; work         ;
-;    |video_processor:inst8|                           ; 302 (0)             ; 186 (1)                   ; 147456      ; 0            ; 0       ; 0         ; 0    ; 0            ; |Collenda|video_processor:inst8                                                                                                                                 ; video_processor     ; work         ;
+;    |video_processor:inst8|                           ; 349 (0)             ; 186 (1)                   ; 147456      ; 0            ; 0       ; 0         ; 0    ; 0            ; |Collenda|video_processor:inst8                                                                                                                                 ; video_processor     ; work         ;
 ;       |VGA_sync:VGA_sync_inst|                       ; 49 (49)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Collenda|video_processor:inst8|VGA_sync:VGA_sync_inst                                                                                                          ; VGA_sync            ; work         ;
 ;       |clock_pll:clock_pll_inst|                     ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Collenda|video_processor:inst8|clock_pll:clock_pll_inst                                                                                                        ; clock_pll           ; work         ;
 ;          |altpll:altpll_component|                   ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Collenda|video_processor:inst8|clock_pll:clock_pll_inst|altpll:altpll_component                                                                                ; altpll              ; work         ;
 ;             |clock_pll_altpll:auto_generated|        ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Collenda|video_processor:inst8|clock_pll:clock_pll_inst|altpll:altpll_component|clock_pll_altpll:auto_generated                                                ; clock_pll_altpll    ; work         ;
 ;       |controlUnit:controlUnit_inst|                 ; 5 (5)               ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Collenda|video_processor:inst8|controlUnit:controlUnit_inst                                                                                                    ; controlUnit         ; work         ;
 ;       |decorderInstruction:decorderInstruction_inst| ; 21 (21)             ; 21 (21)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Collenda|video_processor:inst8|decorderInstruction:decorderInstruction_inst                                                                                    ; decorderInstruction ; work         ;
-;       |full_print_module:full_print_module_inst|     ; 114 (0)             ; 83 (15)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Collenda|video_processor:inst8|full_print_module:full_print_module_inst                                                                                        ; full_print_module   ; work         ;
-;          |calculoAddress:calculoAddress_inst|        ; 90 (90)             ; 20 (20)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Collenda|video_processor:inst8|full_print_module:full_print_module_inst|calculoAddress:calculoAddress_inst                                                     ; calculoAddress      ; work         ;
+;       |full_print_module:full_print_module_inst|     ; 115 (0)             ; 83 (15)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Collenda|video_processor:inst8|full_print_module:full_print_module_inst                                                                                        ; full_print_module   ; work         ;
+;          |calculoAddress:calculoAddress_inst|        ; 91 (91)             ; 20 (20)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Collenda|video_processor:inst8|full_print_module:full_print_module_inst|calculoAddress:calculoAddress_inst                                                     ; calculoAddress      ; work         ;
 ;          |multiplexador:multiplexador_inst|          ; 14 (14)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Collenda|video_processor:inst8|full_print_module:full_print_module_inst|multiplexador:multiplexador_inst                                                       ; multiplexador       ; work         ;
 ;          |printModule:printModule_inst|              ; 10 (10)             ; 48 (48)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Collenda|video_processor:inst8|full_print_module:full_print_module_inst|printModule:printModule_inst                                                           ; printModule         ; work         ;
-;       |full_register_file:full_register_file_inst|   ; 95 (0)              ; 43 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Collenda|video_processor:inst8|full_register_file:full_register_file_inst                                                                                      ; full_register_file  ; work         ;
-;          |mod_comparator:mod_comparator_inst|        ; 93 (21)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Collenda|video_processor:inst8|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst                                                   ; mod_comparator      ; work         ;
-;             |comparator:comparator_inst_0|           ; 36 (36)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Collenda|video_processor:inst8|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_0                      ; comparator          ; work         ;
-;             |comparator:comparator_inst_5|           ; 36 (36)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Collenda|video_processor:inst8|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_5                      ; comparator          ; work         ;
+;       |full_register_file:full_register_file_inst|   ; 141 (0)             ; 43 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Collenda|video_processor:inst8|full_register_file:full_register_file_inst                                                                                      ; full_register_file  ; work         ;
+;          |mod_comparator:mod_comparator_inst|        ; 139 (22)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Collenda|video_processor:inst8|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst                                                   ; mod_comparator      ; work         ;
+;             |comparator:comparator_inst_0|           ; 59 (59)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Collenda|video_processor:inst8|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_0                      ; comparator          ; work         ;
+;             |comparator:comparator_inst_5|           ; 58 (58)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Collenda|video_processor:inst8|full_register_file:full_register_file_inst|mod_comparator:mod_comparator_inst|comparator:comparator_inst_5                      ; comparator          ; work         ;
 ;          |registerFile:registerFile_inst|            ; 2 (2)               ; 43 (43)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Collenda|video_processor:inst8|full_register_file:full_register_file_inst|registerFile:registerFile_inst                                                       ; registerFile        ; work         ;
 ;       |multiplexador:multiplexador_inst_color|       ; 9 (9)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Collenda|video_processor:inst8|multiplexador:multiplexador_inst_color                                                                                          ; multiplexador       ; work         ;
 ;       |sprite_memory:sprite_memory_inst|             ; 9 (0)               ; 11 (9)                    ; 147456      ; 0            ; 0       ; 0         ; 0    ; 0            ; |Collenda|video_processor:inst8|sprite_memory:sprite_memory_inst                                                                                                ; sprite_memory       ; work         ;
@@ -2531,7 +2531,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Parameter Name ; Value ; Type                                                         ;
 +----------------+-------+--------------------------------------------------------------+
 ; MAX_VALUE      ; 620   ; Signed Integer                                               ;
-; MIN_VALUE      ; 1     ; Signed Integer                                               ;
+; MIN_VALUE      ; 0     ; Signed Integer                                               ;
 +----------------+-------+--------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -2651,21 +2651,21 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     SCLR              ; 5                           ;
 ;     SLD               ; 12                          ;
 ;     plain             ; 74                          ;
-; cycloneiii_lcell_comb ; 395                         ;
-;     arith             ; 199                         ;
-;         2 data inputs ; 82                          ;
-;         3 data inputs ; 117                         ;
-;     normal            ; 196                         ;
-;         0 data inputs ; 6                           ;
+; cycloneiii_lcell_comb ; 442                         ;
+;     arith             ; 249                         ;
+;         2 data inputs ; 94                          ;
+;         3 data inputs ; 155                         ;
+;     normal            ; 193                         ;
+;         0 data inputs ; 8                           ;
 ;         1 data inputs ; 7                           ;
-;         2 data inputs ; 58                          ;
-;         3 data inputs ; 39                          ;
-;         4 data inputs ; 86                          ;
+;         2 data inputs ; 62                          ;
+;         3 data inputs ; 41                          ;
+;         4 data inputs ; 75                          ;
 ; cycloneiii_pll        ; 1                           ;
 ; cycloneiii_ram_block  ; 18                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 5.50                        ;
-; Average LUT depth     ; 3.23                        ;
+; Max LUT depth         ; 5.60                        ;
+; Average LUT depth     ; 3.54                        ;
 +-----------------------+-----------------------------+
 
 
@@ -2674,7 +2674,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:02     ;
+; Top            ; 00:00:03     ;
 +----------------+--------------+
 
 
@@ -2684,7 +2684,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon Sep 14 18:23:40 2020
+    Info: Processing started: Sat Sep 19 17:03:50 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ConsoleFPGA -c ConsoleFPGA
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -2853,17 +2853,17 @@ Info (17049): 4 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file /home/gabriel/Documents/ConsoleFPGA/output_files/ConsoleFPGA.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 535 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 583 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
     Info (21059): Implemented 11 output pins
-    Info (21061): Implemented 499 logic cells
+    Info (21061): Implemented 547 logic cells
     Info (21064): Implemented 18 RAM segments
     Info (21065): Implemented 1 PLLs
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 981 megabytes
-    Info: Processing ended: Mon Sep 14 18:24:04 2020
-    Info: Elapsed time: 00:00:24
-    Info: Total CPU time (on all processors): 00:00:54
+    Info: Peak virtual memory: 992 megabytes
+    Info: Processing ended: Sat Sep 19 17:04:20 2020
+    Info: Elapsed time: 00:00:30
+    Info: Total CPU time (on all processors): 00:00:56
 
 
 +------------------------------------------+

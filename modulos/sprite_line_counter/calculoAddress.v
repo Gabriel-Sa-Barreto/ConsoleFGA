@@ -69,7 +69,7 @@ end
 
 always @(negedge clk_pixel) begin
 	if(sprite_on == 1'b1) begin
-		if(counter < 5'd20) begin
+		if(counter <= 5'd20) begin
 			counter              <= counter + 5'd1;
 			aux_counter_finished <= 1'b0;	
 			out_memory_address   <= aux_memory_address;

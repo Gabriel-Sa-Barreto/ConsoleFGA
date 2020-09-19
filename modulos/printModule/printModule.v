@@ -81,7 +81,7 @@ always @(state or data_reg or count_finished or active_area) begin
 
 		PROCESSA:
 			begin
-				if(data_reg == 32'h00000001) begin //pixel atual pertence ao background do monitor.
+				if( data_reg == 32'h00000001 ) begin //pixel atual pertence ao background do monitor.
 					next = AGUARDO;               
 				end
 				else begin

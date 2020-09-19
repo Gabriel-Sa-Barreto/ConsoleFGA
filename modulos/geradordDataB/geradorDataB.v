@@ -16,7 +16,7 @@ reg [31:0] outData;
 wire [9:0] outputData_x;
 wire [9:0] outputData_y;
 
-contador #(.MAX_VALUE(620), .MIN_VALUE(1))
+contador #(.MAX_VALUE(620), .MIN_VALUE(0))
 contador_inst
 (
 	.clk(clk) ,					// input  clk_sig
