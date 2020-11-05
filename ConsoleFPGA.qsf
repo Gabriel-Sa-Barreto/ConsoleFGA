@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE22F17C6
-set_global_assignment -name TOP_LEVEL_ENTITY Collenda
+set_global_assignment -name TOP_LEVEL_ENTITY ArquiteturaCollenda
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 18.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "11:26:16  SEPTEMBER 10, 2020"
 set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Lite Edition"
@@ -56,7 +56,29 @@ set_location_assignment PIN_M1 -to reset
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_location_assignment PIN_R8 -to clk_FPGA
+set_location_assignment PIN_R8 -to clk
+set_location_assignment PIN_T8 -to switch[0]
+set_location_assignment PIN_B9 -to switch[1]
+set_location_assignment PIN_M15 -to switch[2]
+set_global_assignment -name VERILOG_FILE modulos/registerFile/full_register_file.v
+set_global_assignment -name VERILOG_FILE modulos/Top_level/video_processor.v
+set_global_assignment -name VERILOG_FILE modulos/sprite_memory/sprite_memory.v
+set_global_assignment -name VERILOG_FILE modulos/sprite_memory/memory.v
+set_global_assignment -name VERILOG_FILE modulos/sprite_line_counter/calculoAddress.v
+set_global_assignment -name VERILOG_FILE modulos/registerFile/registerFile.v
+set_global_assignment -name VERILOG_FILE modulos/printModule/printModule.v
+set_global_assignment -name VERILOG_FILE modulos/PLL/clock_pll.v
+set_global_assignment -name VERILOG_FILE modulos/multiplexador/multiplexador.v
+set_global_assignment -name VERILOG_FILE modulos/mod_comparator/mod_comparator.v
+set_global_assignment -name VERILOG_FILE modulos/mod_comparator/comparator.v
+set_global_assignment -name VERILOG_FILE modulos/interfaceVGA/VGA_sync.v
+set_global_assignment -name VERILOG_FILE modulos/full_print_module/full_print_module.v
+set_global_assignment -name VERILOG_FILE modulos/demultiplexador/demultiplexador.v
+set_global_assignment -name VERILOG_FILE modulos/decoderInstruction/decoderInstruction.v
+set_global_assignment -name VERILOG_FILE modulos/ControlUnit/controlUnit.v
+set_global_assignment -name VERILOG_FILE modulos/geradordData/geradorData.v
+set_global_assignment -name QIP_FILE Arquitetura/synthesis/Arquitetura.qip
+set_global_assignment -name BDF_FILE Arquitetura/ArquiteturaCollenda.bdf
 set_location_assignment PIN_A4 -to out_hsync
 set_location_assignment PIN_B5 -to out_vsync
 set_location_assignment PIN_D5 -to B[2]
@@ -68,28 +90,4 @@ set_location_assignment PIN_D8 -to G[0]
 set_location_assignment PIN_F8 -to R[2]
 set_location_assignment PIN_E9 -to R[1]
 set_location_assignment PIN_F9 -to R[0]
-set_global_assignment -name VERILOG_FILE modulos/frequency_divisor/frequency_divisor.v
-set_global_assignment -name VERILOG_FILE modulos/contador/contador.v
-set_global_assignment -name VERILOG_FILE modulos/geradordDataB/geradorDataB.v
-set_global_assignment -name VERILOG_FILE modulos/Top_level/video_processor.v
-set_global_assignment -name VERILOG_FILE modulos/sprite_memory/sprite_memory.v
-set_global_assignment -name VERILOG_FILE modulos/sprite_line_counter/calculoAddress.v
-set_global_assignment -name VERILOG_FILE modulos/registerFile/full_register_file.v
-set_global_assignment -name VERILOG_FILE modulos/registerFile/registerFile.v
-set_global_assignment -name VERILOG_FILE modulos/printModule/printModule.v
-set_global_assignment -name VERILOG_FILE modulos/multiplexador/multiplexador.v
-set_global_assignment -name VERILOG_FILE modulos/mod_comparator/mod_comparator.v
-set_global_assignment -name VERILOG_FILE modulos/mod_comparator/comparator.v
-set_global_assignment -name VERILOG_FILE modulos/interfaceVGA/VGA_sync.v
-set_global_assignment -name VERILOG_FILE modulos/full_print_module/full_print_module.v
-set_global_assignment -name VERILOG_FILE modulos/demultiplexador/demultiplexador.v
-set_global_assignment -name VERILOG_FILE modulos/decoderInstruction/decoderInstruction.v
-set_global_assignment -name VERILOG_FILE modulos/ControlUnit/controlUnit.v
-set_global_assignment -name QIP_FILE modulos/sprite_memory/memory.qip
-set_global_assignment -name QIP_FILE modulos/PLL/clock_pll.qip
-set_global_assignment -name BDF_FILE modulos/Collenda.bdf
-set_location_assignment PIN_F13 -to buttonLeft
-set_location_assignment PIN_T15 -to buttonRight
-set_location_assignment PIN_T12 -to up
-set_location_assignment PIN_T13 -to down
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

@@ -1,29 +1,26 @@
 module video_processor(
 	input wire clk_FPGA,   //(50 Mhz)
-	input wire clk_en,
 	input wire reset,
-	//input wire [31:0] dataA,
+	input wire [31:0] dataA,
 	input wire [31:0] dataB,
  
 	output wire [2:0] R,
 	output wire [2:0] G,
 	output wire [2:0] B,
-	output wire     out_hsync,
-	output wire     out_vsync,
-	output reg      out_printtingScreen
+	output wire        out_hsync,
+	output wire        out_vsync,
+	output wire        out_printting
 );
 
 
 /*------------------Fios de ligação entre os módulos---------------------*/
 wire        new_instruction;
-wire 		done;
 wire [3:0]  out_opcode;
 wire [13:0] out_register;
 wire [31:0] out_data;
 wire 		done_register;
 wire [4:0]  n_reg;
 wire [31:0] register_data;
-wire 		printtingScreen;
 wire [19:0] check_value;
 wire [31:0] data_reg;
 wire [13:0] memory_address;
@@ -39,6 +36,7 @@ wire [9:0]  pixel_y;
 wire 		clk_100;
 wire 		clk_25;
 wire        reset_done;
+wire 		printting;
 /*------------------------------------------------------------------------*/
 
 /*-----Sinais da unidade de controle para o gerenciamento dos módulos-----*/
@@ -50,10 +48,9 @@ wire 	   selectorDemuxData;
 wire 	   selectorAddress;
 wire 	   instruction_finished;
 /*------------------------------------------------------------------------*/
-
-reg reg_done;
-//reg clk_100;
-//reg clk_25;
+reg 	   clk_en;
+reg        isAvailable;
+reg 	   reg_done;
 
 /*-------Módulo Pll responsável por gerar os sinais de clock necessários para os outros módulos
 	c0 - 100 Mhz
@@ -67,24 +64,25 @@ clock_pll clock_pll_inst
 	.c1(clk_25) 			// output  c1_sig
 );
 
+always @(clk_FPGA or printting) begin
+	if(clk_FPGA == 1'b1 && printting == 1'b0) begin
+		clk_en = 1'b1;
+	end
+	else begin
+		clk_en = 1'b0;
+	end
+end
 
-//background
-//32'h3fff1
-//32'd12
-
-//sprite
-//32'h50
-//32'd694310912
 decorderInstruction 
 decorderInstruction_inst
 (
-	.clk_en(clk_en) ,					// input  clk_en_sig
-	.dataA(32'h50) ,				    // input [31:0] dataA_sig
-	.dataB(dataB) ,				// input [31:0] dataB_sig
-	.new_instruction(new_instruction) ,	// input  new_instruction_sig
-	.out_opcode(out_opcode) ,			// output [1:0]  out_opcode_sig
-	.out_register(out_register) ,		// output [13:0] out_register_sig
-	.out_data(out_data) 				// output [31:0] out_data_sig
+	.clk_en(clk_en) ,						// input  clk_en_sig
+	.dataA(dataA) ,				    		// input [31:0] dataA_sig
+	.dataB(dataB) ,							// input [31:0] dataB_sig
+	.new_instruction(new_instruction) ,		// input  new_instruction_sig
+	.out_opcode(out_opcode) ,				// output [1:0]  out_opcode_sig
+	.out_register(out_register) ,			// output [13:0] out_register_sig
+	.out_data(out_data) 					// output [31:0] out_data_sig
 );
 
 controlUnit 
@@ -93,8 +91,8 @@ controlUnit_inst
 	.clk(clk_100) ,							// input  clk_sig
 	.reset(!reset) ,							// input  reset_sig
 	.opCode(out_opcode) ,					// input [3:0] opCode_sig
-	.printtingScreen(printtingScreen) ,		// input  printtingScreen_sig
-	.done(instruction_finished) ,			// input  done_sig
+	.printtingScreen(printting) ,		// input  printtingScreen_sig
+	.doneInst(instruction_finished) ,			// input  doneInst_sig
 	.new_instruction(new_instruction) ,		// output  new_instruction_sig
 	.memory_wr(memory_wr) ,					// output  memory_wr_sig
 	.selectField() ,						// output [3:0] selectField_sig
@@ -153,8 +151,8 @@ full_print_module_inst
 	.pixel_x(pixel_x) ,							// input [size_x1-1:0] pixel_x_sig
 	.pixel_y(pixel_y) ,							// input [size_y1-1:0] pixel_y_sig
 	.memory_address(memory_address) ,	        // output [size_address1-1:0] memory_address_sig
-	.printtingScreen(printtingScreen) ,			// output  printtingScreen_sig
-	.check_value(check_value) 					// output [bits_x_y_1-1:0] check_value_sig
+	.check_value(check_value), 					// output [bits_x_y_1-1:0] check_value_sig
+	.printting(printting)
 );
 
 /*-------Multiplexador para selecionar a entrada de endereço para a memória de sprites--------*/
@@ -208,10 +206,7 @@ multiplexador_inst_color
 	.out(monitor_color_out) 	// output [out_bits_size-1:0] out_sig
 );
 
-always @(posedge clk_25) begin
-	out_printtingScreen  <= printtingScreen;
-end
-
+assign out_printting        = printting;
 assign instruction_finished = reg_done;
 assign R = monitor_color_out[2:0];
 assign G = monitor_color_out[5:3];

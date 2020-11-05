@@ -1,5 +1,20 @@
 
-State Machine - |Collenda|video_processor:inst8|full_print_module:full_print_module_inst|printModule:printModule_inst|state
+State Machine - |ArquiteturaCollenda|Arquitetura:inst_Nios|Arquitetura_nios2_gen2_0:nios2_gen2_0|Arquitetura_nios2_gen2_0_cpu:cpu|Arquitetura_nios2_gen2_0_cpu_nios2_oci:the_Arquitetura_nios2_gen2_0_cpu_nios2_oci|Arquitetura_nios2_gen2_0_cpu_debug_slave_wrapper:the_Arquitetura_nios2_gen2_0_cpu_debug_slave_wrapper|Arquitetura_nios2_gen2_0_cpu_debug_slave_tck:the_Arquitetura_nios2_gen2_0_cpu_debug_slave_tck|DRsize
+Name DRsize.101 DRsize.100 DRsize.011 DRsize.010 DRsize.001 DRsize.000 
+DRsize.000 0 0 0 0 0 0 
+DRsize.001 0 0 0 0 1 1 
+DRsize.010 0 0 0 1 0 1 
+DRsize.011 0 0 1 0 0 1 
+DRsize.100 0 1 0 0 0 1 
+DRsize.101 1 0 0 0 0 1 
+
+State Machine - |ArquiteturaCollenda|geradorData:inst5|state
+Name state.RECEBER_DATA_A state.LIMPAR_DATAS state.RECEBER_DATA_B 
+state.RECEBER_DATA_A 0 0 0 
+state.RECEBER_DATA_B 1 0 1 
+state.LIMPAR_DATAS 1 1 0 
+
+State Machine - |ArquiteturaCollenda|video_processor:inst7|full_print_module:full_print_module_inst|printModule:printModule_inst|state
 Name state.AGUARDO state.SPRITE state.PROCESSA state.RECEBE state.AGUARDO_2 
 state.RECEBE 0 0 0 0 0 
 state.PROCESSA 0 0 1 1 0 
@@ -7,7 +22,7 @@ state.SPRITE 0 1 0 1 0
 state.AGUARDO 1 0 0 1 0 
 state.AGUARDO_2 0 0 0 1 1 
 
-State Machine - |Collenda|video_processor:inst8|controlUnit:controlUnit_inst|state
+State Machine - |ArquiteturaCollenda|video_processor:inst7|controlUnit:controlUnit_inst|state
 Name state.ESCRITA_NA_MEMORIA state.HABILITAR_IMPRESSAO state.ESCREVER_NO_BANCO state.PRONTO 
 state.PRONTO 0 0 0 0 
 state.ESCREVER_NO_BANCO 0 0 1 1 

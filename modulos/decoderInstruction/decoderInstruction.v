@@ -11,9 +11,9 @@ new_instruction: sinal que informa ao decodificador de instruçao se pode ou nã
 decodificar uma nova instrução que for enviada.
 		 		 
 SAIDAS:		 
-   opcode: valor que indica a unidade de controle qual instruçao sera executada.
- regsiter: identificaçao do registrador no banco de registrador.
-     data: valores a serem escritos no banco de registradores.
+   out_opcode: valor que indica a unidade de controle qual instruçao sera executada.
+ out_regsiter: identificaçao do registrador no banco de registrador.
+     out_data: valores a serem escritos no banco de registradores.
 //////////////////////////////////////////////////////////////////////////
 **/
 module decorderInstruction(
@@ -21,7 +21,6 @@ module decorderInstruction(
 	input wire [31:0] dataA,
 	input wire [31:0] dataB,
 	input wire        new_instruction,
-	input wire        reset,
 	output reg [3:0]  out_opcode,
 	output reg [13:0] out_register,
 	output reg [31:0] out_data
@@ -29,62 +28,62 @@ module decorderInstruction(
 
 reg [3:0]  opcode;
 reg [13:0] register;
-reg [31:0] data;
+reg [31:0] data;        
 
 always @(posedge clk_en) begin
 	if(!new_instruction) begin
-		out_opcode   <= opcode;
-    	out_register <= register;
-    	out_data     <= data;
+		out_opcode   		<= opcode;
+    	out_register 		<= register;
+    	out_data     		<= data;
 	end
 	else begin
-		out_opcode   <= 4'b1111;      //valor default de opcode
-		out_register <= 0;       	 //valor default de register
-		out_data     <= 32'd0;       //valor default de data
+		out_opcode   		<= 4'b1111;      //valor default de opcode
+		out_register 		<= 0;       	 //valor default de register
+		out_data     		<= 32'd0;       //valor default de data
 	end
 end
 
 always @(new_instruction or dataA or dataB) begin
 	case(new_instruction)
-		2'b0: begin
+		1'b0: begin
 			opcode = dataA[3:0];
 			case (dataA[3:0])
-				4'b0000: begin                 		//instruçao de alterar posiçao de um sprite.
-					register[4:0]  = dataA[8:4];    //output Register.
-					register[13:5] = 9'd0; 
-					    data = dataB[31:0];  		//output data (valores de x e y).
+				4'b0000: begin                 					//instruçao de alterar posiçao de um sprite.
+					register[4:0]  		= dataA[8:4];    		//output Register.
+					register[13:5] 		= 9'd0; 
+					data 				= dataB[31:0];  		//output data (valores de x e y).
 				end
-				4'b0001: begin                 		//instruçao de escrita na memória de sprites.
-					register = dataA[17:4];  		//endereço onde os dados serão escritos.
-					    data = dataB[31:0];  		//output data (valor de nova cor).
+				4'b0001: begin                 					//instruçao de escrita na memória de sprites.
+					register 			= dataA[17:4];  		//endereço onde os dados serão escritos.
+					data 	 			= dataB[31:0];  		//output data (valor de nova cor).
 				end
-				4'b0010: begin                 		//instruçao de alterar offset de memoria associado a um sprite.
-					register[4:0] = dataA[8:4];   	//output Register.
-					register[13:5] = 9'd0;
-					data = dataB[31:0];  			//output data (valor de offset).
+				4'b0010: begin 
+					opcode   			= 4'b1111;              //valor default de opcode
+					register 			= 0;       				//valor default de register
+					data     			= 32'd0;       			//valor default de data
 				end
 				4'b0011: begin
-					register = 14'bxxxxxxxxxxxxxx;
-					data     = 32'dx;
+					register 			= 14'bxxxxxxxxxxxxxx;
+					data     			= 32'dx;
 				end
 				default: begin
-				   	opcode   = 4'b1111; //valor default de opcode
-					register = 0;       //valor default de register
-					data     = 32'd0;       //valor default de data
+				   	opcode   			= 4'b1111; 		//valor default de opcode
+					register 			= 0;       		//valor default de register
+					data     			= 32'd0;        //valor default de data
 				end
 			endcase
 		end
 
-		2'b1: begin
-			opcode   = 4'b1111;      //valor default de opcode
-			register = 0;       	 //valor default de register
-			data     = 32'd0;       //valor default de data
+		1'b1: begin
+			opcode   			= 4'b1111;      //valor default de opcode
+			register 			= 0;       	 	//valor default de register
+			data     			= 32'd0;        //valor default de data
 		end
 
 		default: begin
-			opcode   = 4'b1111;      //valor default de opcode
-			register = 0;       	 //valor default de register
-			data     = 32'd0;       //valor default de data
+			opcode   			= 4'b1111;      //valor default de opcode
+			register 			= 0;       	 	//valor default de register
+			data     			= 32'd0;        //valor default de data
 		end
 	endcase
 end
