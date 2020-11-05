@@ -170,7 +170,7 @@ end
 
 /*---------------Bloco always que define se o módulo está em impressão de tela ou não----------------*/
 always @(posedge clk_pixel) begin
-	if( active_area ) 
+	if( pixel_y < 480 ) 
 		out_printtingScreen <= 1;
 	else 
 		out_printtingScreen <= 0;

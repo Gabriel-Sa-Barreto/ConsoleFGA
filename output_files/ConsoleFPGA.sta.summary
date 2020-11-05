@@ -2,32 +2,32 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'geradorDataB:inst|contador:contador_inst|frequency_divisor:frequency_divisor_inst|new_clock'
-Slack : -1.680
-TNS   : -16.800
-
 Type  : Slow 1200mV 85C Model Setup 'geradorDataB:inst|contador:contador_inst2|frequency_divisor:frequency_divisor_inst|new_clock'
-Slack : -1.544
-TNS   : -15.440
+Slack : -1.838
+TNS   : -18.380
+
+Type  : Slow 1200mV 85C Model Setup 'geradorDataB:inst|contador:contador_inst|frequency_divisor:frequency_divisor_inst|new_clock'
+Slack : -1.696
+TNS   : -16.960
 
 Type  : Slow 1200mV 85C Model Setup 'clk_FPGA'
-Slack : -0.626
-TNS   : -1.509
+Slack : -0.682
+TNS   : -11.322
 
 Type  : Slow 1200mV 85C Model Setup 'inst8|clock_pll_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : -0.568
-TNS   : -13.478
+Slack : -0.479
+TNS   : -13.164
 
 Type  : Slow 1200mV 85C Model Setup 'inst8|clock_pll_inst|altpll_component|auto_generated|pll1|clk[1]'
-Slack : -0.010
-TNS   : -0.010
-
-Type  : Slow 1200mV 85C Model Hold 'clk_FPGA'
-Slack : 0.249
+Slack : 0.308
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'inst8|clock_pll_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 0.357
+Slack : 0.199
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clk_FPGA'
+Slack : 0.325
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'inst8|clock_pll_inst|altpll_component|auto_generated|pll1|clk[1]'
@@ -35,11 +35,11 @@ Slack : 0.358
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'geradorDataB:inst|contador:contador_inst2|frequency_divisor:frequency_divisor_inst|new_clock'
-Slack : 0.561
+Slack : 0.395
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'geradorDataB:inst|contador:contador_inst|frequency_divisor:frequency_divisor_inst|new_clock'
-Slack : 0.567
+Slack : 0.566
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'geradorDataB:inst|contador:contador_inst2|frequency_divisor:frequency_divisor_inst|new_clock'
@@ -55,39 +55,39 @@ Slack : 4.743
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk_FPGA'
-Slack : 9.681
+Slack : 9.671
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'inst8|clock_pll_inst|altpll_component|auto_generated|pll1|clk[1]'
 Slack : 19.747
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Setup 'geradorDataB:inst|contador:contador_inst|frequency_divisor:frequency_divisor_inst|new_clock'
-Slack : -1.405
-TNS   : -14.050
-
 Type  : Slow 1200mV 0C Model Setup 'geradorDataB:inst|contador:contador_inst2|frequency_divisor:frequency_divisor_inst|new_clock'
-Slack : -1.289
-TNS   : -12.890
+Slack : -1.543
+TNS   : -15.430
+
+Type  : Slow 1200mV 0C Model Setup 'geradorDataB:inst|contador:contador_inst|frequency_divisor:frequency_divisor_inst|new_clock'
+Slack : -1.417
+TNS   : -14.170
 
 Type  : Slow 1200mV 0C Model Setup 'clk_FPGA'
-Slack : -0.495
-TNS   : -0.958
+Slack : -0.523
+TNS   : -8.029
 
 Type  : Slow 1200mV 0C Model Setup 'inst8|clock_pll_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : -0.001
-TNS   : -0.006
-
-Type  : Slow 1200mV 0C Model Setup 'inst8|clock_pll_inst|altpll_component|auto_generated|pll1|clk[1]'
-Slack : 0.552
+Slack : 0.074
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Hold 'clk_FPGA'
-Slack : 0.240
+Type  : Slow 1200mV 0C Model Setup 'inst8|clock_pll_inst|altpll_component|auto_generated|pll1|clk[1]'
+Slack : 0.828
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'inst8|clock_pll_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 0.312
+Slack : 0.193
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'clk_FPGA'
+Slack : 0.285
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'inst8|clock_pll_inst|altpll_component|auto_generated|pll1|clk[1]'
@@ -95,11 +95,11 @@ Slack : 0.312
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'geradorDataB:inst|contador:contador_inst2|frequency_divisor:frequency_divisor_inst|new_clock'
-Slack : 0.502
+Slack : 0.353
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'geradorDataB:inst|contador:contador_inst|frequency_divisor:frequency_divisor_inst|new_clock'
-Slack : 0.510
+Slack : 0.509
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'geradorDataB:inst|contador:contador_inst2|frequency_divisor:frequency_divisor_inst|new_clock'
@@ -115,51 +115,51 @@ Slack : 4.744
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk_FPGA'
-Slack : 9.695
+Slack : 9.696
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'inst8|clock_pll_inst|altpll_component|auto_generated|pll1|clk[1]'
 Slack : 19.744
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Setup 'geradorDataB:inst|contador:contador_inst|frequency_divisor:frequency_divisor_inst|new_clock'
-Slack : -0.482
-TNS   : -4.820
-
 Type  : Fast 1200mV 0C Model Setup 'geradorDataB:inst|contador:contador_inst2|frequency_divisor:frequency_divisor_inst|new_clock'
-Slack : -0.404
-TNS   : -4.040
+Slack : -0.593
+TNS   : -5.930
+
+Type  : Fast 1200mV 0C Model Setup 'geradorDataB:inst|contador:contador_inst|frequency_divisor:frequency_divisor_inst|new_clock'
+Slack : -0.492
+TNS   : -4.920
 
 Type  : Fast 1200mV 0C Model Setup 'clk_FPGA'
-Slack : -0.254
-TNS   : -0.477
+Slack : -0.289
+TNS   : -0.550
 
 Type  : Fast 1200mV 0C Model Setup 'inst8|clock_pll_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 1.790
+Slack : 1.851
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'inst8|clock_pll_inst|altpll_component|auto_generated|pll1|clk[1]'
-Slack : 2.155
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'clk_FPGA'
-Slack : 0.089
+Slack : 2.342
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'inst8|clock_pll_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 0.186
+Slack : 0.096
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clk_FPGA'
+Slack : 0.126
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'inst8|clock_pll_inst|altpll_component|auto_generated|pll1|clk[1]'
-Slack : 0.187
+Slack : 0.186
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'geradorDataB:inst|contador:contador_inst2|frequency_divisor:frequency_divisor_inst|new_clock'
-Slack : 0.300
+Slack : 0.206
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'geradorDataB:inst|contador:contador_inst|frequency_divisor:frequency_divisor_inst|new_clock'
-Slack : 0.305
+Slack : 0.303
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'geradorDataB:inst|contador:contador_inst2|frequency_divisor:frequency_divisor_inst|new_clock'
@@ -175,7 +175,7 @@ Slack : 4.746
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk_FPGA'
-Slack : 9.445
+Slack : 9.419
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'inst8|clock_pll_inst|altpll_component|auto_generated|pll1|clk[1]'
