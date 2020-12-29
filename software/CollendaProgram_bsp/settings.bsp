@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Nov 5, 2020 11:08:20 AM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1604585300223</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Dec 29, 2020 9:21:33 AM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1609244493774</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>/home/gabriel/Documents/ConsoleFPGA/software/CollendaProgram_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>../../Arquitetura.sopcinfo</SopcDesignFile>
